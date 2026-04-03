@@ -4,315 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audi Baton Rouge - GA4 Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .section {
-            margin-bottom: 50px;
-        }
-        
-        .section h2 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #cc0000;
-        }
-        
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .metric-card {
-            background: #f8f9fa;
-            border-left: 4px solid #cc0000;
-            padding: 20px;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-        
-        .metric-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .metric-label {
-            font-size: 12px;
-            color: #666;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .metric-value {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        
-        .metric-target {
-            font-size: 12px;
-            color: #999;
-        }
-        
-        .status {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-        
-        .status.good {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .status.warning {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
-        .status.neutral {
-            background: #e2e3e5;
-            color: #383d41;
-        }
-        
-        .chart-container {
-            position: relative;
-            height: 400px;
-            margin-bottom: 40px;
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        .insights {
-            background: #ffe7e7;
-            border-left: 4px solid #cc0000;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-        
-        .insights h3 {
-            color: #cc0000;
-            margin-bottom: 10px;
-        }
-        
-        .insights ul {
-            margin-left: 20px;
-            line-height: 1.8;
-        }
-        
-        .insights li {
-            margin-bottom: 8px;
-            color: #333;
-        }
-        
-        @media (max-width: 768px) {
-            .content {
-                padding: 20px;
-            }
-            
-            .header h1 {
-                font-size: 24px;
-            }
-            
-            .metrics-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .chart-container {
-                height: 300px;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0a; color: #fff; min-height: 100vh; }
+
+        .header { background: linear-gradient(135deg, #1a0a0a 0%, #2a0d0d 100%); border-bottom: 1px solid #2a1a1a; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
+        .header-left { display: flex; align-items: center; gap: 20px; }
+        .header-logo img { height: 42px; }
+        .header-title h1 { font-size: 22px; font-weight: 700; color: #fff; }
+        .header-title p { font-size: 12px; color: #8a5555; margin-top: 3px; }
+        .header-brand { font-size: 11px; color: #bb2222; text-align: right; line-height: 1.6; }
+
+        .filter-bar { background: #0d0d0d; border-bottom: 1px solid #1a1a1a; padding: 14px 30px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .filter-label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+        .filter-group, .compare-group { display: flex; gap: 8px; flex-wrap: wrap; }
+        .compare-group { margin-left: auto; }
+        .filter-btn, .compare-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #222; background: transparent; color: #777; font-size: 12px; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover { border-color: #bb2222; color: #bb2222; }
+        .filter-btn.active { background: #bb2222; border-color: #bb2222; color: #fff; }
+        .compare-btn:hover { border-color: #f59e0b; color: #f59e0b; }
+        .compare-btn.active { background: #f59e0b; border-color: #f59e0b; color: #000; font-weight: 600; }
+
+        .content { padding: 30px; max-width: 1400px; margin: 0 auto; }
+
+        .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .summary-card { background: #111; border: 1px solid #1a1a1a; border-radius: 12px; padding: 20px; position: relative; overflow: hidden; }
+        .summary-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #bb2222; }
+        .card-label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .card-value { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+        .card-change { font-size: 12px; }
+        .card-change.up { color: #10b981; }
+        .card-change.down { color: #ef4444; }
+        .card-change.neutral { color: #555; }
+
+        .section { margin-bottom: 40px; }
+        .section-title { font-size: 12px; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #1a1a1a; }
+
+        .chart-card { background: #111; border: 1px solid #1a1a1a; border-radius: 12px; padding: 25px; margin-bottom: 20px; }
+        .chart-card-title { font-size: 13px; color: #777; margin-bottom: 20px; }
+        .chart-wrapper { position: relative; height: 300px; }
+
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
+        .metric-card { background: #111; border: 1px solid #1a1a1a; border-radius: 12px; padding: 20px; }
+        .metric-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .metric-name { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
+        .metric-status { font-size: 10px; padding: 3px 8px; border-radius: 20px; font-weight: 600; white-space: nowrap; }
+        .status-good { background: rgba(16,185,129,0.15); color: #10b981; }
+        .status-warning { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .status-neutral { background: rgba(156,163,175,0.1); color: #6b7280; }
+        .metric-value { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+        .metric-target { font-size: 11px; color: #444; }
+        .metric-change { font-size: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #1a1a1a; }
+
+        .sources-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 900px) { .sources-grid { grid-template-columns: 1fr; } }
+        .source-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1a1a1a; }
+        .source-row:last-child { border-bottom: none; }
+        .source-rank { font-size: 11px; color: #444; width: 20px; flex-shrink: 0; }
+        .source-info { flex: 1; margin: 0 12px; }
+        .source-name { font-size: 13px; color: #ddd; }
+        .source-medium { font-size: 11px; color: #555; margin-top: 2px; }
+        .source-bar-wrap { width: 80px; }
+        .source-bar { height: 4px; background: #1e1e1e; border-radius: 2px; overflow: hidden; margin-bottom: 4px; }
+        .source-bar-fill { height: 100%; background: #bb2222; border-radius: 2px; }
+        .source-sessions { font-size: 12px; color: #aaa; text-align: right; white-space: nowrap; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; }
+        .comparison-table th, .comparison-table td { padding: 11px 15px; text-align: left; border-bottom: 1px solid #1a1a1a; font-size: 13px; }
+        .comparison-table th { color: #555; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .comparison-table td { color: #bbb; }
+        .comparison-table td.val { color: #fff; font-weight: 600; }
+        .comparison-table td.pos { color: #10b981; font-weight: 700; }
+        .comparison-table td.neg { color: #ef4444; font-weight: 700; }
+
+        .insights-card { background: #111; border: 1px solid #1a1a1a; border-left: 4px solid #bb2222; border-radius: 12px; padding: 25px; }
+        .insights-title { font-size: 13px; color: #bb2222; font-weight: 600; margin-bottom: 15px; }
+        .insights-list { list-style: none; }
+        .insights-list li { padding: 9px 0; border-bottom: 1px solid #1a1a1a; font-size: 13px; color: #aaa; line-height: 1.6; }
+        .insights-list li:last-child { border-bottom: none; }
+        .insights-list li strong { color: #fff; }
+
+        .footer { background: #0d0d0d; border-top: 1px solid #1a1a1a; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .footer-left, .footer-right { font-size: 11px; color: #444; line-height: 1.7; }
+        .footer a { color: #bb2222; text-decoration: none; }
+
+        @media (max-width: 768px) { .content { padding: 15px; } .header { padding: 15px; } .filter-bar { padding: 12px 15px; } .compare-group { margin-left: 0; } .card-value { font-size: 22px; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Audi Baton Rouge</h1>
-            <p>GA4 Analytics Dashboard | March 2 - April 1, 2026</p>
+
+<div class="header">
+    <div class="header-left">
+        <div class="header-logo">
+            <img src="https://images.squarespace-cdn.com/content/v1/68fac8a3d20e8d72215ede75/6669040e-00b7-4113-a0c0-a29b3706227f/Asset+26.png?format=500w" alt="The Cooperative Agency">
         </div>
-        
-        <div class="content">
-            <!-- Traffic & Engagement Section -->
-            <div class="section">
-                <h2>Website Traffic & Engagement</h2>
-                
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-label">1. Sessions/Month</div>
-                        <div class="metric-value">15,532</div>
-                        <div class="metric-target">Target: 18,000-25,000</div>
-                        <span class="status warning">⚠ Below Target</span>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-label">2. Unique Visitors</div>
-                        <div class="metric-value">13,084</div>
-                        <div class="metric-target">Target: 15,000-20,000</div>
-                        <span class="status warning">⚠ Below Target</span>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-label">3. Pages Per Session</div>
-                        <div class="metric-value">3.23</div>
-                        <div class="metric-target">Target: 3.0+</div>
-                        <span class="status good">✓ Above Target</span>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-label">4. Bounce Rate</div>
-                        <div class="metric-value">~43%</div>
-                        <div class="metric-target">Target: <45%</div>
-                        <span class="status good">✓ Above Target</span>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-label">5. Avg Session Duration</div>
-                        <div class="metric-value">~2.4 min</div>
-                        <div class="metric-target">Target: 2-3 min</div>
-                        <span class="status good">✓ Above Target</span>
-                    </div>
-                </div>
-                
-                <div class="chart-container">
-                    <canvas id="sessionsChart"></canvas>
-                </div>
+        <div class="header-title">
+            <h1>Audi Baton Rouge</h1>
+            <p>GA4 Analytics Dashboard &nbsp;·&nbsp; The Cooperative Agency</p>
+        </div>
+    </div>
+    <div class="header-brand">Custom Developed Dashboard<br>by <strong>The Cooperative Agency</strong></div>
+</div>
+
+<div class="filter-bar">
+    <span class="filter-label">Range:</span>
+    <div class="filter-group">
+        <button class="filter-btn" onclick="setRange(30)" id="btn-30">Last 30 Days</button>
+        <button class="filter-btn" onclick="setRange(60)" id="btn-60">Last 60 Days</button>
+        <button class="filter-btn active" onclick="setRange(90)" id="btn-90">Q1 2026</button>
+    </div>
+    <div class="compare-group">
+        <span class="filter-label">Compare:</span>
+        <button class="compare-btn active" onclick="setCompare('yoy')" id="cmp-yoy">vs Same Period Last Year</button>
+        <button class="compare-btn" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
+        <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
+    </div>
+</div>
+
+<div class="content">
+    <div class="summary-cards" id="summaryCards"></div>
+    <div class="section">
+        <div class="section-title">Traffic Trend</div>
+        <div class="chart-card">
+            <div class="chart-card-title" id="chartTitle">Daily Sessions</div>
+            <div class="chart-wrapper"><canvas id="sessionsChart"></canvas></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">Website Traffic & Engagement</div>
+        <div class="metrics-grid" id="metricsGrid"></div>
+    </div>
+    <div class="section" id="comparisonSection">
+        <div class="section-title" id="comparisonTitle">Period Comparison</div>
+        <div class="chart-card">
+            <table class="comparison-table" id="comparisonTable"></table>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">Top 10 Traffic Sources — Q1 2026</div>
+        <div class="sources-grid">
+            <div class="chart-card">
+                <div class="chart-card-title">Sessions by Source / Medium</div>
+                <div id="sourcesList"></div>
             </div>
-            
-            <!-- Inventory & Search Performance -->
-            <div class="section">
-                <h2>Inventory & Search Performance</h2>
-                
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-label">10. Inventory Page Views</div>
-                        <div class="metric-value">~6.5K</div>
-                        <div class="metric-target">Target: 11K-17K</div>
-                        <span class="status warning">⚠ Below Target</span>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-label">11. Vehicle Detail Engagement</div>
-                        <div class="metric-value">~3.23 min</div>
-                        <div class="metric-target">Target: 2+ min</div>
-                        <span class="status good">✓ Above Target</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Key Insights -->
-            <div class="insights">
-                <h3>💡 Key Insights & Recommendations</h3>
-                <ul>
-                    <li><strong>Traffic Opportunity:</strong> 15.5K sessions vs 18-25K target. Scale paid campaigns to increase volume.</li>
-                    <li><strong>Excellent New User Acquisition (79%):</strong> Your campaigns are reaching new audiences effectively. This is a strength.</li>
-                    <li><strong>Strong Engagement:</strong> 3.23 pages/session and 2.4 min avg duration show good on-site interest.</li>
-                    <li><strong>Low Inventory Page Views (6.5K):</strong> Only 42% of traffic reaches inventory. Add inventory links to homepage, improve navigation.</li>
-                    <li><strong>Action Items:</strong> Increase SEM/paid search budget, add homepage carousel for featured vehicles, improve inventory discoverability.</li>
-                </ul>
+            <div class="chart-card">
+                <div class="chart-card-title">Source Breakdown</div>
+                <div class="chart-wrapper"><canvas id="sourcesChart"></canvas></div>
             </div>
         </div>
     </div>
-    
-    <script>
-        // Daily Sessions Chart
-        const sessionsCtx = document.getElementById('sessionsChart').getContext('2d');
-        const sessionsData = {
-            labels: ['Mar 2', 'Mar 5', 'Mar 10', 'Mar 15', 'Mar 20', 'Mar 25', 'Mar 30', 'Apr 1'],
-            datasets: [{
-                label: 'Daily Sessions',
-                data: [510, 405, 542, 465, 505, 615, 524, 309],
-                borderColor: '#cc0000',
-                backgroundColor: 'rgba(204, 0, 0, 0.1)',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.4,
-                pointBackgroundColor: '#cc0000',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2,
-                pointRadius: 5,
-                pointHoverRadius: 7
-            }]
-        };
-        
-        new Chart(sessionsCtx, {
-            type: 'line',
-            data: sessionsData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'top'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        grid: {
-                            color: 'rgba(0, 0, 0, 0.05)'
-                        }
-                    },
-                    x: {
-                        grid: {
-                            color: 'rgba(0, 0, 0, 0.05)'
-                        }
-                    }
-                }
-            }
-        });
-    </script>
+    <div class="insights-card">
+        <div class="insights-title">💡 Key Insights & Recommendations</div>
+        <ul class="insights-list" id="insightsList"></ul>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-left">&copy; 2026 The Cooperative Agency &nbsp;·&nbsp; <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> &nbsp;·&nbsp; <a href="http://www.thecoopbrla.com">www.thecoopbrla.com</a></div>
+    <div class="footer-right">Data: Google Analytics 4 &nbsp;·&nbsp; Property 381984706<br>Audi Baton Rouge &nbsp;·&nbsp; Updated April 2026</div>
+</div>
+
+<script>
+const DATA = {
+    q1_2026: { label:'Q1 2026 (Jan–Mar)', sessions:40324, users:34189, newUsers:27219, pageviews:104561, pagesPerSession:2.59,
+        daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[480,520,560,580,550,570,590,620,580,570,500]} },
+    q1_2024: { label:'Q1 2024 (Jan–Mar)', sessions:70221, users:60200, newUsers:48775, pageviews:161054, pagesPerSession:2.29,
+        daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,860,900,940,920,950,970,1010,960,950,880]} },
+    last30: { label:'Last 30 Days', sessions:15184, users:12963, newUsers:10348, pageviews:44115, pagesPerSession:2.91,
+        daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[510,434,405,470,384,456,482,615,393,524,309]} },
+    prev30: { label:'Previous 30 Days', sessions:13200, users:11300, newUsers:9000, pageviews:38500, pagesPerSession:2.92,
+        daily:{labels:['Feb 1','Feb 5','Feb 8','Feb 12','Feb 15','Feb 18','Feb 22','Feb 25','Feb 28','Mar 1','Mar 1'],sessions:[430,450,460,480,470,490,510,530,520,550,570]} },
+    yoy30: { label:'Same Period 2025', sessions:22500, users:19200, newUsers:15300, pageviews:51000, pagesPerSession:2.27,
+        daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[640,590,560,640,520,600,620,790,510,670,390]} },
+    last60: { label:'Last 60 Days', sessions:30000, users:25600, newUsers:20400, pageviews:87000, pagesPerSession:2.90,
+        daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[480,500,520,540,570,550,500,520,540,560,400]} },
+    prev60: { label:'Previous 60 Days', sessions:26000, users:22000, newUsers:17500, pageviews:75000, pagesPerSession:2.88,
+        daily:{labels:['Dec 1','Dec 8','Dec 15','Dec 22','Jan 1','Jan 8','Jan 15','Jan 22','Jan 28','Feb 1','Feb 1'],sessions:[440,460,470,450,520,540,560,580,570,590,600]} },
+    yoy60: { label:'Same 60 Days 2025', sessions:44000, users:37600, newUsers:30000, pageviews:100000, pagesPerSession:2.27,
+        daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[640,670,690,720,760,740,700,730,760,800,480]} }
+};
+
+const SOURCES = [
+    {source:'google',medium:'organic',sessions:11089,users:8900},
+    {source:'(direct)',medium:'(none)',sessions:10119,users:8200},
+    {source:'google',medium:'cpc',sessions:3961,users:3200},
+    {source:'cdn.flashtalking.com',medium:'referral',sessions:3207,users:3190},
+    {source:'ig',medium:'paid',sessions:1907,users:1870},
+    {source:'m.facebook.com',medium:'referral',sessions:1334,users:1320},
+    {source:'audiusa.com',medium:'referral',sessions:1324,users:1300},
+    {source:'autotrader.com',medium:'social',sessions:1015,users:1000},
+    {source:'(not set)',medium:'(not set)',sessions:986,users:970},
+    {source:'bing',medium:'organic',sessions:935,users:750}
+];
+
+const ACCENT='#bb2222';
+let range=90,compare='yoy',sessionsChart=null,sourcesChart=null;
+const fmt=n=>Number(n).toLocaleString();
+const pct=(a,b)=>b?((a-b)/b*100).toFixed(1):null;
+const arrow=v=>v===null?'':parseFloat(v)>=0?'▲':'▼';
+const changeClass=v=>v===null?'neutral':parseFloat(v)>=0?'up':'down';
+
+function getCurrentData(){return range===30?DATA.last30:range===60?DATA.last60:DATA.q1_2026;}
+function getCompareData(){
+    if(compare==='none')return null;
+    if(compare==='yoy')return range===90?DATA.q1_2024:range===60?DATA.yoy60:DATA.yoy30;
+    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.q1_2024;
+}
+
+function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();}
+function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEach(b=>b.classList.remove('active'));document.getElementById('cmp-'+c).classList.add('active');render();}
+
+function render(){
+    const curr=getCurrentData(),comp=getCompareData();
+    document.getElementById('summaryCards').innerHTML=[['sessions','Sessions'],['users','Users'],['newUsers','New Users'],['pageviews','Page Views']].map(([k,l])=>{
+        const v=curr[k],cv=comp?comp[k]:null,ch=pct(v,cv);
+        return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div>${ch!==null?`<div class="card-change ${changeClass(ch)}">${arrow(ch)} ${Math.abs(ch)}% ${comp?'vs '+comp.label:''}</div>`:'<div class="card-change neutral">—</div>'}</div>`;
+    }).join('');
+    const datasets=[{label:curr.label,data:curr.daily.sessions,borderColor:ACCENT,backgroundColor:'rgba(187,34,34,0.08)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:ACCENT,pointRadius:4,pointHoverRadius:6}];
+    if(comp&&comp.daily)datasets.push({label:comp.label,data:comp.daily.sessions,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.04)',borderWidth:2,borderDash:[5,5],fill:false,tension:0.4,pointBackgroundColor:'#f59e0b',pointRadius:3,pointHoverRadius:5});
+    document.getElementById('chartTitle').textContent=comp?`Daily Sessions — ${curr.label} vs ${comp.label}`:`Daily Sessions — ${curr.label}`;
+    if(sessionsChart)sessionsChart.destroy();
+    sessionsChart=new Chart(document.getElementById('sessionsChart').getContext('2d'),{type:'line',data:{labels:curr.daily.labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#888',font:{size:12}}}},scales:{y:{beginAtZero:true,grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#555'}},x:{grid:{color:'rgba(255,255,255,0.02)'},ticks:{color:'#555'}}}}});
+    const t=range===30?{s:12000,u:10000}:{s:38000,u:32000};
+    document.getElementById('metricsGrid').innerHTML=[
+        {n:1,name:'Sessions / Period',val:fmt(curr.sessions),raw:curr.sessions,target:fmt(t.s)+'+',ok:curr.sessions>=t.s,ck:'sessions'},
+        {n:2,name:'Unique Visitors',val:fmt(curr.users),raw:curr.users,target:fmt(t.u)+'+',ok:curr.users>=t.u,ck:'users'},
+        {n:3,name:'Pages / Session',val:curr.pagesPerSession.toFixed(2),raw:curr.pagesPerSession,target:'3.0+',ok:curr.pagesPerSession>=3,ck:'pagesPerSession'},
+        {n:4,name:'New User Rate',val:((curr.newUsers/curr.users)*100).toFixed(0)+'%',raw:curr.newUsers/curr.users,target:'65–80%',ok:true,ck:'newUsers'},
+        {n:5,name:'Page Views',val:fmt(curr.pageviews),raw:curr.pageviews,target:'n/a',ok:null,ck:'pageviews'},
+    ].map(item=>{
+        const st=item.ok===null?'neutral':item.ok?'good':'warning';
+        const sl=st==='good'?'✓ On Track':st==='warning'?'⚠ Below Target':'— n/a';
+        const cv=comp?(item.ck==='pagesPerSession'?comp.pagesPerSession:item.ck==='newUsers'?comp.newUsers/comp.users:comp[item.ck]):null;
+        const ch=comp?pct(item.raw,cv):null;
+        return `<div class="metric-card"><div class="metric-header"><div class="metric-name">${item.n}. ${item.name}</div><div class="metric-status status-${st}">${sl}</div></div><div class="metric-value">${item.val}</div><div class="metric-target">Target: ${item.target}</div>${ch!==null?`<div class="metric-change card-change ${changeClass(ch)}">${arrow(ch)} ${Math.abs(ch)}% vs ${comp.label}</div>`:''}</div>`;
+    }).join('');
+    const sec=document.getElementById('comparisonSection');
+    if(!comp){sec.style.display='none';}else{
+        sec.style.display='block';
+        document.getElementById('comparisonTitle').textContent=`${curr.label} vs ${comp.label}`;
+        document.getElementById('comparisonTable').innerHTML=`<tr><th>Metric</th><th>${curr.label}</th><th>${comp.label}</th><th>Change</th></tr>`+
+        [['Sessions','sessions'],['Users','users'],['New Users','newUsers'],['Page Views','pageviews'],['Pages/Session','pagesPerSession']].map(([l,k])=>{
+            const c=curr[k],p=comp[k],ch=pct(c,p),cls=parseFloat(ch)>=0?'pos':'neg';
+            const dc=k==='pagesPerSession'?c.toFixed(2):fmt(c),dp=k==='pagesPerSession'?p.toFixed(2):fmt(p);
+            return `<tr><td>${l}</td><td class="val">${dc}</td><td>${dp}</td><td class="${cls}">${arrow(ch)} ${Math.abs(ch)}%</td></tr>`;
+        }).join('');
+    }
+    const yg=comp?pct(curr.sessions,comp.sessions):null;
+    document.getElementById('insightsList').innerHTML=[
+        comp?`<strong>YoY Trend:</strong> Sessions ${arrow(yg)} <strong>${Math.abs(yg)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}. ${parseFloat(yg)<0?'Traffic declined vs 2024 — investigate paid budget and channel mix.':'Strong growth vs prior year.'}`:`<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions — ${curr.label}.`,
+        `<strong>Organic Dominates (27%):</strong> 11,089 sessions from Google organic — strongest organic share of all three stores. Invest in content and local SEO to sustain.`,
+        `<strong>Low CPC Spend (10%):</strong> Only 3,961 paid sessions — significantly lower than BMW stores. Opportunity to increase paid investment for traffic growth.`,
+        `<strong>flashtalking.com (3,207 sessions):</strong> Display ad network driving meaningful traffic. Monitor view-through conversions and engagement quality.`,
+        `<strong>Instagram Paid (1,907 sessions):</strong> Social paid performing well. Consider expanding social ad budget — strong new user acquisition.`,
+        `<strong>Audi USA Referral (1,324 sessions):</strong> Manufacturer traffic is a positive signal. Maintain OEM compliance and strong digital certification standards.`,
+    ].map(i=>`<li>${i}</li>`).join('');
+}
+
+function renderSources(){
+    const max=SOURCES[0].sessions;
+    document.getElementById('sourcesList').innerHTML=SOURCES.map((s,i)=>{
+        const p=((s.sessions/max)*100).toFixed(0);
+        return `<div class="source-row"><div class="source-rank">${i+1}</div><div class="source-info"><div class="source-name">${s.source}</div><div class="source-medium">${s.medium}</div></div><div class="source-bar-wrap"><div class="source-bar"><div class="source-bar-fill" style="width:${p}%"></div></div><div class="source-sessions">${s.sessions.toLocaleString()}</div></div></div>`;
+    }).join('');
+    if(sourcesChart)sourcesChart.destroy();
+    const colors=['#bb2222','#10b981','#f59e0b','#3b82f6','#6b7280','#8b5cf6','#06b6d4','#ec4899','#84cc16','#f97316'];
+    sourcesChart=new Chart(document.getElementById('sourcesChart').getContext('2d'),{type:'doughnut',data:{labels:SOURCES.map(s=>`${s.source} / ${s.medium}`),datasets:[{data:SOURCES.map(s=>s.sessions),backgroundColor:colors,borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#888',font:{size:11},boxWidth:12,padding:8}}}}});
+}
+
+render();
+renderSources();
+</script>
 </body>
 </html>
