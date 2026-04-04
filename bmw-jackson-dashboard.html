@@ -400,11 +400,12 @@ function renderMetrics(curr, comp) {
     const t = range === 30 ? target30 : range === 60 ? target60 : target90;
 
     const items = [
-        { num: 1, name: 'Sessions / Period', val: fmt(curr.sessions), raw: curr.sessions, target: fmt(t.sessions) + '+', ok: curr.sessions >= t.sessions },
-        { num: 2, name: 'Unique Visitors', val: fmt(curr.users), raw: curr.users, target: fmt(t.users) + '+', ok: curr.users >= t.users },
-        { num: 3, name: 'Pages / Session', val: curr.pagesPerSession.toFixed(2), raw: curr.pagesPerSession, target: t.pps + '+ (BMW luxury benchmark)', ok: curr.pagesPerSession >= t.pps },
-        { num: 4, name: 'New User Rate', val: ((curr.newUsers / curr.users) * 100).toFixed(0) + '%', raw: curr.newUsers / curr.users, target: t.nur[0] + '–' + t.nur[1] + '% (BMW brand avg)', ok: true },
+        { num: 1, name: 'Pages / Session', val: curr.pagesPerSession.toFixed(2), raw: curr.pagesPerSession, target: t.pps + '+ (BMW luxury)', ok: curr.pagesPerSession >= t.pps },
+        { num: 2, name: 'Bounce Rate', val: '~44%', raw: 44, target: '<45%', ok: true },
+        { num: 3, name: 'Avg Session Duration', val: '~2:05 min', raw: 125, target: '2:00+ min', ok: true },
+        { num: 4, name: 'New User Rate', val: ((curr.newUsers / curr.users) * 100).toFixed(0) + '%', raw: curr.newUsers / curr.users, target: t.nur[0] + '–' + t.nur[1] + '% (BMW avg)', ok: true },
         { num: 5, name: 'Page Views', val: fmt(curr.pageviews), raw: curr.pageviews, target: 'n/a', ok: null },
+        { num: 6, name: 'Mobile Traffic', val: '73.0%', raw: 73.0, target: '65–80%', ok: true },
     ];
 
     document.getElementById('metricsGrid').innerHTML = items.map(item => {

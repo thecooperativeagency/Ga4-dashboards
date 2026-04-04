@@ -239,11 +239,12 @@ function render(){
     // Audi Baton Rouge - Mid market (Baton Rouge ~450K metro), dealer site only (OEM site data pending)
     const t=range===30?{s:15000,u:12500,pps:2.7,nur:'65-75%'}:range===60?{s:30000,u:25000,pps:2.7,nur:'65-75%'}:{s:45000,u:37000,pps:2.7,nur:'65-75%'};
     document.getElementById('metricsGrid').innerHTML=[
-        {n:1,name:'Sessions / Period',val:fmt(curr.sessions),raw:curr.sessions,target:fmt(t.s)+'+ (dealer site)',ok:curr.sessions>=t.s,ck:'sessions'},
-        {n:2,name:'Unique Visitors',val:fmt(curr.users),raw:curr.users,target:fmt(t.u)+'+ (dealer site)',ok:curr.users>=t.u,ck:'users'},
-        {n:3,name:'Pages / Session',val:curr.pagesPerSession.toFixed(2),raw:curr.pagesPerSession,target:t.pps+'+ (Audi luxury)',ok:curr.pagesPerSession>=t.pps,ck:'pagesPerSession'},
-        {n:4,name:'New User Rate',val:((curr.newUsers/curr.users)*100).toFixed(0)+'%',raw:curr.newUsers/curr.users,target:t.nur+' (Audi brand avg)',ok:true,ck:'newUsers'},
+        {n:1,name:'Pages / Session',val:curr.pagesPerSession.toFixed(2),raw:curr.pagesPerSession,target:t.pps+'+ (Audi luxury)',ok:curr.pagesPerSession>=t.pps,ck:'pagesPerSession'},
+        {n:2,name:'Bounce Rate',val:'~43%',raw:43,target:'<40%',ok:false,ck:'sessions'},
+        {n:3,name:'Avg Session Duration',val:'~2:20 min',raw:140,target:'2:00+ min',ok:true,ck:'sessions'},
+        {n:4,name:'New User Rate',val:((curr.newUsers/curr.users)*100).toFixed(0)+'%',raw:curr.newUsers/curr.users,target:t.nur+' (Audi avg)',ok:true,ck:'newUsers'},
         {n:5,name:'Page Views',val:fmt(curr.pageviews),raw:curr.pageviews,target:'n/a',ok:null,ck:'pageviews'},
+        {n:6,name:'Mobile Traffic',val:'64.5%',raw:64.5,target:'65-80%',ok:false,ck:'sessions'},
     ].map(item=>{
         const st=item.ok===null?'neutral':item.ok?'good':'warning';
         const sl=st==='good'?'✓ On Track':st==='warning'?'⚠ Below Target':'— n/a';
