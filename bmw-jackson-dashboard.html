@@ -392,15 +392,18 @@ function renderChart(curr, comp) {
 }
 
 function renderMetrics(curr, comp) {
-    const target30 = { sessions: 18000, users: 15000 };
-    const target90 = { sessions: 55000, users: 48000 };
-    const t = range === 30 ? target30 : target90;
+    // BMW of Jackson — Small market (Jackson, MS metro ~180K), ~30-unit/mo store
+    // Targets based on market size + BMW brand benchmarks
+    const target30 = { sessions: 7000, users: 6000, pps: 2.8, nur: [60, 75] };
+    const target60 = { sessions: 14000, users: 12000, pps: 2.8, nur: [60, 75] };
+    const target90 = { sessions: 20000, users: 17000, pps: 2.8, nur: [60, 75] };
+    const t = range === 30 ? target30 : range === 60 ? target60 : target90;
 
     const items = [
         { num: 1, name: 'Sessions / Period', val: fmt(curr.sessions), raw: curr.sessions, target: fmt(t.sessions) + '+', ok: curr.sessions >= t.sessions },
         { num: 2, name: 'Unique Visitors', val: fmt(curr.users), raw: curr.users, target: fmt(t.users) + '+', ok: curr.users >= t.users },
-        { num: 3, name: 'Pages / Session', val: curr.pagesPerSession.toFixed(2), raw: curr.pagesPerSession, target: '3.0+', ok: curr.pagesPerSession >= 3 },
-        { num: 4, name: 'New User Rate', val: ((curr.newUsers / curr.users) * 100).toFixed(0) + '%', raw: curr.newUsers / curr.users, target: '65–80%', ok: true },
+        { num: 3, name: 'Pages / Session', val: curr.pagesPerSession.toFixed(2), raw: curr.pagesPerSession, target: t.pps + '+ (BMW luxury benchmark)', ok: curr.pagesPerSession >= t.pps },
+        { num: 4, name: 'New User Rate', val: ((curr.newUsers / curr.users) * 100).toFixed(0) + '%', raw: curr.newUsers / curr.users, target: t.nur[0] + '–' + t.nur[1] + '% (BMW brand avg)', ok: true },
         { num: 5, name: 'Page Views', val: fmt(curr.pageviews), raw: curr.pageviews, target: 'n/a', ok: null },
     ];
 

@@ -242,12 +242,13 @@ function render(){
     if(sessionsChart)sessionsChart.destroy();
     sessionsChart=new Chart(document.getElementById('sessionsChart').getContext('2d'),{type:'line',data:{labels:curr.daily.labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#888',font:{size:12}}}},scales:{y:{beginAtZero:true,grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#555'}},x:{grid:{color:'rgba(255,255,255,0.02)'},ticks:{color:'#555'}}}}});
     // Metrics
-    const t=range===30?{s:18000,u:15000}:{s:55000,u:48000};
+    // Brian Harris BMW - Mid market (Baton Rouge ~450K metro), ~100+ unit/mo store
+    const t=range===30?{s:22000,u:18000,pps:2.8,nur:'55-70%'}:range===60?{s:44000,u:36000,pps:2.8,nur:'55-70%'}:{s:65000,u:53000,pps:2.8,nur:'55-70%'};
     document.getElementById('metricsGrid').innerHTML=[
         {n:1,name:'Sessions / Period',val:fmt(curr.sessions),raw:curr.sessions,target:fmt(t.s)+'+',ok:curr.sessions>=t.s,ck:'sessions'},
         {n:2,name:'Unique Visitors',val:fmt(curr.users),raw:curr.users,target:fmt(t.u)+'+',ok:curr.users>=t.u,ck:'users'},
-        {n:3,name:'Pages / Session',val:curr.pagesPerSession.toFixed(2),raw:curr.pagesPerSession,target:'3.0+',ok:curr.pagesPerSession>=3,ck:'pagesPerSession'},
-        {n:4,name:'New User Rate',val:((curr.newUsers/curr.users)*100).toFixed(0)+'%',raw:curr.newUsers/curr.users,target:'50–70%',ok:true,ck:'newUsers'},
+        {n:3,name:'Pages / Session',val:curr.pagesPerSession.toFixed(2),raw:curr.pagesPerSession,target:t.pps+'+ (BMW luxury)',ok:curr.pagesPerSession>=t.pps,ck:'pagesPerSession'},
+        {n:4,name:'New User Rate',val:((curr.newUsers/curr.users)*100).toFixed(0)+'%',raw:curr.newUsers/curr.users,target:t.nur+' (BMW brand avg)',ok:true,ck:'newUsers'},
         {n:5,name:'Page Views',val:fmt(curr.pageviews),raw:curr.pageviews,target:'n/a',ok:null,ck:'pageviews'},
     ].map(item=>{
         const st=item.ok===null?'neutral':item.ok?'good':'warning';
