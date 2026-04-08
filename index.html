@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cooperative Agency — Command Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #080808;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #0d0d1a 0%, #111127 100%);
+      border-bottom: 1px solid #1e1e2e;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .header-left { display: flex; align-items: center; gap: 18px; }
+    .header-logo { height: 44px; }
+    .header-titles h1 { font-size: 20px; font-weight: 700; color: #fff; }
+    .header-titles p { font-size: 12px; color: #555; margin-top: 3px; letter-spacing: 0.5px; }
+    .header-badge {
+      font-size: 10px;
+      color: #667eea;
+      background: rgba(102,126,234,0.1);
+      border: 1px solid rgba(102,126,234,0.2);
+      border-radius: 20px;
+      padding: 4px 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* MAIN */
+    .main { padding: 40px; max-width: 1200px; margin: 0 auto; }
+
+    /* SECTION */
+    .section { margin-bottom: 50px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .section-icon { font-size: 18px; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .section-count {
+      font-size: 10px;
+      color: #333;
+      background: #111;
+      border: 1px solid #1e1e1e;
+      border-radius: 20px;
+      padding: 2px 9px;
+    }
+
+    /* GRID */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+
+    /* CARD */
+    .card {
+      background: #0f0f0f;
+      border: 1px solid #1a1a1a;
+      border-radius: 14px;
+      padding: 22px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .card:hover {
+      border-color: #2a2a2a;
+      background: #141414;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+
+    /* Accent colors per brand */
+    .accent-blue::before   { background: linear-gradient(90deg, #1c69d4, #0056b3); }
+    .accent-silver::before { background: linear-gradient(90deg, #8c9bab, #5a6a7a); }
+    .accent-red::before    { background: linear-gradient(90deg, #cc0000, #990000); }
+    .accent-green::before  { background: linear-gradient(90deg, #10b981, #059669); }
+    .accent-amber::before  { background: linear-gradient(90deg, #f59e0b, #d97706); }
+    .accent-purple::before { background: linear-gradient(90deg, #667eea, #5a54d4); }
+    .accent-cyan::before   { background: linear-gradient(90deg, #06b6d4, #0891b2); }
+    .accent-white::before  { background: linear-gradient(90deg, #e5e5e5, #aaa); }
+
+    .card-emoji { font-size: 22px; }
+    .card-name { font-size: 15px; font-weight: 600; color: #fff; }
+    .card-desc { font-size: 12px; color: #555; line-height: 1.5; }
+    .card-tag {
+      font-size: 10px;
+      color: #444;
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 20px;
+      padding: 2px 10px;
+      align-self: flex-start;
+      margin-top: auto;
+    }
+    .card-tag.live { color: #10b981; border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.05); }
+    .card-tag.local { color: #f59e0b; border-color: rgba(245,158,11,0.2); background: rgba(245,158,11,0.05); }
+    .card-tag.drive { color: #667eea; border-color: rgba(102,126,234,0.2); background: rgba(102,126,234,0.05); }
+
+    .card-arrow {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 14px;
+      color: #2a2a2a;
+      transition: color 0.2s;
+    }
+    .card:hover .card-arrow { color: #555; }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid #111;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .footer-left { font-size: 11px; color: #333; }
+    .footer-right { font-size: 11px; color: #222; }
+
+    @media (max-width: 600px) {
+      .header { padding: 20px; flex-direction: column; align-items: flex-start; }
+      .main { padding: 20px; }
+      .footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <img src="https://raw.githubusercontent.com/thecooperativeagency/postengine/main/media/coop-agency-logo.jpg"
+         onerror="this.style.display='none'"
+         class="header-logo" alt="The Cooperative Agency">
+    <div class="header-titles">
+      <h1>Command Hub</h1>
+      <p>The Cooperative Agency — Internal Tools &amp; Dashboards</p>
+    </div>
+  </div>
+  <div class="header-badge">Internal Use Only</div>
+</header>
+
+<main class="main">
+
+  <!-- SECTION: GitHub Pages (Public) -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">🌐</span>
+      <span class="section-label">GitHub Pages</span>
+      <span class="section-count">3 live</span>
+    </div>
+    <div class="grid">
+
+      <a href="https://thecooperativeagency.github.io/Ga4-dashboards/bmw-jackson-dashboard.html"
+         target="_blank" class="card accent-blue">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">🏎️</div>
+        <div class="card-name">BMW of Jackson</div>
+        <div class="card-desc">GA4 analytics dashboard — traffic, engagement, benchmarks, YoY comparison.</div>
+        <span class="card-tag live">● Live</span>
+      </a>
+
+      <a href="https://thecooperativeagency.github.io/Ga4-dashboards/brian-harris-bmw-dashboard.html"
+         target="_blank" class="card accent-silver">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">🚗</div>
+        <div class="card-name">Brian Harris BMW</div>
+        <div class="card-desc">GA4 analytics dashboard — Baton Rouge market, engagement metrics, sources.</div>
+        <span class="card-tag live">● Live</span>
+      </a>
+
+      <a href="https://thecooperativeagency.github.io/Ga4-dashboards/audi-baton-rouge-dashboard.html"
+         target="_blank" class="card accent-red">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">🔴</div>
+        <div class="card-name">Audi Baton Rouge</div>
+        <div class="card-desc">GA4 analytics dashboard — dealer site data, OEM data pending Cody access.</div>
+        <span class="card-tag live">● Live</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SECTION: Locally Hosted Tools -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">🖥️</span>
+      <span class="section-label">Locally Hosted</span>
+      <span class="section-count">Tailscale accessible</span>
+    </div>
+    <div class="grid">
+
+      <a href="http://100.83.146.27:3456" target="_blank" class="card accent-purple">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">📲</div>
+        <div class="card-name">PostEngine</div>
+        <div class="card-desc">Social media pipeline — Drive scanner, AI captions, Zernio publishing for all 4 dealerships.</div>
+        <span class="card-tag local">● Local :3456</span>
+      </a>
+
+      <a href="http://100.83.146.27:3200" target="_blank" class="card accent-green">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">📈</div>
+        <div class="card-name">Kalshi Trading Dashboard</div>
+        <div class="card-desc">Multi-vertical prediction market system — weather, arb scanner, live positions, P&amp;L.</div>
+        <span class="card-tag local">● Local :3200</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SECTION: Google Drive Resources -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">📁</span>
+      <span class="section-label">Drive Resources</span>
+      <span class="section-count">Docs &amp; Sheets</span>
+    </div>
+    <div class="grid">
+
+      <a href="https://docs.google.com/document/d/17qcSjmjsuQQnrUiN5At6c9yQdUBO-8KQ/edit"
+         target="_blank" class="card accent-red">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">📋</div>
+        <div class="card-name">Audi BR — Google Ads Brief</div>
+        <div class="card-desc">SEM optimization brief — campaign structure, budgets, negative keywords, conversion tracking.</div>
+        <span class="card-tag drive">● Drive Doc</span>
+      </a>
+
+      <a href="https://docs.google.com/spreadsheets/d/15xl3whvuaUnGkwPBEy3Mz_xeYM6DMkFHtv4rh1GHnRs/edit"
+         target="_blank" class="card accent-red">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">📊</div>
+        <div class="card-name">Audi BR — Ads Data Sheet</div>
+        <div class="card-desc">Google Ads performance data, campaign breakdown, spend vs conversion analysis.</div>
+        <span class="card-tag drive">● Drive Sheet</span>
+      </a>
+
+      <a href="https://docs.google.com/spreadsheets/d/1q7ALUjzm5GAjsnftKB8jCZRF7V08DLfarYGCXw8AIy4"
+         target="_blank" class="card accent-white">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">🏎️</div>
+        <div class="card-name">Harris Porsche — Parts Brief</div>
+        <div class="card-desc">Action items from parts dept meeting — eBay setup, photography, Rexy/watches strategy.</div>
+        <span class="card-tag drive">● Drive Sheet</span>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1ZIY-CQBwxkup_emrKd3acuB3zxG6ByZw"
+         target="_blank" class="card accent-cyan">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">🧠</div>
+        <div class="card-name">Dealer Intel Platform — Brief</div>
+        <div class="card-desc">Export-based analytics platform concept — VinSolutions, Vauto, GA4, weekly GM digest.</div>
+        <span class="card-tag drive">● Drive PDF</span>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1J8Wr7lTVqnLnuUctk_YxONx7lMYuNDag"
+         target="_blank" class="card accent-white">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">🚐</div>
+        <div class="card-name">Harris Porsche — Van Livery</div>
+        <div class="card-desc">Heritage-inspired livery concept — red/cream, bold typography, Porsche crest. Awaiting approval.</div>
+        <span class="card-tag drive">● Drive Folder</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SECTION: GitHub Repos -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-icon">⚙️</span>
+      <span class="section-label">GitHub Repos</span>
+      <span class="section-count">Source code</span>
+    </div>
+    <div class="grid">
+
+      <a href="https://github.com/thecooperativeagency/Ga4-dashboards"
+         target="_blank" class="card accent-silver">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">📊</div>
+        <div class="card-name">GA4 Dashboards</div>
+        <div class="card-desc">Source for all 3 client GA4 dashboards. Auto-updates every Monday 6AM CDT.</div>
+        <span class="card-tag">github.com</span>
+      </a>
+
+      <a href="https://github.com/thecooperativeagency/postengine"
+         target="_blank" class="card accent-purple">
+        <span class="card-arrow">↗</span>
+        <div class="card-emoji">📲</div>
+        <div class="card-name">PostEngine</div>
+        <div class="card-desc">Social media pipeline source — Express + React + SQLite. Hosts media for Zernio publishing.</div>
+        <span class="card-tag">github.com</span>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-left">© 2026 The Cooperative Agency, LLC — Internal use only. Do not share externally.</div>
+  <div class="footer-right">Built by Luc 🦞</div>
+</footer>
+
+</body>
+</html>
