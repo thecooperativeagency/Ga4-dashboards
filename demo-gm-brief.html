@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GM Morning Brief — Prestige BMW of Nashville</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e8e8e8; min-height: 100vh; }
+  .header { background: #111; border-bottom: 2px solid #1c69d4; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .bmw-badge { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #fff 50%, #1c69d4 50%); border: 3px solid #333; }
+  .dealership-name { font-size: 20px; font-weight: 700; color: #fff; }
+  .dealership-sub { font-size: 13px; color: #888; margin-top: 2px; }
+  .date-badge { background: #1c69d4; color: #fff; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+  .content { max-width: 860px; margin: 0 auto; padding: 32px 24px; }
+  .greeting { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .greeting span { color: #1c69d4; }
+  .subtitle { color: #888; font-size: 14px; margin-bottom: 32px; }
+  .section { background: #161616; border: 1px solid #222; border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .section-icon { font-size: 18px; }
+  .section-title { font-size: 15px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .metric { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 16px; }
+  .metric-value { font-size: 28px; font-weight: 800; color: #fff; }
+  .metric-label { font-size: 12px; color: #666; margin-top: 4px; }
+  .metric-delta { font-size: 12px; margin-top: 6px; font-weight: 600; }
+  .up { color: #22c55e; }
+  .down { color: #ef4444; }
+  .neutral { color: #888; }
+  .meeting-list { display: flex; flex-direction: column; gap: 12px; }
+  .meeting { display: flex; gap: 16px; align-items: flex-start; padding: 14px; background: #1a1a1a; border-radius: 8px; border-left: 3px solid #1c69d4; }
+  .meeting-time { font-size: 13px; font-weight: 700; color: #1c69d4; min-width: 70px; }
+  .meeting-title { font-size: 14px; font-weight: 600; color: #fff; }
+  .meeting-detail { font-size: 12px; color: #666; margin-top: 3px; }
+  .alert { display: flex; gap: 12px; padding: 14px; border-radius: 8px; margin-bottom: 10px; align-items: flex-start; }
+  .alert-urgent { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); }
+  .alert-warn { background: rgba(234,179,8,0.1); border: 1px solid rgba(234,179,8,0.3); }
+  .alert-info { background: rgba(28,105,212,0.1); border: 1px solid rgba(28,105,212,0.3); }
+  .alert-icon { font-size: 16px; margin-top: 1px; }
+  .alert-text { font-size: 13px; color: #ccc; line-height: 1.5; }
+  .alert-text strong { color: #fff; }
+  .inventory-table { width: 100%; border-collapse: collapse; }
+  .inventory-table th { text-align: left; font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 12px; border-bottom: 1px solid #222; }
+  .inventory-table td { padding: 10px 12px; font-size: 13px; border-bottom: 1px solid #1a1a1a; }
+  .inventory-table tr:last-child td { border-bottom: none; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .tag-red { background: rgba(239,68,68,0.2); color: #ef4444; }
+  .tag-yellow { background: rgba(234,179,8,0.2); color: #eab308; }
+  .tag-green { background: rgba(34,197,94,0.2); color: #22c55e; }
+  .action-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .action-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; color: #ccc; padding: 12px; background: #1a1a1a; border-radius: 8px; }
+  .action-list li::before { content: "→"; color: #1c69d4; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .footer { text-align: center; padding: 32px; color: #444; font-size: 12px; }
+  .footer img { height: 20px; opacity: 0.3; margin-bottom: 8px; }
+  .powered { color: #333; font-size: 11px; margin-top: 6px; }
+  @media (max-width: 600px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="bmw-badge"></div>
+    <div>
+      <div class="dealership-name">Prestige BMW of Nashville</div>
+      <div class="dealership-sub">GM Morning Brief · Delivered by The Cooperative Agency</div>
+    </div>
+  </div>
+  <div class="date-badge">Thursday, April 9, 2026</div>
+</div>
+
+<div class="content">
+  <div class="greeting">Good morning, <span>Michael.</span></div>
+  <div class="subtitle">Here's what you need to know before you walk in the door.</div>
+
+  <!-- KEY METRICS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📊</span>
+      <span class="section-title">Week-to-Date Performance</span>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="metric-value">34</div>
+        <div class="metric-label">Units Sold MTD</div>
+        <div class="metric-delta up">↑ 12% vs last month</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">$2.4M</div>
+        <div class="metric-label">Gross Revenue MTD</div>
+        <div class="metric-delta up">↑ 8% vs last month</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">18</div>
+        <div class="metric-label">New Leads (24h)</div>
+        <div class="metric-delta down">↓ 3 vs yesterday</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">4.2h</div>
+        <div class="metric-label">Avg Lead Response</div>
+        <div class="metric-delta down">↑ Over 2h target</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">142</div>
+        <div class="metric-label">New Units in Stock</div>
+        <div class="metric-delta neutral">Target: 130–150</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">67</div>
+        <div class="metric-label">CPO in Stock</div>
+        <div class="metric-delta up">↑ 5 units this week</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">$18,200</div>
+        <div class="metric-label">SEM Spend MTD</div>
+        <div class="metric-delta neutral">Budget: $22K/mo</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">4.7 ★</div>
+        <div class="metric-label">Google Rating</div>
+        <div class="metric-delta up">2 new reviews today</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TODAY'S MEETINGS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📅</span>
+      <span class="section-title">Today's Schedule</span>
+    </div>
+    <div class="meeting-list">
+      <div class="meeting">
+        <div class="meeting-time">8:30 AM</div>
+        <div>
+          <div class="meeting-title">Sales Desk Standup</div>
+          <div class="meeting-detail">Conference Room A · Daily team check-in with sales managers</div>
+        </div>
+      </div>
+      <div class="meeting">
+        <div class="meeting-time">10:00 AM</div>
+        <div>
+          <div class="meeting-title">BMW Zone Manager Visit — Chad Hollister</div>
+          <div class="meeting-detail">Showroom Floor · Q1 performance review + Q2 co-op allocation discussion. Prep: pull Q1 sales by model, have SEM performance ready.</div>
+        </div>
+      </div>
+      <div class="meeting">
+        <div class="meeting-time">1:00 PM</div>
+        <div>
+          <div class="meeting-title">F&I Training — JM&A Group</div>
+          <div class="meeting-detail">Training Room · New product rollout for service contracts. All F&I staff required.</div>
+        </div>
+      </div>
+      <div class="meeting">
+        <div class="meeting-time">3:30 PM</div>
+        <div>
+          <div class="meeting-title">Aged Inventory Review</div>
+          <div class="meeting-detail">GM Office · Review all units 60+ days. Pricing decisions needed on 7 vehicles.</div>
+        </div>
+      </div>
+      <div class="meeting">
+        <div class="meeting-time">5:00 PM</div>
+        <div>
+          <div class="meeting-title">Call — The Cooperative Agency (Lance Faucheux)</div>
+          <div class="meeting-detail">Google Meet · Weekly marketing sync. Topics: April ad spend pacing, Q2 content calendar, GBP review strategy.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERTS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🚨</span>
+      <span class="section-title">Alerts & Action Items</span>
+    </div>
+    <div class="alert alert-urgent">
+      <span class="alert-icon">🔴</span>
+      <div class="alert-text"><strong>Lead response time at 4.2 hours</strong> — Target is under 2 hours. 6 leads from yesterday haven't been contacted. BDC needs to address before 9 AM.</div>
+    </div>
+    <div class="alert alert-warn">
+      <span class="alert-icon">🟡</span>
+      <div class="alert-text"><strong>7 units over 60 days aged</strong> — 3 of them are over 90 days. Recommend price adjustments of 3–5% before the weekend. Review scheduled for 3:30 PM today.</div>
+    </div>
+    <div class="alert alert-warn">
+      <span class="alert-icon">🟡</span>
+      <div class="alert-text"><strong>BMW Zone Manager visit at 10 AM</strong> — Q1 co-op reimbursement submissions are due April 15. $12,400 in eligible spend hasn't been submitted yet.</div>
+    </div>
+    <div class="alert alert-info">
+      <span class="alert-icon">🔵</span>
+      <div class="alert-text"><strong>2 new Google reviews overnight</strong> — Both 5-star. One mentions salesperson "Derek" by name. Good recognition opportunity.</div>
+    </div>
+    <div class="alert alert-info">
+      <span class="alert-icon">🔵</span>
+      <div class="alert-text"><strong>iX inventory strong</strong> — 14 units in stock vs regional avg of 8. Consider push on EV-specific ad creative this week to move metal.</div>
+    </div>
+  </div>
+
+  <!-- AGED INVENTORY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🚗</span>
+      <span class="section-title">Aged Inventory Watchlist (60+ Days)</span>
+    </div>
+    <table class="inventory-table">
+      <thead>
+        <tr>
+          <th>Vehicle</th>
+          <th>Days on Lot</th>
+          <th>List Price</th>
+          <th>Market Avg</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2024 BMW 740i xDrive · Mineral White</td>
+          <td>94</td>
+          <td>$98,500</td>
+          <td>$91,200</td>
+          <td><span class="tag tag-red">Price High</span></td>
+        </tr>
+        <tr>
+          <td>2023 BMW M3 Competition · Sao Paulo Yellow</td>
+          <td>87</td>
+          <td>$82,900</td>
+          <td>$79,400</td>
+          <td><span class="tag tag-red">Price High</span></td>
+        </tr>
+        <tr>
+          <td>2024 BMW iX xDrive50 · Phytonic Blue</td>
+          <td>74</td>
+          <td>$91,000</td>
+          <td>$89,500</td>
+          <td><span class="tag tag-yellow">Watch</span></td>
+        </tr>
+        <tr>
+          <td>2023 BMW X7 M60i · Dark Graphite</td>
+          <td>68</td>
+          <td>$115,000</td>
+          <td>$112,000</td>
+          <td><span class="tag tag-yellow">Watch</span></td>
+        </tr>
+        <tr>
+          <td>2024 BMW 330i · Alpine White</td>
+          <td>63</td>
+          <td>$47,200</td>
+          <td>$46,800</td>
+          <td><span class="tag tag-green">Near Market</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TODAY'S PRIORITIES -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">✅</span>
+      <span class="section-title">Your Top 5 Today</span>
+    </div>
+    <ul class="action-list">
+      <li>Get BDC on the 6 uncontacted leads from yesterday before 9 AM standup</li>
+      <li>Pull Q1 sales by model + SEM performance summary for Zone Manager visit at 10 AM</li>
+      <li>Submit $12,400 in co-op reimbursements before April 15 deadline — have office manager start this today</li>
+      <li>Make pricing decisions on the 740i and M3 Competition at the 3:30 PM aged inventory review</li>
+      <li>Recognize Derek publicly at today's standup — two customers mentioned him by name this week</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div>Prestige BMW of Nashville · GM Morning Brief · Thursday, April 9, 2026</div>
+  <div class="powered">Custom Developed by The Cooperative Agency · thecoopbrla.com</div>
+</div>
+
+</body>
+</html>
