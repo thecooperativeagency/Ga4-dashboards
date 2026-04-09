@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-theme="dark" data-theme="dark">
 <head>
     <meta charset="UTF-8">
   <meta name="robots" content="noindex, nofollow">
@@ -91,10 +91,63 @@
         .footer a { color: #1d6fa8; text-decoration: none; }
 
         @media (max-width: 768px) { .content { padding: 15px; } .header { padding: 15px; } .filter-bar { padding: 12px 15px; } .compare-group { margin-left: 0; } .card-value { font-size: 22px; } }
+
+        /* === THEME VARIABLES === */
+        :root { transition: background 0.2s, color 0.2s; }
+        html { transition: background 0.2s; }
+
+        /* Light mode overrides for dark-first dashboards */
+        [data-theme="light"] body { background: #f0f2f5 !important; color: #111 !important; }
+        [data-theme="light"] .header { background: linear-gradient(135deg, #e8edf5 0%, #dbe5f0 100%) !important; border-bottom: 1px solid #c5d3e0 !important; }
+        [data-theme="light"] .header-title h1 { color: #111 !important; }
+        [data-theme="light"] .header-title p { color: #4a6080 !important; }
+        [data-theme="light"] .header-brand { color: #2a5f90 !important; }
+        [data-theme="light"] .filter-bar { background: #e5e8ec !important; border-bottom: 1px solid #ccc !important; }
+        [data-theme="light"] .filter-label { color: #888 !important; }
+        [data-theme="light"] .filter-btn { border-color: #bbb !important; color: #555 !important; background: #fff !important; }
+        [data-theme="light"] .filter-btn:hover { border-color: #1d6fa8 !important; color: #1d6fa8 !important; }
+        [data-theme="light"] .filter-btn.active { background: #1d6fa8 !important; border-color: #1d6fa8 !important; color: #fff !important; }
+        [data-theme="light"] .summary-card { background: #fff !important; border-color: #ddd !important; }
+        [data-theme="light"] .card-label { color: #888 !important; }
+        [data-theme="light"] .card-value { color: #111 !important; }
+        [data-theme="light"] .chart-card { background: #fff !important; border-color: #ddd !important; }
+        [data-theme="light"] .chart-card-title { color: #555 !important; }
+        [data-theme="light"] .metric-card { background: #fff !important; border-color: #ddd !important; }
+        [data-theme="light"] .metric-name { color: #888 !important; }
+        [data-theme="light"] .metric-value { color: #111 !important; }
+        [data-theme="light"] .metric-target { color: #777 !important; }
+        [data-theme="light"] .metric-change { border-top-color: #eee !important; }
+        [data-theme="light"] .section-title { color: #888 !important; border-bottom-color: #ddd !important; }
+        [data-theme="light"] .source-row { border-bottom-color: #eee !important; }
+        [data-theme="light"] .source-rank { color: #aaa !important; }
+        [data-theme="light"] .source-name { color: #222 !important; }
+        [data-theme="light"] .source-medium { color: #888 !important; }
+        [data-theme="light"] .source-bar { background: #e5e5e5 !important; }
+        [data-theme="light"] .source-sessions { color: #444 !important; }
+        [data-theme="light"] .comparison-table th { color: #888 !important; }
+        [data-theme="light"] .comparison-table td { color: #333 !important; border-bottom-color: #eee !important; }
+        [data-theme="light"] .comparison-table td.val { color: #111 !important; }
+        [data-theme="light"] .insights-card { background: #fff !important; border-color: #ddd !important; }
+        [data-theme="light"] .insights-list li { color: #555 !important; border-bottom-color: #eee !important; }
+        [data-theme="light"] .insights-list li strong { color: #111 !important; }
+        [data-theme="light"] .footer { background: #e5e8ec !important; border-top-color: #ccc !important; }
+        [data-theme="light"] .footer-left, [data-theme="light"] .footer-right { color: #777 !important; }
+        [data-theme="light"] .card-change.neutral { color: #888 !important; }
+        [data-theme="light"] .status-neutral { background: rgba(100,100,100,0.1) !important; }
     </style>
 </head>
 <body>
 <div style="background:#0a0a0a;border-bottom:1px solid #222;padding:10px 24px;"><a href="https://thecooperativeagency.github.io/vendor-briefs/" style="color:#c0392b;text-decoration:none;font-size:12px;font-weight:600;font-family:-apple-system,sans-serif;">← Command Center</a></div>
+<button id="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode" style="
+  position:fixed;top:14px;right:18px;z-index:9999;
+  background:rgba(128,128,128,0.15);
+  border:1px solid rgba(128,128,128,0.3);
+  border-radius:20px;padding:6px 12px;
+  font-size:16px;cursor:pointer;
+  backdrop-filter:blur(6px);
+  transition:background 0.2s,border-color 0.2s;
+" aria-label="Toggle theme">🌙</button>
+
 
 
 <div class="header">
@@ -394,6 +447,26 @@ function renderSources(){
 
 render();
 renderSources();
+</script>
+<script>
+(function(){
+  var saved = localStorage.getItem('theme');
+  if(saved) document.documentElement.setAttribute('data-theme', saved);
+  else document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-default-theme') || 'dark');
+})();
+function toggleTheme(){
+  var el = document.documentElement;
+  var cur = el.getAttribute('data-theme');
+  var next = cur === 'dark' ? 'light' : 'dark';
+  el.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('theme-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+}
+window.addEventListener('DOMContentLoaded',function(){
+  var t = document.documentElement.getAttribute('data-theme');
+  var btn = document.getElementById('theme-toggle');
+  if(btn) btn.textContent = t === 'dark' ? '🌙' : '☀️';
+});
 </script>
 </body>
 </html>
