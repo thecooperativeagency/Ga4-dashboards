@@ -168,22 +168,94 @@
   <div style="background:#111;border:1px solid #1a1a1a;border-radius:8px;overflow:hidden;">
     <table style="width:100%;border-collapse:collapse;font-size:13px;">
       <thead><tr style="background:#1a1a1a;">
-        <th style="padding:10px 16px;text-align:left;color:#888;font-weight:600;">Page URL</th>
-        <th style="padding:10px 16px;text-align:right;color:#888;font-weight:600;">Sessions</th>
-        <th style="padding:10px 16px;text-align:right;color:#888;font-weight:600;">Bounce Rate</th>
+        <th style="padding:10px 16px;text-align:left;color:#888;font-weight:600;">Page URL + Traffic Source Breakdown</th>
+        <th style="padding:10px 16px;text-align:right;color:#888;font-weight:600;">Bounce</th>
         <th style="padding:10px 16px;text-align:left;color:#888;font-weight:600;">Flag</th>
+        <th style="padding:10px 16px;text-align:right;color:#888;font-weight:600;">Sessions</th>
       </tr></thead>
       <tbody>
-        <tr style="border-top:1px solid #1a1a1a;"><td style="padding:10px 16px;color:#e0e0e0;">/service-specials</td><td style="padding:10px 16px;text-align:right;color:#aaa;">1,900</td><td style="padding:10px 16px;text-align:right;color:#ef4444;font-weight:700;">83.1%</td><td style="padding:10px 16px;"><span style="background:rgba(239,68,68,0.15);color:#ef4444;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">⚠️ Check Page</span></td></tr>
-        <tr style="border-top:1px solid #1a1a1a;"><td style="padding:10px 16px;color:#e0e0e0;">/oil-change</td><td style="padding:10px 16px;text-align:right;color:#aaa;">996</td><td style="padding:10px 16px;text-align:right;color:#ef4444;font-weight:700;">80.2%</td><td style="padding:10px 16px;"><span style="background:rgba(239,68,68,0.15);color:#ef4444;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">⚠️ Check Page</span></td></tr>
-        <tr style="border-top:1px solid #1a1a1a;"><td style="padding:10px 16px;color:#e0e0e0;">/cars/bmw-x5</td><td style="padding:10px 16px;text-align:right;color:#aaa;">1,788</td><td style="padding:10px 16px;text-align:right;color:#f59e0b;font-weight:700;">67.8%</td><td style="padding:10px 16px;"><span style="background:rgba(245,158,11,0.15);color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">👀 Monitor</span></td></tr>
-        <tr style="border-top:1px solid #1a1a1a;"><td style="padding:10px 16px;color:#e0e0e0;">/cars/bmw-x3</td><td style="padding:10px 16px;text-align:right;color:#aaa;">1,013</td><td style="padding:10px 16px;text-align:right;color:#f59e0b;font-weight:700;">62.9%</td><td style="padding:10px 16px;"><span style="background:rgba(245,158,11,0.15);color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">👀 Monitor</span></td></tr>
-        <tr style="border-top:1px solid #1a1a1a;"><td style="padding:10px 16px;color:#e0e0e0;">/brakes</td><td style="padding:10px 16px;text-align:right;color:#aaa;">173</td><td style="padding:10px 16px;text-align:right;color:#f59e0b;font-weight:700;">63.0%</td><td style="padding:10px 16px;"><span style="background:rgba(245,158,11,0.15);color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">👀 Monitor</span></td></tr>
-        <tr style="border-top:1px solid #1a1a1a;"><td style="padding:10px 16px;color:#e0e0e0;">/general-service</td><td style="padding:10px 16px;text-align:right;color:#aaa;">218</td><td style="padding:10px 16px;text-align:right;color:#f59e0b;font-weight:700;">57.3%</td><td style="padding:10px 16px;"><span style="background:rgba(245,158,11,0.15);color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">👀 Monitor</span></td></tr>
-        <tr style="border-top:1px solid #1a1a1a;"><td style="padding:10px 16px;color:#e0e0e0;">/finance</td><td style="padding:10px 16px;text-align:right;color:#aaa;">180</td><td style="padding:10px 16px;text-align:right;color:#f59e0b;font-weight:700;">46.1%</td><td style="padding:10px 16px;"><span style="background:rgba(245,158,11,0.15);color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">👀 Monitor</span></td></tr>
-      </tbody>
+        <tr style="border-top:1px solid #1a1a1a;">
+          <td style="padding:0;vertical-align:top;">
+            <div style="padding:10px 16px;color:#e0e0e0;">/service-specials</div>
+            <table style="width:100%;border-collapse:collapse;background:#0d0d0d;">
+              <thead><tr style="background:#151515;">
+                <th style="padding:6px 12px;text-align:left;color:#555;font-size:10px;font-weight:600;">SOURCE</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">SESSIONS</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">BOUNCE</th>
+              </tr></thead>
+              <tbody><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Paid</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">1323</td><td style="padding:6px 12px;text-align:right;color:#ef4444;font-size:11px;font-weight:600;">85.1%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Direct</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">541</td><td style="padding:6px 12px;text-align:right;color:#ef4444;font-size:11px;font-weight:600;">78.9%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Organic</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">13</td><td style="padding:6px 12px;text-align:right;color:#22c55e;font-size:11px;font-weight:600;">46.2%</td></tr></tbody>
+            </table>
+          </td>
+          <td style="padding:10px 16px;text-align:right;color:#ef4444;font-weight:700;vertical-align:top;">83.1%</td>
+          <td style="padding:10px 16px;vertical-align:top;white-space:nowrap;"><span style="background:#ef444422;color:#ef4444;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">⚠️ Check Page</span></td>
+          <td style="padding:10px 16px;text-align:right;color:#666;vertical-align:top;">1,900</td>
+        </tr>
+        <tr style="border-top:1px solid #1a1a1a;">
+          <td style="padding:0;vertical-align:top;">
+            <div style="padding:10px 16px;color:#e0e0e0;">/oil-change</div>
+            <table style="width:100%;border-collapse:collapse;background:#0d0d0d;">
+              <thead><tr style="background:#151515;">
+                <th style="padding:6px 12px;text-align:left;color:#555;font-size:10px;font-weight:600;">SOURCE</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">SESSIONS</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">BOUNCE</th>
+              </tr></thead>
+              <tbody><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Paid</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">946</td><td style="padding:6px 12px;text-align:right;color:#ef4444;font-size:11px;font-weight:600;">81.9%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Direct</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">25</td><td style="padding:6px 12px;text-align:right;color:#f59e0b;font-size:11px;font-weight:600;">60.0%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Organic</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">5</td><td style="padding:6px 12px;text-align:right;color:#22c55e;font-size:11px;font-weight:600;">40.0%</td></tr></tbody>
+            </table>
+          </td>
+          <td style="padding:10px 16px;text-align:right;color:#ef4444;font-weight:700;vertical-align:top;">80.2%</td>
+          <td style="padding:10px 16px;vertical-align:top;white-space:nowrap;"><span style="background:#ef444422;color:#ef4444;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">⚠️ Check Page</span></td>
+          <td style="padding:10px 16px;text-align:right;color:#666;vertical-align:top;">996</td>
+        </tr>
+        <tr style="border-top:1px solid #1a1a1a;">
+          <td style="padding:0;vertical-align:top;">
+            <div style="padding:10px 16px;color:#e0e0e0;">/cars/bmw-x5</div>
+            <table style="width:100%;border-collapse:collapse;background:#0d0d0d;">
+              <thead><tr style="background:#151515;">
+                <th style="padding:6px 12px;text-align:left;color:#555;font-size:10px;font-weight:600;">SOURCE</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">SESSIONS</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">BOUNCE</th>
+              </tr></thead>
+              <tbody><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Paid</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">1545</td><td style="padding:6px 12px;text-align:right;color:#f59e0b;font-size:11px;font-weight:600;">71.3%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Direct</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">119</td><td style="padding:6px 12px;text-align:right;color:#ef4444;font-size:11px;font-weight:600;">84.9%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Organic</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">67</td><td style="padding:6px 12px;text-align:right;color:#22c55e;font-size:11px;font-weight:600;">1.5%</td></tr></tbody>
+            </table>
+          </td>
+          <td style="padding:10px 16px;text-align:right;color:#f59e0b;font-weight:700;vertical-align:top;">67.8%</td>
+          <td style="padding:10px 16px;vertical-align:top;white-space:nowrap;"><span style="background:#f59e0b22;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">👀 Monitor</span></td>
+          <td style="padding:10px 16px;text-align:right;color:#666;vertical-align:top;">1,788</td>
+        </tr>
+        <tr style="border-top:1px solid #1a1a1a;">
+          <td style="padding:0;vertical-align:top;">
+            <div style="padding:10px 16px;color:#e0e0e0;">/cars/bmw-x3</div>
+            <table style="width:100%;border-collapse:collapse;background:#0d0d0d;">
+              <thead><tr style="background:#151515;">
+                <th style="padding:6px 12px;text-align:left;color:#555;font-size:10px;font-weight:600;">SOURCE</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">SESSIONS</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">BOUNCE</th>
+              </tr></thead>
+              <tbody><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Paid</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">885</td><td style="padding:6px 12px;text-align:right;color:#f59e0b;font-size:11px;font-weight:600;">70.1%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Organic</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">54</td><td style="padding:6px 12px;text-align:right;color:#22c55e;font-size:11px;font-weight:600;">3.7%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Direct</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">16</td><td style="padding:6px 12px;text-align:right;color:#22c55e;font-size:11px;font-weight:600;">25.0%</td></tr></tbody>
+            </table>
+          </td>
+          <td style="padding:10px 16px;text-align:right;color:#f59e0b;font-weight:700;vertical-align:top;">62.9%</td>
+          <td style="padding:10px 16px;vertical-align:top;white-space:nowrap;"><span style="background:#f59e0b22;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">👀 Monitor</span></td>
+          <td style="padding:10px 16px;text-align:right;color:#666;vertical-align:top;">1,013</td>
+        </tr>
+        <tr style="border-top:1px solid #1a1a1a;">
+          <td style="padding:0;vertical-align:top;">
+            <div style="padding:10px 16px;color:#e0e0e0;">/general-service</div>
+            <table style="width:100%;border-collapse:collapse;background:#0d0d0d;">
+              <thead><tr style="background:#151515;">
+                <th style="padding:6px 12px;text-align:left;color:#555;font-size:10px;font-weight:600;">SOURCE</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">SESSIONS</th>
+                <th style="padding:6px 12px;text-align:right;color:#555;font-size:10px;font-weight:600;">BOUNCE</th>
+              </tr></thead>
+              <tbody><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Paid</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">194</td><td style="padding:6px 12px;text-align:right;color:#f59e0b;font-size:11px;font-weight:600;">61.3%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Google Organic</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">10</td><td style="padding:6px 12px;text-align:right;color:#22c55e;font-size:11px;font-weight:600;">20.0%</td></tr><tr style="border-top:1px solid #1e1e1e;"><td style="padding:6px 12px;color:#aaa;font-size:11px;">Direct</td><td style="padding:6px 12px;text-align:right;color:#666;font-size:11px;">5</td><td style="padding:6px 12px;text-align:right;color:#22c55e;font-size:11px;font-weight:600;">40.0%</td></tr></tbody>
+            </table>
+          </td>
+          <td style="padding:10px 16px;text-align:right;color:#f59e0b;font-weight:700;vertical-align:top;">57.3%</td>
+          <td style="padding:10px 16px;vertical-align:top;white-space:nowrap;"><span style="background:#f59e0b22;color:#f59e0b;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">👀 Monitor</span></td>
+          <td style="padding:10px 16px;text-align:right;color:#666;vertical-align:top;">218</td>
+        </tr></tbody>
     </table>
-    <div style="padding:12px 16px;background:#0d0d0d;border-top:1px solid #1a1a1a;font-size:11px;color:#555;">Pages with 20+ sessions, sorted by bounce rate. Red = immediate attention. Yellow = monitor. Last 30 days · GA4 Property 334199347</div>
+    <div style="padding:12px 16px;background:#0d0d0d;border-top:1px solid #1a1a1a;font-size:11px;color:#555;">Pages with 20+ sessions sorted by bounce rate. Source breakdown shows where bad traffic is coming from. Last 30 days · GA4 Property 334199347</div>
   </div>
 </div>
 
