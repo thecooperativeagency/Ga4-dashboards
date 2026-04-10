@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMW of Jackson — Paid Traffic Issue Brief for J&L</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #111; font-size: 14px; line-height: 1.6; }
+  .header { background: #111; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 4px solid #bb0a21; }
+  .header img { height: 36px; filter: brightness(0) invert(1); }
+  .header-right { text-align: right; color: #aaa; font-size: 12px; }
+  .header-right strong { color: #fff; display: block; font-size: 14px; }
+  .store-banner { background: #1c69d4; color: #fff; padding: 18px 40px; }
+  .store-banner h1 { font-size: 20px; font-weight: 700; }
+  .store-banner p { font-size: 12px; opacity: 0.85; margin-top: 3px; }
+  .content { max-width: 800px; margin: 0 auto; padding: 32px 40px; }
+  .summary-box { background: #fff8f8; border: 1px solid #fca5a5; border-left: 4px solid #ef4444; border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; }
+  .summary-box h2 { font-size: 14px; font-weight: 700; color: #b91c1c; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .summary-box p { font-size: 13px; color: #444; line-height: 1.7; }
+  .summary-box strong { color: #111; }
+  .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e5e5e5; }
+  .url-block { border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; margin-bottom: 20px; }
+  .url-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8f8f8; border-bottom: 1px solid #e5e5e5; flex-wrap: wrap; gap: 8px; }
+  .url-path { font-family: monospace; font-size: 13px; font-weight: 700; color: #111; }
+  .url-meta { display: flex; align-items: center; gap: 12px; }
+  .bounce-num { font-size: 18px; font-weight: 800; }
+  .red { color: #ef4444; }
+  .orange { color: #f59e0b; }
+  .tag { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+  .tag-red { background: #fee2e2; color: #b91c1c; }
+  .tag-orange { background: #fef3c7; color: #92400e; }
+  .tag-yellow { background: #fef9c3; color: #854d0e; }
+  .sessions-count { font-size: 12px; color: #888; }
+  .source-table { width: 100%; border-collapse: collapse; }
+  .source-table th { padding: 8px 16px; text-align: left; font-size: 11px; color: #999; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background: #fafafa; border-bottom: 1px solid #e5e5e5; }
+  .source-table td { padding: 9px 16px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
+  .source-table tr:last-child td { border-bottom: none; }
+  .finding-box { background: #f0fdf4; border: 1px solid #86efac; border-left: 4px solid #22c55e; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
+  .finding-box h3 { font-size: 13px; font-weight: 700; color: #15803d; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .finding-box ul { padding-left: 16px; }
+  .finding-box li { font-size: 13px; color: #444; margin-bottom: 6px; line-height: 1.6; }
+  .action-box { background: #eff6ff; border: 1px solid #93c5fd; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
+  .action-box h3 { font-size: 13px; font-weight: 700; color: #1d4ed8; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .action-box ol { padding-left: 16px; }
+  .action-box li { font-size: 13px; color: #444; margin-bottom: 8px; line-height: 1.6; }
+  .note-box { background: #fefce8; border: 1px solid #fde047; border-left: 4px solid #eab308; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
+  .note-box h3 { font-size: 13px; font-weight: 700; color: #854d0e; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .note-box p { font-size: 13px; color: #444; line-height: 1.7; }
+  .footer { background: #111; border-top: 3px solid #bb0a21; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+  .footer-text { color: #888; font-size: 11px; }
+  .footer-text strong { color: #fff; display: block; }
+  .footer-text a { color: #bb0a21; text-decoration: none; }
+  @media print {
+    body { font-size: 12px; }
+    .header, .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .summary-box, .finding-box, .action-box, .note-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .url-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="https://images.squarespace-cdn.com/content/v1/68fac8a3d20e8d72215ede75/6669040e-00b7-4113-a0c0-a29b3706227f/Asset+26.png?format=200w" alt="The Cooperative Agency">
+  <div class="header-right"><strong>GA4 Issue Brief</strong>Prepared by The Cooperative Agency · April 2026</div>
+</div>
+
+<div class="store-banner">
+  <h1>BMW of Jackson — Paid Traffic Landing Page Issues</h1>
+  <p>Prepared for J&amp;L (Paid Media) · Last 30 Days · GA4 Property 255835161 (bmwofjackson.com)</p>
+</div>
+
+<div class="content">
+
+  <div class="summary-box">
+    <h2>🚨 Executive Summary</h2>
+    <p>GA4 data for the last 30 days shows <strong>Google Paid and Facebook Paid campaigns bouncing at 80–87% on model pages</strong> while organic traffic bounces at 6–9% on the same pages. The pages are not broken — the campaign strategy is routing the wrong audience to the wrong page. Additionally, <strong>/service/schedule-service shows a 93.9% bounce rate from organic search</strong>, which is likely a broken or non-functional scheduling form. That issue is flagged separately — it is <strong>not a J&amp;L issue</strong> and should be routed to the website team.</p>
+  </div>
+
+  <div class="section-label" style="margin-bottom:16px;">High Bounce URL Analysis — Last 30 Days</div>
+
+  <!-- URL 1 - Service page (not J&L) -->
+  <div class="url-block">
+    <div class="url-header">
+      <div>
+        <div class="url-path">/service/schedule-service</div>
+        <div class="sessions-count" style="margin-top:3px;">33 sessions · Organic-driven — possible broken scheduling form · NOT a J&amp;L issue</div>
+      </div>
+      <div class="url-meta">
+        <span class="bounce-num red">93.9%</span>
+        <span class="tag tag-yellow">⚠️ Website Team</span>
+      </div>
+    </div>
+    <table class="source-table">
+      <thead><tr><th>Traffic Source</th><th>Sessions</th><th>Bounce Rate</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>Google Organic</td><td>31</td><td style="color:#ef4444;font-weight:700;">93.5%</td><td style="color:#888;font-size:12px;">Almost entirely organic — scheduling form may be broken or not loading</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- URL 2 -->
+  <div class="url-block">
+    <div class="url-header">
+      <div>
+        <div class="url-path">/cars/new-x3</div>
+        <div class="sessions-count" style="margin-top:3px;">4,064 sessions · Google + Facebook paid both at 82% · Organic at 6.3%</div>
+      </div>
+      <div class="url-meta">
+        <span class="bounce-num red">79.1%</span>
+        <span class="tag tag-red">🔴 Critical</span>
+      </div>
+    </div>
+    <table class="source-table">
+      <thead><tr><th>Traffic Source</th><th>Sessions</th><th>Bounce Rate</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>Google Paid (CPC)</td><td>2,602</td><td style="color:#ef4444;font-weight:700;">82.6%</td><td style="color:#888;font-size:12px;">Paid search → model overview page, no offer above fold</td></tr>
+        <tr><td>Facebook Paid (CPC)</td><td>539</td><td style="color:#ef4444;font-weight:700;">82.4%</td><td style="color:#888;font-size:12px;">Social ad → same model page, same result</td></tr>
+        <tr><td>Direct</td><td>673</td><td style="color:#ef4444;font-weight:700;">74.1%</td><td style="color:#888;font-size:12px;">Saved/typed URL — page lacks conversion hook</td></tr>
+        <tr><td>Google Organic</td><td>80</td><td style="color:#22c55e;font-weight:700;">6.3%</td><td style="color:#888;font-size:12px;">⚡ Organic users convert — paid audience intent is different</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- URL 3 -->
+  <div class="url-block">
+    <div class="url-header">
+      <div>
+        <div class="url-path">/cars/new-x5</div>
+        <div class="sessions-count" style="margin-top:3px;">3,714 sessions · Highest-volume paid page — organic at 9%, paid at 81.5%</div>
+      </div>
+      <div class="url-meta">
+        <span class="bounce-num red">78.0%</span>
+        <span class="tag tag-red">🔴 Critical</span>
+      </div>
+    </div>
+    <table class="source-table">
+      <thead><tr><th>Traffic Source</th><th>Sessions</th><th>Bounce Rate</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>Google Paid (CPC)</td><td>3,048</td><td style="color:#ef4444;font-weight:700;">81.5%</td><td style="color:#888;font-size:12px;">Largest paid traffic page on the site — needs dedicated VLP</td></tr>
+        <tr><td>Direct</td><td>545</td><td style="color:#ef4444;font-weight:700;">73.9%</td><td style="color:#888;font-size:12px;">Returning users bounce too — page isn't giving them a reason to act</td></tr>
+        <tr><td>Google Organic</td><td>67</td><td style="color:#22c55e;font-weight:700;">9.0%</td><td style="color:#888;font-size:12px;">⚡ Organic users engage — same page, very different outcome</td></tr>
+        <tr><td>Bing Organic</td><td>11</td><td style="color:#22c55e;font-weight:700;">18.2%</td><td style="color:#888;font-size:12px;">Organic Bing traffic also engages well</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- URL 4 -->
+  <div class="url-block">
+    <div class="url-header">
+      <div>
+        <div class="url-path">/cars/new-x7</div>
+        <div class="sessions-count" style="margin-top:3px;">807 sessions · Paid 86.5% bounce · Organic 7.5% — same pattern</div>
+      </div>
+      <div class="url-meta">
+        <span class="bounce-num red">75.6%</span>
+        <span class="tag tag-red">🔴 High</span>
+      </div>
+    </div>
+    <table class="source-table">
+      <thead><tr><th>Traffic Source</th><th>Sessions</th><th>Bounce Rate</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>Google Paid (CPC)</td><td>653</td><td style="color:#ef4444;font-weight:700;">86.5%</td><td style="color:#888;font-size:12px;">Paid → model overview, no offer hook</td></tr>
+        <tr><td>Google Organic</td><td>40</td><td style="color:#22c55e;font-weight:700;">7.5%</td><td style="color:#888;font-size:12px;">⚡ Organic converts — consistent with X3/X5 pattern</td></tr>
+        <tr><td>Direct</td><td>37</td><td style="color:#22c55e;font-weight:700;">21.6%</td><td style="color:#888;font-size:12px;">Returning visitors engage better than cold paid traffic</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- URL 5 -->
+  <div class="url-block">
+    <div class="url-header">
+      <div>
+        <div class="url-path">/cars/new-5-series</div>
+        <div class="sessions-count" style="margin-top:3px;">232 sessions · Paid 77.4% · Organic 16% — consistent pattern across all models</div>
+      </div>
+      <div class="url-meta">
+        <span class="bounce-num orange">63.8%</span>
+        <span class="tag tag-orange">⚠️ High</span>
+      </div>
+    </div>
+    <table class="source-table">
+      <thead><tr><th>Traffic Source</th><th>Sessions</th><th>Bounce Rate</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>Google Paid (CPC)</td><td>177</td><td style="color:#ef4444;font-weight:700;">77.4%</td><td style="color:#888;font-size:12px;">Same paid-vs-organic pattern as all other model pages</td></tr>
+        <tr><td>Google Organic</td><td>25</td><td style="color:#22c55e;font-weight:700;">16.0%</td><td style="color:#888;font-size:12px;">Organic users engage — paid users don't find what they expected</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Note box for service scheduling -->
+  <div class="note-box">
+    <h3>📌 Note: /service/schedule-service — Not a J&amp;L Issue</h3>
+    <p>The 93.9% bounce rate on this page is driven almost entirely by organic search traffic (31 of 33 sessions). This is likely a <strong>broken or non-loading scheduling form</strong> — not a paid media campaign issue. This should be escalated to the website/platform team for investigation. Do not include this in any J&amp;L performance discussions.</p>
+  </div>
+
+  <!-- Key Finding -->
+  <div class="finding-box">
+    <h3>📋 Root Cause</h3>
+    <ul>
+      <li>Google Paid and Facebook Paid campaigns are routing traffic to <strong>model overview pages</strong> (new-x3, new-x5, new-x7, new-5-series) instead of dedicated landing pages with specific offers</li>
+      <li>Organic users arrive with high purchase intent (they searched for a specific model) and engage — <strong>6–9% bounce rate</strong></li>
+      <li>Paid users arrive with variable intent (they responded to an ad) and bounce when they don't see an immediate offer, payment, or reason to stay — <strong>80–87% bounce rate</strong></li>
+      <li>The pages are not broken. The campaign targeting and landing page strategy needs adjustment</li>
+      <li>Facebook paid campaigns may be the most acute issue — social ad audiences have even lower purchase intent than paid search, yet they're landing on the same bare model pages</li>
+    </ul>
+  </div>
+
+  <!-- Action Items -->
+  <div class="action-box">
+    <h3>✅ Recommended Actions for J&amp;L</h3>
+    <ol>
+      <li><strong>Build dedicated VLPs (Vehicle Landing Pages) for X3 and X5 paid campaigns</strong> — these are the two highest-volume paid pages on the site. Include current payment/lease offer, available inventory count, and a single strong CTA. The model overview pages are not converting paid traffic at any meaningful rate.</li>
+      <li><strong>Review Facebook ad creative for X3 campaigns</strong> — ensure the specific model shown in the ad matches what's on the landing page. Generic BMW ads routing to /cars/new-x3 create a disconnect. Consider model-specific creative per campaign.</li>
+      <li><strong>Review Google Ads Quality Scores on X3 and X5 keywords</strong> — an 80%+ bounce rate will lower Quality Score over time, which raises CPC and reduces ad rank. Landing page relevance is now a cost-per-click issue, not just a conversion issue.</li>
+      <li><strong>Consider VLA (Vehicle Listing Ads) for model-specific traffic</strong> — VLAs surface specific inventory with price and photo directly in the ad unit, which pre-qualifies intent before the click. This has been proven effective for this store in prior strategy work.</li>
+      <li><strong>Escalate /service/schedule-service to the website team</strong> (not J&amp;L) — this is a separate platform/form issue and should not be attributed to paid media performance.</li>
+    </ol>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-text">
+    <strong>The Cooperative Agency</strong>
+    Baton Rouge, Louisiana · <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> · <a href="http://www.thecoopbrla.com">thecoopbrla.com</a>
+  </div>
+  <div class="footer-text" style="text-align:right;">
+    <strong>Data Source</strong>
+    Google Analytics 4 · Property 255835161<br>
+    BMW of Jackson · April 2026
+  </div>
+</div>
+
+</body>
+</html>
