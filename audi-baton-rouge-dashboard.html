@@ -173,14 +173,14 @@
 <div class="filter-bar">
     <span class="filter-label">Range:</span>
     <div class="filter-group">
-        <button class="filter-btn" onclick="setRange(30)" id="btn-30">Last 30 Days</button>
+        <button class="filter-btn active" onclick="setRange(30)" id="btn-30">Last 30 Days</button>
         <button class="filter-btn" onclick="setRange(60)" id="btn-60">Last 60 Days</button>
-        <button class="filter-btn active" onclick="setRange(90)" id="btn-90">Last 90 Days</button>
+        <button class="filter-btn" onclick="setRange(90)" id="btn-90">Last 90 Days</button>
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn active" onclick="setCompare('yoy')" id="cmp-yoy">vs Same Period Last Year</button>
-        <button class="compare-btn" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Same Period Last Year</button>
+        <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
 </div>
@@ -368,7 +368,7 @@ const SOURCES = [
 ];
 
 const ACCENT='#bb2222';
-let range=90,compare='yoy',sessionsChart=null,sourcesChart=null;
+let range=30,compare='prev',sessionsChart=null,sourcesChart=null;
 const fmt=n=>Number(n).toLocaleString();
 const pct=(a,b)=>b?((a-b)/b*100).toFixed(1):null;
 const arrow=v=>v===null?'':parseFloat(v)>=0?'▲':'▼';
@@ -446,7 +446,7 @@ function renderSources(){
 
 render();
 renderSources();
-var _d=document.getElementById('oemDisclaimer');if(_d)_d.style.display='flex';// shown by default on YoY load
+// disclaimer only shows on YoY — hidden by default since we load prev period
 </script>
 <script>
 (function(){
