@@ -190,16 +190,16 @@
     <div class="section">
         <div class="section-title">Website Traffic & Engagement</div>
         <div class="metrics-grid" id="metricsGrid"></div>
-    </div>
-    <div class="section" id="comparisonSection">
-        <div class="section-title" id="comparisonTitle">Period Comparison</div>
-        <div style="background:#1a0a0a;border:1px solid #BB0A21;border-radius:8px;padding:14px 18px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start;">
+        <div id="oemDisclaimer" style="display:none;margin-top:16px;background:#1a0a0a;border:1px solid #BB0A21;border-radius:8px;padding:14px 18px;display:none;flex;gap:12px;align-items:flex-start;">
             <span style="font-size:18px;flex-shrink:0;">⚠️</span>
             <div style="font-size:13px;color:#ccc;line-height:1.6;">
                 <strong style="color:#fff;">Audi OEM Site Data Not Included</strong><br>
                 The YoY comparison below reflects our <strong>Motive dealer site only</strong> (audibatonrougela.com). Audi's OEM-controlled site data is not yet included in these results — this affects the most recent 3–6 months of traffic. We are actively working with the Audi OEM team to incorporate that data into these dashboards.
             </div>
         </div>
+    </div>
+    <div class="section" id="comparisonSection">
+        <div class="section-title" id="comparisonTitle">Period Comparison</div>
         <div class="chart-card">
             <table class="comparison-table" id="comparisonTable"></table>
         </div>
@@ -382,7 +382,7 @@ function getCompareData(){
 }
 
 function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();}
-function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEach(b=>b.classList.remove('active'));document.getElementById('cmp-'+c).classList.add('active');render();}
+function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEach(b=>b.classList.remove('active'));document.getElementById('cmp-'+c).classList.add('active');var d=document.getElementById('oemDisclaimer');if(d)d.style.display=c==='yoy'?'flex':'none';render();}
 
 function render(){
     const curr=getCurrentData(),comp=getCompareData();
@@ -446,6 +446,7 @@ function renderSources(){
 
 render();
 renderSources();
+var _d=document.getElementById('oemDisclaimer');if(_d)_d.style.display='flex';
 </script>
 <script>
 (function(){
