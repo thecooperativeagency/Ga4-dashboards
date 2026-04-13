@@ -163,6 +163,13 @@
     <div class="header-brand">Custom Developed Dashboard<br>by <strong>The Cooperative Agency</strong></div>
 </div>
 
+<div id="oemDisclaimer" style="display:none;background:#1a0a0a;border-bottom:2px solid #BB0A21;padding:12px 24px;gap:12px;align-items:center;">
+    <span style="font-size:16px;flex-shrink:0;">⚠️</span>
+    <div style="font-size:13px;color:#ccc;line-height:1.5;">
+        <strong style="color:#fff;">Note on YoY numbers:</strong> When comparing year-over-year, our most recent months only include Motive dealer site data. We are still working with Audi to incorporate the OAD site analytics into our own Google Analytics.
+    </div>
+</div>
+
 <div class="filter-bar">
     <span class="filter-label">Range:</span>
     <div class="filter-group">
@@ -189,13 +196,6 @@
     </div>
     <div class="section">
         <div class="section-title">Website Traffic & Engagement</div>
-        <div id="oemDisclaimer" style="display:none;margin-bottom:16px;background:#1a0a0a;border:1px solid #BB0A21;border-radius:8px;padding:14px 18px;gap:12px;align-items:flex-start;">
-            <span style="font-size:18px;flex-shrink:0;">⚠️</span>
-            <div style="font-size:13px;color:#ccc;line-height:1.6;">
-                <strong style="color:#fff;">Why is everything red?</strong><br>
-                These numbers compare our <strong>Motive dealer site only</strong> to Q1 2024 — Audi's OEM-controlled site data is not yet included. The combined traffic from both sites would show a much more accurate picture. We are actively working with the Audi OEM team to incorporate that data into these dashboards.
-            </div>
-        </div>
         <div class="metrics-grid" id="metricsGrid"></div>
     </div>
     <div class="section" id="comparisonSection">
@@ -446,7 +446,7 @@ function renderSources(){
 
 render();
 renderSources();
-var _d=document.getElementById('oemDisclaimer');if(_d)_d.style.display='flex';
+var _d=document.getElementById('oemDisclaimer');if(_d)_d.style.display='flex';// shown by default on YoY load
 </script>
 <script>
 (function(){
