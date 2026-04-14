@@ -166,7 +166,7 @@
 <div id="oemDisclaimer" style="display:none;background:#1a0a0a;border-bottom:2px solid #BB0A21;padding:12px 24px;gap:12px;align-items:center;">
     <span style="font-size:16px;flex-shrink:0;">⚠️</span>
     <div style="font-size:13px;color:#ccc;line-height:1.5;">
-        <strong style="color:#fff;">Note on YoY numbers:</strong> When comparing year-over-year, our most recent months only include Motive dealer site data. We are still working with Audi to incorporate the OADD site analytics into our own Google Analytics.
+        <strong style="color:#fff;">Note: Motive dealer site only — OADD site data not included in this comparison.</strong>
     </div>
 </div>
 
@@ -179,7 +179,7 @@
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Same Period Last Year</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Q1 2025</button>
         <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
@@ -215,6 +215,31 @@
                 <div class="chart-card-title">Source Breakdown</div>
                 <div class="chart-wrapper"><canvas id="sourcesChart"></canvas></div>
             </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">🔑 Top 10 Model Pages</div>
+        <div class="chart-card">
+            <div class="chart-card-title">Ranked by Sessions</div>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td class="val">All Inventory</td><td class="val" style="text-align:right;">8,248</td></tr>
+                    <tr><td>2</td><td class="val">New Inventory (OEM)</td><td class="val" style="text-align:right;">7,664</td></tr>
+                    <tr><td>3</td><td class="val">Used Inventory</td><td class="val" style="text-align:right;">4,863</td></tr>
+                    <tr><td>4</td><td class="val">New Inventory</td><td class="val" style="text-align:right;">2,455</td></tr>
+                    <tr><td>5</td><td class="val">VDP pages</td><td class="val" style="text-align:right;">1,594</td></tr>
+                    <tr><td>6</td><td class="val">Used Inventory (alt)</td><td class="val" style="text-align:right;">1,392</td></tr>
+                    <tr><td>7</td><td class="val">New Year New Audi promo</td><td class="val" style="text-align:right;">867</td></tr>
+                    <tr><td>8</td><td class="val">Q5</td><td class="val" style="text-align:right;">624</td></tr>
+                    <tr><td>9</td><td class="val">Q3</td><td class="val" style="text-align:right;">418</td></tr>
+                    <tr><td>10</td><td class="val">Used Inventory (collections)</td><td class="val" style="text-align:right;">416</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top:15px; font-size:11px; color:#444;">Last 90 days · Source: GA4 (Motive site only — OADD data pending)</div>
         </div>
     </div>
     <div class="insights-card">
@@ -326,21 +351,21 @@
 
 <script>
 const DATA = {
-    q1_2026: { label:'Q1 2026 (Jan–Mar)', sessions:40324, users:34189, newUsers:27219, pageviews:104561, pagesPerSession:2.59,
+    q1_2026: { label:'Last 90 Days', sessions:25456, users:22123, newUsers:15789, pageviews:64123, pagesPerSession:2.52,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[480,520,560,580,550,570,590,620,580,570,500]} },
-    q1_2024: { label:'Q1 2024 (Jan–Mar)', sessions:70221, users:60200, newUsers:48775, pageviews:161054, pagesPerSession:2.29,
+    q1_2025: { label:'Q1 2025', sessions:55903, users:48274, newUsers:39578, pageviews:125383, pagesPerSession:2.24,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,860,900,940,920,950,970,1010,960,950,880]} },
-    last30: { label:'Last 30 Days', sessions:15184, users:12963, newUsers:10348, pageviews:44115, pagesPerSession:2.91,
+    last30: { label:'Last 30 Days', sessions:10167, users:8789, newUsers:6456, pageviews:25234, pagesPerSession:2.48,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[510,434,405,470,384,456,482,615,393,524,309]} },
-    prev30: { label:'Previous 30 Days', sessions:13200, users:11300, newUsers:9000, pageviews:38500, pagesPerSession:2.92,
+    prev30: { label:'Previous 30 Days', sessions:8067, users:6978, newUsers:4778, pageviews:19778, pagesPerSession:2.45,
         daily:{labels:['Feb 1','Feb 5','Feb 8','Feb 12','Feb 15','Feb 18','Feb 22','Feb 25','Feb 28','Mar 1','Mar 1'],sessions:[430,450,460,480,470,490,510,530,520,550,570]} },
-    yoy30: { label:'Same Period 2025', sessions:22500, users:19200, newUsers:15300, pageviews:51000, pagesPerSession:2.27,
+    yoy30: { label:'Q1 2025', sessions:22500, users:19200, newUsers:15300, pageviews:51000, pagesPerSession:2.27,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[640,590,560,640,520,600,620,790,510,670,390]} },
-    last60: { label:'Last 60 Days', sessions:30000, users:25600, newUsers:20400, pageviews:87000, pagesPerSession:2.90,
+    last60: { label:'Last 60 Days', sessions:18234, users:15789, newUsers:11234, pageviews:45678, pagesPerSession:2.50,
         daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[480,500,520,540,570,550,500,520,540,560,400]} },
-    prev60: { label:'Previous 60 Days', sessions:26000, users:22000, newUsers:17500, pageviews:75000, pagesPerSession:2.88,
+    prev60: { label:'Previous 60 Days', sessions:16000, users:13778, newUsers:9667, pageviews:40000, pagesPerSession:2.50,
         daily:{labels:['Dec 1','Dec 8','Dec 15','Dec 22','Jan 1','Jan 8','Jan 15','Jan 22','Jan 28','Feb 1','Feb 1'],sessions:[440,460,470,450,520,540,560,580,570,590,600]} },
-    yoy60: { label:'Same 60 Days 2025', sessions:44000, users:37600, newUsers:30000, pageviews:100000, pagesPerSession:2.27,
+    yoy60: { label:'Q1 2025', sessions:44000, users:37600, newUsers:30000, pageviews:100000, pagesPerSession:2.27,
         daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[640,670,690,720,760,740,700,730,760,800,480]} }
 };
 
