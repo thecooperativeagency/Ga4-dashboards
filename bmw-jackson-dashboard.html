@@ -180,7 +180,7 @@
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Q1 2024</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Q1 2025</button>
         <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
@@ -193,7 +193,7 @@
     <div class="section">
         <div class="section-title">Traffic Trend</div>
         <div class="chart-card">
-            <div class="chart-card-title" id="chartTitle">Daily Sessions — Last 90 Days vs Q1 2024</div>
+            <div class="chart-card-title" id="chartTitle">Daily Sessions — Last 90 Days vs Q1 2025</div>
             <div class="chart-wrapper"><canvas id="sessionsChart"></canvas></div>
         </div>
     </div>
@@ -221,6 +221,31 @@
                 <div class="chart-card-title">Source Breakdown</div>
                 <div class="chart-wrapper"><canvas id="sourcesChart"></canvas></div>
             </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">🔑 Top 10 Model Pages</div>
+        <div class="chart-card">
+            <div class="chart-card-title">Ranked by Sessions</div>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td class="val">All Inventory</td><td class="val" style="text-align:right;">11,053</td></tr>
+                    <tr><td>2</td><td class="val">New X3</td><td class="val" style="text-align:right;">9,245</td></tr>
+                    <tr><td>3</td><td class="val">New X5</td><td class="val" style="text-align:right;">8,595</td></tr>
+                    <tr><td>4</td><td class="val">Used Inventory</td><td class="val" style="text-align:right;">4,838</td></tr>
+                    <tr><td>5</td><td class="val">New Inventory</td><td class="val" style="text-align:right;">2,299</td></tr>
+                    <tr><td>6</td><td class="val">New 3 Series</td><td class="val" style="text-align:right;">1,433</td></tr>
+                    <tr><td>7</td><td class="val">CPO Vehicles</td><td class="val" style="text-align:right;">1,437</td></tr>
+                    <tr><td>8</td><td class="val">New 5 Series</td><td class="val" style="text-align:right;">1,396</td></tr>
+                    <tr><td>9</td><td class="val">New X7</td><td class="val" style="text-align:right;">1,255</td></tr>
+                    <tr><td>10</td><td class="val">BMW Specials (1.99% APR X3)</td><td class="val" style="text-align:right;">739</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top:15px; font-size:11px; color:#444;">Last 90 days · Source: GA4</div>
         </div>
     </div>
 
@@ -349,9 +374,9 @@ const DATA = {
         daily: { labels: ['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],
                  sessions: [620,680,780,820,810,840,860,920,880,875,806] }
     },
-    q1_2024: {
-        label: 'Q1 2024',
-        sessions: 44799, users: 40346, newUsers: 30203, pageviews: 114048, pagesPerSession: 2.55,
+    q1_2025: {
+        label: 'Q1 2025',
+        sessions: 43915, users: 37368, newUsers: 25853, pageviews: 117434, pagesPerSession: 2.67,
         daily: { labels: ['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],
                  sessions: [464,520,530,500,468,510,480,574,413,415,349] }
     },
@@ -435,12 +460,12 @@ function getCurrentData() {
 function getCompareData() {
     if (compare === 'none') return null;
     if (compare === 'yoy') {
-        if (range === 90) return DATA.q1_2024;
+        if (range === 90) return DATA.q1_2025;
         if (range === 60) return DATA.yoy60;
         return DATA.yoy30;
     }
     if (compare === 'prev') {
-        if (range === 90) return DATA.q1_2024; // use 2024 as "prev year" for Q1
+        if (range === 90) return DATA.q1_2025; // use 2025 as "prev year" for Q1
         if (range === 60) return DATA.prev60;
         return DATA.prev30;
     }
