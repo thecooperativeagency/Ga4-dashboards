@@ -166,14 +166,14 @@
 <div class="filter-bar">
     <span class="filter-label">Range:</span>
     <div class="filter-group">
-        <button class="filter-btn" onclick="setRange(30)" id="btn-30">Last 30 Days</button>
+        <button class="filter-btn active" onclick="setRange(30)" id="btn-30">Last 30 Days</button>
         <button class="filter-btn" onclick="setRange(60)" id="btn-60">Last 60 Days</button>
-        <button class="filter-btn active" onclick="setRange(90)" id="btn-90">Q1 2026</button>
+        <button class="filter-btn" onclick="setRange(90)" id="btn-90">Last 90 Days</button>
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn active" onclick="setCompare('yoy')" id="cmp-yoy">vs Same Period Last Year</button>
-        <button class="compare-btn" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Same Period Last Year</button>
+        <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
 </div>
@@ -198,7 +198,7 @@
         </div>
     </div>
     <div class="section">
-        <div class="section-title">Top 20 Traffic Sources — Q1 2026</div>
+        <div class="section-title">Top 20 Traffic Sources — Last 90 Days</div>
         <div class="sources-grid">
             <div class="chart-card">
                 <div class="chart-card-title">Sessions by Source / Medium</div>
@@ -319,7 +319,7 @@
 
 <script>
 const DATA = {
-    q1_2026: { label:'Q1 2026 (Jan–Mar)', sessions:67801, users:56077, newUsers:39417, pageviews:242996, pagesPerSession:3.58,
+    q1_2026: { label:'Last 90 Days', sessions:67801, users:56077, newUsers:39417, pageviews:242996, pagesPerSession:3.58,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,880,920,950,910,940,960,1020,980,970,880]} },
     q1_2024: { label:'Q1 2024 (Jan–Mar)', sessions:56415, users:45753, newUsers:31376, pageviews:231387, pagesPerSession:4.10,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[600,650,700,720,680,720,740,820,810,800,700]} },
@@ -361,7 +361,7 @@ const SOURCES = [
 ];
 
 const ACCENT = '#1d6fa8';
-let range=90, compare='yoy', sessionsChart=null, sourcesChart=null;
+let range=30, compare='prev', sessionsChart=null, sourcesChart=null;
 const fmt=n=>Number(n).toLocaleString();
 const pct=(a,b)=>b?((a-b)/b*100).toFixed(1):null;
 const arrow=v=>v===null?'':parseFloat(v)>=0?'▲':'▼';
@@ -425,7 +425,7 @@ function render(){
     // Insights
     const yg=comp?pct(curr.sessions,comp.sessions):null;
     document.getElementById('insightsList').innerHTML=[
-        comp?`<strong>YoY Growth:</strong> Sessions ${arrow(yg)} <strong>${Math.abs(yg)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}.`:`<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions — ${curr.label}.`,
+        comp?`<strong>Growth:</strong> Sessions ${arrow(yg)} <strong>${Math.abs(yg)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}.`:`<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions — ${curr.label}.`,
         `<strong>Organic Strength (25%):</strong> 16,943 sessions from Google organic — strongest organic ratio of all three stores. Excellent SEO foundation.`,
         `<strong>Direct Traffic (23%):</strong> 15,924 direct sessions indicates strong brand recognition. Customers know your URL and come back.`,
         `<strong>Pages/Session (${curr.pagesPerSession.toFixed(2)}):</strong> Highest engagement of all three stores — visitors are exploring deeply. Continue optimizing inventory and service pages.`,

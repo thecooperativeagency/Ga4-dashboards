@@ -174,14 +174,14 @@
 <div class="filter-bar">
     <span class="filter-label">Range:</span>
     <div class="filter-group">
-        <button class="filter-btn" onclick="setRange(30)" id="btn-30">Last 30 Days</button>
+        <button class="filter-btn active" onclick="setRange(30)" id="btn-30">Last 30 Days</button>
         <button class="filter-btn" onclick="setRange(60)" id="btn-60">Last 60 Days</button>
-        <button class="filter-btn active" onclick="setRange(90)" id="btn-90">Q1 2026</button>
+        <button class="filter-btn" onclick="setRange(90)" id="btn-90">Last 90 Days</button>
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn active" onclick="setCompare('yoy')" id="cmp-yoy">vs Same Period Last Year</button>
-        <button class="compare-btn" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Same Period Last Year</button>
+        <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
 </div>
@@ -193,7 +193,7 @@
     <div class="section">
         <div class="section-title">Traffic Trend</div>
         <div class="chart-card">
-            <div class="chart-card-title" id="chartTitle">Daily Sessions — Q1 2026 vs Q1 2024</div>
+            <div class="chart-card-title" id="chartTitle">Daily Sessions — Last 90 Days vs Q1 2024</div>
             <div class="chart-wrapper"><canvas id="sessionsChart"></canvas></div>
         </div>
     </div>
@@ -211,7 +211,7 @@
     </div>
 
     <div class="section">
-        <div class="section-title">Top 20 Traffic Sources — Q1 2026</div>
+        <div class="section-title">Top 20 Traffic Sources — Last 90 Days</div>
         <div class="sources-grid">
             <div class="chart-card">
                 <div class="chart-card-title">Sessions by Source / Medium</div>
@@ -344,7 +344,7 @@
 // ── DATA ──────────────────────────────────────────────────────
 const DATA = {
     q1_2026: {
-        label: 'Q1 2026 (Jan–Mar)',
+        label: 'Last 90 Days',
         sessions: 64157, users: 56293, newUsers: 44074, pageviews: 153965, pagesPerSession: 2.40,
         daily: { labels: ['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],
                  sessions: [620,680,780,820,810,840,860,920,880,875,806] }
@@ -417,7 +417,7 @@ const SOURCES = [
 ];
 
 // ── STATE ──────────────────────────────────────────────────────
-let range = 90, compare = 'yoy';
+let range = 30, compare = 'prev';
 let sessionsChart = null, sourcesChart = null;
 
 // ── HELPERS ────────────────────────────────────────────────────
@@ -603,7 +603,7 @@ function renderComparison(curr, comp) {
 function renderInsights(curr, comp) {
     const yoyGrowth = comp ? pct(curr.sessions, comp.sessions) : null;
     const insights = [
-        comp ? `<strong>YoY Growth:</strong> Sessions ${arrow(yoyGrowth)} <strong>${Math.abs(yoyGrowth)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}. ${parseFloat(yoyGrowth) > 0 ? 'Strong upward trajectory.' : 'Down vs prior period — investigate.'}` : `<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions for ${curr.label}.`,
+        comp ? `<strong>Growth:</strong> Sessions ${arrow(yoyGrowth)} <strong>${Math.abs(yoyGrowth)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}. ${parseFloat(yoyGrowth) > 0 ? 'Strong upward trajectory.' : 'Down vs prior period — investigate.'}` : `<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions for ${curr.label}.`,
         `<strong>Google CPC Dependency:</strong> 51% of all traffic (32,817 sessions) comes from paid Google. Strong volume but high cost exposure — ensure organic is growing too.`,
         `<strong>Organic Search (19%):</strong> 12,171 sessions from Google organic. Healthy for an automotive dealer. Focus on local SEO and inventory page optimization.`,
         `<strong>Pages/Session (${curr.pagesPerSession.toFixed(2)}):</strong> Below the 3.0+ target. Visitors are goal-oriented — browsing specific inventory. Add cross-sell content, finance calculators, and featured vehicle comparisons.`,
