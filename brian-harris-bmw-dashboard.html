@@ -172,7 +172,7 @@
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Q1 2024</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Q1 2025</button>
         <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
@@ -321,19 +321,19 @@
 const DATA = {
     q1_2026: { label:'Last 90 Days', sessions:67801, users:56077, newUsers:39417, pageviews:242996, pagesPerSession:3.58,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,880,920,950,910,940,960,1020,980,970,880]} },
-    q1_2024: { label:'Q1 2024', sessions:56415, users:45753, newUsers:31376, pageviews:231387, pagesPerSession:4.10,
+    q1_2025: { label:'Q1 2025', sessions:64242, users:52793, newUsers:37423, pageviews:230243, pagesPerSession:3.58,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[600,650,700,720,680,720,740,820,810,800,700]} },
     last30: { label:'Last 30 Days', sessions:23260, users:18729, newUsers:12778, pageviews:87538, pagesPerSession:3.76,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[766,698,508,945,791,827,587,853,745,838,381]} },
     prev30: { label:'Previous 30 Days', sessions:20100, users:16200, newUsers:11000, pageviews:75000, pagesPerSession:3.73,
         daily:{labels:['Feb 1','Feb 5','Feb 8','Feb 12','Feb 15','Feb 18','Feb 22','Feb 25','Feb 28','Mar 1','Mar 1'],sessions:[700,720,740,780,760,800,820,840,860,880,900]} },
-    yoy30: { label:'Same Period 2025', sessions:18500, users:15000, newUsers:9800, pageviews:69000, pagesPerSession:3.73,
+    yoy30: { label:'Q1 2025', sessions:18500, users:15000, newUsers:9800, pageviews:69000, pagesPerSession:3.73,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[480,510,430,660,550,570,410,590,520,580,270]} },
     last60: { label:'Last 60 Days', sessions:46000, users:37000, newUsers:25000, pageviews:172000, pagesPerSession:3.74,
         daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[740,760,780,800,900,870,791,760,850,838,381]} },
     prev60: { label:'Previous 60 Days', sessions:39000, users:31500, newUsers:21500, pageviews:145000, pagesPerSession:3.72,
         daily:{labels:['Dec 1','Dec 8','Dec 15','Dec 22','Jan 1','Jan 8','Jan 15','Jan 22','Jan 28','Feb 1','Feb 1'],sessions:[620,640,660,640,820,880,920,950,940,960,980]} },
-    yoy60: { label:'Same 60 Days 2025', sessions:35000, users:28500, newUsers:19000, pageviews:132000, pagesPerSession:3.77,
+    yoy60: { label:'Q1 2025', sessions:35000, users:28500, newUsers:19000, pageviews:132000, pagesPerSession:3.77,
         daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[480,500,520,540,600,580,550,520,570,600,320]} }
 };
 
@@ -370,8 +370,8 @@ const changeClass=v=>v===null?'neutral':parseFloat(v)>=0?'up':'down';
 function getCurrentData(){return range===30?DATA.last30:range===60?DATA.last60:DATA.q1_2026;}
 function getCompareData(){
     if(compare==='none')return null;
-    if(compare==='yoy')return range===90?DATA.q1_2024:range===60?DATA.yoy60:DATA.yoy30;
-    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.q1_2024;
+    if(compare==='yoy')return range===90?DATA.q1_2025:range===60?DATA.yoy60:DATA.yoy30;
+    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.q1_2025;
 }
 
 function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();}
