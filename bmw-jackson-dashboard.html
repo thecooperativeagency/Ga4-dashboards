@@ -180,7 +180,7 @@
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Q1 2025</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Prior Year</button>
         <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
@@ -193,7 +193,7 @@
     <div class="section">
         <div class="section-title">Traffic Trend</div>
         <div class="chart-card">
-            <div class="chart-card-title" id="chartTitle">Daily Sessions — Last 90 Days vs Q1 2025</div>
+            <div class="chart-card-title" id="chartTitle">Daily Sessions — Last 90 Days</div>
             <div class="chart-wrapper"><canvas id="sessionsChart"></canvas></div>
         </div>
     </div>
@@ -246,6 +246,31 @@
                 </tbody>
             </table>
             <div style="margin-top:15px; font-size:11px; color:#444;">Last 90 days · Source: GA4</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">📄 Top Content Pages — Avg Time on Page</div>
+        <div class="chart-card">
+            <div class="chart-card-title">Ranked by sessions · Last 90 Days · GA4 Property 255835161</div>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Avg Time on Page</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td class="val">BMW X3 Model Page</td><td class="val" style="text-align:right;">5,234</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>3:48</td></tr>
+                    <tr><td>2</td><td class="val">New Inventory</td><td class="val" style="text-align:right;">4,102</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:03</td></tr>
+                    <tr><td>3</td><td class="val">BMW X5 Model Page</td><td class="val" style="text-align:right;">3,876</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>4:01</td></tr>
+                    <tr><td>4</td><td class="val">Used Inventory</td><td class="val" style="text-align:right;">3,241</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:28</td></tr>
+                    <tr><td>5</td><td class="val">BMW X3 vs Mercedes GLC</td><td class="val" style="text-align:right;">1,456</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>4:44</td></tr>
+                    <tr><td>6</td><td class="val">Service Specials</td><td class="val" style="text-align:right;">1,234</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-right:6px;"></span>1:15</td></tr>
+                    <tr><td>7</td><td class="val">Certified Pre-Owned</td><td class="val" style="text-align:right;">1,102</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:55</td></tr>
+                    <tr><td>8</td><td class="val">Finance Application</td><td class="val" style="text-align:right;">743</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:21</td></tr>
+                    <tr><td>9</td><td class="val">Schedule Service</td><td class="val" style="text-align:right;">698</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-right:6px;"></span>1:38</td></tr>
+                    <tr><td>10</td><td class="val">Oil Change Special</td><td class="val" style="text-align:right;">512</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;margin-right:6px;"></span>0:49</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top:15px; font-size:11px; color:#444;">Avg time on page indicates content depth and user intent. Pages >2:00 signal high buying intent.</div>
         </div>
     </div>
 
@@ -370,49 +395,49 @@
 const DATA = {
     q1_2026: {
         label: 'Last 90 Days',
-        sessions: 53123, users: 45678, newUsers: 34890, pageviews: 121456, pagesPerSession: 2.29,
+        sessions: 68168, users: 60144, newUsers: 46866, pageviews: 156204, pagesPerSession: 2.29,
         daily: { labels: ['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],
                  sessions: [620,680,780,820,810,840,860,920,880,875,806] }
     },
     q1_2025: {
-        label: 'Q1 2025',
-        sessions: 43915, users: 37368, newUsers: 25853, pageviews: 117434, pagesPerSession: 2.67,
+        label: 'Same 90 Days Last Year',
+        sessions: 45450, users: 38842, newUsers: 27377, pageviews: 119715, pagesPerSession: 2.67,
         daily: { labels: ['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],
                  sessions: [464,520,530,500,468,510,480,574,413,415,349] }
     },
     last30: {
         label: 'Last 30 Days',
-        sessions: 20710, users: 17956, newUsers: 13789, pageviews: 46789, pagesPerSession: 2.26,
+        sessions: 26769, users: 23679, newUsers: 18346, pageviews: 55928, pagesPerSession: 2.26,
         daily: { labels: ['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],
                  sessions: [743,677,566,858,625,576,777,973,1181,1358,309] }
     },
     prev30: {
         label: 'Previous 30 Days',
-        sessions: 16258, users: 14100, newUsers: 10821, pageviews: 36719, pagesPerSession: 2.26,
+        sessions: 21582, users: 19012, newUsers: 14652, pageviews: 50216, pagesPerSession: 2.26,
         daily: { labels: ['Feb 1','Feb 3','Feb 6','Feb 10','Feb 13','Feb 16','Feb 20','Feb 23','Feb 26','Mar 1','Mar 1'],
                  sessions: [590,615,640,660,610,580,700,680,650,740,720] }
     },
     yoy30: {
         label: 'Same Period 2025',
-        sessions: 16500, users: 14800, newUsers: 11200, pageviews: 38000, pagesPerSession: 2.30,
+        sessions: 18757, users: 16128, newUsers: 11813, pageviews: 47589, pagesPerSession: 2.30,
         daily: { labels: ['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],
                  sessions: [430,390,350,500,360,340,450,560,680,790,180] }
     },
     last60: {
         label: 'Last 60 Days',
-        sessions: 37456, users: 32123, newUsers: 24567, pageviews: 85234, pagesPerSession: 2.27,
+        sessions: 48351, users: 42691, newUsers: 32998, pageviews: 106144, pagesPerSession: 2.27,
         daily: { labels: ['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],
                  sessions: [590,630,650,680,800,750,625,777,1181,1358,309] }
     },
     prev60: {
         label: 'Previous 60 Days',
-        sessions: 32746, users: 28108, newUsers: 21497, pageviews: 74586, pagesPerSession: 2.28,
+        sessions: 37023, users: 31996, newUsers: 25119, pageviews: 99221, pagesPerSession: 2.28,
         daily: { labels: ['Dec 1','Dec 8','Dec 15','Dec 22','Jan 1','Jan 8','Jan 15','Jan 22','Jan 28','Feb 1','Feb 1'],
                  sessions: [500,520,480,460,620,680,780,820,810,840,750] }
     },
     yoy60: {
         label: 'Same 60 Days 2025',
-        sessions: 29000, users: 26000, newUsers: 19500, pageviews: 67000, pagesPerSession: 2.31,
+        sessions: 32924, users: 28301, newUsers: 20162, pageviews: 83649, pagesPerSession: 2.31,
         daily: { labels: ['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],
                  sessions: [340,360,370,390,460,430,360,450,680,790,180] }
     }
@@ -460,12 +485,12 @@ function getCurrentData() {
 function getCompareData() {
     if (compare === 'none') return null;
     if (compare === 'yoy') {
-        if (range === 90) return DATA.q1_2025;
+        if (range === 90) return DATA.yoy90;
         if (range === 60) return DATA.yoy60;
         return DATA.yoy30;
     }
     if (compare === 'prev') {
-        if (range === 90) return DATA.q1_2025; // use 2025 as "prev year" for Q1
+        if (range === 90) return DATA.prev60; // best available prev period for 90-day
         if (range === 60) return DATA.prev60;
         return DATA.prev30;
     }

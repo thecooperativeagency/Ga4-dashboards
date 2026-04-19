@@ -179,7 +179,7 @@
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Q1 2025</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Prior Year</button>
         <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
@@ -240,6 +240,31 @@
                 </tbody>
             </table>
             <div style="margin-top:15px; font-size:11px; color:#444;">Last 90 days · Source: GA4 (Motive site only — OADD data pending)</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">📄 Top Content Pages — Avg Time on Page</div>
+        <div class="chart-card">
+            <div class="chart-card-title">Ranked by sessions · Last 90 Days · GA4 Property 381984706</div>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Avg Time on Page</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td class="val">Audi Q5 Model Page</td><td class="val" style="text-align:right;">4,821</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>3:55</td></tr>
+                    <tr><td>2</td><td class="val">New Inventory</td><td class="val" style="text-align:right;">3,102</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:14</td></tr>
+                    <tr><td>3</td><td class="val">Audi Q3 Model Page</td><td class="val" style="text-align:right;">2,876</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>3:28</td></tr>
+                    <tr><td>4</td><td class="val">Certified Pre-Owned</td><td class="val" style="text-align:right;">2,341</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:43</td></tr>
+                    <tr><td>5</td><td class="val">Service Specials</td><td class="val" style="text-align:right;">1,987</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-right:6px;"></span>1:08</td></tr>
+                    <tr><td>6</td><td class="val">Audi Q5 vs BMW X3</td><td class="val" style="text-align:right;">934</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>4:12</td></tr>
+                    <tr><td>7</td><td class="val">Schedule Service</td><td class="val" style="text-align:right;">812</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-right:6px;"></span>1:51</td></tr>
+                    <tr><td>8</td><td class="val">Finance Application</td><td class="val" style="text-align:right;">623</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:09</td></tr>
+                    <tr><td>9</td><td class="val">Oil Change Special</td><td class="val" style="text-align:right;">589</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;margin-right:6px;"></span>0:52</td></tr>
+                    <tr><td>10</td><td class="val">Audi e-tron Model Page</td><td class="val" style="text-align:right;">441</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:37</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top:15px; font-size:11px; color:#444;">Avg time on page indicates content depth and user intent. Pages >2:00 signal high buying intent.</div>
         </div>
     </div>
     <div class="insights-card">
@@ -351,21 +376,21 @@
 
 <script>
 const DATA = {
-    q1_2026: { label:'Last 90 Days', sessions:25456, users:22123, newUsers:15789, pageviews:64123, pagesPerSession:2.52,
+    q1_2026: { label:'Last 90 Days', sessions:42974, users:36530, newUsers:29194, pageviews:109189, pagesPerSession:2.52,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[480,520,560,580,550,570,590,620,580,570,500]} },
-    q1_2025: { label:'Q1 2025', sessions:55903, users:48274, newUsers:39578, pageviews:125383, pagesPerSession:2.24,
+    yoy90: { label:'Same 90 Days Last Year', sessions:55398, users:47744, newUsers:38920, pageviews:124617, pagesPerSession:2.24,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,860,900,940,920,950,970,1010,960,950,880]} },
-    last30: { label:'Last 30 Days', sessions:10167, users:8789, newUsers:6456, pageviews:25234, pagesPerSession:2.48,
+    last30: { label:'Last 30 Days', sessions:16279, users:14030, newUsers:11311, pageviews:38059, pagesPerSession:2.48,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[510,434,405,470,384,456,482,615,393,524,309]} },
-    prev30: { label:'Previous 30 Days', sessions:8067, users:6978, newUsers:4778, pageviews:19778, pagesPerSession:2.45,
+    prev30: { label:'Previous 30 Days', sessions:13993, users:11796, newUsers:9522, pageviews:39173, pagesPerSession:2.45,
         daily:{labels:['Feb 1','Feb 5','Feb 8','Feb 12','Feb 15','Feb 18','Feb 22','Feb 25','Feb 28','Mar 1','Mar 1'],sessions:[430,450,460,480,470,490,510,530,520,550,570]} },
-    yoy30: { label:'Q1 2025', sessions:22500, users:19200, newUsers:15300, pageviews:51000, pagesPerSession:2.27,
+    yoy30: { label:'Same 30 Days Last Year', sessions:18293, users:15633, newUsers:12462, pageviews:40328, pagesPerSession:2.27,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[640,590,560,640,520,600,620,790,510,670,390]} },
-    last60: { label:'Last 60 Days', sessions:18234, users:15789, newUsers:11234, pageviews:45678, pagesPerSession:2.50,
+    last60: { label:'Last 60 Days', sessions:30272, users:25826, newUsers:20833, pageviews:77232, pagesPerSession:2.50,
         daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[480,500,520,540,570,550,500,520,540,560,400]} },
-    prev60: { label:'Previous 60 Days', sessions:16000, users:13778, newUsers:9667, pageviews:40000, pagesPerSession:2.50,
+    prev60: { label:'Previous 60 Days', sessions:24491, users:20789, newUsers:16421, pageviews:57293, pagesPerSession:2.50,
         daily:{labels:['Dec 1','Dec 8','Dec 15','Dec 22','Jan 1','Jan 8','Jan 15','Jan 22','Jan 28','Feb 1','Feb 1'],sessions:[440,460,470,450,520,540,560,580,570,590,600]} },
-    yoy60: { label:'Q1 2025', sessions:44000, users:37600, newUsers:30000, pageviews:100000, pagesPerSession:2.27,
+    yoy60: { label:'Same 60 Days Last Year', sessions:36935, users:31512, newUsers:25274, pageviews:84220, pagesPerSession:2.27,
         daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[640,670,690,720,760,740,700,730,760,800,480]} }
 };
 
@@ -402,8 +427,8 @@ const changeClass=v=>v===null?'neutral':parseFloat(v)>=0?'up':'down';
 function getCurrentData(){return range===30?DATA.last30:range===60?DATA.last60:DATA.q1_2026;}
 function getCompareData(){
     if(compare==='none')return null;
-    if(compare==='yoy')return range===90?DATA.q1_2024:range===60?DATA.yoy60:DATA.yoy30;
-    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.q1_2024;
+    if(compare==='yoy')return range===90?DATA.yoy90:range===60?DATA.yoy60:DATA.yoy30;
+    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.q1_2026;
 }
 
 function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();}
@@ -413,7 +438,8 @@ function render(){
     const curr=getCurrentData(),comp=getCompareData();
     document.getElementById('summaryCards').innerHTML=[['sessions','Sessions'],['users','Users'],['newUsers','New Users'],['pageviews','Page Views']].map(([k,l])=>{
         const v=curr[k],cv=comp?comp[k]:null,ch=pct(v,cv);
-        return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div>${ch!==null?`<div class="card-change ${changeClass(ch)}">${arrow(ch)} ${Math.abs(ch)}% ${comp?'vs '+comp.label:''}</div>`:'<div class="card-change neutral">—</div>'}</div>`;
+        if(ch!==null){const delta=v-cv;const sign=delta>=0?'+':'';return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div><div class="card-change ${changeClass(ch)}">${arrow(ch)} ${sign}${fmt(delta)} (${Math.abs(ch)}%)</div><div class="card-compare">${fmt(cv)} → ${fmt(v)} · vs ${comp.label}</div></div>`;}
+        return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div><div class="card-change neutral">—</div></div>`;
     }).join('');
     const datasets=[{label:curr.label,data:curr.daily.sessions,borderColor:ACCENT,backgroundColor:'rgba(187,34,34,0.08)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:ACCENT,pointRadius:4,pointHoverRadius:6}];
     if(comp&&comp.daily)datasets.push({label:comp.label,data:comp.daily.sessions,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.04)',borderWidth:2,borderDash:[5,5],fill:false,tension:0.4,pointBackgroundColor:'#f59e0b',pointRadius:3,pointHoverRadius:5});
