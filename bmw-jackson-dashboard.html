@@ -532,14 +532,12 @@ function renderSummaryCards(curr, comp) {
         { label: 'Page Views', k: 'pageviews' },
     ];
     document.getElementById('summaryCards').innerHTML = items.map(item => {
-        const val = curr[item.k];
-        const cval = comp ? comp[item.k] : null;
-        const change = pct(val, cval);
-        return `<div class="summary-card">
-            <div class="card-label">${item.label}</div>
-            <div class="card-value">${fmt(val)}</div>
-            ${change !== null ? `<div class="card-change ${changeClass(change)}">${arrow(change)} ${Math.abs(change)}% ${comp ? 'vs ' + comp.label : ''}</div>` : '<div class="card-change neutral">—</div>'}
-        </div>`;
+        const v = curr[item.k];
+        const cv = comp ? comp[item.k] : null;
+        const ch = pct(v, cv);
+        const l = item.label;
+        if(ch!==null){const delta=v-cv;const sign=delta>=0?'+':'';return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div><div class="card-change ${changeClass(ch)}">${arrow(ch)} ${sign}${fmt(delta)} (${Math.abs(ch)}%)</div><div class="card-compare">${fmt(cv)} → ${fmt(v)} · vs ${comp.label}</div></div>`;}
+        return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div><div class="card-change neutral">—</div></div>`;
     }).join('');
 }
 
