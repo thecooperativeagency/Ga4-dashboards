@@ -443,7 +443,7 @@ function render(){
         return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div><div class="card-change neutral">—</div></div>`;
     }).join('');
     const datasets=[{label:curr.label,data:curr.daily.sessions,borderColor:ACCENT,backgroundColor:'rgba(187,34,34,0.08)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:ACCENT,pointRadius:4,pointHoverRadius:6}];
-    if(comp&&comp.daily)datasets.push({label:comp.label,data:comp.daily.sessions,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.04)',borderWidth:2,borderDash:[5,5],fill:false,tension:0.4,pointBackgroundColor:'#f59e0b',pointRadius:3,pointHoverRadius:5});
+    if(comp&&comp.daily&&comp.daily.sessions&&comp.daily.sessions.length===curr.daily.sessions.length)datasets.push({label:comp.label,data:comp.daily.sessions,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.04)',borderWidth:2,borderDash:[5,5],fill:false,tension:0.4,pointBackgroundColor:'#f59e0b',pointRadius:3,pointHoverRadius:5});
     document.getElementById('chartTitle').textContent=comp?`Daily Sessions — ${curr.label} vs ${comp.label}`:`Daily Sessions — ${curr.label}`;
     if(sessionsChart)sessionsChart.destroy();
     sessionsChart=new Chart(document.getElementById('sessionsChart').getContext('2d'),{type:'line',data:{labels:curr.daily.labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#888',font:{size:12}}}},scales:{y:{beginAtZero:true,grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#555'}},x:{grid:{color:'rgba(255,255,255,0.02)'},ticks:{color:'#555'}}}}});

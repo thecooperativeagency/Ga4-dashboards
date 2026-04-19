@@ -557,7 +557,7 @@ function renderChart(curr, comp) {
         pointHoverRadius: 6
     }];
 
-    if (comp && comp.daily) {
+    if (comp && comp.daily && comp.daily.sessions && comp.daily.sessions.length === curr.daily.sessions.length) {
         datasets.push({
             label: comp.label,
             data: comp.daily.sessions,
