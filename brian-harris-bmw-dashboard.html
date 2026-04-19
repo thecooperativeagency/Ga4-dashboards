@@ -38,6 +38,7 @@
         .card-change.up { color: #10b981; }
         .card-change.down { color: #ef4444; }
         .card-change.neutral { color: #555; }
+        .card-compare { font-size: 11px; color: #444; margin-top: 3px; }
 
         .section { margin-bottom: 40px; }
         .section-title { font-size: 12px; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #1a1a1a; }
@@ -133,6 +134,7 @@
         [data-theme="light"] .footer { background: #e5e8ec !important; border-top-color: #ccc !important; }
         [data-theme="light"] .footer-left, [data-theme="light"] .footer-right { color: #777 !important; }
         [data-theme="light"] .card-change.neutral { color: #888 !important; }
+        [data-theme="light"] .card-compare { color: #777 !important; }
         [data-theme="light"] .status-neutral { background: rgba(100,100,100,0.1) !important; }
     </style>
 </head>
@@ -172,7 +174,7 @@
     </div>
     <div class="compare-group">
         <span class="filter-label">Compare:</span>
-        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Q1 2025</button>
+        <button class="compare-btn" onclick="setCompare('yoy')" id="cmp-yoy">vs Prior Year</button>
         <button class="compare-btn active" onclick="setCompare('prev')" id="cmp-prev">vs Previous Period</button>
         <button class="compare-btn" onclick="setCompare('none')" id="cmp-none">No Compare</button>
     </div>
@@ -372,19 +374,19 @@
 const DATA = {
     q1_2026: { label:'Last 90 Days', sessions:55234, users:43189, newUsers:29789, pageviews:184567, pagesPerSession:3.34,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,880,920,950,910,940,960,1020,980,970,880]} },
-    q1_2025: { label:'Q1 2025', sessions:64242, users:52793, newUsers:37423, pageviews:230243, pagesPerSession:3.58,
+    yoy90: { label:'Same 90 Days Last Year', sessions:64242, users:52793, newUsers:37423, pageviews:230243, pagesPerSession:3.58,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[600,650,700,720,680,720,740,820,810,800,700]} },
     last30: { label:'Last 30 Days', sessions:21952, users:16959, newUsers:11025, pageviews:73123, pagesPerSession:3.33,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[766,698,508,945,791,827,587,853,745,838,381]} },
     prev30: { label:'Previous 30 Days', sessions:16662, users:13165, newUsers:8764, pageviews:55433, pagesPerSession:3.33,
         daily:{labels:['Feb 1','Feb 5','Feb 8','Feb 12','Feb 15','Feb 18','Feb 22','Feb 25','Feb 28','Mar 1','Mar 1'],sessions:[550,560,570,580,590,600,610,620,630,640,650]} },
-    yoy30: { label:'Q1 2025', sessions:18500, users:15000, newUsers:9800, pageviews:69000, pagesPerSession:3.73,
+    yoy30: { label:'Same 30 Days Last Year', sessions:18500, users:15000, newUsers:9800, pageviews:69000, pagesPerSession:3.73,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[480,510,430,660,550,570,410,590,520,580,270]} },
     last60: { label:'Last 60 Days', sessions:38614, users:30124, newUsers:20456, pageviews:128456, pagesPerSession:3.33,
         daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[740,760,780,800,900,870,791,760,850,838,381]} },
     prev60: { label:'Previous 60 Days', sessions:33380, users:26113, newUsers:17427, pageviews:110413, pagesPerSession:3.31,
         daily:{labels:['Dec 1','Dec 8','Dec 15','Dec 22','Jan 1','Jan 8','Jan 15','Jan 22','Jan 28','Feb 1','Feb 1'],sessions:[620,640,660,640,820,880,920,950,940,960,980]} },
-    yoy60: { label:'Q1 2025', sessions:35000, users:28500, newUsers:19000, pageviews:132000, pagesPerSession:3.77,
+    yoy60: { label:'Same 60 Days Last Year', sessions:35000, users:28500, newUsers:19000, pageviews:132000, pagesPerSession:3.77,
         daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[480,500,520,540,600,580,550,520,570,600,320]} }
 };
 
@@ -421,8 +423,8 @@ const changeClass=v=>v===null?'neutral':parseFloat(v)>=0?'up':'down';
 function getCurrentData(){return range===30?DATA.last30:range===60?DATA.last60:DATA.q1_2026;}
 function getCompareData(){
     if(compare==='none')return null;
-    if(compare==='yoy')return range===90?DATA.q1_2025:range===60?DATA.yoy60:DATA.yoy30;
-    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.q1_2025;
+    if(compare==='yoy')return range===90?DATA.yoy90:range===60?DATA.yoy60:DATA.yoy30;
+    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.yoy90;
 }
 
 function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();}
@@ -431,13 +433,15 @@ function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEa
 function render(){
     const curr=getCurrentData(), comp=getCompareData();
     // Summary cards
-    [['sessions','Sessions'],['users','Users'],['newUsers','New Users'],['pageviews','Page Views']].forEach(([k,l])=>{
-        const val=curr[k],cval=comp?comp[k]:null,change=pct(val,cval);
-        document.getElementById('summaryCards').innerHTML=[['sessions','Sessions'],['users','Users'],['newUsers','New Users'],['pageviews','Page Views']].map(([k2,l2])=>{
-            const v=curr[k2],cv=comp?comp[k2]:null,ch=pct(v,cv);
-            return `<div class="summary-card"><div class="card-label">${l2}</div><div class="card-value">${fmt(v)}</div>${ch!==null?`<div class="card-change ${changeClass(ch)}">${arrow(ch)} ${Math.abs(ch)}% ${comp?'vs '+comp.label:''}</div>`:'<div class="card-change neutral">—</div>'}</div>`;
-        }).join('');
-    });
+    document.getElementById('summaryCards').innerHTML=[['sessions','Sessions'],['users','Users'],['newUsers','New Users'],['pageviews','Page Views']].map(([k2,l2])=>{
+        const v=curr[k2],cv=comp?comp[k2]:null,ch=pct(v,cv);
+        if(ch!==null){
+            const delta=v-cv;
+            const sign=delta>=0?'+':'';
+            return `<div class="summary-card"><div class="card-label">${l2}</div><div class="card-value">${fmt(v)}</div><div class="card-change ${changeClass(ch)}">${arrow(ch)} ${sign}${fmt(delta)} (${Math.abs(ch)}%)</div><div class="card-compare">${fmt(cv)} → ${fmt(v)} · vs ${comp.label}</div></div>`;
+        }
+        return `<div class="summary-card"><div class="card-label">${l2}</div><div class="card-value">${fmt(v)}</div><div class="card-change neutral">—</div></div>`;
+    }).join('');
     // Chart
     const datasets=[{label:curr.label,data:curr.daily.sessions,borderColor:ACCENT,backgroundColor:'rgba(29,111,168,0.08)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:ACCENT,pointRadius:4,pointHoverRadius:6}];
     if(comp&&comp.daily)datasets.push({label:comp.label,data:comp.daily.sessions,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.04)',borderWidth:2,borderDash:[5,5],fill:false,tension:0.4,pointBackgroundColor:'#f59e0b',pointRadius:3,pointHoverRadius:5});
