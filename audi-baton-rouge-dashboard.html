@@ -379,6 +379,7 @@ const DATA = {
     q1_2026: { label:'Last 90 Days', sessions:42974, users:36530, newUsers:29194, pageviews:109189, pagesPerSession:2.52,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[480,520,560,580,550,570,590,620,580,570,500]} },
     yoy90: { label:'Same 90 Days Last Year', sessions:55398, users:47744, newUsers:38920, pageviews:124617, pagesPerSession:2.24,
+    prev90: { label:'Previous 90 Days', sessions:25506, users:20945, newUsers:15450, pageviews:58408, pagesPerSession:2.52, daily:{labels:[],sessions:[]} },
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,860,900,940,920,950,970,1010,960,950,880]} },
     last30: { label:'Last 30 Days', sessions:16279, users:14030, newUsers:11311, pageviews:38059, pagesPerSession:2.48,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[510,434,405,470,384,456,482,615,393,524,309]} },
@@ -428,7 +429,7 @@ function getCurrentData(){return range===30?DATA.last30:range===60?DATA.last60:D
 function getCompareData(){
     if(compare==='none')return null;
     if(compare==='yoy')return range===90?DATA.yoy90:range===60?DATA.yoy60:DATA.yoy30;
-    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.q1_2026;
+    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.prev90;
 }
 
 function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();}
