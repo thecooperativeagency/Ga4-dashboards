@@ -424,7 +424,7 @@ function getCurrentData(){return range===30?DATA.last30:range===60?DATA.last60:D
 function getCompareData(){
     if(compare==='none')return null;
     if(compare==='yoy')return range===90?DATA.yoy90:range===60?DATA.yoy60:DATA.yoy30;
-    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.yoy90;
+    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.q1_2025;
 }
 
 function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();}
