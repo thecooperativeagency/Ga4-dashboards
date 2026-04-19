@@ -38,6 +38,7 @@
         .card-change.up { color: #10b981; }
         .card-change.down { color: #ef4444; }
         .card-change.neutral { color: #555; }
+        .card-compare { font-size: 11px; color: #444; margin-top: 3px; }
 
         .section { margin-bottom: 40px; }
         .section-title { font-size: 12px; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #1a1a1a; }
@@ -133,6 +134,7 @@
         [data-theme="light"] .footer { background: #e5e8ec !important; border-top-color: #ccc !important; }
         [data-theme="light"] .footer-left, [data-theme="light"] .footer-right { color: #777 !important; }
         [data-theme="light"] .card-change.neutral { color: #888 !important; }
+        [data-theme="light"] .card-compare { color: #777 !important; }
         [data-theme="light"] .status-neutral { background: rgba(100,100,100,0.1) !important; }
     </style>
 </head>
@@ -379,8 +381,9 @@ const DATA = {
     q1_2026: { label:'Last 90 Days', sessions:42974, users:36530, newUsers:29194, pageviews:109189, pagesPerSession:2.52,
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[480,520,560,580,550,570,590,620,580,570,500]} },
     yoy90: { label:'Same 90 Days Last Year', sessions:55398, users:47744, newUsers:38920, pageviews:124617, pagesPerSession:2.24,
-    prev90: { label:'Previous 90 Days', sessions:25506, users:20945, newUsers:15450, pageviews:58408, pagesPerSession:2.52, daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[480,520,560,580,550,570,590,620,580,570,500]} },
         daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,860,900,940,920,950,970,1010,960,950,880]} },
+    prev90: { label:'Previous 90 Days', sessions:25506, users:20945, newUsers:15450, pageviews:58408, pagesPerSession:2.52,
+        daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[480,520,560,580,550,570,590,620,580,570,500]} },
     last30: { label:'Last 30 Days', sessions:16279, users:14030, newUsers:11311, pageviews:38059, pagesPerSession:2.48,
         daily:{labels:['Mar 2','Mar 5','Mar 8','Mar 12','Mar 15','Mar 18','Mar 22','Mar 25','Mar 28','Mar 30','Apr 1'],sessions:[510,434,405,470,384,456,482,615,393,524,309]} },
     prev30: { label:'Previous 30 Days', sessions:13993, users:11796, newUsers:9522, pageviews:39173, pagesPerSession:2.45,
@@ -392,11 +395,7 @@ const DATA = {
     prev60: { label:'Previous 60 Days', sessions:24491, users:20789, newUsers:16421, pageviews:57293, pagesPerSession:2.50,
         daily:{labels:['Dec 1','Dec 8','Dec 15','Dec 22','Jan 1','Jan 8','Jan 15','Jan 22','Jan 28','Feb 1','Feb 1'],sessions:[440,460,470,450,520,540,560,580,570,590,600]} },
     yoy60: { label:'Same 60 Days Last Year', sessions:36935, users:31512, newUsers:25274, pageviews:84220, pagesPerSession:2.27,
-        daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[640,670,690,720,760,740,700,730,760,800,480]} },
-    yoy90: { label:'Same 90 Days Last Year', sessions:55398, users:47744, newUsers:38920, pageviews:124617, pagesPerSession:2.24,
-        daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[820,860,900,940,920,950,970,1010,960,950,880]} },
-    prev90: { label:'Previous 90 Days', sessions:25506, users:20945, newUsers:15450, pageviews:58408, pagesPerSession:2.52,
-        daily:{labels:['Jan 1','Jan 8','Jan 15','Jan 22','Feb 1','Feb 10','Feb 20','Mar 1','Mar 10','Mar 20','Mar 31'],sessions:[480,520,560,580,550,570,590,620,580,570,500]} }
+        daily:{labels:['Feb 1','Feb 8','Feb 15','Feb 22','Mar 1','Mar 8','Mar 15','Mar 22','Mar 28','Mar 30','Apr 1'],sessions:[640,670,690,720,760,740,700,730,760,800,480]} }
 };
 
 const SOURCES = [
