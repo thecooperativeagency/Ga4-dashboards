@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian Harris BMW — PMA Intelligence</title>
+<style>
+  :root {
+    --bmw-blue: #1C69D4;
+    --bg-dark: #0d1117;
+    --card-bg: #161b22;
+    --card-border: #30363d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --red: #f85149;
+    --orange: #db6d28;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  header {
+    background: linear-gradient(135deg, #0a0e14 0%, #111820 100%);
+    border-bottom: 2px solid var(--bmw-blue);
+    padding: 2rem 2rem 1.5rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  header h1 span { color: var(--bmw-blue); }
+
+  header .subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.35rem;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+  }
+
+  .badge-live { background: var(--bmw-blue); color: #fff; }
+
+  main { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  /* ---- Competitor Cards ---- */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .card:hover { border-color: var(--bmw-blue); }
+
+  .card.primary { border-top: 3px solid var(--bmw-blue); }
+  .card.competitor { border-top: 3px solid var(--card-border); }
+
+  .card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+
+  .logo-placeholder {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem; color: #fff; flex-shrink: 0;
+  }
+
+  .logo-bmw { background: var(--bmw-blue); }
+  .logo-lexus { background: #5c5c5c; }
+  .logo-mb { background: #222; border: 1px solid #444; }
+
+  .card-header h2 { font-size: 1.05rem; font-weight: 600; }
+  .card-header .card-type { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+
+  .metrics { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.25rem; }
+
+  .metric-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+
+  .metric-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+
+  .metric-value { font-size: 0.9rem; font-weight: 600; text-align: right; }
+
+  .metric-detail { font-size: 0.75rem; color: var(--text-secondary); font-weight: 400; }
+
+  .stat-bar {
+    height: 6px; border-radius: 3px; margin-top: 0.5rem;
+    background: #21262d; overflow: hidden;
+  }
+
+  .stat-bar-fill { height: 100%; border-radius: 3px; }
+
+  .fill-high { background: var(--green); }
+  .fill-mid { background: var(--yellow); }
+  .fill-low { background: var(--red); }
+  .fill-none { background: var(--card-border); }
+
+  .rating { display: flex; align-items: center; gap: 0.4rem; margin: 0.75rem 0; }
+  .stars { color: var(--yellow); font-size: 0.95rem; letter-spacing: 1px; }
+  .rating-text { font-size: 0.85rem; font-weight: 600; }
+  .review-count { font-size: 0.75rem; color: var(--text-secondary); }
+
+  .opportunities {
+    background: rgba(28, 105, 212, 0.06);
+    border: 1px solid rgba(28, 105, 212, 0.15);
+    border-radius: 6px;
+    padding: 0.85rem;
+    margin-top: 0.75rem;
+  }
+
+  .opportunities h4 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--bmw-blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .opportunities p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    font-weight: 600;
+    margin-right: 0.3rem;
+    margin-top: 0.3rem;
+  }
+
+  .tag-model { background: rgba(28, 105, 212, 0.15); color: var(--bmw-blue); }
+  .tag-theme { background: rgba(63, 185, 80, 0.12); color: var(--green); }
+  .tag-weakness { background: rgba(248, 81, 73, 0.12); color: var(--red); }
+
+  /* ---- Benchmark Card ---- */
+  .benchmark {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-top: 3px solid #F59E0B;
+    border-radius: 10px;
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .benchmark:hover { border-color: #F59E0B; }
+
+  .benchmark-header { text-align: center; margin-bottom: 1.5rem; }
+
+  .benchmark-header h3 {
+    font-size: 1.15rem;
+    color: #F59E0B;
+    margin-bottom: 0.25rem;
+  }
+
+  .benchmark-header p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .benchmark-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .benchmark-col h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #F59E0B;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+  }
+
+  .benchmark-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .benchmark-col li {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .benchmark-col li strong { color: var(--text-primary); font-weight: 600; }
+
+  .benchmark-steal {
+    background: rgba(245, 158, 11, 0.06);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .benchmark-steal h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #F59E0B;
+    margin-bottom: 0.75rem;
+  }
+
+  .benchmark-steal ol {
+    list-style: none;
+    counter-reset: steal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .benchmark-steal li {
+    counter-increment: steal;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-left: 1.75rem;
+    position: relative;
+  }
+
+  .benchmark-steal li::before {
+    content: counter(steal);
+    position: absolute;
+    left: 0;
+    background: #F59E0B;
+    color: #000;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.7rem;
+    top: 0;
+  }
+
+  @media (max-width: 960px) {
+    .benchmark-columns { grid-template-columns: 1fr; }
+  }
+
+  /* ---- Recommendations ---- */
+  .recs {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.75rem;
+  }
+
+  .recs h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .recs h3 span { color: var(--bmw-blue); }
+
+  .rec-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+
+  .rec-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem;
+    background: rgba(28, 105, 212, 0.04);
+    border-radius: 8px;
+    border-left: 3px solid var(--bmw-blue);
+  }
+
+  .rec-number {
+    background: var(--bmw-blue);
+    color: #fff;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem; flex-shrink: 0;
+  }
+
+  .rec-content h4 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .rec-content p { font-size: 0.85rem; color: var(--text-secondary); }
+
+  /* ---- Footer ---- */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--card-border);
+    margin-top: 2rem;
+  }
+
+  footer strong { color: var(--text-primary); font-weight: 600; }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 960px) {
+    .cards { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 1.25rem 1rem; }
+    header h1 { font-size: 1.25rem; }
+    main { padding: 1.25rem 1rem; }
+    .recs { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span>Brian Harris BMW</span> — PMA Intelligence</h1>
+  <p class="subtitle">Primary Market Area &middot; Baton Rouge, LA &middot; April 21, 2026</p>
+  <span class="badge badge-live">Live Recon</span>
+</header>
+
+<main>
+
+<p class="section-label">Competitive Landscape</p>
+
+<div class="cards">
+
+  <!-- BHBMW -->
+  <div class="card primary">
+    <div class="card-header">
+      <div class="logo-placeholder logo-bmw">BMW</div>
+      <div>
+        <h2>Brian Harris BMW</h2>
+        <span class="card-type">Your Dealership</span>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div>
+        <div class="metric-row">
+          <span class="metric-label">Google Ads</span>
+          <span class="metric-value">~200 active</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Agency</span>
+          <span class="metric-value metric-detail">J&amp;L Marketing</span>
+        </div>
+        <div class="stat-bar"><div class="stat-bar-fill fill-high" style="width:100%"></div></div>
+        <div style="margin-top:0.4rem">
+          <span class="tag tag-model">Used X7</span>
+          <span class="tag tag-model">X5</span>
+          <span class="tag tag-model">Pre-Owned</span>
+        </div>
+      </div>
+      <div>
+        <div class="metric-row">
+          <span class="metric-label">Meta Ads</span>
+          <span class="metric-value" style="color:var(--red)">0 active</span>
+        </div>
+        <div class="stat-bar"><div class="stat-bar-fill fill-none" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <div class="rating">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+      <span class="rating-text">4.7</span>
+      <span class="review-count">(2,161 reviews)</span>
+    </div>
+
+    <div class="opportunities">
+      <h4>Key Gap</h4>
+      <p>Zero Meta/social ad presence while competitors run up to 250 creatives. Massive untapped channel.</p>
+    </div>
+  </div>
+
+  <!-- Price LeBlanc Lexus -->
+  <div class="card competitor">
+    <div class="card-header">
+      <div class="logo-placeholder logo-lexus">LEX</div>
+      <div>
+        <h2>Price LeBlanc Lexus</h2>
+        <span class="card-type">Competitor</span>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div>
+        <div class="metric-row">
+          <span class="metric-label">Google Ads</span>
+          <span class="metric-value">~200 active</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Agency</span>
+          <span class="metric-value metric-detail">Toyota Motor Sales USA (OEM)</span>
+        </div>
+        <div class="stat-bar"><div class="stat-bar-fill fill-high" style="width:100%"></div></div>
+        <div style="margin-top:0.4rem">
+          <span class="tag tag-model">2025 TX</span>
+          <span class="tag tag-model">Luxury SUVs</span>
+          <span class="tag tag-model">L/Certified</span>
+        </div>
+      </div>
+      <div>
+        <div class="metric-row">
+          <span class="metric-label">Meta Ads</span>
+          <span class="metric-value">~4 active</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Since</span>
+          <span class="metric-value metric-detail">April 1, 2026</span>
+        </div>
+        <div class="stat-bar"><div class="stat-bar-fill fill-low" style="width:2%"></div></div>
+        <div style="margin-top:0.4rem">
+          <span class="tag tag-theme">Generic branding</span>
+          <span class="tag tag-theme">Pre-owned</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rating">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+      <span class="rating-text">4.7</span>
+      <span class="review-count" style="color:var(--orange)">(14 reviews — very low)</span>
+    </div>
+
+    <div class="opportunities">
+      <h4>Opportunities to Exploit</h4>
+      <p>OEM-controlled ads with no local flexibility. Generic messaging ("Turn every drive into a statement"). Minimal social presence. Tiny review footprint — easy to out-trust.</p>
+      <div style="margin-top:0.35rem">
+        <span class="tag tag-weakness">No local control</span>
+        <span class="tag tag-weakness">Low reviews</span>
+        <span class="tag tag-weakness">Generic copy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mercedes-Benz of Baton Rouge -->
+  <div class="card competitor">
+    <div class="card-header">
+      <div class="logo-placeholder logo-mb">MB</div>
+      <div>
+        <h2>Mercedes-Benz of Baton Rouge</h2>
+        <span class="card-type">Competitor</span>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div>
+        <div class="metric-row">
+          <span class="metric-label">Google Ads</span>
+          <span class="metric-value">52 active</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Agency</span>
+          <span class="metric-value metric-detail">BIJ LA LLC (local)</span>
+        </div>
+        <div class="stat-bar"><div class="stat-bar-fill fill-mid" style="width:26%"></div></div>
+        <div style="margin-top:0.4rem">
+          <span class="tag tag-model">2026 S-Class</span>
+          <span class="tag tag-model">CPO Program</span>
+        </div>
+      </div>
+      <div>
+        <div class="metric-row">
+          <span class="metric-label">Meta Ads</span>
+          <span class="metric-value" style="color:var(--green)">~250 active</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Since</span>
+          <span class="metric-value metric-detail">April 2025 (12+ months)</span>
+        </div>
+        <div class="stat-bar"><div class="stat-bar-fill fill-high" style="width:100%"></div></div>
+        <div style="margin-top:0.4rem">
+          <span class="tag tag-theme">CPO "3/30 Guarantee"</span>
+          <span class="tag tag-theme">CLE 300</span>
+          <span class="tag tag-theme">164-pt inspection</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rating">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+      <span class="rating-text">4.7</span>
+      <span class="review-count">(282 Carfax / 788 DealerRater)</span>
+    </div>
+
+    <div class="opportunities">
+      <h4>Opportunities to Exploit</h4>
+      <p>Only 52 Google Ads vs BHBMW's 200 — you dominate search. Strong CPO narrative on social but BMW CPO can match it. Messaging is polished but beatable with local authenticity.</p>
+      <div style="margin-top:0.35rem">
+        <span class="tag tag-weakness">Low Google volume</span>
+        <span class="tag tag-weakness">CPO-dependent</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Benchmark Store -->
+<p class="section-label">Benchmark Store</p>
+
+<div class="benchmark">
+  <div class="benchmark-header">
+    <h3>&#127942; Benchmark Intelligence — Galleria BMW (D'Iberville, MS)</h3>
+    <p>Top-performing BMW store in the Gulf South. Reverse-engineering their playbook.</p>
+  </div>
+
+  <div class="benchmark-columns">
+    <div class="benchmark-col">
+      <h4>Ad Intelligence</h4>
+      <ul>
+        <li><strong>Google Ads:</strong> ~300 active (in-house, under dealer name)</li>
+        <li><strong>Meta Ads:</strong> ~258 variants | Longest-running: 18 months active</li>
+        <li><strong>Platforms:</strong> FB + IG + Messenger + Audience Network + Google Display + Video</li>
+        <li><strong>Top models:</strong> 2026 X3, 2026 X5, 2025 X1, used non-BMW inventory (RAM 1500)</li>
+        <li><strong>Creative style:</strong> Consistent "Galleria BMW | [roundel]" branding header on every ad</li>
+        <li><strong>Ad strategy:</strong> A/B testing every set, price callouts in creative (VDP-style)</li>
+      </ul>
+    </div>
+    <div class="benchmark-col">
+      <h4>Who's Running It</h4>
+      <ul>
+        <li><strong>Agency:</strong> NONE — 100% in-house</li>
+        <li><strong>Group:</strong> Mandal Automotive Group (3 stores, D'Iberville MS)</li>
+        <li><strong>Owner:</strong> Bo Mandal (President/CEO)</li>
+        <li><strong>Key player:</strong> Michelle Ladner (GSM/Finance Director) — personally manages campaigns</li>
+        <li><strong>Website platform:</strong> space.auto</li>
+        <li><strong>Funding:</strong> BMW OEM co-op dollars + direct Google Ads</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="benchmark-steal">
+    <h4>What BHBMW &amp; BMW Jackson Should Steal</h4>
+    <ol>
+      <li>Launch Meta immediately — 0 active ads vs Galleria's 258 variants is unacceptable</li>
+      <li>Add video creative to Google — Galleria runs multiple video ads, most dealers skip this</li>
+      <li>A/B test every ad set — find a winner and let it run for months, not weeks</li>
+      <li>Put prices in the creative — VDP-style ads with real sticker prices pre-qualify buyers</li>
+      <li>Push new 2026 inventory — Galleria leads with NEW models, not just used/CPO</li>
+      <li>Maximize BMW co-op — Galleria funds this with OEM money, BHBMW should too</li>
+    </ol>
+  </div>
+</div>
+
+<!-- Strategic Recommendations -->
+<p class="section-label">Action Items</p>
+
+<div class="recs">
+  <h3><span>&#9654;</span> Strategic Recommendations for BHBMW</h3>
+  <ul class="rec-list">
+    <li class="rec-item">
+      <div class="rec-number">1</div>
+      <div class="rec-content">
+        <h4>Out-Local Lexus</h4>
+        <p>Price LeBlanc is running on OEM autopilot — generic national copy, no local voice. BHBMW can win by leaning into Baton Rouge-specific messaging, community ties, and hyper-local offers that a Toyota corporate desk in Plano can't touch.</p>
+      </div>
+    </li>
+    <li class="rec-item">
+      <div class="rec-number">2</div>
+      <div class="rec-content">
+        <h4>Counter the Mercedes CPO Narrative</h4>
+        <p>Mercedes-Benz of BR has built a strong CPO story on Meta (3/30 Guarantee, 164-point inspection). BMW's CPO program is equally strong — unlimited mileage warranty, roadside assistance, loaner vehicles. Say it louder. Directly counter their messaging with BMW CPO creative on the same platforms.</p>
+      </div>
+    </li>
+    <li class="rec-item">
+      <div class="rec-number">3</div>
+      <div class="rec-content">
+        <h4>Activate Meta — Close the 0 vs. 250 Gap</h4>
+        <p>BHBMW has zero Meta ads running while Mercedes is at ~250 creatives with 12+ months of momentum. Launch a Meta campaign immediately: new model showcases, CPO inventory, and community content. Even a modest 20-30 active ads closes the visibility gap in the feed.</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  Last updated: April 21, 2026 &nbsp;&middot;&nbsp; <strong>TAS</strong> — Tactical Awareness Suite &nbsp;&middot;&nbsp; The Cooperative Agency &nbsp;&middot;&nbsp; Recon: BHBMW PMA + Galleria Benchmark
+</footer>
+
+</body>
+</html>
