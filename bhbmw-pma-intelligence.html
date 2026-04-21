@@ -471,8 +471,98 @@
   footer strong { color: var(--text-primary); font-weight: 600; }
 
   /* ---- Responsive ---- */
+  /* ---- Competitor Ad Creatives ---- */
+  .creatives-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .creatives-section .section-header {
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+
+  .creatives-section .section-header h3 {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .creatives-section .section-header p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .competitor-creatives {
+    margin-bottom: 2rem;
+  }
+
+  .competitor-creatives:last-child {
+    margin-bottom: 0;
+  }
+
+  .competitor-creatives h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .competitor-creatives h4.accent-amber {
+    color: var(--orange);
+    border-bottom: 1px solid rgba(219, 109, 40, 0.25);
+  }
+
+  .competitor-creatives h4.accent-red {
+    color: var(--red);
+    border-bottom: 1px solid rgba(248, 81, 73, 0.25);
+  }
+
+  .creative-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 280px));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .creative-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .creative-item img {
+    max-width: 280px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+  }
+
+  .creative-item .creative-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+
+  .callout-green {
+    background: rgba(63, 185, 80, 0.08);
+    border: 1px solid rgba(63, 185, 80, 0.25);
+    color: var(--green);
+  }
+
+  .callout-orange {
+    background: rgba(219, 109, 40, 0.08);
+    border: 1px solid rgba(219, 109, 40, 0.25);
+    color: var(--orange);
+  }
+
   @media (max-width: 960px) {
     .cards { grid-template-columns: 1fr; }
+    .creative-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
   }
 
   @media (max-width: 600px) {
@@ -650,6 +740,72 @@
     </div>
   </div>
 
+</div>
+
+<!-- Competitor Ad Creatives -->
+<p class="section-label">Competitor Ad Creatives</p>
+
+<div class="creatives-section">
+  <div class="section-header">
+    <h3>Competitor Ad Creatives &mdash; Meta (Facebook/Instagram)</h3>
+    <p>Source: Meta Ad Library &mdash; April 21, 2026</p>
+  </div>
+
+  <!-- Price LeBlanc Lexus -->
+  <div class="competitor-creatives">
+    <h4 class="accent-amber">Price LeBlanc Lexus &mdash; Meta Ad Creatives</h4>
+    <div class="creative-grid">
+      <div class="creative-item">
+        <img src="assets/creatives/price-leblanc-lexus/ad_1_view.png" alt="Price LeBlanc Lexus Ad 1">
+        <span class="creative-label">2026 Lexus TX 350 Premium AWD</span>
+      </div>
+      <div class="creative-item">
+        <img src="assets/creatives/price-leblanc-lexus/ad_2_view.png" alt="Price LeBlanc Lexus Ad 2">
+        <span class="creative-label">2026 Lexus TX 350 Premium AWD (variant)</span>
+      </div>
+      <div class="creative-item">
+        <img src="assets/creatives/price-leblanc-lexus/ad_3_view.png" alt="Price LeBlanc Lexus Ad 3">
+        <span class="creative-label">Pre-Owned 2023 Audi Q7 quattro Premium Plus</span>
+      </div>
+      <div class="creative-item">
+        <img src="assets/creatives/price-leblanc-lexus/ad_4_view.png" alt="Price LeBlanc Lexus Ad 4">
+        <span class="creative-label">Pre-Owned 2021 Audi Q8 quattro Premium Plus</span>
+      </div>
+    </div>
+    <div class="callout callout-orange">
+      4 active ads. No pricing. No lease offers. Generic OEM copy &mdash; &ldquo;Turn every drive into a statement.&rdquo; Running 2026 TX 350 new inventory + pre-owned Audi Q7/Q8. Zero local angle.
+    </div>
+  </div>
+
+  <!-- Mercedes-Benz of Baton Rouge -->
+  <div class="competitor-creatives">
+    <h4 class="accent-red">Mercedes-Benz of Baton Rouge &mdash; Meta Ad Creatives</h4>
+    <div class="creative-grid">
+      <div class="creative-item">
+        <img src="assets/creatives/mercedes-br/ad_1_view.png" alt="Mercedes-Benz BR Ad 1">
+        <span class="creative-label">2024 Mercedes-Benz E 350 (CPO &mdash; 3/30 Guarantee)</span>
+      </div>
+      <div class="creative-item">
+        <img src="assets/creatives/mercedes-br/ad_2_view.png" alt="Mercedes-Benz BR Ad 2">
+        <span class="creative-label">2024 Mercedes-Benz C 300</span>
+      </div>
+      <div class="creative-item">
+        <img src="assets/creatives/mercedes-br/ad_3_view.png" alt="Mercedes-Benz BR Ad 3">
+        <span class="creative-label">2025 Mercedes-Benz GLC 300 (CPO &mdash; 164-pt Inspection)</span>
+      </div>
+      <div class="creative-item">
+        <img src="assets/creatives/mercedes-br/ad_4_view.png" alt="Mercedes-Benz BR Ad 4">
+        <span class="creative-label">2024 Mercedes-Benz CLE 300</span>
+      </div>
+      <div class="creative-item">
+        <img src="assets/creatives/mercedes-br/ad_5_view.png" alt="Mercedes-Benz BR Ad 5">
+        <span class="creative-label">2026 Mercedes-Benz GLC 300 ($499/mo Lease)</span>
+      </div>
+    </div>
+    <div class="callout callout-green">
+      &#9889; Active offer: 2026 GLC 300 &mdash; $499/mo for 24 months + 2.99% APR financing up to 60 months. Running CPO narrative: &ldquo;3/30 guarantee&rdquo; (3-day return, 30-day exchange) + 164-point inspection. 8 active ads with real offers and pricing.
+    </div>
+  </div>
 </div>
 
 <!-- Benchmark Store -->
