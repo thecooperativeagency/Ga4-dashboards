@@ -222,6 +222,55 @@ print(f"Audi BR Q1: {audi_q1['sessions']:,} sessions | Mobile: {audi_mobile}%")
 print(f"BMW Jackson Q1: {jackson_q1['sessions']:,} sessions | Mobile: {jackson_mobile}%")
 PYEOF
 
+echo "[$DATE] Checking yesterday's session thresholds..." | tee -a "$LOG_FILE"
+
+ALERT_THRESHOLD=100
+ALERTS=""
+
+# Get yesterday's sessions for threshold check
+YESTERDAY=$(date -v-1d '+%Y-%m-%d')
+
+for EMAIL in "$BH_BMW_EMAIL" "$AUDI_BR_EMAIL" "$BMW_JACKSON_EMAIL"; do
+    TOKEN=$(get_access_token "$EMAIL")
+    PROPERTY=""
+    NAME=""
+    case "$EMAIL" in
+        "$BH_BMW_EMAIL") PROPERTY="$BH_BMW_PROPERTY"; NAME="Brian Harris BMW" ;;
+        "$AUDI_BR_EMAIL") PROPERTY="$AUDI_BR_PROPERTY"; NAME="Audi Baton Rouge" ;;
+        "$BMW_JACKSON_EMAIL") PROPERTY="$BMW_JACKSON_PROPERTY"; NAME="BMW of Jackson" ;;
+    esac
+    
+    YESTERDAY_DATA=$(curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+        -H "Content-Type: application/json" \
+        "https://analyticsdata.googleapis.com/v1beta/properties/${PROPERTY}:runReport" \
+        -d "{\"dateRanges\":[{\"startDate\":\"yesterday\",\"endDate\":\"yesterday\"}],\"metrics\":[{\"name\":\"sessions\"}]}" | \
+        python3 -c "import sys,json; data=json.load(sys.stdin); rows=data.get('rows',[]); print(int(rows[0]['metricValues'][0]['value']) if rows else 0)")
+    
+    if [ "$YESTERDAY_DATA" -lt "$ALERT_THRESHOLD" ]; then
+        ALERTS="${ALERTS}⚠️ ${NAME}: ${YESTERDAY_DATA} sessions (threshold: ${ALERT_THRESHOLD})\n"
+    fi
+    
+    # Add yesterday's sessions to the data object
+    echo "${NAME} yesterday: ${YESTERDAY_DATA} sessions" | tee -a "$LOG_FILE"
+done
+
+# Telegram alert if any property is below threshold
+if [ -n "$ALERTS" ]; then
+    echo "[$DATE] ALERT: Properties below threshold detected" | tee -a "$LOG_FILE"
+    TELEGRAM_BOT_TOKEN=$(grep TELEGRAM_BOT_TOKEN ~/.openclaw/workspace/kalshi-weather/.env 2>/dev/null | cut -d= -f2)
+    TELEGRAM_CHAT_ID=$(grep TELEGRAM_CHAT_ID ~/.openclaw/workspace/kalshi-weather/.env 2>/dev/null | cut -d= -f2)
+    
+    if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "parse_mode=Markdown" \
+            -d "text=🚨 *GA4 Session Alert* 🚨%0A%0AYesterday's sessions dropped below threshold:%0A%0A${ALERTS}%0A📊 Dashboards updated: https://thecooperativeagency.github.io/Ga4-dashboards/" > /dev/null
+        echo "[$DATE] Telegram alert sent" | tee -a "$LOG_FILE"
+    fi
+else
+    echo "[$DATE] All properties above threshold. No alerts." | tee -a "$LOG_FILE"
+fi
+
 echo "[$DATE] Committing and pushing to GitHub..." | tee -a "$LOG_FILE"
 
 cd "$SCRIPT_DIR"
