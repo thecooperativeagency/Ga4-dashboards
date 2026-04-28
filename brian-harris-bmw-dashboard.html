@@ -453,28 +453,59 @@ const SOURCES = [
     {source:'autotrader.com',medium:'referral',sessions:94,users:65}
 ];
 
-const OUTBOUND_CAMPAIGNS = [
-    {campaign:'apr26',source:'amp',medium:'text',sessions:557,users:422,newUsers:349,pageviews:993,engagedSessions:223},
-    {campaign:'march26_spring',source:'amp',medium:'text',sessions:446,users:285,newUsers:226,pageviews:1365,engagedSessions:254},
-    {campaign:'pres_day_feb26',source:'amp',medium:'text',sessions:319,users:204,newUsers:168,pageviews:862,engagedSessions:166},
-    {campaign:'(referral)',source:'amp',medium:'email',sessions:208,users:149,newUsers:122,pageviews:634,engagedSessions:126},
-    {campaign:'pres_day_feb26',source:'amp',medium:'email',sessions:143,users:128,newUsers:87,pageviews:528,engagedSessions:112},
-    {campaign:'x_offers_oct25',source:'amp',medium:'email',sessions:9,users:6,newUsers:1,pageviews:29,engagedSessions:4},
-    {campaign:'oil_tire_oct25',source:'amp',medium:'email',sessions:7,users:5,newUsers:2,pageviews:9,engagedSessions:2},
-    {campaign:'(not set)',source:'amp',medium:'email',sessions:6,users:3,newUsers:1,pageviews:10,engagedSessions:3},
-    {campaign:'servicevisit',source:'amp',medium:'email',sessions:3,users:2,newUsers:0,pageviews:8,engagedSessions:1},
-    {campaign:'april26_offers',source:'amp',medium:'email',sessions:1,users:1,newUsers:1,pageviews:2,engagedSessions:1}
-];
+const OUTBOUND_CAMPAIGNS_BY_RANGE = {
+    last30: [
+        {campaign:'apr26',source:'amp',medium:'text',sessions:558,users:423,newUsers:349,pageviews:994,engagedSessions:223},
+        {campaign:'march26_spring',source:'amp',medium:'text',sessions:43,users:29,newUsers:9,pageviews:112,engagedSessions:20},
+        {campaign:'pres_day_feb26',source:'amp',medium:'text',sessions:2,users:1,newUsers:0,pageviews:2,engagedSessions:0},
+        {campaign:'april26_offers',source:'amp',medium:'email',sessions:1,users:1,newUsers:1,pageviews:2,engagedSessions:1},
+        {campaign:'pres_day_feb26',source:'amp',medium:'email',sessions:1,users:1,newUsers:0,pageviews:1,engagedSessions:0}
+    ],
+    last60: [
+        {campaign:'apr26',source:'amp',medium:'text',sessions:558,users:423,newUsers:349,pageviews:994,engagedSessions:223},
+        {campaign:'march26_spring',source:'amp',medium:'text',sessions:446,users:285,newUsers:226,pageviews:1365,engagedSessions:254},
+        {campaign:'pres_day_feb26',source:'amp',medium:'text',sessions:38,users:23,newUsers:9,pageviews:70,engagedSessions:14},
+        {campaign:'pres_day_feb26',source:'amp',medium:'email',sessions:9,users:8,newUsers:4,pageviews:20,engagedSessions:4},
+        {campaign:'(referral)',source:'amp',medium:'email',sessions:2,users:2,newUsers:0,pageviews:14,engagedSessions:2},
+        {campaign:'oil_tire_oct25',source:'amp',medium:'email',sessions:2,users:1,newUsers:0,pageviews:3,engagedSessions:1},
+        {campaign:'servicevisit',source:'amp',medium:'email',sessions:2,users:1,newUsers:0,pageviews:2,engagedSessions:0},
+        {campaign:'april26_offers',source:'amp',medium:'email',sessions:1,users:1,newUsers:1,pageviews:2,engagedSessions:1}
+    ],
+    last90: [
+        {campaign:'apr26',source:'amp',medium:'text',sessions:558,users:423,newUsers:349,pageviews:994,engagedSessions:223},
+        {campaign:'march26_spring',source:'amp',medium:'text',sessions:446,users:285,newUsers:226,pageviews:1365,engagedSessions:254},
+        {campaign:'pres_day_feb26',source:'amp',medium:'text',sessions:319,users:204,newUsers:168,pageviews:862,engagedSessions:166},
+        {campaign:'pres_day_feb26',source:'amp',medium:'email',sessions:143,users:128,newUsers:87,pageviews:528,engagedSessions:112},
+        {campaign:'(referral)',source:'amp',medium:'email',sessions:17,users:10,newUsers:4,pageviews:42,engagedSessions:10},
+        {campaign:'oil_tire_oct25',source:'amp',medium:'email',sessions:2,users:1,newUsers:0,pageviews:3,engagedSessions:1},
+        {campaign:'servicevisit',source:'amp',medium:'email',sessions:2,users:1,newUsers:0,pageviews:2,engagedSessions:0},
+        {campaign:'april26_offers',source:'amp',medium:'email',sessions:1,users:1,newUsers:1,pageviews:2,engagedSessions:1}
+    ]
+};
 
-const JLM_LEAD_EVENTS = [
-    {event:'i_want_this_one_jlm',count:5338,label:'I Want This One'},
-    {event:'tell_me_more_jlm',count:3325,label:'Tell Me More'},
-    {event:'confirm_availability_jlm',count:1806,label:'Confirm Availability'},
-    {event:'i_have_a_trade_jlm',count:989,label:'I Have a Trade'},
-    {event:'test_drive_jlm',count:53,label:'Test Drive'},
-    {event:'file_download',count:14,label:'File Download'},
-    {event:'hours_and_directions',count:1,label:'Hours & Directions'}
-];
+const JLM_LEAD_EVENTS_BY_RANGE = {
+    last30: [
+        {event:'tell_me_more_jlm',count:1576,label:'Tell Me More'},
+        {event:'i_want_this_one_jlm',count:1505,label:'I Want This One'},
+        {event:'confirm_availability_jlm',count:464,label:'Confirm Availability'},
+        {event:'file_download',count:7,label:'File Download'},
+        {event:'test_drive_jlm',count:7,label:'Test Drive'}
+    ],
+    last60: [
+        {event:'tell_me_more_jlm',count:2774,label:'Tell Me More'},
+        {event:'i_want_this_one_jlm',count:2717,label:'I Want This One'},
+        {event:'confirm_availability_jlm',count:1005,label:'Confirm Availability'},
+        {event:'test_drive_jlm',count:21,label:'Test Drive'},
+        {event:'file_download',count:12,label:'File Download'}
+    ],
+    last90: [
+        {event:'i_want_this_one_jlm',count:3770,label:'I Want This One'},
+        {event:'tell_me_more_jlm',count:3325,label:'Tell Me More'},
+        {event:'confirm_availability_jlm',count:1618,label:'Confirm Availability'},
+        {event:'test_drive_jlm',count:47,label:'Test Drive'},
+        {event:'file_download',count:14,label:'File Download'}
+    ]
+};
 
 const ACCENT = '#1d6fa8';
 let range=30, compare='prev', sessionsChart=null, sourcesChart=null, outboundCampaignChart=null, jlmLeadChart=null;
@@ -490,7 +521,7 @@ function getCompareData(){
     return range===30?DATA.prev30:range===60?DATA.prev60:DATA.prev90;
 }
 
-function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();}
+function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();renderOutboundCampaigns();renderJlmLeadEvents();}
 function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEach(b=>b.classList.remove('active'));document.getElementById('cmp-'+c).classList.add('active');render();}
 
 function render(){
@@ -563,8 +594,12 @@ function renderSources(){
     sourcesChart=new Chart(document.getElementById('sourcesChart').getContext('2d'),{type:'doughnut',data:{labels:SOURCES.map(s=>`${s.source} / ${s.medium}`),datasets:[{data:SOURCES.map(s=>s.sessions),backgroundColor:colors,borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#888',font:{size:11},boxWidth:12,padding:8}}}}});
 }
 
+function getRangeKey(){
+    return range===30?'last30':range===60?'last60':'last90';
+}
+
 function renderOutboundCampaigns(){
-    const sorted=[...OUTBOUND_CAMPAIGNS].sort((a,b)=>b.sessions-a.sessions);
+    const sorted=[...(OUTBOUND_CAMPAIGNS_BY_RANGE[getRangeKey()] || [])].sort((a,b)=>b.sessions-a.sessions);
     const max=sorted[0]?.sessions || 1;
     document.getElementById('outboundCampaignList').innerHTML=sorted.map((c,i)=>{
         const p=((c.sessions/max)*100).toFixed(0);
@@ -599,7 +634,7 @@ function renderOutboundCampaigns(){
 }
 
 function renderJlmLeadEvents(){
-    const sorted=[...JLM_LEAD_EVENTS].sort((a,b)=>b.count-a.count);
+    const sorted=[...(JLM_LEAD_EVENTS_BY_RANGE[getRangeKey()] || [])].sort((a,b)=>b.count-a.count);
     const max=sorted[0]?.count || 1;
     document.getElementById('jlmLeadList').innerHTML=sorted.map((e,i)=>{
         const p=((e.count/max)*100).toFixed(0);
