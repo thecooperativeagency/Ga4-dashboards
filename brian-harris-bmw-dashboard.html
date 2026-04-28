@@ -214,6 +214,25 @@
     </div>
 
     <div class="section">
+        <div class="section-title">AMP Campaign Traffic — Text + Email</div>
+        <div class="sources-grid">
+            <div class="chart-card">
+                <div class="chart-card-title">Outbound Campaign Sessions by Campaign</div>
+                <div id="outboundCampaignList"></div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-card-title">Campaign Mix</div>
+                <div class="chart-wrapper"><canvas id="outboundCampaignChart"></canvas></div>
+            </div>
+        </div>
+        <div class="chart-card" style="margin-top:20px;">
+            <div class="chart-card-title">Campaign Source Details</div>
+            <table class="comparison-table" id="outboundCampaignTable"></table>
+            <div style="margin-top:15px; font-size:11px; color:#444;">Source filter: <strong>amp</strong> · Mediums currently found: <strong>text</strong>, <strong>email</strong> · Campaign names are not fully standardized, so this block groups the real GA4 campaign taxonomy instead of assuming only mon26 labels.</div>
+        </div>
+    </div>
+
+    <div class="section">
         <div class="section-title">🔑 Top 10 Model Pages</div>
         <div class="chart-card">
             <div class="chart-card-title">Ranked by Sessions</div>
@@ -399,10 +418,10 @@ const SOURCES = [
     {source:'bing',medium:'organic',sessions:1605,users:937},
     {source:'vinurl.com',medium:'referral',sessions:1429,users:945},
     {source:'bmwusa.com',medium:'referral',sessions:808,users:472},
-    {source:'amp',medium:'text',sessions:730,users:472},
+    {source:'amp',medium:'text',sessions:1322,users:911},
     {source:'yahoo',medium:'organic',sessions:573,users:291},
     {source:'app.podium.com',medium:'referral',sessions:445,users:9},
-    {source:'amp',medium:'email',sessions:376,users:285},
+    {source:'amp',medium:'email',sessions:377,users:294},
     {source:'youtube.com',medium:'referral',sessions:354,users:278},
     {source:'(data not available)',medium:'(data not available)',sessions:256,users:256},
     {source:'(not set)',medium:'(not set)',sessions:254,users:247},
@@ -415,8 +434,21 @@ const SOURCES = [
     {source:'autotrader.com',medium:'referral',sessions:94,users:65}
 ];
 
+const OUTBOUND_CAMPAIGNS = [
+    {campaign:'apr26',source:'amp',medium:'text',sessions:557,users:422,newUsers:349,pageviews:993,engagedSessions:223},
+    {campaign:'march26_spring',source:'amp',medium:'text',sessions:446,users:285,newUsers:226,pageviews:1365,engagedSessions:254},
+    {campaign:'pres_day_feb26',source:'amp',medium:'text',sessions:319,users:204,newUsers:168,pageviews:862,engagedSessions:166},
+    {campaign:'(referral)',source:'amp',medium:'email',sessions:208,users:149,newUsers:122,pageviews:634,engagedSessions:126},
+    {campaign:'pres_day_feb26',source:'amp',medium:'email',sessions:143,users:128,newUsers:87,pageviews:528,engagedSessions:112},
+    {campaign:'x_offers_oct25',source:'amp',medium:'email',sessions:9,users:6,newUsers:1,pageviews:29,engagedSessions:4},
+    {campaign:'oil_tire_oct25',source:'amp',medium:'email',sessions:7,users:5,newUsers:2,pageviews:9,engagedSessions:2},
+    {campaign:'(not set)',source:'amp',medium:'email',sessions:6,users:3,newUsers:1,pageviews:10,engagedSessions:3},
+    {campaign:'servicevisit',source:'amp',medium:'email',sessions:3,users:2,newUsers:0,pageviews:8,engagedSessions:1},
+    {campaign:'april26_offers',source:'amp',medium:'email',sessions:1,users:1,newUsers:1,pageviews:2,engagedSessions:1}
+];
+
 const ACCENT = '#1d6fa8';
-let range=30, compare='prev', sessionsChart=null, sourcesChart=null;
+let range=30, compare='prev', sessionsChart=null, sourcesChart=null, outboundCampaignChart=null;
 const fmt=n=>Number(n).toLocaleString();
 const pct=(a,b)=>b?((a-b)/b*100).toFixed(1):null;
 const arrow=v=>v===null?'':parseFloat(v)>=0?'▲':'▼';
@@ -502,8 +534,44 @@ function renderSources(){
     sourcesChart=new Chart(document.getElementById('sourcesChart').getContext('2d'),{type:'doughnut',data:{labels:SOURCES.map(s=>`${s.source} / ${s.medium}`),datasets:[{data:SOURCES.map(s=>s.sessions),backgroundColor:colors,borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#888',font:{size:11},boxWidth:12,padding:8}}}}});
 }
 
+function renderOutboundCampaigns(){
+    const sorted=[...OUTBOUND_CAMPAIGNS].sort((a,b)=>b.sessions-a.sessions);
+    const max=sorted[0]?.sessions || 1;
+    document.getElementById('outboundCampaignList').innerHTML=sorted.map((c,i)=>{
+        const p=((c.sessions/max)*100).toFixed(0);
+        return `<div class="source-row"><div class="source-rank">${i+1}</div><div class="source-info"><div class="source-name">${c.campaign}</div><div class="source-medium">${c.source} / ${c.medium} · ${fmt(c.users)} users · ${fmt(c.newUsers)} new</div></div><div class="source-bar-wrap"><div class="source-bar"><div class="source-bar-fill" style="width:${p}%"></div></div><div class="source-sessions">${fmt(c.sessions)}</div></div></div>`;
+    }).join('');
+
+    if(outboundCampaignChart)outboundCampaignChart.destroy();
+    const colors=['#1d6fa8','#10b981','#f59e0b','#3b82f6','#8b5cf6','#06b6d4','#ec4899','#84cc16','#f97316','#6b7280'];
+    outboundCampaignChart=new Chart(document.getElementById('outboundCampaignChart').getContext('2d'),{
+        type:'doughnut',
+        data:{
+            labels:sorted.map(c=>`${c.campaign} (${c.medium})`),
+            datasets:[{data:sorted.map(c=>c.sessions),backgroundColor:colors,borderWidth:0}]
+        },
+        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#888',font:{size:11},boxWidth:12,padding:8}}}}
+    });
+
+    const totalSessions=sorted.reduce((n,c)=>n+c.sessions,0);
+    const totalUsers=sorted.reduce((n,c)=>n+c.users,0);
+    const totalNewUsers=sorted.reduce((n,c)=>n+c.newUsers,0);
+    const totalPageviews=sorted.reduce((n,c)=>n+c.pageviews,0);
+    const textSessions=sorted.filter(c=>c.medium==='text').reduce((n,c)=>n+c.sessions,0);
+    const emailSessions=sorted.filter(c=>c.medium==='email').reduce((n,c)=>n+c.sessions,0);
+    document.getElementById('outboundCampaignTable').innerHTML =
+        `<tr><th>Metric</th><th>Total</th><th>Text</th><th>Email</th></tr>`+
+        `<tr><td>Total Sessions</td><td class="val">${fmt(totalSessions)}</td><td>${fmt(textSessions)}</td><td>${fmt(emailSessions)}</td></tr>`+
+        `<tr><td>Total Users</td><td class="val">${fmt(totalUsers)}</td><td>${fmt(sorted.filter(c=>c.medium==='text').reduce((n,c)=>n+c.users,0))}</td><td>${fmt(sorted.filter(c=>c.medium==='email').reduce((n,c)=>n+c.users,0))}</td></tr>`+
+        `<tr><td>New Users</td><td class="val">${fmt(totalNewUsers)}</td><td>${fmt(sorted.filter(c=>c.medium==='text').reduce((n,c)=>n+c.newUsers,0))}</td><td>${fmt(sorted.filter(c=>c.medium==='email').reduce((n,c)=>n+c.newUsers,0))}</td></tr>`+
+        `<tr><td>Page Views</td><td class="val">${fmt(totalPageviews)}</td><td>${fmt(sorted.filter(c=>c.medium==='text').reduce((n,c)=>n+c.pageviews,0))}</td><td>${fmt(sorted.filter(c=>c.medium==='email').reduce((n,c)=>n+c.pageviews,0))}</td></tr>`+
+        `<tr><td>Top Campaign</td><td class="val">${sorted[0].campaign}</td><td>${sorted.find(c=>c.medium==='text')?.campaign || '—'}</td><td>${sorted.find(c=>c.medium==='email')?.campaign || '—'}</td></tr>`+
+        `<tr><td>Top Landing Intent</td><td class="val">Lease / Offers + Homepage + Inventory</td><td>Lease / offers pages</td><td>Email blasts / offers / service</td></tr>`;
+}
+
 render();
 renderSources();
+renderOutboundCampaigns();
 </script>
 <script>
 (function(){
