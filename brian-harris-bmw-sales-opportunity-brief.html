@@ -31,11 +31,11 @@
   .chart-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #111; }
   .chart-subtitle { font-size: 12px; color: #666; margin-bottom: 14px; }
   .chart-wrap { height: 320px; }
-  .table-card { overflow: hidden; margin-bottom: 24px; }
+  .table-card { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 24px; }
   .table-title { padding: 16px 18px; border-bottom: 1px solid #e5e7eb; font-size: 14px; font-weight: 700; }
-  table { width: 100%; border-collapse: collapse; }
+  table { width: 100%; min-width: 920px; border-collapse: collapse; }
   th { background: #fafafa; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; padding: 10px 16px; border-bottom: 1px solid #e5e7eb; }
-  td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
+  td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-size: 13px; vertical-align: top; }
   tr:last-child td { border-bottom: none; }
   .val { font-weight: 700; color: #111; }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
