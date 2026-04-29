@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audi Baton Rouge — Sales Opportunity Brief</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #111; font-size: 14px; line-height: 1.6; }
+  .header { background: #111; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 4px solid #bb0a21; }
+  .header img { height: 36px; filter: brightness(0) invert(1); }
+  .header-right { text-align: right; color: #aaa; font-size: 12px; }
+  .header-right strong { color: #fff; display: block; font-size: 14px; }
+  .store-banner { background: #1a1a2e; color: #fff; padding: 18px 40px; }
+  .store-banner h1 { font-size: 20px; font-weight: 700; }
+  .store-banner p { font-size: 12px; opacity: 0.85; margin-top: 3px; }
+  .content { max-width: 1120px; margin: 0 auto; padding: 32px 40px; }
+  .summary-box { background: #fff8f0; border: 1px solid #fed7aa; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; }
+  .summary-box h2 { font-size: 14px; font-weight: 700; color: #92400e; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .summary-box p { font-size: 13px; color: #444; line-height: 1.7; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+  .metric-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px; background: #fff; }
+  .metric-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
+  .metric-value { font-size: 28px; font-weight: 800; color: #111; line-height: 1; }
+  .metric-sub { font-size: 12px; color: #666; margin-top: 8px; }
+  .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e5e5e5; }
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+  .chart-card, .table-card, .opportunity-box, .playbook-box, .data-box { border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; }
+  .chart-card { padding: 18px; }
+  .chart-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #111; }
+  .chart-subtitle { font-size: 12px; color: #666; margin-bottom: 14px; }
+  .chart-wrap { height: 320px; }
+  .table-card { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 24px; }
+  .table-title { padding: 16px 18px; border-bottom: 1px solid #e5e7eb; font-size: 14px; font-weight: 700; }
+  table { width: 100%; min-width: 920px; border-collapse: collapse; }
+  th { background: #fafafa; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; padding: 10px 16px; border-bottom: 1px solid #e5e7eb; }
+  td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-size: 13px; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .val { font-weight: 700; color: #111; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .opportunity-box { padding: 20px 24px; border-left: 4px solid #ef4444; background: #fff8f8; }
+  .playbook-box { padding: 20px 24px; border-left: 4px solid #3b82f6; background: #eff6ff; margin-top: 24px; }
+  .data-box { padding: 20px 24px; border-left: 4px solid #22c55e; background: #f0fdf4; margin-top: 24px; }
+  .opportunity-box h3, .playbook-box h3, .data-box h3 { font-size: 13px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .opportunity-box ul, .playbook-box ol, .data-box ul { padding-left: 18px; }
+  .opportunity-box li, .playbook-box li, .data-box li { font-size: 13px; color: #444; margin-bottom: 8px; }
+  .footer { background: #111; border-top: 3px solid #bb0a21; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+  .footer-text { color: #888; font-size: 11px; }
+  .footer-text strong { color: #fff; display: block; }
+  .footer-text a { color: #bb0a21; text-decoration: none; }
+  @media (max-width: 900px) { .metrics-grid, .chart-grid, .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="header">
+  <img src="https://images.squarespace-cdn.com/content/v1/68fac8a3d20e8d72215ede75/6669040e-00b7-4113-a0c0-a29b3706227f/Asset+26.png?format=200w" alt="The Cooperative Agency">
+  <div class="header-right"><strong>Opportunity Brief</strong>Prepared for Lance · April 2026</div>
+</div>
+<div class="store-banner">
+  <h1>Audi Baton Rouge — Where We Can Help</h1>
+  <p>Internal strategy brief · month-to-date sales snapshot · improvement opportunities and consulting angles</p>
+</div>
+<div class="content">
+  <div class="summary-box">
+    <h2>Strategic Read</h2>
+    <p>Audi Baton Rouge looks like a store where the opportunity is <strong>not simply more leads</strong> — it is getting more out of the leads already coming in. With 601 leads MTD and only 49 showroom visits logged, the biggest likely leverage point is <strong>internet lead conversion into appointments and store traffic</strong>. The low/unclear showroom progression data also makes this a strong candidate for a CRM discipline and sales-process visibility project.</p>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric-card"><div class="metric-label">Lead Volume</div><div class="metric-value">601</div><div class="metric-sub">Enough top-of-funnel opportunity to improve from</div></div>
+    <div class="metric-card"><div class="metric-label">Internet Share</div><div class="metric-value">78.0%</div><div class="metric-sub">Biggest operational lever in the funnel</div></div>
+    <div class="metric-card"><div class="metric-label">Lead → Sold</div><div class="metric-value">6.3%</div><div class="metric-sub">Baseline leaves room for meaningful lift</div></div>
+    <div class="metric-card"><div class="metric-label">Visible Activity</div><div class="metric-value">1,002</div><div class="metric-sub">Plenty of effort, unclear conversion efficiency</div></div>
+  </div>
+  <div class="section-label">Baseline Visuals</div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <div class="chart-title">Lead Source Mix</div>
+      <div class="chart-subtitle">Internet dominates the funnel, which means lead handling and appointment conversion matter most.</div>
+      <div class="chart-wrap"><canvas id="leadMixChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Pipeline Snapshot</div>
+      <div class="chart-subtitle">Current month-to-date pipeline picture using the reported sales metrics.</div>
+      <div class="chart-wrap"><canvas id="funnelChart"></canvas></div>
+    </div>
+  </div>
+  <div class="table-card">
+    <div class="table-title">Where the Opportunity Likely Lives</div>
+    <table>
+      <thead><tr><th>Area</th><th>Observed Signal</th><th>Why It Matters</th><th>How We Can Help</th></tr></thead>
+      <tbody>
+        <tr><td>Internet Lead Handling</td><td class="val">469 internet leads</td><td>This is by far the largest lead bucket and likely where the most lift can be created</td><td>Audit response speed, call cadence, templates, and appointment conversion</td></tr>
+        <tr><td>Appointment Process</td><td class="val">7 scheduled / 6 confirmed / 18 complete / 36 cancel</td><td>The reporting does not tell a clean operational story, which makes management decisions harder</td><td>Clean up appointment definitions, review process, and install scorecard tracking</td></tr>
+        <tr><td>Showroom Progression</td><td class="val">49 visits / 0 demos / 0 desked</td><td>This almost certainly means missing stage logging or a major process visibility issue</td><td>Standardize CRM stage usage and create a true showroom funnel view</td></tr>
+        <tr><td>Rep-Level Accountability</td><td class="val">1,002 outbound touches</td><td>The team is working, but it is not clear which reps or workflows are converting best</td><td>Build rep-level source and stage conversion reporting</td></tr>
+        <tr><td>Management Rhythm</td><td class="val">No decision-ready operating view visible from this report alone</td><td>Leadership needs weekly clarity, not just end-of-month volume stats</td><td>Install a recurring management scorecard and review rhythm</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="opportunity-box">
+      <h3>Consulting Angles</h3>
+      <ul>
+        <li><strong>Internet lead process audit:</strong> review how web leads are worked and where they stall.</li>
+        <li><strong>Appointment conversion cleanup:</strong> understand why so few scheduled appointments are showing up against total lead volume.</li>
+        <li><strong>CRM discipline reset:</strong> tighten showroom, demo, and desk stage usage so reporting becomes meaningful.</li>
+        <li><strong>Manager scorecard buildout:</strong> give leadership a clean weekly conversion view.</li>
+        <li><strong>Rep efficiency breakdown:</strong> identify who is producing activity vs. who is actually converting.</li>
+      </ul>
+    </div>
+    <div class="opportunity-box" style="border-left-color:#f59e0b; background:#fffaf0;">
+      <h3>What This Lets You Say</h3>
+      <ul>
+        <li>"You already have enough lead volume to improve without buying more traffic right away."</li>
+        <li>"The bigger win is likely in converting internet leads into appointments and showroom visits."</li>
+        <li>"Right now your CRM picture makes it hard to see exactly where the leakage is. We can fix that."</li>
+        <li>"If we tighten stage tracking and review rhythm, management can coach to the real bottleneck instead of guessing."</li>
+      </ul>
+    </div>
+  </div>
+  <div class="playbook-box">
+    <h3>Recommended Improvement Playbook</h3>
+    <ol>
+      <li><strong>Start with an internet lead audit.</strong> That is the biggest lead source and likely the fastest place to create lift.</li>
+      <li><strong>Clarify appointment definitions and workflow.</strong> The current reporting suggests either a process problem or a reporting problem.</li>
+      <li><strong>Build a clean lead → appointment → show → sold scorecard.</strong> Management needs weekly visibility.</li>
+      <li><strong>Fix showroom stage logging.</strong> Demo and desk counts at zero make the current report incomplete as an operating tool.</li>
+      <li><strong>Use this month as the before-state benchmark.</strong> Once the funnel is cleaner, future improvement becomes measurable.</li>
+    </ol>
+  </div>
+  <div class="data-box">
+    <h3>Data Needed to Copy This for Each Dealership</h3>
+    <ul>
+      <li><strong>Store identification:</strong> dealership name, month/date range, rooftop/store group context</li>
+      <li><strong>Lead volume by source:</strong> internet leads, phone leads, walk-ins, total new leads</li>
+      <li><strong>Sales funnel counts:</strong> showroom visits, demos, desked deals, sold units</li>
+      <li><strong>Appointment metrics:</strong> scheduled, confirmed, completed/shown, canceled, missed/no-show</li>
+      <li><strong>Activity metrics:</strong> phone in/out, email in/out, text activity if available</li>
+      <li><strong>Helpful extras:</strong> salesperson-level conversion, lead source conversion, response times, contact rate, show rate, sold rate, gross per unit</li>
+    </ul>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-text">
+    <strong>The Cooperative Agency</strong>
+    Baton Rouge, Louisiana · <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> · <a href="http://www.thecoopbrla.com">thecoopbrla.com</a>
+  </div>
+  <div class="footer-text" style="text-align:right;">
+    <strong>Data Source</strong>
+    Sales department MTD screenshot provided by client<br>Prepared as internal opportunity brief
+  </div>
+</div>
+<script>
+const leadMix = { labels: ['Internet', 'Phone', 'Walk-Ins'], values: [469, 105, 27] };
+const funnel = { labels: ['New Leads', 'Showroom Visits', 'Sold'], values: [601, 49, 38] };
+new Chart(document.getElementById('leadMixChart').getContext('2d'), { type: 'doughnut', data: { labels: leadMix.labels, datasets: [{ data: leadMix.values, backgroundColor: ['#1d6fa8', '#6b7280', '#bb0a21'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: '#555', font: { size: 12 }, padding: 14 } }, tooltip: { callbacks: { label: (ctx) => { const total = leadMix.values.reduce((a,b)=>a+b,0); const pct = ((ctx.raw / total) * 100).toFixed(1); return `${ctx.label}: ${ctx.raw} (${pct}%)`; } } } } } });
+new Chart(document.getElementById('funnelChart').getContext('2d'), { type: 'bar', data: { labels: funnel.labels, datasets: [{ label: 'Count', data: funnel.values, backgroundColor: ['#0f172a', '#1d6fa8', '#16a34a'], borderRadius: 6 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { afterLabel: (ctx) => { const first = funnel.values[0]; const pct = ((ctx.raw / first) * 100).toFixed(1); return `${pct}% of total leads`; } } } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: '#666' } }, x: { grid: { display: false }, ticks: { color: '#666' } } } } });
+</script>
+</body>
+</html>
