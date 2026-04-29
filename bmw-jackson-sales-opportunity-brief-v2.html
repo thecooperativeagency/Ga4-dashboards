@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMW of Jackson — Sales Opportunity Brief v2</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#fff; color:#111; font-size:14px; line-height:1.6; }
+  .header { background:#111; padding:24px 40px; display:flex; align-items:center; justify-content:space-between; border-bottom:4px solid #bb0a21; }
+  .header img { height:36px; filter:brightness(0) invert(1); }
+  .header-right { text-align:right; color:#aaa; font-size:12px; }
+  .header-right strong { color:#fff; display:block; font-size:14px; }
+  .store-banner { background:#1a1a2e; color:#fff; padding:18px 40px; }
+  .store-banner h1 { font-size:20px; font-weight:700; }
+  .store-banner p { font-size:12px; opacity:0.85; margin-top:3px; }
+  .content { max-width:1150px; margin:0 auto; padding:32px 40px; }
+  .summary-box { background:#fff8f0; border:1px solid #fed7aa; border-left:4px solid #f59e0b; border-radius:8px; padding:20px 24px; margin-bottom:28px; }
+  .summary-box h2 { font-size:14px; font-weight:700; color:#92400e; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px; }
+  .summary-box p { font-size:13px; color:#444; line-height:1.7; }
+  .metrics-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:28px; }
+  .metric-card { border:1px solid #e5e7eb; border-radius:8px; padding:18px; background:#fff; }
+  .metric-label { font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.6px; margin-bottom:8px; }
+  .metric-value { font-size:28px; font-weight:800; color:#111; line-height:1; }
+  .metric-sub { font-size:12px; color:#666; margin-top:8px; }
+  .section-label { font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#999; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #e5e5e5; }
+  .chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:28px; }
+  .chart-card, .table-card, .box { border:1px solid #e5e7eb; border-radius:8px; background:#fff; }
+  .chart-card { padding:18px; }
+  .chart-title { font-size:14px; font-weight:700; margin-bottom:12px; color:#111; }
+  .chart-subtitle { font-size:12px; color:#666; margin-bottom:14px; }
+  .chart-wrap { height:320px; }
+  .table-card { overflow-x:auto; -webkit-overflow-scrolling:touch; margin-bottom:24px; }
+  .table-title { padding:16px 18px; border-bottom:1px solid #e5e7eb; font-size:14px; font-weight:700; }
+  table { width:100%; min-width:920px; border-collapse:collapse; }
+  th { background:#fafafa; color:#777; font-size:11px; text-transform:uppercase; letter-spacing:0.5px; text-align:left; padding:10px 16px; border-bottom:1px solid #e5e7eb; }
+  td { padding:12px 16px; border-bottom:1px solid #f1f5f9; font-size:13px; vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  .val { font-weight:700; color:#111; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .box { padding:20px 24px; }
+  .box h3 { font-size:13px; font-weight:700; margin-bottom:10px; text-transform:uppercase; letter-spacing:0.5px; }
+  .box ul, .box ol { padding-left:18px; }
+  .box li { font-size:13px; color:#444; margin-bottom:8px; }
+  .red { border-left:4px solid #ef4444; background:#fff8f8; }
+  .blue { border-left:4px solid #3b82f6; background:#eff6ff; }
+  .green { border-left:4px solid #22c55e; background:#f0fdf4; }
+  .footer { background:#111; border-top:3px solid #bb0a21; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:40px; }
+  .footer-text { color:#888; font-size:11px; }
+  .footer-text strong { color:#fff; display:block; }
+  .footer-text a { color:#bb0a21; text-decoration:none; }
+  @media (max-width:900px){ .metrics-grid,.chart-grid,.two-col { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="header">
+  <img src="https://images.squarespace-cdn.com/content/v1/68fac8a3d20e8d72215ede75/6669040e-00b7-4113-a0c0-a29b3706227f/Asset+26.png?format=200w" alt="The Cooperative Agency">
+  <div class="header-right"><strong>Opportunity Brief v2</strong>Prepared for Lance · April 2026</div>
+</div>
+<div class="store-banner">
+  <h1>BMW of Jackson — Sales Opportunity Brief</h1>
+  <p>Internal strategy draft · first-pass deduped view · cleaner prospect story from prospect export</p>
+</div>
+<div class="content">
+  <div class="summary-box">
+    <h2>Refined Read</h2>
+    <p>After a first-pass dedupe, the export drops from <strong>441 rows to 346 unique-ish prospect records</strong>, which materially changes the story. BMW of Jackson still has a heavy internet lead mix, but not quite as inflated as the raw export made it appear. Even after cleanup, the biggest likely opportunity remains the same: <strong>internet lead handling and CRM hygiene</strong>. The store appears to close much better from walk-in, repeat, referral, and store-generated activity than from raw internet demand.</p>
+  </div>
+
+  <div class="metrics-grid">
+    <div class="metric-card"><div class="metric-label">Raw Rows</div><div class="metric-value">441</div><div class="metric-sub">Original export size</div></div>
+    <div class="metric-card"><div class="metric-label">Deduped Rows</div><div class="metric-value">346</div><div class="metric-sub">First-pass cleaned prospect pool</div></div>
+    <div class="metric-card"><div class="metric-label">Rows Removed</div><div class="metric-value">95</div><div class="metric-sub">Duplicate / repeated-contact reduction</div></div>
+    <div class="metric-card"><div class="metric-label">Internet Prospects</div><div class="metric-value">224</div><div class="metric-sub">64.7% of deduped pool</div></div>
+  </div>
+
+  <div class="section-label">Cleaned Visuals</div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <div class="chart-title">Deduped Prospect Type Mix</div>
+      <div class="chart-subtitle">Internet still dominates, but less dramatically than the raw export suggested.</div>
+      <div class="chart-wrap"><canvas id="prospectChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Deduped Status Mix</div>
+      <div class="chart-subtitle">Lost, bad-lead, and still-open records remain the main story after cleanup.</div>
+      <div class="chart-wrap"><canvas id="statusChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="table-title">Raw vs Deduped View</div>
+    <table>
+      <thead><tr><th>Metric</th><th>Raw Export</th><th>Deduped View</th><th>Takeaway</th></tr></thead>
+      <tbody>
+        <tr><td>Total Rows</td><td class="val">441</td><td class="val">346</td><td>Export was meaningfully inflated by repeated records</td></tr>
+        <tr><td>Internet Rows</td><td class="val">312</td><td class="val">224</td><td>Internet is still biggest source, but raw file overstated the size</td></tr>
+        <tr><td>Duplicate Status Rows</td><td class="val">81</td><td class="val">12</td><td>Dedupe clears out a large amount of CRM noise</td></tr>
+        <tr><td>Bad Lead Rows</td><td class="val">61</td><td class="val">55</td><td>Bad-lead problem is real, not just duplicate noise</td></tr>
+        <tr><td>Sold-like Rows</td><td class="val">55</td><td class="val">48</td><td>Store still has real sold output after cleanup</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <div class="table-title">Deduped Prospect Type Conversion Story</div>
+    <table>
+      <thead><tr><th>Prospect Type</th><th>Total Deduped</th><th>Sold-like</th><th>Directional Conversion</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td>Internet</td><td class="val">224</td><td>8</td><td class="val">3.6%</td><td>Still the biggest opportunity gap in the cleaned dataset</td></tr>
+        <tr><td>Walk-In</td><td class="val">44</td><td>14</td><td class="val">31.8%</td><td>Floor traffic still appears to outperform internet significantly</td></tr>
+        <tr><td>Phone</td><td class="val">37</td><td>3</td><td class="val">8.1%</td><td>Phone appears better than internet, but not a major volume driver</td></tr>
+        <tr><td>Other</td><td class="val">30</td><td>13</td><td class="val">43.3%</td><td>Likely includes repeat/referral/service-lane/store-generated business</td></tr>
+        <tr><td>DMS Created</td><td class="val">11</td><td>10</td><td class="val">90.9%</td><td>Mostly sold/admin records, not a lead-gen source</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="box red">
+      <h3>Main Opportunity Angles</h3>
+      <ul>
+        <li><strong>Internet conversion still looks weak</strong> even after cleanup.</li>
+        <li><strong>Bad-lead volume is still high</strong> after dedupe, which suggests a real lead-quality and/or qualification problem.</li>
+        <li><strong>CRM hygiene is still a story</strong>, because 95 repeated rows were removable in a basic pass.</li>
+        <li><strong>Store-driven business looks much healthier</strong> than cold internet demand.</li>
+      </ul>
+    </div>
+    <div class="box blue">
+      <h3>What This Lets You Say</h3>
+      <ul>
+        <li>"Even after cleaning the export, internet still looks like the weakest conversion channel."</li>
+        <li>"The store seems to close much better from showroom/repeat/referral-driven activity than from internet demand."</li>
+        <li>"We can help clean up the CRM picture so management is coaching from reality instead of noisy raw exports."</li>
+        <li>"There’s probably a mix of lead-quality, duplicate-management, and internet follow-up opportunity here."</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box green" style="margin-top:24px;">
+    <h3>Recommended Next Pass</h3>
+    <ol>
+      <li><strong>Build source-quality analysis off the deduped dataset</strong>.</li>
+      <li><strong>Break out internet-only statuses</strong> so we can isolate where those leads die.</li>
+      <li><strong>Create salesperson load vs sold-like output view</strong>.</li>
+      <li><strong>Potentially build both a management-facing and internal version</strong> once this cleaner analysis is locked.</li>
+    </ol>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-text">
+    <strong>The Cooperative Agency</strong>
+    Baton Rouge, Louisiana · <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> · <a href="http://www.thecoopbrla.com">thecoopbrla.com</a>
+  </div>
+  <div class="footer-text" style="text-align:right;">
+    <strong>Data Source</strong>
+    BMW of Jackson prospect export CSV · deduped first-pass<br>Prepared as internal strategy draft v2
+  </div>
+</div>
+<script>
+const prospectType = { labels:['Internet','Walk-In','Phone','Other','DMS Created'], values:[224,44,37,30,11] };
+const statusMix = { labels:['Lost','New','Bad Lead','Sold - Integration','Active','Duplicate'], values:[82,70,55,48,45,12] };
+new Chart(document.getElementById('prospectChart').getContext('2d'), {
+  type:'doughnut',
+  data:{ labels: prospectType.labels, datasets:[{ data: prospectType.values, backgroundColor:['#1d6fa8','#bb0a21','#6b7280','#8b5cf6','#16a34a'], borderWidth:0 }] },
+  options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ color:'#555', font:{ size:12 }, padding:14 } }, tooltip:{ callbacks:{ label:(ctx)=>{ const total=prospectType.values.reduce((a,b)=>a+b,0); const pct=((ctx.raw/total)*100).toFixed(1); return `${ctx.label}: ${ctx.raw} (${pct}%)`; } } } } }
+});
+new Chart(document.getElementById('statusChart').getContext('2d'), {
+  type:'bar',
+  data:{ labels: statusMix.labels, datasets:[{ label:'Rows', data:statusMix.values, backgroundColor:['#ef4444','#1d6fa8','#6b7280','#16a34a','#8b5cf6','#f59e0b'], borderRadius:6 }] },
+  options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ y:{ beginAtZero:true, grid:{ color:'rgba(0,0,0,0.06)' }, ticks:{ color:'#666' } }, x:{ grid:{ display:false }, ticks:{ color:'#666' } } } }
+});
+</script>
+</body>
+</html>
