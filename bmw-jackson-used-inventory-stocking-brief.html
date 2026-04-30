@@ -46,6 +46,8 @@
     td { color: #e5e7eb; font-size: 14px; }
     td.val { font-weight: 700; color: #fff; }
     .table-scroll { overflow-x: auto; }
+    .compact-table table { min-width: 1120px; }
+    .compact-table th, .compact-table td { font-size: 13px; padding: 10px 8px; }
     .bullet-card ul { padding-left: 20px; }
     .bullet-card li { margin-bottom: 10px; color: #d1d5db; }
     .pill {
@@ -105,62 +107,44 @@
       </div>
     </div>
 
-    <div class="table-card">
+    <div class="table-card compact-table">
       <div class="table-title">Shopping List: What to Go Buy</div>
-      <div style="color:#9ca3af; font-size:14px; margin:-4px 0 14px;">Do not treat this as a front-end gross chart. Used pricing is too tight. The right system is to buy units that <strong>turn fast, finance cleanly, warranty well, and recon/service efficiently</strong>, then let F&amp;I and service carry more of the profit load. These acquisition numbers are <strong>high-market reality estimates</strong> built for a strong auction environment, not fantasy steals. Manheim wholesale values remain elevated.</div>
+      <div style="color:#9ca3af; font-size:14px; margin:-4px 0 14px;">Use this like a buyer chart. One row per target unit type. Auction numbers are still elevated, so acquisition lanes reflect a high-cost market.</div>
       <div class="table-scroll">
         <table>
           <thead>
             <tr>
               <th>Priority</th>
-              <th>Go Look For</th>
-              <th>Acquisition Lane</th>
-              <th>Retail Lane</th>
-              <th>Age / Miles</th>
-              <th>Target Payment</th>
+              <th>Year</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Trim / Notes</th>
+              <th>Acquire</th>
+              <th>Retail</th>
+              <th>Miles</th>
+              <th>Payment</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="val">1 <span class="pill good">Buy Heavy</span></td>
-              <td><strong>2020-2023 Toyota RAV4, 2020-2023 Honda CR-V, 2020-2023 Nissan Rogue, 2020-2023 Mazda CX-5, 2020-2023 Hyundai Tucson, 2020-2023 Kia Sportage, 2020-2023 Subaru Forester</strong></td>
-              <td class="val">$18k–$24k</td>
-              <td class="val">$22k–$31k</td>
-              <td>2020–2025 / 20k–90k mi</td>
-              <td class="val">$425–$625</td>
-            </tr>
-            <tr>
-              <td class="val">2 <span class="pill good">Buy Heavy</span></td>
-              <td><strong>2020-2023 Toyota Camry, 2020-2023 Honda Accord, 2020-2023 Toyota Corolla, 2020-2023 Honda Civic, 2020-2023 Nissan Altima, 2020-2023 Hyundai Elantra</strong></td>
-              <td class="val">$16k–$22k</td>
-              <td class="val">$19k–$29k</td>
-              <td>2020–2025 / 15k–95k mi</td>
-              <td class="val">$400–$575</td>
-            </tr>
-            <tr>
-              <td class="val">3 <span class="pill good">Buy Often</span></td>
-              <td><strong>2020-2023 Toyota Highlander, 2020-2023 Honda Pilot, 2020-2023 Hyundai Santa Fe, 2020-2023 Kia Sorento, 2020-2022 Nissan Murano, 2020-2022 Chevrolet Blazer, 2020-2022 Ford Edge</strong></td>
-              <td class="val">$22k–$28k</td>
-              <td class="val">$27k–$35k</td>
-              <td>2019–2025 / 20k–95k mi</td>
-              <td class="val">$525–$700</td>
-            </tr>
-            <tr>
-              <td class="val">4 <span class="pill warn">Be Selective</span></td>
-              <td><strong>2020-2023 Lexus NX, 2020-2023 Lexus ES, 2020-2023 Acura RDX, 2020-2023 Acura TLX, 2020-2022 Infiniti QX50, 2020-2022 Volvo XC60</strong></td>
-              <td class="val">$23k–$30k</td>
-              <td class="val">$28k–$37k</td>
-              <td>2019–2024 / 20k–85k mi</td>
-              <td class="val">$550–$700</td>
-            </tr>
-            <tr>
-              <td class="val">5 <span class="pill warn">Only If Right</span></td>
-              <td><strong>2020-2022 BMW X1 sDrive28i / xDrive28i, 2020-2022 BMW X3 sDrive30i / xDrive30i, 2020-2022 BMW 330i</strong></td>
-              <td class="val">$25k–$33k</td>
-              <td class="val">$29k–$39k</td>
-              <td>2020–2024 / 15k–75k mi</td>
-              <td class="val">$575–$725</td>
-            </tr>
+            <tr><td class="val">1</td><td>2020-2023</td><td>Toyota</td><td class="val">RAV4</td><td>Mainstream volume compact SUV</td><td class="val">$20k-$24k</td><td class="val">$25k-$31k</td><td>20k-85k</td><td class="val">$475-$625</td></tr>
+            <tr><td class="val">1</td><td>2020-2023</td><td>Honda</td><td class="val">CR-V</td><td>Mainstream volume compact SUV</td><td class="val">$20k-$24k</td><td class="val">$25k-$31k</td><td>20k-85k</td><td class="val">$475-$625</td></tr>
+            <tr><td class="val">1</td><td>2020-2023</td><td>Nissan</td><td class="val">Rogue</td><td>Value compact SUV lane</td><td class="val">$18k-$22k</td><td class="val">$22k-$28k</td><td>20k-90k</td><td class="val">$425-$575</td></tr>
+            <tr><td class="val">1</td><td>2020-2023</td><td>Mazda</td><td class="val">CX-5</td><td>Nice interior, strong value lane</td><td class="val">$19k-$23k</td><td class="val">$24k-$30k</td><td>20k-85k</td><td class="val">$450-$600</td></tr>
+            <tr><td class="val">1</td><td>2020-2023</td><td>Hyundai</td><td class="val">Tucson</td><td>Payment-friendly compact SUV</td><td class="val">$18k-$22k</td><td class="val">$22k-$28k</td><td>20k-90k</td><td class="val">$425-$575</td></tr>
+            <tr><td class="val">1</td><td>2020-2023</td><td>Kia</td><td class="val">Sportage</td><td>Payment-friendly compact SUV</td><td class="val">$18k-$22k</td><td class="val">$22k-$28k</td><td>20k-90k</td><td class="val">$425-$575</td></tr>
+            <tr><td class="val">2</td><td>2020-2023</td><td>Toyota</td><td class="val">Camry</td><td>Core commuter sedan</td><td class="val">$18k-$22k</td><td class="val">$23k-$29k</td><td>15k-85k</td><td class="val">$450-$575</td></tr>
+            <tr><td class="val">2</td><td>2020-2023</td><td>Honda</td><td class="val">Accord</td><td>Core commuter sedan</td><td class="val">$18k-$22k</td><td class="val">$23k-$29k</td><td>15k-85k</td><td class="val">$450-$575</td></tr>
+            <tr><td class="val">2</td><td>2020-2023</td><td>Toyota</td><td class="val">Corolla</td><td>Entry commuter / lower payment</td><td class="val">$16k-$20k</td><td class="val">$20k-$25k</td><td>15k-90k</td><td class="val">$400-$525</td></tr>
+            <tr><td class="val">2</td><td>2020-2023</td><td>Honda</td><td class="val">Civic</td><td>Entry commuter / lower payment</td><td class="val">$17k-$21k</td><td class="val">$21k-$27k</td><td>15k-90k</td><td class="val">$425-$550</td></tr>
+            <tr><td class="val">3</td><td>2020-2023</td><td>Toyota</td><td class="val">Highlander</td><td>Family midsize SUV</td><td class="val">$24k-$28k</td><td class="val">$30k-$35k</td><td>20k-90k</td><td class="val">$575-$700</td></tr>
+            <tr><td class="val">3</td><td>2020-2023</td><td>Honda</td><td class="val">Pilot</td><td>Family midsize SUV</td><td class="val">$23k-$27k</td><td class="val">$29k-$35k</td><td>20k-90k</td><td class="val">$550-$700</td></tr>
+            <tr><td class="val">3</td><td>2020-2023</td><td>Hyundai</td><td class="val">Santa Fe</td><td>Value midsize SUV</td><td class="val">$21k-$25k</td><td class="val">$26k-$32k</td><td>20k-90k</td><td class="val">$525-$650</td></tr>
+            <tr><td class="val">3</td><td>2020-2023</td><td>Kia</td><td class="val">Sorento</td><td>Value midsize SUV</td><td class="val">$21k-$25k</td><td class="val">$26k-$32k</td><td>20k-90k</td><td class="val">$525-$650</td></tr>
+            <tr><td class="val">4</td><td>2020-2023</td><td>Lexus</td><td class="val">NX</td><td>Near-premium SUV</td><td class="val">$24k-$29k</td><td class="val">$30k-$36k</td><td>20k-80k</td><td class="val">$600-$700</td></tr>
+            <tr><td class="val">4</td><td>2020-2023</td><td>Acura</td><td class="val">RDX</td><td>Near-premium SUV</td><td class="val">$24k-$29k</td><td class="val">$30k-$36k</td><td>20k-80k</td><td class="val">$600-$700</td></tr>
+            <tr><td class="val">5</td><td>2020-2022</td><td>BMW</td><td class="val">X1</td><td>sDrive28i / xDrive28i</td><td class="val">$25k-$29k</td><td class="val">$30k-$35k</td><td>15k-70k</td><td class="val">$600-$700</td></tr>
+            <tr><td class="val">5</td><td>2020-2022</td><td>BMW</td><td class="val">X3</td><td>sDrive30i / xDrive30i</td><td class="val">$28k-$33k</td><td class="val">$34k-$39k</td><td>15k-75k</td><td class="val">$650-$725</td></tr>
+            <tr><td class="val">5</td><td>2020-2022</td><td>BMW</td><td class="val">330i</td><td>Only when clearly below new-BMW payment logic</td><td class="val">$25k-$30k</td><td class="val">$31k-$36k</td><td>15k-75k</td><td class="val">$600-$700</td></tr>
           </tbody>
         </table>
       </div>
