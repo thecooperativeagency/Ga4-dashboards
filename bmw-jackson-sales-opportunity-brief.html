@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMW of Jackson — Sales Opportunity Brief</title>
+<title>BMW of Jackson — Inventory vs Demand Opportunity Brief</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,7 +15,7 @@
   .store-banner { background: #1a1a2e; color: #fff; padding: 18px 40px; }
   .store-banner h1 { font-size: 20px; font-weight: 700; }
   .store-banner p { font-size: 12px; opacity: 0.85; margin-top: 3px; }
-  .content { max-width: 1120px; margin: 0 auto; padding: 32px 40px; }
+  .content { max-width: 1140px; margin: 0 auto; padding: 32px 40px; }
   .summary-box { background: #fff8f0; border: 1px solid #fed7aa; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 20px 24px; margin-bottom: 22px; }
   .summary-box h2 { font-size: 14px; font-weight: 700; color: #92400e; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
   .summary-box p { font-size: 13px; color: #444; line-height: 1.7; }
@@ -27,25 +27,26 @@
   .metric-sub { font-size: 12px; color: #666; margin-top: 8px; }
   .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e5e5e5; }
   .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
-  .chart-card, .table-card, .opportunity-box, .playbook-box, .data-box { border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; }
+  .chart-card, .table-card, .box { border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; }
   .chart-card { padding: 18px; }
   .chart-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #111; }
   .chart-subtitle { font-size: 12px; color: #666; margin-bottom: 14px; }
   .chart-wrap { height: 320px; }
   .table-card { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 24px; }
   .table-title { padding: 16px 18px; border-bottom: 1px solid #e5e7eb; font-size: 14px; font-weight: 700; }
-  table { width: 100%; min-width: 920px; border-collapse: collapse; }
+  table { width: 100%; min-width: 980px; border-collapse: collapse; }
   th { background: #fafafa; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; padding: 10px 16px; border-bottom: 1px solid #e5e7eb; }
   td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-size: 13px; vertical-align: top; }
   tr:last-child td { border-bottom: none; }
   .val { font-weight: 700; color: #111; }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .opportunity-box { padding: 20px 24px; border-left: 4px solid #ef4444; background: #fff8f8; }
-  .playbook-box { padding: 20px 24px; border-left: 4px solid #3b82f6; background: #eff6ff; margin-top: 24px; }
-  .data-box { padding: 20px 24px; border-left: 4px solid #22c55e; background: #f0fdf4; margin-top: 24px; }
-  .opportunity-box h3, .playbook-box h3, .data-box h3 { font-size: 13px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .opportunity-box ul, .playbook-box ol, .data-box ul { padding-left: 18px; }
-  .opportunity-box li, .playbook-box li, .data-box li { font-size: 13px; color: #444; margin-bottom: 8px; }
+  .box { padding: 20px 24px; }
+  .box h3 { font-size: 13px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .box ul, .box ol { padding-left: 18px; }
+  .box li { font-size: 13px; color: #444; margin-bottom: 8px; }
+  .red { border-left: 4px solid #ef4444; background: #fff8f8; }
+  .blue { border-left: 4px solid #3b82f6; background: #eff6ff; }
+  .green { border-left: 4px solid #22c55e; background: #f0fdf4; margin-top: 24px; }
   .footer { background: #111; border-top: 3px solid #bb0a21; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
   .footer-text { color: #888; font-size: 11px; }
   .footer-text strong { color: #fff; display: block; }
@@ -59,97 +60,121 @@
   <div class="header-right"><strong>Opportunity Brief</strong>Prepared for Lance · April 2026</div>
 </div>
 <div class="store-banner">
-  <h1>BMW of Jackson — Where We Can Help</h1>
-  <p>Internal strategy brief · cleaned prospect view · improvement opportunities and consulting angles</p>
+  <h1>BMW of Jackson — Inventory vs Customer Demand</h1>
+  <p>Internal strategy brief · inventory pricing mix vs CRM lead behavior vs GA4 shopper demand</p>
 </div>
 <div class="content">
   <div class="summary-box">
     <h2>Strategic Read</h2>
-    <p>BMW of Jackson looks like a strong example of a store where the opportunity is <strong>not just more leads</strong>. After cleaning the prospect export, the store still shows a heavy internet lead mix, but the sold output from internet prospects is far weaker than from walk-in and store-generated business. That creates a clear consulting wedge: <strong>internet lead handling, source quality control, and CRM cleanup</strong>.</p>
+    <p>BMW of Jackson does <strong>not</strong> appear to be broadly overstocked in all premium inventory. The stronger read is more specific: <strong>shopper demand appears healthiest in the mid-premium bands, especially roughly $50k–$79k</strong>, while the store still carries a meaningful amount of true top-end inventory above that range. In short, the likely mismatch is <strong>not "luxury inventory" in general</strong> — it is <strong>too much six-figure exposure relative to where shopper attention and intent are strongest</strong>.</p>
   </div>
-  <div class="note-box"><strong>Data note:</strong> the original prospect export had repeated client records. A first-pass dedupe reduced the file from <strong>441 rows to 346 cleaned prospect records</strong>. The analysis below uses the cleaned counts.</div>
+
+  <div class="note-box">
+    <strong>Method note:</strong> this first pass combines the live BMW Jackson inventory export, the cleaned prospect export, and GA4 VDP behavior. BMW Jackson appears to use a different lead-event naming convention than Brian Harris BMW, so GA4 high-intent signals were mapped using likely equivalents like <strong>contact_us</strong> and <strong>value_your_trade</strong>.
+  </div>
+
   <div class="metrics-grid">
-    <div class="metric-card"><div class="metric-label">Cleaned Prospect Pool</div><div class="metric-value">346</div><div class="metric-sub">Usable prospect universe after cleanup</div></div>
-    <div class="metric-card"><div class="metric-label">Internet Prospects</div><div class="metric-value">224</div><div class="metric-sub">64.7% of cleaned prospect pool</div></div>
-    <div class="metric-card"><div class="metric-label">Internet Sold-like Rate</div><div class="metric-value">3.6%</div><div class="metric-sub">Biggest improvement opportunity</div></div>
-    <div class="metric-card"><div class="metric-label">Bad Leads</div><div class="metric-value">55</div><div class="metric-sub">Still high even after dedupe</div></div>
+    <div class="metric-card"><div class="metric-label">Retail BMW Units</div><div class="metric-value">122</div><div class="metric-sub">Current BMW retail inventory in export</div></div>
+    <div class="metric-card"><div class="metric-label">Avg BMW Price</div><div class="metric-value">$69.3k</div><div class="metric-sub">Average BMW retail asking price</div></div>
+    <div class="metric-card"><div class="metric-label">Units $80k+</div><div class="metric-value">35</div><div class="metric-sub">28.7% of BMW retail inventory</div></div>
+    <div class="metric-card"><div class="metric-label">Units $100k+</div><div class="metric-value">14</div><div class="metric-sub">11.5% of BMW retail inventory</div></div>
   </div>
-  <div class="section-label">Baseline Visuals</div>
+
+  <div class="section-label">Demand vs Inventory</div>
   <div class="chart-grid">
     <div class="chart-card">
-      <div class="chart-title">Prospect Type Mix</div>
-      <div class="chart-subtitle">Internet still dominates the cleaned prospect pool.</div>
-      <div class="chart-wrap"><canvas id="prospectChart"></canvas></div>
+      <div class="chart-title">Retail Inventory by Price Band</div>
+      <div class="chart-subtitle">BMW Jackson is carrying a meaningful amount of $80k+ and six-figure inventory.</div>
+      <div class="chart-wrap"><canvas id="inventoryChart"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Status Mix</div>
-      <div class="chart-subtitle">Lost, bad-lead, and open pipeline records drive the main story.</div>
-      <div class="chart-wrap"><canvas id="statusChart"></canvas></div>
+      <div class="chart-title">GA4 VDP Views by Price Band</div>
+      <div class="chart-subtitle">Shopper browsing demand is strongest in the $50k–$69k bands.</div>
+      <div class="chart-wrap"><canvas id="viewChart"></canvas></div>
     </div>
   </div>
+
   <div class="table-card">
-    <div class="table-title">Where the Opportunity Likely Lives</div>
+    <div class="table-title">Inventory Mix vs CRM Lead Mix vs GA4 Demand</div>
     <table>
-      <thead><tr><th>Area</th><th>Observed Signal</th><th>Why It Matters</th><th>How We Can Help</th></tr></thead>
+      <thead><tr><th>Price Band</th><th>BMW Retail Inventory</th><th>Matched CRM Leads</th><th>GA4 VDP Views</th><th>GA4 High-Intent Events</th><th>Read</th></tr></thead>
       <tbody>
-        <tr><td>Internet Lead Handling</td><td class="val">224 cleaned internet prospects / 8 sold-like</td><td>The biggest demand source is also the weakest converter</td><td>Audit response speed, follow-up cadence, appointment-setting, and lead handling discipline</td></tr>
-        <tr><td>Lead Quality / Qualification</td><td class="val">55 bad leads after cleanup</td><td>Bad-lead volume is still materially high, which wastes effort and muddies reporting</td><td>Improve qualification rules and isolate unusable leads faster</td></tr>
-        <tr><td>Source Quality</td><td class="val">Podium, website, Motive, AutoTrader, Trade In all heavily represented</td><td>Not every source is likely worth equal attention or spend</td><td>Rank sources by cleaned sold yield, not raw row count</td></tr>
-        <tr><td>Rep-Level Accountability</td><td class="val">Three salespeople carry most of the volume</td><td>There may be rep bandwidth or process discipline differences affecting output</td><td>Build rep-level cleaned pipeline and source conversion views</td></tr>
-        <tr><td>CRM Hygiene</td><td class="val">95 repeated rows removed in first-pass cleanup</td><td>The store needs a cleaner operating picture to manage from</td><td>Install recurring CRM cleanup and cleaner prospect reporting views</td></tr>
+        <tr><td>Under $40k</td><td class="val">8</td><td>0</td><td>1,423</td><td>2</td><td>Some browsing, but not a major stocked or lead-driven band for BMW units</td></tr>
+        <tr><td>$40k–$49k</td><td class="val">14</td><td>15</td><td>1,875</td><td>6</td><td>Healthy lower-premium support band</td></tr>
+        <tr><td>$50k–$59k</td><td class="val">31</td><td>22</td><td>3,073</td><td>7</td><td>One of the clearest demand-center bands</td></tr>
+        <tr><td>$60k–$69k</td><td class="val">20</td><td>4</td><td>2,810</td><td>10</td><td>Very strong browse + intent activity despite weaker CRM lead-match count</td></tr>
+        <tr><td>$70k–$79k</td><td class="val">14</td><td>13</td><td>1,602</td><td>9</td><td>Strong higher-intent mid-premium band</td></tr>
+        <tr><td>$80k–$89k</td><td class="val">16</td><td>17</td><td>2,397</td><td>4</td><td>Still viable, but not the strongest intent zone</td></tr>
+        <tr><td>$90k–$99k</td><td class="val">5</td><td>21</td><td>491</td><td>2</td><td>CRM matched surprisingly high here, but live browse/intent is lighter</td></tr>
+        <tr><td>$100k–$109k</td><td class="val">7</td><td>2</td><td>826</td><td>3</td><td>Some niche action, but thin relative to carrying cost</td></tr>
+        <tr><td>$110k+</td><td class="val">7</td><td>0</td><td>788</td><td>3</td><td>Likely overexposed true top-end tier</td></tr>
       </tbody>
     </table>
   </div>
+
+  <div class="table-card">
+    <div class="table-title">Inventory Composition That Matters</div>
+    <table>
+      <thead><tr><th>Inventory Group</th><th>Units</th><th>Share of BMW Retail Inventory</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td>$50k–$69k</td><td class="val">51</td><td>41.8%</td><td>This appears to be the center of gravity for shopper attention</td></tr>
+        <tr><td>$70k–$89k</td><td class="val">30</td><td>24.6%</td><td>Still meaningful and still marketable, especially upper-mid-premium units</td></tr>
+        <tr><td>$80k+</td><td class="val">35</td><td>28.7%</td><td>High concentration for a store whose strongest browse/intent sits lower</td></tr>
+        <tr><td>$90k+</td><td class="val">19</td><td>15.6%</td><td>The top-end tier starts to outrun the observed shopper demand</td></tr>
+        <tr><td>$100k+</td><td class="val">14</td><td>11.5%</td><td>This is where the overexposure argument gets strongest</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <div class="two-col">
-    <div class="opportunity-box">
-      <h3>Consulting Angles</h3>
+    <div class="box red">
+      <h3>Main Opportunity Angles</h3>
       <ul>
-        <li><strong>Internet lead process audit:</strong> first-response, call cadence, and appointment conversion.</li>
-        <li><strong>Lead-quality cleanup:</strong> separate bad/duplicate/noisy prospects from workable demand.</li>
-        <li><strong>Source-quality analysis:</strong> identify which sources are productive vs cluttered.</li>
-        <li><strong>Rep performance breakdown:</strong> load, open pipeline, and sold output by salesperson.</li>
-        <li><strong>CRM hygiene reset:</strong> build a cleaner management reporting layer.</li>
+        <li><strong>The demand center looks mid-premium.</strong> Shopper behavior is strongest around roughly <strong>$50k–$79k</strong>.</li>
+        <li><strong>The store appears top-heavy above that.</strong> The true six-figure tier looks thinner in live shopper behavior.</li>
+        <li><strong>$60k–$69k deserves attention.</strong> It shows strong VDP views and intent, but weaker CRM lead matching in this first pass.</li>
+        <li><strong>$100k+ is where the stocking risk appears most real.</strong></li>
       </ul>
     </div>
-    <div class="opportunity-box" style="border-left-color:#f59e0b; background:#fffaf0;">
+    <div class="box blue">
       <h3>What This Lets You Say</h3>
       <ul>
-        <li>"The store seems to have enough internet opportunity already — the bigger issue is converting it."</li>
-        <li>"Walk-in and store-driven business appears to close much better than internet traffic."</li>
-        <li>"We can help management see which lead sources are real opportunities and which are mostly noise."</li>
-        <li>"The CRM export needed cleanup, but even after cleaning it, the same core internet-conversion story remains."</li>
+        <li>"The store does not look overstocked in premium inventory broadly — it looks overextended in the true top-end tier."</li>
+        <li>"Shopper demand appears strongest in the mid-premium bands, especially from roughly $50k to $79k."</li>
+        <li>"We should be careful not to confuse luxury demand with six-figure demand — those are not the same thing."</li>
+        <li>"The biggest inventory-risk question is whether the store is carrying too much six-figure metal relative to live shopper behavior."</li>
       </ul>
     </div>
   </div>
-  <div class="playbook-box">
-    <h3>Recommended Improvement Playbook</h3>
+
+  <div class="box green">
+    <h3>Recommended Next Steps</h3>
     <ol>
-      <li><strong>Start with an internet lead audit.</strong> That is where the biggest volume and biggest weakness both sit.</li>
-      <li><strong>Build a source-quality scorecard.</strong> Management should review cleaned source volume vs sold yield weekly.</li>
-      <li><strong>Separate usable prospects from noisy prospects faster.</strong> That will improve focus and manager visibility.</li>
-      <li><strong>Create rep-level cleaned conversion views.</strong> The store needs clearer accountability around who is converting what.</li>
-      <li><strong>Use this cleaned month as the baseline.</strong> Future gains can be measured against it.</li>
+      <li><strong>Review aging units in the $100k+ tier first.</strong></li>
+      <li><strong>Break out new vs used demand by price band.</strong></li>
+      <li><strong>Pull deeper GA4 event mapping</strong> to catch any additional BMW Jackson lead-intent events beyond contact/trade.</li>
+      <li><strong>Turn this into the management-facing version</strong> once the internal read is locked.</li>
     </ol>
-  </div>
-  <div class="data-box">
-    <h3>Data Needed to Copy This for Each Dealership</h3>
-    <ul>
-      <li><strong>Store identification:</strong> dealership name, month/date range, rooftop/store group context</li>
-      <li><strong>Row-level prospect export:</strong> client name, prospect type, status, source, salesperson, created date, last activity</li>
-      <li><strong>Optional but useful:</strong> trade/equity fields, manager assignment, activity notes, appointment fields if available</li>
-      <li><strong>Best practice:</strong> use the same export structure so dedupe + source-quality logic can be reused consistently</li>
-    </ul>
   </div>
 </div>
 <div class="footer">
   <div class="footer-text"><strong>The Cooperative Agency</strong>Baton Rouge, Louisiana · <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> · <a href="http://www.thecoopbrla.com">thecoopbrla.com</a></div>
-  <div class="footer-text" style="text-align:right;"><strong>Data Source</strong>BMW of Jackson prospect export CSV · cleaned first-pass view<br>Prepared as internal opportunity brief</div>
+  <div class="footer-text" style="text-align:right;"><strong>Data Sources</strong>vAuto inventory export · cleaned CRM prospect export · GA4 VDP behavior<br>Prepared as first-pass internal opportunity brief</div>
 </div>
 <script>
-const prospectType = { labels:['Internet','Walk-In','Phone','Other','DMS Created'], values:[224,44,37,30,11] };
-const statusMix = { labels:['Lost','New','Bad Lead','Sold - Integration','Active','Duplicate'], values:[82,70,55,48,45,12] };
-new Chart(document.getElementById('prospectChart').getContext('2d'), { type:'doughnut', data:{ labels: prospectType.labels, datasets:[{ data: prospectType.values, backgroundColor:['#1d6fa8','#bb0a21','#6b7280','#8b5cf6','#16a34a'], borderWidth:0 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ color:'#555', font:{ size:12 }, padding:14 } }, tooltip:{ callbacks:{ label:(ctx)=>{ const total=prospectType.values.reduce((a,b)=>a+b,0); const pct=((ctx.raw/total)*100).toFixed(1); return `${ctx.label}: ${ctx.raw} (${pct}%)`; } } } } } });
-new Chart(document.getElementById('statusChart').getContext('2d'), { type:'bar', data:{ labels: statusMix.labels, datasets:[{ label:'Rows', data:statusMix.values, backgroundColor:['#ef4444','#1d6fa8','#6b7280','#16a34a','#8b5cf6','#f59e0b'], borderRadius:6 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ y:{ beginAtZero:true, grid:{ color:'rgba(0,0,0,0.06)' }, ticks:{ color:'#666' } }, x:{ grid:{ display:false }, ticks:{ color:'#666' } } } } });
+const labels = ['Under $40k','$40k-$49k','$50k-$59k','$60k-$69k','$70k-$79k','$80k-$89k','$90k-$99k','$100k-$109k','$110k+'];
+const inventory = [8,14,31,20,14,16,5,7,7];
+const views = [1423,1875,3073,2810,1602,2397,491,826,788];
+new Chart(document.getElementById('inventoryChart').getContext('2d'), {
+  type:'bar',
+  data:{ labels, datasets:[{ label:'Retail BMW Units', data:inventory, backgroundColor:'#1d6fa8', borderRadius:6 }] },
+  options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ y:{ beginAtZero:true, grid:{ color:'rgba(0,0,0,0.06)' }, ticks:{ color:'#666' } }, x:{ grid:{ display:false }, ticks:{ color:'#666', maxRotation:45, minRotation:45 } } } }
+});
+new Chart(document.getElementById('viewChart').getContext('2d'), {
+  type:'bar',
+  data:{ labels, datasets:[{ label:'GA4 VDP Views', data:views, backgroundColor:'#bb0a21', borderRadius:6 }] },
+  options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ y:{ beginAtZero:true, grid:{ color:'rgba(0,0,0,0.06)' }, ticks:{ color:'#666' } }, x:{ grid:{ display:false }, ticks:{ color:'#666', maxRotation:45, minRotation:45 } } } }
+});
 </script>
 </body>
 </html>
