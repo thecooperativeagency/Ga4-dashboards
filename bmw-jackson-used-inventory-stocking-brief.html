@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-default-theme="dark" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMW of Jackson - Used Inventory Stocking Brief</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+    .container { max-width: 1400px; margin: 0 auto; padding: 28px 20px 60px; }
+    .header { margin-bottom: 28px; }
+    .eyebrow {
+      color: #60a5fa; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px;
+    }
+    h1 { font-size: 40px; line-height: 1.05; margin-bottom: 12px; }
+    .subtitle { color: #a3a3a3; max-width: 980px; font-size: 16px; }
+    .note-box, .summary-box {
+      background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 18px 20px; margin: 18px 0;
+    }
+    .summary-box h2, .section-title { font-size: 22px; margin-bottom: 10px; }
+    .metrics-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 22px 0 28px;
+    }
+    .metric-card {
+      background: #111111; border: 1px solid #262626; border-radius: 16px; padding: 18px;
+    }
+    .metric-label { color: #9ca3af; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+    .metric-value { font-size: 34px; font-weight: 800; line-height: 1; margin-bottom: 6px; }
+    .metric-sub { color: #a3a3a3; font-size: 13px; }
+    .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; margin: 20px 0; }
+    .card, .chart-card, .table-card {
+      background: #111111; border: 1px solid #262626; border-radius: 16px; padding: 20px;
+    }
+    .chart-wrap { position: relative; height: 360px; }
+    .table-title { font-size: 20px; font-weight: 700; margin-bottom: 14px; }
+    table { width: 100%; border-collapse: collapse; min-width: 860px; }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #262626; text-align: left; vertical-align: top; }
+    th { color: #93c5fd; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+    td { color: #e5e7eb; font-size: 14px; }
+    td.val { font-weight: 700; color: #fff; }
+    .table-scroll { overflow-x: auto; }
+    .bullet-card ul { padding-left: 20px; }
+    .bullet-card li { margin-bottom: 10px; color: #d1d5db; }
+    .pill {
+      display: inline-block; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em;
+    }
+    .good { background: rgba(34,197,94,.14); color: #86efac; }
+    .warn { background: rgba(250,204,21,.14); color: #fde68a; }
+    .bad { background: rgba(239,68,68,.14); color: #fca5a5; }
+    @media (max-width: 980px) { .two-col { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="eyebrow">BMW of Jackson · GM / GSM / Pre-Owned Management</div>
+      <h1>Used Inventory Stocking Brief</h1>
+      <p class="subtitle">Actionable stocking guidance for faster used-car turn in the Jackson, Mississippi market. This brief is designed to answer one question: <strong>what should BMW of Jackson look for if the goal is faster used-car sales without stepping on new BMW inventory?</strong></p>
+    </div>
+
+    <div class="summary-box">
+      <h2>Main Read</h2>
+      <p>BMW of Jackson should lean harder into <strong>financeable, warranty-friendly, payment-accessible used inventory</strong> in the $20,000-$35,000 retail lane, especially compact SUVs, midsize SUVs, and durable commuter sedans that are <strong>6 years old or newer and under 100k miles</strong>. The point is not to chase random cheap cars. The point is to stock the kind of used units that move faster in Mississippi, generate easier monthly payments, and do <strong>not</strong> cannibalize the store’s new BMW position.</p>
+    </div>
+
+    <div class="note-box">
+      <strong>Method note:</strong> this recommendation blends BMW Jackson’s existing website + CRM funnel context with national Cox / vAuto / Kelley Blue Book affordability benchmarks and Mississippi/Jackson market demand signals. This is a <strong>stocking lane brief</strong>, not a VIN-by-VIN buy list.
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="metric-label">Target Retail Lane</div><div class="metric-value">$20k–$35k</div><div class="metric-sub">Core used sweet spot for payment-driven shoppers</div></div>
+      <div class="metric-card"><div class="metric-label">Target Payment Window</div><div class="metric-value">$400–$700</div><div class="metric-sub">Matches management brief and financeability goal</div></div>
+      <div class="metric-card"><div class="metric-label">Age Guardrail</div><div class="metric-value">≤ 6 yrs</div><div class="metric-sub">Loaner-capable and warranty-friendlier</div></div>
+      <div class="metric-card"><div class="metric-label">Mileage Guardrail</div><div class="metric-value">&lt; 100k</div><div class="metric-sub">Keeps units financeable and cleaner to retail</div></div>
+      <div class="metric-card"><div class="metric-label">Used Market Avg</div><div class="metric-value">$25,287</div><div class="metric-sub">National Cox / vAuto used listing benchmark</div></div>
+      <div class="metric-card"><div class="metric-label">Top 5 Used Sellers Avg</div><div class="metric-value">$23,578</div><div class="metric-sub">National Cox / vAuto top-volume used benchmark</div></div>
+    </div>
+
+    <div class="two-col">
+      <div class="chart-card">
+        <div class="table-title">Recommended Stocking Mix by Lane</div>
+        <div class="chart-wrap"><canvas id="mixChart"></canvas></div>
+      </div>
+      <div class="bullet-card card">
+        <div class="table-title">What This Means in Plain English</div>
+        <ul>
+          <li><strong>Do not build this used lot around expensive aspirational luxury pieces.</strong> They may get attention, but they are less likely to turn fast in the payment bands that matter.</li>
+          <li><strong>Favor mainstream imports and near-premium daily drivers.</strong> Think cars and SUVs that are easy to explain, easy to finance, and easy to warranty.</li>
+          <li><strong>Compact and midsize SUVs should carry the load.</strong> That is where the broadest used demand usually lives.</li>
+          <li><strong>Selective BMW is fine, but only where it behaves like fast-turn used inventory.</strong> Entry BMW sedans/SUVs priced too close to new inventory are the wrong move.</li>
+          <li><strong>Speed matters more than ego here.</strong> Faster turn beats owning fancy problem inventory.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-title">Recommended Buy Box</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Lane</th>
+              <th>What to Look For</th>
+              <th>Target Cost</th>
+              <th>Target Retail</th>
+              <th>Age / Miles</th>
+              <th>Target Payment</th>
+              <th>Why It Works</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="val">Compact SUVs <span class="pill good">Highest Priority</span></td>
+              <td>Toyota RAV4, Honda CR-V, Nissan Rogue, Mazda CX-5, Hyundai Tucson, Kia Sportage, Subaru Forester</td>
+              <td class="val">$17k–$25k</td>
+              <td class="val">$22k–$31k</td>
+              <td>2020–2025 / 20k–90k mi</td>
+              <td class="val">$425–$625</td>
+              <td>Broad demand, strong payment story, easy daily-driver pitch, safer turn lane than premium oddballs</td>
+            </tr>
+            <tr>
+              <td class="val">Midsize SUVs <span class="pill good">High Priority</span></td>
+              <td>Toyota Highlander, Honda Pilot, Hyundai Santa Fe, Kia Sorento, Nissan Murano, Chevrolet Blazer, Ford Edge</td>
+              <td class="val">$21k–$29k</td>
+              <td class="val">$27k–$35k</td>
+              <td>2019–2025 / 20k–95k mi</td>
+              <td class="val">$525–$700</td>
+              <td>Family utility without the full-size payment shock; strong finance/warranty lane</td>
+            </tr>
+            <tr>
+              <td class="val">Commuter Sedans <span class="pill good">High Priority</span></td>
+              <td>Toyota Camry, Honda Accord, Toyota Corolla, Honda Civic, Nissan Altima, Hyundai Elantra</td>
+              <td class="val">$15k–$24k</td>
+              <td class="val">$19k–$29k</td>
+              <td>2020–2025 / 15k–95k mi</td>
+              <td class="val">$400–$575</td>
+              <td>Mississippi-friendly, payment-accessible, easy to finance, easy to justify, fast-turn commuter lane</td>
+            </tr>
+            <tr>
+              <td class="val">Near-Premium Imports <span class="pill warn">Selective</span></td>
+              <td>Lexus NX, Lexus ES, Acura RDX, Acura TLX, Infiniti QX50, Volvo XC60</td>
+              <td class="val">$22k–$31k</td>
+              <td class="val">$28k–$37k</td>
+              <td>2019–2024 / 20k–85k mi</td>
+              <td class="val">$550–$700</td>
+              <td>Good fit when clean and well-bought; gives some premium feel without forcing BMW-priced used payments</td>
+            </tr>
+            <tr>
+              <td class="val">Selective BMW Value Lane <span class="pill warn">Only If Right</span></td>
+              <td>Well-bought X1, X3, 3 Series, 2/3-year-old lease-return style units that do not sit too close to new</td>
+              <td class="val">$24k–$34k</td>
+              <td class="val">$29k–$39k</td>
+              <td>2020–2024 / 15k–75k mi</td>
+              <td class="val">$575–$725</td>
+              <td>Can work if clean and clearly cheaper than new BMW alternatives; avoid stacking too many lookalike units near new-car payments</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="table-card">
+        <div class="table-title">What Not to Buy</div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>Do-Not-Buy Lane</th><th>Why It Misses</th><th>Risk</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="val">High-line luxury over $40k used</td><td>Too close to new-car payment logic and too dependent on the right buyer showing up</td><td>Slow turn / aging / gross trapped in metal</td></tr>
+              <tr><td class="val">Old premium units with 90k-100k+ miles</td><td>Looks “cheap” on price but becomes hard to warranty, finance, and explain</td><td>Recon pain / lender friction / reputation drag</td></tr>
+              <tr><td class="val">Weird spec luxury sedans and coupes</td><td>Narrow audience, weak daily-driver relevance, weaker Jackson-market depth</td><td>Long sit times</td></tr>
+              <tr><td class="val">Used EVs that need a niche buyer</td><td>Depreciation, narrower demand, and harder payment/value story in this market</td><td>Price cuts and aging</td></tr>
+              <tr><td class="val">BMW units priced too close to new BMW inventory</td><td>Steps on new-car toes and creates internal payment competition</td><td>Cannibalization + confusion</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-title">Management Filters for Every Buy</div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>Filter</th><th>Target</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="val">Retail price</td><td>$20k–$35k core; only selective stretch above</td><td>Keeps units inside real payment demand</td></tr>
+              <tr><td class="val">Age</td><td>2020 model year or newer, flex to 2019 if unit is exceptional</td><td>Supports loaner-capable / warranty-friendly lane</td></tr>
+              <tr><td class="val">Mileage</td><td>Prefer 20k–80k, avoid 90k+ unless deal is unusually clean</td><td>Better finance / better perceived value</td></tr>
+              <tr><td class="val">Body style</td><td>Compact SUV, midsize SUV, commuter sedan first</td><td>Broadest demand and easiest payment conversation</td></tr>
+              <tr><td class="val">Payment test</td><td>Must pencil inside $400–$700 with believable terms</td><td>If the payment story is weak, the turn story is weak</td></tr>
+              <tr><td class="val">New inventory protection</td><td>No used buys that blur directly into core new BMW offers</td><td>Protects the rooftop’s brand and new-car lane</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-title">Why These Lanes Fit the Market Better</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Market Signal</th><th>Number</th><th>Read</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="val">National average used listing price</td><td>$25,287</td><td>Mainstream used affordability is well below luxury-used pricing centers</td></tr>
+            <tr><td class="val">Top 5 used sellers average price</td><td>$23,578</td><td>The highest-volume used units sell even cheaper than overall used-market average</td></tr>
+            <tr><td class="val">Compact SUV ATP (new)</td><td>$36,807</td><td>Consumers are anchored to mainstream SUV payments well below high-line luxury norms</td></tr>
+            <tr><td class="val">Subcompact SUV ATP (new)</td><td>$30,836</td><td>Payment-sensitive buyers live here</td></tr>
+            <tr><td class="val">Compact car ATP (new)</td><td>$27,341</td><td>Commuter-value demand is still strong at lower price points</td></tr>
+            <tr><td class="val">Mississippi best-seller signal</td><td>Toyota-heavy / Camry-led</td><td>The local market rewards dependable, mainstream, payment-friendly vehicles</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <h2>Bottom Line</h2>
+      <p>If BMW of Jackson wants to sell more used cars faster, it should stock <strong>cleaner, newer, financeable mainstream inventory</strong> that lands inside real Jackson-market payments. The best lane is not “cheap junk.” It is <strong>affordable, trustworthy, easy-to-approve inventory</strong> that a customer can say yes to quickly. Compact SUVs, midsize SUVs, commuter sedans, and a limited number of near-premium imports are the right lane. Expensive used luxury, old premium iron, and units that mimic new BMW payments are the wrong lane.</p>
+    </div>
+  </div>
+
+  <script>
+    new Chart(document.getElementById('mixChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Compact SUVs', 'Midsize SUVs', 'Commuter Sedans', 'Near-Premium Imports', 'Selective BMW'],
+        datasets: [{
+          label: 'Recommended share of stocking focus',
+          data: [32, 24, 24, 12, 8],
+          backgroundColor: ['#60a5fa', '#34d399', '#fbbf24', '#f97316', '#a78bfa'],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#d1d5db' },
+            grid: { color: 'rgba(255,255,255,0.06)' }
+          },
+          y: {
+            beginAtZero: true,
+            max: 40,
+            ticks: { color: '#d1d5db', callback: value => value + '%' },
+            grid: { color: 'rgba(255,255,255,0.06)' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
