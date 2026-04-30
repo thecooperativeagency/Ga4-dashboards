@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMW of Jackson — Inventory vs Demand Opportunity Brief</title>
+<title>BMW of Jackson — Traffic, Demand & Affordability Opportunity Brief</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,7 +34,7 @@
   .chart-wrap { height: 320px; }
   .table-card { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 24px; }
   .table-title { padding: 16px 18px; border-bottom: 1px solid #e5e7eb; font-size: 14px; font-weight: 700; }
-  table { width: 100%; min-width: 980px; border-collapse: collapse; }
+  table { width: 100%; min-width: 1020px; border-collapse: collapse; }
   th { background: #fafafa; color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; padding: 10px 16px; border-bottom: 1px solid #e5e7eb; }
   td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-size: 13px; vertical-align: top; }
   tr:last-child td { border-bottom: none; }
@@ -60,68 +60,81 @@
   <div class="header-right"><strong>Opportunity Brief</strong>Prepared for Lance · April 2026</div>
 </div>
 <div class="store-banner">
-  <h1>BMW of Jackson — Inventory vs Customer Demand</h1>
-  <p>Internal strategy brief · inventory pricing mix vs CRM lead behavior vs GA4 shopper demand</p>
+  <h1>BMW of Jackson — Traffic, Demand & Affordability</h1>
+  <p>Internal strategy brief · why website traffic may be outpacing lead volume · used inventory stocking opportunity</p>
 </div>
 <div class="content">
   <div class="summary-box">
-    <h2>Strategic Read</h2>
-    <p>BMW of Jackson does <strong>not</strong> appear to be broadly overstocked in all premium inventory. The stronger read is more specific: <strong>shopper demand appears healthiest in the mid-premium bands, especially roughly $50k–$79k</strong>, while the store still carries a meaningful amount of true top-end inventory above that range. In short, the likely mismatch is <strong>not "luxury inventory" in general</strong> — it is <strong>too much six-figure exposure relative to where shopper attention and intent are strongest</strong>.</p>
+    <h2>Main Read</h2>
+    <p>BMW of Jackson may be generating <strong>real website traffic from attractive aspirational inventory</strong> without generating enough leads from that traffic because the store’s visible inventory mix appears too far above where much of the market can realistically buy right now. The key issue does not appear to be a lack of shopper interest. It appears to be a likely <strong>affordability mismatch</strong> — especially on the used side — between what the site is showcasing and what more in-market shoppers can comfortably convert on.</p>
   </div>
 
   <div class="note-box">
-    <strong>Method note:</strong> this first pass combines the live BMW Jackson inventory export, the cleaned prospect export, and GA4 VDP behavior. BMW Jackson appears to use a different lead-event naming convention than Brian Harris BMW, so GA4 high-intent signals were mapped using likely equivalents like <strong>contact_us</strong> and <strong>value_your_trade</strong>.
+    <strong>Method note:</strong> this first pass combines live inventory pricing, cleaned CRM prospect behavior, GA4 inventory-detail traffic, translated Jackson lead-intent events, and broad market pricing context from Cox Automotive / Kelley Blue Book. BMW Jackson appears to use different event naming than Brian Harris BMW, with lead-intent equivalents including <strong>contact_us</strong> and <strong>value_your_trade</strong>.
   </div>
 
   <div class="metrics-grid">
-    <div class="metric-card"><div class="metric-label">Retail BMW Units</div><div class="metric-value">122</div><div class="metric-sub">Current BMW retail inventory in export</div></div>
-    <div class="metric-card"><div class="metric-label">Avg BMW Price</div><div class="metric-value">$69.3k</div><div class="metric-sub">Average BMW retail asking price</div></div>
-    <div class="metric-card"><div class="metric-label">Units $80k+</div><div class="metric-value">35</div><div class="metric-sub">28.7% of BMW retail inventory</div></div>
-    <div class="metric-card"><div class="metric-label">Units $100k+</div><div class="metric-value">14</div><div class="metric-sub">11.5% of BMW retail inventory</div></div>
+    <div class="metric-card"><div class="metric-label">Avg BMW Retail Price</div><div class="metric-value">$69.3k</div><div class="metric-sub">BMW Jackson retail BMW average</div></div>
+    <div class="metric-card"><div class="metric-label">National New ATP</div><div class="metric-value">$49.4k</div><div class="metric-sub">Kelley Blue Book Feb 2026</div></div>
+    <div class="metric-card"><div class="metric-label">Avg Used Listing Price</div><div class="metric-value">$25.3k</div><div class="metric-sub">Cox / vAuto nationwide Feb 2026</div></div>
+    <div class="metric-card"><div class="metric-label">BMW Units $100k+</div><div class="metric-value">14</div><div class="metric-sub">11.5% of BMW retail inventory</div></div>
   </div>
 
-  <div class="section-label">Demand vs Inventory</div>
+  <div class="section-label">Traffic vs Affordability</div>
   <div class="chart-grid">
     <div class="chart-card">
-      <div class="chart-title">Retail Inventory by Price Band</div>
-      <div class="chart-subtitle">BMW Jackson is carrying a meaningful amount of $80k+ and six-figure inventory.</div>
+      <div class="chart-title">BMW Inventory by Price Band</div>
+      <div class="chart-subtitle">The store carries a meaningful amount of premium and true top-end inventory.</div>
       <div class="chart-wrap"><canvas id="inventoryChart"></canvas></div>
     </div>
     <div class="chart-card">
       <div class="chart-title">GA4 VDP Views by Price Band</div>
-      <div class="chart-subtitle">Shopper browsing demand is strongest in the $50k–$69k bands.</div>
+      <div class="chart-subtitle">Shopper browsing is strongest in the mid-premium bands, not at the very top end.</div>
       <div class="chart-wrap"><canvas id="viewChart"></canvas></div>
     </div>
   </div>
 
   <div class="table-card">
-    <div class="table-title">Inventory Mix vs CRM Lead Mix vs GA4 Demand</div>
+    <div class="table-title">Why Traffic May Be Outpacing Leads</div>
     <table>
-      <thead><tr><th>Price Band</th><th>BMW Retail Inventory</th><th>Matched CRM Leads</th><th>GA4 VDP Views</th><th>GA4 High-Intent Events</th><th>Read</th></tr></thead>
+      <thead><tr><th>Signal</th><th>What We See</th><th>Why It Matters</th><th>Interpretation</th></tr></thead>
       <tbody>
-        <tr><td>Under $40k</td><td class="val">8</td><td>0</td><td>1,423</td><td>2</td><td>Some browsing, but not a major stocked or lead-driven band for BMW units</td></tr>
-        <tr><td>$40k–$49k</td><td class="val">14</td><td>15</td><td>1,875</td><td>6</td><td>Healthy lower-premium support band</td></tr>
-        <tr><td>$50k–$59k</td><td class="val">31</td><td>22</td><td>3,073</td><td>7</td><td>One of the clearest demand-center bands</td></tr>
-        <tr><td>$60k–$69k</td><td class="val">20</td><td>4</td><td>2,810</td><td>10</td><td>Very strong browse + intent activity despite weaker CRM lead-match count</td></tr>
-        <tr><td>$70k–$79k</td><td class="val">14</td><td>13</td><td>1,602</td><td>9</td><td>Strong higher-intent mid-premium band</td></tr>
-        <tr><td>$80k–$89k</td><td class="val">16</td><td>17</td><td>2,397</td><td>4</td><td>Still viable, but not the strongest intent zone</td></tr>
-        <tr><td>$90k–$99k</td><td class="val">5</td><td>21</td><td>491</td><td>2</td><td>CRM matched surprisingly high here, but live browse/intent is lighter</td></tr>
-        <tr><td>$100k–$109k</td><td class="val">7</td><td>2</td><td>826</td><td>3</td><td>Some niche action, but thin relative to carrying cost</td></tr>
-        <tr><td>$110k+</td><td class="val">7</td><td>0</td><td>788</td><td>3</td><td>Likely overexposed true top-end tier</td></tr>
+        <tr><td>Website Traffic</td><td class="val">Strong VDP demand in $50k–$69k and meaningful browse interest up to $79k</td><td>Shoppers are engaging with inventory; the site is not invisible</td><td>Traffic is real, but traffic alone does not mean affordability alignment</td></tr>
+        <tr><td>Lead Volume</td><td class="val">CRM lead flow does not appear to track cleanly with all top-end inventory exposure</td><td>Some inventory may attract attention without converting proportionally</td><td>Aspirational traffic may be outpacing practical buying intent</td></tr>
+        <tr><td>Inventory Center of Gravity</td><td class="val">Avg BMW retail price ~ $69.3k</td><td>That sits well above both national new ATP and especially national used norms</td><td>The store may be asking the market to stretch too high too often</td></tr>
+        <tr><td>Broad Market Context</td><td class="val">National used listing avg ~ $25.3k vs national new ATP ~ $49.4k</td><td>The market still leans affordability-sensitive, especially in used</td><td>Used inventory strategy matters more, not less, right now</td></tr>
       </tbody>
     </table>
   </div>
 
   <div class="table-card">
-    <div class="table-title">Inventory Composition That Matters</div>
+    <div class="table-title">Inventory Mix vs Demand Mix</div>
     <table>
-      <thead><tr><th>Inventory Group</th><th>Units</th><th>Share of BMW Retail Inventory</th><th>Why It Matters</th></tr></thead>
+      <thead><tr><th>Price Band</th><th>BMW Retail Inventory</th><th>GA4 VDP Views</th><th>GA4 High-Intent Events</th><th>Practical Read</th></tr></thead>
       <tbody>
-        <tr><td>$50k–$69k</td><td class="val">51</td><td>41.8%</td><td>This appears to be the center of gravity for shopper attention</td></tr>
-        <tr><td>$70k–$89k</td><td class="val">30</td><td>24.6%</td><td>Still meaningful and still marketable, especially upper-mid-premium units</td></tr>
-        <tr><td>$80k+</td><td class="val">35</td><td>28.7%</td><td>High concentration for a store whose strongest browse/intent sits lower</td></tr>
-        <tr><td>$90k+</td><td class="val">19</td><td>15.6%</td><td>The top-end tier starts to outrun the observed shopper demand</td></tr>
-        <tr><td>$100k+</td><td class="val">14</td><td>11.5%</td><td>This is where the overexposure argument gets strongest</td></tr>
+        <tr><td>Under $40k</td><td class="val">8</td><td>1,423</td><td>2</td><td>There is still demand for more attainable inventory</td></tr>
+        <tr><td>$40k–$49k</td><td class="val">14</td><td>1,875</td><td>6</td><td>Healthy lower-premium used / attainable luxury zone</td></tr>
+        <tr><td>$50k–$59k</td><td class="val">31</td><td>3,073</td><td>7</td><td>One of the clearest website demand-center bands</td></tr>
+        <tr><td>$60k–$69k</td><td class="val">20</td><td>2,810</td><td>10</td><td>Strongest higher-intent zone in this first pass</td></tr>
+        <tr><td>$70k–$79k</td><td class="val">14</td><td>1,602</td><td>9</td><td>Still viable, still converting attention into stronger actions</td></tr>
+        <tr><td>$80k–$89k</td><td class="val">16</td><td>2,397</td><td>4</td><td>Good browse support, but softer intent relative to mid-premium bands</td></tr>
+        <tr><td>$90k–$99k</td><td class="val">5</td><td>491</td><td>2</td><td>Demand gets noticeably thinner</td></tr>
+        <tr><td>$100k–$109k</td><td class="val">7</td><td>826</td><td>3</td><td>Niche traffic exists, but the pool is smaller and riskier</td></tr>
+        <tr><td>$110k+</td><td class="val">7</td><td>788</td><td>3</td><td>This is likely the least broadly aligned tier</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-card">
+    <div class="table-title">Broad Market Context</div>
+    <table>
+      <thead><tr><th>Market Metric</th><th>Current Read</th><th>Source</th><th>Why It Matters for Jackson</th></tr></thead>
+      <tbody>
+        <tr><td>Average New Vehicle Transaction Price</td><td class="val">$49,353</td><td>Kelley Blue Book / Cox · Feb 2026</td><td>Jackson’s BMW average retail price is roughly $20k higher than the national new ATP</td></tr>
+        <tr><td>Average New Vehicle MSRP</td><td class="val">$51,440</td><td>Kelley Blue Book / Cox · Feb 2026</td><td>Sticker pricing nationally is still materially below Jackson’s average BMW inventory</td></tr>
+        <tr><td>Average Used Vehicle Listing Price</td><td class="val">$25,287</td><td>Cox / vAuto · Feb 2026</td><td>Jackson’s used-car opportunity may be underdeveloped relative to where market affordability sits</td></tr>
+        <tr><td>Compact SUV ATP</td><td class="val">$36,807</td><td>Kelley Blue Book / Cox · Feb 2026</td><td>Mass-market volume still lives well below BMW Jackson’s pricing center</td></tr>
+        <tr><td>Midsize SUV ATP</td><td class="val">$50,148</td><td>Kelley Blue Book / Cox · Feb 2026</td><td>Even mainstream midsize SUV demand centers well below Jackson’s current BMW average</td></tr>
       </tbody>
     </table>
   </div>
@@ -130,19 +143,19 @@
     <div class="box red">
       <h3>Main Opportunity Angles</h3>
       <ul>
-        <li><strong>The demand center looks mid-premium.</strong> Shopper behavior is strongest around roughly <strong>$50k–$79k</strong>.</li>
-        <li><strong>The store appears top-heavy above that.</strong> The true six-figure tier looks thinner in live shopper behavior.</li>
-        <li><strong>$60k–$69k deserves attention.</strong> It shows strong VDP views and intent, but weaker CRM lead matching in this first pass.</li>
-        <li><strong>$100k+ is where the stocking risk appears most real.</strong></li>
+        <li><strong>Traffic does not appear to be the core problem.</strong> The site is attracting shopper attention.</li>
+        <li><strong>Affordability mismatch may be the bigger issue.</strong> Too much visible inventory may sit outside practical buying range.</li>
+        <li><strong>Used inventory looks like the clearest lever.</strong> The store may not be giving the market enough attainable options.</li>
+        <li><strong>The real gap may be between aspiration and conversion.</strong></li>
       </ul>
     </div>
     <div class="box blue">
       <h3>What This Lets You Say</h3>
       <ul>
-        <li>"The store does not look overstocked in premium inventory broadly — it looks overextended in the true top-end tier."</li>
-        <li>"Shopper demand appears strongest in the mid-premium bands, especially from roughly $50k to $79k."</li>
-        <li>"We should be careful not to confuse luxury demand with six-figure demand — those are not the same thing."</li>
-        <li>"The biggest inventory-risk question is whether the store is carrying too much six-figure metal relative to live shopper behavior."</li>
+        <li>"We may have enough traffic, but not enough inventory aligned with what more shoppers can realistically buy right now."</li>
+        <li>"The site appears to be doing its job attracting attention — the inventory mix may be doing less of its job converting that attention."</li>
+        <li>"BMW Jackson may be too dependent on aspirational traffic and not strong enough in attainable used inventory."</li>
+        <li>"A better-priced used mix could help close the gap between website traffic and lead volume."</li>
       </ul>
     </div>
   </div>
@@ -150,16 +163,16 @@
   <div class="box green">
     <h3>Recommended Next Steps</h3>
     <ol>
-      <li><strong>Review aging units in the $100k+ tier first.</strong></li>
-      <li><strong>Break out new vs used demand by price band.</strong></li>
-      <li><strong>Pull deeper GA4 event mapping</strong> to catch any additional BMW Jackson lead-intent events beyond contact/trade.</li>
-      <li><strong>Turn this into the management-facing version</strong> once the internal read is locked.</li>
+      <li><strong>Audit current used inventory affordability bands.</strong> How many truly attainable used units are on the site right now?</li>
+      <li><strong>Compare Jackson used mix to stronger-converting rooftops.</strong></li>
+      <li><strong>Build a used-only traffic / lead / inventory analysis.</strong></li>
+      <li><strong>Reframe stocking toward attainable premium and stronger used value bands.</strong></li>
     </ol>
   </div>
 </div>
 <div class="footer">
   <div class="footer-text"><strong>The Cooperative Agency</strong>Baton Rouge, Louisiana · <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> · <a href="http://www.thecoopbrla.com">thecoopbrla.com</a></div>
-  <div class="footer-text" style="text-align:right;"><strong>Data Sources</strong>vAuto inventory export · cleaned CRM prospect export · GA4 VDP behavior<br>Prepared as first-pass internal opportunity brief</div>
+  <div class="footer-text" style="text-align:right;"><strong>Data Sources</strong>vAuto inventory export · cleaned CRM prospect export · GA4 VDP behavior · Cox/KBB market pricing context<br>Prepared as first-pass internal opportunity brief</div>
 </div>
 <script>
 const labels = ['Under $40k','$40k-$49k','$50k-$59k','$60k-$69k','$70k-$79k','$80k-$89k','$90k-$99k','$100k-$109k','$110k+'];
