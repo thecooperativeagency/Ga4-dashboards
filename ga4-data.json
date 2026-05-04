@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-28",
+  "updated": "2026-05-04",
   "brian_harris_bmw": {
     "q1_2026": {
       "sessions": 67801,
@@ -16,18 +16,18 @@
       "pagesPerSession": 4.1
     },
     "last30": {
-      "sessions": 22011,
-      "users": 17921,
-      "newUsers": 12268,
-      "pageviews": 81199,
-      "pagesPerSession": 3.69
+      "sessions": 22201,
+      "users": 18122,
+      "newUsers": 12528,
+      "pageviews": 80839,
+      "pagesPerSession": 3.64
     },
     "last60": {
-      "sessions": 45263,
-      "users": 36727,
-      "newUsers": 25285,
-      "pageviews": 166564,
-      "pagesPerSession": 3.68
+      "sessions": 44715,
+      "users": 36239,
+      "newUsers": 24919,
+      "pageviews": 166061,
+      "pagesPerSession": 3.71
     },
     "sources": [
       {
@@ -169,18 +169,18 @@
       "pagesPerSession": 2.29
     },
     "last30": {
-      "sessions": 15809,
-      "users": 13700,
-      "newUsers": 11090,
-      "pageviews": 32515,
-      "pagesPerSession": 2.06
+      "sessions": 15943,
+      "users": 13888,
+      "newUsers": 11363,
+      "pageviews": 32698,
+      "pagesPerSession": 2.05
     },
     "last60": {
-      "sessions": 30488,
-      "users": 26213,
-      "newUsers": 21111,
-      "pageviews": 76127,
-      "pagesPerSession": 2.5
+      "sessions": 30536,
+      "users": 26378,
+      "newUsers": 21312,
+      "pageviews": 75105,
+      "pagesPerSession": 2.46
     },
     "sources": [
       {
@@ -322,18 +322,18 @@
       "pagesPerSession": 2.55
     },
     "last30": {
-      "sessions": 25920,
-      "users": 22969,
-      "newUsers": 17659,
-      "pageviews": 55087,
-      "pagesPerSession": 2.13
+      "sessions": 26255,
+      "users": 23295,
+      "newUsers": 17952,
+      "pageviews": 55607,
+      "pagesPerSession": 2.12
     },
     "last60": {
-      "sessions": 48529,
-      "users": 42922,
-      "newUsers": 33124,
-      "pageviews": 105780,
-      "pagesPerSession": 2.18
+      "sessions": 49369,
+      "users": 43626,
+      "newUsers": 33688,
+      "pageviews": 107149,
+      "pagesPerSession": 2.17
     },
     "sources": [
       {
