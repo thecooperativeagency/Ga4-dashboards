@@ -2,18 +2,18 @@
   "updated": "2026-05-04",
   "brian_harris_bmw": {
     "q1_2026": {
-      "sessions": 67801,
-      "users": 56077,
-      "newUsers": 39417,
-      "pageviews": 242996,
-      "pagesPerSession": 3.58
+      "sessions": 67770,
+      "users": 55447,
+      "newUsers": 38612,
+      "pageviews": 249023,
+      "pagesPerSession": 3.67
     },
     "q1_prev": {
-      "sessions": 56415,
-      "users": 45753,
-      "newUsers": 31376,
-      "pageviews": 231387,
-      "pagesPerSession": 4.1
+      "sessions": 61044,
+      "users": 50506,
+      "newUsers": 35179,
+      "pageviews": 220283,
+      "pagesPerSession": 3.61
     },
     "last30": {
       "sessions": 22214,
@@ -155,18 +155,18 @@
   },
   "audi_baton_rouge": {
     "q1_2026": {
-      "sessions": 40324,
-      "users": 34189,
-      "newUsers": 27219,
-      "pageviews": 104561,
-      "pagesPerSession": 2.59
+      "sessions": 43332,
+      "users": 36990,
+      "newUsers": 29666,
+      "pageviews": 107268,
+      "pagesPerSession": 2.48
     },
     "q1_prev": {
-      "sessions": 70221,
-      "users": 60200,
-      "newUsers": 48775,
-      "pageviews": 161054,
-      "pagesPerSession": 2.29
+      "sessions": 53489,
+      "users": 45853,
+      "newUsers": 36948,
+      "pageviews": 122920,
+      "pagesPerSession": 2.3
     },
     "last30": {
       "sessions": 15989,
@@ -308,18 +308,18 @@
   },
   "bmw_jackson": {
     "q1_2026": {
-      "sessions": 64157,
-      "users": 56293,
-      "newUsers": 44074,
-      "pageviews": 153965,
-      "pagesPerSession": 2.4
+      "sessions": 71713,
+      "users": 63385,
+      "newUsers": 49110,
+      "pageviews": 159807,
+      "pagesPerSession": 2.23
     },
     "q1_prev": {
-      "sessions": 44799,
-      "users": 40346,
-      "newUsers": 30203,
-      "pageviews": 114048,
-      "pagesPerSession": 2.55
+      "sessions": 47775,
+      "users": 40994,
+      "newUsers": 29300,
+      "pageviews": 122757,
+      "pagesPerSession": 2.57
     },
     "last30": {
       "sessions": 26276,
