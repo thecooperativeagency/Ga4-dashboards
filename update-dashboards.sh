@@ -5,7 +5,7 @@
 # Pulls fresh data from GA4 and updates all 3 dashboards
 # ============================================================
 
-set -e
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_FILE="/tmp/ga4-dashboard-update.log"
@@ -33,13 +33,22 @@ BMW_JACKSON_EMAIL="bmwofjackson@thecoopbrla.com"
 
 get_access_token() {
     local EMAIL="$1"
-    local REFRESH_JSON=$(security find-generic-password -a "token:default:${EMAIL}" -s "gogcli" -w 2>/dev/null)
-    local REFRESH_TOKEN=$(echo "$REFRESH_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin)['refresh_token'])")
+    local REFRESH_JSON
+    REFRESH_JSON=$(security find-generic-password -a "token:analytics:${EMAIL}" -s "gogcli" -w 2>/dev/null || true)
+    if [ -z "$REFRESH_JSON" ]; then
+        REFRESH_JSON=$(security find-generic-password -a "token:default:${EMAIL}" -s "gogcli" -w 2>/dev/null || true)
+    fi
+    if [ -z "$REFRESH_JSON" ]; then
+        echo "Missing refresh token for ${EMAIL}" >&2
+        return 1
+    fi
+    local REFRESH_TOKEN
+    REFRESH_TOKEN=$(echo "$REFRESH_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin)['refresh_token'])")
     curl -s -X POST "https://oauth2.googleapis.com/token" \
         -d "client_id=${CLIENT_ID}" \
         -d "client_secret=${CLIENT_SECRET}" \
         -d "refresh_token=${REFRESH_TOKEN}" \
-        -d "grant_type=refresh_token" | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])"
+        -d "grant_type=refresh_token" | python3 -c "import sys,json; data=json.load(sys.stdin); print(data['access_token']) if 'access_token' in data else (_ for _ in ()).throw(SystemExit(data))"
 }
 
 get_totals() {
@@ -137,90 +146,11 @@ JACKSON_DEVICES=$(get_devices "$TOKEN_JACKSON" "$BMW_JACKSON_PROPERTY" "$Q1_2026
 echo "[$DATE] Data pulled. Generating updated dashboards..." | tee -a "$LOG_FILE"
 
 # ── GENERATE UPDATED DATA JS ───────────────────────────────────
-python3 << PYEOF
-import json, subprocess, sys, os
-
-def parse_totals(csv):
-    parts = csv.strip().split(',')
-    return {
-        'sessions': int(parts[0]),
-        'users': int(parts[1]),
-        'newUsers': int(parts[2]),
-        'pageviews': int(parts[3]),
-        'pagesPerSession': float(parts[4])
-    }
-
-def parse_sources(json_str):
-    data = json.loads(json_str)
-    sources = []
-    for r in data.get('rows', []):
-        sources.append({
-            'source': r['dimensionValues'][0]['value'],
-            'medium': r['dimensionValues'][1]['value'],
-            'sessions': int(r['metricValues'][0]['value']),
-            'users': int(r['metricValues'][1]['value'])
-        })
-    return sources
-
-def parse_mobile_pct(json_str):
-    data = json.loads(json_str)
-    rows = data.get('rows', [])
-    total = sum(int(r['metricValues'][0]['value']) for r in rows)
-    for r in rows:
-        if r['dimensionValues'][0]['value'] == 'mobile':
-            return round(int(r['metricValues'][0]['value']) / total * 100, 1)
-    return 0
-
-# Parse all data
-bh_q1 = parse_totals("""${BH_Q1}""")
-bh_prev = parse_totals("""${BH_PREV}""")
-bh_30 = parse_totals("""${BH_30}""")
-bh_60 = parse_totals("""${BH_60}""")
-bh_sources = parse_sources("""${BH_SOURCES}""")
-bh_mobile = parse_mobile_pct("""${BH_DEVICES}""")
-
-audi_q1 = parse_totals("""${AUDI_Q1}""")
-audi_prev = parse_totals("""${AUDI_PREV}""")
-audi_30 = parse_totals("""${AUDI_30}""")
-audi_60 = parse_totals("""${AUDI_60}""")
-audi_sources = parse_sources("""${AUDI_SOURCES}""")
-audi_mobile = parse_mobile_pct("""${AUDI_DEVICES}""")
-
-jackson_q1 = parse_totals("""${JACKSON_Q1}""")
-jackson_prev = parse_totals("""${JACKSON_PREV}""")
-jackson_30 = parse_totals("""${JACKSON_30}""")
-jackson_60 = parse_totals("""${JACKSON_60}""")
-jackson_sources = parse_sources("""${JACKSON_SOURCES}""")
-jackson_mobile = parse_mobile_pct("""${JACKSON_DEVICES}""")
-
-# Write data file
-data = {
-    'updated': '${TODAY}',
-    'brian_harris_bmw': {
-        'q1_2026': bh_q1, 'q1_prev': bh_prev,
-        'last30': bh_30, 'last60': bh_60,
-        'sources': bh_sources, 'mobile_pct': bh_mobile
-    },
-    'audi_baton_rouge': {
-        'q1_2026': audi_q1, 'q1_prev': audi_prev,
-        'last30': audi_30, 'last60': audi_60,
-        'sources': audi_sources, 'mobile_pct': audi_mobile
-    },
-    'bmw_jackson': {
-        'q1_2026': jackson_q1, 'q1_prev': jackson_prev,
-        'last30': jackson_30, 'last60': jackson_60,
-        'sources': jackson_sources, 'mobile_pct': jackson_mobile
-    }
-}
-
-with open('ga4-data.json', 'w') as f:
-    json.dump(data, f, indent=2)
-
-print(f"Data written to ga4-data.json")
-print(f"BH BMW Q1: {bh_q1['sessions']:,} sessions | Mobile: {bh_mobile}%")
-print(f"Audi BR Q1: {audi_q1['sessions']:,} sessions | Mobile: {audi_mobile}%")
-print(f"BMW Jackson Q1: {jackson_q1['sessions']:,} sessions | Mobile: {jackson_mobile}%")
-PYEOF
+BH_Q1="$BH_Q1" BH_PREV="$BH_PREV" BH_30="$BH_30" BH_60="$BH_60" BH_SOURCES="$BH_SOURCES" BH_DEVICES="$BH_DEVICES" \
+AUDI_Q1="$AUDI_Q1" AUDI_PREV="$AUDI_PREV" AUDI_30="$AUDI_30" AUDI_60="$AUDI_60" AUDI_SOURCES="$AUDI_SOURCES" AUDI_DEVICES="$AUDI_DEVICES" \
+JACKSON_Q1="$JACKSON_Q1" JACKSON_PREV="$JACKSON_PREV" JACKSON_30="$JACKSON_30" JACKSON_60="$JACKSON_60" JACKSON_SOURCES="$JACKSON_SOURCES" JACKSON_DEVICES="$JACKSON_DEVICES" \
+TODAY="$TODAY" BH_BMW_EMAIL="$BH_BMW_EMAIL" AUDI_BR_EMAIL="$AUDI_BR_EMAIL" BMW_JACKSON_EMAIL="$BMW_JACKSON_EMAIL" BH_BMW_PROPERTY="$BH_BMW_PROPERTY" AUDI_BR_PROPERTY="$AUDI_BR_PROPERTY" BMW_JACKSON_PROPERTY="$BMW_JACKSON_PROPERTY" \
+python3 /Users/lucfaucheux/.openclaw/workspace/scripts/update_ga4_dashboards.py
 
 echo "[$DATE] Checking yesterday's session thresholds..." | tee -a "$LOG_FILE"
 
@@ -230,15 +160,9 @@ ALERTS=""
 # Get yesterday's sessions for threshold check
 YESTERDAY=$(date -v-1d '+%Y-%m-%d')
 
-for EMAIL in "$BH_BMW_EMAIL" "$AUDI_BR_EMAIL" "$BMW_JACKSON_EMAIL"; do
+for STORE in "Brian Harris BMW|$BH_BMW_EMAIL|$BH_BMW_PROPERTY" "Audi Baton Rouge|$AUDI_BR_EMAIL|$AUDI_BR_PROPERTY" "BMW of Jackson|$BMW_JACKSON_EMAIL|$BMW_JACKSON_PROPERTY"; do
+    IFS='|' read -r NAME EMAIL PROPERTY <<< "$STORE"
     TOKEN=$(get_access_token "$EMAIL")
-    PROPERTY=""
-    NAME=""
-    case "$EMAIL" in
-        "$BH_BMW_EMAIL") PROPERTY="$BH_BMW_PROPERTY"; NAME="Brian Harris BMW" ;;
-        "$AUDI_BR_EMAIL") PROPERTY="$AUDI_BR_PROPERTY"; NAME="Audi Baton Rouge" ;;
-        "$BMW_JACKSON_EMAIL") PROPERTY="$BMW_JACKSON_PROPERTY"; NAME="BMW of Jackson" ;;
-    esac
     
     YESTERDAY_DATA=$(curl -s -X POST -H "Authorization: Bearer $TOKEN" \
         -H "Content-Type: application/json" \
@@ -276,7 +200,11 @@ echo "[$DATE] Committing and pushing to GitHub..." | tee -a "$LOG_FILE"
 cd "$SCRIPT_DIR"
 git add ga4-data.json
 git add brian-harris-bmw-dashboard.html bmw-jackson-dashboard.html audi-baton-rouge-dashboard.html
-git diff --staged --quiet || git commit -m "Auto-update: GA4 data refresh $(date '+%Y-%m-%d')"
-git push origin main
+if git diff --staged --quiet; then
+    echo "[$DATE] No dashboard changes to commit." | tee -a "$LOG_FILE"
+else
+    git commit -m "Auto-update: GA4 data refresh $(date '+%Y-%m-%d')"
+    git push origin main
+fi
 
 echo "[$DATE] Dashboard update complete!" | tee -a "$LOG_FILE"
