@@ -169,17 +169,17 @@
       "pagesPerSession": 2.29
     },
     "last30": {
-      "sessions": 15960,
-      "users": 13905,
-      "newUsers": 11383,
-      "pageviews": 32747,
+      "sessions": 15989,
+      "users": 13933,
+      "newUsers": 11405,
+      "pageviews": 32788,
       "pagesPerSession": 2.05
     },
     "last60": {
-      "sessions": 30553,
-      "users": 26395,
-      "newUsers": 21332,
-      "pageviews": 75154,
+      "sessions": 30582,
+      "users": 26423,
+      "newUsers": 21354,
+      "pageviews": 75195,
       "pagesPerSession": 2.46
     },
     "sources": [
