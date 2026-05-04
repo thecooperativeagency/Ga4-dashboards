@@ -16,17 +16,17 @@
       "pagesPerSession": 4.1
     },
     "last30": {
-      "sessions": 22206,
-      "users": 18127,
-      "newUsers": 12533,
-      "pageviews": 80844,
+      "sessions": 22214,
+      "users": 18135,
+      "newUsers": 12539,
+      "pageviews": 80855,
       "pagesPerSession": 3.64
     },
     "last60": {
-      "sessions": 44720,
-      "users": 36244,
-      "newUsers": 24924,
-      "pageviews": 166066,
+      "sessions": 44728,
+      "users": 36252,
+      "newUsers": 24930,
+      "pageviews": 166077,
       "pagesPerSession": 3.71
     },
     "sources": [
@@ -169,17 +169,17 @@
       "pagesPerSession": 2.29
     },
     "last30": {
-      "sessions": 15953,
-      "users": 13898,
-      "newUsers": 11381,
-      "pageviews": 32738,
+      "sessions": 15960,
+      "users": 13905,
+      "newUsers": 11383,
+      "pageviews": 32747,
       "pagesPerSession": 2.05
     },
     "last60": {
-      "sessions": 30546,
-      "users": 26388,
-      "newUsers": 21330,
-      "pageviews": 75145,
+      "sessions": 30553,
+      "users": 26395,
+      "newUsers": 21332,
+      "pageviews": 75154,
       "pagesPerSession": 2.46
     },
     "sources": [
@@ -322,17 +322,17 @@
       "pagesPerSession": 2.55
     },
     "last30": {
-      "sessions": 26259,
-      "users": 23299,
-      "newUsers": 17956,
-      "pageviews": 55611,
+      "sessions": 26276,
+      "users": 23316,
+      "newUsers": 17972,
+      "pageviews": 55632,
       "pagesPerSession": 2.12
     },
     "last60": {
-      "sessions": 49373,
-      "users": 43630,
-      "newUsers": 33692,
-      "pageviews": 107153,
+      "sessions": 49390,
+      "users": 43647,
+      "newUsers": 33708,
+      "pageviews": 107174,
       "pagesPerSession": 2.17
     },
     "sources": [
