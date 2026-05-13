@@ -56,7 +56,7 @@
 <body>
 <div class="header">
   <img src="https://images.squarespace-cdn.com/content/v1/68fac8a3d20e8d72215ede75/6669040e-00b7-4113-a0c0-a29b3706227f/Asset+26.png?format=200w" alt="The Cooperative Agency">
-  <div class="header-right"><strong>Sales Management Brief</strong>Prepared by The Cooperative Agency · April 2026</div>
+  <div class="header-right"><strong>Sales Management Brief</strong>Prepared by The Cooperative Agency · May 2026</div>
 </div>
 <div class="store-banner">
   <h1>BMW of Jackson — Sales Department Baseline</h1>
@@ -65,25 +65,25 @@
 <div class="content">
   <div class="summary-box">
     <h2>Management Readout</h2>
-    <p>BMW of Jackson appears to have <strong>plenty of demand in the system</strong>, especially from internet lead sources, but the cleaned prospect data suggests the bigger opportunity is in <strong>internet lead conversion, reporting hygiene, and source quality visibility</strong>. The store appears to close much better from walk-in and store-driven business than from internet traffic, which gives management a clear process-improvement opportunity.</p>
+    <p>BMW of Jackson still has <strong>plenty of demand in the system</strong>, and the updated May export shows a larger usable prospect pool than the prior baseline. The biggest opportunity still sits in <strong>internet lead conversion, reporting hygiene, and source-quality visibility</strong>, but the new file also shows internet close performance improving off the earlier floor while duplicate volume remains heavy enough to muddy the pipeline.</p>
   </div>
-  <div class="note-box"><strong>Data note:</strong> the original prospect export had repeated records. A first-pass dedupe reduced the file from <strong>441 rows to 346 cleaned prospect records</strong>. The metrics below use the cleaned counts.</div>
+  <div class="note-box"><strong>Data note:</strong> the new prospect export still contains repeated records. A first-pass cleanup reduced the file from <strong>449 rows to 424 cleaned prospect records</strong>. The metrics below use the cleaned counts.</div>
   <div class="metrics-grid">
-    <div class="metric-card"><div class="metric-label">Cleaned Prospect Pool</div><div class="metric-value">346</div><div class="metric-sub">Usable prospect universe after cleanup</div></div>
-    <div class="metric-card"><div class="metric-label">Internet Prospects</div><div class="metric-value">224</div><div class="metric-sub">64.7% of cleaned prospect pool</div></div>
-    <div class="metric-card"><div class="metric-label">Sold-like Records</div><div class="metric-value">48</div><div class="metric-sub">Current sold baseline from cleaned view</div></div>
-    <div class="metric-card"><div class="metric-label">Open Pipeline</div><div class="metric-value">117</div><div class="metric-sub">70 new + 45 active + 2 review/F&I</div></div>
+    <div class="metric-card"><div class="metric-label">Cleaned Prospect Pool</div><div class="metric-value">424</div><div class="metric-sub">Usable prospect universe after cleanup</div></div>
+    <div class="metric-card"><div class="metric-label">Internet Prospects</div><div class="metric-value">289</div><div class="metric-sub">68.2% of cleaned prospect pool</div></div>
+    <div class="metric-card"><div class="metric-label">Sold-like Records</div><div class="metric-value">55</div><div class="metric-sub">Current sold baseline from cleaned view</div></div>
+    <div class="metric-card"><div class="metric-label">Open Pipeline</div><div class="metric-value">137</div><div class="metric-sub">78 new + 54 active + 5 review/F&I</div></div>
   </div>
   <div class="section-label">Management Charts</div>
   <div class="chart-grid">
     <div class="chart-card">
       <div class="chart-title">Prospect Type Mix</div>
-      <div class="chart-subtitle">Internet is still the dominant source of opportunity after cleanup.</div>
+      <div class="chart-subtitle">Internet is even more dominant in the updated cleaned file.</div>
       <div class="chart-wrap"><canvas id="prospectChart"></canvas></div>
     </div>
     <div class="chart-card">
       <div class="chart-title">Status Mix</div>
-      <div class="chart-subtitle">Lost, bad-lead, and active/new records make up most of the cleaned file.</div>
+      <div class="chart-subtitle">New, duplicate, lost, and active records now make up most of the cleaned file.</div>
       <div class="chart-wrap"><canvas id="statusChart"></canvas></div>
     </div>
   </div>
@@ -92,13 +92,13 @@
     <table>
       <thead><tr><th>Metric</th><th>Value</th><th>Management Takeaway</th></tr></thead>
       <tbody>
-        <tr><td>Internet Share of Prospect Pool</td><td class="val">64.7%</td><td>Internet is the primary growth lever and deserves the most process attention</td></tr>
-        <tr><td>Internet Sold-like Rate</td><td class="val">3.6%</td><td>Internet appears to be the weakest conversion channel in the cleaned dataset</td></tr>
-        <tr><td>Walk-In Sold-like Rate</td><td class="val">31.8%</td><td>In-store traffic appears to convert much better than internet traffic</td></tr>
-        <tr><td>Phone Sold-like Rate</td><td class="val">8.1%</td><td>Phone looks stronger than internet, though smaller in volume</td></tr>
-        <tr><td>Bad Lead Share</td><td class="val">15.9%</td><td>Bad-lead volume is still meaningful even after cleanup</td></tr>
-        <tr><td>Lost Share</td><td class="val">23.7%</td><td>A large part of the cleaned file is already moving into lost status</td></tr>
-        <tr><td>Open Pipeline Share</td><td class="val">33.8%</td><td>Management has enough live opportunity to inspect and coach right now</td></tr>
+        <tr><td>Internet Share of Prospect Pool</td><td class="val">68.2%</td><td>Internet is even more clearly the main operating lever</td></tr>
+        <tr><td>Internet Sold-like Rate</td><td class="val">5.2%</td><td>Internet conversion improved versus the prior baseline, but still leaves room to coach</td></tr>
+        <tr><td>Walk-In Sold-like Rate</td><td class="val">18.5%</td><td>Walk-in still converts better than internet, though not as dramatically as the earlier file implied</td></tr>
+        <tr><td>Phone Sold-like Rate</td><td class="val">20.0%</td><td>Phone is small-volume but converts well when the store gets real conversations</td></tr>
+        <tr><td>Bad Lead Share</td><td class="val">10.1%</td><td>Bad-lead share is lower than the prior baseline but still worth watching by source</td></tr>
+        <tr><td>Lost Share</td><td class="val">17.2%</td><td>Lost volume is still meaningful, but less dominant than before</td></tr>
+        <tr><td>Open Pipeline Share</td><td class="val">32.3%</td><td>There is still enough live opportunity in the file to inspect and coach right now</td></tr>
       </tbody>
     </table>
   </div>
@@ -106,37 +106,37 @@
     <div class="insight-box">
       <h3>Current Strengths</h3>
       <ul>
-        <li><strong>Demand is there.</strong> Even after cleanup, the store still has a large usable prospect pool.</li>
-        <li><strong>Walk-in and store-driven business appears strong.</strong> The floor seems to convert much better than internet business.</li>
-        <li><strong>There is active pipeline to work.</strong> The cleaned file still shows a meaningful amount of live opportunity.</li>
+        <li><strong>Demand is there.</strong> Even after cleanup, the store now shows an even larger usable prospect pool.</li>
+        <li><strong>Internet conversion improved from the earlier baseline.</strong> The store is not stuck at the prior low-water mark.</li>
+        <li><strong>There is still active pipeline to work.</strong> The cleaned file continues to show a meaningful amount of live opportunity.</li>
       </ul>
     </div>
     <div class="opportunity-box">
       <h3>Near-Term Opportunities</h3>
       <ul>
-        <li><strong>Internet lead conversion looks weak.</strong> This is the biggest likely operating opportunity.</li>
-        <li><strong>Bad-lead volume is still high.</strong> That suggests either noisy sources, weak qualification, or both.</li>
-        <li><strong>Source-quality visibility is needed.</strong> Management needs to know which sources are productive vs noisy.</li>
+        <li><strong>Internet lead conversion still needs work.</strong> It improved, but it is still the biggest likely operating opportunity.</li>
+        <li><strong>Duplicate volume is still heavy.</strong> That makes the working pipeline look less clean than it should.</li>
+        <li><strong>Source-quality visibility is still needed.</strong> Management needs to know which sources are productive versus noisy or repetitive.</li>
       </ul>
     </div>
   </div>
   <div class="action-box">
     <h3>Recommended Management Actions</h3>
     <ol>
-      <li><strong>Review internet lead handling first.</strong> That is where the largest share of opportunity sits.</li>
-      <li><strong>Build a source-quality scorecard.</strong> Management should review cleaned source volume vs sold output weekly.</li>
-      <li><strong>Separate bad leads from workable leads more aggressively.</strong> This will sharpen pipeline focus.</li>
-      <li><strong>Use this cleaned month as the baseline.</strong> Future process improvements can be measured against it.</li>
+      <li><strong>Review internet lead handling first.</strong> That is still where the largest share of opportunity sits.</li>
+      <li><strong>Build a source-quality and duplicate scorecard.</strong> Management should review cleaned source volume, duplicate volume, and sold output weekly.</li>
+      <li><strong>Separate bad leads and duplicate chains from workable leads more aggressively.</strong> This will sharpen pipeline focus.</li>
+      <li><strong>Use this May cleaned file as the new baseline.</strong> Future process improvements should be measured against this updated snapshot.</li>
     </ol>
   </div>
 </div>
 <div class="footer">
   <div class="footer-text"><strong>The Cooperative Agency</strong>Baton Rouge, Louisiana · <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> · <a href="http://www.thecoopbrla.com">thecoopbrla.com</a></div>
-  <div class="footer-text" style="text-align:right;"><strong>Data Source</strong>BMW of Jackson prospect export CSV · cleaned first-pass view<br>Prepared as management baseline snapshot</div>
+  <div class="footer-text" style="text-align:right;"><strong>Data Source</strong>BMW of Jackson prospect export CSV · updated May cleaned first-pass view<br>Prepared as management baseline snapshot</div>
 </div>
 <script>
-const prospectType = { labels:['Internet','Walk-In','Phone','Other','DMS Created'], values:[224,44,37,30,11] };
-const statusMix = { labels:['Lost','New','Bad Lead','Sold - Integration','Active','Duplicate'], values:[82,70,55,48,45,12] };
+const prospectType = { labels:['Internet','Walk-In','Other','Phone','DMS Created'], values:[289,54,33,30,18] };
+const statusMix = { labels:['New','Duplicate','Lost','Active','Sold - Integration','Bad Lead'], values:[78,74,73,54,46,43] };
 new Chart(document.getElementById('prospectChart').getContext('2d'), { type:'doughnut', data:{ labels: prospectType.labels, datasets:[{ data: prospectType.values, backgroundColor:['#1d6fa8','#bb0a21','#6b7280','#8b5cf6','#16a34a'], borderWidth:0 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ color:'#555', font:{ size:12 }, padding:14 } }, tooltip:{ callbacks:{ label:(ctx)=>{ const total=prospectType.values.reduce((a,b)=>a+b,0); const pct=((ctx.raw/total)*100).toFixed(1); return `${ctx.label}: ${ctx.raw} (${pct}%)`; } } } } } });
 new Chart(document.getElementById('statusChart').getContext('2d'), { type:'bar', data:{ labels: statusMix.labels, datasets:[{ label:'Rows', data:statusMix.values, backgroundColor:['#ef4444','#1d6fa8','#6b7280','#16a34a','#8b5cf6','#f59e0b'], borderRadius:6 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ y:{ beginAtZero:true, grid:{ color:'rgba(0,0,0,0.06)' }, ticks:{ color:'#666' } }, x:{ grid:{ display:false }, ticks:{ color:'#666' } } } } });
 </script>

@@ -108,12 +108,10 @@ get_daily() {
 
 # ── DATE RANGES ────────────────────────────────────────────────
 TODAY=$(date '+%Y-%m-%d')
-LAST30_START=$(date -v-30d '+%Y-%m-%d')
-LAST60_START=$(date -v-60d '+%Y-%m-%d')
-Q1_2026_START="2026-01-01"
-Q1_2026_END="2026-03-31"
-Q1_PREV_START="2024-01-01"
-Q1_PREV_END="2024-03-31"
+LAST90_START="90daysAgo"
+LAST90_END="today"
+
+echo "[$DATE] Using rolling GA4 windows (30/60/90 days ending today)..." | tee -a "$LOG_FILE"
 
 echo "[$DATE] Fetching access tokens..." | tee -a "$LOG_FILE"
 TOKEN_BH=$(get_access_token "$BH_BMW_EMAIL")
@@ -122,14 +120,14 @@ TOKEN_JACKSON=$(get_access_token "$BMW_JACKSON_EMAIL")
 echo "[$DATE] Pulling data for all 3 stores..." | tee -a "$LOG_FILE"
 
 # ── PULL ALL DATA ─────────────────────────────────────────────
-BH_SOURCES=$(get_sources "$TOKEN_BH" "$BH_BMW_PROPERTY" "$Q1_2026_START" "$Q1_2026_END")
-BH_DEVICES=$(get_devices "$TOKEN_BH" "$BH_BMW_PROPERTY" "$Q1_2026_START" "$Q1_2026_END")
+BH_SOURCES=$(get_sources "$TOKEN_BH" "$BH_BMW_PROPERTY" "$LAST90_START" "$LAST90_END")
+BH_DEVICES=$(get_devices "$TOKEN_BH" "$BH_BMW_PROPERTY" "$LAST90_START" "$LAST90_END")
 
-AUDI_SOURCES=$(get_sources "$TOKEN_BH" "$AUDI_BR_PROPERTY" "$Q1_2026_START" "$Q1_2026_END")
-AUDI_DEVICES=$(get_devices "$TOKEN_BH" "$AUDI_BR_PROPERTY" "$Q1_2026_START" "$Q1_2026_END")
+AUDI_SOURCES=$(get_sources "$TOKEN_BH" "$AUDI_BR_PROPERTY" "$LAST90_START" "$LAST90_END")
+AUDI_DEVICES=$(get_devices "$TOKEN_BH" "$AUDI_BR_PROPERTY" "$LAST90_START" "$LAST90_END")
 
-JACKSON_SOURCES=$(get_sources "$TOKEN_JACKSON" "$BMW_JACKSON_PROPERTY" "$Q1_2026_START" "$Q1_2026_END")
-JACKSON_DEVICES=$(get_devices "$TOKEN_JACKSON" "$BMW_JACKSON_PROPERTY" "$Q1_2026_START" "$Q1_2026_END")
+JACKSON_SOURCES=$(get_sources "$TOKEN_JACKSON" "$BMW_JACKSON_PROPERTY" "$LAST90_START" "$LAST90_END")
+JACKSON_DEVICES=$(get_devices "$TOKEN_JACKSON" "$BMW_JACKSON_PROPERTY" "$LAST90_START" "$LAST90_END")
 
 echo "[$DATE] Data pulled. Generating updated dashboards..." | tee -a "$LOG_FILE"
 
