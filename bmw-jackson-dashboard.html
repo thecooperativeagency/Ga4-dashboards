@@ -378,13 +378,23 @@
 </div>
 
     <div class="section">
+        <div class="section">
         <div class="section-title">Last Year Seasonality</div>
         <div class="chart-card">
-            <div class="chart-card-title">Weekly Sessions — 2025 Traffic Movement</div>
+            <div class="chart-card-title">Weekly Sessions — 2025 Overall Traffic Movement</div>
             <div class="chart-wrapper"><canvas id="seasonalityChart"></canvas></div>
         </div>
+        <div class="sources-grid" style="margin-top:20px;">
+            <div class="chart-card">
+                <div class="chart-card-title">Weekly Sessions — 2025 New Traffic</div>
+                <div class="chart-wrapper"><canvas id="seasonalityNewChart"></canvas></div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-card-title">Weekly Sessions — 2025 Used Traffic</div>
+                <div class="chart-wrapper"><canvas id="seasonalityUsedChart"></canvas></div>
+            </div>
+        </div>
     </div>
-
 <div class="footer">
     <div class="footer-left">
         &copy; 2026 The Cooperative Agency &nbsp;·&nbsp;
@@ -412,13 +422,13 @@ const DATA = {
     yoy30: {"label":"Same 30 Days Last Year","sessions":18211,"users":15791,"newUsers":11759,"pageviews":45442,"pagesPerSession":2.5,"daily":{"labels":["04/28","04/22","05/05","04/17","04/24","04/18","04/23","05/02","04/25","04/14","04/21","04/29","05/01","04/15","04/16","04/26","04/27","04/30","05/06","04/13","05/07","04/20","04/19","05/12","05/04","05/03","05/08","05/09","05/11","05/10"],"sessions":[739,714,710,707,696,689,684,682,675,671,671,671,649,613,613,602,601,594,586,575,560,554,548,546,539,531,528,494,398,371]}}
 };
 
-const WEEKLY_2025 = {"labels":["Dec 30","Jan 06","Jan 13","Jan 20","Jan 27","Feb 03","Feb 10","Feb 17","Feb 24","Mar 03","Mar 10","Mar 17","Mar 24","Mar 31","Apr 07","Apr 14","Apr 21","Apr 28","May 05","May 12","May 19","May 26","Jun 02","Jun 09","Jun 16","Jun 23","Jun 30","Jul 07","Jul 14","Jul 21","Jul 28","Aug 04","Aug 11","Aug 18","Aug 25","Sep 01","Sep 08","Sep 15","Sep 22","Sep 29","Oct 06","Oct 13","Oct 20","Oct 27","Nov 03","Nov 10","Nov 17","Nov 24","Dec 01","Dec 08","Dec 15","Dec 22","Dec 29"],"sessions":[2859,3860,3836,3419,3319,2884,2540,2867,3583,3391,3201,3667,3935,4534,4269,4395,4643,4405,3647,3844,3870,3230,3561,3344,3345,3791,4100,3807,3918,3975,3023,3165,3461,3319,4694,3598,3316,4518,4185,3364,3351,3325,3613,3560,3881,4511,4902,3894,3586,3540,3416,3679,1749]};
+const WEEKLY_2025 = {"overall":{"labels":["Dec 30","Jan 06","Jan 13","Jan 20","Jan 27","Feb 03","Feb 10","Feb 17","Feb 24","Mar 03","Mar 10","Mar 17","Mar 24","Mar 31","Apr 07","Apr 14","Apr 21","Apr 28","May 05","May 12","May 19","May 26","Jun 02","Jun 09","Jun 16","Jun 23","Jun 30","Jul 07","Jul 14","Jul 21","Jul 28","Aug 04","Aug 11","Aug 18","Aug 25","Sep 01","Sep 08","Sep 15","Sep 22","Sep 29","Oct 06","Oct 13","Oct 20","Oct 27","Nov 03","Nov 10","Nov 17","Nov 24","Dec 01","Dec 08","Dec 15","Dec 22","Dec 29"],"sessions":[6245,8807,9196,8127,7894,7010,6434,6827,7515,7238,7228,7840,9013,9518,9196,9143,9933,8888,8029,8482,8072,7285,7743,7635,7719,8107,8553,8413,8376,8791,7534,7550,8679,8158,9729,8492,7263,9116,8399,7302,7725,8189,8364,8225,9378,11362,10754,8211,8292,8353,7870,8555,4320]},"new":{"labels":["Dec 30","Jan 06","Jan 13","Jan 20","Jan 27","Feb 03","Feb 10","Feb 17","Feb 24","Mar 03","Mar 10","Mar 17","Mar 24","Mar 31","Apr 07","Apr 14","Apr 21","Apr 28","May 05","May 12","May 19","May 26","Jun 02","Jun 09","Jun 16","Jun 23","Jun 30","Jul 07","Jul 14","Jul 21","Jul 28","Aug 04","Aug 11","Aug 18","Aug 25","Sep 01","Sep 08","Sep 15","Sep 22","Sep 29","Oct 06","Oct 13","Oct 20","Oct 27","Nov 03","Nov 10","Nov 17","Nov 24","Dec 01","Dec 08","Dec 15","Dec 22","Dec 29"],"sessions":[1195,1836,1665,1571,1420,983,1061,1055,1039,860,1036,1195,1358,1251,1350,1126,1127,1286,1087,1939,1626,1537,1560,1375,1529,1488,1421,1538,1502,1821,1521,1389,1914,1580,1649,1711,1362,1600,1428,1171,1431,1566,2044,2038,2593,2935,1925,1558,1122,974,900,1173,592]},"used":{"labels":["Dec 30","Jan 06","Jan 13","Jan 20","Jan 27","Feb 03","Feb 10","Feb 17","Feb 24","Mar 03","Mar 10","Mar 17","Mar 24","Mar 31","Apr 07","Apr 14","Apr 21","Apr 28","May 05","May 12","May 19","May 26","Jun 02","Jun 09","Jun 16","Jun 23","Jun 30","Jul 07","Jul 14","Jul 21","Jul 28","Aug 04","Aug 11","Aug 18","Aug 25","Sep 01","Sep 08","Sep 15","Sep 22","Sep 29","Oct 06","Oct 13","Oct 20","Oct 27","Nov 03","Nov 10","Nov 17","Nov 24","Dec 01","Dec 08","Dec 15","Dec 22","Dec 29"],"sessions":[2373,3428,3784,3184,3154,2839,2538,2528,3017,2838,2498,2526,2913,3188,2872,3135,3599,2701,2627,2641,2436,2255,2203,2310,2288,2482,2374,2391,2363,2394,2346,2333,2635,2401,2477,2418,2011,2462,2264,1939,2111,2335,2006,2074,2417,2651,2460,1886,2242,2338,2023,1943,1064]}};
 
 const SOURCES = [{"source":"google","medium":"cpc","sessions":38578,"users":29486},{"source":"(direct)","medium":"(none)","sessions":11810,"users":8806},{"source":"google","medium":"organic","sessions":10458,"users":6139},{"source":"facebook","medium":"cpc","sessions":5116,"users":4068},{"source":"(not set)","medium":"(not set)","sessions":2582,"users":2269},{"source":"bing","medium":"organic","sessions":822,"users":453},{"source":"(data not available)","medium":"(data not available)","sessions":430,"users":425},{"source":"yahoo","medium":"organic","sessions":333,"users":188},{"source":"bmw-retailer.email-dealer.com","medium":"referral","sessions":323,"users":324},{"source":"facebook.com","medium":"referral","sessions":299,"users":292},{"source":"m.facebook.com","medium":"referral","sessions":273,"users":264},{"source":"autotrader.com","medium":"referral","sessions":207,"users":113},{"source":"bmwusa.com","medium":"referral","sessions":196,"users":140},{"source":"cars.com","medium":"referral","sessions":148,"users":89},{"source":"focus.dealer.reyrey.net","medium":"referral","sessions":128,"users":3},{"source":"duckduckgo","medium":"organic","sessions":116,"users":60},{"source":"jlemail","medium":"email1","sessions":86,"users":63},{"source":"fb","medium":"paid","sessions":69,"users":67},{"source":"visor.vin","medium":"referral","sessions":45,"users":23},{"source":"an","medium":"paid","sessions":42,"users":31}];
 
 // ── STATE ──────────────────────────────────────────────────────
 let range = 30, compare = 'prev';
-let sessionsChart = null, sourcesChart = null, seasonalityChart = null;
+let sessionsChart = null, sourcesChart = null, seasonalityChart = null, seasonalityNewChart = null, seasonalityUsedChart = null;
 
 // ── HELPERS ────────────────────────────────────────────────────
 const fmt = n => Number(n).toLocaleString();
@@ -545,37 +555,36 @@ function renderChart(curr, comp) {
 
 function renderSeasonality() {
     if (!document.getElementById('seasonalityChart') || !WEEKLY_2025) return;
-    if (seasonalityChart) seasonalityChart.destroy();
-    seasonalityChart = new Chart(document.getElementById('seasonalityChart').getContext('2d'), {
-        type: 'line',
-        data: {
-            labels: WEEKLY_2025.labels,
-            datasets: [{
-                label: 'Weekly Sessions (2025)',
-                data: WEEKLY_2025.sessions,
-                borderColor: '#22c55e',
-                backgroundColor: 'rgba(34,197,94,0.10)',
-                borderWidth: 2.5,
-                fill: true,
-                tension: 0.35,
-                pointRadius: 3,
-                pointHoverRadius: 5,
-                pointBackgroundColor: '#22c55e'
-            }]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: {
-                legend: { labels: { color: '#888', font: { size: 12 } } },
-                tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } }
-            },
-            scales: {
-                y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } },
-                x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } }
-            }
-        }
+    const makeOptions = (color) => ({
+        borderColor: color,
+        backgroundColor: color === '#22c55e' ? 'rgba(34,197,94,0.10)' : color === '#3b82f6' ? 'rgba(59,130,246,0.10)' : 'rgba(245,158,11,0.10)',
+        borderWidth: 2.5,
+        fill: true,
+        tension: 0.35,
+        pointRadius: 3,
+        pointHoverRadius: 5,
+        pointBackgroundColor: color
     });
+    const build = (id, dataset, label, color, existing) => {
+        if (existing) existing.destroy();
+        return new Chart(document.getElementById(id).getContext('2d'), {
+            type: 'line',
+            data: { labels: dataset.labels, datasets: [{ label, data: dataset.sessions, ...makeOptions(color) }] },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
+                scales: {
+                    y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } },
+                    x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } }
+                }
+            }
+        });
+    };
+    seasonalityChart = build('seasonalityChart', WEEKLY_2025.overall, 'Weekly Sessions (2025 Overall)', '#22c55e', seasonalityChart);
+    seasonalityNewChart = build('seasonalityNewChart', WEEKLY_2025.new, 'Weekly Sessions (2025 New)', '#3b82f6', seasonalityNewChart);
+    seasonalityUsedChart = build('seasonalityUsedChart', WEEKLY_2025.used, 'Weekly Sessions (2025 Used)', '#f59e0b', seasonalityUsedChart);
 }
+
 
 function renderMetrics(curr, comp) {
     // BMW of Jackson — Small market (Jackson, MS metro ~180K), ~30-unit/mo store
