@@ -139,7 +139,6 @@
     </style>
 </head>
 <body>
-<div style="background:#0a0a0a;border-bottom:1px solid #222;padding:10px 24px;"><a href="https://thecooperativeagency.github.io/vendor-briefs/" style="color:#c0392b;text-decoration:none;font-size:12px;font-weight:600;font-family:-apple-system,sans-serif;">← Command Center</a></div>
 <button id="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode" style="
   position:fixed;top:14px;right:18px;z-index:9999;
   background:rgba(128,128,128,0.15);
@@ -165,10 +164,10 @@
     <div class="header-brand">Custom Developed Dashboard<br>by <strong>The Cooperative Agency</strong></div>
 </div>
 
-<div id="oemDisclaimer" style="display:none;background:#1a0a0a;border-bottom:2px solid #BB0A21;padding:12px 24px;gap:12px;align-items:center;">
-    <span style="font-size:16px;flex-shrink:0;">⚠️</span>
+<div id="oemDisclaimer" style="display:flex;background:#1a0a0a;border-bottom:2px solid #BB0A21;padding:12px 24px;gap:12px;align-items:center;">
+    <span style="font-size:16px;flex-shrink:0;">ℹ️</span>
     <div style="font-size:13px;color:#ccc;line-height:1.5;">
-        <strong style="color:#fff;">Note: Motive dealer site only — OADD site data not included in this comparison.</strong>
+        <strong style="color:#fff;">Combined Audi Baton Rouge web ecosystem view.</strong> Current totals include Motive + OEM hostname traffic where available. Prior-year comparison was effectively a one-site baseline, so YoY should be read with that footprint change in mind.
     </div>
 </div>
 
@@ -217,6 +216,25 @@
                 <div class="chart-card-title">Source Breakdown</div>
                 <div class="chart-wrapper"><canvas id="sourcesChart"></canvas></div>
             </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Hostname Comparison</div>
+        <div class="chart-card">
+            <div class="chart-card-title">Current site footprint — combined total vs hostname mix</div>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Hostname</th><th style="text-align:right;">Last 90 Days Sessions</th><th style="text-align:right;">Share</th><th>Read</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="val">audibatonrouge.com</td><td class="val" style="text-align:right;">41,723</td><td class="val" style="text-align:right;">91.9%</td><td>Main Motive domain still carries the overwhelming majority of traffic</td></tr>
+                    <tr><td class="val">www.audibatonrougela.com</td><td class="val" style="text-align:right;">2,635</td><td class="val" style="text-align:right;">5.8%</td><td>OEM hostname is now visible and contributing meaningful incremental traffic</td></tr>
+                    <tr><td class="val">louisianasaudihq.com</td><td class="val" style="text-align:right;">1,006</td><td class="val" style="text-align:right;">2.2%</td><td>Secondary campaign / legacy hostname still contributes a small tail</td></tr>
+                    <tr><td class="val">Combined tracked total</td><td class="val" style="text-align:right;">45,400</td><td class="val" style="text-align:right;">100%</td><td>Recommended headline total for the current Audi Baton Rouge site ecosystem</td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top:15px; font-size:11px; color:#444;">YoY context: same 90 days last year was effectively <strong>52,517 sessions from the main site only</strong>. OEM hostname history appears to begin around mid-February 2026, so current combined totals are not a clean apples-to-apples YoY baseline.</div>
         </div>
     </div>
 
@@ -373,7 +391,7 @@
 
 <div class="footer">
     <div class="footer-left">&copy; 2026 The Cooperative Agency &nbsp;·&nbsp; <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> &nbsp;·&nbsp; <a href="http://www.thecoopbrla.com">www.thecoopbrla.com</a></div>
-    <div class="footer-right">Data: Google Analytics 4 &nbsp;·&nbsp; Property 381984706<br>Audi Baton Rouge &nbsp;·&nbsp; Updated April 2026</div>
+    <div class="footer-right">Data: Google Analytics 4 &nbsp;·&nbsp; Property 381984706<br>Audi Baton Rouge &nbsp;·&nbsp; Updated May 2026</div>
 </div>
 
 <script>
