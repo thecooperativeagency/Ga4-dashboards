@@ -473,8 +473,7 @@ function getCompareData(){
     return range===30?DATA.prev30:range===60?DATA.prev60:DATA.prev90;
 }
 
-function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();renderOutboundCampaigns();renderJlmLeadEvents();
-renderSeasonality();}
+function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();renderSeasonality();}
 function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEach(b=>b.classList.remove('active'));document.getElementById('cmp-'+c).classList.add('active');render();}
 
 function render(){
@@ -626,8 +625,7 @@ function renderJlmLeadEvents(){
 
 render();
 renderSources();
-renderOutboundCampaigns();
-renderJlmLeadEvents();
+renderSeasonality();
 </script>
 <script>
 (function(){
