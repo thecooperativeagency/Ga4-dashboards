@@ -63,11 +63,13 @@ def totals_from_report(report: dict):
 
 
 def daily_from_report(report: dict):
-    labels, sessions = [], []
+    pairs = []
     for row in report.get('rows', []):
         date_str = row['dimensionValues'][0]['value']
-        labels.append(f"{date_str[4:6]}/{date_str[6:8]}")
-        sessions.append(int(row['metricValues'][0]['value']))
+        pairs.append((date_str, int(row['metricValues'][0]['value'])))
+    pairs.sort(key=lambda x: x[0])
+    labels = [f"{date_str[4:6]}/{date_str[6:8]}" for date_str, _ in pairs]
+    sessions = [value for _, value in pairs]
     return {'labels': labels, 'sessions': sessions}
 
 
