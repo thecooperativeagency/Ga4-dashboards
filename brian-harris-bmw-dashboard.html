@@ -214,44 +214,6 @@
     </div>
 
     <div class="section">
-        <div class="section-title">AMP Campaign Traffic — Text + Email</div>
-        <div class="sources-grid">
-            <div class="chart-card">
-                <div class="chart-card-title">Outbound Campaign Sessions by Campaign</div>
-                <div id="outboundCampaignList"></div>
-            </div>
-            <div class="chart-card">
-                <div class="chart-card-title">Campaign Mix</div>
-                <div class="chart-wrapper"><canvas id="outboundCampaignChart"></canvas></div>
-            </div>
-        </div>
-        <div class="chart-card" style="margin-top:20px;">
-            <div class="chart-card-title">Campaign Source Details</div>
-            <table class="comparison-table" id="outboundCampaignTable"></table>
-            <div style="margin-top:15px; font-size:11px; color:#444;">Source filter: <strong>amp</strong> · Mediums currently found: <strong>text</strong>, <strong>email</strong> · Campaign names are not fully standardized, so this block groups the real GA4 campaign taxonomy instead of assuming only mon26 labels.</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Lead / Conversion Intent Events</div>
-        <div class="sources-grid">
-            <div class="chart-card">
-                <div class="chart-card-title">JLM Lead Events by Type</div>
-                <div id="jlmLeadList"></div>
-            </div>
-            <div class="chart-card">
-                <div class="chart-card-title">Lead Event Mix</div>
-                <div class="chart-wrapper"><canvas id="jlmLeadChart"></canvas></div>
-            </div>
-        </div>
-        <div class="chart-card" style="margin-top:20px;">
-            <div class="chart-card-title">Lead Event Summary</div>
-            <table class="comparison-table" id="jlmLeadTable"></table>
-            <div style="margin-top:15px; font-size:11px; color:#444;">These are GA4-tracked JLM lead-intent events. They may not represent every conversion on the site, but they are strong signal data for form and lead actions.</div>
-        </div>
-    </div>
-
-    <div class="section">
         <div class="section-title">🔑 Top 10 Model Pages</div>
         <div class="chart-card">
             <div class="chart-card-title">Ranked by Sessions</div>
@@ -497,7 +459,7 @@ const JLM_LEAD_EVENTS_BY_RANGE = {
 };
 
 const ACCENT = '#1d6fa8';
-let range=30, compare='prev', sessionsChart=null, sourcesChart=null, outboundCampaignChart=null, jlmLeadChart=null, seasonalityChart=null, seasonalityNewChart=null, seasonalityUsedChart=null;
+let range=30, compare='prev', sessionsChart=null, sourcesChart=null, seasonalityChart=null, seasonalityNewChart=null, seasonalityUsedChart=null;
 const WEEKLY_2025={overall:{labels:['Jan 5','Jan 12','Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4','May 11','May 18','May 25','Jun 1','Jun 8','Jun 15','Jun 22','Jun 29','Jul 6','Jul 13','Jul 20','Jul 27','Aug 3','Aug 10','Aug 17','Aug 24','Aug 31','Sep 7','Sep 14','Sep 21','Sep 28','Oct 5','Oct 12','Oct 19','Oct 26','Nov 2','Nov 9','Nov 16','Nov 23','Nov 30','Dec 7','Dec 14','Dec 21','Dec 28'],sessions:[1710,1786,1854,1912,1988,2051,2110,2198,2286,2368,2441,2516,2594,2472,2396,2338,2281,2226,2184,2140,2098,2065,2022,1984,1948,1906,1868,1834,1802,1770,1738,1709,1680,1662,1645,1624,1601,1588,1569,1548,1526,1508,1490,1474,1458,1431,1384,1342,1298,1246,1162,1098]},new:{labels:['Jan 5','Jan 12','Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4','May 11','May 18','May 25','Jun 1','Jun 8','Jun 15','Jun 22','Jun 29','Jul 6','Jul 13','Jul 20','Jul 27','Aug 3','Aug 10','Aug 17','Aug 24','Aug 31','Sep 7','Sep 14','Sep 21','Sep 28','Oct 5','Oct 12','Oct 19','Oct 26','Nov 2','Nov 9','Nov 16','Nov 23','Nov 30','Dec 7','Dec 14','Dec 21','Dec 28'],sessions:[980,1026,1068,1103,1151,1194,1232,1281,1332,1380,1424,1471,1518,1459,1417,1381,1342,1306,1278,1245,1216,1193,1166,1142,1119,1094,1072,1050,1031,1012,994,978,963,952,941,929,916,905,893,880,868,857,845,833,820,801,776,752,724,696,649,614]},used:{labels:['Jan 5','Jan 12','Jan 19','Jan 26','Feb 2','Feb 9','Feb 16','Feb 23','Mar 2','Mar 9','Mar 16','Mar 23','Mar 30','Apr 6','Apr 13','Apr 20','Apr 27','May 4','May 11','May 18','May 25','Jun 1','Jun 8','Jun 15','Jun 22','Jun 29','Jul 6','Jul 13','Jul 20','Jul 27','Aug 3','Aug 10','Aug 17','Aug 24','Aug 31','Sep 7','Sep 14','Sep 21','Sep 28','Oct 5','Oct 12','Oct 19','Oct 26','Nov 2','Nov 9','Nov 16','Nov 23','Nov 30','Dec 7','Dec 14','Dec 21','Dec 28'],sessions:[730,760,786,809,837,857,878,917,954,988,1017,1045,1076,1013,979,957,939,920,906,895,882,872,856,842,829,812,796,784,771,758,744,731,717,710,704,695,685,683,676,668,658,651,645,641,638,630,608,590,574,550,513,484]}};
 const fmt=n=>Number(n).toLocaleString();
 const pct=(a,b)=>b?((a-b)/b*100).toFixed(1):null;
