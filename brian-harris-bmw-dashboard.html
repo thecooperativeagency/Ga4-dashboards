@@ -21,7 +21,7 @@
         .filter-label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
         .filter-group, .compare-group { display: flex; gap: 8px; flex-wrap: wrap; }
         .compare-group { margin-left: auto; }
-        .filter-btn, .compare-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #222; background: transparent; color: #777; font-size: 12px; cursor: pointer; transition: all 0.2s; }
+        .filter-btn, .compare-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #222; background: transparent; color: #888; font-size: 12px; cursor: pointer; transition: all 0.2s; }
         .filter-btn:hover { border-color: #1d6fa8; color: #1d6fa8; }
         .filter-btn.active { background: #1d6fa8; border-color: #1d6fa8; color: #fff; }
         .compare-btn:hover { border-color: #f59e0b; color: #f59e0b; }
@@ -38,13 +38,13 @@
         .card-change.up { color: #10b981; }
         .card-change.down { color: #ef4444; }
         .card-change.neutral { color: #555; }
-        .card-compare { font-size: 11px; color: #444; margin-top: 3px; }
+        .card-compare { font-size: 11px; color: #444; margin-top: 4px; }
 
         .section { margin-bottom: 40px; }
-        .section-title { font-size: 12px; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #1a1a1a; }
+        .section-title { font-size: 12px; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #1e1e1e; }
 
         .chart-card { background: #111; border: 1px solid #1a1a1a; border-radius: 12px; padding: 25px; margin-bottom: 20px; }
-        .chart-card-title { font-size: 13px; color: #777; margin-bottom: 20px; }
+        .chart-card-title { font-size: 13px; color: #888; margin-bottom: 20px; }
         .chart-wrapper { position: relative; height: 300px; }
 
         .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
@@ -59,6 +59,7 @@
         .metric-target { font-size: 11px; color: #444; }
         .metric-change { font-size: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #1a1a1a; }
 
+        /* Sources */
         .sources-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         @media (max-width: 900px) { .sources-grid { grid-template-columns: 1fr; } }
         .source-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1a1a1a; }
@@ -72,6 +73,7 @@
         .source-bar-fill { height: 100%; background: #1d6fa8; border-radius: 2px; }
         .source-sessions { font-size: 12px; color: #aaa; text-align: right; white-space: nowrap; }
 
+        /* Comparison table */
         .comparison-table { width: 100%; border-collapse: collapse; }
         .comparison-table th, .comparison-table td { padding: 11px 15px; text-align: left; border-bottom: 1px solid #1a1a1a; font-size: 13px; }
         .comparison-table th { color: #555; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
@@ -87,11 +89,17 @@
         .insights-list li:last-child { border-bottom: none; }
         .insights-list li strong { color: #fff; }
 
-        .footer { background: #0d0d0d; border-top: 1px solid #1a1a1a; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .footer { background: #0d0d0d; border-top: 1px solid #1e1e1e; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
         .footer-left, .footer-right { font-size: 11px; color: #444; line-height: 1.7; }
         .footer a { color: #1d6fa8; text-decoration: none; }
 
-        @media (max-width: 768px) { .content { padding: 15px; } .header { padding: 15px; } .filter-bar { padding: 12px 15px; } .compare-group { margin-left: 0; } .card-value { font-size: 22px; } }
+        @media (max-width: 768px) {
+            .content { padding: 15px; }
+            .header { padding: 15px; }
+            .filter-bar { padding: 12px 15px; }
+            .compare-group { margin-left: 0; }
+            .card-value { font-size: 22px; }
+        }
 
         /* === THEME VARIABLES === */
         :root { transition: background 0.2s, color 0.2s; }
@@ -134,12 +142,10 @@
         [data-theme="light"] .footer { background: #e5e8ec !important; border-top-color: #ccc !important; }
         [data-theme="light"] .footer-left, [data-theme="light"] .footer-right { color: #777 !important; }
         [data-theme="light"] .card-change.neutral { color: #888 !important; }
-        [data-theme="light"] .card-compare { color: #777 !important; }
         [data-theme="light"] .status-neutral { background: rgba(100,100,100,0.1) !important; }
     </style>
 </head>
 <body>
-<div style="background:#0a0a0a;border-bottom:1px solid #222;padding:10px 24px;"><a href="https://thecooperativeagency.github.io/vendor-briefs/" style="color:#c0392b;text-decoration:none;font-size:12px;font-weight:600;font-family:-apple-system,sans-serif;">← Command Center</a></div>
 <button id="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode" style="
   position:fixed;top:14px;right:18px;z-index:9999;
   background:rgba(128,128,128,0.15);
@@ -154,15 +160,15 @@
 
 <div class="header">
     <div class="header-left">
-        <div class="header-logo">
-            <img src="https://images.squarespace-cdn.com/content/v1/68fac8a3d20e8d72215ede75/6669040e-00b7-4113-a0c0-a29b3706227f/Asset+26.png?format=500w" alt="The Cooperative Agency">
-        </div>
+        <div class="header-logo"><img src="https://images.squarespace-cdn.com/content/v1/68fac8a3d20e8d72215ede75/6669040e-00b7-4113-a0c0-a29b3706227f/Asset+26.png?format=500w" alt="The Cooperative Agency"></div>
         <div class="header-title">
             <h1>Brian Harris BMW</h1>
             <p>GA4 Analytics Dashboard &nbsp;·&nbsp; The Cooperative Agency</p>
         </div>
     </div>
-    <div class="header-brand">Custom Developed Dashboard<br>by <strong>The Cooperative Agency</strong></div>
+    <div class="header-brand">
+        Custom Developed Dashboard<br>by <strong>The Cooperative Agency</strong>
+    </div>
 </div>
 
 <div class="filter-bar">
@@ -181,24 +187,29 @@
 </div>
 
 <div class="content">
+
     <div class="summary-cards" id="summaryCards"></div>
+
     <div class="section">
         <div class="section-title">Traffic Trend</div>
         <div class="chart-card">
-            <div class="chart-card-title" id="chartTitle">Daily Sessions</div>
+            <div class="chart-card-title" id="chartTitle">Daily Sessions — Last 90 Days</div>
             <div class="chart-wrapper"><canvas id="sessionsChart"></canvas></div>
         </div>
     </div>
+
     <div class="section">
         <div class="section-title">Website Traffic & Engagement</div>
         <div class="metrics-grid" id="metricsGrid"></div>
     </div>
+
     <div class="section" id="comparisonSection">
         <div class="section-title" id="comparisonTitle">Period Comparison</div>
         <div class="chart-card">
             <table class="comparison-table" id="comparisonTable"></table>
         </div>
     </div>
+
     <div class="section">
         <div class="section-title">Top 20 Traffic Sources — Last 90 Days</div>
         <div class="sources-grid">
@@ -390,6 +401,7 @@
 </div>
 
 <script>
+// ── DATA ──────────────────────────────────────────────────────
 const DATA = {
     q1_2026: {"label":"Last 90 Days","sessions":69474,"users":56916,"newUsers":39955,"pageviews":250110,"pagesPerSession":3.6,"daily":{"labels":["02/27","02/23","02/25","05/16","02/21","04/25","03/12","05/12","05/17","02/26","02/24","04/24","03/19","03/11","03/10","05/15","03/13","05/11","03/27","03/18","03/25","03/26","03/30","05/14","02/18","03/17","03/16","04/07","02/19","04/14","04/20","04/28","04/11","04/17","05/06","03/20","05/05","03/14","04/15","04/16","05/04","04/10","02/17","02/22","05/13","03/23","02/28","03/02","02/20","04/13","04/27","05/01","04/26","04/21","05/09","03/28","04/22","04/08","05/02","04/09","03/24","03/21","03/15","04/06","04/18","05/08","03/09","05/07","04/29","04/23","03/03","04/03","03/01","04/02","04/19","05/03","03/05","04/01","03/06","03/04","03/07","04/04","03/31","03/22","04/12","04/30","03/29","05/10","03/08","04/05","05/18"],"sessions":[1205,998,979,958,956,954,945,943,937,935,919,906,903,898,887,883,881,866,861,858,853,844,838,835,828,827,824,822,818,816,815,809,807,796,796,791,788,783,781,777,777,772,771,771,771,767,766,766,765,756,755,755,751,750,747,745,743,739,733,732,722,719,715,714,709,708,698,698,686,684,678,673,669,662,660,654,651,642,641,637,623,596,593,587,584,582,575,554,508,500,100]}},
     prev90: {"label":"Previous 90 Days","sessions":64510,"users":53424,"newUsers":37104,"pageviews":229633,"pagesPerSession":3.56,"daily":{"labels":["02/16","01/22","01/09","12/13","01/17","12/29","01/12","01/16","01/14","01/10","12/08","12/12","12/10","12/22","01/15","11/21","12/06","02/09","02/02","12/05","01/07","01/08","02/10","12/30","12/27","12/15","12/19","01/11","12/26","01/03","01/13","11/25","12/17","01/23","01/02","12/16","12/02","02/13","12/01","02/14","11/19","11/22","11/24","01/18","01/05","12/11","02/15","11/20","12/09","01/04","01/06","02/01","12/14","01/27","01/01","12/20","12/23","12/28","02/11","01/26","12/18","02/07","12/04","12/03","11/28","01/24","01/30","12/21","02/06","01/21","02/03","12/07","02/12","12/24","01/19","11/26","01/28","12/31","02/04","11/29","01/31","01/29","02/08","11/23","12/25","02/05","11/27","01/25","11/30","01/20"],"sessions":[1023,1021,1010,1005,997,992,983,979,967,964,913,866,865,863,854,839,838,826,821,813,809,807,805,798,797,792,785,783,781,780,780,775,762,757,740,739,736,730,727,727,725,723,722,720,716,714,712,705,703,703,701,700,682,680,679,674,672,670,656,655,649,649,647,646,637,627,627,623,614,607,606,605,593,592,583,580,580,574,572,571,554,551,545,538,529,523,480,478,360,9]}},
@@ -412,103 +424,264 @@ const pct=(a,b)=>b?((a-b)/b*100).toFixed(1):null;
 const arrow=v=>v===null?'':parseFloat(v)>=0?'▲':'▼';
 const changeClass=v=>v===null?'neutral':parseFloat(v)>=0?'up':'down';
 
-function getCurrentData(){return range===30?DATA.last30:range===60?DATA.last60:DATA.q1_2026;}
-function getCompareData(){
-    if(compare==='none')return null;
-    if(compare==='yoy')return range===90?DATA.yoy90:range===60?DATA.yoy60:DATA.yoy30;
-    return range===30?DATA.prev30:range===60?DATA.prev60:DATA.prev90;
+function getCurrentData() {
+    if (range === 30) return DATA.last30;
+    if (range === 60) return DATA.last60;
+    return DATA.q1_2026;
 }
 
-function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();renderSeasonality();}
-function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEach(b=>b.classList.remove('active'));document.getElementById('cmp-'+c).classList.add('active');render();renderSeasonality();}
-
-function render(){
-    const curr=getCurrentData(), comp=getCompareData();
-    // Summary cards
-    document.getElementById('summaryCards').innerHTML=[['sessions','Sessions'],['users','Users'],['newUsers','New Users'],['pageviews','Page Views']].map(([k2,l2])=>{
-        const v=curr[k2],cv=comp?comp[k2]:null,ch=pct(v,cv);
-        if(ch!==null){
-            const delta=v-cv;
-            const sign=delta>=0?'+':'';
-            return `<div class="summary-card"><div class="card-label">${l2}</div><div class="card-value">${fmt(v)}</div><div class="card-change ${changeClass(ch)}">${arrow(ch)} ${sign}${fmt(delta)} (${Math.abs(ch)}%)</div><div class="card-compare">${fmt(cv)} → ${fmt(v)} · vs ${comp.label}</div></div>`;
-        }
-        return `<div class="summary-card"><div class="card-label">${l2}</div><div class="card-value">${fmt(v)}</div><div class="card-change neutral">—</div></div>`;
-    }).join('');
-    // Chart
-    const datasets=[{label:curr.label,data:curr.daily.sessions,borderColor:ACCENT,backgroundColor:'rgba(29,111,168,0.08)',borderWidth:2.5,fill:true,tension:0.4,pointBackgroundColor:ACCENT,pointRadius:4,pointHoverRadius:6}];
-    if(comp&&comp.daily&&comp.daily.sessions&&comp.daily.sessions.length===curr.daily.sessions.length)datasets.push({label:comp.label,data:comp.daily.sessions,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.04)',borderWidth:2,borderDash:[5,5],fill:false,tension:0.4,pointBackgroundColor:'#f59e0b',pointRadius:3,pointHoverRadius:5});
-    document.getElementById('chartTitle').textContent=comp?`Daily Sessions — ${curr.label} vs ${comp.label}`:`Daily Sessions — ${curr.label}`;
-    if(sessionsChart)sessionsChart.destroy();
-    sessionsChart=new Chart(document.getElementById('sessionsChart').getContext('2d'),{type:'line',data:{labels:curr.daily.labels,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#888',font:{size:12}}}},scales:{y:{beginAtZero:true,grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#555'}},x:{grid:{color:'rgba(255,255,255,0.02)'},ticks:{color:'#555'}}}}});
-    // Metrics
-    // Brian Harris BMW - Mid market (Baton Rouge ~450K metro), ~100+ unit/mo store
-    const t=range===30?{s:22000,u:18000,pps:2.8,nur:'55-70%'}:range===60?{s:44000,u:36000,pps:2.8,nur:'55-70%'}:{s:65000,u:53000,pps:2.8,nur:'55-70%'};
-    document.getElementById('metricsGrid').innerHTML=[
-        {n:1,name:'Pages / Session',val:curr.pagesPerSession.toFixed(2),raw:curr.pagesPerSession,target:t.pps+'+ (BMW luxury)',ok:curr.pagesPerSession>=t.pps,ck:'pagesPerSession'},
-        {n:2,name:'Bounce Rate',val:'~42%',raw:42,target:'<45%',ok:true,ck:'sessions'},
-        {n:3,name:'Avg Session Duration',val:'~2:50 min',raw:170,target:'2:00+ min',ok:true,ck:'sessions'},
-        {n:4,name:'New User Rate',val:((curr.newUsers/curr.users)*100).toFixed(0)+'%',raw:curr.newUsers/curr.users,target:t.nur+' (BMW avg)',ok:true,ck:'newUsers'},
-        {n:5,name:'Page Views',val:fmt(curr.pageviews),raw:curr.pageviews,target:'n/a',ok:null,ck:'pageviews'},
-        {n:6,name:'Mobile Traffic',val:'65.4%',raw:65.4,target:'65-80%',ok:true,ck:'sessions'},
-    ].map(item=>{
-        const st=item.ok===null?'neutral':item.ok?'good':'warning';
-        const sl=st==='good'?'✓ On Track':st==='warning'?'⚠ Below Target':'— n/a';
-        const cv=comp?(item.ck==='pagesPerSession'?comp.pagesPerSession:item.ck==='newUsers'?comp.newUsers/comp.users:comp[item.ck]):null;
-        const ch=comp?pct(item.raw,cv):null;
-        return `<div class="metric-card"><div class="metric-header"><div class="metric-name">${item.n}. ${item.name}</div><div class="metric-status status-${st}">${sl}</div></div><div class="metric-value">${item.val}</div><div class="metric-target">Target: ${item.target}</div>${ch!==null?`<div class="metric-change card-change ${changeClass(ch)}">${arrow(ch)} ${Math.abs(ch)}% vs ${comp.label}</div>`:''}</div>`;
-    }).join('');
-    // Comparison table
-    const sec=document.getElementById('comparisonSection');
-    if(!comp){sec.style.display='none';}else{
-        sec.style.display='block';
-        document.getElementById('comparisonTitle').textContent=`${curr.label} vs ${comp.label}`;
-        document.getElementById('comparisonTable').innerHTML=`<tr><th>Metric</th><th>${curr.label}</th><th>${comp.label}</th><th>Change</th></tr>`+
-        [['Sessions','sessions'],['Users','users'],['New Users','newUsers'],['Page Views','pageviews'],['Pages/Session','pagesPerSession']].map(([l,k])=>{
-            const c=curr[k],p=comp[k],ch=pct(c,p),cls=parseFloat(ch)>=0?'pos':'neg';
-            const dc=k==='pagesPerSession'?c.toFixed(2):fmt(c),dp=k==='pagesPerSession'?p.toFixed(2):fmt(p);
-            return `<tr><td>${l}</td><td class="val">${dc}</td><td>${dp}</td><td class="${cls}">${arrow(ch)} ${Math.abs(ch)}%</td></tr>`;
-        }).join('');
+function getCompareData() {
+    if (compare === 'none') return null;
+    if (compare === 'yoy') {
+        if (range === 90) return DATA.yoy90;
+        if (range === 60) return DATA.yoy60;
+        return DATA.yoy30;
     }
-    // Insights
-    const yg=comp?pct(curr.sessions,comp.sessions):null;
-    document.getElementById('insightsList').innerHTML=[
-        comp?`<strong>Growth:</strong> Sessions ${arrow(yg)} <strong>${Math.abs(yg)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}.`:`<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions — ${curr.label}.`,
-        `<strong>Organic Strength (25%):</strong> 16,943 sessions from Google organic — strongest organic ratio of all three stores. Excellent SEO foundation.`,
-        `<strong>Direct Traffic (23%):</strong> 15,924 direct sessions indicates strong brand recognition. Customers know your URL and come back.`,
-        `<strong>Pages/Session (${curr.pagesPerSession.toFixed(2)}):</strong> Highest engagement of all three stores — visitors are exploring deeply. Continue optimizing inventory and service pages.`,
-        `<strong>vinurl.com Referral (1,429 sessions):</strong> Third-party inventory site driving quality traffic. Monitor lead quality from this source.`,
-        `<strong>BMW USA Referral (808 sessions):</strong> Manufacturer sending traffic to your store — good OEM alignment. Maintain strong BMW certified programs.`,
-    ].map(i=>`<li>${i}</li>`).join('');
+    if (compare === 'prev') {
+        if (range === 90) return DATA.prev90;
+        if (range === 60) return DATA.prev60;
+        return DATA.prev30;
+    }
+    return null;
 }
 
-
-function renderSeasonality(){
-    if(!document.getElementById('seasonalityChart')||!WEEKLY_2025)return;
-    const makeOptions=color=>({borderColor:color,backgroundColor:color==='#22c55e'?'rgba(34,197,94,0.10)':color==='#3b82f6'?'rgba(59,130,246,0.10)':'rgba(245,158,11,0.10)',borderWidth:2.5,fill:true,tension:0.35,pointRadius:3,pointHoverRadius:5,pointBackgroundColor:color});
-    const build=(id,dataset,label,color,existing)=>{if(existing)existing.destroy();return new Chart(document.getElementById(id).getContext('2d'),{type:'line',data:{labels:dataset.labels,datasets:[{label,data:dataset.sessions,...makeOptions(color)}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#888',font:{size:12}}},tooltip:{callbacks:{label:(ctx)=>`Sessions: ${Number(ctx.raw).toLocaleString()}`}}},scales:{y:{beginAtZero:false,grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#555'}},x:{grid:{color:'rgba(255,255,255,0.02)'},ticks:{color:'#555',maxRotation:0,autoSkip:true,maxTicksLimit:14}}}});};
-    seasonalityChart=build('seasonalityChart',WEEKLY_2025.overall,'Weekly Sessions (2025 Overall)','#22c55e',seasonalityChart);
-    seasonalityNewChart=build('seasonalityNewChart',WEEKLY_2025.new,'Weekly Sessions (2025 New)','#3b82f6',seasonalityNewChart);
-    seasonalityUsedChart=build('seasonalityUsedChart',WEEKLY_2025.used,'Weekly Sessions (2025 Used)','#f59e0b',seasonalityUsedChart);
+// ── SETTERS ────────────────────────────────────────────────────
+function setRange(r) {
+    range = r;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('btn-' + r).classList.add('active');
+    render();
 }
 
-function renderSources(){
-    const max=SOURCES[0].sessions;
-    document.getElementById('sourcesList').innerHTML=SOURCES.map((s,i)=>{
-        const p=((s.sessions/max)*100).toFixed(0);
-        return `<div class="source-row"><div class="source-rank">${i+1}</div><div class="source-info"><div class="source-name">${s.source}</div><div class="source-medium">${s.medium}</div></div><div class="source-bar-wrap"><div class="source-bar"><div class="source-bar-fill" style="width:${p}%"></div></div><div class="source-sessions">${s.sessions.toLocaleString()}</div></div></div>`;
+function setCompare(c) {
+    compare = c;
+    document.querySelectorAll('.compare-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('cmp-' + c).classList.add('active');
+    render();
+}
+
+// ── RENDER ─────────────────────────────────────────────────────
+function render() {
+    const curr = getCurrentData();
+    const comp = getCompareData();
+
+    renderSummaryCards(curr, comp);
+    renderChart(curr, comp);
+    renderMetrics(curr, comp);
+    renderComparison(curr, comp);
+    renderInsights(curr, comp);
+    renderSeasonality();
+}
+
+function renderSummaryCards(curr, comp) {
+    const items = [
+        { label: 'Sessions', k: 'sessions' },
+        { label: 'Users', k: 'users' },
+        { label: 'New Users', k: 'newUsers' },
+        { label: 'Page Views', k: 'pageviews' },
+    ];
+    document.getElementById('summaryCards').innerHTML = items.map(item => {
+        const v = curr[item.k];
+        const cv = comp ? comp[item.k] : null;
+        const ch = pct(v, cv);
+        const l = item.label;
+        if(ch!==null){const delta=v-cv;const sign=delta>=0?'+':'';return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div><div class="card-change ${changeClass(ch)}">${arrow(ch)} ${sign}${fmt(delta)} (${Math.abs(ch)}%)</div><div class="card-compare">${fmt(cv)} → ${fmt(v)} · vs ${comp.label}</div></div>`;}
+        return `<div class="summary-card"><div class="card-label">${l}</div><div class="card-value">${fmt(v)}</div><div class="card-change neutral">—</div></div>`;
     }).join('');
-    if(sourcesChart)sourcesChart.destroy();
-    const colors=['#1d6fa8','#10b981','#f59e0b','#3b82f6','#6b7280','#8b5cf6','#06b6d4','#ec4899','#84cc16','#f97316'];
-    sourcesChart=new Chart(document.getElementById('sourcesChart').getContext('2d'),{type:'doughnut',data:{labels:SOURCES.map(s=>`${s.source} / ${s.medium}`),datasets:[{data:SOURCES.map(s=>s.sessions),backgroundColor:colors,borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#888',font:{size:11},boxWidth:12,padding:8}}}}});
 }
 
-function getRangeKey(){
-    return range===30?'last30':range===60?'last60':'last90';
+function renderChart(curr, comp) {
+    const labels = curr.daily.labels;
+    const datasets = [{
+        label: curr.label,
+        data: curr.daily.sessions,
+        borderColor: '#1d6fa8',
+        backgroundColor: 'rgba(102,126,234,0.08)',
+        borderWidth: 2.5,
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: '#1d6fa8',
+        pointRadius: 4,
+        pointHoverRadius: 6
+    }];
+
+    if (comp && comp.daily && comp.daily.sessions && comp.daily.sessions.length === curr.daily.sessions.length) {
+        datasets.push({
+            label: comp.label,
+            data: comp.daily.sessions,
+            borderColor: '#f59e0b',
+            backgroundColor: 'rgba(245,158,11,0.04)',
+            borderWidth: 2,
+            borderDash: [5,5],
+            fill: false,
+            tension: 0.4,
+            pointBackgroundColor: '#f59e0b',
+            pointRadius: 3,
+            pointHoverRadius: 5
+        });
+    }
+
+    document.getElementById('chartTitle').textContent = comp
+        ? `Daily Sessions — ${curr.label} vs ${comp.label}`
+        : `Daily Sessions — ${curr.label}`;
+
+    if (sessionsChart) sessionsChart.destroy();
+    sessionsChart = new Chart(document.getElementById('sessionsChart').getContext('2d'), {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } } },
+            scales: {
+                y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } },
+                x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555' } }
+            }
+        }
+    });
 }
 
+
+function renderSeasonality() {
+    if (!document.getElementById('seasonalityChart') || !WEEKLY_2025) return;
+    const makeOptions = (color) => ({
+        borderColor: color,
+        backgroundColor: color === '#22c55e' ? 'rgba(34,197,94,0.10)' : color === '#3b82f6' ? 'rgba(59,130,246,0.10)' : 'rgba(245,158,11,0.10)',
+        borderWidth: 2.5,
+        fill: true,
+        tension: 0.35,
+        pointRadius: 3,
+        pointHoverRadius: 5,
+        pointBackgroundColor: color
+    });
+    const build = (id, dataset, label, color, existing) => {
+        if (existing) existing.destroy();
+        return new Chart(document.getElementById(id).getContext('2d'), {
+            type: 'line',
+            data: { labels: dataset.labels, datasets: [{ label, data: dataset.sessions, ...makeOptions(color) }] },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
+                scales: {
+                    y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } },
+                    x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } }
+                }
+            }
+        });
+    };
+    seasonalityChart = build('seasonalityChart', WEEKLY_2025.overall, 'Weekly Sessions (2025 Overall)', '#22c55e', seasonalityChart);
+    seasonalityNewChart = build('seasonalityNewChart', WEEKLY_2025.new, 'Weekly Sessions (2025 New)', '#3b82f6', seasonalityNewChart);
+    seasonalityUsedChart = build('seasonalityUsedChart', WEEKLY_2025.used, 'Weekly Sessions (2025 Used)', '#f59e0b', seasonalityUsedChart);
+}
+
+
+function renderMetrics(curr, comp) {
+    // Brian Harris BMW — Small market (Jackson, MS metro ~180K), ~30-unit/mo store
+    // Targets based on market size + BMW brand benchmarks
+    const target30 = { sessions: 7000, users: 6000, pps: 2.8, nur: [60, 75] };
+    const target60 = { sessions: 14000, users: 12000, pps: 2.8, nur: [60, 75] };
+    const target90 = { sessions: 20000, users: 17000, pps: 2.8, nur: [60, 75] };
+    const t = range === 30 ? target30 : range === 60 ? target60 : target90;
+
+    const items = [
+        { num: 1, name: 'Pages / Session', val: curr.pagesPerSession.toFixed(2), raw: curr.pagesPerSession, target: t.pps + '+ (BMW luxury)', ok: curr.pagesPerSession >= t.pps },
+        { num: 2, name: 'Bounce Rate', val: '~44%', raw: 44, target: '<45%', ok: true },
+        { num: 3, name: 'Avg Session Duration', val: '~2:05 min', raw: 125, target: '2:00+ min', ok: true },
+        { num: 4, name: 'New User Rate', val: ((curr.newUsers / curr.users) * 100).toFixed(0) + '%', raw: curr.newUsers / curr.users, target: t.nur[0] + '–' + t.nur[1] + '% (BMW avg)', ok: true },
+        { num: 5, name: 'Page Views', val: fmt(curr.pageviews), raw: curr.pageviews, target: 'n/a', ok: null },
+        { num: 6, name: 'Mobile Traffic',val:'70.0%',raw:70.0, target: '65–80%', ok: true },
+    ];
+
+    document.getElementById('metricsGrid').innerHTML = items.map(item => {
+        const status = item.ok === null ? 'neutral' : item.ok ? 'good' : 'warning';
+        const statusLabel = status === 'good' ? '✓ On Track' : status === 'warning' ? '⚠ Below Target' : '— n/a';
+        const compVal = comp ? (item.num === 1 ? comp.sessions : item.num === 2 ? comp.users : item.num === 3 ? comp.pagesPerSession : item.num === 4 ? comp.newUsers / comp.users : comp.pageviews) : null;
+        const change = comp ? pct(item.raw, compVal) : null;
+        return `<div class="metric-card">
+            <div class="metric-header">
+                <div class="metric-name">${item.num}. ${item.name}</div>
+                <div class="metric-status status-${status}">${statusLabel}</div>
+            </div>
+            <div class="metric-value">${item.val}</div>
+            <div class="metric-target">Target: ${item.target}</div>
+            ${change !== null ? `<div class="metric-change card-change ${changeClass(change)}">${arrow(change)} ${Math.abs(change)}% vs ${comp.label}</div>` : ''}
+        </div>`;
+    }).join('');
+}
+
+function renderComparison(curr, comp) {
+    const sec = document.getElementById('comparisonSection');
+    if (!comp) { sec.style.display = 'none'; return; }
+    sec.style.display = 'block';
+    document.getElementById('comparisonTitle').textContent = `${curr.label} vs ${comp.label}`;
+    const rows = [
+        { label: 'Sessions', c: curr.sessions, p: comp.sessions },
+        { label: 'Users', c: curr.users, p: comp.users },
+        { label: 'New Users', c: curr.newUsers, p: comp.newUsers },
+        { label: 'Page Views', c: curr.pageviews, p: comp.pageviews },
+        { label: 'Pages / Session', c: curr.pagesPerSession, p: comp.pagesPerSession },
+    ];
+    document.getElementById('comparisonTable').innerHTML = `
+        <tr><th>Metric</th><th>${curr.label}</th><th>${comp.label}</th><th>Change</th></tr>
+        ${rows.map(r => {
+            const change = pct(r.c, r.p);
+            const cls = parseFloat(change) >= 0 ? 'pos' : 'neg';
+            const displayC = r.label === 'Pages / Session' ? r.c.toFixed(2) : fmt(r.c);
+            const displayP = r.label === 'Pages / Session' ? r.p.toFixed(2) : fmt(r.p);
+            return `<tr><td>${r.label}</td><td class="val">${displayC}</td><td>${displayP}</td><td class="${cls}">${arrow(change)} ${Math.abs(change)}%</td></tr>`;
+        }).join('')}`;
+}
+
+function renderInsights(curr, comp) {
+    const yoyGrowth = comp ? pct(curr.sessions, comp.sessions) : null;
+    const insights = [
+        comp ? `<strong>Growth:</strong> Sessions ${arrow(yoyGrowth)} <strong>${Math.abs(yoyGrowth)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}. ${parseFloat(yoyGrowth) > 0 ? 'Strong upward trajectory.' : 'Down vs prior period — investigate.'}` : `<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions for ${curr.label}.`,
+        `<strong>Google CPC Dependency:</strong> 51% of all traffic (32,817 sessions) comes from paid Google. Strong volume but high cost exposure — ensure organic is growing too.`,
+        `<strong>Organic Search (19%):</strong> 12,171 sessions from Google organic. Healthy for an automotive dealer. Focus on local SEO and inventory page optimization.`,
+        `<strong>Pages/Session (${curr.pagesPerSession.toFixed(2)}):</strong> Below the 3.0+ target. Visitors are goal-oriented — browsing specific inventory. Add cross-sell content, finance calculators, and featured vehicle comparisons.`,
+        `<strong>New User Rate (${((curr.newUsers / curr.users) * 100).toFixed(0)}%):</strong> Strong acquisition. Consider retargeting campaigns to convert repeat visitors and reduce churn.`,
+        `<strong>leadsgo.io Referral (504 sessions):</strong> Third-party lead referral sending meaningful traffic. Evaluate quality vs cost — is this converting to leads?`,
+    ];
+    document.getElementById('insightsList').innerHTML = insights.map(i => `<li>${i}</li>`).join('');
+}
+
+// ── SOURCES CHART ──────────────────────────────────────────────
+function renderSources() {
+    const maxSessions = SOURCES[0].sessions;
+    document.getElementById('sourcesList').innerHTML = SOURCES.map((s, i) => {
+        const pct = ((s.sessions / maxSessions) * 100).toFixed(0);
+        return `<div class="source-row">
+            <div class="source-rank">${i + 1}</div>
+            <div class="source-info">
+                <div class="source-name">${s.source}</div>
+                <div class="source-medium">${s.medium}</div>
+            </div>
+            <div class="source-bar-wrap">
+                <div class="source-bar"><div class="source-bar-fill" style="width:${pct}%"></div></div>
+                <div class="source-sessions">${s.sessions.toLocaleString()}</div>
+            </div>
+        </div>`;
+    }).join('');
+
+    if (sourcesChart) sourcesChart.destroy();
+    const colors = ['#1d6fa8','#10b981','#f59e0b','#3b82f6','#6b7280','#8b5cf6','#06b6d4','#ec4899','#84cc16','#f97316'];
+    sourcesChart = new Chart(document.getElementById('sourcesChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: SOURCES.map(s => `${s.source} / ${s.medium}`),
+            datasets: [{ data: SOURCES.map(s => s.sessions), backgroundColor: colors, borderWidth: 0 }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'right', labels: { color: '#888', font: { size: 11 }, boxWidth: 12, padding: 8 } }
+            }
+        }
+    });
+}
+
+// ── INIT ───────────────────────────────────────────────────────
 render();
 renderSources();
-renderSeasonality();
 </script>
 <script>
 (function(){
