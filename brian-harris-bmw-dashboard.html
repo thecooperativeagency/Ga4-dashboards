@@ -386,7 +386,7 @@
 
 <div class="footer">
     <div class="footer-left">&copy; 2026 The Cooperative Agency &nbsp;·&nbsp; <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> &nbsp;·&nbsp; <a href="http://www.thecoopbrla.com">www.thecoopbrla.com</a></div>
-    <div class="footer-right">Data: Google Analytics 4 &nbsp;·&nbsp; Property 334199347<br>Brian Harris BMW &nbsp;·&nbsp; Updated May 2026</div>
+    <div class="footer-right">Data: Google Analytics 4 &nbsp;·&nbsp; Property 334199347<br>Brian Harris BMW &nbsp;·&nbsp; Updated May 18, 2026</div>
 </div>
 
 <script>
@@ -420,7 +420,7 @@ function getCompareData(){
 }
 
 function setRange(r){range=r;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+r).classList.add('active');render();renderSeasonality();}
-function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEach(b=>b.classList.remove('active'));document.getElementById('cmp-'+c).classList.add('active');render();}
+function setCompare(c){compare=c;document.querySelectorAll('.compare-btn').forEach(b=>b.classList.remove('active'));document.getElementById('cmp-'+c).classList.add('active');render();renderSeasonality();}
 
 function render(){
     const curr=getCurrentData(), comp=getCompareData();
