@@ -282,7 +282,7 @@
     <div class="section">
         <div class="section-title">Last Year Seasonality</div>
         <div class="chart-card">
-            <div class="chart-card-title">Weekly Sessions — 2025 Overall Traffic Movement</div>
+            <div class="chart-card-title">Weekly Sessions — 2025 Total Website Traffic</div>
             <div class="chart-wrapper"><canvas id="seasonalityChart"></canvas></div>
         </div>
         <div class="chart-card" style="margin-top:20px;">
@@ -468,7 +468,7 @@ function renderSeasonality() {
     if (seasonalityChart) seasonalityChart.destroy();
     seasonalityChart = new Chart(document.getElementById('seasonalityChart').getContext('2d'), {
         type: 'line',
-        data: { labels: WEEKLY_2025.overall.labels, datasets: [{ label: 'Weekly Sessions (2025 Overall)', data: WEEKLY_2025.overall.sessions, ...makeOptions('#22c55e') }] },
+        data: { labels: WEEKLY_2025.overall.labels, datasets: [{ label: 'Weekly Sessions (2025 Total Website Traffic)', data: WEEKLY_2025.overall.sessions, ...makeOptions('#22c55e') }] },
         options: {
             responsive: true, maintainAspectRatio: false,
             plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
