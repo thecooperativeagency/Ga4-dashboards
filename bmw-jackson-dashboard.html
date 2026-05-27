@@ -562,15 +562,23 @@ function renderSeasonality() {
         tension: 0.35,
         pointRadius: 3,
         pointHoverRadius: 5,
-        pointBackgroundColor: color
+        pointBackgroundColor: color,
+        spanGaps: false
     });
+    const alignSeries = (targetLabels, sourceLabels, sourceSessions) => {
+        const map = new Map(sourceLabels.map((label, i) => [label, sourceSessions[i]]));
+        return targetLabels.map(label => map.has(label) ? map.get(label) : null);
+    };
+    const overallLabels = WEEKLY_2025.overall_2025.labels;
+    const newLabels = WEEKLY_2025.new_2025.labels;
+    const usedLabels = WEEKLY_2025.used_2025.labels;
     if (seasonalityChart) seasonalityChart.destroy();
     seasonalityChart = new Chart(document.getElementById('seasonalityChart').getContext('2d'), {
         type: 'line',
-        data: { labels: WEEKLY_2025.overall_2025.labels, datasets: [{ label: 'Weekly Sessions (2025 Total Website Traffic)', data: WEEKLY_2025.overall_2025.sessions, ...makeOptions('#94a3b8', false) }, { label: 'Weekly Sessions (2026 Total Website Traffic)', data: WEEKLY_2025.overall_2026.sessions, ...makeOptions('#16a34a', false) }] },
+        data: { labels: overallLabels, datasets: [{ label: 'Weekly Sessions (2025 Total Website Traffic)', data: WEEKLY_2025.overall_2025.sessions, ...makeOptions('#94a3b8', false) }, { label: 'Weekly Sessions (2026 Total Website Traffic)', data: alignSeries(overallLabels, WEEKLY_2025.overall_2026.labels, WEEKLY_2025.overall_2026.sessions), ...makeOptions('#16a34a', false) }] },
         options: {
             responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
+            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => ctx.raw == null ? null : `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
             scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
         }
     });
@@ -578,15 +586,15 @@ function renderSeasonality() {
     seasonalityNewChart = new Chart(document.getElementById('seasonalityNewChart').getContext('2d'), {
         type: 'line',
         data: {
-            labels: WEEKLY_2025.new_2026.labels,
+            labels: newLabels,
             datasets: [
                 { label: 'Weekly Sessions (2025 New Traffic)', data: WEEKLY_2025.new_2025.sessions, ...makeOptions('#94a3b8', false) },
-                { label: 'Weekly Sessions (2026 New Traffic)', data: WEEKLY_2025.new_2026.sessions, ...makeOptions('#2563eb', false) }
+                { label: 'Weekly Sessions (2026 New Traffic)', data: alignSeries(newLabels, WEEKLY_2025.new_2026.labels, WEEKLY_2025.new_2026.sessions), ...makeOptions('#2563eb', false) }
             ]
         },
         options: {
             responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
+            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => ctx.raw == null ? null : `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
             scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
         }
     });
@@ -594,15 +602,15 @@ function renderSeasonality() {
     seasonalityUsedChart = new Chart(document.getElementById('seasonalityUsedChart').getContext('2d'), {
         type: 'line',
         data: {
-            labels: WEEKLY_2025.used_2026.labels,
+            labels: usedLabels,
             datasets: [
                 { label: 'Weekly Sessions (2025 Used Traffic)', data: WEEKLY_2025.used_2025.sessions, ...makeOptions('#94a3b8', false) },
-                { label: 'Weekly Sessions (2026 Used Traffic)', data: WEEKLY_2025.used_2026.sessions, ...makeOptions('#d97706', false) }
+                { label: 'Weekly Sessions (2026 Used Traffic)', data: alignSeries(usedLabels, WEEKLY_2025.used_2026.labels, WEEKLY_2025.used_2026.sessions), ...makeOptions('#d97706', false) }
             ]
         },
         options: {
             responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
+            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => ctx.raw == null ? null : `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
             scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
         }
     });
