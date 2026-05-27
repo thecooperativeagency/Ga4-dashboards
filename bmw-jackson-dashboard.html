@@ -578,7 +578,7 @@ function renderSeasonality() {
     seasonalityNewChart = new Chart(document.getElementById('seasonalityNewChart').getContext('2d'), {
         type: 'line',
         data: {
-            labels: WEEKLY_2025.new_2025.labels,
+            labels: WEEKLY_2025.new_2026.labels,
             datasets: [
                 { label: 'Weekly Sessions (2025 New Traffic)', data: WEEKLY_2025.new_2025.sessions, ...makeOptions('#94a3b8', false) },
                 { label: 'Weekly Sessions (2026 New Traffic)', data: WEEKLY_2025.new_2026.sessions, ...makeOptions('#2563eb', false) }
@@ -594,7 +594,7 @@ function renderSeasonality() {
     seasonalityUsedChart = new Chart(document.getElementById('seasonalityUsedChart').getContext('2d'), {
         type: 'line',
         data: {
-            labels: WEEKLY_2025.used_2025.labels,
+            labels: WEEKLY_2025.used_2026.labels,
             datasets: [
                 { label: 'Weekly Sessions (2025 Used Traffic)', data: WEEKLY_2025.used_2025.sessions, ...makeOptions('#94a3b8', false) },
                 { label: 'Weekly Sessions (2026 Used Traffic)', data: WEEKLY_2025.used_2026.sessions, ...makeOptions('#d97706', false) }
