@@ -423,6 +423,8 @@ const DATA = {
 
 const SOURCES = [{"source":"google","medium":"cpc","sessions":40186,"users":30315},{"source":"(direct)","medium":"(none)","sessions":12984,"users":9956},{"source":"google","medium":"organic","sessions":10166,"users":5989},{"source":"facebook","medium":"cpc","sessions":4875,"users":3841},{"source":"(not set)","medium":"(not set)","sessions":1759,"users":1594},{"source":"bing","medium":"organic","sessions":824,"users":438},{"source":"(data not available)","medium":"(data not available)","sessions":444,"users":438},{"source":"bmw-retailer.email-dealer.com","medium":"referral","sessions":323,"users":324},{"source":"yahoo","medium":"organic","sessions":304,"users":179},{"source":"facebook.com","medium":"referral","sessions":257,"users":249},{"source":"autotrader.com","medium":"referral","sessions":219,"users":117},{"source":"m.facebook.com","medium":"referral","sessions":210,"users":203},{"source":"bmwusa.com","medium":"referral","sessions":207,"users":139},{"source":"cars.com","medium":"referral","sessions":131,"users":73},{"source":"duckduckgo","medium":"organic","sessions":115,"users":58},{"source":"focus.dealer.reyrey.net","medium":"referral","sessions":96,"users":3},{"source":"jlemail","medium":"email1","sessions":90,"users":65},{"source":"fb","medium":"paid","sessions":69,"users":67},{"source":"visor.vin","medium":"referral","sessions":53,"users":29},{"source":"creditacceptance.com","medium":"referral","sessions":49,"users":37}];
 
+const WEEKLY_2025={"overall_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[6154,5419,5326,4317,4269,5426,4682,5129,5088,4971,5199,4964,4559,4213,4658,4068,4271,4288,4222,4246,4623,5866,4638,4452,4714,5205,4949,5016,5301,5587,5080,5444,5893,5684,5424,5100,5083,5624,5281,5379,5319,5172,5166,5359,5537,6180,5214,4125,5012,5748,5024,4904,2364]},"new_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[939,762,772,555,594,708,539,635,547,639,566,556,490,278,279,220,206,203,284,358,630,2052,790,710,896,1219,1514,1369,1442,1584,1614,1509,1710,1626,1800,1353,1800,2158,2298,2030,1880,1840,1761,2216,1903,1740,1590,1085,1416,1743,1593,1646,687]},"used_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[319,331,315,285,313,308,310,341,312,350,376,357,381,277,312,308,330,343,341,390,426,440,406,403,442,633,646,589,725,674,643,882,810,747,784,792,714,782,531,584,747,606,623,563,720,725,715,627,738,733,640,672,317]},"overall_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[5266,5790,6280,4082,4347,4330,5049,5932,6471,4504,5807,5509,5367,4504,5170,5295,5603,4974,5068,6193,4052]},"new_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[1887,1621,2048,201,21,50,54,26,18,20,83,10,8,3,8,4,5,7,2,3,3]},"used_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[612,795,818,143,37,52,52,57,21,17,47,14,22,10,1,14,6,19,8,6,3]}};
+
 // ── STATE ──────────────────────────────────────────────────────
 let range = 30, compare = 'prev';
 let sessionsChart = null, sourcesChart = null, seasonalityChart = null, seasonalityNewChart = null, seasonalityUsedChart = null;
@@ -551,35 +553,59 @@ function renderChart(curr, comp) {
 
 
 function renderSeasonality() {
-    if (!document.getElementById('seasonalityChart') || !WEEKLY_2025) return;
-    const makeOptions = (color) => ({
+    if (!document.getElementById('seasonalityChart') || typeof WEEKLY_2025 === 'undefined') return;
+    const makeOptions = (color, fill = true) => ({
         borderColor: color,
-        backgroundColor: color === '#22c55e' ? 'rgba(34,197,94,0.10)' : color === '#3b82f6' ? 'rgba(59,130,246,0.10)' : 'rgba(245,158,11,0.10)',
+        backgroundColor: fill ? (color === '#22c55e' ? 'rgba(34,197,94,0.10)' : color === '#3b82f6' ? 'rgba(59,130,246,0.10)' : 'rgba(245,158,11,0.10)') : 'transparent',
         borderWidth: 2.5,
-        fill: true,
+        fill,
         tension: 0.35,
         pointRadius: 3,
         pointHoverRadius: 5,
         pointBackgroundColor: color
     });
-    const build = (id, dataset, label, color, existing) => {
-        if (existing) existing.destroy();
-        return new Chart(document.getElementById(id).getContext('2d'), {
-            type: 'line',
-            data: { labels: dataset.labels, datasets: [{ label, data: dataset.sessions, ...makeOptions(color) }] },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
-                scales: {
-                    y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } },
-                    x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } }
-                }
-            }
-        });
-    };
-    seasonalityChart = build('seasonalityChart', WEEKLY_2025.overall, 'Weekly Sessions (2025 Overall)', '#22c55e', seasonalityChart);
-    seasonalityNewChart = build('seasonalityNewChart', WEEKLY_2025.new, 'Weekly Sessions (2025 New)', '#3b82f6', seasonalityNewChart);
-    seasonalityUsedChart = build('seasonalityUsedChart', WEEKLY_2025.used, 'Weekly Sessions (2025 Used)', '#f59e0b', seasonalityUsedChart);
+    if (seasonalityChart) seasonalityChart.destroy();
+    seasonalityChart = new Chart(document.getElementById('seasonalityChart').getContext('2d'), {
+        type: 'line',
+        data: { labels: WEEKLY_2025.overall_2025.labels, datasets: [{ label: 'Weekly Sessions (2025 Total Website Traffic)', data: WEEKLY_2025.overall_2025.sessions, ...makeOptions('#22c55e', false) }, { label: 'Weekly Sessions (2026 Total Website Traffic)', data: WEEKLY_2025.overall_2026.sessions, ...makeOptions('#10b981', false) }] },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
+            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
+        }
+    });
+    if (seasonalityNewChart) seasonalityNewChart.destroy();
+    seasonalityNewChart = new Chart(document.getElementById('seasonalityNewChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: WEEKLY_2025.new_2025.labels,
+            datasets: [
+                { label: 'Weekly Sessions (2025 New Traffic)', data: WEEKLY_2025.new_2025.sessions, ...makeOptions('#3b82f6', false) },
+                { label: 'Weekly Sessions (2026 New Traffic)', data: WEEKLY_2025.new_2026.sessions, ...makeOptions('#60a5fa', false) }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
+            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
+        }
+    });
+    if (seasonalityUsedChart) seasonalityUsedChart.destroy();
+    seasonalityUsedChart = new Chart(document.getElementById('seasonalityUsedChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: WEEKLY_2025.used_2025.labels,
+            datasets: [
+                { label: 'Weekly Sessions (2025 Used Traffic)', data: WEEKLY_2025.used_2025.sessions, ...makeOptions('#f59e0b', false) },
+                { label: 'Weekly Sessions (2026 Used Traffic)', data: WEEKLY_2025.used_2026.sessions, ...makeOptions('#fbbf24', false) }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
+            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
+        }
+    });
 }
 
 
