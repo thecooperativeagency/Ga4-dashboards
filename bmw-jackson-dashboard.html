@@ -567,7 +567,7 @@ function renderSeasonality() {
     if (seasonalityChart) seasonalityChart.destroy();
     seasonalityChart = new Chart(document.getElementById('seasonalityChart').getContext('2d'), {
         type: 'line',
-        data: { labels: WEEKLY_2025.overall_2025.labels, datasets: [{ label: 'Weekly Sessions (2025 Total Website Traffic)', data: WEEKLY_2025.overall_2025.sessions, ...makeOptions('#22c55e', false) }, { label: 'Weekly Sessions (2026 Total Website Traffic)', data: WEEKLY_2025.overall_2026.sessions, ...makeOptions('#10b981', false) }] },
+        data: { labels: WEEKLY_2025.overall_2025.labels, datasets: [{ label: 'Weekly Sessions (2025 Total Website Traffic)', data: WEEKLY_2025.overall_2025.sessions, ...makeOptions('#94a3b8', false) }, { label: 'Weekly Sessions (2026 Total Website Traffic)', data: WEEKLY_2025.overall_2026.sessions, ...makeOptions('#16a34a', false) }] },
         options: {
             responsive: true, maintainAspectRatio: false,
             plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
@@ -580,8 +580,8 @@ function renderSeasonality() {
         data: {
             labels: WEEKLY_2025.new_2025.labels,
             datasets: [
-                { label: 'Weekly Sessions (2025 New Traffic)', data: WEEKLY_2025.new_2025.sessions, ...makeOptions('#3b82f6', false) },
-                { label: 'Weekly Sessions (2026 New Traffic)', data: WEEKLY_2025.new_2026.sessions, ...makeOptions('#60a5fa', false) }
+                { label: 'Weekly Sessions (2025 New Traffic)', data: WEEKLY_2025.new_2025.sessions, ...makeOptions('#94a3b8', false) },
+                { label: 'Weekly Sessions (2026 New Traffic)', data: WEEKLY_2025.new_2026.sessions, ...makeOptions('#2563eb', false) }
             ]
         },
         options: {
@@ -596,8 +596,8 @@ function renderSeasonality() {
         data: {
             labels: WEEKLY_2025.used_2025.labels,
             datasets: [
-                { label: 'Weekly Sessions (2025 Used Traffic)', data: WEEKLY_2025.used_2025.sessions, ...makeOptions('#f59e0b', false) },
-                { label: 'Weekly Sessions (2026 Used Traffic)', data: WEEKLY_2025.used_2026.sessions, ...makeOptions('#fbbf24', false) }
+                { label: 'Weekly Sessions (2025 Used Traffic)', data: WEEKLY_2025.used_2025.sessions, ...makeOptions('#94a3b8', false) },
+                { label: 'Weekly Sessions (2026 Used Traffic)', data: WEEKLY_2025.used_2026.sessions, ...makeOptions('#d97706', false) }
             ]
         },
         options: {
