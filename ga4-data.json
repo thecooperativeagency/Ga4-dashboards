@@ -1,462 +1,462 @@
 {
-  "updated": "2026-06-15",
+  "updated": "2026-07-15",
   "brian_harris_bmw": {
     "q1_2026": {
-      "sessions": 71743,
-      "users": 59259,
-      "newUsers": 41767,
-      "pageviews": 257426,
-      "pagesPerSession": 3.59
+      "sessions": 74929,
+      "users": 62619,
+      "newUsers": 45386,
+      "pageviews": 264382,
+      "pagesPerSession": 3.53
     },
     "q1_prev": {
-      "sessions": 58514,
-      "users": 48088,
-      "newUsers": 32800,
-      "pageviews": 206177,
-      "pagesPerSession": 3.52
-    },
-    "last30": {
-      "sessions": 26779,
-      "users": 22586,
-      "newUsers": 16420,
-      "pageviews": 91993,
+      "sessions": 60168,
+      "users": 49473,
+      "newUsers": 34195,
+      "pageviews": 207164,
       "pagesPerSession": 3.44
     },
+    "last30": {
+      "sessions": 26178,
+      "users": 21951,
+      "newUsers": 16216,
+      "pageviews": 93824,
+      "pagesPerSession": 3.58
+    },
     "last60": {
-      "sessions": 49664,
-      "users": 41471,
-      "newUsers": 29791,
-      "pageviews": 173140,
-      "pagesPerSession": 3.49
+      "sessions": 52044,
+      "users": 43734,
+      "newUsers": 32015,
+      "pageviews": 183235,
+      "pagesPerSession": 3.52
     },
     "sources": [
       {
         "source": "google",
         "medium": "cpc",
-        "sessions": 26512,
-        "users": 20027
+        "sessions": 25879,
+        "users": 19182
       },
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 18194,
-        "users": 12756
+        "sessions": 21783,
+        "users": 16556
       },
       {
         "source": "google",
         "medium": "organic",
-        "sessions": 15651,
-        "users": 7010
+        "sessions": 15697,
+        "users": 7019
+      },
+      {
+        "source": "facebook",
+        "medium": "cpc",
+        "sessions": 2119,
+        "users": 1752
       },
       {
         "source": "amp",
         "medium": "text",
-        "sessions": 2151,
-        "users": 1353
+        "sessions": 1771,
+        "users": 1108
       },
       {
         "source": "bing",
         "medium": "organic",
-        "sessions": 1707,
-        "users": 966
-      },
-      {
-        "source": "facebook",
-        "medium": "cpc",
-        "sessions": 1347,
-        "users": 1138
+        "sessions": 1718,
+        "users": 934
       },
       {
         "source": "vinurl.com",
         "medium": "referral",
-        "sessions": 1034,
-        "users": 681
+        "sessions": 828,
+        "users": 533
       },
       {
         "source": "bmwusa.com",
         "medium": "referral",
-        "sessions": 856,
-        "users": 483
+        "sessions": 779,
+        "users": 419
       },
       {
         "source": "app.podium.com",
         "medium": "referral",
-        "sessions": 852,
-        "users": 11
+        "sessions": 763,
+        "users": 10
       },
       {
         "source": "yahoo",
         "medium": "organic",
-        "sessions": 654,
-        "users": 335
+        "sessions": 579,
+        "users": 297
+      },
+      {
+        "source": "autotrader.com",
+        "medium": "referral",
+        "sessions": 461,
+        "users": 244
       },
       {
         "source": "duckduckgo",
         "medium": "organic",
-        "sessions": 350,
-        "users": 96
+        "sessions": 327,
+        "users": 107
       },
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 325,
-        "users": 306
-      },
-      {
-        "source": "autotrader.com",
-        "medium": "referral",
-        "sessions": 305,
-        "users": 178
-      },
-      {
-        "source": "jlemail",
-        "medium": "email1",
-        "sessions": 236,
-        "users": 185
+        "sessions": 319,
+        "users": 302
       },
       {
         "source": "(data not available)",
         "medium": "(data not available)",
-        "sessions": 218,
-        "users": 218
+        "sessions": 233,
+        "users": 232
       },
       {
-        "source": "facebook.com",
-        "medium": "referral",
-        "sessions": 159,
-        "users": 144
-      },
-      {
-        "source": "m.facebook.com",
-        "medium": "referral",
-        "sessions": 159,
-        "users": 140
+        "source": "jlemail",
+        "medium": "email1",
+        "sessions": 233,
+        "users": 181
       },
       {
         "source": "visor.vin",
         "medium": "referral",
-        "sessions": 149,
-        "users": 97
+        "sessions": 211,
+        "users": 130
+      },
+      {
+        "source": "facebook.com",
+        "medium": "referral",
+        "sessions": 165,
+        "users": 151
       },
       {
         "source": "carfax.com",
         "medium": "referral",
-        "sessions": 145,
-        "users": 79
+        "sessions": 149,
+        "users": 88
       },
       {
-        "source": "brianharrisautogroup.com",
+        "source": "m.facebook.com",
         "medium": "referral",
-        "sessions": 129,
-        "users": 18
+        "sessions": 147,
+        "users": 133
+      },
+      {
+        "source": "amp",
+        "medium": "email",
+        "sessions": 116,
+        "users": 91
       }
     ],
-    "mobile_pct": 64.7
+    "mobile_pct": 60.7
   },
   "audi_baton_rouge": {
     "q1_2026": {
-      "sessions": 47486,
-      "users": 41219,
-      "newUsers": 33639,
-      "pageviews": 107967,
-      "pagesPerSession": 2.27
+      "sessions": 49461,
+      "users": 43375,
+      "newUsers": 36218,
+      "pageviews": 102368,
+      "pagesPerSession": 2.07
     },
     "q1_prev": {
-      "sessions": 43602,
-      "users": 37070,
-      "newUsers": 29037,
-      "pageviews": 98707,
-      "pagesPerSession": 2.26
+      "sessions": 32348,
+      "users": 27006,
+      "newUsers": 20289,
+      "pageviews": 75175,
+      "pagesPerSession": 2.32
     },
     "last30": {
-      "sessions": 16162,
-      "users": 14039,
-      "newUsers": 11678,
-      "pageviews": 34424,
-      "pagesPerSession": 2.13
+      "sessions": 18796,
+      "users": 16676,
+      "newUsers": 14275,
+      "pageviews": 37101,
+      "pagesPerSession": 1.97
     },
     "last60": {
-      "sessions": 31229,
-      "users": 27179,
-      "newUsers": 22312,
-      "pageviews": 66295,
-      "pagesPerSession": 2.12
+      "sessions": 34394,
+      "users": 30235,
+      "newUsers": 25584,
+      "pageviews": 70497,
+      "pagesPerSession": 2.05
     },
     "sources": [
       {
-        "source": "google",
-        "medium": "organic",
-        "sessions": 11989,
-        "users": 5697
-      },
-      {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 10701,
-        "users": 7323
+        "sessions": 13953,
+        "users": 10612
+      },
+      {
+        "source": "google",
+        "medium": "organic",
+        "sessions": 11562,
+        "users": 5331
       },
       {
         "source": "google",
         "medium": "cpc",
-        "sessions": 4580,
-        "users": 3830
+        "sessions": 4940,
+        "users": 4160
       },
       {
         "source": "cdn.flashtalking.com",
         "medium": "referral",
-        "sessions": 3462,
-        "users": 3379
+        "sessions": 3368,
+        "users": 3265
       },
       {
         "source": "ig",
         "medium": "paid",
-        "sessions": 2900,
-        "users": 2752
+        "sessions": 3352,
+        "users": 3125
       },
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 2339,
-        "users": 2284
+        "sessions": 2336,
+        "users": 2279
       },
       {
         "source": "autotrader.com",
         "medium": "social",
-        "sessions": 1781,
-        "users": 1479
-      },
-      {
-        "source": "fb",
-        "medium": "paid",
-        "sessions": 1779,
-        "users": 1679
+        "sessions": 1745,
+        "users": 1498
       },
       {
         "source": "audiusa.com",
         "medium": "referral",
-        "sessions": 1241,
-        "users": 912
+        "sessions": 1097,
+        "users": 771
       },
       {
-        "source": "facebook",
+        "source": "fb",
         "medium": "paid",
-        "sessions": 1003,
+        "sessions": 1050,
         "users": 966
       },
       {
         "source": "bing",
         "medium": "organic",
-        "sessions": 991,
-        "users": 539
+        "sessions": 962,
+        "users": 526
       },
       {
         "source": "imasdk.googleapis.com",
         "medium": "referral",
-        "sessions": 789,
-        "users": 788
+        "sessions": 902,
+        "users": 900
       },
       {
         "source": "vinurl.com",
         "medium": "referral",
-        "sessions": 745,
-        "users": 547
+        "sessions": 789,
+        "users": 572
       },
       {
         "source": "pinterest.com",
         "medium": "referral",
-        "sessions": 570,
-        "users": 527
-      },
-      {
-        "source": "tpc.googlesyndication.com",
-        "medium": "referral",
-        "sessions": 370,
-        "users": 368
+        "sessions": 586,
+        "users": 556
       },
       {
         "source": "m.facebook.com",
         "medium": "referral",
-        "sessions": 353,
-        "users": 343
+        "sessions": 467,
+        "users": 464
       },
       {
-        "source": "yahoo",
-        "medium": "organic",
-        "sessions": 289,
-        "users": 152
+        "source": "facebook",
+        "medium": "paid",
+        "sessions": 448,
+        "users": 436
+      },
+      {
+        "source": "tpc.googlesyndication.com",
+        "medium": "referral",
+        "sessions": 323,
+        "users": 322
       },
       {
         "source": "facebook.com",
         "medium": "referral",
-        "sessions": 227,
-        "users": 223
+        "sessions": 303,
+        "users": 298
+      },
+      {
+        "source": "yahoo",
+        "medium": "organic",
+        "sessions": 283,
+        "users": 146
       },
       {
         "source": "cargurus.com",
         "medium": "referral",
-        "sessions": 183,
-        "users": 126
+        "sessions": 172,
+        "users": 115
       },
       {
         "source": "banners2.esm1.net",
         "medium": "referral",
-        "sessions": 182,
-        "users": 183
+        "sessions": 164,
+        "users": 163
       }
     ],
-    "mobile_pct": 65.6
+    "mobile_pct": 60.8
   },
   "bmw_jackson": {
     "q1_2026": {
-      "sessions": 79993,
-      "users": 70498,
-      "newUsers": 53297,
-      "pageviews": 172978,
-      "pagesPerSession": 2.16
+      "sessions": 81581,
+      "users": 71961,
+      "newUsers": 52822,
+      "pageviews": 175334,
+      "pagesPerSession": 2.15
     },
     "q1_prev": {
-      "sessions": 50950,
-      "users": 44059,
-      "newUsers": 32882,
-      "pageviews": 129852,
+      "sessions": 49266,
+      "users": 42632,
+      "newUsers": 32056,
+      "pageviews": 125772,
       "pagesPerSession": 2.55
     },
     "last30": {
-      "sessions": 28579,
-      "users": 25032,
-      "newUsers": 18244,
-      "pageviews": 62728,
-      "pagesPerSession": 2.19
+      "sessions": 28154,
+      "users": 24880,
+      "newUsers": 17649,
+      "pageviews": 58721,
+      "pagesPerSession": 2.09
     },
     "last60": {
-      "sessions": 54262,
-      "users": 47817,
-      "newUsers": 35699,
-      "pageviews": 118199,
-      "pagesPerSession": 2.18
+      "sessions": 55898,
+      "users": 49176,
+      "newUsers": 35367,
+      "pageviews": 119863,
+      "pagesPerSession": 2.14
     },
     "sources": [
       {
         "source": "google",
         "medium": "cpc",
-        "sessions": 44366,
-        "users": 32475
+        "sessions": 46161,
+        "users": 32529
       },
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 14035,
-        "users": 10734
+        "sessions": 14509,
+        "users": 11542
       },
       {
         "source": "google",
         "medium": "organic",
-        "sessions": 10255,
-        "users": 5723
+        "sessions": 9597,
+        "users": 5121
       },
       {
         "source": "facebook",
         "medium": "cpc",
-        "sessions": 5022,
-        "users": 4006
+        "sessions": 5119,
+        "users": 4076
       },
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 1204,
-        "users": 1086
+        "sessions": 1464,
+        "users": 1324
       },
       {
         "source": "bing",
         "medium": "organic",
-        "sessions": 950,
-        "users": 463
+        "sessions": 960,
+        "users": 459
       },
       {
         "source": "(data not available)",
         "medium": "(data not available)",
-        "sessions": 456,
-        "users": 447
+        "sessions": 432,
+        "users": 422
       },
       {
         "source": "facebook.com",
         "medium": "referral",
-        "sessions": 316,
-        "users": 296
+        "sessions": 350,
+        "users": 320
       },
       {
         "source": "yahoo",
         "medium": "organic",
-        "sessions": 314,
-        "users": 194
-      },
-      {
-        "source": "bmwusa.com",
-        "medium": "referral",
-        "sessions": 243,
-        "users": 150
+        "sessions": 310,
+        "users": 177
       },
       {
         "source": "autotrader.com",
         "medium": "referral",
-        "sessions": 222,
-        "users": 115
+        "sessions": 247,
+        "users": 127
       },
       {
         "source": "m.facebook.com",
         "medium": "referral",
-        "sessions": 213,
-        "users": 211
+        "sessions": 247,
+        "users": 239
       },
       {
-        "source": "bmw-retailer.email-dealer.com",
+        "source": "bmwusa.com",
         "medium": "referral",
-        "sessions": 189,
-        "users": 189
+        "sessions": 215,
+        "users": 138
       },
       {
         "source": "jlemail",
         "medium": "email1",
-        "sessions": 122,
-        "users": 87
-      },
-      {
-        "source": "cars.com",
-        "medium": "referral",
-        "sessions": 111,
-        "users": 56
-      },
-      {
-        "source": "duckduckgo",
-        "medium": "organic",
-        "sessions": 98,
-        "users": 55
-      },
-      {
-        "source": "focus.dealer.reyrey.net",
-        "medium": "referral",
-        "sessions": 84,
-        "users": 2
+        "sessions": 167,
+        "users": 120
       },
       {
         "source": "fb",
         "medium": "paid",
-        "sessions": 69,
-        "users": 67
+        "sessions": 121,
+        "users": 118
+      },
+      {
+        "source": "duckduckgo",
+        "medium": "organic",
+        "sessions": 92,
+        "users": 55
+      },
+      {
+        "source": "bmw-retailer.email-dealer.com",
+        "medium": "referral",
+        "sessions": 89,
+        "users": 89
       },
       {
         "source": "visor.vin",
         "medium": "referral",
-        "sessions": 63,
-        "users": 35
+        "sessions": 83,
+        "users": 43
       },
       {
-        "source": "instagram.com",
+        "source": "an",
+        "medium": "paid",
+        "sessions": 78,
+        "users": 63
+      },
+      {
+        "source": "app.podium.com",
         "medium": "referral",
-        "sessions": 54,
-        "users": 53
+        "sessions": 57,
+        "users": 4
+      },
+      {
+        "source": "focus.dealer.reyrey.net",
+        "medium": "referral",
+        "sessions": 53,
+        "users": 2
       }
     ],
-    "mobile_pct": 70.1
+    "mobile_pct": 69.6
   }
 }
