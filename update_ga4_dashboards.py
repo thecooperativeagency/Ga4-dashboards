@@ -232,6 +232,154 @@ def fetch_high_bounce_pages(email: str, property_id: str, start: str, end: str, 
     return out
 
 
+
+def fetch_campaigns(email: str, property_id: str, start: str, end: str, limit: int = 50):
+    report = run_report_api(
+        email,
+        property_id,
+        {
+            'dateRanges': [{'startDate': start, 'endDate': end}],
+            'dimensions': [
+                {'name': 'sessionCampaignName'},
+                {'name': 'sessionSource'},
+                {'name': 'sessionMedium'},
+            ],
+            'metrics': [
+                {'name': 'sessions'},
+                {'name': 'totalUsers'},
+                {'name': 'bounceRate'},
+                {'name': 'averageSessionDuration'},
+            ],
+            'orderBys': [{'metric': {'metricName': 'sessions'}, 'desc': True}],
+            'limit': limit,
+        },
+    )
+    out = []
+    for r in report.get('rows', []):
+        campaign = r['dimensionValues'][0]['value']
+        source = r['dimensionValues'][1]['value']
+        medium = r['dimensionValues'][2]['value']
+        sessions = int(r['metricValues'][0]['value'])
+        users = int(r['metricValues'][1]['value'])
+        bounce = round(float(r['metricValues'][2]['value']) * 100, 1)
+        duration = round(float(r['metricValues'][3]['value']), 1)
+        src_l, med_l, camp_l = source.lower(), medium.lower(), campaign.lower()
+        paid = (
+            med_l in {'cpc', 'ppc', 'paid', 'paid_social', 'display'}
+            or src_l in {'fb', 'ig', 'facebook', 'instagram', 'meta'}
+            or 'paid search' in camp_l
+            or 'paid social' in camp_l
+        )
+        if not paid:
+            continue
+        out.append(
+            {
+                'campaign': campaign,
+                'source': source,
+                'medium': medium,
+                'channel': f'{source} / {medium}',
+                'sessions': sessions,
+                'users': users,
+                'bounceRate': bounce,
+                'avgSessionDuration': duration,
+            }
+        )
+    out.sort(key=lambda row: row['sessions'], reverse=True)
+    return out[:25]
+
+
+def fetch_hostnames(email: str, property_id: str, start: str, end: str, limit: int = 15):
+    report = run_report_api(
+        email,
+        property_id,
+        {
+            'dateRanges': [{'startDate': start, 'endDate': end}],
+            'dimensions': [{'name': 'hostName'}],
+            'metrics': [{'name': 'sessions'}, {'name': 'totalUsers'}],
+            'orderBys': [{'metric': {'metricName': 'sessions'}, 'desc': True}],
+            'limit': limit,
+        },
+    )
+    rows = []
+    total = 0
+    for r in report.get('rows', []):
+        sessions = int(r['metricValues'][0]['value'])
+        total += sessions
+        rows.append(
+            {
+                'hostname': r['dimensionValues'][0]['value'],
+                'sessions': sessions,
+                'users': int(r['metricValues'][1]['value']),
+            }
+        )
+    for row in rows:
+        row['share'] = round((row['sessions'] / total * 100), 1) if total else 0.0
+    return {'total': total, 'rows': rows}
+
+
+def fetch_top_pages(email: str, property_id: str, start: str, end: str, limit: int = 15):
+    report = run_report_api(
+        email,
+        property_id,
+        {
+            'dateRanges': [{'startDate': start, 'endDate': end}],
+            'dimensions': [{'name': 'pagePath'}],
+            'metrics': [
+                {'name': 'sessions'},
+                {'name': 'averageSessionDuration'},
+                {'name': 'bounceRate'},
+                {'name': 'screenPageViews'},
+            ],
+            'orderBys': [{'metric': {'metricName': 'sessions'}, 'desc': True}],
+            'limit': limit,
+        },
+    )
+    out = []
+    for r in report.get('rows', []):
+        out.append(
+            {
+                'pagePath': r['dimensionValues'][0]['value'],
+                'sessions': int(r['metricValues'][0]['value']),
+                'avgSessionDuration': round(float(r['metricValues'][1]['value']), 1),
+                'bounceRate': round(float(r['metricValues'][2]['value']) * 100, 1),
+                'pageviews': int(r['metricValues'][3]['value']),
+            }
+        )
+    return out
+
+
+def fetch_weekly_sessions(email: str, property_id: str, start: str, end: str):
+    report = run_report_api(
+        email,
+        property_id,
+        {
+            'dateRanges': [{'startDate': start, 'endDate': end}],
+            'dimensions': [{'name': 'yearWeek'}],
+            'metrics': [{'name': 'sessions'}],
+            'orderBys': [{'dimension': {'dimensionName': 'yearWeek'}}],
+            'limit': 60,
+        },
+    )
+    labels = []
+    sessions = []
+    for r in report.get('rows', []):
+        yw = r['dimensionValues'][0]['value']  # e.g. 202628
+        labels.append(yw)
+        sessions.append(int(r['metricValues'][0]['value']))
+    return {'labels': labels, 'sessions': sessions}
+
+
+def fetch_panels(email: str, property_id: str):
+    return {
+        'campaigns': fetch_campaigns(email, property_id, '30daysAgo', 'today'),
+        'hostnames': fetch_hostnames(email, property_id, '90daysAgo', 'today'),
+        'top_pages': fetch_top_pages(email, property_id, '90daysAgo', 'today', limit=12),
+        'top_pages_30': fetch_top_pages(email, property_id, '30daysAgo', 'today', limit=12),
+        'weekly_current': fetch_weekly_sessions(email, property_id, '365daysAgo', 'today'),
+        'weekly_prior': fetch_weekly_sessions(email, property_id, '730daysAgo', '366daysAgo'),
+    }
+
+
 def fetch_period(email: str, property_id: str, start: str, end: str, label: str):
     report = run_report(email, property_id, start, end)
     totals = totals_from_report(report)
@@ -259,45 +407,59 @@ def js_obj(value):
     return json.dumps(value, separators=(',', ':'))
 
 
+
+def upsert_const(html: str, name: str, value_js: str, after: str = 'SOURCES') -> str:
+    pattern = rf'const {name}\s*=\s*[\s\S]*?;'
+    if re.search(pattern, html):
+        return re.sub(pattern, f'const {name} = {value_js};', html, count=1)
+    anchor = rf'(const {after}\s*=\s*[\s\S]*?;)'
+    if re.search(anchor, html):
+        return re.sub(anchor, rf'\1\n\nconst {name} = {value_js};', html, count=1)
+    # fallback after DATA
+    return re.sub(
+        r'(const DATA\s*=\s*\{[\s\S]*?\};)',
+        rf'\1\n\nconst {name} = {value_js};',
+        html,
+        count=1,
+    )
+
+
 def patch_dashboard(
     path: Path,
     datasets: dict,
     sources: list,
     high_bounce: list,
+    panels: dict,
     updated_label: str,
 ):
     html = path.read_text()
     data_js = '{\n' + ',\n'.join(f'    {k}: {js_obj(v)}' for k, v in datasets.items()) + '\n}'
     sources_js = js_obj(sources)
     high_bounce_js = js_obj(high_bounce)
+    campaigns_js = js_obj(panels['campaigns'])
+    hostnames_js = js_obj(panels['hostnames'])
+    top_pages_js = js_obj(panels['top_pages'])
+    top_pages_30_js = js_obj(panels['top_pages_30'])
+    weekly_js = js_obj(
+        {
+            'current': panels['weekly_current'],
+            'prior': panels['weekly_prior'],
+        }
+    )
 
-    # DATA + SOURCES
     html = re.sub(
         r'const DATA\s*=\s*\{[\s\S]*?\};\s*\n\s*const SOURCES\s*=\s*\[[\s\S]*?\];',
         f'const DATA = {data_js};\n\nconst SOURCES = {sources_js};',
         html,
         count=1,
     )
+    html = upsert_const(html, 'HIGH_BOUNCE', high_bounce_js, after='SOURCES')
+    html = upsert_const(html, 'CAMPAIGNS', campaigns_js, after='HIGH_BOUNCE')
+    html = upsert_const(html, 'HOSTNAMES', hostnames_js, after='CAMPAIGNS')
+    html = upsert_const(html, 'TOP_PAGES', top_pages_js, after='HOSTNAMES')
+    html = upsert_const(html, 'TOP_PAGES_30', top_pages_30_js, after='TOP_PAGES')
+    html = upsert_const(html, 'WEEKLY', weekly_js, after='TOP_PAGES_30')
 
-    # HIGH_BOUNCE array: insert/replace after SOURCES
-    if re.search(r'const HIGH_BOUNCE\s*=\s*\[[\s\S]*?\];', html):
-        html = re.sub(
-            r'const HIGH_BOUNCE\s*=\s*\[[\s\S]*?\];',
-            f'const HIGH_BOUNCE = {high_bounce_js};',
-            html,
-            count=1,
-        )
-    else:
-        html = re.sub(
-            r'(const SOURCES\s*=\s*\[[\s\S]*?\];)',
-            rf'\1\n\nconst HIGH_BOUNCE = {high_bounce_js};',
-            html,
-            count=1,
-        )
-
-    # Remove obsolete Mobile Traffic string patches (values now live in DATA)
-
-    # Keep visible refresh stamps current on every refresh (header badge + footer).
     html = re.sub(
         r'(id="dataUpdated">Updated on )(?:[A-Za-z]+ \d{1,2}, \d{4}|[A-Za-z]+ \d{4})',
         rf'\1{updated_label}',
@@ -361,6 +523,10 @@ def main():
     audi_high = fetch_high_bounce_pages(audi_email, audi_prop, '30daysAgo', 'today')
     jackson_high = fetch_high_bounce_pages(jackson_email, jackson_prop, '30daysAgo', 'today')
 
+    bh_panels = fetch_panels(bh_email, bh_prop)
+    audi_panels = fetch_panels(audi_email, audi_prop)
+    jackson_panels = fetch_panels(jackson_email, jackson_prop)
+
     today = os.environ['TODAY']
     updated_label = datetime.strptime(today, '%Y-%m-%d').strftime('%B %-d, %Y')
 
@@ -374,6 +540,7 @@ def main():
             'sources': bh_sources,
             'mobile_pct': bh_data['q1_2026']['mobilePct'],
             'high_bounce': bh_high,
+            'panels': bh_panels,
         },
         'audi_baton_rouge': {
             'q1_2026': period_summary(audi_data['q1_2026']),
@@ -383,6 +550,7 @@ def main():
             'sources': audi_sources,
             'mobile_pct': audi_data['q1_2026']['mobilePct'],
             'high_bounce': audi_high,
+            'panels': audi_panels,
         },
         'bmw_jackson': {
             'q1_2026': period_summary(jackson_data['q1_2026']),
@@ -392,44 +560,26 @@ def main():
             'sources': jackson_sources,
             'mobile_pct': jackson_data['q1_2026']['mobilePct'],
             'high_bounce': jackson_high,
+            'panels': jackson_panels,
         },
     }
     (DASH_DIR / 'ga4-data.json').write_text(json.dumps(cache, indent=2))
 
-    patch_dashboard(
-        DASH_DIR / 'brian-harris-bmw-dashboard.html',
-        bh_data,
-        bh_sources,
-        bh_high,
-        updated_label,
-    )
-    patch_dashboard(
-        DASH_DIR / 'audi-baton-rouge-dashboard.html',
-        audi_data,
-        audi_sources,
-        audi_high,
-        updated_label,
-    )
-    patch_dashboard(
-        DASH_DIR / 'bmw-jackson-dashboard.html',
-        jackson_data,
-        jackson_sources,
-        jackson_high,
-        updated_label,
-    )
+    patch_dashboard(DASH_DIR / 'brian-harris-bmw-dashboard.html', bh_data, bh_sources, bh_high, bh_panels, updated_label)
+    patch_dashboard(DASH_DIR / 'audi-baton-rouge-dashboard.html', audi_data, audi_sources, audi_high, audi_panels, updated_label)
+    patch_dashboard(DASH_DIR / 'bmw-jackson-dashboard.html', jackson_data, jackson_sources, jackson_high, jackson_panels, updated_label)
 
     print('Data written to ga4-data.json and dashboard HTML files')
-    for label, data in (
-        ('BH BMW', bh_data),
-        ('Audi BR', audi_data),
-        ('BMW Jackson', jackson_data),
+    for label, data, panels in (
+        ('BH BMW', bh_data, bh_panels),
+        ('Audi BR', audi_data, audi_panels),
+        ('BMW Jackson', jackson_data, jackson_panels),
     ):
         cur = data['last30']
-        prev = data['prev30']
         print(
             f"{label} last30: sessions={cur['sessions']:,} bounce={cur['bounceRate']}% "
-            f"duration={cur['avgSessionDuration']}s mobile={cur['mobilePct']}% "
-            f"| prev bounce={prev['bounceRate']}%"
+            f"campaigns={len(panels['campaigns'])} top_pages={len(panels['top_pages'])} "
+            f"hosts={len(panels['hostnames']['rows'])}"
         )
 
 
