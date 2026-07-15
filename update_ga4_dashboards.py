@@ -92,13 +92,32 @@ def js_obj(value):
     return json.dumps(value, separators=(',', ':'))
 
 
-def patch_dashboard(path: Path, datasets: dict, sources: list, mobile_pct: float):
+def patch_dashboard(path: Path, datasets: dict, sources: list, mobile_pct: float, updated_label: str):
     html = path.read_text()
     data_js = '{\n' + ',\n'.join(f"    {k}: {js_obj(v)}" for k, v in datasets.items()) + '\n}'
     sources_js = js_obj(sources)
     html = re.sub(r"const DATA\s*=\s*\{[\s\S]*?\};\s*\n\s*const SOURCES\s*=\s*\[[\s\S]*?\];", f"const DATA = {data_js};\n\nconst SOURCES = {sources_js};", html, count=1)
     html = re.sub(r"Mobile Traffic',\s*val:\s*'[^']+',\s*raw:\s*[0-9.]+", f"Mobile Traffic',val:'{mobile_pct}%',raw:{mobile_pct}", html)
     html = re.sub(r"Mobile Traffic',\s* val: '\s*[^']+',\s* raw: [0-9.]+", f"Mobile Traffic', val: '{mobile_pct}%', raw: {mobile_pct}", html)
+    # Keep visible refresh stamps current on every refresh (header badge + footer).
+    html = re.sub(
+        r'(id="dataUpdated">Updated on )(?:[A-Za-z]+ \d{1,2}, \d{4}|[A-Za-z]+ \d{4})',
+        rf'\1{updated_label}',
+        html,
+        count=1,
+    )
+    html = re.sub(
+        r'(footer-right[\s\S]{0,400}?Updated\s+)(?:[A-Za-z]+ \d{1,2}, \d{4}|[A-Za-z]+ \d{4})',
+        rf'\1{updated_label}',
+        html,
+        count=1,
+    )
+    # Fallback: any remaining plain "Updated MONTH ..." stamps in footers.
+    html = re.sub(
+        r'(Updated\s+)(?:[A-Za-z]+ \d{1,2}, \d{4}|[A-Za-z]+ \d{4})',
+        rf'\1{updated_label}',
+        html,
+    )
     path.write_text(html)
 
 
@@ -128,8 +147,13 @@ def main():
     audi_data = build_store(os.environ['AUDI_BR_EMAIL'], os.environ['AUDI_BR_PROPERTY'])
     jackson_data = build_store(os.environ['BMW_JACKSON_EMAIL'], os.environ['BMW_JACKSON_PROPERTY'])
 
+    from datetime import datetime
+
+    today = os.environ['TODAY']
+    updated_label = datetime.strptime(today, '%Y-%m-%d').strftime('%B %-d, %Y')
+
     cache = {
-        'updated': os.environ['TODAY'],
+        'updated': today,
         'brian_harris_bmw': {
             'q1_2026': {k: bh_data['q1_2026'][k] for k in ('sessions', 'users', 'newUsers', 'pageviews', 'pagesPerSession')},
             'q1_prev': {k: bh_data['yoy90'][k] for k in ('sessions', 'users', 'newUsers', 'pageviews', 'pagesPerSession')},
@@ -157,9 +181,9 @@ def main():
     }
     (DASH_DIR / 'ga4-data.json').write_text(json.dumps(cache, indent=2))
 
-    patch_dashboard(DASH_DIR / 'brian-harris-bmw-dashboard.html', bh_data, bh_sources, bh_mobile)
-    patch_dashboard(DASH_DIR / 'audi-baton-rouge-dashboard.html', audi_data, audi_sources, audi_mobile)
-    patch_dashboard(DASH_DIR / 'bmw-jackson-dashboard.html', jackson_data, jackson_sources, jackson_mobile)
+    patch_dashboard(DASH_DIR / 'brian-harris-bmw-dashboard.html', bh_data, bh_sources, bh_mobile, updated_label)
+    patch_dashboard(DASH_DIR / 'audi-baton-rouge-dashboard.html', audi_data, audi_sources, audi_mobile, updated_label)
+    patch_dashboard(DASH_DIR / 'bmw-jackson-dashboard.html', jackson_data, jackson_sources, jackson_mobile, updated_label)
 
     print('Data written to ga4-data.json and dashboard HTML files')
     print(f"BH BMW last30 vs prev30: {bh_data['last30']['sessions']:,} vs {bh_data['prev30']['sessions']:,}")
