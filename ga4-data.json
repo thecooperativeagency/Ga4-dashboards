@@ -2,39 +2,55 @@
   "updated": "2026-07-15",
   "brian_harris_bmw": {
     "q1_2026": {
-      "sessions": 74929,
-      "users": 62619,
-      "newUsers": 45386,
-      "pageviews": 264382,
-      "pagesPerSession": 3.53
+      "sessions": 74935,
+      "users": 62625,
+      "newUsers": 45390,
+      "pageviews": 264405,
+      "pagesPerSession": 3.48,
+      "bounceRate": 51.4,
+      "avgSessionDuration": 203.2,
+      "engagementRate": 48.6,
+      "mobilePct": 60.7
     },
     "q1_prev": {
       "sessions": 60168,
       "users": 49473,
       "newUsers": 34195,
       "pageviews": 207164,
-      "pagesPerSession": 3.44
+      "pagesPerSession": 3.45,
+      "bounceRate": 29.9,
+      "avgSessionDuration": 255.3,
+      "engagementRate": 70.1,
+      "mobilePct": 63.0
     },
     "last30": {
-      "sessions": 26178,
-      "users": 21951,
-      "newUsers": 16216,
-      "pageviews": 93824,
-      "pagesPerSession": 3.58
+      "sessions": 26184,
+      "users": 21957,
+      "newUsers": 16220,
+      "pageviews": 93847,
+      "pagesPerSession": 3.54,
+      "bounceRate": 52.9,
+      "avgSessionDuration": 205.3,
+      "engagementRate": 47.1,
+      "mobilePct": 54.5
     },
     "last60": {
-      "sessions": 52044,
-      "users": 43734,
-      "newUsers": 32015,
-      "pageviews": 183235,
-      "pagesPerSession": 3.52
+      "sessions": 52050,
+      "users": 43740,
+      "newUsers": 32019,
+      "pageviews": 183258,
+      "pagesPerSession": 3.42,
+      "bounceRate": 53.6,
+      "avgSessionDuration": 198.3,
+      "engagementRate": 46.4,
+      "mobilePct": 59.8
     },
     "sources": [
       {
         "source": "google",
         "medium": "cpc",
         "sessions": 25879,
-        "users": 19182
+        "users": 19183
       },
       {
         "source": "(direct)",
@@ -51,8 +67,8 @@
       {
         "source": "facebook",
         "medium": "cpc",
-        "sessions": 2119,
-        "users": 1752
+        "sessions": 2120,
+        "users": 1753
       },
       {
         "source": "amp",
@@ -87,7 +103,7 @@
       {
         "source": "yahoo",
         "medium": "organic",
-        "sessions": 579,
+        "sessions": 580,
         "users": 297
       },
       {
@@ -151,36 +167,126 @@
         "users": 91
       }
     ],
-    "mobile_pct": 60.7
+    "mobile_pct": 60.7,
+    "high_bounce": [
+      {
+        "pagePath": "/oil-change",
+        "sessions": 1381,
+        "bounceRate": 79.1,
+        "avgSessionDuration": 44.7
+      },
+      {
+        "pagePath": "/service-specials",
+        "sessions": 1539,
+        "bounceRate": 78.6,
+        "avgSessionDuration": 76.3
+      },
+      {
+        "pagePath": "/cars/new-330i",
+        "sessions": 467,
+        "bounceRate": 73.0,
+        "avgSessionDuration": 68.6
+      },
+      {
+        "pagePath": "/gen-m-tour",
+        "sessions": 53,
+        "bounceRate": 71.7,
+        "avgSessionDuration": 60.6
+      },
+      {
+        "pagePath": "/cars/bmw-x3",
+        "sessions": 831,
+        "bounceRate": 63.9,
+        "avgSessionDuration": 56.4
+      },
+      {
+        "pagePath": "/tires",
+        "sessions": 191,
+        "bounceRate": 60.7,
+        "avgSessionDuration": 37.6
+      },
+      {
+        "pagePath": "/brakes",
+        "sessions": 394,
+        "bounceRate": 59.4,
+        "avgSessionDuration": 63.5
+      },
+      {
+        "pagePath": "/cars/bmw-x5",
+        "sessions": 1067,
+        "bounceRate": 58.4,
+        "avgSessionDuration": 105.2
+      },
+      {
+        "pagePath": "/finance",
+        "sessions": 183,
+        "bounceRate": 47.5,
+        "avgSessionDuration": 198.9
+      },
+      {
+        "pagePath": "/bmw-x3-vs-lexus-rx-why-the-bmw-x3-is-the-ultimate-choice",
+        "sessions": 37,
+        "bounceRate": 45.9,
+        "avgSessionDuration": 46.6
+      },
+      {
+        "pagePath": "/inventory/Used-2024-Toyota-Land_Cruiser-First_Edition-JTEABFAJ9RK003145",
+        "sessions": 77,
+        "bounceRate": 45.5,
+        "avgSessionDuration": 104.5
+      },
+      {
+        "pagePath": "/inventory/Used-2023-BMW-X3-sDrive30i-WBX47DP06PN242222",
+        "sessions": 117,
+        "bounceRate": 44.4,
+        "avgSessionDuration": 259.9
+      }
+    ]
   },
   "audi_baton_rouge": {
     "q1_2026": {
-      "sessions": 49461,
-      "users": 43375,
-      "newUsers": 36218,
-      "pageviews": 102368,
-      "pagesPerSession": 2.07
+      "sessions": 49462,
+      "users": 43376,
+      "newUsers": 36219,
+      "pageviews": 102369,
+      "pagesPerSession": 2.06,
+      "bounceRate": 58.9,
+      "avgSessionDuration": 165.0,
+      "engagementRate": 41.1,
+      "mobilePct": 60.8
     },
     "q1_prev": {
       "sessions": 32348,
       "users": 27006,
       "newUsers": 20289,
       "pageviews": 75175,
-      "pagesPerSession": 2.32
+      "pagesPerSession": 2.31,
+      "bounceRate": 36.5,
+      "avgSessionDuration": 192.8,
+      "engagementRate": 63.5,
+      "mobilePct": 63.2
     },
     "last30": {
-      "sessions": 18796,
-      "users": 16676,
-      "newUsers": 14275,
-      "pageviews": 37101,
-      "pagesPerSession": 1.97
+      "sessions": 18797,
+      "users": 16677,
+      "newUsers": 14276,
+      "pageviews": 37102,
+      "pagesPerSession": 1.99,
+      "bounceRate": 63.7,
+      "avgSessionDuration": 160.1,
+      "engagementRate": 36.3,
+      "mobilePct": 56.2
     },
     "last60": {
-      "sessions": 34394,
-      "users": 30235,
-      "newUsers": 25584,
-      "pageviews": 70497,
-      "pagesPerSession": 2.05
+      "sessions": 34395,
+      "users": 30236,
+      "newUsers": 25585,
+      "pageviews": 70498,
+      "pagesPerSession": 2.01,
+      "bounceRate": 61.1,
+      "avgSessionDuration": 161.1,
+      "engagementRate": 38.9,
+      "mobilePct": 60.2
     },
     "sources": [
       {
@@ -304,36 +410,126 @@
         "users": 163
       }
     ],
-    "mobile_pct": 60.8
+    "mobile_pct": 60.8,
+    "high_bounce": [
+      {
+        "pagePath": "/en/inventory/New-2025-Audi-RS 7-WUAPDBF2XSN907631",
+        "sessions": 33,
+        "bounceRate": 87.9,
+        "avgSessionDuration": 2.7
+      },
+      {
+        "pagePath": "/en/inventory/new",
+        "sessions": 4311,
+        "bounceRate": 87.8,
+        "avgSessionDuration": 8.6
+      },
+      {
+        "pagePath": "/en/inventory/New-2025-Audi-A7-WAUV2BF20SN028663",
+        "sessions": 20,
+        "bounceRate": 80.0,
+        "avgSessionDuration": 2.9
+      },
+      {
+        "pagePath": "/inventory/New-2025-Audi-RS 7-WUAPDBF2XSN907631",
+        "sessions": 55,
+        "bounceRate": 74.5,
+        "avgSessionDuration": 4.5
+      },
+      {
+        "pagePath": "/en/inventory/New-2025-Audi-RS 3-WUAGWDGY3SA910063",
+        "sessions": 49,
+        "bounceRate": 73.5,
+        "avgSessionDuration": 4.7
+      },
+      {
+        "pagePath": "/inventory/Used-2021-CADILLAC-Escalade-1GYS4GKL5MR347753",
+        "sessions": 44,
+        "bounceRate": 72.7,
+        "avgSessionDuration": 7.6
+      },
+      {
+        "pagePath": "/en/inventory/Used-2017-Ford-Expedition-1FMJU1KT2HEA76724",
+        "sessions": 36,
+        "bounceRate": 72.2,
+        "avgSessionDuration": 3.6
+      },
+      {
+        "pagePath": "/inventory/Used-2019-Honda-Accord-1HGCV1F39KA119072",
+        "sessions": 35,
+        "bounceRate": 71.4,
+        "avgSessionDuration": 5.8
+      },
+      {
+        "pagePath": "/inventory/New-2025-Audi-RS 3-WUAGWDGY3SA910063",
+        "sessions": 38,
+        "bounceRate": 71.1,
+        "avgSessionDuration": 5.9
+      },
+      {
+        "pagePath": "/inventory/Used-2022-Audi-RS 7-WUAPCBF2XNN901741",
+        "sessions": 22,
+        "bounceRate": 68.2,
+        "avgSessionDuration": 5.0
+      },
+      {
+        "pagePath": "/inventory/New-2026-Audi-SQ5-Premium_Plus-WA125AGU7T2046310",
+        "sessions": 38,
+        "bounceRate": 57.9,
+        "avgSessionDuration": 24.7
+      },
+      {
+        "pagePath": "/en/inventory/Used-2022-Audi-RS 7-WUAPCBF2XNN901741",
+        "sessions": 25,
+        "bounceRate": 56.0,
+        "avgSessionDuration": 7.6
+      }
+    ]
   },
   "bmw_jackson": {
     "q1_2026": {
-      "sessions": 81581,
-      "users": 71961,
-      "newUsers": 52822,
-      "pageviews": 175334,
-      "pagesPerSession": 2.15
+      "sessions": 81582,
+      "users": 71962,
+      "newUsers": 52823,
+      "pageviews": 175336,
+      "pagesPerSession": 2.19,
+      "bounceRate": 61.6,
+      "avgSessionDuration": 135.0,
+      "engagementRate": 38.4,
+      "mobilePct": 69.6
     },
     "q1_prev": {
       "sessions": 49266,
       "users": 42632,
       "newUsers": 32056,
       "pageviews": 125772,
-      "pagesPerSession": 2.55
+      "pagesPerSession": 2.63,
+      "bounceRate": 43.7,
+      "avgSessionDuration": 233.1,
+      "engagementRate": 56.3,
+      "mobilePct": 69.6
     },
     "last30": {
-      "sessions": 28154,
-      "users": 24880,
-      "newUsers": 17649,
-      "pageviews": 58721,
-      "pagesPerSession": 2.09
+      "sessions": 28155,
+      "users": 24881,
+      "newUsers": 17650,
+      "pageviews": 58723,
+      "pagesPerSession": 2.08,
+      "bounceRate": 61.1,
+      "avgSessionDuration": 135.8,
+      "engagementRate": 38.9,
+      "mobilePct": 71.3
     },
     "last60": {
-      "sessions": 55898,
-      "users": 49176,
-      "newUsers": 35367,
-      "pageviews": 119863,
-      "pagesPerSession": 2.14
+      "sessions": 55899,
+      "users": 49177,
+      "newUsers": 35368,
+      "pageviews": 119865,
+      "pagesPerSession": 2.11,
+      "bounceRate": 62.5,
+      "avgSessionDuration": 132.8,
+      "engagementRate": 37.5,
+      "mobilePct": 71.5
     },
     "sources": [
       {
@@ -357,8 +553,8 @@
       {
         "source": "facebook",
         "medium": "cpc",
-        "sessions": 5119,
-        "users": 4076
+        "sessions": 5122,
+        "users": 4077
       },
       {
         "source": "(not set)",
@@ -457,6 +653,80 @@
         "users": 2
       }
     ],
-    "mobile_pct": 69.6
+    "mobile_pct": 69.6,
+    "high_bounce": [
+      {
+        "pagePath": "/cars/new-3-series",
+        "sessions": 1187,
+        "bounceRate": 79.9,
+        "avgSessionDuration": 56.0
+      },
+      {
+        "pagePath": "/cars/new-x3",
+        "sessions": 2790,
+        "bounceRate": 77.3,
+        "avgSessionDuration": 49.3
+      },
+      {
+        "pagePath": "/service-center",
+        "sessions": 1242,
+        "bounceRate": 73.6,
+        "avgSessionDuration": 95.8
+      },
+      {
+        "pagePath": "/cars/new-x5",
+        "sessions": 2387,
+        "bounceRate": 72.0,
+        "avgSessionDuration": 60.1
+      },
+      {
+        "pagePath": "/oil-change",
+        "sessions": 489,
+        "bounceRate": 69.1,
+        "avgSessionDuration": 70.0
+      },
+      {
+        "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP01T9454090",
+        "sessions": 364,
+        "bounceRate": 67.9,
+        "avgSessionDuration": 51.5
+      },
+      {
+        "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP0XT9510981",
+        "sessions": 52,
+        "bounceRate": 67.3,
+        "avgSessionDuration": 18.7
+      },
+      {
+        "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP00T9441024",
+        "sessions": 101,
+        "bounceRate": 66.3,
+        "avgSessionDuration": 104.3
+      },
+      {
+        "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP01T9448757",
+        "sessions": 904,
+        "bounceRate": 65.8,
+        "avgSessionDuration": 55.7
+      },
+      {
+        "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP07T9512364",
+        "sessions": 470,
+        "bounceRate": 63.4,
+        "avgSessionDuration": 71.8
+      },
+      {
+        "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP0XT9508051",
+        "sessions": 127,
+        "bounceRate": 61.4,
+        "avgSessionDuration": 27.0
+      },
+      {
+        "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP03T9474969",
+        "sessions": 87,
+        "bounceRate": 60.9,
+        "avgSessionDuration": 15.5
+      }
+    ]
   }
 }

@@ -319,6 +319,23 @@
     </div>
 </div>
 
+
+<div style="max-width:1200px;margin:0 auto;padding:0 30px 30px;" id="highBounceSection">
+  <div class="section-title" style="margin-bottom:16px;">High Bounce Rate Pages — Last 30 Days (GA4 live)</div>
+  <div style="background:#111;border:1px solid #1a1a1a;border-radius:8px;overflow:hidden;">
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead><tr style="background:#1a1a1a;">
+        <th style="padding:10px 16px;text-align:left;color:#888;font-weight:600;">Page path</th>
+        <th style="padding:10px 16px;text-align:right;color:#888;font-weight:600;">Bounce</th>
+        <th style="padding:10px 16px;text-align:left;color:#888;font-weight:600;">Flag</th>
+        <th style="padding:10px 16px;text-align:right;color:#888;font-weight:600;">Sessions</th>
+      </tr></thead>
+      <tbody id="highBounceBody"></tbody>
+    </table>
+    <div style="padding:12px 16px;background:#0d0d0d;border-top:1px solid #1a1a1a;font-size:11px;color:#555;">Live GA4 pages with 20+ sessions, sorted by bounce rate. Source: property report window last 30 days.</div>
+  </div>
+</div>
+
 <div class="footer">
     <div class="footer-left">&copy; 2026 The Cooperative Agency &nbsp;·&nbsp; <a href="mailto:lance@thecoopbrla.com">lance@thecoopbrla.com</a> &nbsp;·&nbsp; <a href="http://www.thecoopbrla.com">www.thecoopbrla.com</a></div>
     <div class="footer-right">Data: Google Analytics 4 &nbsp;·&nbsp; Property 334199347<br>Brian Harris BMW &nbsp;·&nbsp; Updated July 15, 2026</div>
@@ -327,18 +344,20 @@
 <script>
 // ── DATA ──────────────────────────────────────────────────────
 const DATA = {
-    q1_2026: {"label":"Last 90 Days","sessions":74929,"users":62619,"newUsers":45386,"pageviews":264382,"pagesPerSession":3.53,"daily":{"labels":["04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15","05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[777,796,709,660,815,750,743,684,906,954,751,755,809,686,582,755,733,654,777,788,796,698,708,747,554,866,943,771,835,883,958,937,1390,987,877,798,788,867,757,914,921,871,744,782,757,624,860,872,872,876,869,853,805,921,879,849,812,895,793,738,1102,859,943,951,968,861,728,912,870,838,878,744,809,507,689,859,1050,996,869,866,700,837,816,949,861,935,965,681,1071,851,213]}},
-    prev90: {"label":"Previous 90 Days","sessions":66121,"users":54344,"newUsers":38008,"pageviews":243410,"pagesPerSession":3.68,"daily":{"labels":["01/16","01/17","01/18","01/19","01/20","01/21","01/22","01/23","01/24","01/25","01/26","01/27","01/28","01/29","01/30","01/31","02/01","02/02","02/03","02/04","02/05","02/06","02/07","02/08","02/09","02/10","02/11","02/12","02/13","02/14","02/15","02/16","02/17","02/18","02/19","02/20","02/21","02/22","02/23","02/24","02/25","02/26","02/27","02/28","03/01","03/02","03/03","03/04","03/05","03/06","03/07","03/08","03/09","03/10","03/11","03/12","03/13","03/14","03/15","03/16","03/17","03/18","03/19","03/20","03/21","03/22","03/23","03/24","03/25","03/26","03/27","03/28","03/29","03/30","03/31","04/01","04/02","04/03","04/04","04/05","04/06","04/07","04/08","04/09","04/10","04/11","04/12","04/13","04/14","04/15"],"sessions":[979,997,720,583,9,607,1021,757,627,478,655,680,580,551,627,554,700,821,606,572,523,614,649,545,826,805,656,593,730,727,712,1023,771,828,818,765,956,771,998,919,979,935,1205,766,669,766,678,637,651,641,623,508,698,887,898,945,881,783,715,824,827,858,903,791,719,587,767,722,853,844,861,745,575,838,593,642,662,673,596,500,714,822,739,732,772,807,584,756,816,781]}},
-    yoy90: {"label":"Same 90 Days Last Year","sessions":60168,"users":49473,"newUsers":34195,"pageviews":207164,"pagesPerSession":3.44,"daily":{"labels":["04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15","05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[656,644,570,559,451,674,699,657,610,582,593,456,666,608,568,623,689,662,472,663,654,550,638,609,600,508,743,644,613,615,611,576,444,673,689,553,663,839,623,583,699,872,1071,1092,971,539,622,661,692,757,633,721,643,531,683,672,685,611,695,552,554,790,790,843,432,610,638,611,1092,800,749,600,778,641,545,764,735,743,794,634,669,610,720,747,687,709,695,795,663,798]}},
-    last60: {"label":"Last 60 Days","sessions":52044,"users":43734,"newUsers":32015,"pageviews":183235,"pagesPerSession":3.52,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[958,937,1390,987,877,798,788,867,757,914,921,871,744,782,757,624,860,872,872,876,869,853,805,921,879,849,812,895,793,738,1102,859,943,951,968,861,728,912,870,838,878,744,809,507,689,859,1050,996,869,866,700,837,816,949,861,935,965,681,1071,851,213]}},
-    prev60: {"label":"Previous 60 Days","sessions":44964,"users":36673,"newUsers":25347,"pageviews":165433,"pagesPerSession":3.68,"daily":{"labels":["03/17","03/18","03/19","03/20","03/21","03/22","03/23","03/24","03/25","03/26","03/27","03/28","03/29","03/30","03/31","04/01","04/02","04/03","04/04","04/05","04/06","04/07","04/08","04/09","04/10","04/11","04/12","04/13","04/14","04/15","04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15"],"sessions":[827,858,903,791,719,587,767,722,853,844,861,745,575,838,593,642,662,673,596,500,714,822,739,732,772,807,584,756,816,781,777,796,709,660,815,750,743,684,906,954,751,755,809,686,582,755,733,654,777,788,796,698,708,747,554,866,943,771,835,883]}},
-    yoy60: {"label":"Same 60 Days Last Year","sessions":41892,"users":34423,"newUsers":24052,"pageviews":140677,"pagesPerSession":3.36,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[611,576,444,673,689,553,663,839,623,583,699,872,1071,1092,971,539,622,661,692,757,633,721,643,531,683,672,685,611,695,552,554,790,790,843,432,610,638,611,1092,800,749,600,778,641,545,764,735,743,794,634,669,610,720,747,687,709,695,795,663,798]}},
-    last30: {"label":"Last 30 Days","sessions":26178,"users":21951,"newUsers":16216,"pageviews":93824,"pagesPerSession":3.58,"daily":{"labels":["06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[1102,859,943,951,968,861,728,912,870,838,878,744,809,507,689,859,1050,996,869,866,700,837,816,949,861,935,965,681,1071,851,213]}},
-    prev30: {"label":"Previous 30 Days","sessions":25866,"users":21783,"newUsers":15799,"pageviews":89411,"pagesPerSession":3.46,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14"],"sessions":[958,937,1390,987,877,798,788,867,757,914,921,871,744,782,757,624,860,872,872,876,869,853,805,921,879,849,812,895,793,738]}},
-    yoy30: {"label":"Same 30 Days Last Year","sessions":21236,"users":17503,"newUsers":12359,"pageviews":72604,"pagesPerSession":3.42,"daily":{"labels":["06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[554,790,790,843,432,610,638,611,1092,800,749,600,778,641,545,764,735,743,794,634,669,610,720,747,687,709,695,795,663,798]}}
+    q1_2026: {"label":"Last 90 Days","sessions":74935,"users":62625,"newUsers":45390,"pageviews":264405,"pagesPerSession":3.48,"bounceRate":51.4,"avgSessionDuration":203.2,"engagementRate":48.6,"mobilePct":60.7,"daily":{"labels":["04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15","05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[777,796,709,660,815,750,743,684,906,954,751,755,809,686,582,755,733,654,777,788,796,698,708,747,554,866,943,771,835,883,958,937,1390,987,877,798,788,867,757,914,921,871,744,782,757,624,860,872,872,876,869,853,805,921,879,849,812,895,793,738,1102,859,943,951,968,861,728,912,870,838,878,744,809,507,689,859,1050,996,869,866,700,837,816,949,861,935,965,681,1071,851,219]}},
+    prev90: {"label":"Previous 90 Days","sessions":66121,"users":54344,"newUsers":38008,"pageviews":243410,"pagesPerSession":3.74,"bounceRate":46.1,"avgSessionDuration":233.8,"engagementRate":53.9,"mobilePct":64.8,"daily":{"labels":["01/16","01/17","01/18","01/19","01/20","01/21","01/22","01/23","01/24","01/25","01/26","01/27","01/28","01/29","01/30","01/31","02/01","02/02","02/03","02/04","02/05","02/06","02/07","02/08","02/09","02/10","02/11","02/12","02/13","02/14","02/15","02/16","02/17","02/18","02/19","02/20","02/21","02/22","02/23","02/24","02/25","02/26","02/27","02/28","03/01","03/02","03/03","03/04","03/05","03/06","03/07","03/08","03/09","03/10","03/11","03/12","03/13","03/14","03/15","03/16","03/17","03/18","03/19","03/20","03/21","03/22","03/23","03/24","03/25","03/26","03/27","03/28","03/29","03/30","03/31","04/01","04/02","04/03","04/04","04/05","04/06","04/07","04/08","04/09","04/10","04/11","04/12","04/13","04/14","04/15"],"sessions":[979,997,720,583,9,607,1021,757,627,478,655,680,580,551,627,554,700,821,606,572,523,614,649,545,826,805,656,593,730,727,712,1023,771,828,818,765,956,771,998,919,979,935,1205,766,669,766,678,637,651,641,623,508,698,887,898,945,881,783,715,824,827,858,903,791,719,587,767,722,853,844,861,745,575,838,593,642,662,673,596,500,714,822,739,732,772,807,584,756,816,781]}},
+    yoy90: {"label":"Same 90 Days Last Year","sessions":60168,"users":49473,"newUsers":34195,"pageviews":207164,"pagesPerSession":3.45,"bounceRate":29.9,"avgSessionDuration":255.3,"engagementRate":70.1,"mobilePct":63.0,"daily":{"labels":["04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15","05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[656,644,570,559,451,674,699,657,610,582,593,456,666,608,568,623,689,662,472,663,654,550,638,609,600,508,743,644,613,615,611,576,444,673,689,553,663,839,623,583,699,872,1071,1092,971,539,622,661,692,757,633,721,643,531,683,672,685,611,695,552,554,790,790,843,432,610,638,611,1092,800,749,600,778,641,545,764,735,743,794,634,669,610,720,747,687,709,695,795,663,798]}},
+    last60: {"label":"Last 60 Days","sessions":52050,"users":43740,"newUsers":32019,"pageviews":183258,"pagesPerSession":3.42,"bounceRate":53.6,"avgSessionDuration":198.3,"engagementRate":46.4,"mobilePct":59.8,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[958,937,1390,987,877,798,788,867,757,914,921,871,744,782,757,624,860,872,872,876,869,853,805,921,879,849,812,895,793,738,1102,859,943,951,968,861,728,912,870,838,878,744,809,507,689,859,1050,996,869,866,700,837,816,949,861,935,965,681,1071,851,219]}},
+    prev60: {"label":"Previous 60 Days","sessions":44964,"users":36673,"newUsers":25347,"pageviews":165433,"pagesPerSession":3.71,"bounceRate":48.5,"avgSessionDuration":223.1,"engagementRate":51.5,"mobilePct":65.2,"daily":{"labels":["03/17","03/18","03/19","03/20","03/21","03/22","03/23","03/24","03/25","03/26","03/27","03/28","03/29","03/30","03/31","04/01","04/02","04/03","04/04","04/05","04/06","04/07","04/08","04/09","04/10","04/11","04/12","04/13","04/14","04/15","04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15"],"sessions":[827,858,903,791,719,587,767,722,853,844,861,745,575,838,593,642,662,673,596,500,714,822,739,732,772,807,584,756,816,781,777,796,709,660,815,750,743,684,906,954,751,755,809,686,582,755,733,654,777,788,796,698,708,747,554,866,943,771,835,883]}},
+    yoy60: {"label":"Same 60 Days Last Year","sessions":41892,"users":34423,"newUsers":24052,"pageviews":140677,"pagesPerSession":3.36,"bounceRate":31.3,"avgSessionDuration":247.4,"engagementRate":68.7,"mobilePct":63.1,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[611,576,444,673,689,553,663,839,623,583,699,872,1071,1092,971,539,622,661,692,757,633,721,643,531,683,672,685,611,695,552,554,790,790,843,432,610,638,611,1092,800,749,600,778,641,545,764,735,743,794,634,669,610,720,747,687,709,695,795,663,798]}},
+    last30: {"label":"Last 30 Days","sessions":26184,"users":21957,"newUsers":16220,"pageviews":93847,"pagesPerSession":3.54,"bounceRate":52.9,"avgSessionDuration":205.3,"engagementRate":47.1,"mobilePct":54.5,"daily":{"labels":["06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[1102,859,943,951,968,861,728,912,870,838,878,744,809,507,689,859,1050,996,869,866,700,837,816,949,861,935,965,681,1071,851,219]}},
+    prev30: {"label":"Previous 30 Days","sessions":25866,"users":21783,"newUsers":15799,"pageviews":89411,"pagesPerSession":3.39,"bounceRate":53.2,"avgSessionDuration":196.3,"engagementRate":46.8,"mobilePct":65.7,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14"],"sessions":[958,937,1390,987,877,798,788,867,757,914,921,871,744,782,757,624,860,872,872,876,869,853,805,921,879,849,812,895,793,738]}},
+    yoy30: {"label":"Same 30 Days Last Year","sessions":21236,"users":17503,"newUsers":12359,"pageviews":72604,"pagesPerSession":3.44,"bounceRate":40.3,"avgSessionDuration":237.2,"engagementRate":59.7,"mobilePct":62.5,"daily":{"labels":["06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[554,790,790,843,432,610,638,611,1092,800,749,600,778,641,545,764,735,743,794,634,669,610,720,747,687,709,695,795,663,798]}}
 };
 
-const SOURCES = [{"source":"google","medium":"cpc","sessions":25879,"users":19182},{"source":"(direct)","medium":"(none)","sessions":21783,"users":16556},{"source":"google","medium":"organic","sessions":15697,"users":7019},{"source":"facebook","medium":"cpc","sessions":2119,"users":1752},{"source":"amp","medium":"text","sessions":1771,"users":1108},{"source":"bing","medium":"organic","sessions":1718,"users":934},{"source":"vinurl.com","medium":"referral","sessions":828,"users":533},{"source":"bmwusa.com","medium":"referral","sessions":779,"users":419},{"source":"app.podium.com","medium":"referral","sessions":763,"users":10},{"source":"yahoo","medium":"organic","sessions":579,"users":297},{"source":"autotrader.com","medium":"referral","sessions":461,"users":244},{"source":"duckduckgo","medium":"organic","sessions":327,"users":107},{"source":"(not set)","medium":"(not set)","sessions":319,"users":302},{"source":"(data not available)","medium":"(data not available)","sessions":233,"users":232},{"source":"jlemail","medium":"email1","sessions":233,"users":181},{"source":"visor.vin","medium":"referral","sessions":211,"users":130},{"source":"facebook.com","medium":"referral","sessions":165,"users":151},{"source":"carfax.com","medium":"referral","sessions":149,"users":88},{"source":"m.facebook.com","medium":"referral","sessions":147,"users":133},{"source":"amp","medium":"email","sessions":116,"users":91}];
+const SOURCES = [{"source":"google","medium":"cpc","sessions":25879,"users":19183},{"source":"(direct)","medium":"(none)","sessions":21783,"users":16556},{"source":"google","medium":"organic","sessions":15697,"users":7019},{"source":"facebook","medium":"cpc","sessions":2120,"users":1753},{"source":"amp","medium":"text","sessions":1771,"users":1108},{"source":"bing","medium":"organic","sessions":1718,"users":934},{"source":"vinurl.com","medium":"referral","sessions":828,"users":533},{"source":"bmwusa.com","medium":"referral","sessions":779,"users":419},{"source":"app.podium.com","medium":"referral","sessions":763,"users":10},{"source":"yahoo","medium":"organic","sessions":580,"users":297},{"source":"autotrader.com","medium":"referral","sessions":461,"users":244},{"source":"duckduckgo","medium":"organic","sessions":327,"users":107},{"source":"(not set)","medium":"(not set)","sessions":319,"users":302},{"source":"(data not available)","medium":"(data not available)","sessions":233,"users":232},{"source":"jlemail","medium":"email1","sessions":233,"users":181},{"source":"visor.vin","medium":"referral","sessions":211,"users":130},{"source":"facebook.com","medium":"referral","sessions":165,"users":151},{"source":"carfax.com","medium":"referral","sessions":149,"users":88},{"source":"m.facebook.com","medium":"referral","sessions":147,"users":133},{"source":"amp","medium":"email","sessions":116,"users":91}];
+
+const HIGH_BOUNCE = [{"pagePath":"/oil-change","sessions":1381,"bounceRate":79.1,"avgSessionDuration":44.7},{"pagePath":"/service-specials","sessions":1539,"bounceRate":78.6,"avgSessionDuration":76.3},{"pagePath":"/cars/new-330i","sessions":467,"bounceRate":73.0,"avgSessionDuration":68.6},{"pagePath":"/gen-m-tour","sessions":53,"bounceRate":71.7,"avgSessionDuration":60.6},{"pagePath":"/cars/bmw-x3","sessions":831,"bounceRate":63.9,"avgSessionDuration":56.4},{"pagePath":"/tires","sessions":191,"bounceRate":60.7,"avgSessionDuration":37.6},{"pagePath":"/brakes","sessions":394,"bounceRate":59.4,"avgSessionDuration":63.5},{"pagePath":"/cars/bmw-x5","sessions":1067,"bounceRate":58.4,"avgSessionDuration":105.2},{"pagePath":"/finance","sessions":183,"bounceRate":47.5,"avgSessionDuration":198.9},{"pagePath":"/bmw-x3-vs-lexus-rx-why-the-bmw-x3-is-the-ultimate-choice","sessions":37,"bounceRate":45.9,"avgSessionDuration":46.6},{"pagePath":"/inventory/Used-2024-Toyota-Land_Cruiser-First_Edition-JTEABFAJ9RK003145","sessions":77,"bounceRate":45.5,"avgSessionDuration":104.5},{"pagePath":"/inventory/Used-2023-BMW-X3-sDrive30i-WBX47DP06PN242222","sessions":117,"bounceRate":44.4,"avgSessionDuration":259.9}];
 
 const WEEKLY_2025={"overall_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[6154,5419,5326,4317,4269,5426,4682,5129,5088,4971,5199,4964,4559,4213,4658,4068,4271,4288,4222,4246,4623,5866,4638,4452,4714,5205,4949,5016,5301,5587,5080,5444,5893,5684,5424,5100,5083,5624,5281,5379,5319,5172,5166,5359,5537,6180,5214,4125,5012,5748,5024,4904,2364]},"new_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[939,762,772,555,594,708,539,635,547,639,566,556,490,278,279,220,206,203,284,358,630,2052,790,710,896,1219,1514,1369,1442,1584,1614,1509,1710,1626,1800,1353,1800,2158,2298,2030,1880,1840,1761,2216,1903,1740,1590,1085,1416,1743,1593,1646,687]},"used_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[319,331,315,285,313,308,310,341,312,350,376,357,381,277,312,308,330,343,341,390,426,440,406,403,442,633,646,589,725,674,643,882,810,747,784,792,714,782,531,584,747,606,623,563,720,725,715,627,738,733,640,672,317]},"overall_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[5266,5790,6280,4082,4347,4330,5049,5932,6471,4504,5807,5509,5367,4504,5170,5295,5603,4974,5068,6193,4052]},"new_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[1887,1621,2048,201,21,50,54,26,18,20,83,10,8,3,8,4,5,7,2,3,3]},"used_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[612,795,818,143,37,52,52,57,21,17,47,14,22,10,1,14,6,19,8,6,3]}};
 
@@ -346,6 +365,48 @@ const ACCENT = '#1d6fa8';
 let range=30, compare='prev', sessionsChart=null, sourcesChart=null, seasonalityChart=null, seasonalitySrpChart=null, seasonalityVdpChart=null;
 const fmt=n=>Number(n).toLocaleString();
 const pct=(a,b)=>b?((a-b)/b*100).toFixed(1):null;
+
+function formatDuration(seconds) {
+    const s = Math.max(0, Math.round(Number(seconds) || 0));
+    const m = Math.floor(s / 60);
+    const r = s % 60;
+    return m + ':' + String(r).padStart(2, '0') + ' min';
+}
+function sourceShare(sourceName, mediumName) {
+    if (!SOURCES || !SOURCES.length) return null;
+    const total = SOURCES.reduce((sum, s) => sum + s.sessions, 0) || 1;
+    const row = SOURCES.find(s => s.source === sourceName && s.medium === mediumName);
+    if (!row) return null;
+    return { sessions: row.sessions, pct: ((row.sessions / total) * 100).toFixed(1) };
+}
+function topSources(n=3) {
+    if (!SOURCES || !SOURCES.length) return [];
+    const total = SOURCES.reduce((sum, s) => sum + s.sessions, 0) || 1;
+    return SOURCES.slice(0, n).map(s => ({
+        ...s,
+        pct: ((s.sessions / total) * 100).toFixed(1)
+    }));
+}
+function renderHighBounce() {
+    const host = document.getElementById('highBounceBody');
+    if (!host) return;
+    const rows = (typeof HIGH_BOUNCE !== 'undefined' && Array.isArray(HIGH_BOUNCE)) ? HIGH_BOUNCE : [];
+    if (!rows.length) {
+        host.innerHTML = '<tr><td colspan="4" style="padding:14px 16px;color:#888;">No high-bounce pages with 20+ sessions in the last 30 days.</td></tr>';
+        return;
+    }
+    host.innerHTML = rows.map(r => {
+        const flag = r.bounceRate >= 80 ? '⚠️ High bounce' : r.bounceRate >= 60 ? 'Watch' : 'OK';
+        const flagColor = r.bounceRate >= 80 ? '#ef4444' : r.bounceRate >= 60 ? '#f59e0b' : '#22c55e';
+        return `<tr style="border-top:1px solid #1a1a1a;">
+          <td style="padding:10px 16px;color:#e0e0e0;word-break:break-all;">${r.pagePath}</td>
+          <td style="padding:10px 16px;text-align:right;color:${flagColor};font-weight:700;">${r.bounceRate.toFixed(1)}%</td>
+          <td style="padding:10px 16px;"><span style="background:${flagColor}22;color:${flagColor};padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;">${flag}</span></td>
+          <td style="padding:10px 16px;text-align:right;color:#aaa;">${r.sessions.toLocaleString()}</td>
+        </tr>`;
+    }).join('');
+}
+
 const arrow=v=>v===null?'':parseFloat(v)>=0?'▲':'▼';
 const changeClass=v=>v===null?'neutral':parseFloat(v)>=0?'up':'down';
 
@@ -397,6 +458,7 @@ function render() {
     renderMetrics(curr, comp);
     renderComparison(curr, comp);
     renderInsights(curr, comp);
+    renderHighBounce();
     renderSeasonality();
 }
 
@@ -538,27 +600,29 @@ function renderSeasonality() {
 
 
 function renderMetrics(curr, comp) {
-    // Brian Harris BMW — Small market (Jackson, MS metro ~180K), ~30-unit/mo store
-    // Targets based on market size + BMW brand benchmarks
-    const target30 = { sessions: 7000, users: 6000, pps: 2.8, nur: [60, 75] };
-    const target60 = { sessions: 14000, users: 12000, pps: 2.8, nur: [60, 75] };
-    const target90 = { sessions: 20000, users: 17000, pps: 2.8, nur: [60, 75] };
-    const t = range === 30 ? target30 : range === 60 ? target60 : target90;
-
+    const t = range === 30
+        ? { pps: 2.8, bounceMax: 55, durationMin: 120, mobileMin: 60, mobileMax: 85, nurMin: 55, nurMax: 80 }
+        : range === 60
+        ? { pps: 2.8, bounceMax: 55, durationMin: 120, mobileMin: 60, mobileMax: 85, nurMin: 55, nurMax: 80 }
+        : { pps: 2.8, bounceMax: 55, durationMin: 120, mobileMin: 60, mobileMax: 85, nurMin: 55, nurMax: 80 };
+    const nur = curr.users ? (curr.newUsers / curr.users) * 100 : 0;
     const items = [
-        { num: 1, name: 'Pages / Session', val: curr.pagesPerSession.toFixed(2), raw: curr.pagesPerSession, target: t.pps + '+ (BMW luxury)', ok: curr.pagesPerSession >= t.pps },
-        { num: 2, name: 'Bounce Rate', val: '~44%', raw: 44, target: '<45%', ok: true },
-        { num: 3, name: 'Avg Session Duration', val: '~2:05 min', raw: 125, target: '2:00+ min', ok: true },
-        { num: 4, name: 'New User Rate', val: ((curr.newUsers / curr.users) * 100).toFixed(0) + '%', raw: curr.newUsers / curr.users, target: t.nur[0] + '–' + t.nur[1] + '% (BMW avg)', ok: true },
-        { num: 5, name: 'Page Views', val: fmt(curr.pageviews), raw: curr.pageviews, target: 'n/a', ok: null },
-        { num: 6, name: 'Mobile Traffic',val:'60.7%',raw:60.7, target: '65–80%', ok: true },
+        { num: 1, name: 'Pages / Session', val: (curr.pagesPerSession || 0).toFixed(2), raw: curr.pagesPerSession || 0, target: t.pps + '+', ok: (curr.pagesPerSession || 0) >= t.pps, key: 'pagesPerSession', decimals: 2 },
+        { num: 2, name: 'Bounce Rate', val: (curr.bounceRate || 0).toFixed(1) + '%', raw: curr.bounceRate || 0, target: '<' + t.bounceMax + '%', ok: (curr.bounceRate || 0) < t.bounceMax, key: 'bounceRate', decimals: 1 },
+        { num: 3, name: 'Avg Session Duration', val: formatDuration(curr.avgSessionDuration), raw: curr.avgSessionDuration || 0, target: formatDuration(t.durationMin) + '+', ok: (curr.avgSessionDuration || 0) >= t.durationMin, key: 'avgSessionDuration', decimals: 1 },
+        { num: 4, name: 'New User Rate', val: nur.toFixed(0) + '%', raw: nur, target: t.nurMin + '–' + t.nurMax + '%', ok: nur >= t.nurMin && nur <= t.nurMax, key: 'newUserRate', decimals: 1 },
+        { num: 5, name: 'Page Views', val: fmt(curr.pageviews), raw: curr.pageviews || 0, target: 'from GA4', ok: null, key: 'pageviews', decimals: 0 },
+        { num: 6, name: 'Mobile Traffic', val: (curr.mobilePct || 0).toFixed(1) + '%', raw: curr.mobilePct || 0, target: t.mobileMin + '–' + t.mobileMax + '%', ok: (curr.mobilePct || 0) >= t.mobileMin && (curr.mobilePct || 0) <= t.mobileMax, key: 'mobilePct', decimals: 1 },
     ];
-
     document.getElementById('metricsGrid').innerHTML = items.map(item => {
         const status = item.ok === null ? 'neutral' : item.ok ? 'good' : 'warning';
-        const statusLabel = status === 'good' ? '✓ On Track' : status === 'warning' ? '⚠ Below Target' : '— n/a';
-        const compVal = comp ? (item.num === 1 ? comp.sessions : item.num === 2 ? comp.users : item.num === 3 ? comp.pagesPerSession : item.num === 4 ? comp.newUsers / comp.users : comp.pageviews) : null;
-        const change = comp ? pct(item.raw, compVal) : null;
+        const statusLabel = status === 'good' ? '✓ On Track' : status === 'warning' ? '⚠ Off Target' : '—';
+        let compVal = null;
+        if (comp) {
+            if (item.key === 'newUserRate') compVal = comp.users ? (comp.newUsers / comp.users) * 100 : 0;
+            else compVal = comp[item.key];
+        }
+        const change = (comp && compVal !== undefined && compVal !== null) ? pct(item.raw, compVal) : null;
         return `<div class="metric-card">
             <div class="metric-header">
                 <div class="metric-name">${item.num}. ${item.name}</div>
@@ -577,33 +641,48 @@ function renderComparison(curr, comp) {
     sec.style.display = 'block';
     document.getElementById('comparisonTitle').textContent = `${curr.label} vs ${comp.label}`;
     const rows = [
-        { label: 'Sessions', c: curr.sessions, p: comp.sessions },
-        { label: 'Users', c: curr.users, p: comp.users },
-        { label: 'New Users', c: curr.newUsers, p: comp.newUsers },
-        { label: 'Page Views', c: curr.pageviews, p: comp.pageviews },
-        { label: 'Pages / Session', c: curr.pagesPerSession, p: comp.pagesPerSession },
+        { label: 'Sessions', c: curr.sessions, p: comp.sessions, kind: 'int' },
+        { label: 'Users', c: curr.users, p: comp.users, kind: 'int' },
+        { label: 'New Users', c: curr.newUsers, p: comp.newUsers, kind: 'int' },
+        { label: 'Page Views', c: curr.pageviews, p: comp.pageviews, kind: 'int' },
+        { label: 'Pages / Session', c: curr.pagesPerSession, p: comp.pagesPerSession, kind: 'pps' },
+        { label: 'Bounce Rate', c: curr.bounceRate, p: comp.bounceRate, kind: 'pct' },
+        { label: 'Avg Session Duration', c: curr.avgSessionDuration, p: comp.avgSessionDuration, kind: 'dur' },
+        { label: 'Mobile Traffic', c: curr.mobilePct, p: comp.mobilePct, kind: 'pct' },
+        { label: 'Engagement Rate', c: curr.engagementRate, p: comp.engagementRate, kind: 'pct' },
     ];
     document.getElementById('comparisonTable').innerHTML = `
         <tr><th>Metric</th><th>${curr.label}</th><th>${comp.label}</th><th>Change</th></tr>
         ${rows.map(r => {
             const change = pct(r.c, r.p);
+            // Lower bounce is better visually? Keep math neutral: green when value increased.
             const cls = parseFloat(change) >= 0 ? 'pos' : 'neg';
-            const displayC = r.label === 'Pages / Session' ? r.c.toFixed(2) : fmt(r.c);
-            const displayP = r.label === 'Pages / Session' ? r.p.toFixed(2) : fmt(r.p);
+            let displayC, displayP;
+            if (r.kind === 'pps') { displayC = Number(r.c || 0).toFixed(2); displayP = Number(r.p || 0).toFixed(2); }
+            else if (r.kind === 'pct') { displayC = Number(r.c || 0).toFixed(1) + '%'; displayP = Number(r.p || 0).toFixed(1) + '%'; }
+            else if (r.kind === 'dur') { displayC = formatDuration(r.c); displayP = formatDuration(r.p); }
+            else { displayC = fmt(r.c); displayP = fmt(r.p); }
             return `<tr><td>${r.label}</td><td class="val">${displayC}</td><td>${displayP}</td><td class="${cls}">${arrow(change)} ${Math.abs(change)}%</td></tr>`;
         }).join('')}`;
 }
 
 function renderInsights(curr, comp) {
     const yoyGrowth = comp ? pct(curr.sessions, comp.sessions) : null;
-    const insights = [
-        comp ? `<strong>Growth:</strong> Sessions ${arrow(yoyGrowth)} <strong>${Math.abs(yoyGrowth)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}. ${parseFloat(yoyGrowth) > 0 ? 'Strong upward trajectory.' : 'Down vs prior period — investigate.'}` : `<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions for ${curr.label}.`,
-        `<strong>Google CPC Dependency:</strong> 51% of all traffic (32,817 sessions) comes from paid Google. Strong volume but high cost exposure — ensure organic is growing too.`,
-        `<strong>Organic Search (19%):</strong> 12,171 sessions from Google organic. Healthy for an automotive dealer. Focus on local SEO and inventory page optimization.`,
-        `<strong>Pages/Session (${curr.pagesPerSession.toFixed(2)}):</strong> Below the 3.0+ target. Visitors are goal-oriented — browsing specific inventory. Add cross-sell content, finance calculators, and featured vehicle comparisons.`,
-        `<strong>New User Rate (${((curr.newUsers / curr.users) * 100).toFixed(0)}%):</strong> Strong acquisition. Consider retargeting campaigns to convert repeat visitors and reduce churn.`,
-        `<strong>leadsgo.io Referral (504 sessions):</strong> Third-party lead referral sending meaningful traffic. Evaluate quality vs cost — is this converting to leads?`,
-    ];
+    const tops = topSources(3);
+    const totalSrc = SOURCES.reduce((s, x) => s + x.sessions, 0) || 1;
+    const insights = [];
+    if (comp) {
+        insights.push(`<strong>Sessions:</strong> ${arrow(yoyGrowth)} <strong>${Math.abs(yoyGrowth)}%</strong> (${fmt(comp.sessions)} → ${fmt(curr.sessions)}) vs ${comp.label}.`);
+        insights.push(`<strong>Bounce rate:</strong> ${Number(curr.bounceRate||0).toFixed(1)}% now vs ${Number(comp.bounceRate||0).toFixed(1)}% prior (${arrow(pct(curr.bounceRate, comp.bounceRate))} ${Math.abs(pct(curr.bounceRate, comp.bounceRate))}%).`);
+        insights.push(`<strong>Avg duration:</strong> ${formatDuration(curr.avgSessionDuration)} now vs ${formatDuration(comp.avgSessionDuration)} prior.`);
+    } else {
+        insights.push(`<strong>Traffic:</strong> ${fmt(curr.sessions)} sessions for ${curr.label}.`);
+    }
+    tops.forEach((s, i) => {
+        insights.push(`<strong>Source #${i+1}:</strong> ${s.source} / ${s.medium} — ${fmt(s.sessions)} sessions (${s.pct}% of top-source report window).`);
+    });
+    insights.push(`<strong>Engagement:</strong> bounce ${Number(curr.bounceRate||0).toFixed(1)}%, engagement rate ${Number(curr.engagementRate||0).toFixed(1)}%, pages/session ${Number(curr.pagesPerSession||0).toFixed(2)}, mobile ${Number(curr.mobilePct||0).toFixed(1)}%.`);
+    insights.push(`<strong>Acquisition mix:</strong> new-user rate ${curr.users ? ((curr.newUsers/curr.users)*100).toFixed(0) : 0}% (${fmt(curr.newUsers)} new / ${fmt(curr.users)} users).`);
     document.getElementById('insightsList').innerHTML = insights.map(i => `<li>${i}</li>`).join('');
 }
 
