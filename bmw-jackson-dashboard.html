@@ -230,6 +230,28 @@
         </div>
     </div>
 
+    
+    <div class="section">
+        <div class="section-title">SEM & Paid Campaign Performance — Last 30 Days (GA4 live)</div>
+        <div class="chart-card">
+            <div class="chart-card-title">Paid search + paid social from live campaign / source / medium</div>
+            <table class="comparison-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #222;">
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600;">Campaign Name</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600;">Channel</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600; text-align: right;">Sessions</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600; text-align: right;">Bounce</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600; text-align: right;">Avg Dur</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600; padding-left: 25px;">Status (from live metrics)</th>
+                    </tr>
+                </thead>
+                <tbody id="campaignsBody"></tbody>
+            </table>
+            <div style="margin-top: 15px; font-size: 11px; color: #444;">Refreshed on every GA4 pull. Status is derived only from live sessions/bounce/duration — no manual notes.</div>
+        </div>
+    </div>
+
     <div class="section">
         <div class="section-title">Top 20 Traffic Sources — Last 90 Days</div>
         <div class="sources-grid">
@@ -244,56 +266,33 @@
         </div>
     </div>
 
+    
     <div class="section">
-        <div class="section-title">🔑 Top 10 Model Pages</div>
+        <div class="section-title">Top Pages — Last 90 Days (GA4 live)</div>
         <div class="chart-card">
-            <div class="chart-card-title">Ranked by Sessions</div>
+            <div class="chart-card-title">Ranked by sessions · real pagePath</div>
             <table class="comparison-table">
                 <thead>
                     <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th></tr>
                 </thead>
-                <tbody>
-                    <tr><td>1</td><td class="val">All Inventory</td><td class="val" style="text-align:right;">11,053</td></tr>
-                    <tr><td>2</td><td class="val">New X3</td><td class="val" style="text-align:right;">9,245</td></tr>
-                    <tr><td>3</td><td class="val">New X5</td><td class="val" style="text-align:right;">8,595</td></tr>
-                    <tr><td>4</td><td class="val">Used Inventory</td><td class="val" style="text-align:right;">4,838</td></tr>
-                    <tr><td>5</td><td class="val">New Inventory</td><td class="val" style="text-align:right;">2,299</td></tr>
-                    <tr><td>6</td><td class="val">New 3 Series</td><td class="val" style="text-align:right;">1,433</td></tr>
-                    <tr><td>7</td><td class="val">CPO Vehicles</td><td class="val" style="text-align:right;">1,437</td></tr>
-                    <tr><td>8</td><td class="val">New 5 Series</td><td class="val" style="text-align:right;">1,396</td></tr>
-                    <tr><td>9</td><td class="val">New X7</td><td class="val" style="text-align:right;">1,255</td></tr>
-                    <tr><td>10</td><td class="val">BMW Specials (1.99% APR X3)</td><td class="val" style="text-align:right;">739</td></tr>
-                </tbody>
+                <tbody id="topPagesBody"></tbody>
             </table>
-            <div style="margin-top:15px; font-size:11px; color:#444;">Last 90 days · Source: GA4</div>
         </div>
     </div>
-
+    
     <div class="section">
-        <div class="section-title">📄 Top Content Pages — Avg Time on Page</div>
+        <div class="section-title">Top Content Pages — Avg Session Duration (GA4 live)</div>
         <div class="chart-card">
-            <div class="chart-card-title">Ranked by sessions · Last 90 Days · GA4 Property 255835161</div>
+            <div class="chart-card-title">Ranked by sessions · last 90 days · live GA4</div>
             <table class="comparison-table">
                 <thead>
-                    <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Avg Time on Page</th></tr>
+                    <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Avg Session Duration</th></tr>
                 </thead>
-                <tbody>
-                    <tr><td>1</td><td class="val">BMW X3 Model Page</td><td class="val" style="text-align:right;">5,234</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>3:48</td></tr>
-                    <tr><td>2</td><td class="val">New Inventory</td><td class="val" style="text-align:right;">4,102</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:03</td></tr>
-                    <tr><td>3</td><td class="val">BMW X5 Model Page</td><td class="val" style="text-align:right;">3,876</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>4:01</td></tr>
-                    <tr><td>4</td><td class="val">Used Inventory</td><td class="val" style="text-align:right;">3,241</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:28</td></tr>
-                    <tr><td>5</td><td class="val">BMW X3 vs Mercedes GLC</td><td class="val" style="text-align:right;">1,456</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>4:44</td></tr>
-                    <tr><td>6</td><td class="val">Service Specials</td><td class="val" style="text-align:right;">1,234</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-right:6px;"></span>1:15</td></tr>
-                    <tr><td>7</td><td class="val">Certified Pre-Owned</td><td class="val" style="text-align:right;">1,102</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:55</td></tr>
-                    <tr><td>8</td><td class="val">Finance Application</td><td class="val" style="text-align:right;">743</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-right:6px;"></span>2:21</td></tr>
-                    <tr><td>9</td><td class="val">Schedule Service</td><td class="val" style="text-align:right;">698</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-right:6px;"></span>1:38</td></tr>
-                    <tr><td>10</td><td class="val">Oil Change Special</td><td class="val" style="text-align:right;">512</td><td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;margin-right:6px;"></span>0:49</td></tr>
-                </tbody>
+                <tbody id="topContentBody"></tbody>
             </table>
-            <div style="margin-top:15px; font-size:11px; color:#444;">Avg time on page indicates content depth and user intent. Pages >2:00 signal high buying intent.</div>
+            <div style="margin-top:15px; font-size:11px; color:#444;">Duration is GA4 averageSessionDuration for that page path, not a manual estimate.</div>
         </div>
     </div>
-
     <div class="insights-card">
         <div class="insights-title">💡 Key Insights & Recommendations</div>
         <ul class="insights-list" id="insightsList"></ul>
@@ -334,20 +333,30 @@
 <script>
 // ── DATA ──────────────────────────────────────────────────────
 const DATA = {
-    q1_2026: {"label":"Last 90 Days","sessions":81582,"users":71962,"newUsers":52823,"pageviews":175336,"pagesPerSession":2.19,"bounceRate":61.6,"avgSessionDuration":135.0,"engagementRate":38.4,"mobilePct":69.6,"daily":{"labels":["04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15","05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[868,862,733,612,920,813,942,800,816,801,780,1084,1106,839,1015,923,802,858,997,875,901,975,807,724,442,741,872,898,914,963,854,823,1067,1007,856,865,914,749,802,862,1005,972,971,961,880,838,995,901,850,976,1070,840,838,1016,998,1012,903,1006,972,941,1027,1087,975,933,1036,937,862,1028,1061,1087,995,1106,1104,955,1108,1150,1001,996,988,874,842,928,888,846,792,495,663,656,851,799,85]}},
+    q1_2026: {"label":"Last 90 Days","sessions":81588,"users":71968,"newUsers":52827,"pageviews":175355,"pagesPerSession":2.19,"bounceRate":61.6,"avgSessionDuration":135.1,"engagementRate":38.4,"mobilePct":69.6,"daily":{"labels":["04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15","05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[868,862,733,612,920,813,942,800,816,801,780,1084,1106,839,1015,923,802,858,997,875,901,975,807,724,442,741,872,898,914,963,854,823,1067,1007,856,865,914,749,802,862,1005,972,971,961,880,838,995,901,850,976,1070,840,838,1016,998,1012,903,1006,972,941,1027,1087,975,933,1036,937,862,1028,1061,1087,995,1106,1104,955,1108,1150,1001,996,988,874,842,928,888,846,792,495,663,656,851,799,91]}},
     prev90: {"label":"Previous 90 Days","sessions":67671,"users":59670,"newUsers":46617,"pageviews":155979,"pagesPerSession":2.29,"bounceRate":60.1,"avgSessionDuration":139.0,"engagementRate":39.9,"mobilePct":72.6,"daily":{"labels":["01/16","01/17","01/18","01/19","01/20","01/21","01/22","01/23","01/24","01/25","01/26","01/27","01/28","01/29","01/30","01/31","02/01","02/02","02/03","02/04","02/05","02/06","02/07","02/08","02/09","02/10","02/11","02/12","02/13","02/14","02/15","02/16","02/17","02/18","02/19","02/20","02/21","02/22","02/23","02/24","02/25","02/26","02/27","02/28","03/01","03/02","03/03","03/04","03/05","03/06","03/07","03/08","03/09","03/10","03/11","03/12","03/13","03/14","03/15","03/16","03/17","03/18","03/19","03/20","03/21","03/22","03/23","03/24","03/25","03/26","03/27","03/28","03/29","03/30","03/31","04/01","04/02","04/03","04/04","04/05","04/06","04/07","04/08","04/09","04/10","04/11","04/12","04/13","04/14","04/15"],"sessions":[687,712,708,770,717,681,806,703,668,610,668,665,741,501,430,267,521,760,933,508,596,451,526,474,668,651,840,805,765,690,721,862,819,798,759,814,776,754,873,744,793,1177,1143,878,529,743,643,590,615,665,843,566,633,677,833,858,925,501,393,493,506,576,484,625,770,777,875,908,973,1267,1139,1181,1238,1358,806,502,516,611,660,591,911,1090,987,989,933,1000,770,958,951,779]}},
     yoy90: {"label":"Same 90 Days Last Year","sessions":49266,"users":42632,"newUsers":32056,"pageviews":125772,"pagesPerSession":2.63,"bounceRate":43.7,"avgSessionDuration":233.1,"engagementRate":56.3,"mobilePct":69.6,"daily":{"labels":["04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15","05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[613,707,689,548,554,671,714,684,696,675,602,601,739,671,594,649,682,531,539,710,586,560,528,494,371,398,546,493,734,682,505,448,436,577,543,573,671,564,480,462,418,525,547,487,461,393,399,547,592,526,505,534,472,385,523,484,511,476,495,461,394,505,503,479,486,559,396,417,503,567,549,593,536,514,529,631,703,635,597,487,540,507,598,601,567,601,485,500,455,568]}},
-    last60: {"label":"Last 60 Days","sessions":55899,"users":49177,"newUsers":35368,"pageviews":119865,"pagesPerSession":2.11,"bounceRate":62.5,"avgSessionDuration":132.8,"engagementRate":37.5,"mobilePct":71.5,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[854,823,1067,1007,856,865,914,749,802,862,1005,972,971,961,880,838,995,901,850,976,1070,840,838,1016,998,1012,903,1006,972,941,1027,1087,975,933,1036,937,862,1028,1061,1087,995,1106,1104,955,1108,1150,1001,996,988,874,842,928,888,846,792,495,663,656,851,799,85]}},
+    last60: {"label":"Last 60 Days","sessions":55905,"users":49183,"newUsers":35372,"pageviews":119884,"pagesPerSession":2.11,"bounceRate":62.5,"avgSessionDuration":132.9,"engagementRate":37.5,"mobilePct":71.5,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[854,823,1067,1007,856,865,914,749,802,862,1005,972,971,961,880,838,995,901,850,976,1070,840,838,1016,998,1012,903,1006,972,941,1027,1087,975,933,1036,937,862,1028,1061,1087,995,1106,1104,955,1108,1150,1001,996,988,874,842,928,888,846,792,495,663,656,851,799,91]}},
     prev60: {"label":"Previous 60 Days","sessions":51414,"users":45466,"newUsers":35053,"pageviews":110250,"pagesPerSession":2.23,"bounceRate":62.6,"avgSessionDuration":130.7,"engagementRate":37.4,"mobilePct":69.1,"daily":{"labels":["03/17","03/18","03/19","03/20","03/21","03/22","03/23","03/24","03/25","03/26","03/27","03/28","03/29","03/30","03/31","04/01","04/02","04/03","04/04","04/05","04/06","04/07","04/08","04/09","04/10","04/11","04/12","04/13","04/14","04/15","04/16","04/17","04/18","04/19","04/20","04/21","04/22","04/23","04/24","04/25","04/26","04/27","04/28","04/29","04/30","05/01","05/02","05/03","05/04","05/05","05/06","05/07","05/08","05/09","05/10","05/11","05/12","05/13","05/14","05/15"],"sessions":[506,576,484,625,770,777,875,908,973,1267,1139,1181,1238,1358,806,502,516,611,660,591,911,1090,987,989,933,1000,770,958,951,779,868,862,733,612,920,813,942,800,816,801,780,1084,1106,839,1015,923,802,858,997,875,901,975,807,724,442,741,872,898,914,963]}},
     yoy60: {"label":"Same 60 Days Last Year","sessions":31005,"users":26786,"newUsers":20175,"pageviews":80631,"pagesPerSession":2.59,"bounceRate":41.3,"avgSessionDuration":214.4,"engagementRate":58.7,"mobilePct":67.8,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14","06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[505,448,436,577,543,573,671,564,480,462,418,525,547,487,461,393,399,547,592,526,505,534,472,385,523,484,511,476,495,461,394,505,503,479,486,559,396,417,503,567,549,593,536,514,529,631,703,635,597,487,540,507,598,601,567,601,485,500,455,568]}},
-    last30: {"label":"Last 30 Days","sessions":28155,"users":24881,"newUsers":17650,"pageviews":58723,"pagesPerSession":2.08,"bounceRate":61.1,"avgSessionDuration":135.8,"engagementRate":38.9,"mobilePct":71.3,"daily":{"labels":["06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[1027,1087,975,933,1036,937,862,1028,1061,1087,995,1106,1104,955,1108,1150,1001,996,988,874,842,928,888,846,792,495,663,656,851,799,85]}},
+    last30: {"label":"Last 30 Days","sessions":28161,"users":24887,"newUsers":17654,"pageviews":58742,"pagesPerSession":2.08,"bounceRate":61.1,"avgSessionDuration":135.9,"engagementRate":38.9,"mobilePct":71.3,"daily":{"labels":["06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14","07/15"],"sessions":[1027,1087,975,933,1036,937,862,1028,1061,1087,995,1106,1104,955,1108,1150,1001,996,988,874,842,928,888,846,792,495,663,656,851,799,91]}},
     prev30: {"label":"Previous 30 Days","sessions":27744,"users":24296,"newUsers":17718,"pageviews":61142,"pagesPerSession":2.24,"bounceRate":61.1,"avgSessionDuration":135.8,"engagementRate":38.9,"mobilePct":71.2,"daily":{"labels":["05/16","05/17","05/18","05/19","05/20","05/21","05/22","05/23","05/24","05/25","05/26","05/27","05/28","05/29","05/30","05/31","06/01","06/02","06/03","06/04","06/05","06/06","06/07","06/08","06/09","06/10","06/11","06/12","06/13","06/14"],"sessions":[854,823,1067,1007,856,865,914,749,802,862,1005,972,971,961,880,838,995,901,850,976,1070,840,838,1016,998,1012,903,1006,972,941]}},
     yoy30: {"label":"Same 30 Days Last Year","sessions":16005,"users":13767,"newUsers":10247,"pageviews":41107,"pagesPerSession":2.53,"bounceRate":41.6,"avgSessionDuration":217.2,"engagementRate":58.4,"mobilePct":69.4,"daily":{"labels":["06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23","06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02","07/03","07/04","07/05","07/06","07/07","07/08","07/09","07/10","07/11","07/12","07/13","07/14"],"sessions":[394,505,503,479,486,559,396,417,503,567,549,593,536,514,529,631,703,635,597,487,540,507,598,601,567,601,485,500,455,568]}}
 };
 
-const SOURCES = [{"source":"google","medium":"cpc","sessions":46161,"users":32529},{"source":"(direct)","medium":"(none)","sessions":14509,"users":11542},{"source":"google","medium":"organic","sessions":9597,"users":5121},{"source":"facebook","medium":"cpc","sessions":5122,"users":4077},{"source":"(not set)","medium":"(not set)","sessions":1464,"users":1324},{"source":"bing","medium":"organic","sessions":960,"users":459},{"source":"(data not available)","medium":"(data not available)","sessions":432,"users":422},{"source":"facebook.com","medium":"referral","sessions":350,"users":320},{"source":"yahoo","medium":"organic","sessions":310,"users":177},{"source":"autotrader.com","medium":"referral","sessions":247,"users":127},{"source":"m.facebook.com","medium":"referral","sessions":247,"users":239},{"source":"bmwusa.com","medium":"referral","sessions":215,"users":138},{"source":"jlemail","medium":"email1","sessions":167,"users":120},{"source":"fb","medium":"paid","sessions":121,"users":118},{"source":"duckduckgo","medium":"organic","sessions":92,"users":55},{"source":"bmw-retailer.email-dealer.com","medium":"referral","sessions":89,"users":89},{"source":"visor.vin","medium":"referral","sessions":83,"users":43},{"source":"an","medium":"paid","sessions":78,"users":63},{"source":"app.podium.com","medium":"referral","sessions":57,"users":4},{"source":"focus.dealer.reyrey.net","medium":"referral","sessions":53,"users":2}];
+const SOURCES = [{"source":"google","medium":"cpc","sessions":46161,"users":32529},{"source":"(direct)","medium":"(none)","sessions":14509,"users":11542},{"source":"google","medium":"organic","sessions":9597,"users":5123},{"source":"facebook","medium":"cpc","sessions":5123,"users":4078},{"source":"(not set)","medium":"(not set)","sessions":1464,"users":1324},{"source":"bing","medium":"organic","sessions":960,"users":459},{"source":"(data not available)","medium":"(data not available)","sessions":432,"users":422},{"source":"facebook.com","medium":"referral","sessions":350,"users":320},{"source":"yahoo","medium":"organic","sessions":310,"users":177},{"source":"autotrader.com","medium":"referral","sessions":247,"users":127},{"source":"m.facebook.com","medium":"referral","sessions":247,"users":239},{"source":"bmwusa.com","medium":"referral","sessions":215,"users":138},{"source":"jlemail","medium":"email1","sessions":167,"users":120},{"source":"fb","medium":"paid","sessions":121,"users":118},{"source":"duckduckgo","medium":"organic","sessions":92,"users":55},{"source":"bmw-retailer.email-dealer.com","medium":"referral","sessions":89,"users":89},{"source":"visor.vin","medium":"referral","sessions":83,"users":43},{"source":"an","medium":"paid","sessions":78,"users":63},{"source":"app.podium.com","medium":"referral","sessions":57,"users":4},{"source":"focus.dealer.reyrey.net","medium":"referral","sessions":53,"users":2}];
 
 const HIGH_BOUNCE = [{"pagePath":"/cars/new-3-series","sessions":1187,"bounceRate":79.9,"avgSessionDuration":56.0},{"pagePath":"/cars/new-x3","sessions":2790,"bounceRate":77.3,"avgSessionDuration":49.3},{"pagePath":"/service-center","sessions":1242,"bounceRate":73.6,"avgSessionDuration":95.8},{"pagePath":"/cars/new-x5","sessions":2387,"bounceRate":72.0,"avgSessionDuration":60.1},{"pagePath":"/oil-change","sessions":489,"bounceRate":69.1,"avgSessionDuration":70.0},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP01T9454090","sessions":364,"bounceRate":67.9,"avgSessionDuration":51.5},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP0XT9510981","sessions":52,"bounceRate":67.3,"avgSessionDuration":18.7},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP00T9441024","sessions":101,"bounceRate":66.3,"avgSessionDuration":104.3},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP01T9448757","sessions":904,"bounceRate":65.8,"avgSessionDuration":55.7},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP07T9512364","sessions":470,"bounceRate":63.4,"avgSessionDuration":71.8},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP0XT9508051","sessions":127,"bounceRate":61.4,"avgSessionDuration":27.0},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP03T9474969","sessions":87,"bounceRate":60.9,"avgSessionDuration":15.5}];
+
+const CAMPAIGNS = [{"campaign":"Attack - New Inventory | Vehicle Listing Ads","source":"google","medium":"cpc","channel":"google / cpc","sessions":2867,"users":2285,"bounceRate":53.6,"avgSessionDuration":103.3},{"campaign":"Attack - New Inventory - X3 | Vehicle Listing Ads","source":"google","medium":"cpc","channel":"google / cpc","sessions":2807,"users":1721,"bounceRate":77.4,"avgSessionDuration":115.0},{"campaign":"Attack - New Inventory - X5 | Vehicle Listing Ads","source":"google","medium":"cpc","channel":"google / cpc","sessions":2125,"users":1574,"bounceRate":56.2,"avgSessionDuration":87.9},{"campaign":"Attack - New Inventory - X3 | Demand Gen","source":"google","medium":"cpc","channel":"google / cpc","sessions":1046,"users":979,"bounceRate":81.7,"avgSessionDuration":52.0},{"campaign":"Attack - New Inventory - X5 | Demand Gen","source":"google","medium":"cpc","channel":"google / cpc","sessions":1013,"users":962,"bounceRate":82.3,"avgSessionDuration":50.0},{"campaign":"Attack - Used Inventory | Vehicle Listing Ads","source":"google","medium":"cpc","channel":"google / cpc","sessions":945,"users":765,"bounceRate":46.1,"avgSessionDuration":134.7},{"campaign":"Attack - New Inventory - X3 | Display","source":"google","medium":"cpc","channel":"google / cpc","sessions":682,"users":626,"bounceRate":84.5,"avgSessionDuration":51.0},{"campaign":"Attack - Used Dynamic VIN - In-Market","source":"facebook","medium":"cpc","channel":"facebook / cpc","sessions":619,"users":515,"bounceRate":72.9,"avgSessionDuration":40.4},{"campaign":"Attack - OEM | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":601,"users":451,"bounceRate":21.1,"avgSessionDuration":248.5},{"campaign":"Attack - New Inventory - X5 | Display","source":"google","medium":"cpc","channel":"google / cpc","sessions":598,"users":542,"bounceRate":83.3,"avgSessionDuration":55.7},{"campaign":"Attack - New Inventory - 3 Series | Demand Gen","source":"google","medium":"cpc","channel":"google / cpc","sessions":498,"users":434,"bounceRate":82.9,"avgSessionDuration":52.2},{"campaign":"Attack - New Dynamic VIN - In-Market","source":"facebook","medium":"cpc","channel":"facebook / cpc","sessions":482,"users":440,"bounceRate":77.6,"avgSessionDuration":23.9},{"campaign":"Service - Attack - Service Offers | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":481,"users":316,"bounceRate":28.5,"avgSessionDuration":294.5},{"campaign":"Attack - New Inventory - 3 Series | Display","source":"google","medium":"cpc","channel":"google / cpc","sessions":448,"users":403,"bounceRate":85.0,"avgSessionDuration":63.1},{"campaign":"Attack - Brand | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":349,"users":167,"bounceRate":16.3,"avgSessionDuration":356.8},{"campaign":"00-ALL-NA_RTN_Retatgeting_New-X5__AttackNewInventoryRemarketing&PageEngagersMeta","source":"facebook","medium":"cpc","channel":"facebook / cpc","sessions":330,"users":289,"bounceRate":82.7,"avgSessionDuration":36.8},{"campaign":"Service - Attack - Competitor Remarketing | Display","source":"google","medium":"cpc","channel":"google / cpc","sessions":319,"users":287,"bounceRate":87.1,"avgSessionDuration":43.2},{"campaign":"Service - Attack - In-Market Search Keywords| Display","source":"google","medium":"cpc","channel":"google / cpc","sessions":281,"users":249,"bounceRate":80.1,"avgSessionDuration":177.4},{"campaign":"Service - Attack - Competitors | Demand Gen","source":"google","medium":"cpc","channel":"google / cpc","sessions":269,"users":235,"bounceRate":84.8,"avgSessionDuration":67.7},{"campaign":"00-ALL-NA_RTN_Retatgeting_New-X3__AttackNewInventoryRemarketing&PageEngagersMeta","source":"facebook","medium":"cpc","channel":"facebook / cpc","sessions":245,"users":226,"bounceRate":86.9,"avgSessionDuration":11.7},{"campaign":"Service - Attack - Brand | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":240,"users":146,"bounceRate":20.8,"avgSessionDuration":356.2},{"campaign":"Service - Attack - Website Visitors | Display","source":"google","medium":"cpc","channel":"google / cpc","sessions":177,"users":67,"bounceRate":74.0,"avgSessionDuration":101.6},{"campaign":"Attack - Used Inventory | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":176,"users":143,"bounceRate":26.1,"avgSessionDuration":156.0},{"campaign":"Attack - New Inventory - X5 | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":102,"users":60,"bounceRate":27.5,"avgSessionDuration":260.7},{"campaign":"00-ALL-NA_RTN_Retatgeting_New-X7__AttackNewInventoryRemarketing&PageEngagersMeta - Copy","source":"facebook","medium":"cpc","channel":"facebook / cpc","sessions":71,"users":64,"bounceRate":87.3,"avgSessionDuration":6.8}];
+
+const HOSTNAMES = {"total":80210,"rows":[{"hostname":"bmwofjackson.net","sessions":80206,"users":55911,"share":100.0},{"hostname":"bmwofjackson-net.translate.goog","sessions":2,"users":2,"share":0.0},{"hostname":"websites.autoservicecoupons.com","sessions":2,"users":2,"share":0.0}]};
+
+const TOP_PAGES = [{"pagePath":"/inventory","sessions":14316,"avgSessionDuration":150.6,"bounceRate":19.6,"pageviews":41754},{"pagePath":"/","sessions":12599,"avgSessionDuration":68.2,"bounceRate":20.8,"pageviews":16241},{"pagePath":"/cars/new-x3","sessions":9676,"avgSessionDuration":54.9,"bounceRate":78.4,"pageviews":11874},{"pagePath":"/cars/new-x5","sessions":8062,"avgSessionDuration":65.9,"bounceRate":74.5,"pageviews":10582},{"pagePath":"/service-center","sessions":3176,"avgSessionDuration":81.0,"bounceRate":73.4,"pageviews":3870},{"pagePath":"/service","sessions":2626,"avgSessionDuration":167.3,"bounceRate":45.8,"pageviews":3366},{"pagePath":"/cars/bmw-certified","sessions":1986,"avgSessionDuration":157.2,"bounceRate":7.4,"pageviews":5030},{"pagePath":"/cars/new-3-series","sessions":1657,"avgSessionDuration":67.0,"bounceRate":74.5,"pageviews":1992},{"pagePath":"/service-offers","sessions":1567,"avgSessionDuration":55.4,"bounceRate":30.1,"pageviews":1861},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP00T9441024","sessions":1525,"avgSessionDuration":62.2,"bounceRate":71.9,"pageviews":1633},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP01T9448757","sessions":1491,"avgSessionDuration":59.0,"bounceRate":62.8,"pageviews":1674},{"pagePath":"/cars/new-x7","sessions":1182,"avgSessionDuration":49.3,"bounceRate":56.0,"pageviews":1487}];
+
+const TOP_PAGES_30 = [{"pagePath":"/inventory","sessions":4508,"avgSessionDuration":144.8,"bounceRate":17.7,"pageviews":13399},{"pagePath":"/","sessions":4214,"avgSessionDuration":64.3,"bounceRate":23.3,"pageviews":5394},{"pagePath":"/cars/new-x3","sessions":2790,"avgSessionDuration":49.3,"bounceRate":77.3,"pageviews":3492},{"pagePath":"/cars/new-x5","sessions":2387,"avgSessionDuration":60.1,"bounceRate":72.0,"pageviews":3140},{"pagePath":"/service-center","sessions":1242,"avgSessionDuration":95.8,"bounceRate":73.6,"pageviews":1522},{"pagePath":"/cars/new-3-series","sessions":1187,"avgSessionDuration":56.0,"bounceRate":79.9,"pageviews":1389},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP01T9448757","sessions":904,"avgSessionDuration":55.7,"bounceRate":65.8,"pageviews":1013},{"pagePath":"/service","sessions":765,"avgSessionDuration":177.4,"bounceRate":41.2,"pageviews":986},{"pagePath":"/cars/bmw-certified","sessions":580,"avgSessionDuration":174.3,"bounceRate":5.3,"pageviews":1602},{"pagePath":"/oil-change","sessions":489,"avgSessionDuration":70.0,"bounceRate":69.1,"pageviews":557},{"pagePath":"/service-offers","sessions":485,"avgSessionDuration":69.5,"bounceRate":30.9,"pageviews":568},{"pagePath":"/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP07T9512364","sessions":470,"avgSessionDuration":71.8,"bounceRate":63.4,"pageviews":521}];
+
+const WEEKLY = {"current":{"labels":["202529","202530","202531","202532","202533","202534","202535","202536","202537","202538","202539","202540","202541","202542","202543","202544","202545","202546","202547","202548","202549","202550","202551","202552","202553","202601","202602","202603","202604","202605","202606","202607","202608","202609","202610","202611","202612","202613","202614","202615","202616","202617","202618","202619","202620","202621","202622","202623","202624","202625","202626","202627","202628","202629"],"sessions":[2809,3976,3138,3217,3385,3359,4334,4089,3095,4464,4246,3499,3384,3317,3495,3498,3886,4263,4911,4187,3413,3569,3385,3576,2218,2059,3602,4480,5084,3942,4337,4778,5518,6433,4618,5011,3854,7041,5715,6468,5941,5633,6553,6093,5572,6187,6370,6434,6793,6912,7339,7088,5399,2391]},"prior":{"labels":["202429","202430","202431","202432","202433","202434","202435","202436","202437","202438","202439","202440","202441","202442","202443","202444","202445","202446","202447","202448","202449","202450","202451","202452","202453","202501","202502","202503","202504","202505","202506","202507","202508","202509","202510","202511","202512","202513","202514","202515","202516","202517","202518","202519","202520","202521","202522","202523","202524","202525","202526","202527","202528","202529"],"sessions":[2617,2633,2773,2801,2994,2778,2697,2641,2658,2857,2893,2896,2977,2765,2891,2971,3479,3476,3469,3272,3253,3856,3834,4646,2115,2390,3887,3891,3472,3512,2847,2591,2924,3461,3274,3173,3557,3991,4413,4121,4396,4555,4491,3696,3800,3860,3349,3546,3358,3383,3680,4082,3897,1022]}};
 
 const WEEKLY_2025={"overall_2025":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18","May 25","Jun 1","Jun 8","Jun 15","Jun 22","Jun 29","Jul 6","Jul 13","Jul 20","Jul 27","Aug 3","Aug 10","Aug 17","Aug 24","Aug 31","Sep 7","Sep 14","Sep 21","Sep 28","Oct 5","Oct 12","Oct 19","Oct 26","Nov 2","Nov 9","Nov 16","Nov 23","Nov 30","Dec 7","Dec 14","Dec 21","Dec 28"],"sessions":[2396,3866,3839,3426,3431,2894,2598,2858,3524,3376,3150,3509,3967,4493,4262,4416,4596,4467,3788,3806,3844,3293,3575,3335,3322,3679,4122,3859,3871,3973,3137,3247,3375,3319,4294,4068,3086,4485,4218,3513,3443,3288,3522,3531,3942,4335,4939,4190,3422,3545,3385,3649,2221]},"overall_2026":{"labels":["Dec 28","Jan 4","Jan 11","Jan 18","Jan 25","Feb 1","Feb 8","Feb 15","Feb 22","Mar 1","Mar 8","Mar 15","Mar 22","Mar 29","Apr 5","Apr 12","Apr 19","Apr 26","May 3","May 10","May 17","May 24"],"sessions":[2060,3579,4494,5053,3882,4295,4893,5549,6362,4628,4993,3847,7120,5691,6501,5921,5704,6549,6137,5684,6281,2857]},"new_2025":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18","May 25","Jun 1","Jun 8","Jun 15","Jun 22","Jun 29","Jul 6","Jul 13","Jul 20","Jul 27","Aug 3","Aug 10","Aug 17","Aug 24","Aug 31","Sep 7","Sep 14","Sep 21","Sep 28","Oct 5","Oct 12","Oct 19","Oct 26","Nov 2","Nov 9","Nov 16","Nov 23","Nov 30","Dec 7","Dec 14","Dec 21","Dec 28"],"sessions":[297,592,437,427,393,174,159,156,192,96,104,124,146,168,113,109,95,250,160,868,518,549,479,377,436,453,495,457,428,592,366,293,438,385,384,470,384,441,482,273,268,338,606,638,795,988,291,33,25,20,19,9,6]},"used_2025":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18","May 25","Jun 1","Jun 8","Jun 15","Jun 22","Jun 29","Jul 6","Jul 13","Jul 20","Jul 27","Aug 3","Aug 10","Aug 17","Aug 24","Aug 31","Sep 7","Sep 14","Sep 21","Sep 28","Oct 5","Oct 12","Oct 19","Oct 26","Nov 2","Nov 9","Nov 16","Nov 23","Nov 30","Dec 7","Dec 14","Dec 21","Dec 28"],"sessions":[177,358,394,275,418,440,296,310,243,283,247,219,275,272,295,307,351,303,191,177,187,164,163,176,175,213,191,220,180,205,221,245,221,187,215,171,166,218,175,166,177,190,145,143,221,256,61,26,24,30,21,28,21]},"new_2026":{"labels":["Dec 28","Jan 4","Jan 11","Jan 18","Jan 25","Feb 1","Feb 8","Feb 15","Feb 22","Mar 1","Mar 8","Mar 15","Mar 22","Mar 29","Apr 5","Apr 12","Apr 19","Apr 26","May 3","May 10","May 17","May 24"],"sessions":[1091,1222,2201,2939,2088,1714,2804,3129,4011,2217,2657,1997,4741,3575,4008,3301,3102,3623,3105,2902,3643,1630]},"used_2026":{"labels":["Dec 28","Jan 4","Jan 11","Jan 18","Jan 25","Feb 1","Feb 8","Feb 15","Feb 22","Mar 1","Mar 8","Mar 15","Mar 22","Mar 29","Apr 5","Apr 12","Apr 19","Apr 26","May 3","May 10","May 17","May 24"],"sessions":[215,496,551,493,407,584,514,750,661,575,617,268,424,433,510,667,642,885,863,860,753,379]}};
 
@@ -400,6 +409,143 @@ function renderHighBounce() {
     }).join('');
 }
 
+function campaignStatus(row) {
+    if (row.sessions < 25) return { label: 'Low volume', color: '#f59e0b' };
+    if (row.bounceRate >= 80) return { label: 'High bounce', color: '#ef4444' };
+    if (row.bounceRate <= 40 && row.sessions >= 50) return { label: 'Strong engagement', color: '#10b981' };
+    return { label: 'Active', color: '#10b981' };
+}
+function renderCampaigns() {
+    const body = document.getElementById('campaignsBody');
+    if (!body) return;
+    const rows = (typeof CAMPAIGNS !== 'undefined' && Array.isArray(CAMPAIGNS)) ? CAMPAIGNS : [];
+    if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="6" style="padding:12px 15px;color:#888;">No paid campaign sessions found in last 30 days.</td></tr>';
+        return;
+    }
+    body.innerHTML = rows.map(r => {
+        const st = campaignStatus(r);
+        const note = `Bounce ${Number(r.bounceRate).toFixed(1)}% · avg ${formatDuration(r.avgSessionDuration)} · ${fmt(r.users)} users`;
+        return `<tr style="border-bottom:1px solid #1a1a1a;">
+          <td class="val" style="padding:12px 15px;"><strong>${r.campaign || '(not set)'}</strong></td>
+          <td style="padding:12px 15px;color:#aaa;">${r.channel}</td>
+          <td class="val" style="text-align:right;padding:12px 15px;">${fmt(r.sessions)}</td>
+          <td style="text-align:right;padding:12px 15px;">${Number(r.bounceRate).toFixed(1)}%</td>
+          <td style="text-align:right;padding:12px 15px;">${formatDuration(r.avgSessionDuration)}</td>
+          <td style="padding:12px 15px;padding-left:25px;"><span style="background:${st.color}22;color:${st.color};padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-right:8px;">${st.label}</span>${note}</td>
+        </tr>`;
+    }).join('');
+}
+function renderHostnames() {
+    const body = document.getElementById('hostnamesBody');
+    if (!body) return;
+    const pack = (typeof HOSTNAMES !== 'undefined') ? HOSTNAMES : { total: 0, rows: [] };
+    const rows = pack.rows || [];
+    if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="4" style="padding:12px 15px;color:#888;">No hostname rows returned.</td></tr>';
+        return;
+    }
+    body.innerHTML = rows.map(r => {
+        return `<tr>
+          <td class="val">${r.hostname}</td>
+          <td class="val" style="text-align:right;">${fmt(r.sessions)}</td>
+          <td class="val" style="text-align:right;">${Number(r.share).toFixed(1)}%</td>
+          <td>${fmt(r.users)} users</td>
+        </tr>`;
+    }).join('') + `<tr>
+      <td class="val"><strong>Combined tracked total</strong></td>
+      <td class="val" style="text-align:right;"><strong>${fmt(pack.total || 0)}</strong></td>
+      <td class="val" style="text-align:right;"><strong>100%</strong></td>
+      <td>Last 90 days · live GA4 hostName</td>
+    </tr>`;
+}
+function renderTopPages() {
+    const body = document.getElementById('topPagesBody');
+    if (!body) return;
+    const rows = (typeof TOP_PAGES !== 'undefined' && Array.isArray(TOP_PAGES)) ? TOP_PAGES : [];
+    if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="3" style="padding:12px 15px;color:#888;">No page rows returned.</td></tr>';
+        return;
+    }
+    body.innerHTML = rows.slice(0, 10).map((r, i) => `<tr>
+      <td>${i + 1}</td>
+      <td class="val" style="word-break:break-all;">${r.pagePath}</td>
+      <td class="val" style="text-align:right;">${fmt(r.sessions)}</td>
+    </tr>`).join('');
+}
+function renderTopContent() {
+    const body = document.getElementById('topContentBody');
+    if (!body) return;
+    const rows = (typeof TOP_PAGES !== 'undefined' && Array.isArray(TOP_PAGES)) ? TOP_PAGES : [];
+    if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="4" style="padding:12px 15px;color:#888;">No page rows returned.</td></tr>';
+        return;
+    }
+    body.innerHTML = rows.slice(0, 10).map((r, i) => {
+        const dur = Number(r.avgSessionDuration || 0);
+        const color = dur >= 120 ? '#10b981' : dur >= 60 ? '#f59e0b' : '#ef4444';
+        return `<tr>
+          <td>${i + 1}</td>
+          <td class="val" style="word-break:break-all;">${r.pagePath}</td>
+          <td class="val" style="text-align:right;">${fmt(r.sessions)}</td>
+          <td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:6px;"></span>${formatDuration(dur)}</td>
+        </tr>`;
+    }).join('');
+}
+function renderWeekly() {
+    if (typeof WEEKLY === 'undefined' || !document.getElementById('seasonalityChart')) return;
+    const cur = WEEKLY.current || { labels: [], sessions: [] };
+    const prior = WEEKLY.prior || { labels: [], sessions: [] };
+    // Align by week suffix (last 4 chars of yearWeek) where possible
+    const mapPrior = {};
+    prior.labels.forEach((lab, i) => { mapPrior[String(lab).slice(-2)] = prior.sessions[i]; });
+    const labels = cur.labels.map(l => String(l));
+    const curData = cur.sessions.slice();
+    const priorData = cur.labels.map(l => mapPrior[String(l).slice(-2)] ?? null);
+    const mk = (id, datasets) => {
+        const el = document.getElementById(id);
+        if (!el) return null;
+        if (window[id + 'Obj']) window[id + 'Obj'].destroy();
+        window[id + 'Obj'] = new Chart(el.getContext('2d'), {
+            type: 'line',
+            data: { labels, datasets },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#888', font: { size: 12 } } } },
+                scales: {
+                    y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } },
+                    x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } }
+                }
+            }
+        });
+        return window[id + 'Obj'];
+    };
+    mk('seasonalityChart', [
+        { label: 'Weekly sessions (current 365d)', data: curData, borderColor: '#10b981', backgroundColor: 'transparent', borderWidth: 2.5, fill: false, tension: 0.35, pointRadius: 2 },
+        { label: 'Weekly sessions (prior year)', data: priorData, borderColor: '#3b82f6', backgroundColor: 'transparent', borderWidth: 2, borderDash: [5,5], fill: false, tension: 0.35, pointRadius: 2 }
+    ]);
+    // Optional secondary charts: reuse overall if dedicated series not available
+    if (document.getElementById('seasonalitySrpChart')) {
+        mk('seasonalitySrpChart', [
+            { label: 'Current year weekly', data: curData, borderColor: '#22c55e', backgroundColor: 'transparent', borderWidth: 2, fill: false, tension: 0.35, pointRadius: 2 }
+        ]);
+    }
+    if (document.getElementById('seasonalityVdpChart')) {
+        mk('seasonalityVdpChart', [
+            { label: 'Prior year weekly', data: priorData, borderColor: '#f59e0b', backgroundColor: 'transparent', borderWidth: 2, fill: false, tension: 0.35, pointRadius: 2 }
+        ]);
+    }
+}
+function renderAllLivePanels() {
+    renderCampaigns();
+    renderHostnames();
+    renderTopPages();
+    renderTopContent();
+    renderAllLivePanels();
+    renderWeekly();
+}
+
+
 const arrow = v => v === null ? '' : parseFloat(v) >= 0 ? '▲' : '▼';
 const changeClass = v => v === null ? 'neutral' : parseFloat(v) >= 0 ? 'up' : 'down';
 
@@ -449,7 +595,7 @@ function render() {
     renderMetrics(curr, comp);
     renderComparison(curr, comp);
     renderInsights(curr, comp);
-    renderHighBounce();
+    renderAllLivePanels();
     renderSeasonality();
 }
 
@@ -521,69 +667,7 @@ function renderChart(curr, comp) {
 }
 
 
-function renderSeasonality() {
-    if (!document.getElementById('seasonalityChart') || typeof WEEKLY_2025 === 'undefined') return;
-    const makeOptions = (color, fill = true) => ({
-        borderColor: color,
-        backgroundColor: fill ? (color === '#22c55e' ? 'rgba(34,197,94,0.10)' : color === '#3b82f6' ? 'rgba(59,130,246,0.10)' : 'rgba(245,158,11,0.10)') : 'transparent',
-        borderWidth: 2.5,
-        fill,
-        tension: 0.35,
-        pointRadius: 3,
-        pointHoverRadius: 5,
-        pointBackgroundColor: color,
-        spanGaps: false
-    });
-    const alignSeries = (targetLabels, sourceLabels, sourceSessions) => {
-        const map = new Map(sourceLabels.map((label, i) => [label, sourceSessions[i]]));
-        return targetLabels.map(label => map.has(label) ? map.get(label) : null);
-    };
-    const overallLabels = WEEKLY_2025.overall_2025.labels;
-    const newLabels = WEEKLY_2025.new_2025.labels;
-    const usedLabels = WEEKLY_2025.used_2025.labels;
-    if (seasonalityChart) seasonalityChart.destroy();
-    seasonalityChart = new Chart(document.getElementById('seasonalityChart').getContext('2d'), {
-        type: 'line',
-        data: { labels: overallLabels, datasets: [{ label: 'Weekly Sessions (2025 Total Website Traffic)', data: WEEKLY_2025.overall_2025.sessions, ...makeOptions('#94a3b8', false) }, { label: 'Weekly Sessions (2026 Total Website Traffic)', data: alignSeries(overallLabels, WEEKLY_2025.overall_2026.labels, WEEKLY_2025.overall_2026.sessions), ...makeOptions('#16a34a', false) }] },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => ctx.raw == null ? null : `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
-            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
-        }
-    });
-    if (seasonalityNewChart) seasonalityNewChart.destroy();
-    seasonalityNewChart = new Chart(document.getElementById('seasonalityNewChart').getContext('2d'), {
-        type: 'line',
-        data: {
-            labels: newLabels,
-            datasets: [
-                { label: 'Weekly Sessions (2025 New Traffic)', data: WEEKLY_2025.new_2025.sessions, ...makeOptions('#94a3b8', false) },
-                { label: 'Weekly Sessions (2026 New Traffic)', data: alignSeries(newLabels, WEEKLY_2025.new_2026.labels, WEEKLY_2025.new_2026.sessions), ...makeOptions('#2563eb', false) }
-            ]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => ctx.raw == null ? null : `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
-            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
-        }
-    });
-    if (seasonalityUsedChart) seasonalityUsedChart.destroy();
-    seasonalityUsedChart = new Chart(document.getElementById('seasonalityUsedChart').getContext('2d'), {
-        type: 'line',
-        data: {
-            labels: usedLabels,
-            datasets: [
-                { label: 'Weekly Sessions (2025 Used Traffic)', data: WEEKLY_2025.used_2025.sessions, ...makeOptions('#94a3b8', false) },
-                { label: 'Weekly Sessions (2026 Used Traffic)', data: alignSeries(usedLabels, WEEKLY_2025.used_2026.labels, WEEKLY_2025.used_2026.sessions), ...makeOptions('#d97706', false) }
-            ]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => ctx.raw == null ? null : `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
-            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
-        }
-    });
-}
+function renderSeasonality() { renderWeekly(); }
 
 
 function renderMetrics(curr, comp) {

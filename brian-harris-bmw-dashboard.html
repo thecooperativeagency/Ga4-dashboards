@@ -231,6 +231,28 @@
         </div>
     </div>
 
+    
+    <div class="section">
+        <div class="section-title">SEM & Paid Campaign Performance — Last 30 Days (GA4 live)</div>
+        <div class="chart-card">
+            <div class="chart-card-title">Paid search + paid social from live campaign / source / medium</div>
+            <table class="comparison-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #222;">
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600;">Campaign Name</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600;">Channel</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600; text-align: right;">Sessions</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600; text-align: right;">Bounce</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600; text-align: right;">Avg Dur</th>
+                        <th style="padding: 10px 15px; font-size: 10px; text-transform: uppercase; color: #555; font-weight: 600; padding-left: 25px;">Status (from live metrics)</th>
+                    </tr>
+                </thead>
+                <tbody id="campaignsBody"></tbody>
+            </table>
+            <div style="margin-top: 15px; font-size: 11px; color: #444;">Refreshed on every GA4 pull. Status is derived only from live sessions/bounce/duration — no manual notes.</div>
+        </div>
+    </div>
+
     <div class="section">
         <div class="section-title">Top 20 Traffic Sources — Last 90 Days</div>
         <div class="sources-grid">
@@ -245,56 +267,33 @@
         </div>
     </div>
 
+    
     <div class="section">
-        <div class="section-title">🔑 Top 10 Model Pages</div>
+        <div class="section-title">Top Pages — Last 90 Days (GA4 live)</div>
         <div class="chart-card">
-            <div class="chart-card-title">Ranked by Sessions</div>
+            <div class="chart-card-title">Ranked by sessions · real pagePath</div>
             <table class="comparison-table">
                 <thead>
                     <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th></tr>
                 </thead>
-                <tbody>
-                    <tr><td>1</td><td class="val">All Inventory</td><td class="val" style="text-align:right;">20,121</td></tr>
-                    <tr><td>2</td><td class="val">Used Inventory</td><td class="val" style="text-align:right;">8,281</td></tr>
-                    <tr><td>3</td><td class="val">BMW X5</td><td class="val" style="text-align:right;">3,504</td></tr>
-                    <tr><td>4</td><td class="val">BMW X3</td><td class="val" style="text-align:right;">2,831</td></tr>
-                    <tr><td>5</td><td class="val">New Inventory</td><td class="val" style="text-align:right;">2,634</td></tr>
-                    <tr><td>6</td><td class="val">Certified Pre-Owned</td><td class="val" style="text-align:right;">2,406</td></tr>
-                    <tr><td>7</td><td class="val">New Inventory (alt)</td><td class="val" style="text-align:right;">2,123</td></tr>
-                    <tr><td>8</td><td class="val">New BMW Browse</td><td class="val" style="text-align:right;">2,116</td></tr>
-                    <tr><td>9</td><td class="val">New 330i</td><td class="val" style="text-align:right;">1,083</td></tr>
-                    <tr><td>10</td><td class="val">Executive Demo</td><td class="val" style="text-align:right;">1,045</td></tr>
-                </tbody>
+                <tbody id="topPagesBody"></tbody>
             </table>
-            <div style="margin-top:15px; font-size:11px; color:#444;">Last 90 days · Source: GA4</div>
         </div>
     </div>
-
+    
     <div class="section">
-        <div class="section-title">📄 Top Content Pages — Avg Time on Page</div>
+        <div class="section-title">Top Content Pages — Avg Session Duration (GA4 live)</div>
         <div class="chart-card">
-            <div class="chart-card-title">Ranked by sessions · Last 90 Days · GA4 Property 334199347</div>
+            <div class="chart-card-title">Ranked by sessions · last 90 days · live GA4</div>
             <table class="comparison-table">
                 <thead>
-                    <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Avg Time on Page</th></tr>
+                    <tr><th>Rank</th><th>Page</th><th style="text-align:right;">Sessions</th><th style="text-align:right;">Avg Session Duration</th></tr>
                 </thead>
-                <tbody>
-                    <tr><td>1</td><td class="val">BMW X5 Model Page</td><td class="val" style="text-align:right;">3,504</td><td class="val" style="text-align:right;">3:42 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>2</td><td class="val">BMW X3 Model Page</td><td class="val" style="text-align:right;">2,831</td><td class="val" style="text-align:right;">3:18 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>3</td><td class="val">New Inventory</td><td class="val" style="text-align:right;">2,634</td><td class="val" style="text-align:right;">2:05 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>4</td><td class="val">Certified Pre-Owned</td><td class="val" style="text-align:right;">2,406</td><td class="val" style="text-align:right;">2:51 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>5</td><td class="val">Service Specials</td><td class="val" style="text-align:right;">1,900</td><td class="val" style="text-align:right;">1:12 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>6</td><td class="val">BMW 3 Series Model Page</td><td class="val" style="text-align:right;">1,083</td><td class="val" style="text-align:right;">3:05 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>7</td><td class="val">Oil Change Special</td><td class="val" style="text-align:right;">996</td><td class="val" style="text-align:right;">0:58 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>8</td><td class="val">BMW X5 vs Lexus RX</td><td class="val" style="text-align:right;">847</td><td class="val" style="text-align:right;">4:33 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>9</td><td class="val">Schedule Service</td><td class="val" style="text-align:right;">741</td><td class="val" style="text-align:right;">1:44 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                    <tr><td>10</td><td class="val">Finance Application</td><td class="val" style="text-align:right;">612</td><td class="val" style="text-align:right;">2:17 <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;margin-left:6px;vertical-align:middle;"></span></td></tr>
-                </tbody>
+                <tbody id="topContentBody"></tbody>
             </table>
-            <div style="margin-top:15px; font-size:11px; color:#444;">Avg time on page indicates content depth and user intent. Pages >2:00 signal high buying intent.</div>
+            <div style="margin-top:15px; font-size:11px; color:#444;">Duration is GA4 averageSessionDuration for that page path, not a manual estimate.</div>
         </div>
     </div>
-
     <div class="insights-card">
         <div class="insights-title">💡 Key Insights & Recommendations</div>
         <ul class="insights-list" id="insightsList"></ul>
@@ -303,16 +302,16 @@
     <div class="section">
         <div class="section-title">Last Year Seasonality</div>
         <div class="chart-card">
-            <div class="chart-card-title">Weekly Sessions — 2025 vs 2026 Total Website Traffic</div>
+            <div class="chart-card-title">Weekly Sessions — Current Year vs Prior Year (GA4 live)</div>
             <div class="chart-wrapper"><canvas id="seasonalityChart"></canvas></div>
         </div>
         <div class="sources-grid" style="margin-top:20px;">
             <div class="chart-card">
-                <div class="chart-card-title">Weekly Sessions — 2025 vs 2026 New Traffic</div>
+                <div class="chart-card-title">Weekly Sessions — Current Year (GA4 live)</div>
                 <div class="chart-wrapper"><canvas id="seasonalitySrpChart"></canvas></div>
             </div>
             <div class="chart-card">
-                <div class="chart-card-title">Weekly Sessions — 2025 vs 2026 Used Traffic</div>
+                <div class="chart-card-title">Weekly Sessions — Prior Year (GA4 live)</div>
                 <div class="chart-wrapper"><canvas id="seasonalityVdpChart"></canvas></div>
             </div>
         </div>
@@ -358,6 +357,16 @@ const DATA = {
 const SOURCES = [{"source":"google","medium":"cpc","sessions":25879,"users":19183},{"source":"(direct)","medium":"(none)","sessions":21783,"users":16556},{"source":"google","medium":"organic","sessions":15697,"users":7019},{"source":"facebook","medium":"cpc","sessions":2120,"users":1753},{"source":"amp","medium":"text","sessions":1771,"users":1108},{"source":"bing","medium":"organic","sessions":1718,"users":934},{"source":"vinurl.com","medium":"referral","sessions":828,"users":533},{"source":"bmwusa.com","medium":"referral","sessions":779,"users":419},{"source":"app.podium.com","medium":"referral","sessions":763,"users":10},{"source":"yahoo","medium":"organic","sessions":580,"users":297},{"source":"autotrader.com","medium":"referral","sessions":461,"users":244},{"source":"duckduckgo","medium":"organic","sessions":327,"users":107},{"source":"(not set)","medium":"(not set)","sessions":319,"users":302},{"source":"(data not available)","medium":"(data not available)","sessions":233,"users":232},{"source":"jlemail","medium":"email1","sessions":233,"users":181},{"source":"visor.vin","medium":"referral","sessions":211,"users":130},{"source":"facebook.com","medium":"referral","sessions":165,"users":151},{"source":"carfax.com","medium":"referral","sessions":149,"users":88},{"source":"m.facebook.com","medium":"referral","sessions":147,"users":133},{"source":"amp","medium":"email","sessions":116,"users":91}];
 
 const HIGH_BOUNCE = [{"pagePath":"/oil-change","sessions":1381,"bounceRate":79.1,"avgSessionDuration":44.7},{"pagePath":"/service-specials","sessions":1539,"bounceRate":78.6,"avgSessionDuration":76.3},{"pagePath":"/cars/new-330i","sessions":467,"bounceRate":73.0,"avgSessionDuration":68.6},{"pagePath":"/gen-m-tour","sessions":53,"bounceRate":71.7,"avgSessionDuration":60.6},{"pagePath":"/cars/bmw-x3","sessions":831,"bounceRate":63.9,"avgSessionDuration":56.4},{"pagePath":"/tires","sessions":191,"bounceRate":60.7,"avgSessionDuration":37.6},{"pagePath":"/brakes","sessions":394,"bounceRate":59.4,"avgSessionDuration":63.5},{"pagePath":"/cars/bmw-x5","sessions":1067,"bounceRate":58.4,"avgSessionDuration":105.2},{"pagePath":"/finance","sessions":183,"bounceRate":47.5,"avgSessionDuration":198.9},{"pagePath":"/bmw-x3-vs-lexus-rx-why-the-bmw-x3-is-the-ultimate-choice","sessions":37,"bounceRate":45.9,"avgSessionDuration":46.6},{"pagePath":"/inventory/Used-2024-Toyota-Land_Cruiser-First_Edition-JTEABFAJ9RK003145","sessions":77,"bounceRate":45.5,"avgSessionDuration":104.5},{"pagePath":"/inventory/Used-2023-BMW-X3-sDrive30i-WBX47DP06PN242222","sessions":117,"bounceRate":44.4,"avgSessionDuration":259.9}];
+
+const CAMPAIGNS = [{"campaign":"(organic)","source":"google","medium":"cpc","channel":"google / cpc","sessions":2379,"users":1664,"bounceRate":21.2,"avgSessionDuration":308.1},{"campaign":"(not set)","source":"google","medium":"cpc","channel":"google / cpc","sessions":1464,"users":1312,"bounceRate":76.3,"avgSessionDuration":47.0},{"campaign":"*000109468*SEM_Brand_AS","source":"google","medium":"cpc","channel":"google / cpc","sessions":849,"users":476,"bounceRate":19.2,"avgSessionDuration":379.0},{"campaign":"Service - Attack - In-Market Search Keywords | Display","source":"google","medium":"cpc","channel":"google / cpc","sessions":781,"users":711,"bounceRate":85.1,"avgSessionDuration":59.3},{"campaign":"Service - Attack - In-Market Search Keywords | Demand Gen","source":"google","medium":"cpc","channel":"google / cpc","sessions":743,"users":680,"bounceRate":82.4,"avgSessionDuration":38.2},{"campaign":"Service - Attack - Competitor Remarketing | Display","source":"google","medium":"cpc","channel":"google / cpc","sessions":568,"users":527,"bounceRate":83.1,"avgSessionDuration":78.1},{"campaign":"Attack - New Inventory - In-Market - Automotive Inventory Ads (AIA) | Meta - Catalog Sales","source":"facebook","medium":"cpc","channel":"facebook / cpc","sessions":513,"users":444,"bounceRate":70.0,"avgSessionDuration":51.3},{"campaign":"(referral)","source":"google","medium":"cpc","channel":"google / cpc","sessions":511,"users":391,"bounceRate":45.0,"avgSessionDuration":159.5},{"campaign":"Service - Attack - Competitor Remarketing | Demand Gen","source":"google","medium":"cpc","channel":"google / cpc","sessions":415,"users":322,"bounceRate":85.3,"avgSessionDuration":59.3},{"campaign":"Attack - Used Inventory - In-Market - Automotive Inventory Ads (AIA) | Meta - Catalog Sales - Copy","source":"facebook","medium":"cpc","channel":"facebook / cpc","sessions":277,"users":254,"bounceRate":66.8,"avgSessionDuration":53.6},{"campaign":"Service - Attack - Service Offers | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":244,"users":160,"bounceRate":22.5,"avgSessionDuration":298.5},{"campaign":"*000109470*SEM_Locations_AS","source":"google","medium":"cpc","channel":"google / cpc","sessions":57,"users":51,"bounceRate":8.8,"avgSessionDuration":286.0},{"campaign":"Service - Defend - Customer List | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":30,"users":18,"bounceRate":36.7,"avgSessionDuration":299.7},{"campaign":"Service - Attack - Brand | Paid Search","source":"google","medium":"cpc","channel":"google / cpc","sessions":27,"users":18,"bounceRate":37.0,"avgSessionDuration":334.5},{"campaign":"(referral)","source":"ig","medium":"social","channel":"ig / social","sessions":12,"users":11,"bounceRate":50.0,"avgSessionDuration":161.2}];
+
+const HOSTNAMES = {"total":75928,"rows":[{"hostname":"brianharrisbmw.com","sessions":75681,"users":47035,"share":99.7},{"hostname":"bmwofjackson.net","sessions":246,"users":223,"share":0.3},{"hostname":"brianharrisbmwlabmw.cms.dealer.com","sessions":1,"users":1,"share":0.0}]};
+
+const TOP_PAGES = [{"pagePath":"/inventory","sessions":23156,"avgSessionDuration":198.0,"bounceRate":16.3,"pageviews":87837},{"pagePath":"/","sessions":22551,"avgSessionDuration":56.7,"bounceRate":15.8,"pageviews":28175},{"pagePath":"/service-specials","sessions":5584,"avgSessionDuration":96.9,"bounceRate":81.2,"pageviews":6653},{"pagePath":"/cars/bmw-x5","sessions":3925,"avgSessionDuration":98.0,"bounceRate":60.9,"pageviews":5526},{"pagePath":"/cars/new-inventory","sessions":3630,"avgSessionDuration":171.2,"bounceRate":20.6,"pageviews":11590},{"pagePath":"/oil-change","sessions":3482,"avgSessionDuration":46.3,"bounceRate":80.2,"pageviews":3796},{"pagePath":"/cars/bmw-certified","sessions":3178,"avgSessionDuration":174.4,"bounceRate":9.9,"pageviews":10078},{"pagePath":"/cars/bmw-x3","sessions":2930,"avgSessionDuration":54.7,"bounceRate":64.5,"pageviews":4034},{"pagePath":"/cars/new-330i","sessions":1502,"avgSessionDuration":84.4,"bounceRate":69.0,"pageviews":1746},{"pagePath":"/service","sessions":1292,"avgSessionDuration":127.9,"bounceRate":25.7,"pageviews":1499},{"pagePath":"/new-bmw-specials","sessions":1211,"avgSessionDuration":83.5,"bounceRate":14.6,"pageviews":1547},{"pagePath":"/cars/executive-demo","sessions":1104,"avgSessionDuration":134.7,"bounceRate":11.0,"pageviews":2089}];
+
+const TOP_PAGES_30 = [{"pagePath":"/","sessions":7833,"avgSessionDuration":56.0,"bounceRate":17.0,"pageviews":9759},{"pagePath":"/inventory","sessions":7738,"avgSessionDuration":203.2,"bounceRate":17.6,"pageviews":29908},{"pagePath":"/service-specials","sessions":1539,"avgSessionDuration":76.3,"bounceRate":78.6,"pageviews":1855},{"pagePath":"/oil-change","sessions":1381,"avgSessionDuration":44.7,"bounceRate":79.1,"pageviews":1525},{"pagePath":"/cars/bmw-certified","sessions":1204,"avgSessionDuration":186.3,"bounceRate":8.2,"pageviews":4275},{"pagePath":"/cars/bmw-x5","sessions":1067,"avgSessionDuration":105.2,"bounceRate":58.4,"pageviews":1650},{"pagePath":"/cars/new-inventory","sessions":1057,"avgSessionDuration":185.4,"bounceRate":12.2,"pageviews":3873},{"pagePath":"/cars/bmw-x3","sessions":831,"avgSessionDuration":56.4,"bounceRate":63.9,"pageviews":1205},{"pagePath":"/new-bmw-specials2","sessions":512,"avgSessionDuration":61.2,"bounceRate":6.6,"pageviews":653},{"pagePath":"/cars/new-330i","sessions":467,"avgSessionDuration":68.6,"bounceRate":73.0,"pageviews":556},{"pagePath":"/service","sessions":456,"avgSessionDuration":136.8,"bounceRate":22.4,"pageviews":551},{"pagePath":"/brakes","sessions":394,"avgSessionDuration":63.5,"bounceRate":59.4,"pageviews":431}];
+
+const WEEKLY = {"current":{"labels":["202529","202530","202531","202532","202533","202534","202535","202536","202537","202538","202539","202540","202541","202542","202543","202544","202545","202546","202547","202548","202549","202550","202551","202552","202553","202601","202602","202603","202604","202605","202606","202607","202608","202609","202610","202611","202612","202613","202614","202615","202616","202617","202618","202619","202620","202621","202622","202623","202624","202625","202626","202627","202628","202629"],"sessions":[3865,5506,5117,5336,6052,5562,5544,5134,4850,5863,5225,5350,5295,5200,5321,5390,5438,6171,5259,4275,4803,5631,5084,4880,3007,2191,5763,6351,4339,4189,4487,4988,5922,6498,4612,5644,5557,5321,4579,5153,5208,5559,5044,5172,5699,6699,5720,5742,5943,6599,5836,5920,6168,2843]},"prior":{"labels":["202429","202430","202431","202432","202433","202434","202435","202436","202437","202438","202439","202440","202441","202442","202443","202444","202445","202446","202447","202448","202449","202450","202451","202452","202453","202501","202502","202503","202504","202505","202506","202507","202508","202509","202510","202511","202512","202513","202514","202515","202516","202517","202518","202519","202520","202521","202522","202523","202524","202525","202526","202527","202528","202529"],"sessions":[4525,5442,4614,5143,4997,4988,4709,4920,4355,4912,4738,4402,4524,5110,5100,4722,4913,5090,5701,5413,4822,5644,6128,6570,2857,3427,5338,5516,4160,4363,5527,4654,4955,5336,4994,5098,4829,4690,4096,4777,3931,4295,4252,4176,4321,4408,5836,4700,4330,4637,5326,4863,4931,1462]}};
 
 const WEEKLY_2025={"overall_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[6154,5419,5326,4317,4269,5426,4682,5129,5088,4971,5199,4964,4559,4213,4658,4068,4271,4288,4222,4246,4623,5866,4638,4452,4714,5205,4949,5016,5301,5587,5080,5444,5893,5684,5424,5100,5083,5624,5281,5379,5319,5172,5166,5359,5537,6180,5214,4125,5012,5748,5024,4904,2364]},"new_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[939,762,772,555,594,708,539,635,547,639,566,556,490,278,279,220,206,203,284,358,630,2052,790,710,896,1219,1514,1369,1442,1584,1614,1509,1710,1626,1800,1353,1800,2158,2298,2030,1880,1840,1761,2216,1903,1740,1590,1085,1416,1743,1593,1646,687]},"used_2025":{"labels":["Dec 30","Jan 6","Jan 13","Jan 20","Jan 27","Feb 3","Feb 10","Feb 17","Feb 24","Mar 3","Mar 10","Mar 17","Mar 24","Mar 31","Apr 7","Apr 14","Apr 21","Apr 28","May 5","May 12","May 19","May 26","Jun 2","Jun 9","Jun 16","Jun 23","Jun 30","Jul 7","Jul 14","Jul 21","Jul 28","Aug 4","Aug 11","Aug 18","Aug 25","Sep 1","Sep 8","Sep 15","Sep 22","Sep 29","Oct 6","Oct 13","Oct 20","Oct 27","Nov 3","Nov 10","Nov 17","Nov 24","Dec 1","Dec 8","Dec 15","Dec 22","Dec 29"],"sessions":[319,331,315,285,313,308,310,341,312,350,376,357,381,277,312,308,330,343,341,390,426,440,406,403,442,633,646,589,725,674,643,882,810,747,784,792,714,782,531,584,747,606,623,563,720,725,715,627,738,733,640,672,317]},"overall_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[5266,5790,6280,4082,4347,4330,5049,5932,6471,4504,5807,5509,5367,4504,5170,5295,5603,4974,5068,6193,4052]},"new_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[1887,1621,2048,201,21,50,54,26,18,20,83,10,8,3,8,4,5,7,2,3,3]},"used_2026":{"labels":["Dec 29","Jan 5","Jan 12","Jan 19","Jan 26","Feb 2","Feb 9","Feb 16","Feb 23","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6","Apr 13","Apr 20","Apr 27","May 4","May 11","May 18"],"sessions":[612,795,818,143,37,52,52,57,21,17,47,14,22,10,1,14,6,19,8,6,3]}};
 
@@ -406,6 +415,143 @@ function renderHighBounce() {
         </tr>`;
     }).join('');
 }
+
+function campaignStatus(row) {
+    if (row.sessions < 25) return { label: 'Low volume', color: '#f59e0b' };
+    if (row.bounceRate >= 80) return { label: 'High bounce', color: '#ef4444' };
+    if (row.bounceRate <= 40 && row.sessions >= 50) return { label: 'Strong engagement', color: '#10b981' };
+    return { label: 'Active', color: '#10b981' };
+}
+function renderCampaigns() {
+    const body = document.getElementById('campaignsBody');
+    if (!body) return;
+    const rows = (typeof CAMPAIGNS !== 'undefined' && Array.isArray(CAMPAIGNS)) ? CAMPAIGNS : [];
+    if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="6" style="padding:12px 15px;color:#888;">No paid campaign sessions found in last 30 days.</td></tr>';
+        return;
+    }
+    body.innerHTML = rows.map(r => {
+        const st = campaignStatus(r);
+        const note = `Bounce ${Number(r.bounceRate).toFixed(1)}% · avg ${formatDuration(r.avgSessionDuration)} · ${fmt(r.users)} users`;
+        return `<tr style="border-bottom:1px solid #1a1a1a;">
+          <td class="val" style="padding:12px 15px;"><strong>${r.campaign || '(not set)'}</strong></td>
+          <td style="padding:12px 15px;color:#aaa;">${r.channel}</td>
+          <td class="val" style="text-align:right;padding:12px 15px;">${fmt(r.sessions)}</td>
+          <td style="text-align:right;padding:12px 15px;">${Number(r.bounceRate).toFixed(1)}%</td>
+          <td style="text-align:right;padding:12px 15px;">${formatDuration(r.avgSessionDuration)}</td>
+          <td style="padding:12px 15px;padding-left:25px;"><span style="background:${st.color}22;color:${st.color};padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;margin-right:8px;">${st.label}</span>${note}</td>
+        </tr>`;
+    }).join('');
+}
+function renderHostnames() {
+    const body = document.getElementById('hostnamesBody');
+    if (!body) return;
+    const pack = (typeof HOSTNAMES !== 'undefined') ? HOSTNAMES : { total: 0, rows: [] };
+    const rows = pack.rows || [];
+    if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="4" style="padding:12px 15px;color:#888;">No hostname rows returned.</td></tr>';
+        return;
+    }
+    body.innerHTML = rows.map(r => {
+        return `<tr>
+          <td class="val">${r.hostname}</td>
+          <td class="val" style="text-align:right;">${fmt(r.sessions)}</td>
+          <td class="val" style="text-align:right;">${Number(r.share).toFixed(1)}%</td>
+          <td>${fmt(r.users)} users</td>
+        </tr>`;
+    }).join('') + `<tr>
+      <td class="val"><strong>Combined tracked total</strong></td>
+      <td class="val" style="text-align:right;"><strong>${fmt(pack.total || 0)}</strong></td>
+      <td class="val" style="text-align:right;"><strong>100%</strong></td>
+      <td>Last 90 days · live GA4 hostName</td>
+    </tr>`;
+}
+function renderTopPages() {
+    const body = document.getElementById('topPagesBody');
+    if (!body) return;
+    const rows = (typeof TOP_PAGES !== 'undefined' && Array.isArray(TOP_PAGES)) ? TOP_PAGES : [];
+    if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="3" style="padding:12px 15px;color:#888;">No page rows returned.</td></tr>';
+        return;
+    }
+    body.innerHTML = rows.slice(0, 10).map((r, i) => `<tr>
+      <td>${i + 1}</td>
+      <td class="val" style="word-break:break-all;">${r.pagePath}</td>
+      <td class="val" style="text-align:right;">${fmt(r.sessions)}</td>
+    </tr>`).join('');
+}
+function renderTopContent() {
+    const body = document.getElementById('topContentBody');
+    if (!body) return;
+    const rows = (typeof TOP_PAGES !== 'undefined' && Array.isArray(TOP_PAGES)) ? TOP_PAGES : [];
+    if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="4" style="padding:12px 15px;color:#888;">No page rows returned.</td></tr>';
+        return;
+    }
+    body.innerHTML = rows.slice(0, 10).map((r, i) => {
+        const dur = Number(r.avgSessionDuration || 0);
+        const color = dur >= 120 ? '#10b981' : dur >= 60 ? '#f59e0b' : '#ef4444';
+        return `<tr>
+          <td>${i + 1}</td>
+          <td class="val" style="word-break:break-all;">${r.pagePath}</td>
+          <td class="val" style="text-align:right;">${fmt(r.sessions)}</td>
+          <td class="val" style="text-align:right;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:6px;"></span>${formatDuration(dur)}</td>
+        </tr>`;
+    }).join('');
+}
+function renderWeekly() {
+    if (typeof WEEKLY === 'undefined' || !document.getElementById('seasonalityChart')) return;
+    const cur = WEEKLY.current || { labels: [], sessions: [] };
+    const prior = WEEKLY.prior || { labels: [], sessions: [] };
+    // Align by week suffix (last 4 chars of yearWeek) where possible
+    const mapPrior = {};
+    prior.labels.forEach((lab, i) => { mapPrior[String(lab).slice(-2)] = prior.sessions[i]; });
+    const labels = cur.labels.map(l => String(l));
+    const curData = cur.sessions.slice();
+    const priorData = cur.labels.map(l => mapPrior[String(l).slice(-2)] ?? null);
+    const mk = (id, datasets) => {
+        const el = document.getElementById(id);
+        if (!el) return null;
+        if (window[id + 'Obj']) window[id + 'Obj'].destroy();
+        window[id + 'Obj'] = new Chart(el.getContext('2d'), {
+            type: 'line',
+            data: { labels, datasets },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#888', font: { size: 12 } } } },
+                scales: {
+                    y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } },
+                    x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } }
+                }
+            }
+        });
+        return window[id + 'Obj'];
+    };
+    mk('seasonalityChart', [
+        { label: 'Weekly sessions (current 365d)', data: curData, borderColor: '#10b981', backgroundColor: 'transparent', borderWidth: 2.5, fill: false, tension: 0.35, pointRadius: 2 },
+        { label: 'Weekly sessions (prior year)', data: priorData, borderColor: '#3b82f6', backgroundColor: 'transparent', borderWidth: 2, borderDash: [5,5], fill: false, tension: 0.35, pointRadius: 2 }
+    ]);
+    // Optional secondary charts: reuse overall if dedicated series not available
+    if (document.getElementById('seasonalitySrpChart')) {
+        mk('seasonalitySrpChart', [
+            { label: 'Current year weekly', data: curData, borderColor: '#22c55e', backgroundColor: 'transparent', borderWidth: 2, fill: false, tension: 0.35, pointRadius: 2 }
+        ]);
+    }
+    if (document.getElementById('seasonalityVdpChart')) {
+        mk('seasonalityVdpChart', [
+            { label: 'Prior year weekly', data: priorData, borderColor: '#f59e0b', backgroundColor: 'transparent', borderWidth: 2, fill: false, tension: 0.35, pointRadius: 2 }
+        ]);
+    }
+}
+function renderAllLivePanels() {
+    renderCampaigns();
+    renderHostnames();
+    renderTopPages();
+    renderTopContent();
+    renderAllLivePanels();
+    renderWeekly();
+}
+
 
 const arrow=v=>v===null?'':parseFloat(v)>=0?'▲':'▼';
 const changeClass=v=>v===null?'neutral':parseFloat(v)>=0?'up':'down';
@@ -458,7 +604,7 @@ function render() {
     renderMetrics(curr, comp);
     renderComparison(curr, comp);
     renderInsights(curr, comp);
-    renderHighBounce();
+    renderAllLivePanels();
     renderSeasonality();
 }
 
@@ -530,73 +676,7 @@ function renderChart(curr, comp) {
 }
 
 
-function renderSeasonality() {
-    if (!document.getElementById('seasonalityChart') || typeof WEEKLY_2025 === 'undefined') return;
-    const makeOptions = (color, fill = true) => ({
-        borderColor: color,
-        backgroundColor: fill ? (color === '#22c55e' ? 'rgba(34,197,94,0.10)' : color === '#3b82f6' ? 'rgba(59,130,246,0.10)' : 'rgba(245,158,11,0.10)') : 'transparent',
-        borderWidth: 2.5,
-        fill,
-        tension: 0.35,
-        pointRadius: 3,
-        pointHoverRadius: 5,
-        pointBackgroundColor: color
-    });
-    const build = (id, dataset, label, color, existing) => {
-        if (existing) existing.destroy();
-        return new Chart(document.getElementById(id).getContext('2d'), {
-            type: 'line',
-            data: { labels: dataset.labels, datasets: [{ label, data: dataset.sessions, ...makeOptions(color) }] },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
-                scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
-            }
-        });
-    };
-    if (seasonalityChart) seasonalityChart.destroy();
-    seasonalityChart = new Chart(document.getElementById('seasonalityChart').getContext('2d'), {
-        type: 'line',
-        data: { labels: WEEKLY_2025.overall_2025.labels, datasets: [{ label: 'Weekly Sessions (2025 Total Website Traffic)', data: WEEKLY_2025.overall_2025.sessions, ...makeOptions('#22c55e', false) }, { label: 'Weekly Sessions (2026 Total Website Traffic)', data: WEEKLY_2025.overall_2026.sessions, ...makeOptions('#10b981', false) }] },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `Sessions: ${Number(ctx.raw).toLocaleString()}` } } },
-            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
-        }
-    });
-    if (seasonalitySrpChart) seasonalitySrpChart.destroy();
-    seasonalitySrpChart = new Chart(document.getElementById('seasonalitySrpChart').getContext('2d'), {
-        type: 'line',
-        data: {
-            labels: WEEKLY_2025.new_2025.labels,
-            datasets: [
-                { label: 'Weekly Sessions (2025 New Traffic)', data: WEEKLY_2025.new_2025.sessions, ...makeOptions('#3b82f6', false) },
-                { label: 'Weekly Sessions (2026 New Traffic)', data: WEEKLY_2025.new_2026.sessions, ...makeOptions('#60a5fa', false) }
-            ]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
-            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
-        }
-    });
-    if (seasonalityVdpChart) seasonalityVdpChart.destroy();
-    seasonalityVdpChart = new Chart(document.getElementById('seasonalityVdpChart').getContext('2d'), {
-        type: 'line',
-        data: {
-            labels: WEEKLY_2025.used_2025.labels,
-            datasets: [
-                { label: 'Weekly Sessions (2025 Used Traffic)', data: WEEKLY_2025.used_2025.sessions, ...makeOptions('#f59e0b', false) },
-                { label: 'Weekly Sessions (2026 Used Traffic)', data: WEEKLY_2025.used_2026.sessions, ...makeOptions('#fbbf24', false) }
-            ]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#888', font: { size: 12 } } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString()}` } } },
-            scales: { y: { beginAtZero: false, grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#555' } }, x: { grid: { color: 'rgba(255,255,255,0.02)' }, ticks: { color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 14 } } }
-        }
-    });
-}
+function renderSeasonality() { renderWeekly(); }
 
 
 function renderMetrics(curr, comp) {
