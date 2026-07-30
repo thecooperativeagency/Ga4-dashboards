@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Luxury Brand Pressure · ABR + BHBMW · Baton Rouge PMA</title>
+<style>
+  :root {
+    --ink:#0f1419;
+    --muted:#5c6b7a;
+    --line:#e6ebf0;
+    --bg:#f4f6f8;
+    --card:#fff;
+    --audi:#bb0a30;
+    --bmw:#1c69d4;
+    --mb:#333;
+    --lexus:#1a1a1a;
+    --good:#0d7a4f;
+    --warn:#9a5b00;
+    --bad:#a11;
+    --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.45; }
+  .top {
+    background: linear-gradient(120deg, #111 0%, #1a2332 55%, #243044 100%);
+    color:#fff; padding:28px 20px 24px; border-bottom:4px solid #c8a24a;
+  }
+  .top .inner { max-width:1100px; margin:0 auto; }
+  .brand { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.65); font-weight:600; }
+  h1 { margin:8px 0 6px; font-size:26px; letter-spacing:-.03em; font-weight:750; }
+  .sub { color:rgba(255,255,255,.78); font-size:14px; max-width:70ch; }
+  .meta { margin-top:10px; font-size:12px; color:rgba(255,255,255,.6); }
+  .wrap { max-width:1100px; margin:0 auto; padding:18px 16px 64px; }
+  .verdict {
+    background:#111; color:#fff; padding:16px 18px; margin:16px 0;
+  }
+  .verdict h2 { margin:0 0 10px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.65); }
+  .verdict ol { margin:0; padding-left:1.15rem; }
+  .verdict li { margin:0 0 8px; font-size:14px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 14px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 14px; }
+  @media (max-width:820px) {
+    .grid3, .grid2 { grid-template-columns:1fr; }
+  }
+  .stat, .card {
+    background:var(--card); border:1px solid var(--line); padding:14px;
+  }
+  .stat .k { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .stat .v { font-size:26px; font-weight:750; letter-spacing:-.03em; margin-top:4px; font-variant-numeric:tabular-nums; }
+  .stat .s { font-size:12px; color:var(--muted); margin-top:2px; }
+  .card h2 { margin:0 0 4px; font-size:17px; letter-spacing:-.02em; }
+  .card h3 { margin:16px 0 8px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+  .when { font-size:12px; color:var(--muted); margin-bottom:10px; }
+  .why {
+    background:#eef2f6; border-left:4px solid #c8a24a; padding:10px 12px; margin:0 0 14px; font-size:13px;
+  }
+  .table-scroll { overflow-x:auto; margin:0 0 8px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; min-width:520px; }
+  th, td { padding:8px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  th { font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  tr.total td { font-weight:750; border-top:2px solid var(--ink); background:#fafafa; }
+  tr.hl-audi td { background:rgba(187,10,48,.06); }
+  tr.hl-bmw td { background:rgba(28,105,212,.06); }
+  .barwrap { display:flex; align-items:center; gap:8px; }
+  .bar { height:10px; border-radius:2px; background:#ddd; flex:1; max-width:160px; overflow:hidden; }
+  .bar > i { display:block; height:100%; background:#1c69d4; }
+  .bar.audi > i { background:var(--audi); }
+  .bar.nola > i { background:#666; }
+  .bar.la > i { background:#999; }
+  .pill {
+    display:inline-block; font-size:10px; letter-spacing:.06em; text-transform:uppercase;
+    border:1px solid var(--line); padding:3px 7px; font-weight:700; margin-right:6px;
+  }
+  .pill.good { color:var(--good); border-color:#bfe5d3; }
+  .pill.warn { color:var(--warn); border-color:#efd3a0; }
+  .pill.bad { color:var(--bad); border-color:#f0c0c0; }
+  .note { font-size:12px; color:var(--muted); margin:8px 0 0; }
+  footer {
+    margin-top:28px; padding-top:14px; border-top:1px solid var(--line);
+    font-size:11px; color:var(--muted);
+  }
+  .charts { display:grid; grid-template-columns:1.2fr .8fr; gap:12px; }
+  @media (max-width:900px) { .charts { grid-template-columns:1fr; } }
+  .rowbar { display:grid; grid-template-columns:110px 1fr 64px; gap:8px; align-items:center; margin:0 0 7px; font-size:12px; }
+  .rowbar .track { background:#e8edf2; height:14px; position:relative; }
+  .rowbar .fill { height:100%; }
+  .rowbar .lbl { font-weight:600; }
+  .rowbar .n { text-align:right; font-variant-numeric:tabular-nums; color:var(--muted); }
+  .split { display:flex; height:14px; width:100%; background:#e8edf2; }
+  .split span { display:block; height:100%; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="inner">
+      <div class="brand">The Cooperative Agency · Market demand + store capture brief</div>
+      <h1>Luxury brand pressure · ABR + BHBMW</h1>
+      <div class="sub">
+        How much brand / make-model search demand exists in the Baton Rouge PMA and the immediate outside market (New Orleans DMA + Louisiana),
+        compared with the traffic Audi Baton Rouge and Brian Harris BMW are actually getting — and where ABR should draw the paid line.
+      </div>
+      <div class="meta">
+        Generated 2026-07-30 · Keyword Planner (Google Ads account Audi Baton Rouge 3995837733) · GA4 properties BHBMW 334199347 + ABR 381984706 · ABR paid metrics last 30 days
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="verdict">
+      <h2>Decision verdict</h2>
+      <ol>
+        <li><strong>In the Baton Rouge DMA, Audi brand-root demand sits behind BMW, Mercedes-Benz, and Lexus</strong> (1,600 vs 2,900 each on exact brand keywords). ABR is not swimming in the same brand-search pool as BHBMW.</li>
+        <li><strong>Store traffic vs brand pressure:</strong> last 30 days GA4 sessions — BHBMW <strong>28,308</strong> · ABR <strong>18,489</strong>. Against BTR brand-root demand, both stores’ search-channel capture indexes are similar (~4× organic+paid search sessions per brand-root monthly search). ABR is not “failing BMW’s game”; it has a smaller brand-demand base.</li>
+        <li><strong>ABR paid is leaving brand coverage on the table:</strong> Brand campaign search impression share ~<strong>58%</strong>, with ~<strong>34% lost to budget</strong> and only ~8% to rank. Brand spend is only ~$150 / 30 days at ~$0.39 CPC with strong conversions. Draw the first line here: fund brand until budget-lost IS ≈ 0.</li>
+        <li><strong>Make-model pressure for stocking + bids:</strong> BTR DMA — BMW <strong>X5 / X6</strong> lead, then X3/X7. Audi — <strong>Q5</strong> leads, then Q8 / Q7 / Q3. Outside market (New Orleans DMA) is larger on every brand; use it for conquest reach, not as the primary stocking mirror for BTR metal.</li>
+        <li><strong>Spend line order:</strong> (1) finish ABR brand budget-loss → (2) model/local (Q5, Q7, “audi baton rouge”) → (3) conquest only after 1–2 hold CPA. Stop when losses flip from budget to rank and incremental CPA breaks target.</li>
+      </ol>
+    </div>
+
+    <div class="why">
+      <strong>How to read this.</strong>
+      <em>Market pressure</em> = Google Keyword Planner average monthly searches (estimates, not people counted twice-cleanly).
+      <em>Store traffic</em> = GA4 sessions on each rooftop (all channels).
+      These are <strong>different units</strong> — we compare them as a directional capture index, not a true share of voice.
+      Geos corrected: <strong>Baton Rouge DMA 200716</strong> · <strong>New Orleans DMA 200622</strong> · <strong>Louisiana 21151</strong>.
+      BHBMW Google Ads is not on Pipeboard yet — BHBMW side is GA4 traffic only. ABR has GA4 + paid.
+    </div>
+
+    <div class="grid3">
+      <div class="stat">
+        <div class="k">BTR DMA · Audi brand-root</div>
+        <div class="v">1,600</div>
+        <div class="s">avg monthly searches · keyword “audi”</div>
+      </div>
+      <div class="stat">
+        <div class="k">BTR DMA · BMW brand-root</div>
+        <div class="v">2,900</div>
+        <div class="s">avg monthly searches · keyword “bmw”</div>
+      </div>
+      <div class="stat">
+        <div class="k">Core four gap (BTR)</div>
+        <div class="v">−45%</div>
+        <div class="s">Audi brand-root vs BMW / MB / Lexus (2,900)</div>
+      </div>
+      <div class="stat">
+        <div class="k">ABR site sessions · 30d</div>
+        <div class="v">18,489</div>
+        <div class="s">GA4 · all channels</div>
+      </div>
+      <div class="stat">
+        <div class="k">BHBMW site sessions · 30d</div>
+        <div class="v">28,308</div>
+        <div class="s">GA4 · all channels · +53% vs ABR</div>
+      </div>
+      <div class="stat">
+        <div class="k">ABR brand paid IS</div>
+        <div class="v">58%</div>
+        <div class="s">34% lost to budget · 8% to rank</div>
+      </div>
+    </div>
+
+    <!-- BRAND PRESSURE -->
+    <section class="card">
+      <h2>1 · Brand / make pressure</h2>
+      <div class="when">Exact brand-root keywords · Google Keyword Planner · Google Search · English</div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Brand</th>
+              <th class="num">Baton Rouge DMA</th>
+              <th class="num">New Orleans DMA</th>
+              <th class="num">Louisiana</th>
+              <th>BTR bar (vs BMW)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hl-bmw"><td><strong>BMW</strong></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">18,100</td>
+              <td><div class="barwrap"><div class="bar"><i style="width:100%"></i></div></div></td></tr>
+            <tr><td><strong>Mercedes-Benz</strong> <span class="note">(mercedes benz)</span></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">12,100</td>
+              <td><div class="barwrap"><div class="bar"><i style="width:100%"></i></div></div></td></tr>
+            <tr><td><strong>Lexus</strong></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">12,100</td>
+              <td><div class="barwrap"><div class="bar"><i style="width:100%"></i></div></div></td></tr>
+            <tr class="hl-audi"><td><strong>Audi</strong></td><td class="num">1,600</td><td class="num">2,900</td><td class="num">8,100</td>
+              <td><div class="barwrap"><div class="bar audi"><i style="width:55%"></i></div></div></td></tr>
+            <tr><td>Tesla</td><td class="num">2,900</td><td class="num">6,600</td><td class="num">14,800</td>
+              <td><div class="barwrap"><div class="bar"><i style="width:100%"></i></div></div></td></tr>
+            <tr><td>Cadillac</td><td class="num">1,900</td><td class="num">4,400</td><td class="num">9,900</td>
+              <td><div class="barwrap"><div class="bar"><i style="width:66%"></i></div></div></td></tr>
+            <tr><td>Porsche</td><td class="num">1,600</td><td class="num">3,600</td><td class="num">8,100</td>
+              <td><div class="barwrap"><div class="bar"><i style="width:55%"></i></div></div></td></tr>
+            <tr><td>Genesis</td><td class="num">—*</td><td class="num">—*</td><td class="num">—*</td><td class="note">in full export set; not top-seeded this pass</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">*Core four + major luxury shown from exact seeds. Jaguar omitted from decision table (animal/other intent inflates Planner). New Orleans DMA = immediate outside market pressure, not ABR’s primary PMA.</p>
+
+      <h3>Core four mix · Baton Rouge DMA</h3>
+      <div class="rowbar"><div class="lbl">BMW</div><div class="track"><div class="fill" style="width:28.2%;background:#1c69d4"></div></div><div class="n">28%</div></div>
+      <div class="rowbar"><div class="lbl">Mercedes</div><div class="track"><div class="fill" style="width:28.2%;background:#333"></div></div><div class="n">28%</div></div>
+      <div class="rowbar"><div class="lbl">Lexus</div><div class="track"><div class="fill" style="width:28.2%;background:#666"></div></div><div class="n">28%</div></div>
+      <div class="rowbar"><div class="lbl">Audi</div><div class="track"><div class="fill" style="width:15.5%;background:#bb0a30"></div></div><div class="n">16%</div></div>
+      <p class="note">Share of core-four brand-root sum in BTR DMA (2,900+2,900+2,900+1,600 = 10,300).</p>
+    </section>
+
+    <!-- MODEL SUBCHART -->
+    <section class="card" style="margin-top:14px">
+      <h2>2 · Make / model pressure (sub-chart)</h2>
+      <div class="when">Top model keywords · Baton Rouge DMA primary · New Orleans DMA outside · monthly searches</div>
+      <div class="charts">
+        <div>
+          <h3>BMW models · BTR DMA</h3>
+          <div class="rowbar"><div class="lbl">X5</div><div class="track"><div class="fill" style="width:100%;background:#1c69d4"></div></div><div class="n">720</div></div>
+          <div class="rowbar"><div class="lbl">X6</div><div class="track"><div class="fill" style="width:100%;background:#1c69d4"></div></div><div class="n">720</div></div>
+          <div class="rowbar"><div class="lbl">X3</div><div class="track"><div class="fill" style="width:67%;background:#1c69d4"></div></div><div class="n">480</div></div>
+          <div class="rowbar"><div class="lbl">M3 / M4</div><div class="track"><div class="fill" style="width:67%;background:#1c69d4"></div></div><div class="n">480</div></div>
+          <div class="rowbar"><div class="lbl">X7</div><div class="track"><div class="fill" style="width:54%;background:#1c69d4"></div></div><div class="n">390</div></div>
+          <div class="rowbar"><div class="lbl">X1 / X4</div><div class="track"><div class="fill" style="width:29%;background:#1c69d4"></div></div><div class="n">210</div></div>
+          <p class="note">Local: “bmw baton rouge” <strong>1,600</strong> / mo in BTR DMA.</p>
+
+          <h3>Audi models · BTR DMA</h3>
+          <div class="rowbar"><div class="lbl">Q5</div><div class="track"><div class="fill" style="width:100%;background:#bb0a30"></div></div><div class="n">390</div></div>
+          <div class="rowbar"><div class="lbl">Q8</div><div class="track"><div class="fill" style="width:82%;background:#bb0a30"></div></div><div class="n">320</div></div>
+          <div class="rowbar"><div class="lbl">Q7</div><div class="track"><div class="fill" style="width:67%;background:#bb0a30"></div></div><div class="n">260</div></div>
+          <div class="rowbar"><div class="lbl">Q3</div><div class="track"><div class="fill" style="width:67%;background:#bb0a30"></div></div><div class="n">260</div></div>
+          <div class="rowbar"><div class="lbl">A5</div><div class="track"><div class="fill" style="width:54%;background:#bb0a30"></div></div><div class="n">210</div></div>
+          <div class="rowbar"><div class="lbl">A3 / A4</div><div class="track"><div class="fill" style="width:44%;background:#bb0a30"></div></div><div class="n">170</div></div>
+          <div class="rowbar"><div class="lbl">A6</div><div class="track"><div class="fill" style="width:36%;background:#bb0a30"></div></div><div class="n">140</div></div>
+          <p class="note">Local: “audi baton rouge” <strong>2,400</strong> / mo in BTR DMA (Planner; treat as strong local brand+geo intent).</p>
+        </div>
+        <div>
+          <h3>Same models · outside (NOLA DMA)</h3>
+          <div class="table-scroll">
+            <table style="min-width:280px">
+              <thead><tr><th>Model kw</th><th class="num">NOLA</th><th class="num">BTR</th><th class="num">LA</th></tr></thead>
+              <tbody>
+                <tr><td>bmw x5</td><td class="num">1,600</td><td class="num">720</td><td class="num">3,600</td></tr>
+                <tr><td>bmw x3</td><td class="num">880</td><td class="num">480</td><td class="num">1,900</td></tr>
+                <tr><td>bmw x7</td><td class="num">880</td><td class="num">390</td><td class="num">1,900</td></tr>
+                <tr class="hl-audi"><td>audi q5</td><td class="num">880</td><td class="num">390</td><td class="num">1,900</td></tr>
+                <tr class="hl-audi"><td>audi q7</td><td class="num">590</td><td class="num">260</td><td class="num">1,300</td></tr>
+                <tr><td>lexus rx</td><td class="num">720</td><td class="num">390</td><td class="num">1,600</td></tr>
+                <tr><td>mercedes gle</td><td class="num">390</td><td class="num">210</td><td class="num">880</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Stocking read</h3>
+          <p class="note" style="color:var(--ink);font-size:13px">
+            <span class="pill good">Buy signal</span> Q5 remains the Audi demand leader in PMA — don’t go light if turn/gross work.<br/><br/>
+            <span class="pill good">Buy signal</span> BMW X5/X6 pressure supports depth on those lines at BHBMW.<br/><br/>
+            <span class="pill warn">Context</span> NOLA model demand is ~1.5–2× BTR — useful for paid reach radius, not a 1:1 BTR lot copy.<br/><br/>
+            <span class="pill">Sedans</span> A4/A6 and 3/5-series style demand trails crossovers in both DMAs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORE CAPTURE -->
+    <section class="card" style="margin-top:14px">
+      <h2>3 · Store traffic vs brand pressure</h2>
+      <div class="when">GA4 last 30 days (sessions) vs Keyword Planner brand-root (avg monthly searches) in Baton Rouge DMA</div>
+      <div class="grid2">
+        <div>
+          <h3>Brian Harris BMW</h3>
+          <div class="stat" style="margin-bottom:10px">
+            <div class="k">GA4 sessions · 30d</div>
+            <div class="v" style="color:var(--bmw)">28,308</div>
+            <div class="s">Users 19,768 · Engaged sessions 13,210</div>
+          </div>
+          <div class="table-scroll">
+            <table style="min-width:300px">
+              <thead><tr><th>Channel</th><th class="num">Sessions</th><th class="num">Share</th></tr></thead>
+              <tbody>
+                <tr><td>Direct</td><td class="num">11,029</td><td class="num">39%</td></tr>
+                <tr><td>Organic Search</td><td class="num">6,386</td><td class="num">23%</td></tr>
+                <tr><td>Paid Search</td><td class="num">5,583</td><td class="num">20%</td></tr>
+                <tr><td>Display</td><td class="num">1,512</td><td class="num">5%</td></tr>
+                <tr><td>Paid Social</td><td class="num">801</td><td class="num">3%</td></tr>
+                <tr><td>Other</td><td class="num">2,997</td><td class="num">11%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">BMW brand-root BTR: <strong>2,900</strong>/mo · Search sessions (org+paid) 11,969 → capture index <strong>~4.1×</strong></p>
+        </div>
+        <div>
+          <h3>Audi Baton Rouge</h3>
+          <div class="stat" style="margin-bottom:10px">
+            <div class="k">GA4 sessions · 30d</div>
+            <div class="v" style="color:var(--audi)">18,489</div>
+            <div class="s">Users 14,508 · Engaged sessions 7,093</div>
+          </div>
+          <div class="table-scroll">
+            <table style="min-width:300px">
+              <thead><tr><th>Channel</th><th class="num">Sessions</th><th class="num">Share</th></tr></thead>
+              <tbody>
+                <tr><td>Direct</td><td class="num">6,724</td><td class="num">36%</td></tr>
+                <tr><td>Organic Search</td><td class="num">3,981</td><td class="num">22%</td></tr>
+                <tr><td>Paid Search</td><td class="num">2,808</td><td class="num">15%</td></tr>
+                <tr><td>Referral</td><td class="num">2,076</td><td class="num">11%</td></tr>
+                <tr><td>Paid Social</td><td class="num">1,602</td><td class="num">9%</td></tr>
+                <tr><td>Other</td><td class="num">1,298</td><td class="num">7%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">Audi brand-root BTR: <strong>1,600</strong>/mo · Search sessions (org+paid) 6,789 → capture index <strong>~4.2×</strong></p>
+        </div>
+      </div>
+
+      <h3>Head-to-head</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th class="num">BHBMW</th>
+              <th class="num">ABR</th>
+              <th class="num">Read</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Brand-root demand (BTR DMA)</td><td class="num">2,900</td><td class="num">1,600</td><td class="num">BMW +81% demand base</td></tr>
+            <tr><td>GA4 sessions 30d</td><td class="num">28,308</td><td class="num">18,489</td><td class="num">BHBMW +53% traffic</td></tr>
+            <tr><td>GA4 sessions 365d</td><td class="num">283,276</td><td class="num">142,377</td><td class="num">BHBMW ~2.0× year</td></tr>
+            <tr><td>Search sessions 30d (org+paid)</td><td class="num">11,969</td><td class="num">6,789</td><td class="num">BHBMW +76%</td></tr>
+            <tr><td>Capture index (search sess ÷ brand-root)</td><td class="num">~4.1×</td><td class="num">~4.2×</td><td class="num">Essentially tied</td></tr>
+            <tr><td>Paid Search share of site</td><td class="num">20%</td><td class="num">15%</td><td class="num">BHBMW more paid-dependent</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        <strong>Implication:</strong> ABR’s lower total traffic is largely explained by a smaller brand-search base, not a collapse in capture efficiency.
+        The fix is not “match BHBMW session volume.” It’s (a) fully harvest Audi brand/local demand in PMA, (b) win model demand (Q5/Q7), (c) selective conquest where CPA works.
+      </p>
+    </section>
+
+    <!-- ABR SPEND LINE -->
+    <section class="card" style="margin-top:14px">
+      <h2>4 · ABR paid · how much we’re missing · spend line</h2>
+      <div class="when">Google Ads last 30 days · customer 3995837733 · Search impression share on live campaigns</div>
+      <div class="grid3">
+        <div class="stat"><div class="k">Account spend 30d</div><div class="v">$2,280</div><div class="s">1,064 clicks · ~134 conv</div></div>
+        <div class="stat"><div class="k">Brand campaign spend</div><div class="v">$150</div><div class="s">380 clicks · ~$0.39 CPC · ~82 conv</div></div>
+        <div class="stat"><div class="k">Brand IS gap</div><div class="v">42%</div><div class="s">mostly budget (34 pts), not rank (8 pts)</div></div>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th class="num">Cost</th>
+              <th class="num">Clicks</th>
+              <th class="num">IS</th>
+              <th class="num">Lost budget</th>
+              <th class="num">Lost rank</th>
+              <th>Line</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hl-audi">
+              <td><strong>Brand | Paid Search</strong></td>
+              <td class="num">$150</td><td class="num">380</td><td class="num">58%</td><td class="num">34%</td><td class="num">8%</td>
+              <td><span class="pill bad">Fund first</span></td>
+            </tr>
+            <tr>
+              <td>Sales Offers</td>
+              <td class="num">$450</td><td class="num">116</td><td class="num">69%</td><td class="num">10%</td><td class="num">22%</td>
+              <td><span class="pill warn">Rank / creative</span></td>
+            </tr>
+            <tr>
+              <td>Service</td>
+              <td class="num">$309</td><td class="num">186</td><td class="num">48%</td><td class="num">24%</td><td class="num">28%</td>
+              <td><span class="pill warn">Budget + rank</span></td>
+            </tr>
+            <tr>
+              <td>Conquest</td>
+              <td class="num">$414</td><td class="num">111</td><td class="num">56%</td><td class="num">16%</td><td class="num">28%</td>
+              <td><span class="pill">After brand</span></td>
+            </tr>
+            <tr>
+              <td>New Inventory · Q5</td>
+              <td class="num">$119</td><td class="num">42</td><td class="num">68%</td><td class="num">1%</td><td class="num">31%</td>
+              <td><span class="pill warn">Rank-bound</span></td>
+            </tr>
+            <tr>
+              <td>New Inventory · Q7</td>
+              <td class="num">$88</td><td class="num">32</td><td class="num">67%</td><td class="num">1%</td><td class="num">32%</td>
+              <td><span class="pill warn">Rank-bound</span></td>
+            </tr>
+            <tr>
+              <td>Locations</td>
+              <td class="num">$303</td><td class="num">69</td><td class="num">62%</td><td class="num">24%</td><td class="num">14%</td>
+              <td><span class="pill warn">Budget</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Where to draw the line</h3>
+      <ol style="margin:0;padding-left:1.2rem;font-size:14px">
+        <li><strong>Brand:</strong> Raise budget until <em>search budget lost IS ≈ 0%</em>. Keep funding while CPA/lead quality holds. Only then treat remaining gap as rank/competitors.</li>
+        <li><strong>Model / local:</strong> Q5, Q7, “audi baton rouge”, service — fund when IS loss is still budget-driven; if loss is mostly rank (as Q5/Q7 are now), fix bids/quality/creative before dumping budget.</li>
+        <li><strong>Conquest:</strong> Hard-cap by CPA vs close rate. Do not scale while brand still shows double-digit budget-lost IS.</li>
+        <li><strong>Stop:</strong> Next dollar is almost all rank war and conversions flat — that is the line.</li>
+      </ol>
+      <p class="note" style="margin-top:12px">
+        Rough brand upside math (directional): Brand is at 58% IS with strong conv. Clearing the ~34% budget-loss band is the cheapest incremental traffic on the account — not matching BMW’s 28k sessions.
+      </p>
+    </section>
+
+    <!-- BUYING TIE-IN -->
+    <section class="card" style="margin-top:14px">
+      <h2>5 · Tie-in · inventory buying (ABR)</h2>
+      <div class="when">Market search is a demand prior — still subject to turn, front-end gross, and aged metal on the ground</div>
+      <ul style="margin:0;padding-left:1.2rem;font-size:14px">
+        <li><strong>Q5 first</strong> among Audi crossovers in BTR search pressure; keep depth aligned to turn.</li>
+        <li><strong>Q8 / Q7 / Q3</strong> secondary band — don’t starve if aged units already sit.</li>
+        <li><strong>Sedans (A4/A6)</strong> lower search pressure than crossovers — stock tighter unless gross/turn justify.</li>
+        <li><strong>Outside DMA (NOLA)</strong> shows larger absolute model demand — use for paid geo radius tests, not as a mandate to mirror NOLA mix on the BTR lot.</li>
+        <li><strong>Core-four reality:</strong> more shoppers start on BMW / MB / Lexus than Audi here — offers and conquest creative should steal on model/value, not on “equal brand heat.”</li>
+      </ul>
+    </section>
+
+    <footer>
+      Sources: Google Keyword Planner via ABR Google Ads (3995837733); geos Baton Rouge DMA 200716, New Orleans DMA 200622, Louisiana 21151.
+      GA4 BHBMW property 334199347 · ABR 381984706 · bhbmwecommerce@gmail.com token path.
+      ABR campaign metrics last 30 days via Pipeboard.
+      Keyword Planner volumes are Google estimates. Capture index is directional only (sessions ÷ brand-root searches).
+      BHBMW Google Ads not connected on Pipeboard — paid IS for BMW rooftop not in this build.
+      The Cooperative Agency · internal decision brief · not a multi-store client hub.
+    </footer>
+  </div>
+</body>
+</html>
