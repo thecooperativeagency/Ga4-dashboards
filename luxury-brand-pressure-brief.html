@@ -3,21 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Luxury Brand Pressure · ABR + BHBMW · Baton Rouge PMA</title>
+<title>Luxury Brand Pressure · ABR + BHBMW · Market Demand Brief</title>
 <style>
   :root {
-    --ink:#0f1419;
-    --muted:#5c6b7a;
-    --line:#e6ebf0;
-    --bg:#f4f6f8;
-    --card:#fff;
-    --audi:#bb0a30;
-    --bmw:#1c69d4;
-    --mb:#333;
-    --lexus:#1a1a1a;
-    --good:#0d7a4f;
-    --warn:#9a5b00;
-    --bad:#a11;
+    --ink:#0f1419; --muted:#5c6b7a; --line:#e6ebf0; --bg:#f4f6f8; --card:#fff;
+    --audi:#bb0a30; --bmw:#1c69d4; --good:#0d7a4f; --warn:#9a5b00; --bad:#a11;
     --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   * { box-sizing: border-box; }
@@ -26,83 +16,80 @@
     background: linear-gradient(120deg, #111 0%, #1a2332 55%, #243044 100%);
     color:#fff; padding:28px 20px 24px; border-bottom:4px solid #c8a24a;
   }
-  .top .inner { max-width:1100px; margin:0 auto; }
+  .top .inner { max-width:1140px; margin:0 auto; }
   .brand { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.65); font-weight:600; }
   h1 { margin:8px 0 6px; font-size:26px; letter-spacing:-.03em; font-weight:750; }
-  .sub { color:rgba(255,255,255,.78); font-size:14px; max-width:70ch; }
+  .sub { color:rgba(255,255,255,.78); font-size:14px; max-width:75ch; }
   .meta { margin-top:10px; font-size:12px; color:rgba(255,255,255,.6); }
-  .wrap { max-width:1100px; margin:0 auto; padding:18px 16px 64px; }
-  .verdict {
-    background:#111; color:#fff; padding:16px 18px; margin:16px 0;
-  }
+  .wrap { max-width:1140px; margin:0 auto; padding:18px 16px 64px; }
+  .verdict { background:#111; color:#fff; padding:16px 18px; margin:16px 0; }
   .verdict h2 { margin:0 0 10px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.65); }
   .verdict ol { margin:0; padding-left:1.15rem; }
   .verdict li { margin:0 0 8px; font-size:14px; }
   .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 14px; }
   .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 14px; }
-  @media (max-width:820px) {
-    .grid3, .grid2 { grid-template-columns:1fr; }
-  }
-  .stat, .card {
-    background:var(--card); border:1px solid var(--line); padding:14px;
-  }
+  @media (max-width:860px) { .grid3, .grid2 { grid-template-columns:1fr; } }
+  .stat, .card { background:var(--card); border:1px solid var(--line); padding:14px; }
   .stat .k { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600; }
   .stat .v { font-size:26px; font-weight:750; letter-spacing:-.03em; margin-top:4px; font-variant-numeric:tabular-nums; }
   .stat .s { font-size:12px; color:var(--muted); margin-top:2px; }
+  .card { margin:0 0 14px; }
   .card h2 { margin:0 0 4px; font-size:17px; letter-spacing:-.02em; }
   .card h3 { margin:16px 0 8px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:700; }
   .when { font-size:12px; color:var(--muted); margin-bottom:10px; }
-  .why {
-    background:#eef2f6; border-left:4px solid #c8a24a; padding:10px 12px; margin:0 0 14px; font-size:13px;
-  }
+  .why { background:#eef2f6; border-left:4px solid #c8a24a; padding:10px 12px; margin:0 0 14px; font-size:13px; }
   .table-scroll { overflow-x:auto; margin:0 0 8px; }
-  table { width:100%; border-collapse:collapse; font-size:13px; min-width:520px; }
-  th, td { padding:8px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  table { width:100%; border-collapse:collapse; font-size:13px; min-width:560px; }
+  th, td { padding:7px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
   th { font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600; }
   td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
   tr.total td { font-weight:750; border-top:2px solid var(--ink); background:#fafafa; }
+  tr.sub td { font-weight:650; background:#f7f9fb; }
   tr.hl-audi td { background:rgba(187,10,48,.06); }
   tr.hl-bmw td { background:rgba(28,105,212,.06); }
-  .barwrap { display:flex; align-items:center; gap:8px; }
-  .bar { height:10px; border-radius:2px; background:#ddd; flex:1; max-width:160px; overflow:hidden; }
-  .bar > i { display:block; height:100%; background:#1c69d4; }
-  .bar.audi > i { background:var(--audi); }
-  .bar.nola > i { background:#666; }
-  .bar.la > i { background:#999; }
+  tr.muted td { color:var(--muted); font-size:12px; }
   .pill {
     display:inline-block; font-size:10px; letter-spacing:.06em; text-transform:uppercase;
-    border:1px solid var(--line); padding:3px 7px; font-weight:700; margin-right:6px;
+    border:1px solid var(--line); padding:3px 7px; font-weight:700; margin-right:6px; margin-bottom:4px;
   }
   .pill.good { color:var(--good); border-color:#bfe5d3; }
   .pill.warn { color:var(--warn); border-color:#efd3a0; }
   .pill.bad { color:var(--bad); border-color:#f0c0c0; }
   .note { font-size:12px; color:var(--muted); margin:8px 0 0; }
-  footer {
-    margin-top:28px; padding-top:14px; border-top:1px solid var(--line);
-    font-size:11px; color:var(--muted);
-  }
-  .charts { display:grid; grid-template-columns:1.2fr .8fr; gap:12px; }
-  @media (max-width:900px) { .charts { grid-template-columns:1fr; } }
-  .rowbar { display:grid; grid-template-columns:110px 1fr 64px; gap:8px; align-items:center; margin:0 0 7px; font-size:12px; }
-  .rowbar .track { background:#e8edf2; height:14px; position:relative; }
+  .rowbar { display:grid; grid-template-columns:100px 1fr 70px; gap:8px; align-items:center; margin:0 0 6px; font-size:12px; }
+  .rowbar .track { background:#e8edf2; height:12px; }
   .rowbar .fill { height:100%; }
-  .rowbar .lbl { font-weight:600; }
   .rowbar .n { text-align:right; font-variant-numeric:tabular-nums; color:var(--muted); }
-  .split { display:flex; height:14px; width:100%; background:#e8edf2; }
-  .split span { display:block; height:100%; }
+  .brand-block { border:1px solid var(--line); margin:0 0 12px; }
+  .brand-block .bh {
+    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    padding:10px 12px; background:#f7f9fb; border-bottom:1px solid var(--line); font-weight:700;
+  }
+  .brand-block .bh .name { font-size:14px; }
+  .brand-block .bh .nums { font-size:12px; font-weight:600; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .brand-block table { min-width:480px; }
+  footer { margin-top:28px; padding-top:14px; border-top:1px solid var(--line); font-size:11px; color:var(--muted); }
+  .tabs { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }
+  .tabs button {
+    appearance:none; border:1px solid var(--line); background:#fff; padding:8px 12px;
+    font:inherit; font-size:12px; font-weight:700; cursor:pointer;
+  }
+  .tabs button.active { border-color:#111; background:#111; color:#fff; }
+  .panel { display:none; }
+  .panel.active { display:block; }
 </style>
 </head>
 <body>
   <div class="top">
     <div class="inner">
-      <div class="brand">The Cooperative Agency · Market demand + store capture brief</div>
+      <div class="brand">The Cooperative Agency · Market demand brief</div>
       <h1>Luxury brand pressure · ABR + BHBMW</h1>
       <div class="sub">
-        How much brand / make-model search demand exists in the Baton Rouge PMA and the immediate outside market (New Orleans DMA + Louisiana),
-        compared with the traffic Audi Baton Rouge and Brian Harris BMW are actually getting — and where ABR should draw the paid line.
+        Brand-root and top-5 model search demand in the Baton Rouge PMA, New Orleans DMA, and Louisiana —
+        compared with rooftop traffic at Audi Baton Rouge and Brian Harris BMW, plus where ABR should draw the paid line.
       </div>
       <div class="meta">
-        Generated 2026-07-30 · Keyword Planner (Google Ads account Audi Baton Rouge 3995837733) · GA4 properties BHBMW 334199347 + ABR 381984706 · ABR paid metrics last 30 days
+        Updated 2026-07-30 · Keyword Planner via ABR Google Ads 3995837733 · GA4 BHBMW 334199347 + ABR 381984706 · ABR paid last 30 days
       </div>
     </div>
   </div>
@@ -111,163 +98,428 @@
     <div class="verdict">
       <h2>Decision verdict</h2>
       <ol>
-        <li><strong>In the Baton Rouge DMA, Audi brand-root demand sits behind BMW, Mercedes-Benz, and Lexus</strong> (1,600 vs 2,900 each on exact brand keywords). ABR is not swimming in the same brand-search pool as BHBMW.</li>
-        <li><strong>Store traffic vs brand pressure:</strong> last 30 days GA4 sessions — BHBMW <strong>28,308</strong> · ABR <strong>18,489</strong>. Against BTR brand-root demand, both stores’ search-channel capture indexes are similar (~4× organic+paid search sessions per brand-root monthly search). ABR is not “failing BMW’s game”; it has a smaller brand-demand base.</li>
-        <li><strong>ABR paid is leaving brand coverage on the table:</strong> Brand campaign search impression share ~<strong>58%</strong>, with ~<strong>34% lost to budget</strong> and only ~8% to rank. Brand spend is only ~$150 / 30 days at ~$0.39 CPC with strong conversions. Draw the first line here: fund brand until budget-lost IS ≈ 0.</li>
-        <li><strong>Make-model pressure for stocking + bids:</strong> BTR DMA — BMW <strong>X5 / X6</strong> lead, then X3/X7. Audi — <strong>Q5</strong> leads, then Q8 / Q7 / Q3. Outside market (New Orleans DMA) is larger on every brand; use it for conquest reach, not as the primary stocking mirror for BTR metal.</li>
-        <li><strong>Spend line order:</strong> (1) finish ABR brand budget-loss → (2) model/local (Q5, Q7, “audi baton rouge”) → (3) conquest only after 1–2 hold CPA. Stop when losses flip from budget to rank and incremental CPA breaks target.</li>
+        <li><strong>Planner numbers are real Google estimates, not exact counts.</strong> Volumes are bucketed (rungs like 1,600 / 2,900 / 8,100 / 18,100). Use them for ranking and tiers — not “exactly 18,100 people.”</li>
+        <li><strong>Louisiana brand-root:</strong> BMW <strong>18,100</strong> · Tesla 14,800 · MB/Lexus <strong>12,100</strong> · Cadillac 9,900 · Audi/Porsche/Genesis <strong>8,100</strong>. Audi sits clearly below the BMW/MB/Lexus band on the head term.</li>
+        <li><strong>Root + top 5 models (LA stack):</strong> BMW <strong>32,300</strong> · Lexus <strong>30,000</strong> · Tesla 26,100 · Cadillac 19,210 · Acura 19,500 · Porsche 17,580 · Genesis 16,980 · MB 16,650 · <strong>Audi 15,080</strong> · Infiniti 11,300. Stacks can overlap keywords — not unique searchers.</li>
+        <li><strong>BTR PMA models:</strong> BMW led by X5/X6; Audi by <strong>Q5 then Q8/Q7/Q3</strong>; Lexus model demand is heavy (GX 550 / RX 350). Stock and bids should follow model pressure, not brand-root alone.</li>
+        <li><strong>Store capture:</strong> BHBMW 28,308 vs ABR 18,489 sessions (30d). Search capture index vs brand-root is essentially tied (~4.1× vs ~4.2×). ABR’s lower traffic tracks a smaller demand base more than poor capture.</li>
+        <li><strong>ABR spend line:</strong> Brand paid IS ~58% with ~34% lost to budget. Fund brand until budget-lost IS ≈ 0, then model/local, conquest last.</li>
       </ol>
     </div>
 
     <div class="why">
-      <strong>How to read this.</strong>
-      <em>Market pressure</em> = Google Keyword Planner average monthly searches (estimates, not people counted twice-cleanly).
-      <em>Store traffic</em> = GA4 sessions on each rooftop (all channels).
-      These are <strong>different units</strong> — we compare them as a directional capture index, not a true share of voice.
-      Geos corrected: <strong>Baton Rouge DMA 200716</strong> · <strong>New Orleans DMA 200622</strong> · <strong>Louisiana 21151</strong>.
-      BHBMW Google Ads is not on Pipeboard yet — BHBMW side is GA4 traffic only. ABR has GA4 + paid.
+      <strong>What these numbers are.</strong>
+      <em>Avg. monthly searches</em> from Google Keyword Planner for an exact keyword in a geo (Google Search, English).
+      They are <strong>bucketed estimates</strong> — good for order-of-magnitude and competitive ranking; not a census of shoppers.
+      Identical values (e.g. several brands at 2,900 in BTR) mean <strong>same Planner band</strong>, not a true tie to the search.
+      <strong>Brand-root</strong> = head term only (<code>bmw</code>, <code>audi</code>).
+      <strong>Top 5 models</strong> = five highest model keywords we seeded for that brand.
+      <strong>Stack</strong> = root + top 5 (upper-bound planning total; keywords can overlap).
+      Geos: Baton Rouge DMA <code>200716</code> · New Orleans DMA <code>200622</code> · Louisiana <code>21151</code>.
     </div>
 
     <div class="grid3">
       <div class="stat">
-        <div class="k">BTR DMA · Audi brand-root</div>
-        <div class="v">1,600</div>
-        <div class="s">avg monthly searches · keyword “audi”</div>
+        <div class="k">LA · Audi brand-root</div>
+        <div class="v">8,100</div>
+        <div class="s">keyword “audi” · Planner bucket</div>
       </div>
       <div class="stat">
-        <div class="k">BTR DMA · BMW brand-root</div>
-        <div class="v">2,900</div>
-        <div class="s">avg monthly searches · keyword “bmw”</div>
+        <div class="k">LA · BMW brand-root</div>
+        <div class="v">18,100</div>
+        <div class="s">keyword “bmw” · ~2.2× Audi</div>
       </div>
       <div class="stat">
-        <div class="k">Core four gap (BTR)</div>
-        <div class="v">−45%</div>
-        <div class="s">Audi brand-root vs BMW / MB / Lexus (2,900)</div>
+        <div class="k">LA · Audi root + top 5</div>
+        <div class="v">15,080</div>
+        <div class="s">vs BMW stack 32,300</div>
       </div>
       <div class="stat">
-        <div class="k">ABR site sessions · 30d</div>
+        <div class="k">BTR · Audi top model</div>
+        <div class="v">Q5 · 390</div>
+        <div class="s">then Q8 320 · Q7/Q3 260</div>
+      </div>
+      <div class="stat">
+        <div class="k">ABR sessions · 30d</div>
         <div class="v">18,489</div>
-        <div class="s">GA4 · all channels</div>
-      </div>
-      <div class="stat">
-        <div class="k">BHBMW site sessions · 30d</div>
-        <div class="v">28,308</div>
-        <div class="s">GA4 · all channels · +53% vs ABR</div>
+        <div class="s">GA4 all channels</div>
       </div>
       <div class="stat">
         <div class="k">ABR brand paid IS</div>
         <div class="v">58%</div>
-        <div class="s">34% lost to budget · 8% to rank</div>
+        <div class="s">34% lost to budget · fund first</div>
       </div>
     </div>
 
-    <!-- BRAND PRESSURE -->
+    <!-- SECTION 1: accuracy + brand root -->
     <section class="card">
-      <h2>1 · Brand / make pressure</h2>
-      <div class="when">Exact brand-root keywords · Google Keyword Planner · Google Search · English</div>
+      <h2>1 · How accurate is Planner?</h2>
+      <div class="when">Straight answer before the tables</div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+          <tbody>
+            <tr><td>Is 18,100 / 8,100 a real estimate?</td><td><strong>Yes</strong> — Google’s own Keyword Planner average monthly searches for that exact keyword in Louisiana.</td></tr>
+            <tr><td>Is it exact?</td><td><strong>No</strong> — volumes snap to buckets (rungs). Not 18,147 people.</td></tr>
+            <tr><td>What is it good for?</td><td>Ranking brands/models, tiering demand, spend/stock direction.</td></tr>
+            <tr><td>What is it bad for?</td><td>Counting unique buyers, precise forecasts, or treating identical bucket values as true equality.</td></tr>
+            <tr><td>Why do BMW / MB / Lexus all show 2,900 in BTR?</td><td>Same <strong>bucket band</strong> in a small DMA — not proof of identical demand. LA statewide separates them (18.1k / 12.1k / 12.1k).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 2: brand root comparison -->
+    <section class="card">
+      <h2>2 · Brand-root pressure (head terms only)</h2>
+      <div class="when">Exact keywords · avg monthly searches · Google Search</div>
       <div class="table-scroll">
         <table>
           <thead>
             <tr>
-              <th>Brand</th>
+              <th>Brand keyword</th>
               <th class="num">Baton Rouge DMA</th>
               <th class="num">New Orleans DMA</th>
               <th class="num">Louisiana</th>
-              <th>BTR bar (vs BMW)</th>
+              <th>LA band</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="hl-bmw"><td><strong>BMW</strong></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">18,100</td>
-              <td><div class="barwrap"><div class="bar"><i style="width:100%"></i></div></div></td></tr>
-            <tr><td><strong>Mercedes-Benz</strong> <span class="note">(mercedes benz)</span></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">12,100</td>
-              <td><div class="barwrap"><div class="bar"><i style="width:100%"></i></div></div></td></tr>
-            <tr><td><strong>Lexus</strong></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">12,100</td>
-              <td><div class="barwrap"><div class="bar"><i style="width:100%"></i></div></div></td></tr>
-            <tr class="hl-audi"><td><strong>Audi</strong></td><td class="num">1,600</td><td class="num">2,900</td><td class="num">8,100</td>
-              <td><div class="barwrap"><div class="bar audi"><i style="width:55%"></i></div></div></td></tr>
-            <tr><td>Tesla</td><td class="num">2,900</td><td class="num">6,600</td><td class="num">14,800</td>
-              <td><div class="barwrap"><div class="bar"><i style="width:100%"></i></div></div></td></tr>
-            <tr><td>Cadillac</td><td class="num">1,900</td><td class="num">4,400</td><td class="num">9,900</td>
-              <td><div class="barwrap"><div class="bar"><i style="width:66%"></i></div></div></td></tr>
-            <tr><td>Porsche</td><td class="num">1,600</td><td class="num">3,600</td><td class="num">8,100</td>
-              <td><div class="barwrap"><div class="bar"><i style="width:55%"></i></div></div></td></tr>
-            <tr><td>Genesis</td><td class="num">—*</td><td class="num">—*</td><td class="num">—*</td><td class="note">in full export set; not top-seeded this pass</td></tr>
+            <tr class="hl-bmw"><td><strong>bmw</strong></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">18,100</td><td>Top tier</td></tr>
+            <tr><td><strong>tesla</strong></td><td class="num">2,900</td><td class="num">6,600</td><td class="num">14,800</td><td>Top tier</td></tr>
+            <tr><td><strong>mercedes benz</strong></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">12,100</td><td>High</td></tr>
+            <tr><td><strong>lexus</strong></td><td class="num">2,900</td><td class="num">5,400</td><td class="num">12,100</td><td>High</td></tr>
+            <tr><td><strong>cadillac</strong></td><td class="num">1,900</td><td class="num">4,400</td><td class="num">9,900</td><td>Mid-high</td></tr>
+            <tr class="hl-audi"><td><strong>audi</strong></td><td class="num">1,600</td><td class="num">2,900</td><td class="num">8,100</td><td>Mid</td></tr>
+            <tr><td><strong>porsche</strong></td><td class="num">1,600</td><td class="num">3,600</td><td class="num">8,100</td><td>Mid</td></tr>
+            <tr><td><strong>genesis</strong></td><td class="num">1,600</td><td class="num">3,600</td><td class="num">8,100</td><td>Mid</td></tr>
+            <tr><td><strong>acura</strong></td><td class="num">1,300</td><td class="num">2,400</td><td class="num">5,400</td><td>Lower mid</td></tr>
+            <tr><td><strong>infiniti</strong></td><td class="num">590</td><td class="num">1,300</td><td class="num">2,400</td><td>Lower</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">*Core four + major luxury shown from exact seeds. Jaguar omitted from decision table (animal/other intent inflates Planner). New Orleans DMA = immediate outside market pressure, not ABR’s primary PMA.</p>
-
-      <h3>Core four mix · Baton Rouge DMA</h3>
-      <div class="rowbar"><div class="lbl">BMW</div><div class="track"><div class="fill" style="width:28.2%;background:#1c69d4"></div></div><div class="n">28%</div></div>
-      <div class="rowbar"><div class="lbl">Mercedes</div><div class="track"><div class="fill" style="width:28.2%;background:#333"></div></div><div class="n">28%</div></div>
-      <div class="rowbar"><div class="lbl">Lexus</div><div class="track"><div class="fill" style="width:28.2%;background:#666"></div></div><div class="n">28%</div></div>
-      <div class="rowbar"><div class="lbl">Audi</div><div class="track"><div class="fill" style="width:15.5%;background:#bb0a30"></div></div><div class="n">16%</div></div>
-      <p class="note">Share of core-four brand-root sum in BTR DMA (2,900+2,900+2,900+1,600 = 10,300).</p>
+      <p class="note">BTR values that match (2,900) are the same Planner rung — use LA column for cleaner separation. NOLA = immediate outside market.</p>
     </section>
 
-    <!-- MODEL SUBCHART -->
-    <section class="card" style="margin-top:14px">
-      <h2>2 · Make / model pressure (sub-chart)</h2>
-      <div class="when">Top model keywords · Baton Rouge DMA primary · New Orleans DMA outside · monthly searches</div>
-      <div class="charts">
-        <div>
-          <h3>BMW models · BTR DMA</h3>
-          <div class="rowbar"><div class="lbl">X5</div><div class="track"><div class="fill" style="width:100%;background:#1c69d4"></div></div><div class="n">720</div></div>
-          <div class="rowbar"><div class="lbl">X6</div><div class="track"><div class="fill" style="width:100%;background:#1c69d4"></div></div><div class="n">720</div></div>
-          <div class="rowbar"><div class="lbl">X3</div><div class="track"><div class="fill" style="width:67%;background:#1c69d4"></div></div><div class="n">480</div></div>
-          <div class="rowbar"><div class="lbl">M3 / M4</div><div class="track"><div class="fill" style="width:67%;background:#1c69d4"></div></div><div class="n">480</div></div>
-          <div class="rowbar"><div class="lbl">X7</div><div class="track"><div class="fill" style="width:54%;background:#1c69d4"></div></div><div class="n">390</div></div>
-          <div class="rowbar"><div class="lbl">X1 / X4</div><div class="track"><div class="fill" style="width:29%;background:#1c69d4"></div></div><div class="n">210</div></div>
-          <p class="note">Local: “bmw baton rouge” <strong>1,600</strong> / mo in BTR DMA.</p>
+    <!-- SECTION 3: root + top 5 -->
+    <section class="card">
+      <h2>3 · Brand-root + top 5 models (stacks)</h2>
+      <div class="when">Primary planning view · switch geo · stack = root + top 5 model keywords (overlap possible)</div>
 
-          <h3>Audi models · BTR DMA</h3>
-          <div class="rowbar"><div class="lbl">Q5</div><div class="track"><div class="fill" style="width:100%;background:#bb0a30"></div></div><div class="n">390</div></div>
-          <div class="rowbar"><div class="lbl">Q8</div><div class="track"><div class="fill" style="width:82%;background:#bb0a30"></div></div><div class="n">320</div></div>
-          <div class="rowbar"><div class="lbl">Q7</div><div class="track"><div class="fill" style="width:67%;background:#bb0a30"></div></div><div class="n">260</div></div>
-          <div class="rowbar"><div class="lbl">Q3</div><div class="track"><div class="fill" style="width:67%;background:#bb0a30"></div></div><div class="n">260</div></div>
-          <div class="rowbar"><div class="lbl">A5</div><div class="track"><div class="fill" style="width:54%;background:#bb0a30"></div></div><div class="n">210</div></div>
-          <div class="rowbar"><div class="lbl">A3 / A4</div><div class="track"><div class="fill" style="width:44%;background:#bb0a30"></div></div><div class="n">170</div></div>
-          <div class="rowbar"><div class="lbl">A6</div><div class="track"><div class="fill" style="width:36%;background:#bb0a30"></div></div><div class="n">140</div></div>
-          <p class="note">Local: “audi baton rouge” <strong>2,400</strong> / mo in BTR DMA (Planner; treat as strong local brand+geo intent).</p>
+      <div class="tabs" role="tablist">
+        <button type="button" class="active" data-tab="la">Louisiana</button>
+        <button type="button" data-tab="btr">Baton Rouge DMA (PMA)</button>
+        <button type="button" data-tab="nola">New Orleans DMA</button>
+      </div>
+
+      <!-- LA PANEL -->
+      <div class="panel active" id="tab-la">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th class="num">Brand-root</th>
+                <th class="num">Top 5 models sum</th>
+                <th class="num">Stack (root+top5)</th>
+                <th>Top 5 models (searches)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hl-bmw">
+                <td><strong>BMW</strong></td>
+                <td class="num">18,100</td>
+                <td class="num">14,200</td>
+                <td class="num"><strong>32,300</strong></td>
+                <td class="muted">x5 3,600 · x6 2,900 · m3 2,900 · m4 2,900 · x3 1,900</td>
+              </tr>
+              <tr>
+                <td><strong>Lexus</strong></td>
+                <td class="num">12,100</td>
+                <td class="num">17,900</td>
+                <td class="num"><strong>30,000</strong></td>
+                <td class="muted">gx 550 6,600 · rx 350 4,400 · gx 2,900 · tx 2,400 · rx 1,600</td>
+              </tr>
+              <tr>
+                <td><strong>Tesla</strong></td>
+                <td class="num">14,800</td>
+                <td class="num">11,300</td>
+                <td class="num"><strong>26,100</strong></td>
+                <td class="muted">model y 3,600 · model 3 2,900 · model s 1,900 · cybertruck 1,600 · model x 1,300</td>
+              </tr>
+              <tr>
+                <td><strong>Acura</strong></td>
+                <td class="num">5,400</td>
+                <td class="num">14,100</td>
+                <td class="num"><strong>19,500</strong></td>
+                <td class="muted">mdx 4,400 · adx 4,400 · tlx 2,400 · integra 1,600 · rdx 1,300</td>
+              </tr>
+              <tr>
+                <td><strong>Cadillac</strong></td>
+                <td class="num">9,900</td>
+                <td class="num">9,310</td>
+                <td class="num"><strong>19,210</strong></td>
+                <td class="muted">escalade 5,400 · ct5 1,600 · lyriq 1,000 · xt6 720 · xt5 590</td>
+              </tr>
+              <tr>
+                <td><strong>Porsche</strong></td>
+                <td class="num">8,100</td>
+                <td class="num">9,480</td>
+                <td class="num"><strong>17,580</strong></td>
+                <td class="muted">911 3,600 · cayenne 2,400 · macan 1,300 · panamera 1,300 · taycan 880</td>
+              </tr>
+              <tr>
+                <td><strong>Genesis</strong></td>
+                <td class="num">8,100</td>
+                <td class="num">8,880</td>
+                <td class="num"><strong>16,980</strong></td>
+                <td class="muted">gv80 3,600 · g70 2,400 · gv70 1,900 · g80 720 · gv60 260</td>
+              </tr>
+              <tr>
+                <td><strong>Mercedes-Benz</strong></td>
+                <td class="num">12,100</td>
+                <td class="num">4,550</td>
+                <td class="num"><strong>16,650</strong></td>
+                <td class="muted">gla 1,300 · glb 1,300 · gle 880 · gle 350 590 · glc 300 480</td>
+              </tr>
+              <tr class="hl-audi">
+                <td><strong>Audi</strong></td>
+                <td class="num">8,100</td>
+                <td class="num">6,980</td>
+                <td class="num"><strong>15,080</strong></td>
+                <td class="muted">q5 1,900 · q8 1,600 · q7 1,300 · q3 1,300 · a5 880</td>
+              </tr>
+              <tr>
+                <td><strong>Infiniti</strong></td>
+                <td class="num">2,400</td>
+                <td class="num">8,900</td>
+                <td class="num"><strong>11,300</strong></td>
+                <td class="muted">qx60 2,900 · qx80 2,400 · q50 2,400 · qx50 720 · qx55 480</td>
+              </tr>
+              <tr class="total">
+                <td>Sum of brand stacks</td>
+                <td class="num">—</td>
+                <td class="num">—</td>
+                <td class="num">204,700</td>
+                <td class="muted">Do not read as unique LA luxury searches — brands + keywords overlap</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div>
-          <h3>Same models · outside (NOLA DMA)</h3>
-          <div class="table-scroll">
-            <table style="min-width:280px">
-              <thead><tr><th>Model kw</th><th class="num">NOLA</th><th class="num">BTR</th><th class="num">LA</th></tr></thead>
-              <tbody>
-                <tr><td>bmw x5</td><td class="num">1,600</td><td class="num">720</td><td class="num">3,600</td></tr>
-                <tr><td>bmw x3</td><td class="num">880</td><td class="num">480</td><td class="num">1,900</td></tr>
-                <tr><td>bmw x7</td><td class="num">880</td><td class="num">390</td><td class="num">1,900</td></tr>
-                <tr class="hl-audi"><td>audi q5</td><td class="num">880</td><td class="num">390</td><td class="num">1,900</td></tr>
-                <tr class="hl-audi"><td>audi q7</td><td class="num">590</td><td class="num">260</td><td class="num">1,300</td></tr>
-                <tr><td>lexus rx</td><td class="num">720</td><td class="num">390</td><td class="num">1,600</td></tr>
-                <tr><td>mercedes gle</td><td class="num">390</td><td class="num">210</td><td class="num">880</td></tr>
-              </tbody>
-            </table>
+        <p class="note"><strong>LA story:</strong> BMW leads on root and stack. Lexus model demand is almost as large as BMW’s full stack. Audi’s stack (~15k) is about half of BMW’s (~32k) and below MB on root, with Q5 still the clear Audi model leader.</p>
+      </div>
+
+      <!-- BTR PANEL -->
+      <div class="panel" id="tab-btr">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th class="num">Brand-root (bucket)</th>
+                <th class="num">Top 5 models sum</th>
+                <th class="num">Stack</th>
+                <th>Top 5 models (searches)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Lexus</strong></td>
+                <td class="num">2,900</td>
+                <td class="num">4,430</td>
+                <td class="num"><strong>7,330</strong></td>
+                <td class="muted">gx 550 1,300 · rx 350 1,300 · gx 720 · tx 720 · rx 390</td>
+              </tr>
+              <tr class="hl-bmw">
+                <td><strong>BMW</strong></td>
+                <td class="num">2,900</td>
+                <td class="num">2,880</td>
+                <td class="num"><strong>5,780</strong></td>
+                <td class="muted">x5 720 · x6 720 · m3 480 · m4 480 · x3 480</td>
+              </tr>
+              <tr>
+                <td><strong>Tesla</strong></td>
+                <td class="num">2,900</td>
+                <td class="num">2,470</td>
+                <td class="num"><strong>5,370</strong></td>
+                <td class="muted">model y 720 · model 3 720 · model s 390 · cybertruck 320 · model x 320</td>
+              </tr>
+              <tr>
+                <td><strong>Acura</strong></td>
+                <td class="num">1,300</td>
+                <td class="num">3,190</td>
+                <td class="num"><strong>4,490</strong></td>
+                <td class="muted">mdx 1,000 · adx 1,000 · tlx 480 · integra 390 · rdx 320</td>
+              </tr>
+              <tr>
+                <td><strong>Mercedes-Benz</strong></td>
+                <td class="num">2,900</td>
+                <td class="num">1,070</td>
+                <td class="num"><strong>3,970</strong></td>
+                <td class="muted">gla 320 · glb 320 · gle 210 · gle 350 110 · glc 300 110</td>
+              </tr>
+              <tr>
+                <td><strong>Cadillac</strong></td>
+                <td class="num">1,900</td>
+                <td class="num">1,780</td>
+                <td class="num"><strong>3,680</strong></td>
+                <td class="muted">escalade 1,000 · ct5 320 · lyriq 210 · xt6 140 · xt5 110</td>
+              </tr>
+              <tr>
+                <td><strong>Porsche</strong></td>
+                <td class="num">1,600</td>
+                <td class="num">1,930</td>
+                <td class="num"><strong>3,530</strong></td>
+                <td class="muted">911 720 · cayenne 480 · macan 260 · panamera 260 · taycan 210</td>
+              </tr>
+              <tr>
+                <td><strong>Genesis</strong></td>
+                <td class="num">1,600</td>
+                <td class="num">1,810</td>
+                <td class="num"><strong>3,410</strong></td>
+                <td class="muted">gv80 720 · g70 480 · gv70 390 · g80 170 · gv60 50</td>
+              </tr>
+              <tr class="hl-audi">
+                <td><strong>Audi</strong></td>
+                <td class="num">1,600</td>
+                <td class="num">1,440</td>
+                <td class="num"><strong>3,040</strong></td>
+                <td class="muted">q5 390 · q8 320 · q7 260 · q3 260 · a5 210</td>
+              </tr>
+              <tr>
+                <td><strong>Infiniti</strong></td>
+                <td class="num">590</td>
+                <td class="num">1,840</td>
+                <td class="num"><strong>2,430</strong></td>
+                <td class="muted">qx60 720 · qx80 480 · q50 390 · qx50 140 · qx55 110</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note"><strong>PMA story:</strong> On stacks, Lexus leads BTR (model-heavy). BMW next. Audi is real but smaller — Q5 remains the Audi demand leader for stocking and model bids. Brand-roots at 2,900 are the same bucket for BMW/MB/Lexus/Tesla — trust model rows and LA for separation.</p>
+
+        <h3>Audi vs BMW model bars · BTR DMA</h3>
+        <div class="grid2">
+          <div>
+            <div class="rowbar"><div>X5</div><div class="track"><div class="fill" style="width:100%;background:#1c69d4"></div></div><div class="n">720</div></div>
+            <div class="rowbar"><div>X6</div><div class="track"><div class="fill" style="width:100%;background:#1c69d4"></div></div><div class="n">720</div></div>
+            <div class="rowbar"><div>X3</div><div class="track"><div class="fill" style="width:67%;background:#1c69d4"></div></div><div class="n">480</div></div>
+            <div class="rowbar"><div>M3</div><div class="track"><div class="fill" style="width:67%;background:#1c69d4"></div></div><div class="n">480</div></div>
+            <div class="rowbar"><div>M4</div><div class="track"><div class="fill" style="width:67%;background:#1c69d4"></div></div><div class="n">480</div></div>
           </div>
-          <h3>Stocking read</h3>
-          <p class="note" style="color:var(--ink);font-size:13px">
-            <span class="pill good">Buy signal</span> Q5 remains the Audi demand leader in PMA — don’t go light if turn/gross work.<br/><br/>
-            <span class="pill good">Buy signal</span> BMW X5/X6 pressure supports depth on those lines at BHBMW.<br/><br/>
-            <span class="pill warn">Context</span> NOLA model demand is ~1.5–2× BTR — useful for paid reach radius, not a 1:1 BTR lot copy.<br/><br/>
-            <span class="pill">Sedans</span> A4/A6 and 3/5-series style demand trails crossovers in both DMAs.
-          </p>
+          <div>
+            <div class="rowbar"><div>Q5</div><div class="track"><div class="fill" style="width:54%;background:#bb0a30"></div></div><div class="n">390</div></div>
+            <div class="rowbar"><div>Q8</div><div class="track"><div class="fill" style="width:44%;background:#bb0a30"></div></div><div class="n">320</div></div>
+            <div class="rowbar"><div>Q7</div><div class="track"><div class="fill" style="width:36%;background:#bb0a30"></div></div><div class="n">260</div></div>
+            <div class="rowbar"><div>Q3</div><div class="track"><div class="fill" style="width:36%;background:#bb0a30"></div></div><div class="n">260</div></div>
+            <div class="rowbar"><div>A5</div><div class="track"><div class="fill" style="width:29%;background:#bb0a30"></div></div><div class="n">210</div></div>
+          </div>
         </div>
+        <p class="note">Bars scaled to BMW X5 = 720 in BTR. Audi’s top model is about half of BMW’s top crossover search band.</p>
+      </div>
+
+      <!-- NOLA PANEL -->
+      <div class="panel" id="tab-nola">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th class="num">Brand-root</th>
+                <th class="num">Top 5 models sum</th>
+                <th class="num">Stack</th>
+                <th>Top 5 models (searches)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Lexus</strong></td>
+                <td class="num">5,400</td>
+                <td class="num">7,320</td>
+                <td class="num"><strong>12,720</strong></td>
+                <td class="muted">gx 550 2,400 · rx 350 1,900 · gx 1,300 · tx 1,000 · rx 720</td>
+              </tr>
+              <tr>
+                <td><strong>Tesla</strong></td>
+                <td class="num">6,600</td>
+                <td class="num">5,380</td>
+                <td class="num"><strong>11,980</strong></td>
+                <td class="muted">model y 1,600 · model 3 1,300 · model s 880 · cybertruck 880 · model x 720</td>
+              </tr>
+              <tr class="hl-bmw">
+                <td><strong>BMW</strong></td>
+                <td class="num">5,400</td>
+                <td class="num">6,380</td>
+                <td class="num"><strong>11,780</strong></td>
+                <td class="muted">x5 1,600 · x6 1,300 · m3 1,300 · m4 1,300 · x3 880</td>
+              </tr>
+              <tr>
+                <td><strong>Acura</strong></td>
+                <td class="num">2,400</td>
+                <td class="num">6,110</td>
+                <td class="num"><strong>8,510</strong></td>
+                <td class="muted">mdx 1,900 · adx 1,900 · tlx 1,000 · integra 720 · rdx 590</td>
+              </tr>
+              <tr>
+                <td><strong>Porsche</strong></td>
+                <td class="num">3,600</td>
+                <td class="num">4,300</td>
+                <td class="num"><strong>7,900</strong></td>
+                <td class="muted">911 1,600 · cayenne 1,000 · macan 720 · panamera 590 · taycan 390</td>
+              </tr>
+              <tr>
+                <td><strong>Cadillac</strong></td>
+                <td class="num">4,400</td>
+                <td class="num">3,460</td>
+                <td class="num"><strong>7,860</strong></td>
+                <td class="muted">escalade 1,900 · ct5 590 · lyriq 390 · xt6 320 · xt5 260</td>
+              </tr>
+              <tr>
+                <td><strong>Mercedes-Benz</strong></td>
+                <td class="num">5,400</td>
+                <td class="num">2,300</td>
+                <td class="num"><strong>7,700</strong></td>
+                <td class="muted">gla 720 · glb 720 · gle 390 · gle 350 260 · glc 300 210</td>
+              </tr>
+              <tr>
+                <td><strong>Genesis</strong></td>
+                <td class="num">3,600</td>
+                <td class="num">3,910</td>
+                <td class="num"><strong>7,510</strong></td>
+                <td class="muted">gv80 1,600 · g70 1,000 · gv70 880 · g80 320 · gv60 110</td>
+              </tr>
+              <tr class="hl-audi">
+                <td><strong>Audi</strong></td>
+                <td class="num">2,900</td>
+                <td class="num">3,170</td>
+                <td class="num"><strong>6,070</strong></td>
+                <td class="muted">q5 880 · q8 720 · q7 590 · q3 590 · a5 390</td>
+              </tr>
+              <tr>
+                <td><strong>Infiniti</strong></td>
+                <td class="num">1,300</td>
+                <td class="num">3,710</td>
+                <td class="num"><strong>5,010</strong></td>
+                <td class="muted">qx60 1,300 · q50 1,000 · qx80 880 · qx50 320 · qx55 210</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note"><strong>Outside market:</strong> NOLA stacks are ~1.5–2× BTR on most brands. Use for paid radius / conquest sizing — not as a 1:1 BTR lot copy.</p>
       </div>
     </section>
 
-    <!-- STORE CAPTURE -->
-    <section class="card" style="margin-top:14px">
-      <h2>3 · Store traffic vs brand pressure</h2>
-      <div class="when">GA4 last 30 days (sessions) vs Keyword Planner brand-root (avg monthly searches) in Baton Rouge DMA</div>
+    <!-- SECTION 4: store capture -->
+    <section class="card">
+      <h2>4 · Store traffic vs brand pressure</h2>
+      <div class="when">GA4 last 30 days vs Planner brand-root in Baton Rouge DMA · different units — capture index is directional only</div>
       <div class="grid2">
         <div>
           <h3>Brian Harris BMW</h3>
           <div class="stat" style="margin-bottom:10px">
             <div class="k">GA4 sessions · 30d</div>
             <div class="v" style="color:var(--bmw)">28,308</div>
-            <div class="s">Users 19,768 · Engaged sessions 13,210</div>
+            <div class="s">Users 19,768 · Engaged 13,210</div>
           </div>
           <div class="table-scroll">
             <table style="min-width:300px">
@@ -282,14 +534,14 @@
               </tbody>
             </table>
           </div>
-          <p class="note">BMW brand-root BTR: <strong>2,900</strong>/mo · Search sessions (org+paid) 11,969 → capture index <strong>~4.1×</strong></p>
+          <p class="note">BMW brand-root BTR bucket <strong>2,900</strong> · org+paid search sessions 11,969 · index <strong>~4.1×</strong></p>
         </div>
         <div>
           <h3>Audi Baton Rouge</h3>
           <div class="stat" style="margin-bottom:10px">
             <div class="k">GA4 sessions · 30d</div>
             <div class="v" style="color:var(--audi)">18,489</div>
-            <div class="s">Users 14,508 · Engaged sessions 7,093</div>
+            <div class="s">Users 14,508 · Engaged 7,093</div>
           </div>
           <div class="table-scroll">
             <table style="min-width:300px">
@@ -304,133 +556,95 @@
               </tbody>
             </table>
           </div>
-          <p class="note">Audi brand-root BTR: <strong>1,600</strong>/mo · Search sessions (org+paid) 6,789 → capture index <strong>~4.2×</strong></p>
+          <p class="note">Audi brand-root BTR bucket <strong>1,600</strong> · org+paid search sessions 6,789 · index <strong>~4.2×</strong></p>
         </div>
       </div>
-
-      <h3>Head-to-head</h3>
       <div class="table-scroll">
         <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th class="num">BHBMW</th>
-              <th class="num">ABR</th>
-              <th class="num">Read</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Metric</th><th class="num">BHBMW</th><th class="num">ABR</th><th>Read</th></tr></thead>
           <tbody>
-            <tr><td>Brand-root demand (BTR DMA)</td><td class="num">2,900</td><td class="num">1,600</td><td class="num">BMW +81% demand base</td></tr>
-            <tr><td>GA4 sessions 30d</td><td class="num">28,308</td><td class="num">18,489</td><td class="num">BHBMW +53% traffic</td></tr>
-            <tr><td>GA4 sessions 365d</td><td class="num">283,276</td><td class="num">142,377</td><td class="num">BHBMW ~2.0× year</td></tr>
-            <tr><td>Search sessions 30d (org+paid)</td><td class="num">11,969</td><td class="num">6,789</td><td class="num">BHBMW +76%</td></tr>
-            <tr><td>Capture index (search sess ÷ brand-root)</td><td class="num">~4.1×</td><td class="num">~4.2×</td><td class="num">Essentially tied</td></tr>
-            <tr><td>Paid Search share of site</td><td class="num">20%</td><td class="num">15%</td><td class="num">BHBMW more paid-dependent</td></tr>
+            <tr><td>Brand-root (BTR, bucket)</td><td class="num">2,900</td><td class="num">1,600</td><td>Audi in lower Planner band</td></tr>
+            <tr><td>Root + top 5 stack (BTR)</td><td class="num">5,780</td><td class="num">3,040</td><td>BMW stack ~1.9× Audi</td></tr>
+            <tr><td>GA4 sessions 30d</td><td class="num">28,308</td><td class="num">18,489</td><td>BHBMW +53% traffic</td></tr>
+            <tr><td>GA4 sessions 365d</td><td class="num">283,276</td><td class="num">142,377</td><td>BHBMW ~2.0× year</td></tr>
+            <tr><td>Search capture index</td><td class="num">~4.1×</td><td class="num">~4.2×</td><td>Essentially tied</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">
-        <strong>Implication:</strong> ABR’s lower total traffic is largely explained by a smaller brand-search base, not a collapse in capture efficiency.
-        The fix is not “match BHBMW session volume.” It’s (a) fully harvest Audi brand/local demand in PMA, (b) win model demand (Q5/Q7), (c) selective conquest where CPA works.
-      </p>
+      <p class="note"><strong>Implication:</strong> ABR is not “bad at capturing” relative to its brand band. The job is fully harvest Audi brand/local/model demand, then selective conquest — not matching BMW session volume.</p>
     </section>
 
-    <!-- ABR SPEND LINE -->
-    <section class="card" style="margin-top:14px">
-      <h2>4 · ABR paid · how much we’re missing · spend line</h2>
-      <div class="when">Google Ads last 30 days · customer 3995837733 · Search impression share on live campaigns</div>
+    <!-- SECTION 5: spend line -->
+    <section class="card">
+      <h2>5 · ABR paid · missing traffic · spend line</h2>
+      <div class="when">Google Ads last 30 days · 3995837733</div>
       <div class="grid3">
         <div class="stat"><div class="k">Account spend 30d</div><div class="v">$2,280</div><div class="s">1,064 clicks · ~134 conv</div></div>
-        <div class="stat"><div class="k">Brand campaign spend</div><div class="v">$150</div><div class="s">380 clicks · ~$0.39 CPC · ~82 conv</div></div>
-        <div class="stat"><div class="k">Brand IS gap</div><div class="v">42%</div><div class="s">mostly budget (34 pts), not rank (8 pts)</div></div>
+        <div class="stat"><div class="k">Brand campaign</div><div class="v">$150</div><div class="s">380 clicks · ~$0.39 CPC · ~82 conv</div></div>
+        <div class="stat"><div class="k">Brand IS</div><div class="v">58%</div><div class="s">Budget lost 34% · Rank lost 8%</div></div>
       </div>
-
       <div class="table-scroll">
         <table>
           <thead>
-            <tr>
-              <th>Campaign</th>
-              <th class="num">Cost</th>
-              <th class="num">Clicks</th>
-              <th class="num">IS</th>
-              <th class="num">Lost budget</th>
-              <th class="num">Lost rank</th>
-              <th>Line</th>
-            </tr>
+            <tr><th>Campaign</th><th class="num">Cost</th><th class="num">Clicks</th><th class="num">IS</th><th class="num">Lost budget</th><th class="num">Lost rank</th><th>Line</th></tr>
           </thead>
           <tbody>
-            <tr class="hl-audi">
-              <td><strong>Brand | Paid Search</strong></td>
-              <td class="num">$150</td><td class="num">380</td><td class="num">58%</td><td class="num">34%</td><td class="num">8%</td>
-              <td><span class="pill bad">Fund first</span></td>
-            </tr>
-            <tr>
-              <td>Sales Offers</td>
-              <td class="num">$450</td><td class="num">116</td><td class="num">69%</td><td class="num">10%</td><td class="num">22%</td>
-              <td><span class="pill warn">Rank / creative</span></td>
-            </tr>
-            <tr>
-              <td>Service</td>
-              <td class="num">$309</td><td class="num">186</td><td class="num">48%</td><td class="num">24%</td><td class="num">28%</td>
-              <td><span class="pill warn">Budget + rank</span></td>
-            </tr>
-            <tr>
-              <td>Conquest</td>
-              <td class="num">$414</td><td class="num">111</td><td class="num">56%</td><td class="num">16%</td><td class="num">28%</td>
-              <td><span class="pill">After brand</span></td>
-            </tr>
-            <tr>
-              <td>New Inventory · Q5</td>
-              <td class="num">$119</td><td class="num">42</td><td class="num">68%</td><td class="num">1%</td><td class="num">31%</td>
-              <td><span class="pill warn">Rank-bound</span></td>
-            </tr>
-            <tr>
-              <td>New Inventory · Q7</td>
-              <td class="num">$88</td><td class="num">32</td><td class="num">67%</td><td class="num">1%</td><td class="num">32%</td>
-              <td><span class="pill warn">Rank-bound</span></td>
-            </tr>
-            <tr>
-              <td>Locations</td>
-              <td class="num">$303</td><td class="num">69</td><td class="num">62%</td><td class="num">24%</td><td class="num">14%</td>
-              <td><span class="pill warn">Budget</span></td>
-            </tr>
+            <tr class="hl-audi"><td><strong>Brand | Paid Search</strong></td><td class="num">$150</td><td class="num">380</td><td class="num">58%</td><td class="num">34%</td><td class="num">8%</td><td><span class="pill bad">Fund first</span></td></tr>
+            <tr><td>Sales Offers</td><td class="num">$450</td><td class="num">116</td><td class="num">69%</td><td class="num">10%</td><td class="num">22%</td><td><span class="pill warn">Rank / creative</span></td></tr>
+            <tr><td>Service</td><td class="num">$309</td><td class="num">186</td><td class="num">48%</td><td class="num">24%</td><td class="num">28%</td><td><span class="pill warn">Budget + rank</span></td></tr>
+            <tr><td>Conquest</td><td class="num">$414</td><td class="num">111</td><td class="num">56%</td><td class="num">16%</td><td class="num">28%</td><td><span class="pill">After brand</span></td></tr>
+            <tr><td>New Inventory · Q5</td><td class="num">$119</td><td class="num">42</td><td class="num">68%</td><td class="num">1%</td><td class="num">31%</td><td><span class="pill warn">Rank-bound</span></td></tr>
+            <tr><td>New Inventory · Q7</td><td class="num">$88</td><td class="num">32</td><td class="num">67%</td><td class="num">1%</td><td class="num">32%</td><td><span class="pill warn">Rank-bound</span></td></tr>
+            <tr><td>Locations</td><td class="num">$303</td><td class="num">69</td><td class="num">62%</td><td class="num">24%</td><td class="num">14%</td><td><span class="pill warn">Budget</span></td></tr>
           </tbody>
         </table>
       </div>
-
       <h3>Where to draw the line</h3>
       <ol style="margin:0;padding-left:1.2rem;font-size:14px">
-        <li><strong>Brand:</strong> Raise budget until <em>search budget lost IS ≈ 0%</em>. Keep funding while CPA/lead quality holds. Only then treat remaining gap as rank/competitors.</li>
-        <li><strong>Model / local:</strong> Q5, Q7, “audi baton rouge”, service — fund when IS loss is still budget-driven; if loss is mostly rank (as Q5/Q7 are now), fix bids/quality/creative before dumping budget.</li>
-        <li><strong>Conquest:</strong> Hard-cap by CPA vs close rate. Do not scale while brand still shows double-digit budget-lost IS.</li>
-        <li><strong>Stop:</strong> Next dollar is almost all rank war and conversions flat — that is the line.</li>
+        <li><strong>Brand first</strong> — raise budget until budget-lost IS ≈ 0%, while CPA holds.</li>
+        <li><strong>Model / local next</strong> — Q5, Q7, audi baton rouge, service. If loss is mostly rank (Q5/Q7 now), fix bids/quality before pouring budget.</li>
+        <li><strong>Conquest last</strong> — hard-cap by CPA vs close rate; don’t scale while brand is budget-capped.</li>
+        <li><strong>Stop</strong> when the next dollar is almost all rank war and conversions are flat.</li>
       </ol>
-      <p class="note" style="margin-top:12px">
-        Rough brand upside math (directional): Brand is at 58% IS with strong conv. Clearing the ~34% budget-loss band is the cheapest incremental traffic on the account — not matching BMW’s 28k sessions.
-      </p>
     </section>
 
-    <!-- BUYING TIE-IN -->
-    <section class="card" style="margin-top:14px">
-      <h2>5 · Tie-in · inventory buying (ABR)</h2>
-      <div class="when">Market search is a demand prior — still subject to turn, front-end gross, and aged metal on the ground</div>
+    <!-- SECTION 6: buying -->
+    <section class="card">
+      <h2>6 · Inventory buying tie-in (ABR)</h2>
+      <div class="when">Market search = demand prior · still subject to turn, front-end gross, aged metal</div>
       <ul style="margin:0;padding-left:1.2rem;font-size:14px">
-        <li><strong>Q5 first</strong> among Audi crossovers in BTR search pressure; keep depth aligned to turn.</li>
-        <li><strong>Q8 / Q7 / Q3</strong> secondary band — don’t starve if aged units already sit.</li>
-        <li><strong>Sedans (A4/A6)</strong> lower search pressure than crossovers — stock tighter unless gross/turn justify.</li>
-        <li><strong>Outside DMA (NOLA)</strong> shows larger absolute model demand — use for paid geo radius tests, not as a mandate to mirror NOLA mix on the BTR lot.</li>
-        <li><strong>Core-four reality:</strong> more shoppers start on BMW / MB / Lexus than Audi here — offers and conquest creative should steal on model/value, not on “equal brand heat.”</li>
+        <li><span class="pill good">Q5</span> Top Audi model in BTR and LA — primary depth if turn/gross work.</li>
+        <li><span class="pill good">Q8 / Q7 / Q3</span> Secondary crossover band.</li>
+        <li><span class="pill">Sedans</span> A5 leads sedans; A4/A6 lower — stock tighter unless gross justifies.</li>
+        <li><span class="pill warn">Core four</span> More shoppers start on BMW / MB / Lexus than Audi — conquest on model/value, not equal brand heat.</li>
+        <li><span class="pill warn">NOLA</span> Larger absolute demand — paid radius yes; don’t mirror NOLA mix on the BTR lot 1:1.</li>
       </ul>
     </section>
 
     <footer>
-      Sources: Google Keyword Planner via ABR Google Ads (3995837733); geos Baton Rouge DMA 200716, New Orleans DMA 200622, Louisiana 21151.
-      GA4 BHBMW property 334199347 · ABR 381984706 · bhbmwecommerce@gmail.com token path.
-      ABR campaign metrics last 30 days via Pipeboard.
-      Keyword Planner volumes are Google estimates. Capture index is directional only (sessions ÷ brand-root searches).
-      BHBMW Google Ads not connected on Pipeboard — paid IS for BMW rooftop not in this build.
-      The Cooperative Agency · internal decision brief · not a multi-store client hub.
+      Keyword Planner via ABR Google Ads customer 3995837733 · Google Search · English.
+      Geos: Baton Rouge DMA 200716 · New Orleans DMA 200622 · Louisiana 21151.
+      Volumes are Google average monthly search <strong>buckets</strong>, not exact unique searchers. Stacks = brand-root + top 5 seeded model keywords; overlap possible.
+      GA4: BHBMW 334199347 · ABR 381984706. ABR paid metrics last 30 days via Pipeboard.
+      BHBMW Google Ads not on Pipeboard — no BMW paid IS in this brief.
+      The Cooperative Agency · internal decision brief.
     </footer>
   </div>
+
+<script>
+(function(){
+  const buttons=[...document.querySelectorAll('.tabs button')];
+  const panels={
+    la: document.getElementById('tab-la'),
+    btr: document.getElementById('tab-btr'),
+    nola: document.getElementById('tab-nola')
+  };
+  function act(id){
+    buttons.forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
+    Object.entries(panels).forEach(([k,el])=>el.classList.toggle('active', k===id));
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>act(b.dataset.tab)));
+})();
+</script>
 </body>
 </html>
