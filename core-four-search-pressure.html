@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Core Four Search Pressure · BTR vs NOLA</title>
+<title>Core Four Search Pressure · BTR + NOLA</title>
 <style>
   :root {
     --ink: #0f1419;
@@ -14,7 +14,7 @@
     --gold: #c8a24a;
     --bmw: #1c69d4;
     --audi: #bb0a30;
-    --mb: #222;
+    --mb: #111;
     --lexus: #1a6b4a;
     --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
@@ -32,7 +32,7 @@
     padding: 28px 20px 26px;
     border-bottom: 4px solid var(--gold);
   }
-  .top .inner { max-width: 880px; margin: 0 auto; }
+  .top .inner { max-width: 980px; margin: 0 auto; }
   .eyebrow {
     font-size: 10px;
     letter-spacing: .14em;
@@ -49,7 +49,7 @@
   .sub {
     color: rgba(255,255,255,.8);
     font-size: 15px;
-    max-width: 62ch;
+    max-width: 68ch;
   }
   .meta {
     margin-top: 12px;
@@ -57,39 +57,29 @@
     color: rgba(255,255,255,.55);
   }
   .wrap {
-    max-width: 880px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 18px 16px 56px;
   }
-  .takeaway {
-    background: #111;
-    color: #fff;
-    padding: 16px 18px;
-    margin: 0 0 16px;
-  }
-  .takeaway h2 {
-    margin: 0 0 8px;
-    font-size: 11px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.6);
-  }
-  .takeaway p {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 550;
-    letter-spacing: -.01em;
-  }
-  .takeaway .detail {
-    margin-top: 8px;
+  .how {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    padding: 12px 14px;
+    margin: 0 0 14px;
     font-size: 13px;
-    font-weight: 400;
-    color: rgba(255,255,255,.72);
+  }
+  .how strong { font-weight: 700; }
+  .how code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    background: #f0f3f6;
+    padding: 1px 5px;
   }
   .card {
     background: var(--card);
     border: 1px solid var(--line);
-    padding: 16px 16px 14px;
+    padding: 16px;
     margin: 0 0 14px;
   }
   .card h2 {
@@ -102,114 +92,45 @@
     color: var(--muted);
     margin: 0 0 14px;
   }
-  .market-label {
+  .tabs {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    margin: 0 0 10px;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 14px;
   }
-  .market-label strong { font-size: 14px; }
-  .market-label span { font-size: 12px; color: var(--muted); }
-  .row {
-    display: grid;
-    grid-template-columns: 118px 1fr 64px;
-    gap: 10px;
-    align-items: center;
-    margin: 0 0 10px;
-  }
-  .brand-name {
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .brand-name.audi { color: var(--audi); }
-  .brand-name.bmw { color: var(--bmw); }
-  .brand-name.mb { color: var(--mb); }
-  .brand-name.lexus { color: var(--lexus); }
-  .track {
-    background: #e8edf2;
-    height: 18px;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .fill {
-    height: 100%;
-    border-radius: 2px;
-    min-width: 2px;
-  }
-  .num {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  @media (max-width: 720px) {
-    .compare { grid-template-columns: 1fr; }
-    .row { grid-template-columns: 100px 1fr 56px; }
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-  th, td {
-    padding: 9px 8px;
-    border-bottom: 1px solid var(--line);
-    text-align: left;
-    vertical-align: middle;
-  }
-  th {
-    font-size: 10px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 650;
-  }
-  td.n, th.n {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-  }
-  tr.audi td { background: rgba(187, 10, 48, .05); }
-  tr.audi td:first-child { font-weight: 750; color: var(--audi); }
-  .share {
+  .tabs button {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 8px 12px;
+    font: inherit;
     font-size: 12px;
-    color: var(--muted);
+    font-weight: 700;
+    cursor: pointer;
   }
-  .pill {
-    display: inline-block;
-    font-size: 10px;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    font-weight: 750;
-    border: 1px solid #f0c0c0;
-    color: var(--audi);
-    padding: 2px 7px;
-    margin-left: 6px;
-    vertical-align: middle;
+  .tabs button.active {
+    border-color: #111;
+    background: #111;
+    color: #fff;
   }
-  .note {
-    font-size: 12px;
-    color: var(--muted);
-    margin: 10px 0 0;
-  }
-  .grid2 {
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .grid4 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    margin: 0 0 16px;
   }
-  @media (max-width: 720px) {
-    .grid2 { grid-template-columns: 1fr; }
+  @media (max-width: 860px) {
+    .grid4 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 520px) {
+    .grid4 { grid-template-columns: 1fr; }
   }
   .stat {
-    background: var(--card);
     border: 1px solid var(--line);
-    padding: 14px;
+    padding: 12px;
+    background: #fafbfc;
   }
   .stat .k {
     font-size: 10px;
@@ -220,15 +141,130 @@
   }
   .stat .v {
     margin-top: 4px;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 750;
     letter-spacing: -.03em;
     font-variant-numeric: tabular-nums;
   }
   .stat .s {
-    margin-top: 2px;
+    margin-top: 3px;
     font-size: 12px;
     color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat.bmw .v { color: var(--bmw); }
+  .stat.audi .v { color: var(--audi); }
+  .stat.mb .v { color: var(--mb); }
+  .stat.lexus .v { color: var(--lexus); }
+
+  .rank-row {
+    display: grid;
+    grid-template-columns: 28px 92px 1fr 72px;
+    gap: 10px;
+    align-items: center;
+    margin: 0 0 10px;
+  }
+  .rank-row .r {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .rank-row .name { font-size: 13px; font-weight: 750; }
+  .track {
+    background: #e8edf2;
+    height: 16px;
+    overflow: hidden;
+  }
+  .fill { height: 100%; min-width: 2px; }
+  .n {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    font-weight: 750;
+  }
+
+  .brand-block {
+    border: 1px solid var(--line);
+    margin: 0 0 12px;
+  }
+  .brand-block .bh {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    background: #f7f9fb;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand-block .bh .name {
+    font-size: 14px;
+    font-weight: 750;
+  }
+  .brand-block .bh .name.bmw { color: var(--bmw); }
+  .brand-block .bh .name.audi { color: var(--audi); }
+  .brand-block .bh .name.mb { color: var(--mb); }
+  .brand-block .bh .name.lexus { color: var(--lexus); }
+  .brand-block .bh .nums {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .brand-block .bh .nums b {
+    color: var(--ink);
+    font-weight: 750;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: middle;
+  }
+  th {
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 650;
+    background: #fff;
+  }
+  td.n, th.n {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  tr:last-child td { border-bottom: 0; }
+  tr.total td {
+    font-weight: 750;
+    background: #fafafa;
+    border-top: 1px solid var(--ink);
+  }
+  .model-bars { padding: 10px 12px 12px; }
+  .mrow {
+    display: grid;
+    grid-template-columns: 110px 1fr 56px;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 7px;
+    font-size: 12px;
+  }
+  .mrow .track { height: 12px; background: #e8edf2; }
+  .mrow .fill { height: 100%; }
+  .mrow .lab { font-weight: 600; }
+  .mrow .n { font-size: 12px; color: var(--muted); font-weight: 700; }
+
+  .compare-table-wrap { overflow-x: auto; }
+  .compare-table { min-width: 640px; }
+  .note {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 10px 0 0;
   }
   footer {
     margin-top: 8px;
@@ -245,195 +281,398 @@
       <div class="eyebrow">The Cooperative Agency · Market demand snapshot</div>
       <h1>Core four search pressure</h1>
       <div class="sub">
-        How much Google brand-root demand each luxury make has in our market
-        (Baton Rouge DMA) and directly outside it (New Orleans DMA).
+        Google search demand for BMW, Mercedes-Benz, Lexus, and Audi —
+        brand name plus each brand’s top five model keywords —
+        in the Baton Rouge DMA and New Orleans DMA.
       </div>
       <div class="meta">
-        Keyword Planner · exact brand keywords · Google Search · pulled 2026-07-30 · buckets, not exact counts
+        Keyword Planner · Google Search · English · data pull 2026-07-30 · average monthly search estimates
       </div>
     </div>
   </div>
 
   <div class="wrap">
-    <div class="takeaway">
-      <h2>The point</h2>
-      <p>Audi is playing in a smaller search market than BMW, Mercedes-Benz, and Lexus.</p>
-      <div class="detail">
-        In Baton Rouge, brand-root demand for <strong>bmw / mercedes benz / lexus</strong> sits in the <strong>2,900</strong> band.
-        <strong>audi</strong> sits lower at <strong>1,600</strong> — about <strong>55%</strong> of each of the other three on the head term.
-        Same story outside the market: NOLA puts Audi below the other three again.
-      </div>
+    <div class="how">
+      <strong>How to read the numbers.</strong>
+      Each figure is Google Keyword Planner’s <em>average monthly searches</em> for an exact keyword in that market.
+      These are <strong>estimated bands</strong> (not exact unique people).
+      <br/><br/>
+      <strong>Brand-root</strong> = head term only (<code>bmw</code>, <code>mercedes benz</code>, <code>lexus</code>, <code>audi</code>).<br/>
+      <strong>Top 5 models</strong> = the five highest model keywords we measured for that brand.<br/>
+      <strong>Total search pressure</strong> = brand-root + top 5 models. Useful planning total; keywords can overlap (someone may search both <code>bmw</code> and <code>bmw x5</code>), so this is not a count of unique shoppers.
     </div>
 
-    <div class="grid2" style="margin-bottom:14px">
-      <div class="stat">
-        <div class="k">BTR · Audi vs each peer</div>
-        <div class="v" style="color:var(--audi)">~55%</div>
-        <div class="s">1,600 vs 2,900 brand-root band</div>
-      </div>
-      <div class="stat">
-        <div class="k">BTR · Audi share of core four</div>
-        <div class="v" style="color:var(--audi)">~16%</div>
-        <div class="s">1,600 of 10,300 combined brand-root</div>
-      </div>
+    <div class="tabs" role="tablist">
+      <button type="button" class="active" data-tab="btr">Baton Rouge DMA (our market)</button>
+      <button type="button" data-tab="nola">New Orleans DMA (outside)</button>
+      <button type="button" data-tab="both">Both markets · table</button>
     </div>
 
-    <section class="card">
-      <h2>Side by side</h2>
-      <div class="when">Avg. monthly searches · exact keywords · same scale within each market (tallest bar = 100%)</div>
-      <div class="compare">
-        <div>
-          <div class="market-label">
-            <strong>Our market · Baton Rouge DMA</strong>
-            <span>geo 200716</span>
+    <!-- BTR -->
+    <div class="panel active" id="tab-btr">
+      <section class="card">
+        <h2>Baton Rouge DMA · total search pressure</h2>
+        <div class="when">Brand-root + top 5 model keywords · geo 200716 · ranked by total</div>
+
+        <div class="grid4">
+          <div class="stat lexus">
+            <div class="k">Lexus</div>
+            <div class="v">7,330</div>
+            <div class="s">root 2,900 · models 4,430</div>
           </div>
-          <div class="row">
-            <div class="brand-name bmw">BMW</div>
-            <div class="track"><div class="fill" style="width:100%;background:var(--bmw)"></div></div>
-            <div class="num">2,900</div>
+          <div class="stat bmw">
+            <div class="k">BMW</div>
+            <div class="v">5,780</div>
+            <div class="s">root 2,900 · models 2,880</div>
           </div>
-          <div class="row">
-            <div class="brand-name mb">Mercedes</div>
-            <div class="track"><div class="fill" style="width:100%;background:var(--mb)"></div></div>
-            <div class="num">2,900</div>
+          <div class="stat mb">
+            <div class="k">Mercedes-Benz</div>
+            <div class="v">3,970</div>
+            <div class="s">root 2,900 · models 1,070</div>
           </div>
-          <div class="row">
-            <div class="brand-name lexus">Lexus</div>
-            <div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div>
-            <div class="num">2,900</div>
-          </div>
-          <div class="row">
-            <div class="brand-name audi">Audi</div>
-            <div class="track"><div class="fill" style="width:55%;background:var(--audi)"></div></div>
-            <div class="num">1,600</div>
+          <div class="stat audi">
+            <div class="k">Audi</div>
+            <div class="v">3,040</div>
+            <div class="s">root 1,600 · models 1,440</div>
           </div>
         </div>
-        <div>
-          <div class="market-label">
-            <strong>Outside · New Orleans DMA</strong>
-            <span>geo 200622</span>
+
+        <div class="rank-row">
+          <div class="r">1</div>
+          <div class="name" style="color:var(--lexus)">Lexus</div>
+          <div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div>
+          <div class="n">7,330</div>
+        </div>
+        <div class="rank-row">
+          <div class="r">2</div>
+          <div class="name" style="color:var(--bmw)">BMW</div>
+          <div class="track"><div class="fill" style="width:79%;background:var(--bmw)"></div></div>
+          <div class="n">5,780</div>
+        </div>
+        <div class="rank-row">
+          <div class="r">3</div>
+          <div class="name" style="color:var(--mb)">Mercedes</div>
+          <div class="track"><div class="fill" style="width:54%;background:var(--mb)"></div></div>
+          <div class="n">3,970</div>
+        </div>
+        <div class="rank-row">
+          <div class="r">4</div>
+          <div class="name" style="color:var(--audi)">Audi</div>
+          <div class="track"><div class="fill" style="width:41%;background:var(--audi)"></div></div>
+          <div class="n">3,040</div>
+        </div>
+        <p class="note">Bars scaled to Lexus total (7,330) = 100% in this market.</p>
+      </section>
+
+      <section class="card">
+        <h2>Baton Rouge DMA · brand + top 5 models</h2>
+        <div class="when">Each block: brand-root, model list, and total search pressure</div>
+
+        <div class="brand-block">
+          <div class="bh">
+            <div class="name lexus">Lexus</div>
+            <div class="nums">Brand-root <b>2,900</b> · Top 5 models <b>4,430</b> · Total <b>7,330</b></div>
           </div>
-          <div class="row">
-            <div class="brand-name bmw">BMW</div>
-            <div class="track"><div class="fill" style="width:100%;background:var(--bmw)"></div></div>
-            <div class="num">5,400</div>
-          </div>
-          <div class="row">
-            <div class="brand-name mb">Mercedes</div>
-            <div class="track"><div class="fill" style="width:100%;background:var(--mb)"></div></div>
-            <div class="num">5,400</div>
-          </div>
-          <div class="row">
-            <div class="brand-name lexus">Lexus</div>
-            <div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div>
-            <div class="num">5,400</div>
-          </div>
-          <div class="row">
-            <div class="brand-name audi">Audi</div>
-            <div class="track"><div class="fill" style="width:54%;background:var(--audi)"></div></div>
-            <div class="num">2,900</div>
+          <div class="model-bars">
+            <div class="mrow"><div class="lab">GX 550</div><div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div><div class="n">1,300</div></div>
+            <div class="mrow"><div class="lab">RX 350</div><div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div><div class="n">1,300</div></div>
+            <div class="mrow"><div class="lab">GX</div><div class="track"><div class="fill" style="width:55%;background:var(--lexus)"></div></div><div class="n">720</div></div>
+            <div class="mrow"><div class="lab">TX</div><div class="track"><div class="fill" style="width:55%;background:var(--lexus)"></div></div><div class="n">720</div></div>
+            <div class="mrow"><div class="lab">RX</div><div class="track"><div class="fill" style="width:30%;background:var(--lexus)"></div></div><div class="n">390</div></div>
           </div>
         </div>
-      </div>
-      <p class="note">
-        Identical 2,900 / 5,400 values mean the same Planner <em>bucket</em>, not a true tie to the search.
-        The separation that matters here is Audi’s lower band in both geos.
-      </p>
-    </section>
 
-    <section class="card">
-      <h2>Numbers</h2>
-      <div class="when">Brand-root keywords only · bmw · mercedes benz · lexus · audi</div>
-      <div style="overflow-x:auto">
-        <table>
-          <thead>
-            <tr>
-              <th>Brand</th>
-              <th class="n">Baton Rouge DMA</th>
-              <th class="n">Share of core four</th>
-              <th class="n">New Orleans DMA</th>
-              <th class="n">Share of core four</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>BMW</strong></td>
-              <td class="n">2,900</td>
-              <td class="n">28%</td>
-              <td class="n">5,400</td>
-              <td class="n">28%</td>
-            </tr>
-            <tr>
-              <td><strong>Mercedes-Benz</strong></td>
-              <td class="n">2,900</td>
-              <td class="n">28%</td>
-              <td class="n">5,400</td>
-              <td class="n">28%</td>
-            </tr>
-            <tr>
-              <td><strong>Lexus</strong></td>
-              <td class="n">2,900</td>
-              <td class="n">28%</td>
-              <td class="n">5,400</td>
-              <td class="n">28%</td>
-            </tr>
-            <tr class="audi">
-              <td>Audi <span class="pill">Smaller market</span></td>
-              <td class="n">1,600</td>
-              <td class="n">16%</td>
-              <td class="n">2,900</td>
-              <td class="n">15%</td>
-            </tr>
-            <tr>
-              <td><strong>Core four sum</strong></td>
-              <td class="n">10,300</td>
-              <td class="n">100%</td>
-              <td class="n">19,100</td>
-              <td class="n">100%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">
-        Sums are for share context only — brand searches are not mutually exclusive people.
-        NOLA is roughly ~1.8–1.9× BTR on these head terms; still the same shape: Audi smaller.
-      </p>
-    </section>
+        <div class="brand-block">
+          <div class="bh">
+            <div class="name bmw">BMW</div>
+            <div class="nums">Brand-root <b>2,900</b> · Top 5 models <b>2,880</b> · Total <b>5,780</b></div>
+          </div>
+          <div class="model-bars">
+            <div class="mrow"><div class="lab">X5</div><div class="track"><div class="fill" style="width:100%;background:var(--bmw)"></div></div><div class="n">720</div></div>
+            <div class="mrow"><div class="lab">X6</div><div class="track"><div class="fill" style="width:100%;background:var(--bmw)"></div></div><div class="n">720</div></div>
+            <div class="mrow"><div class="lab">X3</div><div class="track"><div class="fill" style="width:67%;background:var(--bmw)"></div></div><div class="n">480</div></div>
+            <div class="mrow"><div class="lab">M3</div><div class="track"><div class="fill" style="width:67%;background:var(--bmw)"></div></div><div class="n">480</div></div>
+            <div class="mrow"><div class="lab">M4</div><div class="track"><div class="fill" style="width:67%;background:var(--bmw)"></div></div><div class="n">480</div></div>
+          </div>
+        </div>
 
-    <section class="card">
-      <h2>What this is (and isn’t)</h2>
-      <div class="when">Keep the framing tight when you show it</div>
-      <table>
-        <tbody>
-          <tr>
-            <td><strong>Is</strong></td>
-            <td>Google’s estimate of how often people search each brand name in each DMA</td>
-          </tr>
-          <tr>
-            <td><strong>Shows</strong></td>
-            <td>Audi has meaningfully less brand-root demand than the other core-four makes here and next door</td>
-          </tr>
-          <tr>
-            <td><strong>Is not</strong></td>
-            <td>Website traffic, ad performance, or “we’re losing” — it’s market size on the head term</td>
-          </tr>
-          <tr>
-            <td><strong>Not saying</strong></td>
-            <td>Don’t invest in Audi. Saying: expect a smaller pond than BMW / MB / Lexus on brand search</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+        <div class="brand-block">
+          <div class="bh">
+            <div class="name mb">Mercedes-Benz</div>
+            <div class="nums">Brand-root <b>2,900</b> · Top 5 models <b>1,070</b> · Total <b>3,970</b></div>
+          </div>
+          <div class="model-bars">
+            <div class="mrow"><div class="lab">GLA</div><div class="track"><div class="fill" style="width:100%;background:var(--mb)"></div></div><div class="n">320</div></div>
+            <div class="mrow"><div class="lab">GLB</div><div class="track"><div class="fill" style="width:100%;background:var(--mb)"></div></div><div class="n">320</div></div>
+            <div class="mrow"><div class="lab">GLE</div><div class="track"><div class="fill" style="width:66%;background:var(--mb)"></div></div><div class="n">210</div></div>
+            <div class="mrow"><div class="lab">GLE 350</div><div class="track"><div class="fill" style="width:34%;background:var(--mb)"></div></div><div class="n">110</div></div>
+            <div class="mrow"><div class="lab">GLC 300</div><div class="track"><div class="fill" style="width:34%;background:var(--mb)"></div></div><div class="n">110</div></div>
+          </div>
+        </div>
+
+        <div class="brand-block">
+          <div class="bh">
+            <div class="name audi">Audi</div>
+            <div class="nums">Brand-root <b>1,600</b> · Top 5 models <b>1,440</b> · Total <b>3,040</b></div>
+          </div>
+          <div class="model-bars">
+            <div class="mrow"><div class="lab">Q5</div><div class="track"><div class="fill" style="width:100%;background:var(--audi)"></div></div><div class="n">390</div></div>
+            <div class="mrow"><div class="lab">Q8</div><div class="track"><div class="fill" style="width:82%;background:var(--audi)"></div></div><div class="n">320</div></div>
+            <div class="mrow"><div class="lab">Q7</div><div class="track"><div class="fill" style="width:67%;background:var(--audi)"></div></div><div class="n">260</div></div>
+            <div class="mrow"><div class="lab">Q3</div><div class="track"><div class="fill" style="width:67%;background:var(--audi)"></div></div><div class="n">260</div></div>
+            <div class="mrow"><div class="lab">A5</div><div class="track"><div class="fill" style="width:54%;background:var(--audi)"></div></div><div class="n">210</div></div>
+          </div>
+        </div>
+        <p class="note">Within each brand, model bars are scaled to that brand’s #1 model keyword (not cross-brand).</p>
+      </section>
+    </div>
+
+    <!-- NOLA -->
+    <div class="panel" id="tab-nola">
+      <section class="card">
+        <h2>New Orleans DMA · total search pressure</h2>
+        <div class="when">Brand-root + top 5 model keywords · geo 200622 · ranked by total</div>
+
+        <div class="grid4">
+          <div class="stat lexus">
+            <div class="k">Lexus</div>
+            <div class="v">12,720</div>
+            <div class="s">root 5,400 · models 7,320</div>
+          </div>
+          <div class="stat bmw">
+            <div class="k">BMW</div>
+            <div class="v">11,780</div>
+            <div class="s">root 5,400 · models 6,380</div>
+          </div>
+          <div class="stat mb">
+            <div class="k">Mercedes-Benz</div>
+            <div class="v">7,700</div>
+            <div class="s">root 5,400 · models 2,300</div>
+          </div>
+          <div class="stat audi">
+            <div class="k">Audi</div>
+            <div class="v">6,070</div>
+            <div class="s">root 2,900 · models 3,170</div>
+          </div>
+        </div>
+
+        <div class="rank-row">
+          <div class="r">1</div>
+          <div class="name" style="color:var(--lexus)">Lexus</div>
+          <div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div>
+          <div class="n">12,720</div>
+        </div>
+        <div class="rank-row">
+          <div class="r">2</div>
+          <div class="name" style="color:var(--bmw)">BMW</div>
+          <div class="track"><div class="fill" style="width:93%;background:var(--bmw)"></div></div>
+          <div class="n">11,780</div>
+        </div>
+        <div class="rank-row">
+          <div class="r">3</div>
+          <div class="name" style="color:var(--mb)">Mercedes</div>
+          <div class="track"><div class="fill" style="width:61%;background:var(--mb)"></div></div>
+          <div class="n">7,700</div>
+        </div>
+        <div class="rank-row">
+          <div class="r">4</div>
+          <div class="name" style="color:var(--audi)">Audi</div>
+          <div class="track"><div class="fill" style="width:48%;background:var(--audi)"></div></div>
+          <div class="n">6,070</div>
+        </div>
+        <p class="note">Bars scaled to Lexus total (12,720) = 100% in this market. Outside market is larger in absolute terms; ranking shape is similar.</p>
+      </section>
+
+      <section class="card">
+        <h2>New Orleans DMA · brand + top 5 models</h2>
+        <div class="when">Each block: brand-root, model list, and total search pressure</div>
+
+        <div class="brand-block">
+          <div class="bh">
+            <div class="name lexus">Lexus</div>
+            <div class="nums">Brand-root <b>5,400</b> · Top 5 models <b>7,320</b> · Total <b>12,720</b></div>
+          </div>
+          <div class="model-bars">
+            <div class="mrow"><div class="lab">GX 550</div><div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div><div class="n">2,400</div></div>
+            <div class="mrow"><div class="lab">RX 350</div><div class="track"><div class="fill" style="width:79%;background:var(--lexus)"></div></div><div class="n">1,900</div></div>
+            <div class="mrow"><div class="lab">GX</div><div class="track"><div class="fill" style="width:54%;background:var(--lexus)"></div></div><div class="n">1,300</div></div>
+            <div class="mrow"><div class="lab">TX</div><div class="track"><div class="fill" style="width:42%;background:var(--lexus)"></div></div><div class="n">1,000</div></div>
+            <div class="mrow"><div class="lab">RX</div><div class="track"><div class="fill" style="width:30%;background:var(--lexus)"></div></div><div class="n">720</div></div>
+          </div>
+        </div>
+
+        <div class="brand-block">
+          <div class="bh">
+            <div class="name bmw">BMW</div>
+            <div class="nums">Brand-root <b>5,400</b> · Top 5 models <b>6,380</b> · Total <b>11,780</b></div>
+          </div>
+          <div class="model-bars">
+            <div class="mrow"><div class="lab">X5</div><div class="track"><div class="fill" style="width:100%;background:var(--bmw)"></div></div><div class="n">1,600</div></div>
+            <div class="mrow"><div class="lab">X6</div><div class="track"><div class="fill" style="width:81%;background:var(--bmw)"></div></div><div class="n">1,300</div></div>
+            <div class="mrow"><div class="lab">M3</div><div class="track"><div class="fill" style="width:81%;background:var(--bmw)"></div></div><div class="n">1,300</div></div>
+            <div class="mrow"><div class="lab">M4</div><div class="track"><div class="fill" style="width:81%;background:var(--bmw)"></div></div><div class="n">1,300</div></div>
+            <div class="mrow"><div class="lab">X3</div><div class="track"><div class="fill" style="width:55%;background:var(--bmw)"></div></div><div class="n">880</div></div>
+          </div>
+        </div>
+
+        <div class="brand-block">
+          <div class="bh">
+            <div class="name mb">Mercedes-Benz</div>
+            <div class="nums">Brand-root <b>5,400</b> · Top 5 models <b>2,300</b> · Total <b>7,700</b></div>
+          </div>
+          <div class="model-bars">
+            <div class="mrow"><div class="lab">GLA</div><div class="track"><div class="fill" style="width:100%;background:var(--mb)"></div></div><div class="n">720</div></div>
+            <div class="mrow"><div class="lab">GLB</div><div class="track"><div class="fill" style="width:100%;background:var(--mb)"></div></div><div class="n">720</div></div>
+            <div class="mrow"><div class="lab">GLE</div><div class="track"><div class="fill" style="width:54%;background:var(--mb)"></div></div><div class="n">390</div></div>
+            <div class="mrow"><div class="lab">GLE 350</div><div class="track"><div class="fill" style="width:36%;background:var(--mb)"></div></div><div class="n">260</div></div>
+            <div class="mrow"><div class="lab">GLC 300</div><div class="track"><div class="fill" style="width:29%;background:var(--mb)"></div></div><div class="n">210</div></div>
+          </div>
+        </div>
+
+        <div class="brand-block">
+          <div class="bh">
+            <div class="name audi">Audi</div>
+            <div class="nums">Brand-root <b>2,900</b> · Top 5 models <b>3,170</b> · Total <b>6,070</b></div>
+          </div>
+          <div class="model-bars">
+            <div class="mrow"><div class="lab">Q5</div><div class="track"><div class="fill" style="width:100%;background:var(--audi)"></div></div><div class="n">880</div></div>
+            <div class="mrow"><div class="lab">Q8</div><div class="track"><div class="fill" style="width:82%;background:var(--audi)"></div></div><div class="n">720</div></div>
+            <div class="mrow"><div class="lab">Q7</div><div class="track"><div class="fill" style="width:67%;background:var(--audi)"></div></div><div class="n">590</div></div>
+            <div class="mrow"><div class="lab">Q3</div><div class="track"><div class="fill" style="width:67%;background:var(--audi)"></div></div><div class="n">590</div></div>
+            <div class="mrow"><div class="lab">A5</div><div class="track"><div class="fill" style="width:44%;background:var(--audi)"></div></div><div class="n">390</div></div>
+          </div>
+        </div>
+        <p class="note">Within each brand, model bars are scaled to that brand’s #1 model keyword (not cross-brand).</p>
+      </section>
+    </div>
+
+    <!-- BOTH TABLE -->
+    <div class="panel" id="tab-both">
+      <section class="card">
+        <h2>Both markets · summary table</h2>
+        <div class="when">Total search pressure = brand-root + top 5 model keywords</div>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th class="n">BTR root</th>
+                <th class="n">BTR top 5</th>
+                <th class="n">BTR total</th>
+                <th class="n">NOLA root</th>
+                <th class="n">NOLA top 5</th>
+                <th class="n">NOLA total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Lexus</strong></td>
+                <td class="n">2,900</td>
+                <td class="n">4,430</td>
+                <td class="n"><strong>7,330</strong></td>
+                <td class="n">5,400</td>
+                <td class="n">7,320</td>
+                <td class="n"><strong>12,720</strong></td>
+              </tr>
+              <tr>
+                <td><strong>BMW</strong></td>
+                <td class="n">2,900</td>
+                <td class="n">2,880</td>
+                <td class="n"><strong>5,780</strong></td>
+                <td class="n">5,400</td>
+                <td class="n">6,380</td>
+                <td class="n"><strong>11,780</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Mercedes-Benz</strong></td>
+                <td class="n">2,900</td>
+                <td class="n">1,070</td>
+                <td class="n"><strong>3,970</strong></td>
+                <td class="n">5,400</td>
+                <td class="n">2,300</td>
+                <td class="n"><strong>7,700</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Audi</strong></td>
+                <td class="n">1,600</td>
+                <td class="n">1,440</td>
+                <td class="n"><strong>3,040</strong></td>
+                <td class="n">2,900</td>
+                <td class="n">3,170</td>
+                <td class="n"><strong>6,070</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="margin-top:20px;font-size:15px">Top 5 model keywords by brand</h2>
+        <div class="when" style="margin-bottom:8px">Avg. monthly searches · BTR / NOLA</div>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Top 5 models (Baton Rouge DMA)</th>
+                <th>Top 5 models (New Orleans DMA)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Lexus</strong></td>
+                <td>GX 550 1,300 · RX 350 1,300 · GX 720 · TX 720 · RX 390</td>
+                <td>GX 550 2,400 · RX 350 1,900 · GX 1,300 · TX 1,000 · RX 720</td>
+              </tr>
+              <tr>
+                <td><strong>BMW</strong></td>
+                <td>X5 720 · X6 720 · X3 480 · M3 480 · M4 480</td>
+                <td>X5 1,600 · X6 1,300 · M3 1,300 · M4 1,300 · X3 880</td>
+              </tr>
+              <tr>
+                <td><strong>Mercedes-Benz</strong></td>
+                <td>GLA 320 · GLB 320 · GLE 210 · GLE 350 110 · GLC 300 110</td>
+                <td>GLA 720 · GLB 720 · GLE 390 · GLE 350 260 · GLC 300 210</td>
+              </tr>
+              <tr>
+                <td><strong>Audi</strong></td>
+                <td>Q5 390 · Q8 320 · Q7 260 · Q3 260 · A5 210</td>
+                <td>Q5 880 · Q8 720 · Q7 590 · Q3 590 · A5 390</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          Model sets are the five highest keywords from the seeds measured for each brand (not a full catalog).
+          Mercedes model seeds are SUV/crossover-weighted; BMW includes performance models that ranked in the top five.
+        </p>
+      </section>
+    </div>
 
     <footer>
-      Source: Google Keyword Planner via ABR Google Ads customer 3995837733 · Google Search · English · exact match keywords
-      <code>bmw</code>, <code>mercedes benz</code>, <code>lexus</code>, <code>audi</code>.
+      Source: Google Keyword Planner via Google Ads customer 3995837733 · Google Search · English.
       Geos: Baton Rouge DMA 200716 · New Orleans DMA 200622.
-      Volumes are average monthly search buckets (2026-07-30 pull), not exact unique searchers.
-      Full pressure brief (models, GA4, paid line):
-      <a href="https://thecooperativeagency.github.io/Ga4-dashboards/luxury-brand-pressure-brief.html">luxury-brand-pressure-brief.html</a>.
+      Brand-root keywords: <code>bmw</code>, <code>mercedes benz</code>, <code>lexus</code>, <code>audi</code>.
+      Totals = brand-root + top 5 seeded model keywords for that brand. Overlap possible across keywords; not unique searchers.
+      Volumes are average monthly search estimates (bucketed) from the 2026-07-30 pull.
       The Cooperative Agency · internal snapshot.
     </footer>
   </div>
+
+<script>
+(function () {
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.tabs button'));
+  var panels = {
+    btr: document.getElementById('tab-btr'),
+    nola: document.getElementById('tab-nola'),
+    both: document.getElementById('tab-both')
+  };
+  function act(id) {
+    buttons.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-tab') === id); });
+    Object.keys(panels).forEach(function (k) { panels[k].classList.toggle('active', k === id); });
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { act(b.getAttribute('data-tab')); });
+  });
+})();
+</script>
 </body>
 </html>
