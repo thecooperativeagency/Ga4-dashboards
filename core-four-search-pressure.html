@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Core Four Search Pressure · BTR vs NOLA</title>
+<style>
+  :root {
+    --ink: #0f1419;
+    --muted: #5c6b7a;
+    --line: #e6ebf0;
+    --bg: #f3f5f7;
+    --card: #fff;
+    --gold: #c8a24a;
+    --bmw: #1c69d4;
+    --audi: #bb0a30;
+    --mb: #222;
+    --lexus: #1a6b4a;
+    --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .top {
+    background: linear-gradient(125deg, #0e1218 0%, #1a2332 55%, #243044 100%);
+    color: #fff;
+    padding: 28px 20px 26px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .top .inner { max-width: 880px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.62);
+    font-weight: 650;
+  }
+  h1 {
+    margin: 8px 0 8px;
+    font-size: 26px;
+    letter-spacing: -.03em;
+    font-weight: 750;
+  }
+  .sub {
+    color: rgba(255,255,255,.8);
+    font-size: 15px;
+    max-width: 62ch;
+  }
+  .meta {
+    margin-top: 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,.55);
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 18px 16px 56px;
+  }
+  .takeaway {
+    background: #111;
+    color: #fff;
+    padding: 16px 18px;
+    margin: 0 0 16px;
+  }
+  .takeaway h2 {
+    margin: 0 0 8px;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+  }
+  .takeaway p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 550;
+    letter-spacing: -.01em;
+  }
+  .takeaway .detail {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,.72);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 16px 16px 14px;
+    margin: 0 0 14px;
+  }
+  .card h2 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    letter-spacing: -.02em;
+  }
+  .when {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+  .market-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 10px;
+  }
+  .market-label strong { font-size: 14px; }
+  .market-label span { font-size: 12px; color: var(--muted); }
+  .row {
+    display: grid;
+    grid-template-columns: 118px 1fr 64px;
+    gap: 10px;
+    align-items: center;
+    margin: 0 0 10px;
+  }
+  .brand-name {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .brand-name.audi { color: var(--audi); }
+  .brand-name.bmw { color: var(--bmw); }
+  .brand-name.mb { color: var(--mb); }
+  .brand-name.lexus { color: var(--lexus); }
+  .track {
+    background: #e8edf2;
+    height: 18px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .fill {
+    height: 100%;
+    border-radius: 2px;
+    min-width: 2px;
+  }
+  .num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .compare { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 100px 1fr 56px; }
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 9px 8px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: middle;
+  }
+  th {
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 650;
+  }
+  td.n, th.n {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  tr.audi td { background: rgba(187, 10, 48, .05); }
+  tr.audi td:first-child { font-weight: 750; color: var(--audi); }
+  .share {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .pill {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-weight: 750;
+    border: 1px solid #f0c0c0;
+    color: var(--audi);
+    padding: 2px 7px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .note {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 10px 0 0;
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 720px) {
+    .grid2 { grid-template-columns: 1fr; }
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 14px;
+  }
+  .stat .k {
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 650;
+  }
+  .stat .v {
+    margin-top: 4px;
+    font-size: 28px;
+    font-weight: 750;
+    letter-spacing: -.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat .s {
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  footer {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="inner">
+      <div class="eyebrow">The Cooperative Agency · Market demand snapshot</div>
+      <h1>Core four search pressure</h1>
+      <div class="sub">
+        How much Google brand-root demand each luxury make has in our market
+        (Baton Rouge DMA) and directly outside it (New Orleans DMA).
+      </div>
+      <div class="meta">
+        Keyword Planner · exact brand keywords · Google Search · pulled 2026-07-30 · buckets, not exact counts
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="takeaway">
+      <h2>The point</h2>
+      <p>Audi is playing in a smaller search market than BMW, Mercedes-Benz, and Lexus.</p>
+      <div class="detail">
+        In Baton Rouge, brand-root demand for <strong>bmw / mercedes benz / lexus</strong> sits in the <strong>2,900</strong> band.
+        <strong>audi</strong> sits lower at <strong>1,600</strong> — about <strong>55%</strong> of each of the other three on the head term.
+        Same story outside the market: NOLA puts Audi below the other three again.
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-bottom:14px">
+      <div class="stat">
+        <div class="k">BTR · Audi vs each peer</div>
+        <div class="v" style="color:var(--audi)">~55%</div>
+        <div class="s">1,600 vs 2,900 brand-root band</div>
+      </div>
+      <div class="stat">
+        <div class="k">BTR · Audi share of core four</div>
+        <div class="v" style="color:var(--audi)">~16%</div>
+        <div class="s">1,600 of 10,300 combined brand-root</div>
+      </div>
+    </div>
+
+    <section class="card">
+      <h2>Side by side</h2>
+      <div class="when">Avg. monthly searches · exact keywords · same scale within each market (tallest bar = 100%)</div>
+      <div class="compare">
+        <div>
+          <div class="market-label">
+            <strong>Our market · Baton Rouge DMA</strong>
+            <span>geo 200716</span>
+          </div>
+          <div class="row">
+            <div class="brand-name bmw">BMW</div>
+            <div class="track"><div class="fill" style="width:100%;background:var(--bmw)"></div></div>
+            <div class="num">2,900</div>
+          </div>
+          <div class="row">
+            <div class="brand-name mb">Mercedes</div>
+            <div class="track"><div class="fill" style="width:100%;background:var(--mb)"></div></div>
+            <div class="num">2,900</div>
+          </div>
+          <div class="row">
+            <div class="brand-name lexus">Lexus</div>
+            <div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div>
+            <div class="num">2,900</div>
+          </div>
+          <div class="row">
+            <div class="brand-name audi">Audi</div>
+            <div class="track"><div class="fill" style="width:55%;background:var(--audi)"></div></div>
+            <div class="num">1,600</div>
+          </div>
+        </div>
+        <div>
+          <div class="market-label">
+            <strong>Outside · New Orleans DMA</strong>
+            <span>geo 200622</span>
+          </div>
+          <div class="row">
+            <div class="brand-name bmw">BMW</div>
+            <div class="track"><div class="fill" style="width:100%;background:var(--bmw)"></div></div>
+            <div class="num">5,400</div>
+          </div>
+          <div class="row">
+            <div class="brand-name mb">Mercedes</div>
+            <div class="track"><div class="fill" style="width:100%;background:var(--mb)"></div></div>
+            <div class="num">5,400</div>
+          </div>
+          <div class="row">
+            <div class="brand-name lexus">Lexus</div>
+            <div class="track"><div class="fill" style="width:100%;background:var(--lexus)"></div></div>
+            <div class="num">5,400</div>
+          </div>
+          <div class="row">
+            <div class="brand-name audi">Audi</div>
+            <div class="track"><div class="fill" style="width:54%;background:var(--audi)"></div></div>
+            <div class="num">2,900</div>
+          </div>
+        </div>
+      </div>
+      <p class="note">
+        Identical 2,900 / 5,400 values mean the same Planner <em>bucket</em>, not a true tie to the search.
+        The separation that matters here is Audi’s lower band in both geos.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Numbers</h2>
+      <div class="when">Brand-root keywords only · bmw · mercedes benz · lexus · audi</div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Brand</th>
+              <th class="n">Baton Rouge DMA</th>
+              <th class="n">Share of core four</th>
+              <th class="n">New Orleans DMA</th>
+              <th class="n">Share of core four</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>BMW</strong></td>
+              <td class="n">2,900</td>
+              <td class="n">28%</td>
+              <td class="n">5,400</td>
+              <td class="n">28%</td>
+            </tr>
+            <tr>
+              <td><strong>Mercedes-Benz</strong></td>
+              <td class="n">2,900</td>
+              <td class="n">28%</td>
+              <td class="n">5,400</td>
+              <td class="n">28%</td>
+            </tr>
+            <tr>
+              <td><strong>Lexus</strong></td>
+              <td class="n">2,900</td>
+              <td class="n">28%</td>
+              <td class="n">5,400</td>
+              <td class="n">28%</td>
+            </tr>
+            <tr class="audi">
+              <td>Audi <span class="pill">Smaller market</span></td>
+              <td class="n">1,600</td>
+              <td class="n">16%</td>
+              <td class="n">2,900</td>
+              <td class="n">15%</td>
+            </tr>
+            <tr>
+              <td><strong>Core four sum</strong></td>
+              <td class="n">10,300</td>
+              <td class="n">100%</td>
+              <td class="n">19,100</td>
+              <td class="n">100%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        Sums are for share context only — brand searches are not mutually exclusive people.
+        NOLA is roughly ~1.8–1.9× BTR on these head terms; still the same shape: Audi smaller.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>What this is (and isn’t)</h2>
+      <div class="when">Keep the framing tight when you show it</div>
+      <table>
+        <tbody>
+          <tr>
+            <td><strong>Is</strong></td>
+            <td>Google’s estimate of how often people search each brand name in each DMA</td>
+          </tr>
+          <tr>
+            <td><strong>Shows</strong></td>
+            <td>Audi has meaningfully less brand-root demand than the other core-four makes here and next door</td>
+          </tr>
+          <tr>
+            <td><strong>Is not</strong></td>
+            <td>Website traffic, ad performance, or “we’re losing” — it’s market size on the head term</td>
+          </tr>
+          <tr>
+            <td><strong>Not saying</strong></td>
+            <td>Don’t invest in Audi. Saying: expect a smaller pond than BMW / MB / Lexus on brand search</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      Source: Google Keyword Planner via ABR Google Ads customer 3995837733 · Google Search · English · exact match keywords
+      <code>bmw</code>, <code>mercedes benz</code>, <code>lexus</code>, <code>audi</code>.
+      Geos: Baton Rouge DMA 200716 · New Orleans DMA 200622.
+      Volumes are average monthly search buckets (2026-07-30 pull), not exact unique searchers.
+      Full pressure brief (models, GA4, paid line):
+      <a href="https://thecooperativeagency.github.io/Ga4-dashboards/luxury-brand-pressure-brief.html">luxury-brand-pressure-brief.html</a>.
+      The Cooperative Agency · internal snapshot.
+    </footer>
+  </div>
+</body>
+</html>
