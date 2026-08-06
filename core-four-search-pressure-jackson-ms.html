@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Core Four Search Pressure · Jackson MS + Memphis</title>
+<style>
+  :root {
+    --ink: #0f1419;
+    --muted: #5c6b7a;
+    --line: #e6ebf0;
+    --bg: #f3f5f7;
+    --card: #fff;
+    --gold: #c8a24a;
+    --bmw: #1c69d4;
+    --audi: #bb0a30;
+    --mb: #111;
+    --lexus: #1a6b4a;
+    --font: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .top {
+    background: linear-gradient(125deg, #0e1218 0%, #1a2332 55%, #243044 100%);
+    color: #fff;
+    padding: 28px 20px 26px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .top .inner { max-width: 980px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.62);
+    font-weight: 650;
+  }
+  h1 {
+    margin: 8px 0 8px;
+    font-size: 26px;
+    letter-spacing: -.03em;
+    font-weight: 750;
+  }
+  .sub {
+    color: rgba(255,255,255,.8);
+    font-size: 15px;
+    max-width: 70ch;
+  }
+  .meta {
+    margin-top: 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,.55);
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 18px 16px 56px;
+  }
+  .how {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    padding: 14px 16px;
+    margin: 0 0 14px;
+    font-size: 14px;
+  }
+  .how p { margin: 0 0 8px; }
+  .how p:last-child { margin: 0; }
+  .unit {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 16px;
+    margin: 0 0 14px;
+  }
+  .card h2 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    letter-spacing: -.02em;
+  }
+  .when {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 14px;
+  }
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 14px;
+  }
+  .tabs button {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 8px 12px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .tabs button.active {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 0 0 8px;
+  }
+  @media (max-width: 860px) { .board { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .board { grid-template-columns: 1fr; } }
+  .tile {
+    border: 1px solid var(--line);
+    padding: 14px 12px 12px;
+    background: #fafbfc;
+    min-height: 148px;
+    display: flex;
+    flex-direction: column;
+  }
+  .tile .brand { font-size: 13px; font-weight: 750; letter-spacing: -.01em; }
+  .tile.bmw .brand { color: var(--bmw); }
+  .tile.audi .brand { color: var(--audi); }
+  .tile.mb .brand { color: var(--mb); }
+  .tile.lexus .brand { color: var(--lexus); }
+  .tile .total {
+    margin-top: 8px;
+    font-size: 34px;
+    font-weight: 780;
+    letter-spacing: -.04em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .tile .total-label {
+    margin-top: 4px;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .tile .split {
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.5;
+  }
+  .tile .split b { color: var(--ink); font-weight: 750; }
+  .brand-block {
+    border: 1px solid var(--line);
+    margin: 0 0 12px;
+    overflow: hidden;
+  }
+  .brand-block .bh {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 12px 14px;
+    background: #f7f9fb;
+    border-bottom: 1px solid var(--line);
+    align-items: end;
+  }
+  @media (max-width: 720px) { .brand-block .bh { grid-template-columns: 1fr 1fr; } }
+  .brand-block .bh .name { font-size: 16px; font-weight: 750; }
+  .brand-block .bh .name.bmw { color: var(--bmw); }
+  .brand-block .bh .name.audi { color: var(--audi); }
+  .brand-block .bh .name.mb { color: var(--mb); }
+  .brand-block .bh .name.lexus { color: var(--lexus); }
+  .metric .lbl {
+    display: block;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 650;
+    margin-bottom: 2px;
+  }
+  .metric .val {
+    font-size: 20px;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.02em;
+  }
+  .models {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .models th, .models td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+  }
+  .models th {
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 650;
+    background: #fff;
+  }
+  .models td.n, .models th.n {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .models tr:last-child td { border-bottom: 0; }
+  .models td.model { font-weight: 650; }
+  .side {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 860px) { .side { grid-template-columns: 1fr; } }
+  .side .col {
+    border: 1px solid var(--line);
+    padding: 12px;
+    background: #fafbfc;
+  }
+  .side .col h3 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 750;
+  }
+  .line {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+    align-items: baseline;
+  }
+  .line:last-child { border-bottom: 0; }
+  .line .b { font-weight: 750; }
+  .line .v {
+    font-variant-numeric: tabular-nums;
+    font-weight: 750;
+    font-size: 15px;
+  }
+  .line .b.bmw { color: var(--bmw); }
+  .line .b.audi { color: var(--audi); }
+  .line .b.mb { color: var(--mb); }
+  .line .b.lexus { color: var(--lexus); }
+  table.wide {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    min-width: 780px;
+  }
+  .scroll { overflow-x: auto; }
+  table.wide th, table.wide td {
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+  table.wide th {
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 650;
+  }
+  table.wide td.n, table.wide th.n {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  table.wide td.models {
+    font-size: 12px;
+    color: #334;
+    font-variant-numeric: tabular-nums;
+  }
+  table.wide td strong.bmw { color: var(--bmw); }
+  table.wide td strong.audi { color: var(--audi); }
+  table.wide td strong.mb { color: var(--mb); }
+  table.wide td strong.lexus { color: var(--lexus); }
+  .note {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 10px 0 0;
+  }
+  footer {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+  }
+  a.link { color: #1c69d4; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="inner">
+      <div class="eyebrow">The Cooperative Agency · Market demand snapshot · BMW of Jackson</div>
+      <h1>Core four search pressure · Jackson, MS</h1>
+      <div class="sub">
+        How often people on Google search each core-four brand name and that brand’s top model keywords
+        in the Jackson, MS market, Memphis next door, and statewide Mississippi.
+      </div>
+      <div class="meta">
+        Google Keyword Planner · Google Search · English · pull date 2026-08-06
+        · same method as Baton Rouge core-four snapshot
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="how">
+      <p><strong>What every number means:</strong> average Google searches per month for that exact keyword in that market. Source: Google Keyword Planner.</p>
+      <p><strong>Brand name</strong> — searches for the make itself (example: people typing “bmw” or “audi”).</p>
+      <p><strong>Top 5 models</strong> — searches for the five highest model keywords we measured for that make (example: “bmw x5”, “lexus gx 550”).</p>
+      <p><strong>Combined pressure</strong> — brand name searches + those top five model searches added together. Demand pressure across makes — not a headcount of unique shoppers (overlap possible).</p>
+      <p><strong>Markets:</strong> Jackson, MS DMA (PMA for BMW of Jackson) · Memphis DMA (major adjacent outside) · Mississippi state · plus Hattiesburg-Laurel and Biloxi-Gulfport for other MS DMAs.</p>
+      <div class="unit">Unit on every figure below: avg. searches / month</div>
+    </div>
+
+    <div class="card">
+      <h2>Combined pressure by market</h2>
+      <div class="when">Brand name + top 5 model keywords · ranked within each geo</div>
+      <div class="tabs" role="tablist">
+        <button type="button" class="active" data-tab="jan">Jackson, MS DMA (PMA)</button>
+        <button type="button" data-tab="mem">Memphis DMA</button>
+        <button type="button" data-tab="ms">Mississippi</button>
+        <button type="button" data-tab="side">Side-by-side</button>
+        <button type="button" data-tab="other">Other MS DMAs</button>
+      </div>
+
+      <div class="panel active" id="tab-jan">
+
+      <div class="board">
+      <div class="tile lexus">
+        <div class="brand">Lexus</div>
+        <div class="total">4,980</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>1,900</b><br/>Top 5 models <b>3,080</b></div>
+      </div>
+      <div class="tile bmw">
+        <div class="brand">BMW</div>
+        <div class="total">3,870</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>1,900</b><br/>Top 5 models <b>1,970</b></div>
+      </div>
+      <div class="tile mb">
+        <div class="brand">Mercedes-Benz</div>
+        <div class="total">3,320</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>2,400</b><br/>Top 5 models <b>920</b></div>
+      </div>
+      <div class="tile audi">
+        <div class="brand">Audi</div>
+        <div class="total">1,950</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>1,000</b><br/>Top 5 models <b>950</b></div>
+      </div>
+      </div>
+      <p class="note">Ranked by combined pressure (brand name + top 5 model keywords). Unit: avg. searches / month.</p>
+      <h3 style="margin:18px 0 10px;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#5c6b7a">By brand · Jackson, MS DMA</h3>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name lexus">Lexus</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">1,900</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">3,080</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">4,980</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">GX 550</td><td class="n">1,000</td></tr>
+            <tr><td class="model">RX 350</td><td class="n">1,000</td></tr>
+            <tr><td class="model">GX</td><td class="n">480</td></tr>
+            <tr><td class="model">TX</td><td class="n">390</td></tr>
+            <tr><td class="model">LX</td><td class="n">210</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name bmw">BMW</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">1,900</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">1,970</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">3,870</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">X5</td><td class="n">480</td></tr>
+            <tr><td class="model">X6</td><td class="n">390</td></tr>
+            <tr><td class="model">M3</td><td class="n">390</td></tr>
+            <tr><td class="model">M4</td><td class="n">390</td></tr>
+            <tr><td class="model">X3</td><td class="n">320</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name mb">Mercedes-Benz</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">2,400</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">920</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">3,320</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">GLA</td><td class="n">260</td></tr>
+            <tr><td class="model">GLB</td><td class="n">260</td></tr>
+            <tr><td class="model">GLE 350</td><td class="n">170</td></tr>
+            <tr><td class="model">GLE</td><td class="n">140</td></tr>
+            <tr><td class="model">GLC 300</td><td class="n">90</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name audi">Audi</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">1,000</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">950</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">1,950</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">Q5</td><td class="n">260</td></tr>
+            <tr><td class="model">Q7</td><td class="n">210</td></tr>
+            <tr><td class="model">Q8</td><td class="n">170</td></tr>
+            <tr><td class="model">Q3</td><td class="n">170</td></tr>
+            <tr><td class="model">A5</td><td class="n">140</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+
+      <div class="panel" id="tab-mem">
+
+      <div class="board">
+      <div class="tile lexus">
+        <div class="brand">Lexus</div>
+        <div class="total">10,280</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>4,400</b><br/>Top 5 models <b>5,880</b></div>
+      </div>
+      <div class="tile bmw">
+        <div class="brand">BMW</div>
+        <div class="total">10,120</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>5,400</b><br/>Top 5 models <b>4,720</b></div>
+      </div>
+      <div class="tile mb">
+        <div class="brand">Mercedes-Benz</div>
+        <div class="total">7,240</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>5,400</b><br/>Top 5 models <b>1,840</b></div>
+      </div>
+      <div class="tile audi">
+        <div class="brand">Audi</div>
+        <div class="total">5,190</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>2,400</b><br/>Top 5 models <b>2,790</b></div>
+      </div>
+      </div>
+      <p class="note">Ranked by combined pressure (brand name + top 5 model keywords). Unit: avg. searches / month.</p>
+      <h3 style="margin:18px 0 10px;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#5c6b7a">By brand · Memphis DMA</h3>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name lexus">Lexus</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">4,400</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">5,880</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">10,280</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">GX 550</td><td class="n">1,900</td></tr>
+            <tr><td class="model">RX 350</td><td class="n">1,900</td></tr>
+            <tr><td class="model">GX</td><td class="n">880</td></tr>
+            <tr><td class="model">TX</td><td class="n">720</td></tr>
+            <tr><td class="model">LX</td><td class="n">480</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name bmw">BMW</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">5,400</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">4,720</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">10,120</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">X5</td><td class="n">1,000</td></tr>
+            <tr><td class="model">X6</td><td class="n">1,000</td></tr>
+            <tr><td class="model">M3</td><td class="n">1,000</td></tr>
+            <tr><td class="model">M4</td><td class="n">1,000</td></tr>
+            <tr><td class="model">X3</td><td class="n">720</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name mb">Mercedes-Benz</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">5,400</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">1,840</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">7,240</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">GLA</td><td class="n">480</td></tr>
+            <tr><td class="model">GLB</td><td class="n">480</td></tr>
+            <tr><td class="model">GLE</td><td class="n">390</td></tr>
+            <tr><td class="model">GLE 350</td><td class="n">320</td></tr>
+            <tr><td class="model">GLC 300</td><td class="n">170</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name audi">Audi</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">2,400</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">2,790</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">5,190</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">Q5</td><td class="n">720</td></tr>
+            <tr><td class="model">Q8</td><td class="n">720</td></tr>
+            <tr><td class="model">Q7</td><td class="n">480</td></tr>
+            <tr><td class="model">Q3</td><td class="n">480</td></tr>
+            <tr><td class="model">A5</td><td class="n">390</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+
+      <div class="panel" id="tab-ms">
+
+      <div class="board">
+      <div class="tile lexus">
+        <div class="brand">Lexus</div>
+        <div class="total">13,590</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>5,400</b><br/>Top 5 models <b>8,190</b></div>
+      </div>
+      <div class="tile bmw">
+        <div class="brand">BMW</div>
+        <div class="total">12,980</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>6,600</b><br/>Top 5 models <b>6,380</b></div>
+      </div>
+      <div class="tile mb">
+        <div class="brand">Mercedes-Benz</div>
+        <div class="total">9,170</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>6,600</b><br/>Top 5 models <b>2,570</b></div>
+      </div>
+      <div class="tile audi">
+        <div class="brand">Audi</div>
+        <div class="total">5,670</div>
+        <div class="total-label">combined / month</div>
+        <div class="split">Brand name <b>2,900</b><br/>Top 5 models <b>2,770</b></div>
+      </div>
+      </div>
+      <p class="note">Ranked by combined pressure (brand name + top 5 model keywords). Unit: avg. searches / month.</p>
+      <h3 style="margin:18px 0 10px;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#5c6b7a">By brand · Mississippi</h3>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name lexus">Lexus</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">5,400</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">8,190</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">13,590</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">GX 550</td><td class="n">2,900</td></tr>
+            <tr><td class="model">RX 350</td><td class="n">2,400</td></tr>
+            <tr><td class="model">GX</td><td class="n">1,300</td></tr>
+            <tr><td class="model">TX</td><td class="n">1,000</td></tr>
+            <tr><td class="model">LX</td><td class="n">590</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name bmw">BMW</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">6,600</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">6,380</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">12,980</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">X5</td><td class="n">1,600</td></tr>
+            <tr><td class="model">X6</td><td class="n">1,300</td></tr>
+            <tr><td class="model">M3</td><td class="n">1,300</td></tr>
+            <tr><td class="model">M4</td><td class="n">1,300</td></tr>
+            <tr><td class="model">X3</td><td class="n">880</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name mb">Mercedes-Benz</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">6,600</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">2,570</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">9,170</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">GLA</td><td class="n">720</td></tr>
+            <tr><td class="model">GLB</td><td class="n">720</td></tr>
+            <tr><td class="model">GLE</td><td class="n">480</td></tr>
+            <tr><td class="model">GLE 350</td><td class="n">390</td></tr>
+            <tr><td class="model">GLC 300</td><td class="n">260</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="brand-block">
+        <div class="bh">
+          <div class="name audi">Audi</div>
+          <div class="metric"><span class="lbl">Brand name</span><span class="val">2,900</span></div>
+          <div class="metric"><span class="lbl">Top 5 models</span><span class="val">2,770</span></div>
+          <div class="metric"><span class="lbl">Combined</span><span class="val">5,670</span></div>
+        </div>
+        <table class="models">
+          <thead><tr><th>Model keyword</th><th class="n">Avg. searches / month</th></tr></thead>
+          <tbody>
+            <tr><td class="model">Q5</td><td class="n">720</td></tr>
+            <tr><td class="model">Q8</td><td class="n">590</td></tr>
+            <tr><td class="model">Q7</td><td class="n">590</td></tr>
+            <tr><td class="model">Q3</td><td class="n">480</td></tr>
+            <tr><td class="model">A5</td><td class="n">390</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+
+      <div class="panel" id="tab-side">
+        <div class="side">
+      <div class="col">
+        <h3>Jackson, MS DMA · combined</h3>
+        <div class="line"><span class="b lexus">Lexus</span><span class="v">4,980</span></div>
+        <div class="line"><span class="b bmw">BMW</span><span class="v">3,870</span></div>
+        <div class="line"><span class="b mb">Mercedes-Benz</span><span class="v">3,320</span></div>
+        <div class="line"><span class="b audi">Audi</span><span class="v">1,950</span></div>
+      </div>
+      <div class="col">
+        <h3>Memphis DMA · combined</h3>
+        <div class="line"><span class="b lexus">Lexus</span><span class="v">10,280</span></div>
+        <div class="line"><span class="b bmw">BMW</span><span class="v">10,120</span></div>
+        <div class="line"><span class="b mb">Mercedes-Benz</span><span class="v">7,240</span></div>
+        <div class="line"><span class="b audi">Audi</span><span class="v">5,190</span></div>
+      </div>
+      <div class="col">
+        <h3>Mississippi · combined</h3>
+        <div class="line"><span class="b lexus">Lexus</span><span class="v">13,590</span></div>
+        <div class="line"><span class="b bmw">BMW</span><span class="v">12,980</span></div>
+        <div class="line"><span class="b mb">Mercedes-Benz</span><span class="v">9,170</span></div>
+        <div class="line"><span class="b audi">Audi</span><span class="v">5,670</span></div>
+      </div>
+        </div>
+        <p class="note" style="margin-top:14px">Same unit on all three: avg. searches / month for brand name + top 5 models.</p>
+        <div class="scroll" style="margin-top:14px">
+          <table class="wide">
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th class="n">Jackson combined</th>
+                <th class="n">Memphis combined</th>
+                <th class="n">MS combined</th>
+                <th>Jackson top 5 models</th>
+              </tr>
+            </thead>
+            <tbody>
+<tr><td><strong class="lexus">Lexus</strong></td><td class="n"><strong>4,980</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">1,900 + 3,080</div></td><td class="n"><strong>10,280</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">4,400 + 5,880</div></td><td class="n"><strong>13,590</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">5,400 + 8,190</div></td><td class="models">GX 550 1,000 · RX 350 1,000 · GX 480 · TX 390 · LX 210</td></tr>
+<tr><td><strong class="bmw">BMW</strong></td><td class="n"><strong>3,870</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">1,900 + 1,970</div></td><td class="n"><strong>10,120</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">5,400 + 4,720</div></td><td class="n"><strong>12,980</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">6,600 + 6,380</div></td><td class="models">X5 480 · X6 390 · M3 390 · M4 390 · X3 320</td></tr>
+<tr><td><strong class="mb">Mercedes-Benz</strong></td><td class="n"><strong>3,320</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">2,400 + 920</div></td><td class="n"><strong>7,240</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">5,400 + 1,840</div></td><td class="n"><strong>9,170</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">6,600 + 2,570</div></td><td class="models">GLA 260 · GLB 260 · GLE 350 170 · GLE 140 · GLC 300 90</td></tr>
+<tr><td><strong class="audi">Audi</strong></td><td class="n"><strong>1,950</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">1,000 + 950</div></td><td class="n"><strong>5,190</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">2,400 + 2,790</div></td><td class="n"><strong>5,670</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">2,900 + 2,770</div></td><td class="models">Q5 260 · Q7 210 · Q8 170 · Q3 170 · A5 140</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" id="tab-other">
+        <div class="side" style="grid-template-columns:1fr 1fr">
+      <div class="col">
+        <h3>Hattiesburg-Laurel DMA · combined</h3>
+        <div class="line"><span class="b lexus">Lexus</span><span class="v">1,190</span></div>
+        <div class="line"><span class="b bmw">BMW</span><span class="v">1,150</span></div>
+        <div class="line"><span class="b mb">Mercedes-Benz</span><span class="v">700</span></div>
+        <div class="line"><span class="b audi">Audi</span><span class="v">500</span></div>
+      </div>
+      <div class="col">
+        <h3>Biloxi-Gulfport DMA · combined</h3>
+        <div class="line"><span class="b lexus">Lexus</span><span class="v">2,030</span></div>
+        <div class="line"><span class="b bmw">BMW</span><span class="v">1,930</span></div>
+        <div class="line"><span class="b mb">Mercedes-Benz</span><span class="v">1,200</span></div>
+        <div class="line"><span class="b audi">Audi</span><span class="v">830</span></div>
+      </div>
+        </div>
+        <p class="note" style="margin-top:14px">Smaller MS DMAs south/east of Jackson. Useful for paid radius and regional context — not the PMA core.</p>
+        <div class="scroll" style="margin-top:14px">
+          <table class="wide">
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th class="n">Hattiesburg combined</th>
+                <th class="n">Biloxi-Gulfport combined</th>
+                <th class="n">Jackson combined</th>
+                <th>Jackson top 5 models</th>
+              </tr>
+            </thead>
+            <tbody>
+<tr><td><strong class="lexus">Lexus</strong></td><td class="n"><strong>1,190</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">390 + 800</div></td><td class="n"><strong>2,030</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">880 + 1,150</div></td><td class="n"><strong>4,980</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">1,900 + 3,080</div></td><td class="models">GX 550 1,000 · RX 350 1,000 · GX 480 · TX 390 · LX 210</td></tr>
+<tr><td><strong class="bmw">BMW</strong></td><td class="n"><strong>1,150</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">590 + 560</div></td><td class="n"><strong>1,930</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">1,000 + 930</div></td><td class="n"><strong>3,870</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">1,900 + 1,970</div></td><td class="models">X5 480 · X6 390 · M3 390 · M4 390 · X3 320</td></tr>
+<tr><td><strong class="mb">Mercedes-Benz</strong></td><td class="n"><strong>700</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">480 + 220</div></td><td class="n"><strong>1,200</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">880 + 320</div></td><td class="n"><strong>3,320</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">2,400 + 920</div></td><td class="models">GLA 260 · GLB 260 · GLE 350 170 · GLE 140 · GLC 300 90</td></tr>
+<tr><td><strong class="audi">Audi</strong></td><td class="n"><strong>500</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">260 + 240</div></td><td class="n"><strong>830</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">480 + 350</div></td><td class="n"><strong>1,950</strong><div style="font-size:11px;color:#5c6b7a;font-weight:500">1,000 + 950</div></td><td class="models">Q5 260 · Q7 210 · Q8 170 · Q3 170 · A5 140</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Jackson, MS DMA · brand-root only</h2>
+      <div class="when">Head terms only · same Planner pull</div>
+      <div class="side" style="grid-template-columns:1fr">
+        <div class="col">
+          <div class="line"><span class="b mb">Mercedes-Benz · “mercedes benz”</span><span class="v">2,400</span></div>
+          <div class="line"><span class="b bmw">BMW · “bmw”</span><span class="v">1,900</span></div>
+          <div class="line"><span class="b lexus">Lexus · “lexus”</span><span class="v">1,900</span></div>
+          <div class="line"><span class="b audi">Audi · “audi”</span><span class="v">1,000</span></div>
+        </div>
+      </div>
+      <p class="note">Identical bucket values mean same Planner rung, not a true tie to the search. Prefer combined (root + models) for ranking makes.</p>
+    </div>
+
+    <div class="card">
+      <h2>Related</h2>
+      <p class="when" style="margin:0">Baton Rouge set uses the same method</p>
+      <p style="margin:8px 0 0;font-size:14px">
+        <a class="link" href="core-four-search-pressure.html">BTR + NOLA core-four hub</a>
+        ·
+        <a class="link" href="luxury-brand-pressure-brief.html">ABR + BHBMW full pressure brief</a>
+      </p>
+    </div>
+
+    <footer>
+      Keyword Planner via Google Ads customer 3995837733 · Google Search · English · pull 2026-08-06.
+      Geos (name-verified): Jackson, MS DMA <code>200718</code> · Memphis, TN DMA <code>200640</code> · Mississippi <code>21158</code>
+      · Hattiesburg-Laurel DMA <code>200710</code> · Biloxi-Gulfport DMA <code>200746</code>.
+      Volumes are Google average monthly search buckets, not exact unique searchers.
+      Combined = brand-root + top 5 seeded model keywords; keyword overlap possible.
+      Market demand only — not BMW of Jackson site capture or paid impression share.
+      The Cooperative Agency · internal market snapshot.
+    </footer>
+  </div>
+
+<script>
+(function(){
+  const buttons=[...document.querySelectorAll('.tabs button')];
+  const panels={
+    jan: document.getElementById('tab-jan'),
+    mem: document.getElementById('tab-mem'),
+    ms: document.getElementById('tab-ms'),
+    side: document.getElementById('tab-side'),
+    other: document.getElementById('tab-other')
+  };
+  function act(id){
+    buttons.forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
+    Object.entries(panels).forEach(([k,el])=>el && el.classList.toggle('active', k===id));
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>act(b.dataset.tab)));
+})();
+</script>
+</body>
+</html>

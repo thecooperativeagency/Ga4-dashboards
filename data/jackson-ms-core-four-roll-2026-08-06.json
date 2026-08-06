@@ -1,0 +1,1532 @@
+{
+  "Jackson MS DMA": {
+    "brands": {
+      "BMW": {
+        "root_term": "bmw",
+        "root": 1900,
+        "top5": [
+          [
+            "bmw x5",
+            480
+          ],
+          [
+            "bmw x6",
+            390
+          ],
+          [
+            "bmw m3",
+            390
+          ],
+          [
+            "bmw m4",
+            390
+          ],
+          [
+            "bmw x3",
+            320
+          ]
+        ],
+        "models_sum": 1970,
+        "combined": 3870,
+        "all_models": [
+          [
+            "bmw x5",
+            480
+          ],
+          [
+            "bmw x6",
+            390
+          ],
+          [
+            "bmw m3",
+            390
+          ],
+          [
+            "bmw m4",
+            390
+          ],
+          [
+            "bmw x3",
+            320
+          ],
+          [
+            "bmw x7",
+            260
+          ],
+          [
+            "bmw x1",
+            140
+          ],
+          [
+            "bmw x4",
+            140
+          ],
+          [
+            "bmw 3 series",
+            110
+          ],
+          [
+            "bmw m2",
+            110
+          ],
+          [
+            "bmw 5 series",
+            50
+          ],
+          [
+            "bmw i4",
+            50
+          ],
+          [
+            "bmw ix",
+            30
+          ],
+          [
+            "bmw i5",
+            20
+          ]
+        ]
+      },
+      "Audi": {
+        "root_term": "audi",
+        "root": 1000,
+        "top5": [
+          [
+            "audi q5",
+            260
+          ],
+          [
+            "audi q7",
+            210
+          ],
+          [
+            "audi q8",
+            170
+          ],
+          [
+            "audi q3",
+            170
+          ],
+          [
+            "audi a5",
+            140
+          ]
+        ],
+        "models_sum": 950,
+        "combined": 1950,
+        "all_models": [
+          [
+            "audi q5",
+            260
+          ],
+          [
+            "audi q7",
+            210
+          ],
+          [
+            "audi q8",
+            170
+          ],
+          [
+            "audi q3",
+            170
+          ],
+          [
+            "audi a5",
+            140
+          ],
+          [
+            "audi a4",
+            140
+          ],
+          [
+            "audi a3",
+            110
+          ],
+          [
+            "audi a6",
+            90
+          ],
+          [
+            "audi e tron",
+            30
+          ],
+          [
+            "audi q4",
+            10
+          ]
+        ]
+      },
+      "Mercedes-Benz": {
+        "root_term": "mercedes benz",
+        "root": 2400,
+        "top5": [
+          [
+            "mercedes gla",
+            260
+          ],
+          [
+            "mercedes glb",
+            260
+          ],
+          [
+            "mercedes gle 350",
+            170
+          ],
+          [
+            "mercedes gle",
+            140
+          ],
+          [
+            "mercedes glc 300",
+            90
+          ]
+        ],
+        "models_sum": 920,
+        "combined": 3320,
+        "all_models": [
+          [
+            "mercedes gla",
+            260
+          ],
+          [
+            "mercedes glb",
+            260
+          ],
+          [
+            "mercedes gle 350",
+            170
+          ],
+          [
+            "mercedes gle",
+            140
+          ],
+          [
+            "mercedes glc 300",
+            90
+          ],
+          [
+            "mercedes glc",
+            50
+          ],
+          [
+            "mercedes s class",
+            50
+          ],
+          [
+            "mercedes e class",
+            40
+          ],
+          [
+            "mercedes g class",
+            40
+          ],
+          [
+            "mercedes c class",
+            30
+          ]
+        ]
+      },
+      "Lexus": {
+        "root_term": "lexus",
+        "root": 1900,
+        "top5": [
+          [
+            "lexus gx 550",
+            1000
+          ],
+          [
+            "lexus rx 350",
+            1000
+          ],
+          [
+            "lexus gx",
+            480
+          ],
+          [
+            "lexus tx",
+            390
+          ],
+          [
+            "lexus lx",
+            210
+          ]
+        ],
+        "models_sum": 3080,
+        "combined": 4980,
+        "all_models": [
+          [
+            "lexus gx 550",
+            1000
+          ],
+          [
+            "lexus rx 350",
+            1000
+          ],
+          [
+            "lexus gx",
+            480
+          ],
+          [
+            "lexus tx",
+            390
+          ],
+          [
+            "lexus lx",
+            210
+          ],
+          [
+            "lexus nx",
+            170
+          ],
+          [
+            "lexus es",
+            110
+          ],
+          [
+            "lexus is",
+            90
+          ],
+          [
+            "lexus ux",
+            70
+          ],
+          [
+            "lexus rc",
+            30
+          ]
+        ]
+      }
+    },
+    "order": [
+      "Lexus",
+      "BMW",
+      "Mercedes-Benz",
+      "Audi"
+    ]
+  },
+  "Memphis DMA": {
+    "brands": {
+      "BMW": {
+        "root_term": "bmw",
+        "root": 5400,
+        "top5": [
+          [
+            "bmw x5",
+            1000
+          ],
+          [
+            "bmw x6",
+            1000
+          ],
+          [
+            "bmw m3",
+            1000
+          ],
+          [
+            "bmw m4",
+            1000
+          ],
+          [
+            "bmw x3",
+            720
+          ]
+        ],
+        "models_sum": 4720,
+        "combined": 10120,
+        "all_models": [
+          [
+            "bmw x5",
+            1000
+          ],
+          [
+            "bmw x6",
+            1000
+          ],
+          [
+            "bmw m3",
+            1000
+          ],
+          [
+            "bmw m4",
+            1000
+          ],
+          [
+            "bmw x3",
+            720
+          ],
+          [
+            "bmw x7",
+            590
+          ],
+          [
+            "bmw x1",
+            320
+          ],
+          [
+            "bmw x4",
+            320
+          ],
+          [
+            "bmw m2",
+            320
+          ],
+          [
+            "bmw 3 series",
+            260
+          ],
+          [
+            "bmw i4",
+            170
+          ],
+          [
+            "bmw 5 series",
+            110
+          ],
+          [
+            "bmw ix",
+            110
+          ],
+          [
+            "bmw i5",
+            50
+          ]
+        ]
+      },
+      "Audi": {
+        "root_term": "audi",
+        "root": 2400,
+        "top5": [
+          [
+            "audi q5",
+            720
+          ],
+          [
+            "audi q8",
+            720
+          ],
+          [
+            "audi q7",
+            480
+          ],
+          [
+            "audi q3",
+            480
+          ],
+          [
+            "audi a5",
+            390
+          ]
+        ],
+        "models_sum": 2790,
+        "combined": 5190,
+        "all_models": [
+          [
+            "audi q5",
+            720
+          ],
+          [
+            "audi q8",
+            720
+          ],
+          [
+            "audi q7",
+            480
+          ],
+          [
+            "audi q3",
+            480
+          ],
+          [
+            "audi a5",
+            390
+          ],
+          [
+            "audi a4",
+            390
+          ],
+          [
+            "audi a3",
+            320
+          ],
+          [
+            "audi a6",
+            260
+          ],
+          [
+            "audi e tron",
+            90
+          ],
+          [
+            "audi q4",
+            50
+          ]
+        ]
+      },
+      "Mercedes-Benz": {
+        "root_term": "mercedes benz",
+        "root": 5400,
+        "top5": [
+          [
+            "mercedes gla",
+            480
+          ],
+          [
+            "mercedes glb",
+            480
+          ],
+          [
+            "mercedes gle",
+            390
+          ],
+          [
+            "mercedes gle 350",
+            320
+          ],
+          [
+            "mercedes glc 300",
+            170
+          ]
+        ],
+        "models_sum": 1840,
+        "combined": 7240,
+        "all_models": [
+          [
+            "mercedes gla",
+            480
+          ],
+          [
+            "mercedes glb",
+            480
+          ],
+          [
+            "mercedes gle",
+            390
+          ],
+          [
+            "mercedes gle 350",
+            320
+          ],
+          [
+            "mercedes glc 300",
+            170
+          ],
+          [
+            "mercedes glc",
+            140
+          ],
+          [
+            "mercedes s class",
+            140
+          ],
+          [
+            "mercedes g class",
+            110
+          ],
+          [
+            "mercedes c class",
+            90
+          ],
+          [
+            "mercedes e class",
+            90
+          ]
+        ]
+      },
+      "Lexus": {
+        "root_term": "lexus",
+        "root": 4400,
+        "top5": [
+          [
+            "lexus gx 550",
+            1900
+          ],
+          [
+            "lexus rx 350",
+            1900
+          ],
+          [
+            "lexus gx",
+            880
+          ],
+          [
+            "lexus tx",
+            720
+          ],
+          [
+            "lexus lx",
+            480
+          ]
+        ],
+        "models_sum": 5880,
+        "combined": 10280,
+        "all_models": [
+          [
+            "lexus gx 550",
+            1900
+          ],
+          [
+            "lexus rx 350",
+            1900
+          ],
+          [
+            "lexus gx",
+            880
+          ],
+          [
+            "lexus tx",
+            720
+          ],
+          [
+            "lexus lx",
+            480
+          ],
+          [
+            "lexus nx",
+            390
+          ],
+          [
+            "lexus es",
+            210
+          ],
+          [
+            "lexus is",
+            210
+          ],
+          [
+            "lexus ux",
+            170
+          ],
+          [
+            "lexus rc",
+            90
+          ]
+        ]
+      }
+    },
+    "order": [
+      "Lexus",
+      "BMW",
+      "Mercedes-Benz",
+      "Audi"
+    ]
+  },
+  "Mississippi": {
+    "brands": {
+      "BMW": {
+        "root_term": "bmw",
+        "root": 6600,
+        "top5": [
+          [
+            "bmw x5",
+            1600
+          ],
+          [
+            "bmw x6",
+            1300
+          ],
+          [
+            "bmw m3",
+            1300
+          ],
+          [
+            "bmw m4",
+            1300
+          ],
+          [
+            "bmw x3",
+            880
+          ]
+        ],
+        "models_sum": 6380,
+        "combined": 12980,
+        "all_models": [
+          [
+            "bmw x5",
+            1600
+          ],
+          [
+            "bmw x6",
+            1300
+          ],
+          [
+            "bmw m3",
+            1300
+          ],
+          [
+            "bmw m4",
+            1300
+          ],
+          [
+            "bmw x3",
+            880
+          ],
+          [
+            "bmw x7",
+            880
+          ],
+          [
+            "bmw x1",
+            390
+          ],
+          [
+            "bmw x4",
+            390
+          ],
+          [
+            "bmw m2",
+            390
+          ],
+          [
+            "bmw 3 series",
+            320
+          ],
+          [
+            "bmw 5 series",
+            170
+          ],
+          [
+            "bmw i4",
+            170
+          ],
+          [
+            "bmw ix",
+            90
+          ],
+          [
+            "bmw i5",
+            40
+          ]
+        ]
+      },
+      "Audi": {
+        "root_term": "audi",
+        "root": 2900,
+        "top5": [
+          [
+            "audi q5",
+            720
+          ],
+          [
+            "audi q8",
+            590
+          ],
+          [
+            "audi q7",
+            590
+          ],
+          [
+            "audi q3",
+            480
+          ],
+          [
+            "audi a5",
+            390
+          ]
+        ],
+        "models_sum": 2770,
+        "combined": 5670,
+        "all_models": [
+          [
+            "audi q5",
+            720
+          ],
+          [
+            "audi q8",
+            590
+          ],
+          [
+            "audi q7",
+            590
+          ],
+          [
+            "audi q3",
+            480
+          ],
+          [
+            "audi a5",
+            390
+          ],
+          [
+            "audi a4",
+            390
+          ],
+          [
+            "audi a3",
+            390
+          ],
+          [
+            "audi a6",
+            320
+          ],
+          [
+            "audi e tron",
+            90
+          ],
+          [
+            "audi q4",
+            40
+          ]
+        ]
+      },
+      "Mercedes-Benz": {
+        "root_term": "mercedes benz",
+        "root": 6600,
+        "top5": [
+          [
+            "mercedes gla",
+            720
+          ],
+          [
+            "mercedes glb",
+            720
+          ],
+          [
+            "mercedes gle",
+            480
+          ],
+          [
+            "mercedes gle 350",
+            390
+          ],
+          [
+            "mercedes glc 300",
+            260
+          ]
+        ],
+        "models_sum": 2570,
+        "combined": 9170,
+        "all_models": [
+          [
+            "mercedes gla",
+            720
+          ],
+          [
+            "mercedes glb",
+            720
+          ],
+          [
+            "mercedes gle",
+            480
+          ],
+          [
+            "mercedes gle 350",
+            390
+          ],
+          [
+            "mercedes glc 300",
+            260
+          ],
+          [
+            "mercedes glc",
+            170
+          ],
+          [
+            "mercedes s class",
+            170
+          ],
+          [
+            "mercedes g class",
+            140
+          ],
+          [
+            "mercedes c class",
+            110
+          ],
+          [
+            "mercedes e class",
+            110
+          ]
+        ]
+      },
+      "Lexus": {
+        "root_term": "lexus",
+        "root": 5400,
+        "top5": [
+          [
+            "lexus gx 550",
+            2900
+          ],
+          [
+            "lexus rx 350",
+            2400
+          ],
+          [
+            "lexus gx",
+            1300
+          ],
+          [
+            "lexus tx",
+            1000
+          ],
+          [
+            "lexus lx",
+            590
+          ]
+        ],
+        "models_sum": 8190,
+        "combined": 13590,
+        "all_models": [
+          [
+            "lexus gx 550",
+            2900
+          ],
+          [
+            "lexus rx 350",
+            2400
+          ],
+          [
+            "lexus gx",
+            1300
+          ],
+          [
+            "lexus tx",
+            1000
+          ],
+          [
+            "lexus lx",
+            590
+          ],
+          [
+            "lexus nx",
+            480
+          ],
+          [
+            "lexus es",
+            320
+          ],
+          [
+            "lexus is",
+            260
+          ],
+          [
+            "lexus ux",
+            210
+          ],
+          [
+            "lexus rc",
+            90
+          ]
+        ]
+      }
+    },
+    "order": [
+      "Lexus",
+      "BMW",
+      "Mercedes-Benz",
+      "Audi"
+    ]
+  },
+  "Hattiesburg-Laurel DMA": {
+    "brands": {
+      "BMW": {
+        "root_term": "bmw",
+        "root": 590,
+        "top5": [
+          [
+            "bmw x5",
+            140
+          ],
+          [
+            "bmw x6",
+            110
+          ],
+          [
+            "bmw m3",
+            110
+          ],
+          [
+            "bmw m4",
+            110
+          ],
+          [
+            "bmw x3",
+            90
+          ]
+        ],
+        "models_sum": 560,
+        "combined": 1150,
+        "all_models": [
+          [
+            "bmw x5",
+            140
+          ],
+          [
+            "bmw x6",
+            110
+          ],
+          [
+            "bmw m3",
+            110
+          ],
+          [
+            "bmw m4",
+            110
+          ],
+          [
+            "bmw x3",
+            90
+          ],
+          [
+            "bmw x7",
+            90
+          ],
+          [
+            "bmw x1",
+            40
+          ],
+          [
+            "bmw x4",
+            40
+          ],
+          [
+            "bmw m2",
+            40
+          ],
+          [
+            "bmw 3 series",
+            30
+          ],
+          [
+            "bmw 5 series",
+            20
+          ],
+          [
+            "bmw i4",
+            10
+          ],
+          [
+            "bmw i5",
+            10
+          ],
+          [
+            "bmw ix",
+            10
+          ]
+        ]
+      },
+      "Audi": {
+        "root_term": "audi",
+        "root": 260,
+        "top5": [
+          [
+            "audi q5",
+            70
+          ],
+          [
+            "audi q7",
+            50
+          ],
+          [
+            "audi q8",
+            40
+          ],
+          [
+            "audi q3",
+            40
+          ],
+          [
+            "audi a3",
+            40
+          ]
+        ],
+        "models_sum": 240,
+        "combined": 500,
+        "all_models": [
+          [
+            "audi q5",
+            70
+          ],
+          [
+            "audi q7",
+            50
+          ],
+          [
+            "audi q8",
+            40
+          ],
+          [
+            "audi q3",
+            40
+          ],
+          [
+            "audi a3",
+            40
+          ],
+          [
+            "audi a5",
+            30
+          ],
+          [
+            "audi a4",
+            30
+          ],
+          [
+            "audi a6",
+            20
+          ],
+          [
+            "audi q4",
+            10
+          ],
+          [
+            "audi e tron",
+            10
+          ]
+        ]
+      },
+      "Mercedes-Benz": {
+        "root_term": "mercedes benz",
+        "root": 480,
+        "top5": [
+          [
+            "mercedes gla",
+            70
+          ],
+          [
+            "mercedes glb",
+            70
+          ],
+          [
+            "mercedes gle",
+            40
+          ],
+          [
+            "mercedes gle 350",
+            20
+          ],
+          [
+            "mercedes glc 300",
+            20
+          ]
+        ],
+        "models_sum": 220,
+        "combined": 700,
+        "all_models": [
+          [
+            "mercedes gla",
+            70
+          ],
+          [
+            "mercedes glb",
+            70
+          ],
+          [
+            "mercedes gle",
+            40
+          ],
+          [
+            "mercedes gle 350",
+            20
+          ],
+          [
+            "mercedes glc 300",
+            20
+          ],
+          [
+            "mercedes s class",
+            20
+          ],
+          [
+            "mercedes g class",
+            20
+          ],
+          [
+            "mercedes glc",
+            10
+          ],
+          [
+            "mercedes c class",
+            10
+          ],
+          [
+            "mercedes e class",
+            10
+          ]
+        ]
+      },
+      "Lexus": {
+        "root_term": "lexus",
+        "root": 390,
+        "top5": [
+          [
+            "lexus gx 550",
+            320
+          ],
+          [
+            "lexus rx 350",
+            210
+          ],
+          [
+            "lexus gx",
+            110
+          ],
+          [
+            "lexus tx",
+            90
+          ],
+          [
+            "lexus lx",
+            70
+          ]
+        ],
+        "models_sum": 800,
+        "combined": 1190,
+        "all_models": [
+          [
+            "lexus gx 550",
+            320
+          ],
+          [
+            "lexus rx 350",
+            210
+          ],
+          [
+            "lexus gx",
+            110
+          ],
+          [
+            "lexus tx",
+            90
+          ],
+          [
+            "lexus lx",
+            70
+          ],
+          [
+            "lexus nx",
+            40
+          ],
+          [
+            "lexus es",
+            20
+          ],
+          [
+            "lexus is",
+            20
+          ],
+          [
+            "lexus ux",
+            20
+          ],
+          [
+            "lexus rc",
+            10
+          ]
+        ]
+      }
+    },
+    "order": [
+      "Lexus",
+      "BMW",
+      "Mercedes-Benz",
+      "Audi"
+    ]
+  },
+  "Biloxi-Gulfport DMA": {
+    "brands": {
+      "BMW": {
+        "root_term": "bmw",
+        "root": 1000,
+        "top5": [
+          [
+            "bmw x5",
+            210
+          ],
+          [
+            "bmw m3",
+            210
+          ],
+          [
+            "bmw x6",
+            170
+          ],
+          [
+            "bmw m4",
+            170
+          ],
+          [
+            "bmw x3",
+            170
+          ]
+        ],
+        "models_sum": 930,
+        "combined": 1930,
+        "all_models": [
+          [
+            "bmw x5",
+            210
+          ],
+          [
+            "bmw m3",
+            210
+          ],
+          [
+            "bmw x6",
+            170
+          ],
+          [
+            "bmw m4",
+            170
+          ],
+          [
+            "bmw x3",
+            170
+          ],
+          [
+            "bmw x7",
+            140
+          ],
+          [
+            "bmw x1",
+            70
+          ],
+          [
+            "bmw x4",
+            70
+          ],
+          [
+            "bmw m2",
+            70
+          ],
+          [
+            "bmw 3 series",
+            50
+          ],
+          [
+            "bmw i4",
+            30
+          ],
+          [
+            "bmw 5 series",
+            20
+          ],
+          [
+            "bmw ix",
+            20
+          ],
+          [
+            "bmw i5",
+            10
+          ]
+        ]
+      },
+      "Audi": {
+        "root_term": "audi",
+        "root": 480,
+        "top5": [
+          [
+            "audi q5",
+            90
+          ],
+          [
+            "audi q8",
+            70
+          ],
+          [
+            "audi q7",
+            70
+          ],
+          [
+            "audi q3",
+            70
+          ],
+          [
+            "audi a5",
+            50
+          ]
+        ],
+        "models_sum": 350,
+        "combined": 830,
+        "all_models": [
+          [
+            "audi q5",
+            90
+          ],
+          [
+            "audi q8",
+            70
+          ],
+          [
+            "audi q7",
+            70
+          ],
+          [
+            "audi q3",
+            70
+          ],
+          [
+            "audi a5",
+            50
+          ],
+          [
+            "audi a4",
+            50
+          ],
+          [
+            "audi a6",
+            50
+          ],
+          [
+            "audi a3",
+            50
+          ],
+          [
+            "audi e tron",
+            20
+          ],
+          [
+            "audi q4",
+            10
+          ]
+        ]
+      },
+      "Mercedes-Benz": {
+        "root_term": "mercedes benz",
+        "root": 880,
+        "top5": [
+          [
+            "mercedes gla",
+            90
+          ],
+          [
+            "mercedes glb",
+            90
+          ],
+          [
+            "mercedes gle",
+            70
+          ],
+          [
+            "mercedes gle 350",
+            40
+          ],
+          [
+            "mercedes glc 300",
+            30
+          ]
+        ],
+        "models_sum": 320,
+        "combined": 1200,
+        "all_models": [
+          [
+            "mercedes gla",
+            90
+          ],
+          [
+            "mercedes glb",
+            90
+          ],
+          [
+            "mercedes gle",
+            70
+          ],
+          [
+            "mercedes gle 350",
+            40
+          ],
+          [
+            "mercedes glc 300",
+            30
+          ],
+          [
+            "mercedes s class",
+            30
+          ],
+          [
+            "mercedes glc",
+            20
+          ],
+          [
+            "mercedes e class",
+            20
+          ],
+          [
+            "mercedes g class",
+            20
+          ],
+          [
+            "mercedes c class",
+            10
+          ]
+        ]
+      },
+      "Lexus": {
+        "root_term": "lexus",
+        "root": 880,
+        "top5": [
+          [
+            "lexus gx 550",
+            390
+          ],
+          [
+            "lexus rx 350",
+            320
+          ],
+          [
+            "lexus gx",
+            210
+          ],
+          [
+            "lexus tx",
+            140
+          ],
+          [
+            "lexus lx",
+            90
+          ]
+        ],
+        "models_sum": 1150,
+        "combined": 2030,
+        "all_models": [
+          [
+            "lexus gx 550",
+            390
+          ],
+          [
+            "lexus rx 350",
+            320
+          ],
+          [
+            "lexus gx",
+            210
+          ],
+          [
+            "lexus tx",
+            140
+          ],
+          [
+            "lexus lx",
+            90
+          ],
+          [
+            "lexus nx",
+            70
+          ],
+          [
+            "lexus es",
+            50
+          ],
+          [
+            "lexus is",
+            40
+          ],
+          [
+            "lexus ux",
+            30
+          ],
+          [
+            "lexus rc",
+            20
+          ]
+        ]
+      }
+    },
+    "order": [
+      "Lexus",
+      "BMW",
+      "Mercedes-Benz",
+      "Audi"
+    ]
+  }
+}
