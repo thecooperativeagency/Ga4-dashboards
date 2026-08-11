@@ -8,7 +8,7 @@ import os
 import re
 import subprocess
 import urllib.request
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 WORKSPACE = Path('/Users/lucfaucheux/.openclaw/workspace')
@@ -474,17 +474,66 @@ def patch_dashboard(
     path.write_text(html)
 
 
-def build_store(email: str, property_id: str):
+def build_store(email: str, property_id: str, today: date | None = None):
+    """Fetch all GM-Weekly + dashboard periods for one property.
+
+    Rolling windows end on *yesterday* (complete days). MTD is 1st of current
+    month through *today* (date the job is calculating).
+    """
+    today = today or date.today()
+    yday = today - timedelta(days=1)
+
+    def iso(d: date) -> str:
+        return d.isoformat()
+
+    # Rolling complete-day windows (match GM Weekly period_windows)
+    r30_a, r30_b = yday - timedelta(days=29), yday
+    r60_a, r60_b = yday - timedelta(days=59), yday
+    r90_a, r90_b = yday - timedelta(days=89), yday
+    mtd_a, mtd_b = date(today.year, today.month, 1), today
+
+    # Priors for rolling
+    p30_b = r30_a - timedelta(days=1)
+    p30_a = p30_b - timedelta(days=29)
+    p60_b = r60_a - timedelta(days=1)
+    p60_a = p60_b - timedelta(days=59)
+    p90_b = r90_a - timedelta(days=1)
+    p90_a = p90_b - timedelta(days=89)
+
+    # Prior MTD: previous calendar month, same day-span clamped
+    import calendar
+
+    if today.month == 1:
+        py, pm = today.year - 1, 12
+    else:
+        py, pm = today.year, today.month - 1
+    prev_month_last = calendar.monthrange(py, pm)[1]
+    mtd_day_span = (mtd_b - mtd_a).days + 1
+    p_mtd_a = date(py, pm, 1)
+    p_mtd_b = date(py, pm, min(mtd_day_span, prev_month_last))
+
     return {
-        'q1_2026': fetch_period(email, property_id, '90daysAgo', 'today', 'Last 90 Days'),
-        'prev90': fetch_period(email, property_id, '180daysAgo', '91daysAgo', 'Previous 90 Days'),
+        # Legacy dashboard keys (keep)
+        'q1_2026': fetch_period(email, property_id, iso(r90_a), iso(r90_b), 'Last 90 Days'),
+        'prev90': fetch_period(email, property_id, iso(p90_a), iso(p90_b), 'Previous 90 Days'),
         'yoy90': fetch_period(email, property_id, '455daysAgo', '366daysAgo', 'Same 90 Days Last Year'),
-        'last60': fetch_period(email, property_id, '60daysAgo', 'today', 'Last 60 Days'),
-        'prev60': fetch_period(email, property_id, '120daysAgo', '61daysAgo', 'Previous 60 Days'),
+        'last60': fetch_period(email, property_id, iso(r60_a), iso(r60_b), 'Last 60 Days'),
+        'prev60': fetch_period(email, property_id, iso(p60_a), iso(p60_b), 'Previous 60 Days'),
         'yoy60': fetch_period(email, property_id, '425daysAgo', '366daysAgo', 'Same 60 Days Last Year'),
-        'last30': fetch_period(email, property_id, '30daysAgo', 'today', 'Last 30 Days'),
-        'prev30': fetch_period(email, property_id, '60daysAgo', '31daysAgo', 'Previous 30 Days'),
+        'last30': fetch_period(email, property_id, iso(r30_a), iso(r30_b), 'Last 30 Days'),
+        'prev30': fetch_period(email, property_id, iso(p30_a), iso(p30_b), 'Previous 30 Days'),
         'yoy30': fetch_period(email, property_id, '395daysAgo', '366daysAgo', 'Same 30 Days Last Year'),
+        # Explicit GM Weekly keys
+        'last90': fetch_period(email, property_id, iso(r90_a), iso(r90_b), 'Last 90 Days'),
+        'mtd': fetch_period(email, property_id, iso(mtd_a), iso(mtd_b), 'Month to Date'),
+        'prev_mtd': fetch_period(email, property_id, iso(p_mtd_a), iso(p_mtd_b), 'Prior MTD'),
+        'windows': {
+            'last30': {'start': iso(r30_a), 'end': iso(r30_b)},
+            'last60': {'start': iso(r60_a), 'end': iso(r60_b)},
+            'last90': {'start': iso(r90_a), 'end': iso(r90_b)},
+            'mtd': {'start': iso(mtd_a), 'end': iso(mtd_b)},
+            'prev_mtd': {'start': iso(p_mtd_a), 'end': iso(p_mtd_b)},
+        },
     }
 
 
@@ -527,47 +576,44 @@ def main():
     audi_panels = fetch_panels(audi_email, audi_prop)
     jackson_panels = fetch_panels(jackson_email, jackson_prop)
 
-    today = os.environ['TODAY']
+    today = os.environ.get('TODAY') or date.today().isoformat()
     updated_label = datetime.strptime(today, '%Y-%m-%d').strftime('%B %-d, %Y')
+
+    def store_cache(data: dict, sources: list, high: list, panels: dict) -> dict:
+        return {
+            'q1_2026': period_summary(data['q1_2026']),
+            'q1_prev': period_summary(data['yoy90']),
+            'last30': period_summary(data['last30']),
+            'last60': period_summary(data['last60']),
+            'last90': period_summary(data['last90']),
+            'mtd': period_summary(data['mtd']),
+            'prev30': period_summary(data['prev30']),
+            'prev60': period_summary(data['prev60']),
+            'prev90': period_summary(data['prev90']),
+            'prev_mtd': period_summary(data['prev_mtd']),
+            'windows': data.get('windows') or {},
+            'sources': sources,
+            'mobile_pct': data['last30']['mobilePct'],
+            'high_bounce': high,
+            'panels': panels,
+        }
 
     cache = {
         'updated': today,
-        'brian_harris_bmw': {
-            'q1_2026': period_summary(bh_data['q1_2026']),
-            'q1_prev': period_summary(bh_data['yoy90']),
-            'last30': period_summary(bh_data['last30']),
-            'last60': period_summary(bh_data['last60']),
-            'sources': bh_sources,
-            'mobile_pct': bh_data['q1_2026']['mobilePct'],
-            'high_bounce': bh_high,
-            'panels': bh_panels,
-        },
-        'audi_baton_rouge': {
-            'q1_2026': period_summary(audi_data['q1_2026']),
-            'q1_prev': period_summary(audi_data['yoy90']),
-            'last30': period_summary(audi_data['last30']),
-            'last60': period_summary(audi_data['last60']),
-            'sources': audi_sources,
-            'mobile_pct': audi_data['q1_2026']['mobilePct'],
-            'high_bounce': audi_high,
-            'panels': audi_panels,
-        },
-        'bmw_jackson': {
-            'q1_2026': period_summary(jackson_data['q1_2026']),
-            'q1_prev': period_summary(jackson_data['yoy90']),
-            'last30': period_summary(jackson_data['last30']),
-            'last60': period_summary(jackson_data['last60']),
-            'sources': jackson_sources,
-            'mobile_pct': jackson_data['q1_2026']['mobilePct'],
-            'high_bounce': jackson_high,
-            'panels': jackson_panels,
-        },
+        'brian_harris_bmw': store_cache(bh_data, bh_sources, bh_high, bh_panels),
+        'audi_baton_rouge': store_cache(audi_data, audi_sources, audi_high, audi_panels),
+        'bmw_jackson': store_cache(jackson_data, jackson_sources, jackson_high, jackson_panels),
     }
     (DASH_DIR / 'ga4-data.json').write_text(json.dumps(cache, indent=2))
 
-    patch_dashboard(DASH_DIR / 'brian-harris-bmw-dashboard.html', bh_data, bh_sources, bh_high, bh_panels, updated_label)
-    patch_dashboard(DASH_DIR / 'audi-baton-rouge-dashboard.html', audi_data, audi_sources, audi_high, audi_panels, updated_label)
-    patch_dashboard(DASH_DIR / 'bmw-jackson-dashboard.html', jackson_data, jackson_sources, jackson_high, jackson_panels, updated_label)
+    def dash_datasets(data: dict) -> dict:
+        # Dashboard JS DATA expects metric periods only (no windows metadata).
+        skip = {'windows'}
+        return {k: v for k, v in data.items() if k not in skip and isinstance(v, dict) and 'sessions' in v}
+
+    patch_dashboard(DASH_DIR / 'brian-harris-bmw-dashboard.html', dash_datasets(bh_data), bh_sources, bh_high, bh_panels, updated_label)
+    patch_dashboard(DASH_DIR / 'audi-baton-rouge-dashboard.html', dash_datasets(audi_data), audi_sources, audi_high, audi_panels, updated_label)
+    patch_dashboard(DASH_DIR / 'bmw-jackson-dashboard.html', dash_datasets(jackson_data), jackson_sources, jackson_high, jackson_panels, updated_label)
 
     print('Data written to ga4-data.json and dashboard HTML files')
     for label, data, panels in (
@@ -575,11 +621,12 @@ def main():
         ('Audi BR', audi_data, audi_panels),
         ('BMW Jackson', jackson_data, jackson_panels),
     ):
-        cur = data['last30']
+        for key in ('last30', 'last60', 'last90', 'mtd'):
+            cur = data[key]
+            print(f"{label} {key}: sessions={cur['sessions']:,} bounce={cur['bounceRate']}%")
         print(
-            f"{label} last30: sessions={cur['sessions']:,} bounce={cur['bounceRate']}% "
-            f"campaigns={len(panels['campaigns'])} top_pages={len(panels['top_pages'])} "
-            f"hosts={len(panels['hostnames']['rows'])}"
+            f"{label} panels: campaigns={len(panels['campaigns'])} "
+            f"top_pages={len(panels['top_pages'])} hosts={len(panels['hostnames']['rows'])}"
         )
 
 
