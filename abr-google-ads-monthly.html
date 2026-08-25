@@ -1,284 +1,355 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audi Baton Rouge · Google Ads Monthly</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0a; color: #fff; min-height: 100vh; }
-    .header { background: linear-gradient(135deg, #1a0a0a 0%, #2a0d0d 100%); border-bottom: 1px solid #2a1a1a; padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
-    .header-left { display: flex; align-items: center; gap: 20px; }
-    .header-logo img { height: 42px; }
-    .header-title h1 { font-size: 22px; font-weight: 700; }
-    .header-title p { font-size: 12px; color: #8a5555; margin-top: 3px; }
-    .header-title .stamp { font-size: 11px; color: #bb2222; margin-top: 6px; }
-    .header-brand { font-size: 11px; color: #bb2222; text-align: right; line-height: 1.6; }
-    .content { padding: 30px; max-width: 1400px; margin: 0 auto; }
-    .move { background: #111; border: 1px solid #1a1a1a; border-left: 4px solid #bb2222; border-radius: 12px; padding: 20px 22px; margin-bottom: 24px; }
-    .move .k { font-size: 11px; color: #bb2222; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
-    .move p { font-size: 16px; line-height: 1.45; color: #eee; }
-    .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
-    .summary-card { background: #111; border: 1px solid #1a1a1a; border-radius: 12px; padding: 20px; position: relative; overflow: hidden; }
-    .summary-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #bb2222; }
-    .card-label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-    .card-value { font-size: 28px; font-weight: 700; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
-    .card-change { font-size: 12px; }
-    .card-change.up { color: #10b981; }
-    .card-change.down { color: #ef4444; }
-    .card-change.flat { color: #666; }
-    .card-compare { font-size: 11px; color: #444; margin-top: 3px; }
-    .section { margin-bottom: 36px; }
-    .section-title { font-size: 12px; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #1a1a1a; }
-    .table-scroll { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; min-width: 720px; }
-    th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #1a1a1a; font-size: 13px; }
-    th { color: #555; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
-    td { color: #bbb; }
-    td.val, th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; color: #fff; font-weight: 600; }
-    th.num { color: #555; font-weight: 600; }
-    tr.total td { border-top: 2px solid #333; color: #fff; }
-    .pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; }
-    .on { background: rgba(16,185,129,.15); color: #10b981; }
-    .off { background: rgba(156,163,175,.12); color: #888; }
-    .role { color: #888; font-size: 11px; }
-    .note { font-size: 13px; color: #888; line-height: 1.55; }
-    .footer { background: #0d0d0d; border-top: 1px solid #1a1a1a; padding: 20px 30px; font-size: 11px; color: #444; line-height: 1.7; }
-    .footer a { color: #bb2222; text-decoration: none; }
-    @media (max-width: 768px) {
-      .content { padding: 15px; }
-      .header { padding: 15px; }
-      .card-value { font-size: 22px; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Google Ads Monthly — Audi Baton Rouge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+:root {
+  --accent:#BB0A21;
+  --ink:#0a0a0a;
+  --muted:#6b6b6b;
+  --line:#e0e0e0;
+  --bg:#f3f3f3;
+  --card:#FFFFFF;
+  --stat:#fff;
+  --why:#f8fafc;
+  --why-ink:#243041;
+  --row:#f0f2f5;
+  --foot:#ececec;
+  --good:#0f7b3a;
+  --bad:#b42318;
+  --radius:0px;
+  --font:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+html[data-theme="dark"] {
+  --ink:#f3f3f3;
+  --muted:#9a9a9a;
+  --line:#2a2a2a;
+  --bg:#111111;
+  --card:#1a1a1a;
+  --stat:#161616;
+  --why:#161616;
+  --why-ink:#d4d4d4;
+  --row:#222;
+  --foot:#1f1f1f;
+  --good:#3dbe73;
+  --bad:#f07167;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.45; -webkit-font-smoothing:antialiased; }
+.top { background:#fff; border-bottom:4px solid var(--accent); padding:22px 16px; }
+.top.has-photo {
+  position:relative; color:#fff; overflow:hidden;
+  background-color:#0a0a0a; background-position:center; background-size:cover; background-repeat:no-repeat;
+  padding:40px 16px 34px;
+}
+.top.has-photo::before {
+  content:""; position:absolute; inset:0; z-index:0;
+  background:linear-gradient(105deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.55) 48%, rgba(187,10,33,.28) 100%);
+}
+.top.has-photo > .wrap { position:relative; z-index:1; }
+.top.has-photo .brand { color:rgba(255,255,255,.78); }
+.top.has-photo h1 { color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.35); }
+.top.has-photo .sub { color:rgba(255,255,255,.9); }
+.wrap { max-width:920px; margin:0 auto; padding:18px 16px 48px; }
+.brand { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-weight:600; }
+h1 { font-size:28px; margin-top:6px; letter-spacing:-.04em; font-weight:700; }
+.sub { color:var(--muted); font-size:14px; margin-top:4px; }
+.meta { font-size:13px; color:var(--muted); margin:0 0 14px; }
+.theme-row { display:flex; justify-content:flex-end; margin:0 0 12px; }
+.theme-btn {
+  border:1px solid #c5c9d3; background:#fff; color:#111; border-radius:999px;
+  padding:8px 14px; font:inherit; font-size:12.5px; font-weight:750; cursor:pointer;
+}
+html[data-theme="dark"] .theme-btn { background:#1a1a1a; color:#f3f3f3; border-color:#3a3a3a; }
+.theme-btn:hover { border-color:var(--accent); color:var(--accent); }
+.verdict { background:#0a0a0a; color:#fff; border-radius:var(--radius); padding:18px; margin-bottom:14px; border-top:3px solid var(--accent); }
+.verdict .lbl { font-size:11px; text-transform:uppercase; letter-spacing:.06em; opacity:.7; }
+.verdict .txt { font-size:18px; font-weight:750; margin-top:8px; line-height:1.35; }
+.verdict .when { font-size:13px; opacity:.8; margin-top:10px; }
+.block { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px; margin-bottom:14px; }
+.block h2 { font-size:18px; font-weight:800; margin-bottom:4px; letter-spacing:-.02em; }
+.when { font-size:13px; color:var(--muted); margin-bottom:10px; }
+.why { background:var(--why); border:1px solid var(--line); border-radius:var(--radius); padding:12px; margin:0 0 14px; font-size:13px; color:var(--why-ink); }
+.why strong { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-bottom:4px; }
+.stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:12px 0; }
+.stat { background:var(--stat); border:1px solid var(--line); border-radius:var(--radius); padding:12px; }
+.stat .k { font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:700; }
+.stat .v { font-size:22px; font-weight:850; margin-top:4px; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.stat .s { font-size:12px; color:var(--muted); margin-top:4px; }
+.up { color:var(--good); font-weight:700; }
+.down { color:var(--bad); font-weight:700; }
+.flat { color:var(--muted); }
+.table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+table { width:100%; border-collapse:collapse; font-size:13px; min-width:640px; }
+th { text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); border-bottom:1px solid var(--line); padding:8px 6px; font-weight:600; }
+td { padding:10px 6px; border-bottom:1px solid var(--row); vertical-align:top; }
+.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+tr.total-row td { background:var(--foot); font-weight:800; border-top:2px solid var(--line); }
+.pill {
+  display:inline-block; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+  padding:2px 7px; border-radius:0; vertical-align:middle;
+}
+.pill.on { background:#eaf8ef; color:#0f7a3a; border:1px solid #b7e4c7; }
+.pill.off { background:#ececec; color:#666; border:1px solid #d0d0d0; }
+html[data-theme="dark"] .pill.on { background:#16301f; color:#3dbe73; border-color:#245c38; }
+html[data-theme="dark"] .pill.off { background:#2a2a2a; color:#999; border-color:#3a3a3a; }
+.role { color:var(--muted); font-size:12px; }
+.foot { font-size:12px; color:var(--muted); line-height:1.55; padding:6px 2px 0; }
+footer { text-align:center; color:var(--muted); font-size:11px; padding:18px; letter-spacing:.06em; text-transform:uppercase; }
+footer a { color:var(--accent); text-decoration:none; }
+@media (max-width:720px) {
+  html, body { overflow-x:hidden; }
+  .wrap { padding:14px 12px 40px; max-width:100%; }
+  h1 { font-size:22px; }
+  .top.has-photo { padding:28px 16px 24px; }
+  .verdict .txt { font-size:15.5px; }
+  .stat-grid { grid-template-columns:1fr; }
+  .table-scroll { margin-left:-12px; margin-right:-12px; padding-left:12px; padding-right:12px; }
+}
+</style>
 </head>
 <body>
-<div class="header">
-  <div class="header-left">
-    <div class="header-logo">
-      <img src="https://images.squarespace-cdn.com/content/v1/68fac8a3d20e8d72215ede75/6669040e-00b7-4113-a0c0-a29b3706227f/Asset+26.png?format=500w" alt="The Cooperative Agency">
-    </div>
-    <div class="header-title">
+  <div class="top has-photo" style="background-image:url('assets/abr-header.jpg');">
+    <div class="wrap" style="padding-top:0;padding-bottom:0;">
+      <div class="brand">Google Ads Monthly · Prepared by The Cooperative Agency</div>
       <h1>Audi Baton Rouge</h1>
-      <p>Google Ads monthly · Search only · The Cooperative Agency</p>
-      <div class="stamp">Updated on August 25, 2026 · August 1–24 vs July 1–24</div>
+      <div class="sub">Search campaigns only · August 1–24 vs July 1–24</div>
     </div>
   </div>
-  <div class="header-brand">Internal ops brief<br>by <strong>The Cooperative Agency</strong></div>
-</div>
+  <div class="wrap page-main">
+    <div class="meta">This page is for <strong>Audi Baton Rouge</strong> only · Coop ops · Generated Aug 25, 2026</div>
+    <div class="theme-row">
+      <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle color theme">Dark mode</button>
+    </div>
 
-<div class="content">
-  <div class="move">
-    <div class="k">One move</div>
-    <p>Raise Brand. It spent $119 at $0.39 CPC and drove 84 of 126 Ads conversions. Do not cut Sales Offers or Conquest on zero Ads conversions — those campaigns still need site/VDP proof, not an Ads-conversion death sentence.</p>
+    <div class="verdict">
+      <div class="lbl">One move</div>
+      <div class="txt">Raise Brand. It spent $119 at $0.39 CPC and drove 84 of 126 Ads conversions. Do not cut Sales Offers or Conquest on zero Ads conversions — those still need site/VDP proof.</div>
+      <div class="when">August 1–24, 2026 · compared with July 1–24, 2026</div>
+    </div>
+
+    <div class="block">
+      <h2>Month so far</h2>
+      <div class="when">August 1–24 vs same days in July</div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="k">Spend</div>
+          <div class="v">$1,881</div>
+          <div class="s"><span class="up">+2.1%</span> · prior $1,843</div>
+        </div>
+        <div class="stat">
+          <div class="k">Clicks</div>
+          <div class="v">886</div>
+          <div class="s"><span class="up">+2.5%</span> · prior 864</div>
+        </div>
+        <div class="stat">
+          <div class="k">Calls from ads</div>
+          <div class="v">122</div>
+          <div class="s"><span class="up">+14%</span> · prior 107</div>
+        </div>
+        <div class="stat">
+          <div class="k">Avg CPC</div>
+          <div class="v">$2.12</div>
+          <div class="s"><span class="flat">flat</span> · prior $2.13</div>
+        </div>
+        <div class="stat">
+          <div class="k">Ads conversions</div>
+          <div class="v">126</div>
+          <div class="s"><span class="up">+12%</span> · mostly calls</div>
+        </div>
+        <div class="stat">
+          <div class="k">Impressions</div>
+          <div class="v">4,469</div>
+          <div class="s"><span class="up">+21%</span> · CTR 19.8% from 23.5%</div>
+        </div>
+      </div>
+      <div class="why"><strong>What this means</strong>Account is pacing about even with July. Brand is doing the conversion work cheap. Offers and models showing 0 Ads conversions is a tracking/credit issue, not proof they did nothing.</div>
+    </div>
+
+    <div class="block">
+      <h2>Campaigns</h2>
+      <div class="when">Search only · enabled and paused</div>
+      <div class="table-scroll" role="region" aria-label="Scrollable table" tabindex="0">
+        <table class="wide">
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Clicks</th>
+              <th class="num">CPC</th>
+              <th class="num">Ads conv</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sales Offers - Conquest</td>
+              <td class="role">Conquest</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$366.73</td>
+              <td class="num">125</td>
+              <td class="num">$2.93</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Sales Offers</td>
+              <td class="role">Sales Offers</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$361.55</td>
+              <td class="num">109</td>
+              <td class="num">$3.32</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Locations</td>
+              <td class="role">Locations</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$241.92</td>
+              <td class="num">61</td>
+              <td class="num">$3.97</td>
+              <td class="num">5.0</td>
+            </tr>
+            <tr>
+              <td>Service</td>
+              <td class="role">Service</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$232.66</td>
+              <td class="num">99</td>
+              <td class="num">$2.35</td>
+              <td class="num">29.4</td>
+            </tr>
+            <tr>
+              <td>Secondary Models</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$153.99</td>
+              <td class="num">31</td>
+              <td class="num">$4.97</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Service Offers</td>
+              <td class="role">Service Offers</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$122.11</td>
+              <td class="num">58</td>
+              <td class="num">$2.11</td>
+              <td class="num">7.5</td>
+            </tr>
+            <tr>
+              <td>Brand</td>
+              <td class="role">Brand</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$118.79</td>
+              <td class="num">305</td>
+              <td class="num">$0.39</td>
+              <td class="num">84.5</td>
+            </tr>
+            <tr>
+              <td>Q5</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$90.06</td>
+              <td class="num">32</td>
+              <td class="num">$2.81</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Q7</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$75.19</td>
+              <td class="num">25</td>
+              <td class="num">$3.01</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Q3</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$47.79</td>
+              <td class="num">19</td>
+              <td class="num">$2.52</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Q8</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$43.53</td>
+              <td class="num">16</td>
+              <td class="num">$2.72</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Luxury Sedan</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$27.01</td>
+              <td class="num">6</td>
+              <td class="num">$4.50</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Luxury SUV</td>
+              <td class="role">Model</td>
+              <td><span class="pill off">Paused</span></td>
+              <td class="num">$0</td>
+              <td class="num">0</td>
+              <td class="num">—</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Conquest - Competitor</td>
+              <td class="role">Conquest</td>
+              <td><span class="pill off">Paused</span></td>
+              <td class="num">$0</td>
+              <td class="num">0</td>
+              <td class="num">—</td>
+              <td class="num">0</td>
+            </tr>
+            <tr class="total-row">
+              <td>Search total</td>
+              <td></td>
+              <td></td>
+              <td class="num">$1,881.33</td>
+              <td class="num">886</td>
+              <td class="num">$2.12</td>
+              <td class="num">126.4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="why"><strong>What this means</strong>Brand is the cheap converter. Sales Offers + Conquest are $728 with 0 Ads conversions — do not cut on that number. Shopping VLA is still paused. Impression share did not return on this pull.</div>
+    </div>
+
+    <p class="foot">Account 3995837733 · search only · not a GM Weekly page.</p>
   </div>
-
-  <div class="summary-cards">
-    <div class="summary-card">
-      <div class="card-label">Spend</div>
-      <div class="card-value">$1,881</div>
-      <div class="card-change up">+2.1% vs July 1–24</div>
-      <div class="card-compare">Prior $1,843</div>
-    </div>
-    <div class="summary-card">
-      <div class="card-label">Clicks</div>
-      <div class="card-value">886</div>
-      <div class="card-change up">+2.5%</div>
-      <div class="card-compare">Prior 864</div>
-    </div>
-    <div class="summary-card">
-      <div class="card-label">Calls from ads</div>
-      <div class="card-value">122</div>
-      <div class="card-change up">+14%</div>
-      <div class="card-compare">Prior 107 · almost all Ads conversions</div>
-    </div>
-    <div class="summary-card">
-      <div class="card-label">Avg CPC</div>
-      <div class="card-value">$2.12</div>
-      <div class="card-change flat">flat</div>
-      <div class="card-compare">Prior $2.13</div>
-    </div>
-    <div class="summary-card">
-      <div class="card-label">Ads conversions</div>
-      <div class="card-value">126</div>
-      <div class="card-change up">+12%</div>
-      <div class="card-compare">Mostly calls · Offers show 0 here</div>
-    </div>
-    <div class="summary-card">
-      <div class="card-label">Impressions</div>
-      <div class="card-value">4,469</div>
-      <div class="card-change up">+21%</div>
-      <div class="card-compare">Prior 3,679 · CTR 19.8% from 23.5%</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Campaigns · search</div>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>Campaign</th>
-            <th>Role</th>
-            <th>Status</th>
-            <th class="num">Spend</th>
-            <th class="num">Clicks</th>
-            <th class="num">CPC</th>
-            <th class="num">Ads conv</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="val">Sales Offers - Conquest</td>
-            <td class="role">Conquest</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$366.73</td>
-            <td class="num">125</td>
-            <td class="num">$2.93</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Sales Offers</td>
-            <td class="role">Sales Offers</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$361.55</td>
-            <td class="num">109</td>
-            <td class="num">$3.32</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Locations</td>
-            <td class="role">Locations</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$241.92</td>
-            <td class="num">61</td>
-            <td class="num">$3.97</td>
-            <td class="num">5.0</td>
-          </tr>
-          <tr>
-            <td class="val">Service</td>
-            <td class="role">Service</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$232.66</td>
-            <td class="num">99</td>
-            <td class="num">$2.35</td>
-            <td class="num">29.4</td>
-          </tr>
-          <tr>
-            <td class="val">Secondary Models</td>
-            <td class="role">Model</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$153.99</td>
-            <td class="num">31</td>
-            <td class="num">$4.97</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Service Offers</td>
-            <td class="role">Service Offers</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$122.11</td>
-            <td class="num">58</td>
-            <td class="num">$2.11</td>
-            <td class="num">7.5</td>
-          </tr>
-          <tr>
-            <td class="val">Brand</td>
-            <td class="role">Brand</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$118.79</td>
-            <td class="num">305</td>
-            <td class="num">$0.39</td>
-            <td class="num">84.5</td>
-          </tr>
-          <tr>
-            <td class="val">Q5</td>
-            <td class="role">Model</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$90.06</td>
-            <td class="num">32</td>
-            <td class="num">$2.81</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Q7</td>
-            <td class="role">Model</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$75.19</td>
-            <td class="num">25</td>
-            <td class="num">$3.01</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Q3</td>
-            <td class="role">Model</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$47.79</td>
-            <td class="num">19</td>
-            <td class="num">$2.52</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Q8</td>
-            <td class="role">Model</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$43.53</td>
-            <td class="num">16</td>
-            <td class="num">$2.72</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Luxury Sedan</td>
-            <td class="role">Model</td>
-            <td><span class="pill on">On</span></td>
-            <td class="num">$27.01</td>
-            <td class="num">6</td>
-            <td class="num">$4.50</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Luxury SUV</td>
-            <td class="role">Model</td>
-            <td><span class="pill off">Paused</span></td>
-            <td class="num">$0</td>
-            <td class="num">0</td>
-            <td class="num">—</td>
-            <td class="num">0</td>
-          </tr>
-          <tr>
-            <td class="val">Conquest - Competitor</td>
-            <td class="role">Conquest</td>
-            <td><span class="pill off">Paused</span></td>
-            <td class="num">$0</td>
-            <td class="num">0</td>
-            <td class="num">—</td>
-            <td class="num">0</td>
-          </tr>
-          <tr class="total">
-            <td class="val">Search total</td>
-            <td></td>
-            <td></td>
-            <td class="num">$1,881.33</td>
-            <td class="num">886</td>
-            <td class="num">$2.12</td>
-            <td class="num">126.4</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:12px;">Ads conversions on Offers and models are mostly empty because this account credits calls. That is not “no results.” Impression share did not return on this pull — next refresh should add budget-lost vs rank-lost.</p>
-  </div>
-
-  <div class="section">
-    <div class="section-title">What this is / isn’t</div>
-    <p class="note">Calendar-span monthly ops brief for Coop. Search campaigns only. Shopping VLA is still paused. Not a GM Weekly page. Next month: close August vs July, same layout.</p>
-  </div>
-</div>
-
-<div class="footer">
-  Audi Baton Rouge · Google Ads 3995837733 · Generated August 25, 2026 ·
-  <a href="https://thecooperativeagency.github.io/Ga4-dashboards/audi-baton-rouge-dashboard.html">GA4 dashboard</a>
-</div>
+  <footer>Audi Baton Rouge · Generated Aug 25, 2026 · <a href="https://thecooperativeagency.github.io/email-creative/gm-weekly/abr.html">GM Weekly</a></footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  function apply(theme) {
+    root.setAttribute('data-theme', theme);
+    try { localStorage.setItem('abr-ads-theme', theme); } catch (e) {}
+    btn.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('abr-ads-theme'); } catch (e) {}
+  apply(saved === 'dark' || saved === 'light' ? saved : 'light');
+  btn.addEventListener('click', function () {
+    apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+})();
+</script>
 </body>
 </html>
