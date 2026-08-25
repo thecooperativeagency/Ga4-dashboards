@@ -9,45 +9,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 :root {
-  --accent:#BB0A21;
-  --ink:#0a0a0a;
-  --muted:#6b6b6b;
-  --line:#e0e0e0;
-  --bg:#f3f3f3;
-  --card:#FFFFFF;
-  --stat:#fff;
-  --why:#f8fafc;
-  --why-ink:#243041;
-  --row:#f0f2f5;
-  --foot:#ececec;
-  --good:#0f7b3a;
-  --bad:#b42318;
-  --radius:0px;
+  --accent:#BB0A21; --ink:#0a0a0a; --muted:#6b6b6b; --line:#e0e0e0; --bg:#f3f3f3; --card:#FFFFFF;
+  --stat:#fff; --why:#f8fafc; --why-ink:#243041; --row:#f0f2f5; --foot:#ececec;
+  --good:#0f7b3a; --bad:#b42318; --radius:0px;
   --font:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 html[data-theme="dark"] {
-  --ink:#f3f3f3;
-  --muted:#9a9a9a;
-  --line:#2a2a2a;
-  --bg:#111111;
-  --card:#1a1a1a;
-  --stat:#161616;
-  --why:#161616;
-  --why-ink:#d4d4d4;
-  --row:#222;
-  --foot:#1f1f1f;
-  --good:#3dbe73;
-  --bad:#f07167;
+  --ink:#f3f3f3; --muted:#9a9a9a; --line:#2a2a2a; --bg:#111111; --card:#1a1a1a;
+  --stat:#161616; --why:#161616; --why-ink:#d4d4d4; --row:#222; --foot:#1f1f1f;
+  --good:#3dbe73; --bad:#f07167;
 }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.45; -webkit-font-smoothing:antialiased; }
-.top { background:#fff; border-bottom:4px solid var(--accent); padding:22px 16px; }
 .top.has-photo {
   position:relative; color:#fff; overflow:hidden;
   background-color:#0a0a0a; background-position:center; background-size:cover; background-repeat:no-repeat;
-  padding:40px 16px 34px;
+  border-bottom:4px solid var(--accent); padding:40px 16px 34px;
 }
 .top.has-photo::before {
   content:""; position:absolute; inset:0; z-index:0;
@@ -69,17 +47,17 @@ h1 { font-size:28px; margin-top:6px; letter-spacing:-.04em; font-weight:700; }
 }
 html[data-theme="dark"] .theme-btn { background:#1a1a1a; color:#f3f3f3; border-color:#3a3a3a; }
 .theme-btn:hover { border-color:var(--accent); color:var(--accent); }
-.verdict { background:#0a0a0a; color:#fff; border-radius:var(--radius); padding:18px; margin-bottom:14px; border-top:3px solid var(--accent); }
+.verdict { background:#0a0a0a; color:#fff; border-radius:0; padding:18px; margin-bottom:14px; border-top:3px solid var(--accent); }
 .verdict .lbl { font-size:11px; text-transform:uppercase; letter-spacing:.06em; opacity:.7; }
 .verdict .txt { font-size:18px; font-weight:750; margin-top:8px; line-height:1.35; }
 .verdict .when { font-size:13px; opacity:.8; margin-top:10px; }
-.block { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px; margin-bottom:14px; }
+.block { background:var(--card); border:1px solid var(--line); padding:18px; margin-bottom:14px; }
 .block h2 { font-size:18px; font-weight:800; margin-bottom:4px; letter-spacing:-.02em; }
 .when { font-size:13px; color:var(--muted); margin-bottom:10px; }
-.why { background:var(--why); border:1px solid var(--line); border-radius:var(--radius); padding:12px; margin:0 0 14px; font-size:13px; color:var(--why-ink); }
+.why { background:var(--why); border:1px solid var(--line); padding:12px; margin:0 0 14px; font-size:13px; color:var(--why-ink); }
 .why strong { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-bottom:4px; }
 .stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:12px 0; }
-.stat { background:var(--stat); border:1px solid var(--line); border-radius:var(--radius); padding:12px; }
+.stat { background:var(--stat); border:1px solid var(--line); padding:12px; }
 .stat .k { font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:700; }
 .stat .v { font-size:22px; font-weight:850; margin-top:4px; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
 .stat .s { font-size:12px; color:var(--muted); margin-top:4px; }
@@ -87,15 +65,12 @@ html[data-theme="dark"] .theme-btn { background:#1a1a1a; color:#f3f3f3; border-c
 .down { color:var(--bad); font-weight:700; }
 .flat { color:var(--muted); }
 .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
-table { width:100%; border-collapse:collapse; font-size:13px; min-width:640px; }
+table { width:100%; border-collapse:collapse; font-size:13px; min-width:720px; }
 th { text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); border-bottom:1px solid var(--line); padding:8px 6px; font-weight:600; }
 td { padding:10px 6px; border-bottom:1px solid var(--row); vertical-align:top; }
 .num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
 tr.total-row td { background:var(--foot); font-weight:800; border-top:2px solid var(--line); }
-.pill {
-  display:inline-block; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
-  padding:2px 7px; border-radius:0; vertical-align:middle;
-}
+.pill { display:inline-block; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; }
 .pill.on { background:#eaf8ef; color:#0f7a3a; border:1px solid #b7e4c7; }
 .pill.off { background:#ececec; color:#666; border:1px solid #d0d0d0; }
 html[data-theme="dark"] .pill.on { background:#16301f; color:#3dbe73; border-color:#245c38; }
@@ -106,10 +81,8 @@ footer { text-align:center; color:var(--muted); font-size:11px; padding:18px; le
 footer a { color:var(--accent); text-decoration:none; }
 @media (max-width:720px) {
   html, body { overflow-x:hidden; }
-  .wrap { padding:14px 12px 40px; max-width:100%; }
+  .wrap { padding:14px 12px 40px; }
   h1 { font-size:22px; }
-  .top.has-photo { padding:28px 16px 24px; }
-  .verdict .txt { font-size:15.5px; }
   .stat-grid { grid-template-columns:1fr; }
   .table-scroll { margin-left:-12px; margin-right:-12px; padding-left:12px; padding-right:12px; }
 }
@@ -120,24 +93,24 @@ footer a { color:var(--accent); text-decoration:none; }
     <div class="wrap" style="padding-top:0;padding-bottom:0;">
       <div class="brand">Google Ads Monthly · Prepared by The Cooperative Agency</div>
       <h1>Audi Baton Rouge</h1>
-      <div class="sub">Search campaigns only · August 1–24 vs July 1–24</div>
+      <div class="sub">Search campaigns only · Aug 1–24, 2026 vs Jul 1–24, 2026</div>
     </div>
   </div>
   <div class="wrap page-main">
-    <div class="meta">This page is for <strong>Audi Baton Rouge</strong> only · Coop ops · Generated Aug 25, 2026</div>
+    <div class="meta">This page is for <strong>Audi Baton Rouge</strong> only · Coop ops · Generated Aug 25, 2026 · <span id="conv-def">site CTA conversions</span></div>
     <div class="theme-row">
       <button type="button" class="theme-btn" id="themeBtn" aria-label="Toggle color theme">Dark mode</button>
     </div>
 
     <div class="verdict">
       <div class="lbl">One move</div>
-      <div class="txt">Raise Brand. It spent $119 at $0.39 CPC and drove 84 of 126 Ads conversions. Do not cut Sales Offers or Conquest on zero Ads conversions — those still need site/VDP proof.</div>
-      <div class="when">August 1–24, 2026 · compared with July 1–24, 2026</div>
+      <div class="txt">Raise Brand. It spent $119 at $0.39 CPC, 80 ad calls and 157 site CTAs. Judge Offers on site CTAs (55 on $728), not Ads call zeros.</div>
+      <div class="when">Aug 1–24, 2026 · compared with Jul 1–24, 2026</div>
     </div>
 
     <div class="block">
       <h2>Month so far</h2>
-      <div class="when">August 1–24 vs same days in July</div>
+      <div class="when">Aug 1–24, 2026 vs same days last month</div>
       <div class="stat-grid">
         <div class="stat">
           <div class="k">Spend</div>
@@ -150,9 +123,14 @@ footer a { color:var(--accent); text-decoration:none; }
           <div class="s"><span class="up">+2.5%</span> · prior 864</div>
         </div>
         <div class="stat">
+          <div class="k">Site CTAs</div>
+          <div class="v">257</div>
+          <div class="s"><span class="down">-7.9%</span> · prior 279</div>
+        </div>
+        <div class="stat">
           <div class="k">Calls from ads</div>
-          <div class="v">122</div>
-          <div class="s"><span class="up">+14%</span> · prior 107</div>
+          <div class="v">122.0</div>
+          <div class="s"><span class="up">+14.0%</span> · prior 107</div>
         </div>
         <div class="stat">
           <div class="k">Avg CPC</div>
@@ -160,22 +138,17 @@ footer a { color:var(--accent); text-decoration:none; }
           <div class="s"><span class="flat">flat</span> · prior $2.13</div>
         </div>
         <div class="stat">
-          <div class="k">Ads conversions</div>
-          <div class="v">126</div>
-          <div class="s"><span class="up">+12%</span> · mostly calls</div>
-        </div>
-        <div class="stat">
           <div class="k">Impressions</div>
           <div class="v">4,469</div>
-          <div class="s"><span class="up">+21%</span> · CTR 19.8% from 23.5%</div>
+          <div class="s">CTR 19.8% · prior 23.5%</div>
         </div>
       </div>
-      <div class="why"><strong>What this means</strong>Account is pacing about even with July. Brand is doing the conversion work cheap. Offers and models showing 0 Ads conversions is a tracking/credit issue, not proof they did nothing.</div>
+      <div class="why"><strong>What counts as a conversion on this page</strong>Site CTAs only: Main CTA 218 · Phone tap 23 · Start check-availability 16 · Finish qualify form 0. Page views on inventory lists or vehicle pages do not count. Ads call conversions stay in their own column.</div>
     </div>
 
     <div class="block">
       <h2>Campaigns</h2>
-      <div class="when">Search only · enabled and paused</div>
+      <div class="when">Search only · site CTA vs Ads calls</div>
       <div class="table-scroll" role="region" aria-label="Scrollable table" tabindex="0">
         <table class="wide">
           <thead>
@@ -186,7 +159,8 @@ footer a { color:var(--accent); text-decoration:none; }
               <th class="num">Spend</th>
               <th class="num">Clicks</th>
               <th class="num">CPC</th>
-              <th class="num">Ads conv</th>
+              <th class="num">Site CTA</th>
+              <th class="num">Ads calls</th>
             </tr>
           </thead>
           <tbody>
@@ -194,64 +168,71 @@ footer a { color:var(--accent); text-decoration:none; }
               <td>Sales Offers - Conquest</td>
               <td class="role">Conquest</td>
               <td><span class="pill on">On</span></td>
-              <td class="num">$366.73</td>
+              <td class="num">$367</td>
               <td class="num">125</td>
               <td class="num">$2.93</td>
+              <td class="num">30</td>
               <td class="num">0</td>
             </tr>
             <tr>
               <td>Sales Offers</td>
               <td class="role">Sales Offers</td>
               <td><span class="pill on">On</span></td>
-              <td class="num">$361.55</td>
+              <td class="num">$362</td>
               <td class="num">109</td>
               <td class="num">$3.32</td>
+              <td class="num">25</td>
               <td class="num">0</td>
             </tr>
             <tr>
               <td>Locations</td>
               <td class="role">Locations</td>
               <td><span class="pill on">On</span></td>
-              <td class="num">$241.92</td>
+              <td class="num">$242</td>
               <td class="num">61</td>
               <td class="num">$3.97</td>
-              <td class="num">5.0</td>
+              <td class="num">7</td>
+              <td class="num">5</td>
             </tr>
             <tr>
               <td>Service</td>
               <td class="role">Service</td>
               <td><span class="pill on">On</span></td>
-              <td class="num">$232.66</td>
+              <td class="num">$233</td>
               <td class="num">99</td>
               <td class="num">$2.35</td>
-              <td class="num">29.4</td>
+              <td class="num">12</td>
+              <td class="num">29</td>
             </tr>
             <tr>
               <td>Secondary Models</td>
               <td class="role">Model</td>
               <td><span class="pill on">On</span></td>
-              <td class="num">$153.99</td>
+              <td class="num">$154</td>
               <td class="num">31</td>
               <td class="num">$4.97</td>
+              <td class="num">2</td>
               <td class="num">0</td>
             </tr>
             <tr>
               <td>Service Offers</td>
               <td class="role">Service Offers</td>
               <td><span class="pill on">On</span></td>
-              <td class="num">$122.11</td>
+              <td class="num">$122</td>
               <td class="num">58</td>
               <td class="num">$2.11</td>
+              <td class="num">14</td>
               <td class="num">7.5</td>
             </tr>
             <tr>
               <td>Brand</td>
               <td class="role">Brand</td>
               <td><span class="pill on">On</span></td>
-              <td class="num">$118.79</td>
+              <td class="num">$119</td>
               <td class="num">305</td>
               <td class="num">$0.39</td>
-              <td class="num">84.5</td>
+              <td class="num">157</td>
+              <td class="num">80.5</td>
             </tr>
             <tr>
               <td>Q5</td>
@@ -260,6 +241,7 @@ footer a { color:var(--accent); text-decoration:none; }
               <td class="num">$90.06</td>
               <td class="num">32</td>
               <td class="num">$2.81</td>
+              <td class="num">2</td>
               <td class="num">0</td>
             </tr>
             <tr>
@@ -269,6 +251,7 @@ footer a { color:var(--accent); text-decoration:none; }
               <td class="num">$75.19</td>
               <td class="num">25</td>
               <td class="num">$3.01</td>
+              <td class="num">3</td>
               <td class="num">0</td>
             </tr>
             <tr>
@@ -278,6 +261,7 @@ footer a { color:var(--accent); text-decoration:none; }
               <td class="num">$47.79</td>
               <td class="num">19</td>
               <td class="num">$2.52</td>
+              <td class="num">3</td>
               <td class="num">0</td>
             </tr>
             <tr>
@@ -287,6 +271,7 @@ footer a { color:var(--accent); text-decoration:none; }
               <td class="num">$43.53</td>
               <td class="num">16</td>
               <td class="num">$2.72</td>
+              <td class="num">1</td>
               <td class="num">0</td>
             </tr>
             <tr>
@@ -296,6 +281,7 @@ footer a { color:var(--accent); text-decoration:none; }
               <td class="num">$27.01</td>
               <td class="num">6</td>
               <td class="num">$4.50</td>
+              <td class="num">1</td>
               <td class="num">0</td>
             </tr>
             <tr>
@@ -306,6 +292,7 @@ footer a { color:var(--accent); text-decoration:none; }
               <td class="num">0</td>
               <td class="num">—</td>
               <td class="num">0</td>
+              <td class="num">0</td>
             </tr>
             <tr>
               <td>Conquest - Competitor</td>
@@ -315,23 +302,25 @@ footer a { color:var(--accent); text-decoration:none; }
               <td class="num">0</td>
               <td class="num">—</td>
               <td class="num">0</td>
+              <td class="num">0</td>
             </tr>
             <tr class="total-row">
               <td>Search total</td>
               <td></td>
               <td></td>
-              <td class="num">$1,881.33</td>
+              <td class="num">$1,881</td>
               <td class="num">886</td>
               <td class="num">$2.12</td>
-              <td class="num">126.4</td>
+              <td class="num">257</td>
+              <td class="num">122.0</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="why"><strong>What this means</strong>Brand is the cheap converter. Sales Offers + Conquest are $728 with 0 Ads conversions — do not cut on that number. Shopping VLA is still paused. Impression share did not return on this pull.</div>
+      <div class="why"><strong>What this means</strong>Site CTA is the conversion column for Offers and models. Ads calls still matter for Brand and Service. Shopping VLA is not in this table.</div>
     </div>
 
-    <p class="foot">Account 3995837733 · search only · not a GM Weekly page.</p>
+    <p class="foot">Account 3995837733 · search only · conversion definition locked in build_abr_google_ads_monthly.py · not a GM Weekly page.</p>
   </div>
   <footer>Audi Baton Rouge · Generated Aug 25, 2026 · <a href="https://thecooperativeagency.github.io/email-creative/gm-weekly/abr.html">GM Weekly</a></footer>
 <script>
