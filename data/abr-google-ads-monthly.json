@@ -1,7 +1,7 @@
 {
   "store": "Audi Baton Rouge",
   "customer_id": "3995837733",
-  "generated": "2026-09-07",
+  "generated": "2026-09-14",
   "conv_def": [
     "click_main_cta",
     "click_phone_number",
@@ -10,80 +10,99 @@
   ],
   "curr": {
     "start": "2026-09-01",
-    "end": "2026-09-06",
-    "label": "Sep 1\u20136, 2026"
+    "end": "2026-09-13",
+    "label": "Sep 1\u201313, 2026"
   },
   "prior": {
     "start": "2026-08-01",
-    "end": "2026-08-06",
-    "label": "Aug 1\u20136, 2026"
+    "end": "2026-08-13",
+    "label": "Aug 1\u201313, 2026"
   },
   "totals": {
     "curr": {
-      "spend": 416.25,
-      "clicks": 234,
-      "impr": 1451,
-      "ads_conv": 35.48,
-      "calls": 34.48,
-      "cpc": 1.78,
-      "site_cta": 48,
+      "spend": 982.86,
+      "clicks": 530,
+      "impr": 3120,
+      "ads_conv": 85.21,
+      "calls": 82.48,
+      "cpc": 1.85,
+      "site_cta": 96,
       "cta": {
-        "click_main_cta": 43,
-        "click_phone_number": 4,
-        "start_check_availability_form": 1,
+        "click_main_cta": 79,
+        "click_phone_number": 13,
+        "start_check_availability_form": 4,
         "complete_quick_qualify_form": 0
       }
     },
     "prior": {
-      "spend": 455.93,
-      "clicks": 209,
-      "impr": 1026,
-      "ads_conv": 29.5,
-      "calls": 29.5,
-      "cpc": 2.18,
-      "site_cta": 61,
+      "spend": 1049.79,
+      "clicks": 487,
+      "impr": 2456,
+      "ads_conv": 75.0,
+      "calls": 74.0,
+      "cpc": 2.16,
+      "site_cta": 117,
       "cta": {
-        "click_main_cta": 52,
-        "click_phone_number": 6,
-        "start_check_availability_form": 3,
+        "click_main_cta": 99,
+        "click_phone_number": 10,
+        "start_check_availability_form": 8,
         "complete_quick_qualify_form": 0
       }
     }
   },
   "campaigns": [
     {
-      "name": "Sales Offers | Paid Search",
-      "short": "Sales Offers",
-      "status": "ENABLED",
-      "role": "Sales Offers",
-      "spend": 92.65,
-      "clicks": 31,
-      "impr": 320,
-      "ads_conv": 0.0,
-      "cpc": 2.99,
-      "calls": 0.0,
-      "site_cta": 3,
-      "cta": {
-        "click_main_cta": 2,
-        "click_phone_number": 1,
-        "start_check_availability_form": 0,
-        "complete_quick_qualify_form": 0
-      }
-    },
-    {
       "name": "Sales Offers - Conquest | Paid Search",
       "short": "Sales Offers - Conquest",
       "status": "ENABLED",
       "role": "Conquest",
-      "spend": 85.69,
-      "clicks": 32,
-      "impr": 409,
+      "spend": 209.34,
+      "clicks": 64,
+      "impr": 672,
       "ads_conv": 0.0,
-      "cpc": 2.68,
+      "cpc": 3.27,
       "calls": 0.0,
-      "site_cta": 5,
+      "site_cta": 10,
       "cta": {
-        "click_main_cta": 5,
+        "click_main_cta": 9,
+        "click_phone_number": 0,
+        "start_check_availability_form": 1,
+        "complete_quick_qualify_form": 0
+      }
+    },
+    {
+      "name": "Sales Offers | Paid Search",
+      "short": "Sales Offers",
+      "status": "ENABLED",
+      "role": "Sales Offers",
+      "spend": 201.99,
+      "clicks": 88,
+      "impr": 823,
+      "ads_conv": 0.0,
+      "cpc": 2.3,
+      "calls": 0.0,
+      "site_cta": 11,
+      "cta": {
+        "click_main_cta": 8,
+        "click_phone_number": 2,
+        "start_check_availability_form": 1,
+        "complete_quick_qualify_form": 0
+      }
+    },
+    {
+      "name": "Locations | Paid Search",
+      "short": "Locations",
+      "status": "ENABLED",
+      "role": "Locations",
+      "spend": 118.58,
+      "clicks": 30,
+      "impr": 224,
+      "ads_conv": 2.5,
+      "cpc": 3.95,
+      "calls": 2.5,
+      "site_cta": 1,
+      "cta": {
+        "click_main_cta": 1,
         "click_phone_number": 0,
         "start_check_availability_form": 0,
         "complete_quick_qualify_form": 0
@@ -94,35 +113,16 @@
       "short": "Service",
       "status": "ENABLED",
       "role": "Service",
-      "spend": 56.31,
-      "clicks": 23,
-      "impr": 107,
-      "ads_conv": 8.99,
-      "cpc": 2.45,
-      "calls": 7.99,
-      "site_cta": 3,
+      "spend": 117.99,
+      "clicks": 49,
+      "impr": 224,
+      "ads_conv": 15.99,
+      "cpc": 2.41,
+      "calls": 14.99,
+      "site_cta": 6,
       "cta": {
-        "click_main_cta": 2,
-        "click_phone_number": 1,
-        "start_check_availability_form": 0,
-        "complete_quick_qualify_form": 0
-      }
-    },
-    {
-      "name": "Locations | Paid Search",
-      "short": "Locations",
-      "status": "ENABLED",
-      "role": "Locations",
-      "spend": 45.95,
-      "clicks": 14,
-      "impr": 96,
-      "ads_conv": 1.0,
-      "cpc": 3.28,
-      "calls": 1.0,
-      "site_cta": 0,
-      "cta": {
-        "click_main_cta": 0,
-        "click_phone_number": 0,
+        "click_main_cta": 4,
+        "click_phone_number": 2,
         "start_check_availability_form": 0,
         "complete_quick_qualify_form": 0
       }
@@ -132,11 +132,11 @@
       "short": "Secondary Models",
       "status": "ENABLED",
       "role": "Model",
-      "spend": 40.38,
-      "clicks": 11,
-      "impr": 43,
+      "spend": 83.79,
+      "clicks": 22,
+      "impr": 138,
       "ads_conv": 0.0,
-      "cpc": 3.67,
+      "cpc": 3.81,
       "calls": 0.0,
       "site_cta": 0,
       "cta": {
@@ -151,17 +151,36 @@
       "short": "Service Offers",
       "status": "ENABLED",
       "role": "Service Offers",
-      "spend": 25.71,
-      "clicks": 8,
-      "impr": 28,
-      "ads_conv": 4.0,
-      "cpc": 3.21,
-      "calls": 4.0,
-      "site_cta": 2,
+      "spend": 61.62,
+      "clicks": 23,
+      "impr": 84,
+      "ads_conv": 8.0,
+      "cpc": 2.68,
+      "calls": 8.0,
+      "site_cta": 7,
       "cta": {
-        "click_main_cta": 2,
-        "click_phone_number": 0,
+        "click_main_cta": 4,
+        "click_phone_number": 3,
         "start_check_availability_form": 0,
+        "complete_quick_qualify_form": 0
+      }
+    },
+    {
+      "name": "Brand | Paid Search",
+      "short": "Brand",
+      "status": "ENABLED",
+      "role": "Brand",
+      "spend": 59.98,
+      "clicks": 206,
+      "impr": 585,
+      "ads_conv": 58.72,
+      "cpc": 0.29,
+      "calls": 56.99,
+      "site_cta": 58,
+      "cta": {
+        "click_main_cta": 51,
+        "click_phone_number": 5,
+        "start_check_availability_form": 2,
         "complete_quick_qualify_form": 0
       }
     },
@@ -170,11 +189,11 @@
       "short": "Q8",
       "status": "ENABLED",
       "role": "Model",
-      "spend": 22.88,
-      "clicks": 8,
-      "impr": 62,
+      "spend": 53.44,
+      "clicks": 19,
+      "impr": 108,
       "ads_conv": 0.0,
-      "cpc": 2.86,
+      "cpc": 2.81,
       "calls": 0.0,
       "site_cta": 0,
       "cta": {
@@ -185,34 +204,15 @@
       }
     },
     {
-      "name": "Brand | Paid Search",
-      "short": "Brand",
-      "status": "ENABLED",
-      "role": "Brand",
-      "spend": 17.64,
-      "clicks": 94,
-      "impr": 276,
-      "ads_conv": 21.49,
-      "cpc": 0.19,
-      "calls": 21.49,
-      "site_cta": 32,
-      "cta": {
-        "click_main_cta": 30,
-        "click_phone_number": 1,
-        "start_check_availability_form": 1,
-        "complete_quick_qualify_form": 0
-      }
-    },
-    {
       "name": "New Inventory - Q7 | Paid Search",
       "short": "Q7",
       "status": "ENABLED",
       "role": "Model",
-      "spend": 9.18,
-      "clicks": 3,
-      "impr": 29,
+      "spend": 27.28,
+      "clicks": 9,
+      "impr": 90,
       "ads_conv": 0.0,
-      "cpc": 3.06,
+      "cpc": 3.03,
       "calls": 0.0,
       "site_cta": 0,
       "cta": {
@@ -227,11 +227,11 @@
       "short": "Q5",
       "status": "ENABLED",
       "role": "Model",
-      "spend": 8.76,
-      "clicks": 3,
-      "impr": 45,
+      "spend": 23.08,
+      "clicks": 9,
+      "impr": 107,
       "ads_conv": 0.0,
-      "cpc": 2.92,
+      "cpc": 2.56,
       "calls": 0.0,
       "site_cta": 1,
       "cta": {
@@ -246,11 +246,11 @@
       "short": "Q3",
       "status": "ENABLED",
       "role": "Model",
-      "spend": 8.14,
-      "clicks": 4,
-      "impr": 23,
+      "spend": 13.09,
+      "clicks": 6,
+      "impr": 33,
       "ads_conv": 0.0,
-      "cpc": 2.04,
+      "cpc": 2.18,
       "calls": 0.0,
       "site_cta": 1,
       "cta": {
@@ -265,11 +265,11 @@
       "short": "Luxury Sedan",
       "status": "ENABLED",
       "role": "Model",
-      "spend": 2.96,
-      "clicks": 3,
-      "impr": 13,
+      "spend": 12.68,
+      "clicks": 5,
+      "impr": 32,
       "ads_conv": 0.0,
-      "cpc": 0.99,
+      "cpc": 2.54,
       "calls": 0.0,
       "site_cta": 1,
       "cta": {
@@ -318,5 +318,5 @@
       }
     }
   ],
-  "one_move": "Raise Brand. It spent $17.64 at $0.19 CPC, 21 ad calls and 32 site CTAs. Judge Offers on site CTAs (8 on $178), not Ads call zeros."
+  "one_move": "Raise Brand. It spent $59.98 at $0.29 CPC, 57 ad calls and 58 site CTAs. Judge Offers on site CTAs (21 on $411), not Ads call zeros."
 }
