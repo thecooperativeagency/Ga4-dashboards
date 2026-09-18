@@ -973,10 +973,10 @@
       "mobilePct": 55.5
     },
     "mtd": {
-      "sessions": 11655,
-      "users": 10500,
-      "newUsers": 9117,
-      "pageviews": 19537,
+      "sessions": 11656,
+      "users": 10501,
+      "newUsers": 9118,
+      "pageviews": 19547,
       "pagesPerSession": 1.7,
       "bounceRate": 65.1,
       "avgSessionDuration": 140.9,
@@ -1066,7 +1066,7 @@
         "source": "google",
         "medium": "cpc",
         "sessions": 7062,
-        "users": 5596
+        "users": 5597
       },
       {
         "source": "ig",
@@ -1083,8 +1083,8 @@
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 1976,
-        "users": 1946
+        "sessions": 1977,
+        "users": 1947
       },
       {
         "source": "cdn.flashtalking.com",
@@ -1283,10 +1283,10 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 315,
+          "sessions": 316,
           "users": 239,
-          "bounceRate": 17.5,
-          "avgSessionDuration": 284.9
+          "bounceRate": 17.7,
+          "avgSessionDuration": 284.0
         },
         {
           "campaign": "Sales Offers | Paid Search",
@@ -1323,10 +1323,10 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 89,
-          "users": 68,
-          "bounceRate": 14.6,
-          "avgSessionDuration": 308.0
+          "sessions": 90,
+          "users": 69,
+          "bounceRate": 15.6,
+          "avgSessionDuration": 304.6
         },
         {
           "campaign": "Service Offers | Paid Search",
@@ -1460,7 +1460,7 @@
           "sessions": 15587,
           "avgSessionDuration": 76.4,
           "bounceRate": 31.0,
-          "pageviews": 19885
+          "pageviews": 19888
         },
         {
           "pagePath": "/inventory",
@@ -1520,10 +1520,10 @@
         },
         {
           "pagePath": "/service-center",
-          "sessions": 791,
-          "avgSessionDuration": 93.7,
-          "bounceRate": 4.7,
-          "pageviews": 2832
+          "sessions": 792,
+          "avgSessionDuration": 93.6,
+          "bounceRate": 4.8,
+          "pageviews": 2835
         },
         {
           "pagePath": "/collections/new-q8s",
@@ -1543,10 +1543,10 @@
       "top_pages_30": [
         {
           "pagePath": "/",
-          "sessions": 6948,
+          "sessions": 6951,
           "avgSessionDuration": 68.9,
           "bounceRate": 44.6,
-          "pageviews": 8772
+          "pageviews": 8775
         },
         {
           "pagePath": "/inventory",
@@ -1606,10 +1606,10 @@
         },
         {
           "pagePath": "/service-center",
-          "sessions": 227,
-          "avgSessionDuration": 72.7,
-          "bounceRate": 5.3,
-          "pageviews": 834
+          "sessions": 228,
+          "avgSessionDuration": 72.3,
+          "bounceRate": 5.7,
+          "pageviews": 837
         },
         {
           "pagePath": "/about",
@@ -1913,10 +1913,10 @@
       "mobilePct": 75.4
     },
     "mtd": {
-      "sessions": 16511,
-      "users": 14824,
-      "newUsers": 11103,
-      "pageviews": 30264,
+      "sessions": 16513,
+      "users": 14826,
+      "newUsers": 11105,
+      "pageviews": 30266,
       "pagesPerSession": 1.83,
       "bounceRate": 63.8,
       "avgSessionDuration": 110.4,
@@ -2011,8 +2011,8 @@
       {
         "source": "facebook",
         "medium": "cpc",
-        "sessions": 5222,
-        "users": 4239
+        "sessions": 5224,
+        "users": 4241
       },
       {
         "source": "(not set)",
@@ -2303,10 +2303,10 @@
           "source": "facebook",
           "medium": "cpc",
           "channel": "facebook / cpc",
-          "sessions": 518,
-          "users": 462,
-          "bounceRate": 74.1,
-          "avgSessionDuration": 45.8
+          "sessions": 519,
+          "users": 463,
+          "bounceRate": 74.2,
+          "avgSessionDuration": 45.7
         },
         {
           "campaign": "52543614273415",
@@ -2739,7 +2739,7 @@
           7130,
           6638,
           6598,
-          5289
+          5292
         ]
       },
       "weekly_prior": {
@@ -2855,6 +2855,618 @@
           3095,
           2543
         ]
+      }
+    }
+  },
+  "harris_porsche": {
+    "q1_2026": {
+      "sessions": 1263,
+      "users": 1089,
+      "newUsers": 684,
+      "pageviews": 6656,
+      "pagesPerSession": 5.27,
+      "bounceRate": 31.9,
+      "avgSessionDuration": 286.6,
+      "engagementRate": 68.1,
+      "mobilePct": 69.5
+    },
+    "q1_prev": {
+      "sessions": 0,
+      "users": 0,
+      "newUsers": 0,
+      "pageviews": 0,
+      "pagesPerSession": 0.0,
+      "bounceRate": 0.0,
+      "avgSessionDuration": 0.0,
+      "engagementRate": 0.0,
+      "mobilePct": 0.0
+    },
+    "last30": {
+      "sessions": 1263,
+      "users": 1089,
+      "newUsers": 684,
+      "pageviews": 6656,
+      "pagesPerSession": 5.27,
+      "bounceRate": 31.9,
+      "avgSessionDuration": 286.6,
+      "engagementRate": 68.1,
+      "mobilePct": 69.5
+    },
+    "last60": {
+      "sessions": 1263,
+      "users": 1089,
+      "newUsers": 684,
+      "pageviews": 6656,
+      "pagesPerSession": 5.27,
+      "bounceRate": 31.9,
+      "avgSessionDuration": 286.6,
+      "engagementRate": 68.1,
+      "mobilePct": 69.5
+    },
+    "last90": {
+      "sessions": 1263,
+      "users": 1089,
+      "newUsers": 684,
+      "pageviews": 6656,
+      "pagesPerSession": 5.27,
+      "bounceRate": 31.9,
+      "avgSessionDuration": 286.6,
+      "engagementRate": 68.1,
+      "mobilePct": 69.5
+    },
+    "mtd": {
+      "sessions": 1265,
+      "users": 1091,
+      "newUsers": 685,
+      "pageviews": 6656,
+      "pagesPerSession": 5.26,
+      "bounceRate": 31.9,
+      "avgSessionDuration": 286.1,
+      "engagementRate": 68.1,
+      "mobilePct": 69.6
+    },
+    "prev30": {
+      "sessions": 0,
+      "users": 0,
+      "newUsers": 0,
+      "pageviews": 0,
+      "pagesPerSession": 0.0,
+      "bounceRate": 0.0,
+      "avgSessionDuration": 0.0,
+      "engagementRate": 0.0,
+      "mobilePct": 0.0
+    },
+    "prev60": {
+      "sessions": 0,
+      "users": 0,
+      "newUsers": 0,
+      "pageviews": 0,
+      "pagesPerSession": 0.0,
+      "bounceRate": 0.0,
+      "avgSessionDuration": 0.0,
+      "engagementRate": 0.0,
+      "mobilePct": 0.0
+    },
+    "prev90": {
+      "sessions": 0,
+      "users": 0,
+      "newUsers": 0,
+      "pageviews": 0,
+      "pagesPerSession": 0.0,
+      "bounceRate": 0.0,
+      "avgSessionDuration": 0.0,
+      "engagementRate": 0.0,
+      "mobilePct": 0.0
+    },
+    "prev_mtd": {
+      "sessions": 0,
+      "users": 0,
+      "newUsers": 0,
+      "pageviews": 0,
+      "pagesPerSession": 0.0,
+      "bounceRate": 0.0,
+      "avgSessionDuration": 0.0,
+      "engagementRate": 0.0,
+      "mobilePct": 0.0
+    },
+    "windows": {
+      "last30": {
+        "start": "2026-08-19",
+        "end": "2026-09-17"
+      },
+      "last60": {
+        "start": "2026-07-20",
+        "end": "2026-09-17"
+      },
+      "last90": {
+        "start": "2026-06-20",
+        "end": "2026-09-17"
+      },
+      "mtd": {
+        "start": "2026-09-01",
+        "end": "2026-09-18"
+      },
+      "prev_mtd": {
+        "start": "2026-08-01",
+        "end": "2026-08-18"
+      }
+    },
+    "sources": [
+      {
+        "source": "google",
+        "medium": "organic",
+        "sessions": 400,
+        "users": 283
+      },
+      {
+        "source": "google",
+        "medium": "cpc",
+        "sessions": 305,
+        "users": 261
+      },
+      {
+        "source": "(direct)",
+        "medium": "(none)",
+        "sessions": 244,
+        "users": 141
+      },
+      {
+        "source": "(not set)",
+        "medium": "(not set)",
+        "sessions": 126,
+        "users": 117
+      },
+      {
+        "source": "l.facebook.com",
+        "medium": "referral",
+        "sessions": 51,
+        "users": 36
+      },
+      {
+        "source": "(data not available)",
+        "medium": "(data not available)",
+        "sessions": 47,
+        "users": 47
+      },
+      {
+        "source": "bing",
+        "medium": "organic",
+        "sessions": 30,
+        "users": 23
+      },
+      {
+        "source": "instagram.com",
+        "medium": "referral",
+        "sessions": 30,
+        "users": 21
+      },
+      {
+        "source": "lm.facebook.com",
+        "medium": "referral",
+        "sessions": 25,
+        "users": 21
+      },
+      {
+        "source": "m.facebook.com",
+        "medium": "referral",
+        "sessions": 19,
+        "users": 16
+      },
+      {
+        "source": "autotrader.com",
+        "medium": "referral",
+        "sessions": 15,
+        "users": 7
+      },
+      {
+        "source": "yahoo",
+        "medium": "organic",
+        "sessions": 11,
+        "users": 8
+      },
+      {
+        "source": "facebook.com",
+        "medium": "referral",
+        "sessions": 10,
+        "users": 9
+      },
+      {
+        "source": "vinurl.com",
+        "medium": "referral",
+        "sessions": 9,
+        "users": 7
+      },
+      {
+        "source": "duckduckgo",
+        "medium": "organic",
+        "sessions": 8,
+        "users": 5
+      },
+      {
+        "source": "chatgpt.com",
+        "medium": "ai-assistant",
+        "sessions": 7,
+        "users": 6
+      },
+      {
+        "source": "afea355d720124c92dc99639d553fdf8.safeframe.googlesyndication.com",
+        "medium": "referral",
+        "sessions": 1,
+        "users": 1
+      },
+      {
+        "source": "brianharrisautogroup.com",
+        "medium": "referral",
+        "sessions": 1,
+        "users": 1
+      },
+      {
+        "source": "facebook",
+        "medium": "paid_social",
+        "sessions": 1,
+        "users": 1
+      },
+      {
+        "source": "googleads.g.doubleclick.net",
+        "medium": "referral",
+        "sessions": 1,
+        "users": 1
+      }
+    ],
+    "mobile_pct": 69.5,
+    "high_bounce": [
+      {
+        "pagePath": "/en/specials/service-parts",
+        "sessions": 22,
+        "bounceRate": 54.5,
+        "avgSessionDuration": 81.4
+      },
+      {
+        "pagePath": "/en/about-us/staff",
+        "sessions": 26,
+        "bounceRate": 34.6,
+        "avgSessionDuration": 55.0
+      },
+      {
+        "pagePath": "/us/en_US",
+        "sessions": 21,
+        "bounceRate": 28.6,
+        "avgSessionDuration": 84.5
+      },
+      {
+        "pagePath": "/en",
+        "sessions": 650,
+        "bounceRate": 24.9,
+        "avgSessionDuration": 33.0
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-718-cayman-gts-40-preowned-M4O24M",
+        "sessions": 26,
+        "bounceRate": 23.1,
+        "avgSessionDuration": 130.8
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-911-carrera-new-25GXRK",
+        "sessions": 27,
+        "bounceRate": 22.2,
+        "avgSessionDuration": 61.4
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-cayenne-new-V93D89",
+        "sessions": 25,
+        "bounceRate": 20.0,
+        "avgSessionDuration": 142.2
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-cayenne-turbo-gt-new-QOZ5K2",
+        "sessions": 36,
+        "bounceRate": 19.4,
+        "avgSessionDuration": 47.4
+      },
+      {
+        "pagePath": "/en/inventory/porsche/search",
+        "sessions": 724,
+        "bounceRate": 19.3,
+        "avgSessionDuration": 137.1
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-cayenne-preowned-EKZGQE",
+        "sessions": 42,
+        "bounceRate": 16.7,
+        "avgSessionDuration": 173.4
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-911-carrera-new-25GXRK/media",
+        "sessions": 25,
+        "bounceRate": 16.0,
+        "avgSessionDuration": 46.4
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-911-carrera-preowned-L6EG6Q/media",
+        "sessions": 25,
+        "bounceRate": 16.0,
+        "avgSessionDuration": 37.7
+      }
+    ],
+    "panels": {
+      "campaigns": [
+        {
+          "campaign": "(organic)",
+          "source": "google",
+          "medium": "cpc",
+          "channel": "google / cpc",
+          "sessions": 246,
+          "users": 212,
+          "bounceRate": 19.1,
+          "avgSessionDuration": 175.5
+        },
+        {
+          "campaign": "(referral)",
+          "source": "google",
+          "medium": "cpc",
+          "channel": "google / cpc",
+          "sessions": 29,
+          "users": 26,
+          "bounceRate": 17.2,
+          "avgSessionDuration": 102.1
+        },
+        {
+          "campaign": "(not set)",
+          "source": "google",
+          "medium": "cpc",
+          "channel": "google / cpc",
+          "sessions": 28,
+          "users": 25,
+          "bounceRate": 50.0,
+          "avgSessionDuration": 67.1
+        },
+        {
+          "campaign": "",
+          "source": "google",
+          "medium": "cpc",
+          "channel": "google / cpc",
+          "sessions": 2,
+          "users": 2,
+          "bounceRate": 100.0,
+          "avgSessionDuration": 9.3
+        },
+        {
+          "campaign": "(referral)",
+          "source": "facebook",
+          "medium": "paid_social",
+          "channel": "facebook / paid_social",
+          "sessions": 1,
+          "users": 1,
+          "bounceRate": 100.0,
+          "avgSessionDuration": 0.0
+        },
+        {
+          "campaign": "(referral)",
+          "source": "ig",
+          "medium": "social",
+          "channel": "ig / social",
+          "sessions": 1,
+          "users": 1,
+          "bounceRate": 0.0,
+          "avgSessionDuration": 1506.9
+        }
+      ],
+      "hostnames": {
+        "total": 1290,
+        "rows": [
+          {
+            "hostname": "harris.porsche.com",
+            "sessions": 1246,
+            "users": 898,
+            "share": 96.6
+          },
+          {
+            "hostname": "deal.porsche.com",
+            "sessions": 21,
+            "users": 15,
+            "share": 1.6
+          },
+          {
+            "hostname": "service-booking.aftersales.porsche.com",
+            "sessions": 18,
+            "users": 10,
+            "share": 1.4
+          },
+          {
+            "hostname": "service-booking.porsche.com",
+            "sessions": 5,
+            "users": 4,
+            "share": 0.4
+          }
+        ]
+      },
+      "top_pages": [
+        {
+          "pagePath": "/en/inventory/porsche/search",
+          "sessions": 724,
+          "avgSessionDuration": 137.1,
+          "bounceRate": 19.3,
+          "pageviews": 2122
+        },
+        {
+          "pagePath": "/en",
+          "sessions": 650,
+          "avgSessionDuration": 33.0,
+          "bounceRate": 24.9,
+          "pageviews": 84
+        },
+        {
+          "pagePath": "/en/inventory/other-brands/search",
+          "sessions": 50,
+          "avgSessionDuration": 28.2,
+          "bounceRate": 12.0,
+          "pageviews": 49
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-preowned-EKZGQE",
+          "sessions": 42,
+          "avgSessionDuration": 173.4,
+          "bounceRate": 16.7,
+          "pageviews": 60
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-turbo-gt-new-QOZ5K2",
+          "sessions": 36,
+          "avgSessionDuration": 47.4,
+          "bounceRate": 19.4,
+          "pageviews": 50
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-ehybrid-new-WX9R6L",
+          "sessions": 32,
+          "avgSessionDuration": 33.2,
+          "bounceRate": 6.2,
+          "pageviews": 44
+        },
+        {
+          "pagePath": "/en/specials/new",
+          "sessions": 30,
+          "avgSessionDuration": 36.5,
+          "bounceRate": 10.0,
+          "pageviews": 27
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-911-carrera-new-25GXRK",
+          "sessions": 27,
+          "avgSessionDuration": 61.4,
+          "bounceRate": 22.2,
+          "pageviews": 30
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-911-carrera-preowned-L6EG6Q",
+          "sessions": 27,
+          "avgSessionDuration": 63.3,
+          "bounceRate": 14.8,
+          "pageviews": 49
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-preowned-EKZGQE/media",
+          "sessions": 27,
+          "avgSessionDuration": 112.7,
+          "bounceRate": 7.4,
+          "pageviews": 105
+        },
+        {
+          "pagePath": "/en/about-us/staff",
+          "sessions": 26,
+          "avgSessionDuration": 55.0,
+          "bounceRate": 34.6,
+          "pageviews": 17
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-718-cayman-gts-40-preowned-M4O24M",
+          "sessions": 26,
+          "avgSessionDuration": 130.8,
+          "bounceRate": 23.1,
+          "pageviews": 38
+        }
+      ],
+      "top_pages_30": [
+        {
+          "pagePath": "/en/inventory/porsche/search",
+          "sessions": 724,
+          "avgSessionDuration": 137.1,
+          "bounceRate": 19.3,
+          "pageviews": 2122
+        },
+        {
+          "pagePath": "/en",
+          "sessions": 650,
+          "avgSessionDuration": 33.0,
+          "bounceRate": 24.9,
+          "pageviews": 84
+        },
+        {
+          "pagePath": "/en/inventory/other-brands/search",
+          "sessions": 50,
+          "avgSessionDuration": 28.2,
+          "bounceRate": 12.0,
+          "pageviews": 49
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-preowned-EKZGQE",
+          "sessions": 42,
+          "avgSessionDuration": 173.4,
+          "bounceRate": 16.7,
+          "pageviews": 60
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-turbo-gt-new-QOZ5K2",
+          "sessions": 36,
+          "avgSessionDuration": 47.4,
+          "bounceRate": 19.4,
+          "pageviews": 50
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-ehybrid-new-WX9R6L",
+          "sessions": 32,
+          "avgSessionDuration": 33.2,
+          "bounceRate": 6.2,
+          "pageviews": 44
+        },
+        {
+          "pagePath": "/en/specials/new",
+          "sessions": 30,
+          "avgSessionDuration": 36.5,
+          "bounceRate": 10.0,
+          "pageviews": 27
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-911-carrera-new-25GXRK",
+          "sessions": 27,
+          "avgSessionDuration": 61.4,
+          "bounceRate": 22.2,
+          "pageviews": 30
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-911-carrera-preowned-L6EG6Q",
+          "sessions": 27,
+          "avgSessionDuration": 63.3,
+          "bounceRate": 14.8,
+          "pageviews": 49
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-preowned-EKZGQE/media",
+          "sessions": 27,
+          "avgSessionDuration": 112.7,
+          "bounceRate": 7.4,
+          "pageviews": 105
+        },
+        {
+          "pagePath": "/en/about-us/staff",
+          "sessions": 26,
+          "avgSessionDuration": 55.0,
+          "bounceRate": 34.6,
+          "pageviews": 17
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-718-cayman-gts-40-preowned-M4O24M",
+          "sessions": 26,
+          "avgSessionDuration": 130.8,
+          "bounceRate": 23.1,
+          "pageviews": 38
+        }
+      ],
+      "weekly_current": {
+        "labels": [
+          "202636",
+          "202637",
+          "202638"
+        ],
+        "sessions": [
+          166,
+          581,
+          517
+        ]
+      },
+      "weekly_prior": {
+        "labels": [],
+        "sessions": []
       }
     }
   }
