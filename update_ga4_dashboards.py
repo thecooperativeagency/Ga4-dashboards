@@ -109,11 +109,22 @@ def run_report_api(email: str, property_id: str, body: dict) -> dict:
 
 
 def run_report(email: str, property_id: str, start: str, end: str):
-    raw = subprocess.check_output(
-        ['bash', str(GA4_QUERY), email, 'report', property_id, start, end],
-        text=True,
+    # Direct API — do not depend on workspace-root ga4-query.sh (that file is
+    # not in the Pages repo and was dropped in the Ada-archive workspace cut).
+    return run_report_api(
+        email,
+        property_id,
+        {
+            'dateRanges': [{'startDate': start, 'endDate': end}],
+            'metrics': [
+                {'name': 'sessions'},
+                {'name': 'totalUsers'},
+                {'name': 'newUsers'},
+                {'name': 'screenPageViews'},
+            ],
+            'dimensions': [{'name': 'date'}],
+        },
     )
-    return json.loads(raw)
 
 
 def totals_from_report(report: dict):
@@ -564,17 +575,36 @@ def main():
     audi_prop = os.environ['AUDI_BR_PROPERTY']
     jackson_prop = os.environ['BMW_JACKSON_PROPERTY']
 
+    hp_email = os.environ.get('HP_EMAIL') or bh_email
+    hp_prop = os.environ.get('HP_PROPERTY') or '552482455'
+
     bh_data = build_store(bh_email, bh_prop)
     audi_data = build_store(audi_email, audi_prop)
     jackson_data = build_store(jackson_email, jackson_prop)
+    hp_data = build_store(hp_email, hp_prop)
 
     bh_high = fetch_high_bounce_pages(bh_email, bh_prop, '30daysAgo', 'today')
     audi_high = fetch_high_bounce_pages(audi_email, audi_prop, '30daysAgo', 'today')
     jackson_high = fetch_high_bounce_pages(jackson_email, jackson_prop, '30daysAgo', 'today')
+    hp_high = fetch_high_bounce_pages(hp_email, hp_prop, '30daysAgo', 'today')
 
     bh_panels = fetch_panels(bh_email, bh_prop)
     audi_panels = fetch_panels(audi_email, audi_prop)
     jackson_panels = fetch_panels(jackson_email, jackson_prop)
+    hp_panels = fetch_panels(hp_email, hp_prop)
+
+    hp_sources_report = run_report_api(
+        hp_email,
+        hp_prop,
+        {
+            'dateRanges': [{'startDate': '90daysAgo', 'endDate': 'today'}],
+            'dimensions': [{'name': 'sessionSource'}, {'name': 'sessionMedium'}],
+            'metrics': [{'name': 'sessions'}, {'name': 'totalUsers'}],
+            'orderBys': [{'metric': {'metricName': 'sessions'}, 'desc': True}],
+            'limit': 20,
+        },
+    )
+    hp_sources = parse_sources(json.dumps(hp_sources_report))
 
     today = os.environ.get('TODAY') or date.today().isoformat()
     updated_label = datetime.strptime(today, '%Y-%m-%d').strftime('%B %-d, %Y')
@@ -603,6 +633,7 @@ def main():
         'brian_harris_bmw': store_cache(bh_data, bh_sources, bh_high, bh_panels),
         'audi_baton_rouge': store_cache(audi_data, audi_sources, audi_high, audi_panels),
         'bmw_jackson': store_cache(jackson_data, jackson_sources, jackson_high, jackson_panels),
+        'harris_porsche': store_cache(hp_data, hp_sources, hp_high, hp_panels),
     }
     (DASH_DIR / 'ga4-data.json').write_text(json.dumps(cache, indent=2))
 
@@ -620,6 +651,7 @@ def main():
         ('BH BMW', bh_data, bh_panels),
         ('Audi BR', audi_data, audi_panels),
         ('BMW Jackson', jackson_data, jackson_panels),
+        ('Harris Porsche', hp_data, hp_panels),
     ):
         for key in ('last30', 'last60', 'last90', 'mtd'):
             cur = data[key]
