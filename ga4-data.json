@@ -1,186 +1,186 @@
 {
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "brian_harris_bmw": {
     "q1_2026": {
-      "sessions": 111942,
-      "users": 100432,
-      "newUsers": 82996,
-      "pageviews": 289731,
-      "pagesPerSession": 2.61,
-      "bounceRate": 64.3,
-      "avgSessionDuration": 179.3,
-      "engagementRate": 35.7,
-      "mobilePct": 39.6
+      "sessions": 111796,
+      "users": 100245,
+      "newUsers": 82760,
+      "pageviews": 290035,
+      "pagesPerSession": 2.64,
+      "bounceRate": 63.8,
+      "avgSessionDuration": 183.5,
+      "engagementRate": 36.2,
+      "mobilePct": 39.8
     },
     "q1_prev": {
-      "sessions": 68838,
-      "users": 56827,
-      "newUsers": 39659,
-      "pageviews": 232997,
-      "pagesPerSession": 3.38,
-      "bounceRate": 44.4,
-      "avgSessionDuration": 220.9,
-      "engagementRate": 55.6,
-      "mobilePct": 64.6
+      "sessions": 69013,
+      "users": 56979,
+      "newUsers": 39750,
+      "pageviews": 233671,
+      "pagesPerSession": 3.37,
+      "bounceRate": 44.7,
+      "avgSessionDuration": 220.1,
+      "engagementRate": 55.3,
+      "mobilePct": 64.7
     },
     "last30": {
-      "sessions": 29045,
-      "users": 25575,
-      "newUsers": 19413,
-      "pageviews": 85218,
-      "pagesPerSession": 2.93,
-      "bounceRate": 55.3,
-      "avgSessionDuration": 311.4,
-      "engagementRate": 44.7,
-      "mobilePct": 51.3
+      "sessions": 28386,
+      "users": 24900,
+      "newUsers": 18690,
+      "pageviews": 85069,
+      "pagesPerSession": 3.01,
+      "bounceRate": 54.4,
+      "avgSessionDuration": 331.3,
+      "engagementRate": 45.6,
+      "mobilePct": 52.7
     },
     "last60": {
-      "sessions": 83414,
-      "users": 76040,
-      "newUsers": 64096,
-      "pageviews": 197133,
-      "pagesPerSession": 2.32,
-      "bounceRate": 69.0,
-      "avgSessionDuration": 170.5,
-      "engagementRate": 31.0,
-      "mobilePct": 36.3
+      "sessions": 83304,
+      "users": 75947,
+      "newUsers": 63967,
+      "pageviews": 197284,
+      "pagesPerSession": 2.35,
+      "bounceRate": 68.8,
+      "avgSessionDuration": 175.7,
+      "engagementRate": 31.2,
+      "mobilePct": 36.6
     },
     "last90": {
-      "sessions": 111942,
-      "users": 100432,
-      "newUsers": 82996,
-      "pageviews": 289731,
-      "pagesPerSession": 2.61,
-      "bounceRate": 64.3,
-      "avgSessionDuration": 179.3,
-      "engagementRate": 35.7,
-      "mobilePct": 39.6
+      "sessions": 111796,
+      "users": 100245,
+      "newUsers": 82760,
+      "pageviews": 290035,
+      "pagesPerSession": 2.64,
+      "bounceRate": 63.8,
+      "avgSessionDuration": 183.5,
+      "engagementRate": 36.2,
+      "mobilePct": 39.8
     },
     "mtd": {
-      "sessions": 771,
-      "users": 631,
-      "newUsers": 420,
-      "pageviews": 2915,
-      "pagesPerSession": 3.8,
-      "bounceRate": 46.4,
-      "avgSessionDuration": 242.4,
-      "engagementRate": 53.6,
-      "mobilePct": 58.8
+      "sessions": 1499,
+      "users": 1211,
+      "newUsers": 786,
+      "pageviews": 5889,
+      "pagesPerSession": 3.93,
+      "bounceRate": 44.8,
+      "avgSessionDuration": 424.0,
+      "engagementRate": 55.2,
+      "mobilePct": 59.6
     },
     "prev30": {
-      "sessions": 54369,
-      "users": 50465,
-      "newUsers": 44683,
-      "pageviews": 111915,
-      "pagesPerSession": 2.06,
-      "bounceRate": 75.5,
-      "avgSessionDuration": 100.0,
-      "engagementRate": 24.5,
-      "mobilePct": 28.5
+      "sessions": 54918,
+      "users": 51047,
+      "newUsers": 45277,
+      "pageviews": 112215,
+      "pagesPerSession": 2.05,
+      "bounceRate": 75.6,
+      "avgSessionDuration": 98.8,
+      "engagementRate": 24.4,
+      "mobilePct": 28.3
     },
     "prev60": {
-      "sessions": 54251,
-      "users": 45904,
-      "newUsers": 34507,
-      "pageviews": 183091,
+      "sessions": 54205,
+      "users": 45837,
+      "newUsers": 34460,
+      "pageviews": 182850,
       "pagesPerSession": 3.4,
-      "bounceRate": 51.9,
+      "bounceRate": 52.1,
       "avgSessionDuration": 199.2,
-      "engagementRate": 48.1,
-      "mobilePct": 55.4
+      "engagementRate": 47.9,
+      "mobilePct": 55.2
     },
     "prev90": {
-      "sessions": 73207,
-      "users": 60982,
-      "newUsers": 43699,
-      "pageviews": 258778,
-      "pagesPerSession": 3.52,
-      "bounceRate": 50.5,
-      "avgSessionDuration": 207.9,
-      "engagementRate": 49.5,
-      "mobilePct": 62.9
+      "sessions": 73573,
+      "users": 61319,
+      "newUsers": 43993,
+      "pageviews": 259776,
+      "pagesPerSession": 3.51,
+      "bounceRate": 50.3,
+      "avgSessionDuration": 207.7,
+      "engagementRate": 49.7,
+      "mobilePct": 62.8
     },
     "prev_mtd": {
-      "sessions": 2856,
-      "users": 2604,
-      "newUsers": 2249,
-      "pageviews": 6360,
-      "pagesPerSession": 2.23,
-      "bounceRate": 71.9,
-      "avgSessionDuration": 97.1,
-      "engagementRate": 28.1,
-      "mobilePct": 29.9
+      "sessions": 4496,
+      "users": 4147,
+      "newUsers": 3639,
+      "pageviews": 9209,
+      "pagesPerSession": 2.04,
+      "bounceRate": 74.6,
+      "avgSessionDuration": 87.4,
+      "engagementRate": 25.4,
+      "mobilePct": 26.6
     },
     "windows": {
       "last30": {
-        "start": "2026-09-02",
-        "end": "2026-10-01"
+        "start": "2026-09-03",
+        "end": "2026-10-02"
       },
       "last60": {
-        "start": "2026-08-03",
-        "end": "2026-10-01"
+        "start": "2026-08-04",
+        "end": "2026-10-02"
       },
       "last90": {
-        "start": "2026-07-04",
-        "end": "2026-10-01"
+        "start": "2026-07-05",
+        "end": "2026-10-02"
       },
       "mtd": {
         "start": "2026-10-01",
-        "end": "2026-10-02"
+        "end": "2026-10-03"
       },
       "prev_mtd": {
         "start": "2026-09-01",
-        "end": "2026-09-02"
+        "end": "2026-09-03"
       }
     },
     "sources": [
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 59931,
-        "users": 53075
+        "sessions": 59736,
+        "users": 52913
       },
       {
         "source": "google",
         "medium": "cpc",
-        "sessions": 24519,
-        "users": 19116
+        "sessions": 24393,
+        "users": 18972
       },
       {
         "source": "google",
         "medium": "organic",
-        "sessions": 16395,
-        "users": 7614
+        "sessions": 16306,
+        "users": 7648
       },
       {
         "source": "facebook",
         "medium": "cpc",
-        "sessions": 2231,
-        "users": 1741
+        "sessions": 2212,
+        "users": 1724
       },
       {
         "source": "bing",
         "medium": "organic",
-        "sessions": 1716,
-        "users": 858
+        "sessions": 1735,
+        "users": 863
       },
       {
         "source": "amp",
         "medium": "email",
-        "sessions": 1042,
-        "users": 733
+        "sessions": 1048,
+        "users": 736
       },
       {
         "source": "bmwusa.com",
         "medium": "referral",
-        "sessions": 730,
-        "users": 374
+        "sessions": 732,
+        "users": 376
       },
       {
         "source": "autotrader.com",
         "medium": "referral",
-        "sessions": 663,
-        "users": 349
+        "sessions": 661,
+        "users": 347
       },
       {
         "source": "vinurl.com",
@@ -189,46 +189,46 @@
         "users": 379
       },
       {
+        "source": "vinsolutions.app.coxautoinc.com",
+        "medium": "referral",
+        "sessions": 558,
+        "users": 13
+      },
+      {
         "source": "yahoo",
         "medium": "organic",
         "sessions": 556,
-        "users": 268
-      },
-      {
-        "source": "vinsolutions.app.coxautoinc.com",
-        "medium": "referral",
-        "sessions": 548,
-        "users": 13
+        "users": 271
       },
       {
         "source": "amp",
         "medium": "sms",
-        "sessions": 414,
+        "sessions": 423,
         "users": 219
       },
       {
         "source": "chatgpt.com",
         "medium": "ai-assistant",
-        "sessions": 343,
-        "users": 254
+        "sessions": 350,
+        "users": 255
       },
       {
         "source": "duckduckgo",
         "medium": "organic",
-        "sessions": 316,
-        "users": 130
+        "sessions": 320,
+        "users": 131
       },
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 300,
-        "users": 867
+        "sessions": 297,
+        "users": 876
       },
       {
         "source": "(data not available)",
         "medium": "(data not available)",
-        "sessions": 295,
-        "users": 248
+        "sessions": 292,
+        "users": 243
       },
       {
         "source": "app.podium.com",
@@ -237,36 +237,36 @@
         "users": 5
       },
       {
+        "source": "fb",
+        "medium": "paid",
+        "sessions": 244,
+        "users": 202
+      },
+      {
         "source": "m.facebook.com",
         "medium": "referral",
         "sessions": 230,
         "users": 229
       },
       {
-        "source": "fb",
-        "medium": "paid",
-        "sessions": 222,
-        "users": 187
-      },
-      {
         "source": "vsr.bmwgroup.com",
         "medium": "referral",
-        "sessions": 187,
+        "sessions": 192,
         "users": 2
       }
     ],
-    "mobile_pct": 51.3,
+    "mobile_pct": 52.7,
     "high_bounce": [
       {
         "pagePath": "/search/baton-rouge-la",
-        "sessions": 38,
+        "sessions": 32,
         "bounceRate": 100.0,
-        "avgSessionDuration": 0.3
+        "avgSessionDuration": 0.4
       },
       {
         "pagePath": "/oil-change",
-        "sessions": 1376,
-        "bounceRate": 73.8,
+        "sessions": 1358,
+        "bounceRate": 74.2,
         "avgSessionDuration": 46.4
       },
       {
@@ -277,15 +277,15 @@
       },
       {
         "pagePath": "/cars/bmw-x3",
-        "sessions": 1455,
-        "bounceRate": 64.7,
-        "avgSessionDuration": 76.9
+        "sessions": 1456,
+        "bounceRate": 64.6,
+        "avgSessionDuration": 77.2
       },
       {
         "pagePath": "/service-specials",
-        "sessions": 72,
-        "bounceRate": 62.5,
-        "avgSessionDuration": 52.1
+        "sessions": 71,
+        "bounceRate": 63.4,
+        "avgSessionDuration": 50.2
       },
       {
         "pagePath": "/bmw-x1-vs-gla-comparison",
@@ -295,27 +295,27 @@
       },
       {
         "pagePath": "/pre-qualify",
-        "sessions": 23,
-        "bounceRate": 52.2,
-        "avgSessionDuration": 79.0
-      },
-      {
-        "pagePath": "/finance",
-        "sessions": 122,
+        "sessions": 24,
         "bounceRate": 50.0,
-        "avgSessionDuration": 131.2
+        "avgSessionDuration": 76.2
       },
       {
         "pagePath": "/bmw-military-offer",
         "sessions": 22,
         "bounceRate": 50.0,
-        "avgSessionDuration": 18.4
+        "avgSessionDuration": 18.7
       },
       {
         "pagePath": "/cars/bmw-x5",
-        "sessions": 1195,
-        "bounceRate": 49.8,
-        "avgSessionDuration": 80.5
+        "sessions": 1197,
+        "bounceRate": 49.6,
+        "avgSessionDuration": 81.0
+      },
+      {
+        "pagePath": "/finance",
+        "sessions": 123,
+        "bounceRate": 48.8,
+        "avgSessionDuration": 126.1
       },
       {
         "pagePath": "/inventory/Used-2019-Honda-Pilot-Elite-5FNYF6H00KB002716",
@@ -337,19 +337,19 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 2545,
-          "users": 1755,
+          "sessions": 2539,
+          "users": 1751,
           "bounceRate": 17.8,
-          "avgSessionDuration": 399.5
+          "avgSessionDuration": 402.8
         },
         {
           "campaign": "(not set)",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 2132,
-          "users": 1833,
-          "bounceRate": 71.4,
+          "sessions": 2134,
+          "users": 1840,
+          "bounceRate": 71.6,
           "avgSessionDuration": 69.2
         },
         {
@@ -357,19 +357,19 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 1204,
-          "users": 1108,
-          "bounceRate": 63.9,
-          "avgSessionDuration": 916.8
+          "sessions": 1179,
+          "users": 1085,
+          "bounceRate": 64.2,
+          "avgSessionDuration": 935.8
         },
         {
           "campaign": "(referral)",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 900,
-          "users": 712,
-          "bounceRate": 47.0,
+          "sessions": 897,
+          "users": 710,
+          "bounceRate": 46.9,
           "avgSessionDuration": 122.4
         },
         {
@@ -377,135 +377,135 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 478,
-          "users": 362,
-          "bounceRate": 81.8,
-          "avgSessionDuration": 1366.4
+          "sessions": 471,
+          "users": 357,
+          "bounceRate": 82.2,
+          "avgSessionDuration": 1386.1
         },
         {
           "campaign": "*000109468*SEM_Brand_AS",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 442,
-          "users": 230,
+          "sessions": 419,
+          "users": 217,
           "bounceRate": 20.8,
-          "avgSessionDuration": 317.2
+          "avgSessionDuration": 306.3
         },
         {
           "campaign": "Attack - New Inventory - In-Market - Automotive Inventory Ads (AIA) | Meta - Catalog Sales",
           "source": "facebook",
           "medium": "cpc",
           "channel": "facebook / cpc",
-          "sessions": 364,
-          "users": 312,
-          "bounceRate": 62.4,
-          "avgSessionDuration": 44.4
+          "sessions": 343,
+          "users": 298,
+          "bounceRate": 61.5,
+          "avgSessionDuration": 46.3
         },
         {
           "campaign": "Service - Attack - Service Offers | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 172,
-          "users": 146,
-          "bounceRate": 20.9,
-          "avgSessionDuration": 4948.3
+          "sessions": 174,
+          "users": 148,
+          "bounceRate": 21.3,
+          "avgSessionDuration": 6405.5
         },
         {
           "campaign": "Attack - Used Inventory - In-Market - Automotive Inventory Ads (AIA) | Meta - Catalog Sales - Copy",
           "source": "facebook",
           "medium": "cpc",
           "channel": "facebook / cpc",
-          "sessions": 165,
-          "users": 141,
-          "bounceRate": 63.0,
-          "avgSessionDuration": 47.0
+          "sessions": 151,
+          "users": 128,
+          "bounceRate": 60.9,
+          "avgSessionDuration": 50.2
         },
         {
           "campaign": "120244894265620323",
           "source": "fb",
           "medium": "paid",
           "channel": "fb / paid",
-          "sessions": 132,
-          "users": 119,
-          "bounceRate": 44.7,
-          "avgSessionDuration": 5169.0
+          "sessions": 148,
+          "users": 131,
+          "bounceRate": 46.6,
+          "avgSessionDuration": 4617.0
         },
         {
           "campaign": "120245716763220323",
           "source": "fb",
           "medium": "paid",
           "channel": "fb / paid",
-          "sessions": 90,
-          "users": 76,
-          "bounceRate": 40.0,
-          "avgSessionDuration": 298.8
+          "sessions": 96,
+          "users": 80,
+          "bounceRate": 40.6,
+          "avgSessionDuration": 296.7
         },
         {
           "campaign": "120244894265620323",
           "source": "ig",
           "medium": "paid",
           "channel": "ig / paid",
-          "sessions": 58,
-          "users": 58,
-          "bounceRate": 93.1,
-          "avgSessionDuration": 4.4
+          "sessions": 70,
+          "users": 69,
+          "bounceRate": 90.0,
+          "avgSessionDuration": 6.3
         },
         {
           "campaign": "*000109470*SEM_Locations_AS",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 44,
-          "users": 36,
-          "bounceRate": 18.2,
-          "avgSessionDuration": 291.4
+          "sessions": 43,
+          "users": 35,
+          "bounceRate": 18.6,
+          "avgSessionDuration": 297.2
         },
         {
           "campaign": "120245716763220323",
           "source": "ig",
           "medium": "paid",
           "channel": "ig / paid",
-          "sessions": 28,
-          "users": 28,
-          "bounceRate": 92.9,
-          "avgSessionDuration": 41.7
+          "sessions": 30,
+          "users": 30,
+          "bounceRate": 90.0,
+          "avgSessionDuration": 39.2
         },
         {
           "campaign": "Service - Attack - Brand | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 16,
-          "users": 14,
-          "bounceRate": 31.2,
-          "avgSessionDuration": 16300.7
+          "sessions": 20,
+          "users": 17,
+          "bounceRate": 30.0,
+          "avgSessionDuration": 13111.1
         },
         {
           "campaign": "Service - Defend - Segmented Previous Customer List | Demand Gen",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 16,
-          "users": 12,
-          "bounceRate": 75.0,
-          "avgSessionDuration": 124.2
+          "sessions": 14,
+          "users": 11,
+          "bounceRate": 71.4,
+          "avgSessionDuration": 129.0
         }
       ],
       "hostnames": {
-        "total": 111135,
+        "total": 110260,
         "rows": [
           {
             "hostname": "brianharrisbmw.com",
-            "sessions": 110895,
-            "users": 84468,
+            "sessions": 110018,
+            "users": 84227,
             "share": 99.8
           },
           {
             "hostname": "(not set)",
-            "sessions": 140,
-            "users": 694,
+            "sessions": 142,
+            "users": 696,
             "share": 0.1
           },
           {
@@ -517,7 +517,7 @@
           {
             "hostname": "",
             "sessions": 5,
-            "users": 10,
+            "users": 25,
             "share": 0.0
           },
           {
@@ -537,173 +537,173 @@
       "top_pages": [
         {
           "pagePath": "/",
-          "sessions": 25208,
-          "avgSessionDuration": 57.9,
-          "bounceRate": 16.8,
-          "pageviews": 30370
+          "sessions": 25124,
+          "avgSessionDuration": 58.4,
+          "bounceRate": 16.7,
+          "pageviews": 30455
         },
         {
           "pagePath": "/inventory",
-          "sessions": 20990,
-          "avgSessionDuration": 202.1,
-          "bounceRate": 16.7,
-          "pageviews": 79213
+          "sessions": 21082,
+          "avgSessionDuration": 201.8,
+          "bounceRate": 17.2,
+          "pageviews": 79278
         },
         {
           "pagePath": "/oil-change",
-          "sessions": 4326,
-          "avgSessionDuration": 120.6,
-          "bounceRate": 75.9,
-          "pageviews": 4787
+          "sessions": 4302,
+          "avgSessionDuration": 121.1,
+          "bounceRate": 75.6,
+          "pageviews": 4776
         },
         {
           "pagePath": "/cars/bmw-x3",
-          "sessions": 4176,
-          "avgSessionDuration": 64.8,
-          "bounceRate": 64.5,
-          "pageviews": 5719
+          "sessions": 4139,
+          "avgSessionDuration": 65.0,
+          "bounceRate": 64.4,
+          "pageviews": 5714
         },
         {
           "pagePath": "/cars/new-inventory",
-          "sessions": 3919,
-          "avgSessionDuration": 171.0,
-          "bounceRate": 12.2,
-          "pageviews": 13902
+          "sessions": 3962,
+          "avgSessionDuration": 170.9,
+          "bounceRate": 12.4,
+          "pageviews": 14033
         },
         {
           "pagePath": "/cars/bmw-x5",
-          "sessions": 3761,
-          "avgSessionDuration": 76.6,
-          "bounceRate": 53.2,
-          "pageviews": 5838
+          "sessions": 3721,
+          "avgSessionDuration": 77.4,
+          "bounceRate": 52.7,
+          "pageviews": 5818
         },
         {
           "pagePath": "/cars/bmw-certified",
-          "sessions": 3397,
-          "avgSessionDuration": 187.6,
-          "bounceRate": 8.4,
-          "pageviews": 10913
+          "sessions": 3378,
+          "avgSessionDuration": 189.2,
+          "bounceRate": 8.5,
+          "pageviews": 10908
         },
         {
           "pagePath": "/service-specials",
-          "sessions": 2463,
+          "sessions": 2428,
           "avgSessionDuration": 72.9,
-          "bounceRate": 78.2,
-          "pageviews": 2927
+          "bounceRate": 78.1,
+          "pageviews": 2887
         },
         {
           "pagePath": "/new-bmw-specials2",
-          "sessions": 2261,
-          "avgSessionDuration": 72.2,
-          "bounceRate": 11.6,
-          "pageviews": 2975
+          "sessions": 2299,
+          "avgSessionDuration": 71.8,
+          "bounceRate": 11.8,
+          "pageviews": 3028
         },
         {
           "pagePath": "/service",
-          "sessions": 1443,
-          "avgSessionDuration": 137.7,
-          "bounceRate": 27.1,
-          "pageviews": 1608
-        },
-        {
-          "pagePath": "/cars/new-330i",
-          "sessions": 1065,
-          "avgSessionDuration": 105.6,
-          "bounceRate": 57.4,
-          "pageviews": 1492
+          "sessions": 1449,
+          "avgSessionDuration": 139.0,
+          "bounceRate": 27.0,
+          "pageviews": 1612
         },
         {
           "pagePath": "/cars/new-530i",
-          "sessions": 1047,
-          "avgSessionDuration": 69.2,
-          "bounceRate": 55.3,
-          "pageviews": 1424
+          "sessions": 1050,
+          "avgSessionDuration": 69.1,
+          "bounceRate": 55.1,
+          "pageviews": 1428
+        },
+        {
+          "pagePath": "/about",
+          "sessions": 1028,
+          "avgSessionDuration": 141.4,
+          "bounceRate": 19.9,
+          "pageviews": 1105
         }
       ],
       "top_pages_30": [
         {
           "pagePath": "/",
-          "sessions": 7951,
-          "avgSessionDuration": 57.0,
-          "bounceRate": 16.6,
-          "pageviews": 9636
+          "sessions": 7886,
+          "avgSessionDuration": 58.7,
+          "bounceRate": 17.1,
+          "pageviews": 9668
         },
         {
           "pagePath": "/inventory",
-          "sessions": 7451,
-          "avgSessionDuration": 192.1,
-          "bounceRate": 19.5,
-          "pageviews": 25951
+          "sessions": 7417,
+          "avgSessionDuration": 193.0,
+          "bounceRate": 19.8,
+          "pageviews": 25906
         },
         {
           "pagePath": "/cars/bmw-x3",
-          "sessions": 1455,
-          "avgSessionDuration": 76.9,
-          "bounceRate": 64.7,
-          "pageviews": 1988
+          "sessions": 1456,
+          "avgSessionDuration": 77.2,
+          "bounceRate": 64.6,
+          "pageviews": 2025
         },
         {
           "pagePath": "/oil-change",
-          "sessions": 1376,
+          "sessions": 1358,
           "avgSessionDuration": 46.4,
-          "bounceRate": 73.8,
-          "pageviews": 1574
+          "bounceRate": 74.2,
+          "pageviews": 1560
         },
         {
           "pagePath": "/cars/new-inventory",
-          "sessions": 1324,
-          "avgSessionDuration": 172.4,
-          "bounceRate": 13.6,
-          "pageviews": 4393
+          "sessions": 1339,
+          "avgSessionDuration": 174.3,
+          "bounceRate": 13.5,
+          "pageviews": 4477
         },
         {
           "pagePath": "/cars/bmw-x5",
-          "sessions": 1195,
-          "avgSessionDuration": 80.5,
-          "bounceRate": 49.8,
-          "pageviews": 1845
+          "sessions": 1197,
+          "avgSessionDuration": 81.0,
+          "bounceRate": 49.6,
+          "pageviews": 1856
         },
         {
           "pagePath": "/cars/bmw-certified",
-          "sessions": 1045,
-          "avgSessionDuration": 170.2,
-          "bounceRate": 9.2,
-          "pageviews": 3291
+          "sessions": 1034,
+          "avgSessionDuration": 168.8,
+          "bounceRate": 9.1,
+          "pageviews": 3243
         },
         {
           "pagePath": "/new-bmw-specials2",
-          "sessions": 811,
-          "avgSessionDuration": 73.6,
-          "bounceRate": 13.8,
-          "pageviews": 1037
+          "sessions": 823,
+          "avgSessionDuration": 73.3,
+          "bounceRate": 14.2,
+          "pageviews": 1060
         },
         {
           "pagePath": "/service",
-          "sessions": 502,
-          "avgSessionDuration": 119.0,
-          "bounceRate": 28.7,
-          "pageviews": 555
+          "sessions": 507,
+          "avgSessionDuration": 123.3,
+          "bounceRate": 28.2,
+          "pageviews": 560
         },
         {
           "pagePath": "/tires",
-          "sessions": 451,
-          "avgSessionDuration": 75.2,
-          "bounceRate": 36.4,
-          "pageviews": 535
+          "sessions": 437,
+          "avgSessionDuration": 75.7,
+          "bounceRate": 36.2,
+          "pageviews": 523
         },
         {
           "pagePath": "/cars/new-330i",
-          "sessions": 366,
-          "avgSessionDuration": 100.1,
-          "bounceRate": 44.8,
-          "pageviews": 502
+          "sessions": 369,
+          "avgSessionDuration": 100.2,
+          "bounceRate": 44.4,
+          "pageviews": 509
         },
         {
           "pagePath": "/about",
-          "sessions": 340,
-          "avgSessionDuration": 112.8,
-          "bounceRate": 20.9,
-          "pageviews": 361
+          "sessions": 346,
+          "avgSessionDuration": 117.1,
+          "bounceRate": 20.8,
+          "pageviews": 366
         }
       ],
       "weekly_current": {
@@ -764,7 +764,7 @@
           "202640"
         ],
         "sessions": [
-          2309,
+          1500,
           5295,
           5200,
           5321,
@@ -817,7 +817,7 @@
           7263,
           6320,
           6539,
-          4094
+          4791
         ]
       },
       "weekly_prior": {
@@ -878,7 +878,7 @@
           "202540"
         ],
         "sessions": [
-          2682,
+          2087,
           4524,
           5110,
           5100,
@@ -931,221 +931,221 @@
           4850,
           5863,
           5225,
-          3080
+          3874
         ]
       }
     }
   },
   "audi_baton_rouge": {
     "q1_2026": {
-      "sessions": 55925,
-      "users": 49770,
-      "newUsers": 42410,
-      "pageviews": 103038,
+      "sessions": 56131,
+      "users": 49911,
+      "newUsers": 42512,
+      "pageviews": 103588,
       "pagesPerSession": 1.81,
-      "bounceRate": 63.8,
-      "avgSessionDuration": 149.5,
-      "engagementRate": 36.2,
-      "mobilePct": 54.3
+      "bounceRate": 63.9,
+      "avgSessionDuration": 151.7,
+      "engagementRate": 36.1,
+      "mobilePct": 54.5
     },
     "q1_prev": {
-      "sessions": 22115,
-      "users": 16992,
-      "newUsers": 11053,
-      "pageviews": 55277,
-      "pagesPerSession": 2.49,
-      "bounceRate": 22.1,
-      "avgSessionDuration": 248.5,
-      "engagementRate": 77.9,
+      "sessions": 22197,
+      "users": 17044,
+      "newUsers": 11100,
+      "pageviews": 55518,
+      "pagesPerSession": 2.5,
+      "bounceRate": 22.0,
+      "avgSessionDuration": 249.5,
+      "engagementRate": 78.0,
       "mobilePct": 62.6
     },
     "last30": {
-      "sessions": 20457,
-      "users": 18366,
-      "newUsers": 15831,
-      "pageviews": 34439,
-      "pagesPerSession": 1.71,
-      "bounceRate": 65.9,
-      "avgSessionDuration": 142.0,
-      "engagementRate": 34.1,
-      "mobilePct": 54.3
+      "sessions": 20481,
+      "users": 18377,
+      "newUsers": 15853,
+      "pageviews": 34764,
+      "pagesPerSession": 1.73,
+      "bounceRate": 65.6,
+      "avgSessionDuration": 148.7,
+      "engagementRate": 34.4,
+      "mobilePct": 54.2
     },
     "last60": {
-      "sessions": 37731,
-      "users": 33656,
-      "newUsers": 28722,
-      "pageviews": 67109,
+      "sessions": 37881,
+      "users": 33763,
+      "newUsers": 28807,
+      "pageviews": 67663,
       "pagesPerSession": 1.81,
-      "bounceRate": 63.0,
-      "avgSessionDuration": 151.7,
-      "engagementRate": 37.0,
-      "mobilePct": 55.0
+      "bounceRate": 63.2,
+      "avgSessionDuration": 154.3,
+      "engagementRate": 36.8,
+      "mobilePct": 55.1
     },
     "last90": {
-      "sessions": 55925,
-      "users": 49770,
-      "newUsers": 42410,
-      "pageviews": 103038,
+      "sessions": 56131,
+      "users": 49911,
+      "newUsers": 42512,
+      "pageviews": 103588,
       "pagesPerSession": 1.81,
-      "bounceRate": 63.8,
-      "avgSessionDuration": 149.5,
-      "engagementRate": 36.2,
-      "mobilePct": 54.3
+      "bounceRate": 63.9,
+      "avgSessionDuration": 151.7,
+      "engagementRate": 36.1,
+      "mobilePct": 54.5
     },
     "mtd": {
-      "sessions": 852,
-      "users": 768,
-      "newUsers": 630,
-      "pageviews": 1307,
-      "pagesPerSession": 1.53,
-      "bounceRate": 98.5,
-      "avgSessionDuration": 342.7,
-      "engagementRate": 1.5,
-      "mobilePct": 46.0
+      "sessions": 1571,
+      "users": 1390,
+      "newUsers": 1151,
+      "pageviews": 2927,
+      "pagesPerSession": 1.86,
+      "bounceRate": 81.1,
+      "avgSessionDuration": 337.8,
+      "engagementRate": 18.9,
+      "mobilePct": 50.7
     },
     "prev30": {
-      "sessions": 17274,
-      "users": 15290,
-      "newUsers": 12891,
-      "pageviews": 32670,
+      "sessions": 17400,
+      "users": 15386,
+      "newUsers": 12954,
+      "pageviews": 32899,
       "pagesPerSession": 1.91,
-      "bounceRate": 60.2,
-      "avgSessionDuration": 161.2,
-      "engagementRate": 39.8,
-      "mobilePct": 56.7
+      "bounceRate": 60.3,
+      "avgSessionDuration": 161.5,
+      "engagementRate": 39.7,
+      "mobilePct": 56.8
     },
     "prev60": {
-      "sessions": 35996,
-      "users": 31787,
-      "newUsers": 27068,
-      "pageviews": 71566,
-      "pagesPerSession": 2.0,
+      "sessions": 36141,
+      "users": 31953,
+      "newUsers": 27246,
+      "pageviews": 71481,
+      "pagesPerSession": 1.98,
       "bounceRate": 61.6,
-      "avgSessionDuration": 154.6,
+      "avgSessionDuration": 153.1,
       "engagementRate": 38.4,
-      "mobilePct": 55.7
+      "mobilePct": 55.4
     },
     "prev90": {
-      "sessions": 49168,
-      "users": 43019,
-      "newUsers": 35787,
-      "pageviews": 102086,
-      "pagesPerSession": 2.08,
-      "bounceRate": 58.4,
-      "avgSessionDuration": 160.7,
-      "engagementRate": 41.6,
-      "mobilePct": 63.7
+      "sessions": 49264,
+      "users": 43123,
+      "newUsers": 35889,
+      "pageviews": 102346,
+      "pagesPerSession": 2.09,
+      "bounceRate": 58.3,
+      "avgSessionDuration": 161.1,
+      "engagementRate": 41.7,
+      "mobilePct": 63.4
     },
     "prev_mtd": {
-      "sessions": 1458,
-      "users": 1282,
-      "newUsers": 1093,
-      "pageviews": 2563,
-      "pagesPerSession": 1.77,
-      "bounceRate": 61.6,
-      "avgSessionDuration": 155.2,
-      "engagementRate": 38.4,
-      "mobilePct": 55.8
+      "sessions": 2113,
+      "users": 1852,
+      "newUsers": 1566,
+      "pageviews": 3698,
+      "pagesPerSession": 1.76,
+      "bounceRate": 62.4,
+      "avgSessionDuration": 146.8,
+      "engagementRate": 37.6,
+      "mobilePct": 55.9
     },
     "windows": {
       "last30": {
-        "start": "2026-09-02",
-        "end": "2026-10-01"
+        "start": "2026-09-03",
+        "end": "2026-10-02"
       },
       "last60": {
-        "start": "2026-08-03",
-        "end": "2026-10-01"
+        "start": "2026-08-04",
+        "end": "2026-10-02"
       },
       "last90": {
-        "start": "2026-07-04",
-        "end": "2026-10-01"
+        "start": "2026-07-05",
+        "end": "2026-10-02"
       },
       "mtd": {
         "start": "2026-10-01",
-        "end": "2026-10-02"
+        "end": "2026-10-03"
       },
       "prev_mtd": {
         "start": "2026-09-01",
-        "end": "2026-09-02"
+        "end": "2026-09-03"
       }
     },
     "sources": [
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 19652,
-        "users": 15998
+        "sessions": 19755,
+        "users": 15984
       },
       {
         "source": "google",
         "medium": "organic",
-        "sessions": 9701,
-        "users": 4684
+        "sessions": 9720,
+        "users": 4685
       },
       {
         "source": "google",
         "medium": "cpc",
-        "sessions": 7482,
-        "users": 5789
-      },
-      {
-        "source": "ig",
-        "medium": "paid",
-        "sessions": 2182,
-        "users": 1969
+        "sessions": 7519,
+        "users": 5803
       },
       {
         "source": "fb",
         "medium": "paid",
-        "sessions": 2181,
-        "users": 2035
+        "sessions": 2177,
+        "users": 2032
+      },
+      {
+        "source": "ig",
+        "medium": "paid",
+        "sessions": 2159,
+        "users": 1952
       },
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 2164,
-        "users": 2116
+        "sessions": 2118,
+        "users": 2075
       },
       {
         "source": "cdn.flashtalking.com",
         "medium": "referral",
-        "sessions": 1908,
-        "users": 1849
+        "sessions": 1898,
+        "users": 1843
       },
       {
         "source": "imasdk.googleapis.com",
         "medium": "referral",
-        "sessions": 1525,
-        "users": 1520
+        "sessions": 1524,
+        "users": 1519
       },
       {
         "source": "autotrader.com",
         "medium": "social",
-        "sessions": 1499,
-        "users": 1187
+        "sessions": 1474,
+        "users": 1161
       },
       {
         "source": "bing",
         "medium": "organic",
-        "sessions": 1058,
-        "users": 562
+        "sessions": 1078,
+        "users": 566
       },
       {
         "source": "WAFB",
         "medium": "GDM 360 Display",
-        "sessions": 781,
-        "users": 730
+        "sessions": 813,
+        "users": 757
       },
       {
         "source": "WAFB",
         "medium": "GDM 360 Streaming",
-        "sessions": 748,
-        "users": 741
+        "sessions": 776,
+        "users": 768
       },
       {
         "source": "audiusa.com",
         "medium": "referral",
-        "sessions": 728,
+        "sessions": 727,
         "users": 506
       },
       {
@@ -1169,101 +1169,101 @@
       {
         "source": "tpc.googlesyndication.com",
         "medium": "referral",
-        "sessions": 318,
-        "users": 314
+        "sessions": 317,
+        "users": 313
+      },
+      {
+        "source": "(data not available)",
+        "medium": "(data not available)",
+        "sessions": 299,
+        "users": 300
       },
       {
         "source": "yahoo",
         "medium": "organic",
-        "sessions": 283,
-        "users": 151
+        "sessions": 285,
+        "users": 153
       },
       {
         "source": "m.facebook.com",
         "medium": "referral",
-        "sessions": 254,
-        "users": 249
-      },
-      {
-        "source": "facebook.com",
-        "medium": "referral",
-        "sessions": 227,
-        "users": 219
+        "sessions": 246,
+        "users": 241
       }
     ],
-    "mobile_pct": 54.3,
+    "mobile_pct": 54.2,
     "high_bounce": [
       {
         "pagePath": "/inventory/Used-2025-Audi-A5-WAU1BCFU5SN091053",
-        "sessions": 22,
-        "bounceRate": 90.9,
-        "avgSessionDuration": 7.6
+        "sessions": 23,
+        "bounceRate": 91.3,
+        "avgSessionDuration": 7.3
       },
       {
         "pagePath": "/en/inventory/new",
-        "sessions": 3697,
+        "sessions": 3701,
         "bounceRate": 88.7,
-        "avgSessionDuration": 10.3
+        "avgSessionDuration": 10.2
       },
       {
         "pagePath": "/inventory/Used-2025-Audi-A5-2_0T_Premium_Plus-WAU2BCFU2SN064459",
-        "sessions": 24,
-        "bounceRate": 87.5,
-        "avgSessionDuration": 10.8
+        "sessions": 26,
+        "bounceRate": 88.5,
+        "avgSessionDuration": 23.3
       },
       {
         "pagePath": "/inventory/Used-2025-Audi-Q5-2_0T_Premium_Plus-WA12AAGU0S2093205",
-        "sessions": 23,
-        "bounceRate": 87.0,
-        "avgSessionDuration": 47.6
+        "sessions": 24,
+        "bounceRate": 87.5,
+        "avgSessionDuration": 55.4
       },
       {
         "pagePath": "/inventory/New-2026-Audi-Q5-2_0T_Premium_Plus-WA15AAGU9T2051811",
-        "sessions": 22,
-        "bounceRate": 86.4,
-        "avgSessionDuration": 5.8
+        "sessions": 23,
+        "bounceRate": 87.0,
+        "avgSessionDuration": 18.3
+      },
+      {
+        "pagePath": "/inventory/Used-2025-Audi-Q5-2_0T_Premium_Plus-WA12AAGU1S2100517",
+        "sessions": 21,
+        "bounceRate": 85.7,
+        "avgSessionDuration": 64.6
+      },
+      {
+        "pagePath": "/inventory/Used-2025-Audi-Q5-2_0T_Premium_Plus-WA12AAGU2S2013001",
+        "sessions": 26,
+        "bounceRate": 84.6,
+        "avgSessionDuration": 81.9
       },
       {
         "pagePath": "/inventory/Used-2025-Audi-Q5-2_0T_Premium_Plus-WA12AAGUXS2017295",
         "sessions": 24,
         "bounceRate": 83.3,
-        "avgSessionDuration": 17.7
+        "avgSessionDuration": 33.8
       },
       {
         "pagePath": "/audi-q5---pre-owned",
-        "sessions": 260,
-        "bounceRate": 81.2,
-        "avgSessionDuration": 66.0
-      },
-      {
-        "pagePath": "/inventory/Used-2025-Audi-Q5-2_0T_Premium_Plus-WA12AAGU1S2100517",
-        "sessions": 21,
-        "bounceRate": 81.0,
-        "avgSessionDuration": 11.7
-      },
-      {
-        "pagePath": "/inventory/New-2026-Audi-Q5-2_0T_Premium_Plus-WA12AAGU8T2039300",
-        "sessions": 26,
-        "bounceRate": 80.8,
-        "avgSessionDuration": 8.3
-      },
-      {
-        "pagePath": "/inventory/Used-2025-Audi-Q5-2_0T_Premium_Plus-WA12AAGU9S2070344",
-        "sessions": 25,
-        "bounceRate": 80.0,
-        "avgSessionDuration": 8.1
-      },
-      {
-        "pagePath": "/inventory/New-2026-Audi-A5-2_0T_Premium_Plus-WAU5ACFU2TN056170",
-        "sessions": 20,
-        "bounceRate": 80.0,
-        "avgSessionDuration": 9.1
+        "sessions": 294,
+        "bounceRate": 82.0,
+        "avgSessionDuration": 61.5
       },
       {
         "pagePath": "/inventory/Used-2025-Audi-Q5-2_0T_Premium_Plus-WA12AAGU1S2096081",
-        "sessions": 20,
-        "bounceRate": 80.0,
-        "avgSessionDuration": 83.9
+        "sessions": 22,
+        "bounceRate": 81.8,
+        "avgSessionDuration": 102.8
+      },
+      {
+        "pagePath": "/inventory/Used-2025-Audi-Q5-2_0T_Premium_Plus-WA12AAGU9S2070344",
+        "sessions": 27,
+        "bounceRate": 81.5,
+        "avgSessionDuration": 155.7
+      },
+      {
+        "pagePath": "/inventory/New-2026-Audi-A5-2_0T_Premium_Plus-WAU5ACFU2TN056170",
+        "sessions": 21,
+        "bounceRate": 81.0,
+        "avgSessionDuration": 35.6
       }
     ],
     "panels": {
@@ -1273,50 +1273,50 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 1081,
-          "users": 954,
-          "bounceRate": 77.7,
-          "avgSessionDuration": 64.1
+          "sessions": 1075,
+          "users": 947,
+          "bounceRate": 77.9,
+          "avgSessionDuration": 63.8
         },
         {
           "campaign": "120249177425770114",
           "source": "fb",
           "medium": "paid",
           "channel": "fb / paid",
-          "sessions": 766,
-          "users": 738,
-          "bounceRate": 82.1,
-          "avgSessionDuration": 26.7
+          "sessions": 764,
+          "users": 737,
+          "bounceRate": 81.9,
+          "avgSessionDuration": 26.8
         },
         {
           "campaign": "120249177425770114",
           "source": "ig",
           "medium": "paid",
           "channel": "ig / paid",
-          "sessions": 716,
-          "users": 654,
-          "bounceRate": 86.0,
-          "avgSessionDuration": 36.0
+          "sessions": 697,
+          "users": 637,
+          "bounceRate": 85.2,
+          "avgSessionDuration": 38.3
         },
         {
           "campaign": "Brand | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 434,
-          "users": 324,
-          "bounceRate": 20.3,
-          "avgSessionDuration": 309.0
+          "sessions": 445,
+          "users": 332,
+          "bounceRate": 17.1,
+          "avgSessionDuration": 413.4
         },
         {
           "campaign": "Pre-Owned Q5 | Display",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 226,
-          "users": 153,
-          "bounceRate": 83.6,
-          "avgSessionDuration": 65.4
+          "sessions": 265,
+          "users": 173,
+          "bounceRate": 84.9,
+          "avgSessionDuration": 59.0
         },
         {
           "campaign": "Sales Offers | Paid Search",
@@ -1325,108 +1325,108 @@
           "channel": "google / cpc",
           "sessions": 198,
           "users": 142,
-          "bounceRate": 25.3,
-          "avgSessionDuration": 249.5
+          "bounceRate": 24.7,
+          "avgSessionDuration": 241.2
         },
         {
           "campaign": "Sales Offers - Conquest | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 145,
-          "users": 128,
-          "bounceRate": 21.4,
-          "avgSessionDuration": 225.3
+          "sessions": 142,
+          "users": 126,
+          "bounceRate": 22.5,
+          "avgSessionDuration": 201.4
         },
         {
           "campaign": "120249177425770114#type=new",
           "source": "ig",
           "medium": "paid",
           "channel": "ig / paid",
-          "sessions": 108,
+          "sessions": 107,
           "users": 102,
-          "bounceRate": 78.7,
-          "avgSessionDuration": 41.4
+          "bounceRate": 78.5,
+          "avgSessionDuration": 34.0
         },
         {
           "campaign": "New Inventory - Q7 | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 83,
+          "sessions": 86,
           "users": 46,
-          "bounceRate": 28.9,
-          "avgSessionDuration": 346.8
+          "bounceRate": 25.6,
+          "avgSessionDuration": 360.5
         },
         {
           "campaign": "Service | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 71,
-          "users": 61,
-          "bounceRate": 11.3,
-          "avgSessionDuration": 313.8
+          "sessions": 70,
+          "users": 60,
+          "bounceRate": 8.6,
+          "avgSessionDuration": 301.7
         },
         {
           "campaign": "Service Offers | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 67,
-          "users": 35,
-          "bounceRate": 49.3,
-          "avgSessionDuration": 204.4
+          "sessions": 69,
+          "users": 37,
+          "bounceRate": 50.7,
+          "avgSessionDuration": 198.5
         },
         {
           "campaign": "(not set)",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 58,
-          "users": 57,
-          "bounceRate": 72.4,
-          "avgSessionDuration": 22.1
+          "sessions": 59,
+          "users": 58,
+          "bounceRate": 72.9,
+          "avgSessionDuration": 21.9
         },
         {
           "campaign": "New Inventory - Secondary Models | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 58,
+          "sessions": 57,
           "users": 36,
-          "bounceRate": 32.8,
-          "avgSessionDuration": 132.6
+          "bounceRate": 29.8,
+          "avgSessionDuration": 152.1
         },
         {
           "campaign": "New Inventory - Q8 | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 39,
+          "sessions": 38,
           "users": 29,
-          "bounceRate": 23.1,
-          "avgSessionDuration": 189.1
+          "bounceRate": 23.7,
+          "avgSessionDuration": 193.3
         },
         {
           "campaign": "Locations | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 35,
-          "users": 31,
-          "bounceRate": 20.0,
-          "avgSessionDuration": 232.9
+          "sessions": 34,
+          "users": 30,
+          "bounceRate": 17.6,
+          "avgSessionDuration": 238.6
         },
         {
           "campaign": "All-New 2027 Q9 | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 23,
-          "users": 22,
-          "bounceRate": 47.8,
-          "avgSessionDuration": 71.7
+          "sessions": 25,
+          "users": 24,
+          "bounceRate": 40.0,
+          "avgSessionDuration": 85.5
         },
         {
           "campaign": "New Inventory - Q5 | Paid Search",
@@ -1436,22 +1436,22 @@
           "sessions": 23,
           "users": 21,
           "bounceRate": 8.7,
-          "avgSessionDuration": 192.3
+          "avgSessionDuration": 193.6
         }
       ],
       "hostnames": {
-        "total": 57362,
+        "total": 57618,
         "rows": [
           {
             "hostname": "audibatonrouge.com",
-            "sessions": 55918,
-            "users": 41857,
+            "sessions": 56178,
+            "users": 41952,
             "share": 97.5
           },
           {
             "hostname": "www.audibatonrougela.com",
-            "sessions": 1427,
-            "users": 890,
+            "sessions": 1423,
+            "users": 886,
             "share": 2.5
           },
           {
@@ -1477,173 +1477,173 @@
       "top_pages": [
         {
           "pagePath": "/",
-          "sessions": 16610,
-          "avgSessionDuration": 72.2,
-          "bounceRate": 34.8,
-          "pageviews": 20794
+          "sessions": 16819,
+          "avgSessionDuration": 71.0,
+          "bounceRate": 35.6,
+          "pageviews": 20969
         },
         {
           "pagePath": "/inventory",
-          "sessions": 14048,
-          "avgSessionDuration": 153.4,
-          "bounceRate": 34.9,
-          "pageviews": 15267
+          "sessions": 14074,
+          "avgSessionDuration": 153.7,
+          "bounceRate": 34.7,
+          "pageviews": 15341
         },
         {
           "pagePath": "/en/inventory/new",
-          "sessions": 10193,
+          "sessions": 10186,
           "avgSessionDuration": 9.9,
           "bounceRate": 87.1,
-          "pageviews": 10744
+          "pageviews": 10737
         },
         {
           "pagePath": "/cars/used-inventory",
-          "sessions": 2700,
-          "avgSessionDuration": 222.0,
-          "bounceRate": 11.0,
-          "pageviews": 3031
+          "sessions": 2719,
+          "avgSessionDuration": 220.0,
+          "bounceRate": 10.9,
+          "pageviews": 3054
         },
         {
           "pagePath": "/audi-baton-rouge-special-offers",
-          "sessions": 1598,
-          "avgSessionDuration": 70.5,
-          "bounceRate": 18.2,
-          "pageviews": 2068
+          "sessions": 1608,
+          "avgSessionDuration": 71.7,
+          "bounceRate": 18.4,
+          "pageviews": 2083
         },
         {
           "pagePath": "/collections/certified-pre-owned",
-          "sessions": 1211,
-          "avgSessionDuration": 91.9,
-          "bounceRate": 9.2,
+          "sessions": 1213,
+          "avgSessionDuration": 91.2,
+          "bounceRate": 9.7,
           "pageviews": 1387
         },
         {
-          "pagePath": "/en/inventory/vehicle/",
-          "sessions": 1092,
-          "avgSessionDuration": 354.0,
-          "bounceRate": 34.2,
-          "pageviews": 3353
+          "pagePath": "/pre-owned-specials",
+          "sessions": 1086,
+          "avgSessionDuration": 58.8,
+          "bounceRate": 6.4,
+          "pageviews": 2155
         },
         {
-          "pagePath": "/pre-owned-specials",
-          "sessions": 1082,
-          "avgSessionDuration": 64.6,
-          "bounceRate": 6.7,
-          "pageviews": 2162
+          "pagePath": "/en/inventory/vehicle/",
+          "sessions": 1083,
+          "avgSessionDuration": 355.4,
+          "bounceRate": 32.7,
+          "pageviews": 3350
         },
         {
           "pagePath": "/service",
-          "sessions": 874,
-          "avgSessionDuration": 168.3,
-          "bounceRate": 27.8,
-          "pageviews": 1019
+          "sessions": 878,
+          "avgSessionDuration": 167.7,
+          "bounceRate": 27.9,
+          "pageviews": 1025
         },
         {
           "pagePath": "/service-center",
-          "sessions": 797,
-          "avgSessionDuration": 91.1,
-          "bounceRate": 4.0,
-          "pageviews": 2897
+          "sessions": 799,
+          "avgSessionDuration": 89.9,
+          "bounceRate": 3.9,
+          "pageviews": 2907
         },
         {
           "pagePath": "/collections/new-q8s",
-          "sessions": 640,
-          "avgSessionDuration": 134.8,
-          "bounceRate": 15.6,
-          "pageviews": 681
+          "sessions": 644,
+          "avgSessionDuration": 142.2,
+          "bounceRate": 16.3,
+          "pageviews": 688
         },
         {
           "pagePath": "/about",
-          "sessions": 517,
-          "avgSessionDuration": 127.1,
-          "bounceRate": 15.9,
+          "sessions": 520,
+          "avgSessionDuration": 128.7,
+          "bounceRate": 15.6,
           "pageviews": 560
         }
       ],
       "top_pages_30": [
         {
           "pagePath": "/",
-          "sessions": 6742,
-          "avgSessionDuration": 72.0,
-          "bounceRate": 44.9,
-          "pageviews": 8563
+          "sessions": 6842,
+          "avgSessionDuration": 70.3,
+          "bounceRate": 45.4,
+          "pageviews": 8639
         },
         {
           "pagePath": "/inventory",
-          "sessions": 4514,
-          "avgSessionDuration": 162.8,
-          "bounceRate": 35.5,
-          "pageviews": 4792
+          "sessions": 4557,
+          "avgSessionDuration": 161.7,
+          "bounceRate": 35.7,
+          "pageviews": 4843
         },
         {
           "pagePath": "/en/inventory/new",
-          "sessions": 3697,
-          "avgSessionDuration": 10.3,
+          "sessions": 3701,
+          "avgSessionDuration": 10.2,
           "bounceRate": 88.7,
-          "pageviews": 3843
+          "pageviews": 3855
         },
         {
           "pagePath": "/cars/used-inventory",
-          "sessions": 877,
-          "avgSessionDuration": 229.5,
-          "bounceRate": 13.3,
-          "pageviews": 996
+          "sessions": 878,
+          "avgSessionDuration": 214.5,
+          "bounceRate": 13.1,
+          "pageviews": 993
         },
         {
           "pagePath": "/audi-baton-rouge-special-offers",
-          "sessions": 437,
-          "avgSessionDuration": 71.3,
-          "bounceRate": 21.7,
-          "pageviews": 543
+          "sessions": 419,
+          "avgSessionDuration": 79.4,
+          "bounceRate": 18.9,
+          "pageviews": 530
         },
         {
           "pagePath": "/collections/certified-pre-owned",
-          "sessions": 353,
-          "avgSessionDuration": 98.0,
-          "bounceRate": 13.3,
-          "pageviews": 410
+          "sessions": 357,
+          "avgSessionDuration": 97.6,
+          "bounceRate": 14.3,
+          "pageviews": 415
         },
         {
           "pagePath": "/en/inventory/vehicle/",
-          "sessions": 329,
-          "avgSessionDuration": 392.6,
-          "bounceRate": 35.9,
-          "pageviews": 985
+          "sessions": 323,
+          "avgSessionDuration": 409.7,
+          "bounceRate": 31.0,
+          "pageviews": 990
         },
         {
           "pagePath": "/pre-owned-specials",
-          "sessions": 317,
-          "avgSessionDuration": 91.6,
-          "bounceRate": 12.9,
+          "sessions": 314,
+          "avgSessionDuration": 70.9,
+          "bounceRate": 11.8,
           "pageviews": 356
         },
         {
           "pagePath": "/audi-q5---pre-owned",
-          "sessions": 260,
-          "avgSessionDuration": 66.0,
-          "bounceRate": 81.2,
-          "pageviews": 319
+          "sessions": 294,
+          "avgSessionDuration": 61.5,
+          "bounceRate": 82.0,
+          "pageviews": 357
         },
         {
           "pagePath": "/service",
-          "sessions": 239,
-          "avgSessionDuration": 183.4,
-          "bounceRate": 26.4,
-          "pageviews": 268
+          "sessions": 232,
+          "avgSessionDuration": 183.6,
+          "bounceRate": 25.9,
+          "pageviews": 262
         },
         {
           "pagePath": "/service-center",
-          "sessions": 235,
-          "avgSessionDuration": 55.5,
-          "bounceRate": 3.8,
-          "pageviews": 811
+          "sessions": 232,
+          "avgSessionDuration": 52.2,
+          "bounceRate": 3.4,
+          "pageviews": 797
         },
         {
           "pagePath": "/all-new-2027-audi-q9",
-          "sessions": 198,
-          "avgSessionDuration": 74.4,
-          "bounceRate": 51.0,
-          "pageviews": 241
+          "sessions": 202,
+          "avgSessionDuration": 73.3,
+          "bounceRate": 50.0,
+          "pageviews": 246
         }
       ],
       "weekly_current": {
@@ -1704,7 +1704,7 @@
           "202640"
         ],
         "sessions": [
-          671,
+          437,
           1620,
           1476,
           1856,
@@ -1757,7 +1757,7 @@
           5046,
           4405,
           4816,
-          3412
+          4191
         ]
       },
       "weekly_prior": {
@@ -1818,7 +1818,7 @@
           "202540"
         ],
         "sessions": [
-          3483,
+          2663,
           6121,
           6183,
           5844,
@@ -1871,174 +1871,174 @@
           1667,
           1741,
           1531,
-          775
+          1011
         ]
       }
     }
   },
   "bmw_jackson": {
     "q1_2026": {
-      "sessions": 86019,
-      "users": 76476,
-      "newUsers": 55630,
-      "pageviews": 171349,
-      "pagesPerSession": 1.97,
+      "sessions": 85806,
+      "users": 76246,
+      "newUsers": 55450,
+      "pageviews": 171292,
+      "pagesPerSession": 1.99,
       "bounceRate": 61.1,
-      "avgSessionDuration": 125.1,
+      "avgSessionDuration": 126.0,
       "engagementRate": 38.9,
-      "mobilePct": 76.7
+      "mobilePct": 76.6
     },
     "q1_prev": {
-      "sessions": 48051,
-      "users": 41377,
-      "newUsers": 31573,
-      "pageviews": 128006,
-      "pagesPerSession": 2.73,
-      "bounceRate": 40.0,
-      "avgSessionDuration": 251.8,
-      "engagementRate": 60.0,
-      "mobilePct": 72.1
+      "sessions": 48015,
+      "users": 41349,
+      "newUsers": 31563,
+      "pageviews": 128242,
+      "pagesPerSession": 2.75,
+      "bounceRate": 39.8,
+      "avgSessionDuration": 252.8,
+      "engagementRate": 60.2,
+      "mobilePct": 71.9
     },
     "last30": {
-      "sessions": 28734,
-      "users": 25826,
-      "newUsers": 18951,
-      "pageviews": 54642,
-      "pagesPerSession": 1.9,
-      "bounceRate": 61.9,
-      "avgSessionDuration": 117.3,
-      "engagementRate": 38.1,
-      "mobilePct": 78.9
+      "sessions": 28450,
+      "users": 25550,
+      "newUsers": 18725,
+      "pageviews": 54561,
+      "pagesPerSession": 1.92,
+      "bounceRate": 61.8,
+      "avgSessionDuration": 119.0,
+      "engagementRate": 38.2,
+      "mobilePct": 79.0
     },
     "last60": {
-      "sessions": 57705,
-      "users": 51396,
-      "newUsers": 37660,
-      "pageviews": 112216,
+      "sessions": 57570,
+      "users": 51247,
+      "newUsers": 37528,
+      "pageviews": 112131,
       "pagesPerSession": 1.96,
-      "bounceRate": 61.8,
-      "avgSessionDuration": 124.7,
-      "engagementRate": 38.2,
-      "mobilePct": 77.5
+      "bounceRate": 61.7,
+      "avgSessionDuration": 124.1,
+      "engagementRate": 38.3,
+      "mobilePct": 77.4
     },
     "last90": {
-      "sessions": 86019,
-      "users": 76476,
-      "newUsers": 55630,
-      "pageviews": 171349,
-      "pagesPerSession": 1.97,
+      "sessions": 85806,
+      "users": 76246,
+      "newUsers": 55450,
+      "pageviews": 171292,
+      "pagesPerSession": 1.99,
       "bounceRate": 61.1,
-      "avgSessionDuration": 125.1,
+      "avgSessionDuration": 126.0,
       "engagementRate": 38.9,
-      "mobilePct": 76.7
+      "mobilePct": 76.6
     },
     "mtd": {
-      "sessions": 622,
-      "users": 561,
-      "newUsers": 403,
-      "pageviews": 1622,
-      "pagesPerSession": 2.61,
-      "bounceRate": 55.4,
-      "avgSessionDuration": 162.0,
-      "engagementRate": 44.6,
-      "mobilePct": 71.7
+      "sessions": 1287,
+      "users": 1130,
+      "newUsers": 781,
+      "pageviews": 3296,
+      "pagesPerSession": 2.56,
+      "bounceRate": 53.7,
+      "avgSessionDuration": 156.2,
+      "engagementRate": 46.3,
+      "mobilePct": 72.8
     },
     "prev30": {
-      "sessions": 28971,
-      "users": 25570,
-      "newUsers": 18709,
-      "pageviews": 57574,
-      "pagesPerSession": 2.0,
-      "bounceRate": 60.3,
-      "avgSessionDuration": 130.3,
-      "engagementRate": 39.7,
+      "sessions": 29120,
+      "users": 25697,
+      "newUsers": 18803,
+      "pageviews": 57570,
+      "pagesPerSession": 1.96,
+      "bounceRate": 60.9,
+      "avgSessionDuration": 127.1,
+      "engagementRate": 39.1,
       "mobilePct": 76.0
     },
     "prev60": {
-      "sessions": 58322,
-      "users": 51443,
-      "newUsers": 36871,
-      "pageviews": 121037,
+      "sessions": 58142,
+      "users": 51295,
+      "newUsers": 36736,
+      "pageviews": 120816,
       "pagesPerSession": 2.07,
-      "bounceRate": 60.6,
-      "avgSessionDuration": 132.8,
-      "engagementRate": 39.4,
-      "mobilePct": 72.7
+      "bounceRate": 60.2,
+      "avgSessionDuration": 133.0,
+      "engagementRate": 39.8,
+      "mobilePct": 72.6
     },
     "prev90": {
-      "sessions": 82822,
-      "users": 73041,
-      "newUsers": 54303,
-      "pageviews": 176482,
+      "sessions": 83105,
+      "users": 73319,
+      "newUsers": 54464,
+      "pageviews": 176901,
       "pagesPerSession": 2.16,
-      "bounceRate": 62.8,
-      "avgSessionDuration": 131.5,
-      "engagementRate": 37.2,
+      "bounceRate": 62.6,
+      "avgSessionDuration": 131.9,
+      "engagementRate": 37.4,
       "mobilePct": 69.9
     },
     "prev_mtd": {
-      "sessions": 1898,
-      "users": 1662,
-      "newUsers": 1214,
-      "pageviews": 3527,
-      "pagesPerSession": 1.85,
-      "bounceRate": 62.1,
-      "avgSessionDuration": 116.6,
-      "engagementRate": 37.9,
-      "mobilePct": 75.2
+      "sessions": 2813,
+      "users": 2471,
+      "newUsers": 1779,
+      "pageviews": 5418,
+      "pagesPerSession": 1.93,
+      "bounceRate": 61.1,
+      "avgSessionDuration": 120.9,
+      "engagementRate": 38.9,
+      "mobilePct": 75.7
     },
     "windows": {
       "last30": {
-        "start": "2026-09-02",
-        "end": "2026-10-01"
+        "start": "2026-09-03",
+        "end": "2026-10-02"
       },
       "last60": {
-        "start": "2026-08-03",
-        "end": "2026-10-01"
+        "start": "2026-08-04",
+        "end": "2026-10-02"
       },
       "last90": {
-        "start": "2026-07-04",
-        "end": "2026-10-01"
+        "start": "2026-07-05",
+        "end": "2026-10-02"
       },
       "mtd": {
         "start": "2026-10-01",
-        "end": "2026-10-02"
+        "end": "2026-10-03"
       },
       "prev_mtd": {
         "start": "2026-09-01",
-        "end": "2026-09-02"
+        "end": "2026-09-03"
       }
     },
     "sources": [
       {
         "source": "google",
         "medium": "cpc",
-        "sessions": 48894,
-        "users": 33626
+        "sessions": 48418,
+        "users": 33399
       },
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 17394,
-        "users": 14308
+        "sessions": 17399,
+        "users": 14354
       },
       {
         "source": "google",
         "medium": "organic",
-        "sessions": 10025,
-        "users": 4985
+        "sessions": 10149,
+        "users": 5014
       },
       {
         "source": "facebook",
         "medium": "cpc",
         "sessions": 5160,
-        "users": 4099
+        "users": 4094
       },
       {
         "source": "bing",
         "medium": "organic",
-        "sessions": 1016,
-        "users": 491
+        "sessions": 1023,
+        "users": 494
       },
       {
         "source": "fb",
@@ -2049,50 +2049,50 @@
       {
         "source": "(data not available)",
         "medium": "(data not available)",
-        "sessions": 401,
-        "users": 398
+        "sessions": 399,
+        "users": 396
       },
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 305,
-        "users": 305
+        "sessions": 311,
+        "users": 310
       },
       {
         "source": "facebook.com",
         "medium": "referral",
-        "sessions": 284,
+        "sessions": 285,
         "users": 241
       },
       {
         "source": "yahoo",
         "medium": "organic",
-        "sessions": 276,
-        "users": 139
+        "sessions": 272,
+        "users": 138
       },
       {
         "source": "m.facebook.com",
         "medium": "referral",
-        "sessions": 224,
-        "users": 217
+        "sessions": 222,
+        "users": 215
       },
       {
         "source": "app.podium.com",
         "medium": "referral",
-        "sessions": 216,
+        "sessions": 218,
         "users": 2
       },
       {
         "source": "bmwusa.com",
         "medium": "referral",
-        "sessions": 183,
-        "users": 122
+        "sessions": 184,
+        "users": 123
       },
       {
         "source": "autotrader.com",
         "medium": "referral",
-        "sessions": 178,
-        "users": 119
+        "sessions": 179,
+        "users": 120
       },
       {
         "source": "ig",
@@ -2115,138 +2115,138 @@
       {
         "source": "visor.vin",
         "medium": "referral",
-        "sessions": 71,
+        "sessions": 69,
         "users": 36
       },
       {
         "source": "chatgpt.com",
         "medium": "ai-assistant",
-        "sessions": 52,
-        "users": 36
+        "sessions": 51,
+        "users": 35
       },
       {
         "source": "carfax.com",
         "medium": "referral",
-        "sessions": 51,
-        "users": 35
+        "sessions": 49,
+        "users": 34
       }
     ],
-    "mobile_pct": 78.9,
+    "mobile_pct": 79.0,
     "high_bounce": [
       {
         "pagePath": "/cars/new-x3",
-        "sessions": 2672,
+        "sessions": 2664,
         "bounceRate": 75.3,
-        "avgSessionDuration": 65.2
+        "avgSessionDuration": 64.6
       },
       {
         "pagePath": "/cars/new-5-series",
-        "sessions": 899,
-        "bounceRate": 73.1,
-        "avgSessionDuration": 52.3
+        "sessions": 903,
+        "bounceRate": 72.8,
+        "avgSessionDuration": 52.1
       },
       {
         "pagePath": "/cars/new-x5",
-        "sessions": 2517,
-        "bounceRate": 70.4,
-        "avgSessionDuration": 68.6
+        "sessions": 2522,
+        "bounceRate": 70.5,
+        "avgSessionDuration": 69.7
       },
       {
         "pagePath": "/oil-change",
-        "sessions": 697,
-        "bounceRate": 68.4,
-        "avgSessionDuration": 61.4
+        "sessions": 701,
+        "bounceRate": 69.0,
+        "avgSessionDuration": 62.1
       },
       {
         "pagePath": "/inventory/New-2026-BMW-X5-sDrive40i-5UX13EU05T9463219",
-        "sessions": 133,
-        "bounceRate": 67.7,
-        "avgSessionDuration": 45.0
+        "sessions": 117,
+        "bounceRate": 66.7,
+        "avgSessionDuration": 49.2
       },
       {
         "pagePath": "/inventory/New-2027-BMW-5_Series-540i_xDrive-WBA63FJ0XVCY62261",
-        "sessions": 138,
-        "bounceRate": 63.8,
-        "avgSessionDuration": 65.7
-      },
-      {
-        "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP0XT9566399",
-        "sessions": 30,
-        "bounceRate": 63.3,
-        "avgSessionDuration": 37.3
+        "sessions": 137,
+        "bounceRate": 63.5,
+        "avgSessionDuration": 66.2
       },
       {
         "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP05T9462161",
-        "sessions": 204,
-        "bounceRate": 63.2,
-        "avgSessionDuration": 58.2
-      },
-      {
-        "pagePath": "/inventory/New-2026-BMW-3_Series-330i-3MW69CW08T8G70329",
-        "sessions": 68,
-        "bounceRate": 63.2,
-        "avgSessionDuration": 76.5
-      },
-      {
-        "pagePath": "/all-new-bmw-x5-event-rsvp",
-        "sessions": 24,
+        "sessions": 200,
         "bounceRate": 62.5,
-        "avgSessionDuration": 114.6
-      },
-      {
-        "pagePath": "/inventory/New-2026-BMW-X5-xDrive40i-5UX23EU07T9523960",
-        "sessions": 443,
-        "bounceRate": 61.9,
-        "avgSessionDuration": 66.4
+        "avgSessionDuration": 59.3
       },
       {
         "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP01T9454090",
-        "sessions": 52,
-        "bounceRate": 61.5,
-        "avgSessionDuration": 61.7
+        "sessions": 44,
+        "bounceRate": 61.4,
+        "avgSessionDuration": 65.8
+      },
+      {
+        "pagePath": "/inventory/New-2026-BMW-X5-xDrive40i-5UX23EU07T9523960",
+        "sessions": 414,
+        "bounceRate": 61.4,
+        "avgSessionDuration": 64.2
+      },
+      {
+        "pagePath": "/inventory/New-2027-BMW-4_Series-430i-WBA43DA02VCY60578",
+        "sessions": 145,
+        "bounceRate": 60.0,
+        "avgSessionDuration": 88.0
+      },
+      {
+        "pagePath": "/all-new-bmw-x5-event-rsvp",
+        "sessions": 25,
+        "bounceRate": 60.0,
+        "avgSessionDuration": 110.4
+      },
+      {
+        "pagePath": "/blog/master-your-new-bmw-x3",
+        "sessions": 54,
+        "bounceRate": 59.3,
+        "avgSessionDuration": 96.6
       }
     ],
     "panels": {
       "campaigns": [
         {
-          "campaign": "Attack - New Inventory | Vehicle Listing Ads",
-          "source": "google",
-          "medium": "cpc",
-          "channel": "google / cpc",
-          "sessions": 2090,
-          "users": 1695,
-          "bounceRate": 74.3,
-          "avgSessionDuration": 73.9
-        },
-        {
           "campaign": "Attack - Used Inventory | Vehicle Listing Ads",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 1961,
-          "users": 1629,
-          "bounceRate": 55.5,
-          "avgSessionDuration": 95.5
+          "sessions": 1916,
+          "users": 1594,
+          "bounceRate": 55.6,
+          "avgSessionDuration": 94.4
+        },
+        {
+          "campaign": "Attack - New Inventory | Vehicle Listing Ads",
+          "source": "google",
+          "medium": "cpc",
+          "channel": "google / cpc",
+          "sessions": 1915,
+          "users": 1557,
+          "bounceRate": 73.4,
+          "avgSessionDuration": 75.9
         },
         {
           "campaign": "Attack - New Inventory - X5 | Vehicle Listing Ads",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 1786,
-          "users": 1453,
-          "bounceRate": 55.6,
-          "avgSessionDuration": 79.4
+          "sessions": 1749,
+          "users": 1415,
+          "bounceRate": 53.8,
+          "avgSessionDuration": 80.4
         },
         {
           "campaign": "Attack - New Inventory - X3 | Vehicle Listing Ads",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 1535,
-          "users": 1216,
-          "bounceRate": 42.3,
-          "avgSessionDuration": 84.4
+          "sessions": 1519,
+          "users": 1207,
+          "bounceRate": 42.7,
+          "avgSessionDuration": 84.0
         },
         {
           "campaign": "Attack - New Inventory - X5 | Demand Gen",
@@ -2273,30 +2273,30 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 716,
-          "users": 519,
-          "bounceRate": 22.3,
-          "avgSessionDuration": 251.2
+          "sessions": 715,
+          "users": 513,
+          "bounceRate": 22.4,
+          "avgSessionDuration": 250.7
         },
         {
           "campaign": "Attack - New Inventory - X3 | Display",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 651,
+          "sessions": 652,
           "users": 576,
-          "bounceRate": 84.9,
-          "avgSessionDuration": 49.2
+          "bounceRate": 84.8,
+          "avgSessionDuration": 48.5
         },
         {
           "campaign": "Attack - New Inventory - X5 | Display",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 571,
-          "users": 515,
+          "sessions": 570,
+          "users": 514,
           "bounceRate": 86.3,
-          "avgSessionDuration": 49.5
+          "avgSessionDuration": 49.6
         },
         {
           "campaign": "Attack - New Inventory - 5 Series | Demand Gen",
@@ -2314,8 +2314,8 @@
           "medium": "cpc",
           "channel": "facebook / cpc",
           "sessions": 483,
-          "users": 420,
-          "bounceRate": 64.6,
+          "users": 423,
+          "bounceRate": 64.4,
           "avgSessionDuration": 50.0
         },
         {
@@ -2323,50 +2323,50 @@
           "source": "facebook",
           "medium": "cpc",
           "channel": "facebook / cpc",
-          "sessions": 465,
-          "users": 418,
-          "bounceRate": 73.1,
-          "avgSessionDuration": 58.9
+          "sessions": 467,
+          "users": 421,
+          "bounceRate": 71.3,
+          "avgSessionDuration": 58.6
         },
         {
           "campaign": "Service - Attack - Competitors | Demand Gen",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 418,
-          "users": 316,
-          "bounceRate": 78.9,
-          "avgSessionDuration": 66.7
+          "sessions": 417,
+          "users": 317,
+          "bounceRate": 79.9,
+          "avgSessionDuration": 54.7
         },
         {
           "campaign": "00-ALL-NA_RTN_Retatgeting_New-X5__AttackNewInventoryRemarketing&PageEngagersMeta",
           "source": "facebook",
           "medium": "cpc",
           "channel": "facebook / cpc",
-          "sessions": 351,
-          "users": 266,
-          "bounceRate": 77.2,
-          "avgSessionDuration": 71.8
+          "sessions": 347,
+          "users": 261,
+          "bounceRate": 76.7,
+          "avgSessionDuration": 69.9
         },
         {
           "campaign": "Service - Attack - In-Market | Demand Gen",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 271,
-          "users": 264,
-          "bounceRate": 53.5,
-          "avgSessionDuration": 50.5
+          "sessions": 273,
+          "users": 266,
+          "bounceRate": 52.4,
+          "avgSessionDuration": 49.8
         },
         {
           "campaign": "00-ALL-NA_RTN_Retatgeting_New-X3__AttackNewInventoryRemarketing&PageEngagersMeta",
           "source": "facebook",
           "medium": "cpc",
           "channel": "facebook / cpc",
-          "sessions": 250,
-          "users": 216,
-          "bounceRate": 78.8,
-          "avgSessionDuration": 53.6
+          "sessions": 251,
+          "users": 219,
+          "bounceRate": 78.1,
+          "avgSessionDuration": 58.0
         },
         {
           "campaign": "Attack - New Inventory - 5 Series | Display",
@@ -2383,89 +2383,89 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 237,
-          "users": 162,
-          "bounceRate": 16.9,
-          "avgSessionDuration": 288.6
+          "sessions": 239,
+          "users": 164,
+          "bounceRate": 16.7,
+          "avgSessionDuration": 293.0
         },
         {
           "campaign": "Attack - Used Inventory | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 203,
-          "users": 159,
-          "bounceRate": 29.6,
-          "avgSessionDuration": 137.7
+          "sessions": 197,
+          "users": 155,
+          "bounceRate": 29.4,
+          "avgSessionDuration": 140.6
         },
         {
           "campaign": "Service - Attack - Service Offers | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 167,
-          "users": 119,
-          "bounceRate": 34.7,
-          "avgSessionDuration": 242.7
+          "sessions": 154,
+          "users": 112,
+          "bounceRate": 31.8,
+          "avgSessionDuration": 254.5
         },
         {
           "campaign": "Service - Attack - Remarketing | Demand Gen",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 132,
-          "users": 70,
-          "bounceRate": 77.3,
-          "avgSessionDuration": 54.4
+          "sessions": 136,
+          "users": 71,
+          "bounceRate": 76.5,
+          "avgSessionDuration": 79.5
         },
         {
           "campaign": "Service - Attack - Brand | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 101,
-          "users": 41,
-          "bounceRate": 36.6,
-          "avgSessionDuration": 294.1
-        },
-        {
-          "campaign": "00-ALL-NA_RTN_Retatgeting_New-X7__AttackNewInventoryRemarketing&PageEngagersMeta - Copy",
-          "source": "facebook",
-          "medium": "cpc",
-          "channel": "facebook / cpc",
-          "sessions": 67,
-          "users": 61,
-          "bounceRate": 79.1,
-          "avgSessionDuration": 41.6
+          "sessions": 99,
+          "users": 40,
+          "bounceRate": 36.4,
+          "avgSessionDuration": 300.9
         },
         {
           "campaign": "Attack - New Inventory - X3 | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 62,
-          "users": 54,
-          "bounceRate": 22.6,
-          "avgSessionDuration": 245.7
+          "sessions": 66,
+          "users": 53,
+          "bounceRate": 27.3,
+          "avgSessionDuration": 227.4
+        },
+        {
+          "campaign": "00-ALL-NA_RTN_Retatgeting_New-X7__AttackNewInventoryRemarketing&PageEngagersMeta - Copy",
+          "source": "facebook",
+          "medium": "cpc",
+          "channel": "facebook / cpc",
+          "sessions": 65,
+          "users": 59,
+          "bounceRate": 81.5,
+          "avgSessionDuration": 40.4
         },
         {
           "campaign": "Attack - Locations | Paid Search",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 55,
-          "users": 50,
-          "bounceRate": 12.7,
-          "avgSessionDuration": 282.4
+          "sessions": 53,
+          "users": 49,
+          "bounceRate": 11.3,
+          "avgSessionDuration": 291.5
         }
       ],
       "hostnames": {
-        "total": 86981,
+        "total": 86315,
         "rows": [
           {
             "hostname": "bmwofjackson.net",
-            "sessions": 86943,
-            "users": 58448,
+            "sessions": 86277,
+            "users": 58268,
             "share": 100.0
           },
           {
@@ -2485,173 +2485,173 @@
       "top_pages": [
         {
           "pagePath": "/",
-          "sessions": 17945,
-          "avgSessionDuration": 59.8,
-          "bounceRate": 40.2,
-          "pageviews": 22503
+          "sessions": 18049,
+          "avgSessionDuration": 60.1,
+          "bounceRate": 40.5,
+          "pageviews": 22696
         },
         {
           "pagePath": "/inventory",
-          "sessions": 13892,
-          "avgSessionDuration": 161.6,
-          "bounceRate": 17.4,
-          "pageviews": 41698
+          "sessions": 13975,
+          "avgSessionDuration": 160.9,
+          "bounceRate": 17.6,
+          "pageviews": 41836
         },
         {
           "pagePath": "/cars/new-x3",
-          "sessions": 7921,
-          "avgSessionDuration": 67.3,
-          "bounceRate": 75.5,
-          "pageviews": 9770
+          "sessions": 7848,
+          "avgSessionDuration": 67.7,
+          "bounceRate": 75.3,
+          "pageviews": 9707
         },
         {
           "pagePath": "/cars/new-x5",
-          "sessions": 7388,
-          "avgSessionDuration": 68.3,
-          "bounceRate": 70.0,
-          "pageviews": 9738
+          "sessions": 7300,
+          "avgSessionDuration": 69.2,
+          "bounceRate": 69.7,
+          "pageviews": 9662
         },
         {
           "pagePath": "/service-center",
-          "sessions": 2665,
-          "avgSessionDuration": 85.2,
-          "bounceRate": 68.5,
-          "pageviews": 3305
+          "sessions": 2652,
+          "avgSessionDuration": 84.1,
+          "bounceRate": 68.3,
+          "pageviews": 3288
         },
         {
           "pagePath": "/service",
-          "sessions": 2391,
-          "avgSessionDuration": 161.8,
-          "bounceRate": 40.4,
-          "pageviews": 2949
+          "sessions": 2408,
+          "avgSessionDuration": 162.1,
+          "bounceRate": 40.2,
+          "pageviews": 2970
         },
         {
           "pagePath": "/cars/new-5-series",
-          "sessions": 1885,
-          "avgSessionDuration": 60.9,
-          "bounceRate": 71.3,
-          "pageviews": 2295
+          "sessions": 1887,
+          "avgSessionDuration": 60.3,
+          "bounceRate": 71.2,
+          "pageviews": 2297
         },
         {
           "pagePath": "/cars/bmw-certified",
-          "sessions": 1704,
-          "avgSessionDuration": 168.4,
-          "bounceRate": 9.3,
-          "pageviews": 4309
+          "sessions": 1702,
+          "avgSessionDuration": 168.1,
+          "bounceRate": 9.5,
+          "pageviews": 4310
         },
         {
           "pagePath": "/oil-change",
           "sessions": 1642,
-          "avgSessionDuration": 67.8,
+          "avgSessionDuration": 69.9,
           "bounceRate": 66.4,
-          "pageviews": 1880
+          "pageviews": 1881
         },
         {
           "pagePath": "/inventory/New-2026-BMW-X5-xDrive50e-5UX43EU01T9533103",
-          "sessions": 1451,
-          "avgSessionDuration": 66.2,
+          "sessions": 1465,
+          "avgSessionDuration": 65.9,
           "bounceRate": 52.3,
-          "pageviews": 1549
+          "pageviews": 1561
         },
         {
           "pagePath": "/inventory/New-2026-BMW-X5-xDrive40i-5UX23EU05T9402084",
-          "sessions": 1302,
-          "avgSessionDuration": 98.2,
-          "bounceRate": 66.1,
-          "pageviews": 1421
+          "sessions": 1292,
+          "avgSessionDuration": 98.3,
+          "bounceRate": 66.4,
+          "pageviews": 1411
         },
         {
           "pagePath": "/service-offers",
-          "sessions": 1248,
-          "avgSessionDuration": 91.1,
-          "bounceRate": 29.1,
-          "pageviews": 1518
+          "sessions": 1251,
+          "avgSessionDuration": 91.0,
+          "bounceRate": 28.9,
+          "pageviews": 1524
         }
       ],
       "top_pages_30": [
         {
           "pagePath": "/",
-          "sessions": 8507,
-          "avgSessionDuration": 47.1,
-          "bounceRate": 55.5,
-          "pageviews": 10170
+          "sessions": 8499,
+          "avgSessionDuration": 47.9,
+          "bounceRate": 55.6,
+          "pageviews": 10213
         },
         {
           "pagePath": "/inventory",
-          "sessions": 4388,
-          "avgSessionDuration": 159.2,
-          "bounceRate": 19.1,
-          "pageviews": 12789
+          "sessions": 4306,
+          "avgSessionDuration": 162.6,
+          "bounceRate": 18.5,
+          "pageviews": 12788
         },
         {
           "pagePath": "/cars/new-x3",
-          "sessions": 2672,
-          "avgSessionDuration": 65.2,
+          "sessions": 2664,
+          "avgSessionDuration": 64.6,
           "bounceRate": 75.3,
-          "pageviews": 3341
+          "pageviews": 3336
         },
         {
           "pagePath": "/cars/new-x5",
-          "sessions": 2517,
-          "avgSessionDuration": 68.6,
-          "bounceRate": 70.4,
-          "pageviews": 3281
+          "sessions": 2522,
+          "avgSessionDuration": 69.7,
+          "bounceRate": 70.5,
+          "pageviews": 3297
         },
         {
           "pagePath": "/cars/new-5-series",
-          "sessions": 899,
-          "avgSessionDuration": 52.3,
-          "bounceRate": 73.1,
-          "pageviews": 1072
+          "sessions": 903,
+          "avgSessionDuration": 52.1,
+          "bounceRate": 72.8,
+          "pageviews": 1076
         },
         {
           "pagePath": "/service",
-          "sessions": 737,
-          "avgSessionDuration": 157.7,
-          "bounceRate": 40.8,
-          "pageviews": 920
+          "sessions": 710,
+          "avgSessionDuration": 163.7,
+          "bounceRate": 40.3,
+          "pageviews": 892
         },
         {
           "pagePath": "/oil-change",
-          "sessions": 697,
-          "avgSessionDuration": 61.4,
-          "bounceRate": 68.4,
-          "pageviews": 810
+          "sessions": 701,
+          "avgSessionDuration": 62.1,
+          "bounceRate": 69.0,
+          "pageviews": 805
         },
         {
           "pagePath": "/inventory/New-2026-BMW-X5-xDrive50e-5UX43EU01T9533103",
-          "sessions": 592,
-          "avgSessionDuration": 62.5,
-          "bounceRate": 48.6,
-          "pageviews": 619
+          "sessions": 585,
+          "avgSessionDuration": 60.6,
+          "bounceRate": 47.7,
+          "pageviews": 609
         },
         {
           "pagePath": "/cars/bmw-certified",
-          "sessions": 561,
-          "avgSessionDuration": 155.9,
-          "bounceRate": 10.2,
-          "pageviews": 1326
+          "sessions": 560,
+          "avgSessionDuration": 156.9,
+          "bounceRate": 10.9,
+          "pageviews": 1343
         },
         {
           "pagePath": "/inventory/New-2026-BMW-X5-xDrive40i-5UX23EU07T9523960",
-          "sessions": 443,
-          "avgSessionDuration": 66.4,
-          "bounceRate": 61.9,
-          "pageviews": 483
+          "sessions": 414,
+          "avgSessionDuration": 64.2,
+          "bounceRate": 61.4,
+          "pageviews": 451
         },
         {
           "pagePath": "/inventory/New-2026-BMW-X3-30_xDrive-5UX53GP00T9322602",
-          "sessions": 428,
-          "avgSessionDuration": 60.3,
-          "bounceRate": 50.7,
-          "pageviews": 437
+          "sessions": 392,
+          "avgSessionDuration": 55.7,
+          "bounceRate": 49.0,
+          "pageviews": 399
         },
         {
           "pagePath": "/service-offers",
-          "sessions": 315,
-          "avgSessionDuration": 106.5,
-          "bounceRate": 38.1,
-          "pageviews": 396
+          "sessions": 310,
+          "avgSessionDuration": 109.0,
+          "bounceRate": 37.7,
+          "pageviews": 389
         }
       ],
       "weekly_current": {
@@ -2712,7 +2712,7 @@
           "202640"
         ],
         "sessions": [
-          1418,
+          969,
           3384,
           3317,
           3495,
@@ -2765,7 +2765,7 @@
           6598,
           7131,
           6741,
-          4531
+          5113
         ]
       },
       "weekly_prior": {
@@ -2826,7 +2826,7 @@
           "202540"
         ],
         "sessions": [
-          1692,
+          1261,
           2977,
           2765,
           2891,
@@ -2879,22 +2879,22 @@
           3095,
           4464,
           4246,
-          2084
+          2534
         ]
       }
     }
   },
   "harris_porsche": {
     "q1_2026": {
-      "sessions": 2520,
-      "users": 2169,
-      "newUsers": 1288,
-      "pageviews": 12243,
-      "pagesPerSession": 4.86,
-      "bounceRate": 25.5,
-      "avgSessionDuration": 202.5,
-      "engagementRate": 74.5,
-      "mobilePct": 70.1
+      "sessions": 2605,
+      "users": 2240,
+      "newUsers": 1325,
+      "pageviews": 12670,
+      "pagesPerSession": 4.87,
+      "bounceRate": 25.4,
+      "avgSessionDuration": 203.5,
+      "engagementRate": 74.6,
+      "mobilePct": 70.3
     },
     "q1_prev": {
       "sessions": 0,
@@ -2908,48 +2908,48 @@
       "mobilePct": 0.0
     },
     "last30": {
-      "sessions": 2520,
-      "users": 2169,
-      "newUsers": 1288,
-      "pageviews": 12243,
-      "pagesPerSession": 4.86,
-      "bounceRate": 25.5,
-      "avgSessionDuration": 202.5,
-      "engagementRate": 74.5,
-      "mobilePct": 70.1
+      "sessions": 2605,
+      "users": 2240,
+      "newUsers": 1325,
+      "pageviews": 12670,
+      "pagesPerSession": 4.87,
+      "bounceRate": 25.4,
+      "avgSessionDuration": 203.5,
+      "engagementRate": 74.6,
+      "mobilePct": 70.3
     },
     "last60": {
-      "sessions": 2520,
-      "users": 2169,
-      "newUsers": 1288,
-      "pageviews": 12243,
-      "pagesPerSession": 4.86,
-      "bounceRate": 25.5,
-      "avgSessionDuration": 202.5,
-      "engagementRate": 74.5,
-      "mobilePct": 70.1
+      "sessions": 2605,
+      "users": 2240,
+      "newUsers": 1325,
+      "pageviews": 12670,
+      "pagesPerSession": 4.87,
+      "bounceRate": 25.4,
+      "avgSessionDuration": 203.5,
+      "engagementRate": 74.6,
+      "mobilePct": 70.3
     },
     "last90": {
-      "sessions": 2520,
-      "users": 2169,
-      "newUsers": 1288,
-      "pageviews": 12243,
-      "pagesPerSession": 4.86,
-      "bounceRate": 25.5,
-      "avgSessionDuration": 202.5,
-      "engagementRate": 74.5,
-      "mobilePct": 70.1
+      "sessions": 2605,
+      "users": 2240,
+      "newUsers": 1325,
+      "pageviews": 12670,
+      "pagesPerSession": 4.87,
+      "bounceRate": 25.4,
+      "avgSessionDuration": 203.5,
+      "engagementRate": 74.6,
+      "mobilePct": 70.3
     },
     "mtd": {
-      "sessions": 90,
-      "users": 78,
-      "newUsers": 40,
-      "pageviews": 379,
-      "pagesPerSession": 4.21,
-      "bounceRate": 25.6,
-      "avgSessionDuration": 213.9,
-      "engagementRate": 74.4,
-      "mobilePct": 78.9
+      "sessions": 177,
+      "users": 151,
+      "newUsers": 78,
+      "pageviews": 817,
+      "pagesPerSession": 4.62,
+      "bounceRate": 24.9,
+      "avgSessionDuration": 225.4,
+      "engagementRate": 75.1,
+      "mobilePct": 78.0
     },
     "prev30": {
       "sessions": 0,
@@ -2997,86 +2997,86 @@
     },
     "windows": {
       "last30": {
-        "start": "2026-09-02",
-        "end": "2026-10-01"
+        "start": "2026-09-03",
+        "end": "2026-10-02"
       },
       "last60": {
-        "start": "2026-08-03",
-        "end": "2026-10-01"
+        "start": "2026-08-04",
+        "end": "2026-10-02"
       },
       "last90": {
-        "start": "2026-07-04",
-        "end": "2026-10-01"
+        "start": "2026-07-05",
+        "end": "2026-10-02"
       },
       "mtd": {
         "start": "2026-10-01",
-        "end": "2026-10-02"
+        "end": "2026-10-03"
       },
       "prev_mtd": {
         "start": "2026-09-01",
-        "end": "2026-09-02"
+        "end": "2026-09-03"
       }
     },
     "sources": [
       {
         "source": "google",
         "medium": "organic",
-        "sessions": 845,
-        "users": 587
+        "sessions": 884,
+        "users": 613
       },
       {
         "source": "google",
         "medium": "cpc",
-        "sessions": 668,
-        "users": 541
+        "sessions": 684,
+        "users": 554
       },
       {
         "source": "(direct)",
         "medium": "(none)",
-        "sessions": 463,
-        "users": 272
+        "sessions": 475,
+        "users": 277
       },
       {
         "source": "l.facebook.com",
         "medium": "referral",
-        "sessions": 110,
-        "users": 75
+        "sessions": 115,
+        "users": 78
       },
       {
         "source": "lm.facebook.com",
         "medium": "referral",
-        "sessions": 68,
-        "users": 50
+        "sessions": 69,
+        "users": 51
       },
       {
         "source": "instagram.com",
         "medium": "referral",
-        "sessions": 65,
-        "users": 45
+        "sessions": 68,
+        "users": 46
       },
       {
         "source": "bing",
         "medium": "organic",
-        "sessions": 61,
+        "sessions": 63,
         "users": 43
       },
       {
         "source": "(not set)",
         "medium": "(not set)",
-        "sessions": 58,
-        "users": 58
+        "sessions": 60,
+        "users": 60
       },
       {
         "source": "m.facebook.com",
         "medium": "referral",
-        "sessions": 50,
+        "sessions": 54,
         "users": 32
       },
       {
         "source": "facebook.com",
         "medium": "referral",
-        "sessions": 41,
-        "users": 37
+        "sessions": 43,
+        "users": 39
       },
       {
         "source": "yahoo",
@@ -3093,7 +3093,7 @@
       {
         "source": "chatgpt.com",
         "medium": "ai-assistant",
-        "sessions": 15,
+        "sessions": 16,
         "users": 13
       },
       {
@@ -3139,7 +3139,7 @@
         "users": 2
       }
     ],
-    "mobile_pct": 70.1,
+    "mobile_pct": 70.3,
     "high_bounce": [
       {
         "pagePath": "/en/inventory/porsche/K5VZ6P",
@@ -3149,9 +3149,9 @@
       },
       {
         "pagePath": "/en/specials/service-parts",
-        "sessions": 32,
-        "bounceRate": 43.8,
-        "avgSessionDuration": 59.7
+        "sessions": 34,
+        "bounceRate": 41.2,
+        "avgSessionDuration": 60.8
       },
       {
         "pagePath": "/en/service",
@@ -3161,9 +3161,9 @@
       },
       {
         "pagePath": "/en",
-        "sessions": 1305,
+        "sessions": 1359,
         "bounceRate": 18.2,
-        "avgSessionDuration": 44.7
+        "avgSessionDuration": 46.3
       },
       {
         "pagePath": "/us/en_US",
@@ -3173,9 +3173,9 @@
       },
       {
         "pagePath": "/en/about-us/staff",
-        "sessions": 66,
-        "bounceRate": 16.7,
-        "avgSessionDuration": 117.5
+        "sessions": 67,
+        "bounceRate": 16.4,
+        "avgSessionDuration": 117.8
       },
       {
         "pagePath": "/en/inventory/porsche/porsche-718-cayman-gts-40-preowned-M4O24M",
@@ -3184,34 +3184,34 @@
         "avgSessionDuration": 61.0
       },
       {
-        "pagePath": "/en/inventory/porsche/porsche-911-carrera-new-25GXRK",
-        "sessions": 53,
-        "bounceRate": 13.2,
-        "avgSessionDuration": 49.9
+        "pagePath": "/en/inventory/porsche/QOZ5K2",
+        "sessions": 21,
+        "bounceRate": 14.3,
+        "avgSessionDuration": 22.0
       },
       {
         "pagePath": "/en/inventory/porsche/V93D89",
-        "sessions": 26,
-        "bounceRate": 11.5,
-        "avgSessionDuration": 30.9
+        "sessions": 29,
+        "bounceRate": 13.8,
+        "avgSessionDuration": 59.5
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-911-carrera-new-25GXRK",
+        "sessions": 55,
+        "bounceRate": 12.7,
+        "avgSessionDuration": 49.5
+      },
+      {
+        "pagePath": "/en/inventory/porsche/porsche-cayenne-new-V93D89",
+        "sessions": 51,
+        "bounceRate": 11.8,
+        "avgSessionDuration": 100.7
       },
       {
         "pagePath": "/en/inventory/porsche/search",
-        "sessions": 1497,
-        "bounceRate": 11.5,
-        "avgSessionDuration": 113.9
-      },
-      {
-        "pagePath": "/en/inventory/porsche/porsche-cayenne-preowned-EKZGQE",
-        "sessions": 63,
-        "bounceRate": 11.1,
-        "avgSessionDuration": 164.3
-      },
-      {
-        "pagePath": "/en/inventory/porsche/porsche-taycan-gts-preowned-K5VZ6P",
-        "sessions": 27,
-        "bounceRate": 11.1,
-        "avgSessionDuration": 113.9
+        "sessions": 1545,
+        "bounceRate": 11.3,
+        "avgSessionDuration": 114.9
       }
     ],
     "panels": {
@@ -3221,20 +3221,20 @@
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 540,
-          "users": 429,
-          "bounceRate": 20.0,
-          "avgSessionDuration": 189.1
+          "sessions": 556,
+          "users": 442,
+          "bounceRate": 20.1,
+          "avgSessionDuration": 193.0
         },
         {
           "campaign": "(not set)",
           "source": "google",
           "medium": "cpc",
           "channel": "google / cpc",
-          "sessions": 72,
-          "users": 63,
+          "sessions": 75,
+          "users": 66,
           "bounceRate": 34.7,
-          "avgSessionDuration": 105.9
+          "avgSessionDuration": 102.6
         },
         {
           "campaign": "(referral)",
@@ -3257,16 +3257,6 @@
           "avgSessionDuration": 633.5
         },
         {
-          "campaign": "",
-          "source": "google",
-          "medium": "cpc",
-          "channel": "google / cpc",
-          "sessions": 3,
-          "users": 3,
-          "bounceRate": 33.3,
-          "avgSessionDuration": 24.4
-        },
-        {
           "campaign": "(referral)",
           "source": "facebook",
           "medium": "paid_social",
@@ -3278,25 +3268,25 @@
         }
       ],
       "hostnames": {
-        "total": 2573,
+        "total": 2660,
         "rows": [
           {
             "hostname": "harris.porsche.com",
-            "sessions": 2481,
-            "users": 1706,
-            "share": 96.4
+            "sessions": 2568,
+            "users": 1756,
+            "share": 96.5
           },
           {
             "hostname": "deal.porsche.com",
             "sessions": 49,
             "users": 27,
-            "share": 1.9
+            "share": 1.8
           },
           {
             "hostname": "service-booking.aftersales.porsche.com",
             "sessions": 38,
             "users": 21,
-            "share": 1.5
+            "share": 1.4
           },
           {
             "hostname": "service-booking.porsche.com",
@@ -3309,173 +3299,173 @@
       "top_pages": [
         {
           "pagePath": "/en/inventory/porsche/search",
-          "sessions": 1497,
-          "avgSessionDuration": 113.9,
-          "bounceRate": 11.5,
-          "pageviews": 4282
+          "sessions": 1545,
+          "avgSessionDuration": 114.9,
+          "bounceRate": 11.3,
+          "pageviews": 4464
         },
         {
           "pagePath": "/en",
-          "sessions": 1305,
-          "avgSessionDuration": 44.7,
+          "sessions": 1359,
+          "avgSessionDuration": 46.3,
           "bounceRate": 18.2,
-          "pageviews": 161
+          "pageviews": 170
         },
         {
           "pagePath": "/en/inventory/other-brands/search",
-          "sessions": 86,
-          "avgSessionDuration": 31.8,
-          "bounceRate": 7.0,
-          "pageviews": 82
+          "sessions": 91,
+          "avgSessionDuration": 33.1,
+          "bounceRate": 5.5,
+          "pageviews": 88
         },
         {
           "pagePath": "/en/specials/new",
-          "sessions": 78,
-          "avgSessionDuration": 37.0,
-          "bounceRate": 10.3,
-          "pageviews": 35
+          "sessions": 81,
+          "avgSessionDuration": 36.2,
+          "bounceRate": 11.1,
+          "pageviews": 36
         },
         {
           "pagePath": "/en/about-us/staff",
-          "sessions": 66,
-          "avgSessionDuration": 117.5,
-          "bounceRate": 16.7,
+          "sessions": 67,
+          "avgSessionDuration": 117.8,
+          "bounceRate": 16.4,
           "pageviews": 30
         },
         {
           "pagePath": "/en/inventory/porsche/porsche-911-carrera-preowned-L6EG6Q",
-          "sessions": 64,
-          "avgSessionDuration": 65.4,
-          "bounceRate": 1.6,
-          "pageviews": 104
+          "sessions": 65,
+          "avgSessionDuration": 64.9,
+          "bounceRate": 1.5,
+          "pageviews": 106
         },
         {
           "pagePath": "/en/inventory/porsche/porsche-cayenne-preowned-EKZGQE",
+          "sessions": 64,
+          "avgSessionDuration": 163.8,
+          "bounceRate": 10.9,
+          "pageviews": 98
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-911-carrera-4-gts-preowned-QV6OQZ",
           "sessions": 63,
-          "avgSessionDuration": 164.3,
+          "avgSessionDuration": 86.3,
+          "bounceRate": 7.9,
+          "pageviews": 92
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-turbo-gt-new-QOZ5K2",
+          "sessions": 63,
+          "avgSessionDuration": 53.3,
           "bounceRate": 11.1,
           "pageviews": 93
         },
         {
-          "pagePath": "/en/inventory/porsche/porsche-911-carrera-4-gts-preowned-QV6OQZ",
-          "sessions": 62,
-          "avgSessionDuration": 81.2,
-          "bounceRate": 8.1,
-          "pageviews": 91
-        },
-        {
-          "pagePath": "/en/inventory/porsche/porsche-cayenne-turbo-gt-new-QOZ5K2",
-          "sessions": 60,
-          "avgSessionDuration": 55.2,
-          "bounceRate": 10.0,
-          "pageviews": 85
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-ehybrid-new-WX9R6L",
+          "sessions": 57,
+          "avgSessionDuration": 27.2,
+          "bounceRate": 5.3,
+          "pageviews": 76
         },
         {
           "pagePath": "/en/inventory/porsche/porsche-911-carrera-new-25GXRK",
-          "sessions": 53,
-          "avgSessionDuration": 49.9,
-          "bounceRate": 13.2,
-          "pageviews": 71
+          "sessions": 55,
+          "avgSessionDuration": 49.5,
+          "bounceRate": 12.7,
+          "pageviews": 74
         },
         {
-          "pagePath": "/en/inventory/porsche/porsche-911-carrera-preowned-L6EG6Q/media",
-          "sessions": 53,
-          "avgSessionDuration": 19.2,
-          "bounceRate": 1.9,
-          "pageviews": 210
-        },
-        {
-          "pagePath": "/en/inventory/porsche/porsche-cayenne-ehybrid-new-WX9R6L",
-          "sessions": 53,
-          "avgSessionDuration": 27.5,
-          "bounceRate": 3.8,
-          "pageviews": 71
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-gts-coupe-new-QV9MG6",
+          "sessions": 55,
+          "avgSessionDuration": 143.3,
+          "bounceRate": 9.1,
+          "pageviews": 87
         }
       ],
       "top_pages_30": [
         {
           "pagePath": "/en/inventory/porsche/search",
-          "sessions": 1497,
-          "avgSessionDuration": 113.9,
-          "bounceRate": 11.5,
-          "pageviews": 4282
+          "sessions": 1545,
+          "avgSessionDuration": 114.9,
+          "bounceRate": 11.3,
+          "pageviews": 4464
         },
         {
           "pagePath": "/en",
-          "sessions": 1305,
-          "avgSessionDuration": 44.7,
+          "sessions": 1359,
+          "avgSessionDuration": 46.3,
           "bounceRate": 18.2,
-          "pageviews": 161
+          "pageviews": 170
         },
         {
           "pagePath": "/en/inventory/other-brands/search",
-          "sessions": 86,
-          "avgSessionDuration": 31.8,
-          "bounceRate": 7.0,
-          "pageviews": 82
+          "sessions": 91,
+          "avgSessionDuration": 33.1,
+          "bounceRate": 5.5,
+          "pageviews": 88
         },
         {
           "pagePath": "/en/specials/new",
-          "sessions": 78,
-          "avgSessionDuration": 37.0,
-          "bounceRate": 10.3,
-          "pageviews": 35
+          "sessions": 81,
+          "avgSessionDuration": 36.2,
+          "bounceRate": 11.1,
+          "pageviews": 36
         },
         {
           "pagePath": "/en/about-us/staff",
-          "sessions": 66,
-          "avgSessionDuration": 117.5,
-          "bounceRate": 16.7,
+          "sessions": 67,
+          "avgSessionDuration": 117.8,
+          "bounceRate": 16.4,
           "pageviews": 30
         },
         {
           "pagePath": "/en/inventory/porsche/porsche-911-carrera-preowned-L6EG6Q",
-          "sessions": 64,
-          "avgSessionDuration": 65.4,
-          "bounceRate": 1.6,
-          "pageviews": 104
+          "sessions": 65,
+          "avgSessionDuration": 64.9,
+          "bounceRate": 1.5,
+          "pageviews": 106
         },
         {
           "pagePath": "/en/inventory/porsche/porsche-cayenne-preowned-EKZGQE",
+          "sessions": 64,
+          "avgSessionDuration": 163.8,
+          "bounceRate": 10.9,
+          "pageviews": 98
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-911-carrera-4-gts-preowned-QV6OQZ",
           "sessions": 63,
-          "avgSessionDuration": 164.3,
+          "avgSessionDuration": 86.3,
+          "bounceRate": 7.9,
+          "pageviews": 92
+        },
+        {
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-turbo-gt-new-QOZ5K2",
+          "sessions": 63,
+          "avgSessionDuration": 53.3,
           "bounceRate": 11.1,
           "pageviews": 93
         },
         {
-          "pagePath": "/en/inventory/porsche/porsche-911-carrera-4-gts-preowned-QV6OQZ",
-          "sessions": 62,
-          "avgSessionDuration": 81.2,
-          "bounceRate": 8.1,
-          "pageviews": 91
-        },
-        {
-          "pagePath": "/en/inventory/porsche/porsche-cayenne-turbo-gt-new-QOZ5K2",
-          "sessions": 60,
-          "avgSessionDuration": 55.2,
-          "bounceRate": 10.0,
-          "pageviews": 85
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-ehybrid-new-WX9R6L",
+          "sessions": 57,
+          "avgSessionDuration": 27.2,
+          "bounceRate": 5.3,
+          "pageviews": 76
         },
         {
           "pagePath": "/en/inventory/porsche/porsche-911-carrera-new-25GXRK",
-          "sessions": 53,
-          "avgSessionDuration": 49.9,
-          "bounceRate": 13.2,
-          "pageviews": 71
+          "sessions": 55,
+          "avgSessionDuration": 49.5,
+          "bounceRate": 12.7,
+          "pageviews": 74
         },
         {
-          "pagePath": "/en/inventory/porsche/porsche-911-carrera-preowned-L6EG6Q/media",
-          "sessions": 53,
-          "avgSessionDuration": 19.2,
-          "bounceRate": 1.9,
-          "pageviews": 210
-        },
-        {
-          "pagePath": "/en/inventory/porsche/porsche-cayenne-ehybrid-new-WX9R6L",
-          "sessions": 53,
-          "avgSessionDuration": 27.5,
-          "bounceRate": 3.8,
-          "pageviews": 71
+          "pagePath": "/en/inventory/porsche/porsche-cayenne-gts-coupe-new-QV9MG6",
+          "sessions": 55,
+          "avgSessionDuration": 143.3,
+          "bounceRate": 9.1,
+          "pageviews": 87
         }
       ],
       "weekly_current": {
@@ -3491,7 +3481,7 @@
           581,
           695,
           640,
-          438
+          525
         ]
       },
       "weekly_prior": {
