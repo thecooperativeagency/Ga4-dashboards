@@ -6,7 +6,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 python3 scripts/build_abr_google_ads_monthly.py
 STAMP="$(python3 -c 'from datetime import date; print(date.today().strftime("%b %-d, %Y"))')"
-git add abr-google-ads-monthly.html data/abr-google-ads-monthly.json assets/abr-header.jpg scripts/build_abr_google_ads_monthly.py
+git add abr-google-ads-monthly.html data/abr-google-ads-monthly.json assets/abr-header.jpg scripts/build_abr_google_ads_monthly.py scripts/publish_abr_google_ads_monthly.sh
 if git diff --cached --quiet; then
   echo "No changes to publish"
 else
@@ -16,7 +16,7 @@ fi
 URL="https://thecooperativeagency.github.io/Ga4-dashboards/abr-google-ads-monthly.html"
 for i in 1 2 3 4 5 6 7 8; do
   curl -fsS -o /tmp/abr-ads-monthly-live.html "${URL}?cb=${i}$(date +%s)" || true
-  if grep -q "Generated ${STAMP}" /tmp/abr-ads-monthly-live.html && grep -q "site CTA conversions" /tmp/abr-ads-monthly-live.html; then
+  if grep -q "Generated ${STAMP}" /tmp/abr-ads-monthly-live.html && grep -q "Current allotment" /tmp/abr-ads-monthly-live.html; then
     echo "LIVE ${URL}"
     exit 0
   fi

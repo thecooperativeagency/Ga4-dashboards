@@ -35,7 +35,7 @@ body { font-family:var(--font); background:var(--bg); color:var(--ink); line-hei
 .top.has-photo .brand { color:rgba(255,255,255,.78); }
 .top.has-photo h1 { color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.35); }
 .top.has-photo .sub { color:rgba(255,255,255,.9); }
-.wrap { max-width:920px; margin:0 auto; padding:18px 16px 48px; }
+.wrap { max-width:1080px; margin:0 auto; padding:18px 16px 48px; }
 .brand { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-weight:600; }
 h1 { font-size:28px; margin-top:6px; letter-spacing:-.04em; font-weight:700; }
 .sub { color:var(--muted); font-size:14px; margin-top:4px; }
@@ -64,12 +64,19 @@ html[data-theme="dark"] .theme-btn { background:#1a1a1a; color:#f3f3f3; border-c
 .up { color:var(--good); font-weight:700; }
 .down { color:var(--bad); font-weight:700; }
 .flat { color:var(--muted); }
+.muted { color:var(--muted); }
 .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
 table { width:100%; border-collapse:collapse; font-size:13px; min-width:720px; }
+table.wide { min-width:960px; }
 th { text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); border-bottom:1px solid var(--line); padding:8px 6px; font-weight:600; }
 td { padding:10px 6px; border-bottom:1px solid var(--row); vertical-align:top; }
 .num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+td .sub { font-size:11px; font-weight:600; margin-top:2px; }
 tr.total-row td { background:var(--foot); font-weight:800; border-top:2px solid var(--line); }
+table.wide th:first-child, table.wide td:first-child {
+  position:sticky; left:0; background:var(--card); z-index:1;
+}
+tr.total-row td:first-child { background:var(--foot); }
 .pill { display:inline-block; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; }
 .pill.on { background:#eaf8ef; color:#0f7a3a; border:1px solid #b7e4c7; }
 .pill.off { background:#ececec; color:#666; border:1px solid #d0d0d0; }
@@ -93,7 +100,7 @@ footer a { color:var(--accent); text-decoration:none; }
     <div class="wrap" style="padding-top:0;padding-bottom:0;">
       <div class="brand">Google Ads Monthly · Prepared by The Cooperative Agency</div>
       <h1>Audi Baton Rouge</h1>
-      <div class="sub">Search campaigns only · Oct 1–4, 2026 vs Sep 1–4, 2026</div>
+      <div class="sub">Search campaigns + live spend mix · Oct 1–4, 2026 vs Sep 1–4, 2026</div>
     </div>
   </div>
   <div class="wrap page-main">
@@ -104,13 +111,180 @@ footer a { color:var(--accent); text-decoration:none; }
 
     <div class="verdict">
       <div class="lbl">One move</div>
-      <div class="txt">Raise Brand. It spent $71.48 at $0.64 CPC, 11 ad calls and 33 site CTAs. Judge Offers on site CTAs (2 on $54.39), not Ads call zeros.</div>
+      <div class="txt">Raise Brand. It spent $71.48 at $0.64 CPC, 11 ad calls and 49 site CTAs. Judge Offers on site CTAs (3 on $54.39), not Ads call zeros.</div>
       <div class="when">Oct 1–4, 2026 · compared with Sep 1–4, 2026</div>
+    </div>
+
+    <div class="block" id="allotment">
+      <h2>Current allotment</h2>
+      <div class="when">Live daily budgets · 4 days this window · monthly cap = daily × 30.4</div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="k">Enabled daily</div>
+          <div class="v">$125</div>
+          <div class="s">Search + Vehicle ads</div>
+        </div>
+        <div class="stat">
+          <div class="k">Monthly cap</div>
+          <div class="v">$3,800</div>
+          <div class="s">max liability, not spend</div>
+        </div>
+        <div class="stat">
+          <div class="k">MTD vs allotted</div>
+          <div class="v">$343</div>
+          <div class="s">68% of allotted · allotted $500</div>
+        </div>
+      </div>
+      <div class="table-scroll" role="region" aria-label="Spend mix table" tabindex="0">
+        <table class="wide">
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th class="num">Daily</th>
+              <th class="num">Mo cap</th>
+              <th class="num">MTD / allotted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vehicle Inventory</td>
+              <td class="role">Vehicle ads</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$34</td>
+              <td class="num">$1,034</td>
+              <td class="num">$10.52 / $136<div class="sub muted">8% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Q7</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$10</td>
+              <td class="num">$304</td>
+              <td class="num">$41.28 / $40.00<div class="sub flat">103% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Q5</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$10</td>
+              <td class="num">$304</td>
+              <td class="num">$13.98 / $40.00<div class="sub muted">35% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Pre-Owned Q5</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$10</td>
+              <td class="num">$304</td>
+              <td class="num">$8.53 / $40.00<div class="sub muted">21% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Brand</td>
+              <td class="role">Brand</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$8</td>
+              <td class="num">$243</td>
+              <td class="num">$71.48 / $32.00<div class="sub down">223% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Service</td>
+              <td class="role">Service</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$8</td>
+              <td class="num">$243</td>
+              <td class="num">$62.80 / $32.00<div class="sub down">196% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Sales Offers</td>
+              <td class="role">Sales Offers</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$8</td>
+              <td class="num">$243</td>
+              <td class="num">$31.01 / $32.00<div class="sub flat">97% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Service Offers</td>
+              <td class="role">Service Offers</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$8</td>
+              <td class="num">$243</td>
+              <td class="num">$23.11 / $32.00<div class="sub flat">72% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Sales Offers - Conquest</td>
+              <td class="role">Conquest</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$5</td>
+              <td class="num">$152</td>
+              <td class="num">$23.38 / $20.00<div class="sub down">117% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Locations</td>
+              <td class="role">Locations</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$5</td>
+              <td class="num">$152</td>
+              <td class="num">$13.77 / $20.00<div class="sub muted">69% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Q3</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$5</td>
+              <td class="num">$152</td>
+              <td class="num">$8.69 / $20.00<div class="sub muted">44% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Q8</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$5</td>
+              <td class="num">$152</td>
+              <td class="num">$5.75 / $20.00<div class="sub muted">29% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Secondary Models</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$3</td>
+              <td class="num">$91.20</td>
+              <td class="num">$14.97 / $12.00<div class="sub down">125% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>All-New 2027 Q9</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$3</td>
+              <td class="num">$91.20</td>
+              <td class="num">$13.45 / $12.00<div class="sub flat">112% of allotted</div></td>
+            </tr>
+            <tr>
+              <td>Luxury Sedan</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$3</td>
+              <td class="num">$91.20</td>
+              <td class="num">$0.00 / $12.00<div class="sub muted">0% of allotted</div></td>
+            </tr>
+            <tr class="total-row">
+              <td>Enabled total</td>
+              <td></td>
+              <td></td>
+              <td class="num">$125/day</td>
+              <td class="num">$3,800/mo</td>
+              <td class="num">$343 / $500<div class="sub">68% of allotted</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="why"><strong>How to use this with mgmt</strong>Daily is the live Ads budget — the lever you move. Mo cap is daily × 30.4 (what Google can bill if every campaign fills). MTD / allotted is spend so far vs daily × 4 days. Cutting Brand or Service does not move money onto models or Vehicle ads — raise the other campaign separately. Vehicle ads sits in this mix even though the Search table below stays Search-only.</div>
     </div>
 
     <div class="block">
       <h2>Month so far</h2>
-      <div class="when">Oct 1–4, 2026 vs same days last month</div>
+      <div class="when">Oct 1–4, 2026 vs same days last month · Search only</div>
       <div class="stat-grid">
         <div class="stat">
           <div class="k">Spend</div>
@@ -124,8 +298,8 @@ footer a { color:var(--accent); text-decoration:none; }
         </div>
         <div class="stat">
           <div class="k">Site CTAs</div>
-          <div class="v">44</div>
-          <div class="s"><span class="up">+37.5%</span> · prior 32</div>
+          <div class="v">64</div>
+          <div class="s"><span class="up">+100.0%</span> · prior 32</div>
         </div>
         <div class="stat">
           <div class="k">Calls from ads</div>
@@ -143,12 +317,12 @@ footer a { color:var(--accent); text-decoration:none; }
           <div class="s">CTR 19.8% · prior 15.9%</div>
         </div>
       </div>
-      <div class="why"><strong>What counts as a conversion on this page</strong>Site CTAs only: Main CTA 36 · Phone tap 4 · Start check-availability 4 · Finish qualify form 0. Page views on inventory lists or vehicle pages do not count. Ads call conversions stay in their own column.</div>
+      <div class="why"><strong>What counts as a conversion on this page</strong>Site CTAs only: Main CTA 54 · Phone tap 5 · Start check-availability 5 · Finish qualify form 0. Page views on inventory lists or vehicle pages do not count. Ads call conversions stay in their own column.</div>
     </div>
 
     <div class="block">
       <h2>Campaigns</h2>
-      <div class="when">Search only · site CTA vs Ads calls</div>
+      <div class="when">Search only · live daily + site CTA vs Ads calls</div>
       <div class="table-scroll" role="region" aria-label="Scrollable table" tabindex="0">
         <table class="wide">
           <thead>
@@ -156,7 +330,9 @@ footer a { color:var(--accent); text-decoration:none; }
               <th>Campaign</th>
               <th>Role</th>
               <th>Status</th>
+              <th class="num">Daily</th>
               <th class="num">Spend</th>
+              <th class="num">MTD / allotted</th>
               <th class="num">Clicks</th>
               <th class="num">CPC</th>
               <th class="num">Site CTA</th>
@@ -165,72 +341,14 @@ footer a { color:var(--accent); text-decoration:none; }
           </thead>
           <tbody>
             <tr>
-              <td>Brand</td>
-              <td class="role">Brand</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$71.48</td>
-              <td class="num">111</td>
-              <td class="num">$0.64</td>
-              <td class="num">33</td>
-              <td class="num">11.0</td>
-            </tr>
-            <tr>
-              <td>Service</td>
-              <td class="role">Service</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$62.80</td>
-              <td class="num">23</td>
-              <td class="num">$2.73</td>
-              <td class="num">5</td>
-              <td class="num">3</td>
-            </tr>
-            <tr>
               <td>Q7</td>
               <td class="role">Model</td>
               <td><span class="pill on">On</span></td>
+              <td class="num">$10</td>
               <td class="num">$41.28</td>
+              <td class="num">$41.28 / $40.00<div class="sub flat">103% of allotted</div></td>
               <td class="num">14</td>
               <td class="num">$2.95</td>
-              <td class="num">0</td>
-              <td class="num">0</td>
-            </tr>
-            <tr>
-              <td>Sales Offers</td>
-              <td class="role">Sales Offers</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$31.01</td>
-              <td class="num">16</td>
-              <td class="num">$1.94</td>
-              <td class="num">0</td>
-              <td class="num">1</td>
-            </tr>
-            <tr>
-              <td>Sales Offers - Conquest</td>
-              <td class="role">Conquest</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$23.38</td>
-              <td class="num">16</td>
-              <td class="num">$1.46</td>
-              <td class="num">2</td>
-              <td class="num">0</td>
-            </tr>
-            <tr>
-              <td>Service Offers</td>
-              <td class="role">Service Offers</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$23.11</td>
-              <td class="num">9</td>
-              <td class="num">$2.57</td>
-              <td class="num">1</td>
-              <td class="num">1</td>
-            </tr>
-            <tr>
-              <td>Secondary Models</td>
-              <td class="role">Model</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$14.97</td>
-              <td class="num">7</td>
-              <td class="num">$2.14</td>
               <td class="num">0</td>
               <td class="num">0</td>
             </tr>
@@ -238,67 +356,153 @@ footer a { color:var(--accent); text-decoration:none; }
               <td>Q5</td>
               <td class="role">Model</td>
               <td><span class="pill on">On</span></td>
+              <td class="num">$10</td>
               <td class="num">$13.98</td>
+              <td class="num">$13.98 / $40.00<div class="sub muted">35% of allotted</div></td>
               <td class="num">5</td>
               <td class="num">$2.80</td>
-              <td class="num">0</td>
-              <td class="num">0</td>
-            </tr>
-            <tr>
-              <td>Locations</td>
-              <td class="role">Locations</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$13.77</td>
-              <td class="num">4</td>
-              <td class="num">$3.44</td>
-              <td class="num">0</td>
-              <td class="num">0</td>
-            </tr>
-            <tr>
-              <td>All-New 2027 Q9</td>
-              <td class="role">Other</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$13.45</td>
-              <td class="num">16</td>
-              <td class="num">$0.84</td>
               <td class="num">1</td>
-              <td class="num">0</td>
-            </tr>
-            <tr>
-              <td>Q3</td>
-              <td class="role">Model</td>
-              <td><span class="pill on">On</span></td>
-              <td class="num">$8.69</td>
-              <td class="num">4</td>
-              <td class="num">$2.17</td>
-              <td class="num">0</td>
               <td class="num">0</td>
             </tr>
             <tr>
               <td>Pre-Owned Q5</td>
               <td class="role">Model</td>
               <td><span class="pill on">On</span></td>
+              <td class="num">$10</td>
               <td class="num">$8.53</td>
+              <td class="num">$8.53 / $40.00<div class="sub muted">21% of allotted</div></td>
               <td class="num">6</td>
               <td class="num">$1.42</td>
               <td class="num">2</td>
               <td class="num">0</td>
             </tr>
             <tr>
+              <td>Brand</td>
+              <td class="role">Brand</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$8</td>
+              <td class="num">$71.48</td>
+              <td class="num">$71.48 / $32.00<div class="sub down">223% of allotted</div></td>
+              <td class="num">111</td>
+              <td class="num">$0.64</td>
+              <td class="num">49</td>
+              <td class="num">11.0</td>
+            </tr>
+            <tr>
+              <td>Service</td>
+              <td class="role">Service</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$8</td>
+              <td class="num">$62.80</td>
+              <td class="num">$62.80 / $32.00<div class="sub down">196% of allotted</div></td>
+              <td class="num">23</td>
+              <td class="num">$2.73</td>
+              <td class="num">7</td>
+              <td class="num">3</td>
+            </tr>
+            <tr>
+              <td>Sales Offers</td>
+              <td class="role">Sales Offers</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$8</td>
+              <td class="num">$31.01</td>
+              <td class="num">$31.01 / $32.00<div class="sub flat">97% of allotted</div></td>
+              <td class="num">16</td>
+              <td class="num">$1.94</td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+            </tr>
+            <tr>
+              <td>Service Offers</td>
+              <td class="role">Service Offers</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$8</td>
+              <td class="num">$23.11</td>
+              <td class="num">$23.11 / $32.00<div class="sub flat">72% of allotted</div></td>
+              <td class="num">9</td>
+              <td class="num">$2.57</td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+            </tr>
+            <tr>
+              <td>Sales Offers - Conquest</td>
+              <td class="role">Conquest</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$5</td>
+              <td class="num">$23.38</td>
+              <td class="num">$23.38 / $20.00<div class="sub down">117% of allotted</div></td>
+              <td class="num">16</td>
+              <td class="num">$1.46</td>
+              <td class="num">2</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Locations</td>
+              <td class="role">Locations</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$5</td>
+              <td class="num">$13.77</td>
+              <td class="num">$13.77 / $20.00<div class="sub muted">69% of allotted</div></td>
+              <td class="num">4</td>
+              <td class="num">$3.44</td>
+              <td class="num">0</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>Q3</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$5</td>
+              <td class="num">$8.69</td>
+              <td class="num">$8.69 / $20.00<div class="sub muted">44% of allotted</div></td>
+              <td class="num">4</td>
+              <td class="num">$2.17</td>
+              <td class="num">0</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
               <td>Q8</td>
               <td class="role">Model</td>
               <td><span class="pill on">On</span></td>
+              <td class="num">$5</td>
               <td class="num">$5.75</td>
+              <td class="num">$5.75 / $20.00<div class="sub muted">29% of allotted</div></td>
               <td class="num">2</td>
               <td class="num">$2.88</td>
               <td class="num">0</td>
               <td class="num">0</td>
             </tr>
             <tr>
+              <td>Secondary Models</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$3</td>
+              <td class="num">$14.97</td>
+              <td class="num">$14.97 / $12.00<div class="sub down">125% of allotted</div></td>
+              <td class="num">7</td>
+              <td class="num">$2.14</td>
+              <td class="num">0</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
+              <td>All-New 2027 Q9</td>
+              <td class="role">Model</td>
+              <td><span class="pill on">On</span></td>
+              <td class="num">$3</td>
+              <td class="num">$13.45</td>
+              <td class="num">$13.45 / $12.00<div class="sub flat">112% of allotted</div></td>
+              <td class="num">16</td>
+              <td class="num">$0.84</td>
+              <td class="num">1</td>
+              <td class="num">0</td>
+            </tr>
+            <tr>
               <td>Luxury Sedan</td>
               <td class="role">Model</td>
               <td><span class="pill on">On</span></td>
+              <td class="num">$3</td>
               <td class="num">$0</td>
+              <td class="num">$0.00 / $12.00<div class="sub muted">0% of allotted</div></td>
               <td class="num">0</td>
               <td class="num">—</td>
               <td class="num">0</td>
@@ -308,19 +512,21 @@ footer a { color:var(--accent); text-decoration:none; }
               <td>Search total</td>
               <td></td>
               <td></td>
+              <td class="num">$91</td>
               <td class="num">$332</td>
+              <td class="num"></td>
               <td class="num">233</td>
               <td class="num">$1.43</td>
-              <td class="num">44</td>
+              <td class="num">64</td>
               <td class="num">16.0</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="why"><strong>What this means</strong>Site CTA is the conversion column for Offers and models. Ads calls still matter for Brand and Service. Shopping VLA is not in this table.</div>
+      <div class="why"><strong>What this means</strong>Site CTA is the conversion column for Offers and models. Ads calls still matter for Brand and Service. Shopping VLA is not in this table. Vehicle ads allotment is in Current allotment above.</div>
     </div>
 
-    <p class="foot">Account 3995837733 · search only · conversion definition locked in build_abr_google_ads_monthly.py · not a GM Weekly page.</p>
+    <p class="foot">Account 3995837733 · search performance + live dailies · conversion definition locked in build_abr_google_ads_monthly.py · not a GM Weekly page.</p>
   </div>
   <footer>Audi Baton Rouge · Generated Oct 5, 2026 · <a href="https://thecooperativeagency.github.io/email-creative/gm-weekly/abr.html">GM Weekly</a></footer>
 <script>
