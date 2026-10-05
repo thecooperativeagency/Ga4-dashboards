@@ -52,6 +52,7 @@ HTML_PATH = ROOT / "abr-google-ads-monthly.html"
 
 SEARCH_CH = {"SEARCH", "2"}
 PMAX_CH = {"PERFORMANCE_MAX", "10"}
+DISPLAY_CH = {"DISPLAY", "3"}
 
 
 def windows(today: date | None = None) -> tuple[date, date, date, date]:
@@ -136,10 +137,16 @@ def is_vehicle(ch, name: str) -> bool:
     return "vehicle ads" in n or "vehicle inventory" in n
 
 
+def is_display(ch) -> bool:
+    return str(ch or "").upper() in DISPLAY_CH
+
+
 def role(name: str, ch: str = "") -> str:
     n = (name or "").lower()
     if is_vehicle(ch, name):
         return "Vehicle ads"
+    if is_display(ch):
+        return "Display"
     if "conquest" in n:
         return "Conquest"
     if "sales offers" in n:
@@ -184,6 +191,7 @@ def short_name(name: str) -> str:
         (name or "")
         .replace(" | Paid Search", "")
         .replace(" | Vehicle Ads", "")
+        .replace(" | Display", " Display")
         .replace("New Inventory - ", "")
         .strip()
     )
@@ -334,8 +342,8 @@ def apply_budgets(camps: list[dict], budgets: dict[str, dict], days: int) -> lis
 
 
 def in_allotment(c: dict) -> bool:
-    ch = c.get("channel") or ""
-    return is_search(ch) or is_vehicle(ch, c.get("name") or "")
+    # Full account mix — every ENABLED/PAUSED campaign with a budget.
+    return True
 
 
 def allotment_payload(camps: list[dict]) -> dict:
@@ -696,7 +704,7 @@ footer a {{ color:var(--accent); text-decoration:none; }}
         <div class="stat">
           <div class="k">Enabled daily</div>
           <div class="v">{money_day(a['daily_total'])}</div>
-          <div class="s">Search + Vehicle ads</div>
+          <div class="s">Every enabled campaign</div>
         </div>
         <div class="stat">
           <div class="k">Monthly cap</div>
@@ -726,7 +734,7 @@ footer a {{ color:var(--accent); text-decoration:none; }}
           </tbody>
         </table>
       </div>
-      <div class="why"><strong>How to use this with mgmt</strong>Daily is the live Ads budget — the lever you move. Mo cap is daily × 30.4 (what Google can bill if every campaign fills). MTD / allotted is spend so far vs daily × {days} days. Cutting Brand or Service does not move money onto models or Vehicle ads — raise the other campaign separately. Vehicle ads sits in this mix even though the Search table below stays Search-only.</div>
+      <div class="why"><strong>How to use this with mgmt</strong>Daily is the live Ads budget — the lever you move. Mo cap is daily × 30.4 (what Google can bill if every campaign fills). MTD / allotted is spend so far vs daily × {days} days. This mix is the full account (Search + Vehicle ads + Display). Cutting Brand or Service does not move money onto models or Vehicle ads — raise the other campaign separately. The Search table below stays Search-only.</div>
     </div>
 
     <div class="block">

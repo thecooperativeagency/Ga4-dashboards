@@ -52,11 +52,11 @@
     }
   },
   "allotment": {
-    "daily_total": 125.0,
-    "monthly_cap": 3800.0,
-    "allotted_mtd": 500.0,
-    "spend_mtd": 342.72,
-    "pace_pct": 68.5,
+    "daily_total": 140.0,
+    "monthly_cap": 4256.0,
+    "allotted_mtd": 560.0,
+    "spend_mtd": 404.01,
+    "pace_pct": 72.1,
     "enabled": [
       {
         "name": "Vehicle Inventory | Vehicle Ads",
@@ -82,6 +82,32 @@
         "allotted_mtd": 136.0,
         "pace_pct": 7.7,
         "shared_budget": false,
+        "budget_period": "DAILY"
+      },
+      {
+        "name": "Pre-Owned Q5 | Display",
+        "short": "Pre-Owned Q5 Display",
+        "status": "ENABLED",
+        "role": "Display",
+        "channel": "DISPLAY",
+        "spend": 61.29,
+        "clicks": 146,
+        "impr": 6529,
+        "ads_conv": 0.0,
+        "cpc": 0.42,
+        "calls": 0.0,
+        "site_cta": 0,
+        "cta": {
+          "click_main_cta": 0,
+          "click_phone_number": 0,
+          "start_check_availability_form": 0,
+          "complete_quick_qualify_form": 0
+        },
+        "daily": 15.0,
+        "monthly_cap": 456.0,
+        "allotted_mtd": 60.0,
+        "pace_pct": 102.2,
+        "shared_budget": true,
         "budget_period": "DAILY"
       },
       {
